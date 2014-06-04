@@ -4,6 +4,8 @@ layout: default
 related:
  - { name: Project page, link: 'https://github.com/cms-sw/cmssw' }
  - { name: Feedback, link: 'https://github.com/cms-sw/cmssw/issues/new' }
+redirect_from:
+ - /cmssw/tutorial-merge-usercode-repository-in-cmssw.html
 ---
 
 ## Tutorial: using your UserCode repository in CMSSW

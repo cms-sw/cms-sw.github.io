@@ -4,6 +4,9 @@ layout: default
 related:
  - { name: "Project page", link: "https://github.com/cms-sw/cmssw" }
  - { name: "Feedback", link: "https://github.com/cms-sw/cmssw/issues/new" }
+redirect_from:
+ - /cmssw/faq.html
+ - /cmssw/faq/
 ---
 # FAQs
 
