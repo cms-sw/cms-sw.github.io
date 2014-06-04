@@ -351,7 +351,7 @@ which will tell git to ignore any change and consider our current branch (hence
 the name of the option) as the one from which all the changes will be taken,
 regardless of the merge being successful or not.
 
-   git merge -s ours my-non-forwardable-feature
+    git merge -s ours my-non-forwardable-feature
 
 Finally I need to push my branch, and open a pull request in `CMSSW_7_1_X`. Such
 a pull request will say that thre are 0 changes compared to the current
