@@ -20,10 +20,10 @@ To checkout the full CMSSW repository locally you can do:
 
 in your SCRAM work area.  Notice this will require a github account (see
 [here]() for the relevant FAQ). Alternatively you can do:
-    
+
     git clone cmssw-main-ro src
 
-for read only access. If you want to checkout a given tag, you need to 
+for read only access. If you want to checkout a given tag, you need to
 specify it via the `-b` flag, e.g.:
 
     git clone cmssw-main src -b CMSSW_6_1_0
@@ -76,16 +76,16 @@ Let's say you want to find out who is responsible for a given
 change in `FWCore/Framework/BuildFile.xml`. If you are happy with using
 the web based GUI you can simply browse to the given file ([click
 here](https://github.com/cms-sw/cmssw/blob/master/FWCore/Framework/BuildFile.xml)
-for this particular example). 
+for this particular example).
 
 Then click on the "Blame" button (again [click
 here](https://github.com/cms-sw/cmssw/blame/master/FWCore/Framework/BuildFile.xml)
-for the particular example). 
+for the particular example).
 
 ![blame button](images/blame-button.png)
 
 You can get the full information about a given change
-(including which files changed in the same commit) by clicking on the 
+(including which files changed in the same commit) by clicking on the
 specific commit-id (the hash in the left column, [for example
 bd2fd326](https://github.com/cms-sw/cmssw/commit/bd2fd32657121cda0cc132a98b3b0d68773788b8)).
 
@@ -114,7 +114,7 @@ which returns:
     f4330d28 (wmtan 2010-02-18 23:10:32 +0000 15)   <lib   name="1"/>
     f4330d28 (wmtan 2010-02-18 23:10:32 +0000 16) </export>
 
-Let's say we are interested in line 12, i.e. `<use   name="rootcintex"/>`. 
+Let's say we are interested in line 12, i.e. `<use   name="rootcintex"/>`.
 The first column gives us the `commit-id` (`bd2fd326` in this case). To find out everything
 about that commit you can use the `git show` command:
 
@@ -125,9 +125,9 @@ which returns:
     commit bd2fd32657121cda0cc132a98b3b0d68773788b8
     Author: wmtan <>
     Date:   Wed Jan 30 23:21:16 2013 +0000
-    
+
         With Reflex usage partially removed, EventProcessor needs CINT dictionaries
-    
+
     diff --git a/FWCore/Framework/BuildFile.xml b/FWCore/Framework/BuildFile.xml
     index a5cae15..52e584d 100644
     --- a/FWCore/Framework/BuildFile.xml
@@ -147,20 +147,20 @@ which returns:
     @@ -83,6 +83,9 @@
     #include <sched.h>
     #endif
-    
+
     +//Needed for introspection
     +#include "Cintex/Cintex.h"
     +
     namespace edm {
-    
+
     namespace event_processor {
     @@ -585,6 +588,8 @@ namespace edm {
                             serviceregistry::ServiceLegacy iLegacy) {
-    
+
         //std::cerr << processDesc->dump() << std::endl;
     +
     +    ROOT::Cintex::Cintex::Enable();
-    
+
         boost::shared_ptr<ParameterSet> parameterSet = processDesc->getProcessPSet();
         //std::cerr << parameterSet->dump() << std::endl;
 
@@ -173,7 +173,7 @@ doing it is via:
 
     git log --pretty="%an" --since 1y -- <subsytem>/<package> | sort -u
 
-which will print only the authors ( `--pretty="%an"` ) who have committed something in 
+which will print only the authors ( `--pretty="%an"` ) who have committed something in
 the given `<subsytem>/<package>` in the last year ( `--since 1y` ).
 
 ### Downloading from github is painfully slow, how can I improve the situation?
@@ -210,7 +210,7 @@ Git allows you to mirror a repository by doing:
     git clone --mirror --bare https://github.com/cms-sw/cmssw.git $CMSSW_MIRROR_PATH
 
 Done that you can update the mirror via:
-    
+
     cd $CMSSW_MIRROR_PATH
     git remote update
 
@@ -279,7 +279,7 @@ The _CVS HEAD_ at the time of the migration is available in the git branch
 `imported-CVS-HEAD`. You can checkout files from the by simply fetching that
 branch in your local workarea and then using git checkout for it.
 
-For example lets assume you want to checkout the _HEAD_ of 
+For example lets assume you want to checkout the _HEAD_ of
 `PhysicsTools/Configuration/test/SUSY_pattuple_cfg.py` in CMSSW_5_3_11, where
 it was never released. First you need to set up the area and fetch the branch:
 
@@ -326,6 +326,38 @@ To learn more about git reflog you can look at [its man
 page](https://www.kernel.org/pub/software/scm/git/docs/git-reflog.html) or the
 [Pro Git](http://git-scm.com/book/ch6-1.html#RefLog-Shortnames) section about
 it.
+
+### How can I prevent automatic forward porting of a pull request?
+
+CMS uses a cronjob to automate the forward porting of pull requests. For
+examples changes which get applied to `CMSSW_7_0_X` get automatically forward
+ported to `CMSSW_7_1_X` and from there they then get to `CMSSW_7_2_X`, etc. The
+forward porting is smart enough to make sure that if there is any conflicting
+changes in a newer version, the forward port of the conflicting part will not
+happen. However sometimes its desiderable to avoid the forward port completely,
+simply because a given bug-fix / new feature might apply on an old release and
+not a new one. In order to avoid this one needs to prepare an additional pull
+request which will stop the propagation in a given release.
+
+Let's say we have locally a branch `my-non-forwardable-feature` which I only
+want in `CMSSW_7_0_X` and not in `CMSSW_7_1_X`. First of all I need to move from
+my development branch to `CMSSW_7_1_X`:
+
+    git fetch official-cmssw
+    git reset --hard official-cmssw/CMSSW_7_1_X
+
+then I need to merge the unwanted feature there, using the `-s ours` option,
+which will tell git to ignore any change and consider our current branch (hence
+the name of the option) as the one from which all the changes will be taken,
+regardless of the merge being successful or not.
+
+   git merge -s ours my-non-forwardable-feature
+
+Finally I need to push my branch, and open a pull request in `CMSSW_7_1_X`. Such
+a pull request will say that thre are 0 changes compared to the current
+CMSSW_7_1_X. Once such a Pull Request is merged, we can happily merge the one
+which was done for `CMSSW_7_0_X` which will then be ignored by the subsequent
+automatic forward port.
 
 ### How do I ask a question?
 
