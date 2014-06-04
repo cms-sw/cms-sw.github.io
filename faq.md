@@ -6,7 +6,6 @@ related:
  - { name: "Feedback", link: "https://github.com/cms-sw/cmssw/issues/new" }
 redirect_from:
  - /cmssw/faq.html
- - /cmssw/faq/
 ---
 # FAQs
 
@@ -57,7 +56,7 @@ key](https://help.github.com/articles/generating-ssh-keys).
 ### How do I checkout one or more packages?
 
 If you are in a CMSSW area (remember to do `cmsenv`) you can simply use:
-  
+
     git cms-addpkg <package-name>
 
 once you have developments you can checkout dependent packages by doing.
@@ -91,7 +90,7 @@ or in one command:
 
     git pull official-cmssw CMSSW_6_2_X
 
-assuming you are on the `new-feature` branch already. 
+assuming you are on the `new-feature` branch already.
 
 For more information about merging branching read
 [here](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging).
@@ -146,7 +145,7 @@ packages which did not end up in any release.
 No tags other than "release tags" will be allowed inside the _official-cmssw_
 repository, so there is not a particular need for a convention for tags.
 
-In the git model, changes are proposed via private branches 
+In the git model, changes are proposed via private branches
 which are made into Pull Requests. Given a Pull Request gets automatically
 assigned a unique ID (like for tagsets), we will not have a particular
 convention, treating them as private tags in the CVS model.
@@ -170,7 +169,7 @@ gitk (Linux, Mac, Windows, included in git) or [SourceTree](http://www.sourcetre
 ### How can I do showtags?
 
 `showtags` is _CVS_ centric in the sense in git we have no per package tags
-anymore. 
+anymore.
 
 To replace it, you can get the modified files with raw git commands by doing:
 
@@ -182,7 +181,7 @@ A slightly more elaborate way of getting the modified packages is:
 
      git diff --name-only $CMSSW_VERSION | cut -f1,2 -d/ | sort -u
 
-However in git what makes more sense is to find out the topic branches which 
+However in git what makes more sense is to find out the topic branches which
 are on top of some base release. You can get these of with:
 
      git log --graph --merges --oneline $CMSSW_VERSION..
@@ -302,20 +301,16 @@ The documentation you are reading uses [GitHub Pages](http://pages.github.com)
 to publish web pages. To contribute to it you need to:
 
 - Register to github.
-- Fork the cmssw project under your account ([click here to do
-  it](https://github.com/cms-sw/cmssw/fork)).
-- Checkout the `gh-pages` branch:
-
-      git clone -b gh-pages git@github.com:cms-sw/cmssw.git cmssw-pages
-
-- Edit the documentation and push it to your branch:
+- Fork the cms-sw.github.io repository under your account ([click here to do
+  it](https://github.com/cms-sw/cms-sw.github.io/fork)).
+- Edit the documentation and push it to your repository:
 
       <edit-some-documentation>
       git commit <my-changed-files>
-      git push git@github.com:<your-github-username>/cmssw.git gh-pages
+      git push
 
-- Create a "pull request" for you changes by going 
-  [here](https://github.com/cms-sw/cmssw/pull/new/gh-pages).
+- Create a "pull request" for you changes by going
+  [here](https://github.com/cms-sw/cms-sw.github.io/pull/new/master).
 
 This will trigger a discussion (and most likely immediate approval) of your
 documentation changes.
