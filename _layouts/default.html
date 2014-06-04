@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="copyright" content="1954-2013 CERN">  
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <style>
+
+  body {
+    padding: 40px;
+  }
+  table td {
+    border: 1px solid;
+    padding: 4px;
+  }
+  table > thead {
+    background: rgb(51,51,51);
+    color: #ffffff;
+  }
+  p {
+    font-size: 17.5px;
+    font-weight: 300;
+    line-height: 1.25;
+  }
+  </style>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html">CMSSW on GitHub</a>
+      <ul class="nav">
+        {% for r in page.related %}
+         <li><a href="{{ r.link }}">{{ r.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span9">
+        {{content}}
+      </div>
+      <div class="span3">
+        <h3 id='quick_start'>Quick start</h3>
+        <ul>
+          <li><a href='index.html'>Main page</a></li>
+          <li><a href='faq.html'>CMSSW on Github FAQ</a></li>
+          <li><a href='usercode-faq.html'>UserCode on Github FAQ</a></li>
+          <li>Tutorials:<ul>
+            <li><a href='tutorial.html'>Proposing changes to CMSSW</a></li>
+            <li><a href='tutorial-collaborating-with-peers.html'>Collaborating with peers</a></li>
+            <li><a href='tutorial-merge-usercode-repository-in-cmssw.html'>Working with CMSSW and UserCode</a></li>
+            <li><a href='tutorial-l2-check-topics.html'>Approval process</a></li>
+            <li><a href='tutorial-forward-port.html'>Forward porting &amp; rebasing your changes</a></li>
+          </ul></li>
+          <li><a href='rosetta.html'>Rosetta Stone</a></li>
+          <li><a href='troubleshooting.html'>Troubleshooting git</a></li>
+          <li><a href='advanced-usage.html'>Advanced Usage FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span4"></div>
+      <div style="text-align: center; padding-top: 50px;" class="span4"><a style="font-size: 80%;" href="http://copyright.web.cern.ch">Copyright 1954-2013 CERN</a></div>
+      <div class="span4"></div>
+    </div>
+  </div>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
