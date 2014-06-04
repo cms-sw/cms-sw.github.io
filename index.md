@@ -8,37 +8,19 @@ related:
 
 # Welcome to CMSSW on GitHub pages
 
-CMS is migrating the repository of its Offline Experiment Software (CMSSW) to
-git and github.
+The LHC smashes groups of protons together at close to the speed of light: 40
+million times per second and with seven times the energy of the most powerful
+accelerators built up to now. Many of these will just be glancing blows but
+some will be head on collisions and very energetic. When this happens some of
+the energy of the collision is turned into mass and previously unobserved,
+short-lived particles – which could give clues about how Nature behaves at a
+fundamental level - fly out and into the detector.
 
-# Migration schedule:
+CMS is a particle detector that is designed to see a wide range of particles
+and phenomena produced in high-energy collisions in the LHC. Like a cylindrical
+onion, different layers of detectors measure the different particles, and use
+this key data to build up a picture of events at the heart of the collision.
 
-### CMSSW_7_0_X
-
-On **June 26th**, in line with what is `CMSSW_6_2_0_pre8`, `CMSSW_7_0_X`
-branch will open in GitHub.
-
-The current, test, [cms-sw/cmssw](http://github.com/cms-sw/cmssw) repository
-will be scrapped and started from scratch! **You'll need to do the same for your
-forks!**
-
-### CMSSW_6_2_X, CMSSW_5_3_X, CMSSW_4_4_X, CMSSW_4_1_X, SLHC releases.
-
-On the day `CMSSW_6_2_0` was released, we opened branches in git for all the
-required stable release queue.
-
-CVS access to CMSSW repository became read only at that point and all the
-development moved to git.
-
-### UserCode
-
-You will be able to commit to the UserCode repository until the 15th of
-October, in order to avoid disruption for the summer conferences.
-
-This is the final date for your usercode migration, no further grace periods
-will be provided by CERN IT.
-
-Instructions on how to migrate CMSSW releases can be found
-[here](http://cms-sw.github.io/cmssw/usercode-faq.html).
-
-[cvs2git]: http://cvs2svn.tigris.org/cvs2git.html
+Since Summer 2013 some of CMS Software components are [hosted on
+Github](https://github.com/cms-sw). You can find here a [few FAQ](faq.html)
+and tutorials on how develop in CMSSW.
