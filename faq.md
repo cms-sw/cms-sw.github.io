@@ -59,6 +59,10 @@ If you are in a CMSSW area (remember to do `cmsenv`) you can simply use:
 
     git cms-addpkg <package-name>
 
+or
+
+    git cms-addpkg -f <file-with-a-list-of-packages>
+
 once you have developments you can checkout dependent packages by doing.
 
     git cms-checkdeps
@@ -78,6 +82,9 @@ changes in CMSSW](tutorial.html).
 Go to the [CMS Topic Collector][cms-topic-collector]. There you'll find all the
 open requests and their approval status.
 
+Alternatively, go to the [Pull Requests](https://github.com/cms-sw/cmssw/pulls) page, 
+and click on "Yours" to see all the (Open or Closed) requests you have made.
+
 ### How do I make sure my topic branch is updated with the latest developments?
 
 Simply merge the release branch into your topic branch:
@@ -96,6 +103,17 @@ For more information about merging branching read
 [here](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging).
 
 You can also have a look at the CMS git tutorial found [here](tutorial).
+
+### How do I synchronise my personal repository with the official one ?
+
+In general you shouldn't need to do it, but if you really want to, you can do
+it from any CMSSW working area:
+
+    git fetch --all
+    git push my-cmssw remotes/official-cmssw/CMSSW_7_2_X:refs/heads/CMSSW_7_2_X
+
+You need to repeat the last command for each branch (CMSSW_7_1_X, CMSSW_7_2_X, etc.)
+that you want to synchronise.
 
 ### What about UserCode?
 
@@ -117,7 +135,7 @@ However tags are cheap, so we can afford to tag a single integration build.
 
 You can do it by specifying a path at the end of the git command:
 
-    git diff TAG1..TAG2 <some-path>
+    git diff TAG1..TAG2 -- <some-path>
 
 ### How do you delete a branch in git?
 
