@@ -330,6 +330,15 @@ to publish web pages. To contribute to it you need to:
 - Create a "pull request" for you changes by going
   [here](https://github.com/cms-sw/cms-sw.github.io/pull/new/master).
 
+Alternatively, you can edit the pages directly with the github.com web editor:
+
+- go to https://github.com/cms-sw/cms-sw.github.io
+- find for the page you want to modify
+- use the Edit button to automatically fork the repository and open the editor
+- once you are done, use the "Propose file change" button to automatically make 
+  a branch and ceate a pull request
+
+
 This will trigger a discussion (and most likely immediate approval) of your
 documentation changes.
 
