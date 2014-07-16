@@ -206,12 +206,12 @@ or in case you have CVMFS available you can set it too:
 
 Git allows you to mirror a repository by doing:
 
-    CMSSW_MIRROR_PATH=<some-path>
-    git clone --mirror --bare https://github.com/cms-sw/cmssw.git $CMSSW_MIRROR_PATH
+    CMSSW_GIT_REFERENCE=<some-path>
+    git clone --mirror --bare https://github.com/cms-sw/cmssw.git $CMSSW_GIT_REFERENCE
 
 Done that you can update the mirror via:
 
-    cd $CMSSW_MIRROR_PATH
+    cd $CMSSW_GIT_REFERENCE
     git remote update
 
 ### How do I collapse multiple commits into one?
