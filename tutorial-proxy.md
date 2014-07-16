@@ -72,11 +72,10 @@ similar to that used by SSH or GIT.
 
 In this case git uses libcurl to handle the connection; the version of git bundled
 with CMSSW supports different kinds of proxies: SOCKS4, SOCKS4a, SOCKS5, and HTTP/HTTPS.
-In order to connect through any proxy supported by libcurl, you can set the
-`http.proxy` or `https.proxy` git options:
+In order to connect through any proxy supported by libcurl, you can set the `http.proxy` 
+option:
 
     git config --global http.proxy socks5://localhost:1080
-    git config --global https.proxy socks5://localhost:1080
 
 For more information, see the `--proxy` option in [curl(1)](http://curl.haxx.se/docs/manpage.html)
 and the `http.proxy` entry in [git-config(1)](https://www.kernel.org/pub/software/scm/git/docs/git-config.html).
