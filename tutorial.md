@@ -10,7 +10,7 @@ redirect_from:
 
 ## Tutorial: proposing changes to CMSSW.
 
-This tutorial wil guide you step to step from an empty directory to 
+This tutorial wil guide you step to step from an empty directory to
 a new feature being proposed in the CMS Topic Collector. For more general
 questions please have a look at the [FAQ](faq.html) pages.
 
@@ -30,7 +30,7 @@ Set up the work area just like you used to.
 
 ### Checkout a few packages using git cms-addpkg
 
-`git cms-addpkg` behaves like the old addpkg. 
+`git cms-addpkg` behaves like the old addpkg.
 The src directory is populated with just what we asked for (here
 `Tutorial/Test`).
 
@@ -60,7 +60,7 @@ you can track what you were doing in an easier way.
     Switched to a new branch 'my-new-feature'
 
 For example you could call your branch "new-hlt-menu-XYZ",
-"bugfix-for-clustering", etc. Compared to CVS, `git checkout <branch>` means 
+"bugfix-for-clustering", etc. Compared to CVS, `git checkout <branch>` means
 *"Make `branch` the current `branch` in the local work area"*.
 The `-b` option is needed to create the branch if it does not exists.
 
@@ -80,7 +80,7 @@ You have just committed to your **LOCAL** copy of the repository.
 Git supports multiple remote repository. In particular we will use:
 
 - *my-cmssw*: your personal repository, used to propose changes
-- *official-cmssw*: read only authoritative CMSSW sources 
+- *official-cmssw*: read only authoritative CMSSW sources
 
 To show what remotes are available you can use `git remote show`:
 
@@ -93,9 +93,8 @@ The general workflow for development will be the following:
 - Create a feature branch and add your additions on top.
 - Create a [Pull Request](https://help.github.com/articles/using-pull-requests).
 
- Each pull request you do to the [official CMSSW
- repository](https://github.com/cms-sw/cmssw) will also appear in the 
- [CMS Topic Collector][topic-collector], together with the approval information.
+Approval information will be populated shortly after you submit the pull request
+.
 
 ### Push all your work to your private github repository
 
@@ -145,13 +144,3 @@ Or change the "base branch", i.e. the one to which you want to have your changes
 
 Remember to *write a sensible comment* just like you used to do for the
 publishing of tagsets and click on Send Pull Request.
-
-### Go to the Topic Collector and check approval status
-
-Pull requests get automatically tracked in the [CMS Topic
-Collector][topic-collector], just like tagsets were tracked in the CMS topic
-collector.
-
-![Topic Collector](images/topic-collector.png)
-
-[topic-collector]: https://cern.ch/cmsgit/cmsgit
