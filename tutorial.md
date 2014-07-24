@@ -10,8 +10,8 @@ redirect_from:
 
 ## Tutorial: proposing changes to CMSSW.
 
-This tutorial wil guide you step to step from an empty directory to
-a new feature being proposed in the CMS Topic Collector. For more general
+This tutorial wil guide you step to step from an empty directory to a new
+feature being proposed in the official GitHub repository. For more general
 questions please have a look at the [FAQ](faq.html) pages.
 
 ### Before you start.
