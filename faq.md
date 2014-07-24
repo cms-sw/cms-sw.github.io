@@ -79,11 +79,9 @@ changes in CMSSW](tutorial.html).
 
 ### How do I check the status of my pull request(s).
 
-Go to the [CMS Topic Collector][cms-topic-collector]. There you'll find all the
-open requests and their approval status.
-
-Alternatively, go to the [Pull Requests](https://github.com/cms-sw/cmssw/pulls) page, 
-and click on "Yours" to see all the (Open or Closed) requests you have made.
+Go to the [Pull request](https://github.com/cms-sw/cmssw/issues) to have an
+overview of the status of all the pull requests. Click on a given pull request
+to have the whole discussion about the pull request approval process.
 
 ### How do I make sure my topic branch is updated with the latest developments?
 
@@ -267,13 +265,9 @@ which once again shows the importance of good comments.
 
 Simply close it using the standard GitHub GUI when looking at it.
 
-* Go to the Pull Request page, either by clinking on the list on GitHub, or by
-  clicking on it on the Topic Collector.
+* Go to the Pull Request page, either by clinking on the list on GitHub.
 * Scroll down to the bottom of the discussion related to your pull request.
 * Click on "Close"
-
-The pull request will disappear from the list of open pull requests in both
-GitHub and the Topic Collector.
 
 ### Do you have any more in-depth FAQs?
 
@@ -335,7 +329,7 @@ Alternatively, you can edit the pages directly with the github.com web editor:
 - go to https://github.com/cms-sw/cms-sw.github.io
 - find for the page you want to modify
 - use the Edit button to automatically fork the repository and open the editor
-- once you are done, use the "Propose file change" button to automatically make 
+- once you are done, use the "Propose file change" button to automatically make
   a branch and ceate a pull request
 
 
