@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+from argparse import ArgumentParser
+from os.path import exists
+from sys import exit
+import re
+
+RESULTS_RE = "^([0-9.]+)_([^ ]*) (.*) - time date.*exit: (.*)"
+FAILED_RE = "Step([0-9])-FAILED"
+
+if __name__ == "__main__":
+  parser = ArgumentParser()
+  parser.add_argument("input")
+  args = parser.parse_args()
+  if not exists(args.input):
+    print "Please specify an input file"
+    exit(1)
+  
+  buf = open(args.input).read()
+  results = {}
+  for l in buf.split("\n"):
+    r = re.match(RESULTS_RE, l)
+    if not r:
+      continue
+    workflowId, workflow, steps, exit = r.groups()
+    steps = steps.split(" ")
+    failedSteps = [int(re.match(FAILED_RE, s).group(1)) + 1
+                   for s in steps if re.match(FAILED_RE, s)]
+    if not failedSteps:
+      continue
+    results[workflowId] = {
+                           "workflowId": workflowId,
+                           "name": workflow,
+                           "steps": failedSteps
+                          }                                                                                                                                                        
+  print results
