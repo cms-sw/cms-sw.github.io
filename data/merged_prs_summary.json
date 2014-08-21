@@ -3,7 +3,7 @@
         "comparisons": [
             {
                 "builds": [], 
-                "compared_tags": "CMSSW_7_1_X_2014-07-26-0200-->CMSSW_7_1_4_patch1", 
+                "compared_tags": "CMSSW_7_1_X_2014-07-27-0200-->CMSSW_7_1_4_patch1", 
                 "utests": [], 
                 "relvals": [], 
                 "static_checks": "", 
@@ -1259,7 +1259,7 @@
                     }
                 ], 
                 "merged_prs": [], 
-                "hlt_tests": ""
+                "hlt_tests": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/HLT-Validation/CMSSW_7_1_X_2014-08-20-1400/"
             }, 
             {
                 "builds": [], 
@@ -2871,12 +2871,28 @@
                 "hlt_tests": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/HLT-Validation/CMSSW_7_0_X_2014-08-20-1400/"
             }, 
             {
-                "builds": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.0-thu-02/CMSSW_7_0_X_2014-08-21-0200/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
                 "compared_tags": "CMSSW_7_0_X_2014-08-20-1400-->CMSSW_7_0_X_2014-08-21-0200", 
-                "utests": [], 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.0-thu-02/CMSSW_7_0_X_2014-08-21-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
                 "relvals": [], 
                 "static_checks": "", 
-                "tests_archs": [], 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
                 "addons": [], 
                 "merged_prs": [], 
                 "hlt_tests": ""
@@ -5006,7 +5022,7 @@
         "comparisons": [
             {
                 "builds": [], 
-                "compared_tags": "CMSSW_5_3_X_2014-07-26-0200-->CMSSW_5_3_X_2014-07-23-0200", 
+                "compared_tags": "CMSSW_5_3_X_2014-07-27-0200-->CMSSW_5_3_X_2014-07-23-0200", 
                 "utests": [], 
                 "relvals": [], 
                 "static_checks": "", 
@@ -6573,7 +6589,7 @@
         "comparisons": [
             {
                 "builds": [], 
-                "compared_tags": "CMSSW_6_2_X_SLHC_2014-07-26-0200-->CMSSW_6_2_X_SLHC_2014-08-01-0200", 
+                "compared_tags": "CMSSW_6_2_X_SLHC_2014-07-27-0200-->CMSSW_6_2_X_SLHC_2014-08-01-0200", 
                 "utests": [], 
                 "relvals": [], 
                 "static_checks": "", 
@@ -9491,6 +9507,17 @@
     }, 
     {
         "comparisons": [
+            {
+                "builds": [], 
+                "compared_tags": "CMSSW_7_1_CLANG_X_2014-07-27-0200-->CMSSW_7_1_CLANG_X_2014-04-28-1600", 
+                "utests": [], 
+                "relvals": [], 
+                "static_checks": "", 
+                "tests_archs": [], 
+                "addons": [], 
+                "merged_prs": [], 
+                "hlt_tests": ""
+            }, 
             {
                 "builds": [], 
                 "compared_tags": "CMSSW_7_1_CLANG_X_2014-04-28-1600-->CMSSW_7_1_CLANG_X_2014-04-28-2100", 
@@ -15703,84 +15730,6 @@
         "comparisons": [
             {
                 "builds": [], 
-                "compared_tags": "CMSSW_7_2_X_2014-08-05-0200-->CMSSW_7_2_X_2014-08-05-1400", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "hash": "1f82a0a2d92619238083fcd945ce1e6253f1d943", 
-                        "title": "Extra cuts for lumi monitor simulations", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4877", 
-                        "number": "4877", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "civanch"
-                    }, 
-                    {
-                        "hash": "b92bd5cb7c2de2aab1ef0360aa70ef35da47f31d", 
-                        "title": "Hlt templates for run2 in 72x", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4851", 
-                        "number": "4851", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "jalimena"
-                    }, 
-                    {
-                        "hash": "7327ad79eaf6a547173974e11124cfad5c35c573", 
-                        "title": "More run2: EventContent/Menu/HLT_Physics", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4823", 
-                        "number": "4823", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Martin-Grunewald"
-                    }, 
-                    {
-                        "hash": "ced8fd69b42958e0fc180deec6e32059c5dfccef", 
-                        "title": "Change the naming convention of CaloMETs", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4709", 
-                        "number": "4709", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "TaiSakuma"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
-            {
-                "builds": [], 
-                "compared_tags": "CMSSW_7_2_X_2014-08-05-1400-->CMSSW_7_2_X_2014-08-06-0200", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "hash": "ed76a766f63fbc0972c1bf8769a98ac7beb30015", 
-                        "title": "Further integrations in the HLT Run2 menu", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4878", 
-                        "number": "4878", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "perrotta"
-                    }, 
-                    {
-                        "hash": "d5476d2696d6341eeec9e94655912c083d617cab", 
-                        "title": "new BPH paths", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4864", 
-                        "number": "4864", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "lucamartini"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
-            {
-                "builds": [], 
                 "compared_tags": "CMSSW_7_2_X_2014-08-06-0200-->CMSSW_7_2_X_2014-08-06-1400", 
                 "utests": [], 
                 "relvals": [], 
@@ -17588,122 +17537,6 @@
         "comparisons": [
             {
                 "builds": [], 
-                "compared_tags": "CMSSW_7_2_DEVEL_X_2014-08-05-0200-->CMSSW_7_2_DEVEL_X_2014-08-05-1400", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4851", 
-                            "4823", 
-                            "4877"
-                        ], 
-                        "hash": "9a9490a4273031fbe824ff083fb3ba089ab9dbc8", 
-                        "number": "9a9490a", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "1f82a0a2d92619238083fcd945ce1e6253f1d943", 
-                        "title": "Extra cuts for lumi monitor simulations", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4877", 
-                        "number": "4877", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "civanch"
-                    }, 
-                    {
-                        "hash": "b92bd5cb7c2de2aab1ef0360aa70ef35da47f31d", 
-                        "title": "Hlt templates for run2 in 72x", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4851", 
-                        "number": "4851", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "jalimena"
-                    }, 
-                    {
-                        "hash": "7327ad79eaf6a547173974e11124cfad5c35c573", 
-                        "title": "More run2: EventContent/Menu/HLT_Physics", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4823", 
-                        "number": "4823", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Martin-Grunewald"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4709"
-                        ], 
-                        "hash": "a7c4174b9a83d89d429a2d8e89ec86c99abcc36a", 
-                        "number": "a7c4174", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ced8fd69b42958e0fc180deec6e32059c5dfccef", 
-                        "title": "Change the naming convention of CaloMETs", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4709", 
-                        "number": "4709", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "TaiSakuma"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
-            {
-                "builds": [], 
-                "compared_tags": "CMSSW_7_2_DEVEL_X_2014-08-05-1400-->CMSSW_7_2_DEVEL_X_2014-08-06-0200", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4878"
-                        ], 
-                        "hash": "1a66142a3ae8d022fe693b006425565cdff2b6a8", 
-                        "number": "1a66142", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ed76a766f63fbc0972c1bf8769a98ac7beb30015", 
-                        "title": "Further integrations in the HLT Run2 menu", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4878", 
-                        "number": "4878", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "perrotta"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4864"
-                        ], 
-                        "hash": "043cbcb6cdb60829e58f7101af64e8217fc08083", 
-                        "number": "043cbcb", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "d5476d2696d6341eeec9e94655912c083d617cab", 
-                        "title": "new BPH paths", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4864", 
-                        "number": "4864", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lucamartini"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
-            {
-                "builds": [], 
                 "compared_tags": "CMSSW_7_2_DEVEL_X_2014-08-06-0200-->CMSSW_7_2_DEVEL_X_2014-08-06-1400", 
                 "utests": [], 
                 "relvals": [], 
@@ -19258,122 +19091,6 @@
     }, 
     {
         "comparisons": [
-            {
-                "builds": [], 
-                "compared_tags": "CMSSW_7_2_CLANG_X_2014-08-05-0200-->CMSSW_7_2_CLANG_X_2014-08-05-1400", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4851", 
-                            "4823", 
-                            "4877"
-                        ], 
-                        "hash": "1df482ff5a75a632f15ffcfb8fd4b7d2c16021b2", 
-                        "number": "1df482f", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "1f82a0a2d92619238083fcd945ce1e6253f1d943", 
-                        "title": "Extra cuts for lumi monitor simulations", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4877", 
-                        "number": "4877", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "civanch"
-                    }, 
-                    {
-                        "hash": "b92bd5cb7c2de2aab1ef0360aa70ef35da47f31d", 
-                        "title": "Hlt templates for run2 in 72x", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4851", 
-                        "number": "4851", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "jalimena"
-                    }, 
-                    {
-                        "hash": "7327ad79eaf6a547173974e11124cfad5c35c573", 
-                        "title": "More run2: EventContent/Menu/HLT_Physics", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4823", 
-                        "number": "4823", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Martin-Grunewald"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4709"
-                        ], 
-                        "hash": "653084d292eff50f0f8418ac1815038d94b4ef0b", 
-                        "number": "653084d", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ced8fd69b42958e0fc180deec6e32059c5dfccef", 
-                        "title": "Change the naming convention of CaloMETs", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4709", 
-                        "number": "4709", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "TaiSakuma"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
-            {
-                "builds": [], 
-                "compared_tags": "CMSSW_7_2_CLANG_X_2014-08-05-1400-->CMSSW_7_2_CLANG_X_2014-08-06-0200", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4878"
-                        ], 
-                        "hash": "7d45e613fcec86ea0c3dfdbfc9fa5c9aefe9f5dc", 
-                        "number": "7d45e61", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ed76a766f63fbc0972c1bf8769a98ac7beb30015", 
-                        "title": "Further integrations in the HLT Run2 menu", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4878", 
-                        "number": "4878", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "perrotta"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4864"
-                        ], 
-                        "hash": "a445ca4f28629a728fa063accfe29f18febca266", 
-                        "number": "a445ca4", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "d5476d2696d6341eeec9e94655912c083d617cab", 
-                        "title": "new BPH paths", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4864", 
-                        "number": "4864", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lucamartini"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
             {
                 "builds": [], 
                 "compared_tags": "CMSSW_7_2_CLANG_X_2014-08-06-0200-->CMSSW_7_2_CLANG_X_2014-08-06-1400", 
@@ -20969,122 +20686,6 @@
         "comparisons": [
             {
                 "builds": [], 
-                "compared_tags": "CMSSW_7_2_GEANT10_X_2014-08-05-0200-->CMSSW_7_2_GEANT10_X_2014-08-05-1400", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4851", 
-                            "4823", 
-                            "4877"
-                        ], 
-                        "hash": "3e5178cfe61fce3c1ef993b780797941d48b4db4", 
-                        "number": "3e5178c", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "1f82a0a2d92619238083fcd945ce1e6253f1d943", 
-                        "title": "Extra cuts for lumi monitor simulations", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4877", 
-                        "number": "4877", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "civanch"
-                    }, 
-                    {
-                        "hash": "b92bd5cb7c2de2aab1ef0360aa70ef35da47f31d", 
-                        "title": "Hlt templates for run2 in 72x", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4851", 
-                        "number": "4851", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "jalimena"
-                    }, 
-                    {
-                        "hash": "7327ad79eaf6a547173974e11124cfad5c35c573", 
-                        "title": "More run2: EventContent/Menu/HLT_Physics", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4823", 
-                        "number": "4823", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Martin-Grunewald"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4709"
-                        ], 
-                        "hash": "9d52ac7e5d30f8043263d412b589955ed5f3bbe8", 
-                        "number": "9d52ac7", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ced8fd69b42958e0fc180deec6e32059c5dfccef", 
-                        "title": "Change the naming convention of CaloMETs", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4709", 
-                        "number": "4709", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "TaiSakuma"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
-            {
-                "builds": [], 
-                "compared_tags": "CMSSW_7_2_GEANT10_X_2014-08-05-1400-->CMSSW_7_2_GEANT10_X_2014-08-06-0200", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4878"
-                        ], 
-                        "hash": "0a83dcea36444de45517f846055196a9e869d588", 
-                        "number": "0a83dce", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ed76a766f63fbc0972c1bf8769a98ac7beb30015", 
-                        "title": "Further integrations in the HLT Run2 menu", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4878", 
-                        "number": "4878", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "perrotta"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4864"
-                        ], 
-                        "hash": "404938784158184171e281d006c39c1f9b8debca", 
-                        "number": "4049387", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "d5476d2696d6341eeec9e94655912c083d617cab", 
-                        "title": "new BPH paths", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4864", 
-                        "number": "4864", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lucamartini"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
-            {
-                "builds": [], 
                 "compared_tags": "CMSSW_7_2_GEANT10_X_2014-08-06-0200-->CMSSW_7_2_GEANT10_X_2014-08-06-1400", 
                 "utests": [], 
                 "relvals": [], 
@@ -22622,122 +22223,6 @@
     }, 
     {
         "comparisons": [
-            {
-                "builds": [], 
-                "compared_tags": "CMSSW_7_2_THREADED_X_2014-08-05-0200-->CMSSW_7_2_THREADED_X_2014-08-05-1400", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4851", 
-                            "4823", 
-                            "4877"
-                        ], 
-                        "hash": "e8e0294e885c82893fe8c2a7fa72ec3beb24dbce", 
-                        "number": "e8e0294", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "1f82a0a2d92619238083fcd945ce1e6253f1d943", 
-                        "title": "Extra cuts for lumi monitor simulations", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4877", 
-                        "number": "4877", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "civanch"
-                    }, 
-                    {
-                        "hash": "b92bd5cb7c2de2aab1ef0360aa70ef35da47f31d", 
-                        "title": "Hlt templates for run2 in 72x", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4851", 
-                        "number": "4851", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "jalimena"
-                    }, 
-                    {
-                        "hash": "7327ad79eaf6a547173974e11124cfad5c35c573", 
-                        "title": "More run2: EventContent/Menu/HLT_Physics", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4823", 
-                        "number": "4823", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Martin-Grunewald"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4709"
-                        ], 
-                        "hash": "2c790bac265fada80a48ec6fabaa5f51f85f99f2", 
-                        "number": "2c790ba", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ced8fd69b42958e0fc180deec6e32059c5dfccef", 
-                        "title": "Change the naming convention of CaloMETs", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4709", 
-                        "number": "4709", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "TaiSakuma"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
-            {
-                "builds": [], 
-                "compared_tags": "CMSSW_7_2_THREADED_X_2014-08-05-1400-->CMSSW_7_2_THREADED_X_2014-08-06-0200", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4878"
-                        ], 
-                        "hash": "85badfa29b9f394aa483711a1f97f62ae3767ccb", 
-                        "number": "85badfa", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ed76a766f63fbc0972c1bf8769a98ac7beb30015", 
-                        "title": "Further integrations in the HLT Run2 menu", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4878", 
-                        "number": "4878", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "perrotta"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4864"
-                        ], 
-                        "hash": "ecf5d19d8d2490ef0297eda9b273615758ff9f66", 
-                        "number": "ecf5d19", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "d5476d2696d6341eeec9e94655912c083d617cab", 
-                        "title": "new BPH paths", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4864", 
-                        "number": "4864", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lucamartini"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
             {
                 "builds": [], 
                 "compared_tags": "CMSSW_7_2_THREADED_X_2014-08-06-0200-->CMSSW_7_2_THREADED_X_2014-08-06-1400", 
@@ -24294,131 +23779,6 @@
     }, 
     {
         "comparisons": [
-            {
-                "builds": [], 
-                "compared_tags": "CMSSW_7_2_ROOT6_X_2014-08-05-0200-->CMSSW_7_2_ROOT6_X_2014-08-05-1400", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4851", 
-                            "4823", 
-                            "4877"
-                        ], 
-                        "hash": "5e18790e57e65ae9b8bc29a3ae3c8b44ea4925c7", 
-                        "number": "5e18790", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "1f82a0a2d92619238083fcd945ce1e6253f1d943", 
-                        "title": "Extra cuts for lumi monitor simulations", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4877", 
-                        "number": "4877", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "civanch"
-                    }, 
-                    {
-                        "hash": "b92bd5cb7c2de2aab1ef0360aa70ef35da47f31d", 
-                        "title": "Hlt templates for run2 in 72x", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4851", 
-                        "number": "4851", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "jalimena"
-                    }, 
-                    {
-                        "hash": "7327ad79eaf6a547173974e11124cfad5c35c573", 
-                        "title": "More run2: EventContent/Menu/HLT_Physics", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4823", 
-                        "number": "4823", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Martin-Grunewald"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4709"
-                        ], 
-                        "hash": "19bbcea73cac32c11463dafcdbbb4c8ee7d68c37", 
-                        "number": "19bbcea", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ced8fd69b42958e0fc180deec6e32059c5dfccef", 
-                        "title": "Change the naming convention of CaloMETs", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4709", 
-                        "number": "4709", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "TaiSakuma"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
-            {
-                "builds": [], 
-                "compared_tags": "CMSSW_7_2_ROOT6_X_2014-08-05-1400-->CMSSW_7_2_ROOT6_X_2014-08-06-0200", 
-                "utests": [], 
-                "relvals": [], 
-                "static_checks": "", 
-                "tests_archs": [], 
-                "addons": [], 
-                "merged_prs": [
-                    {
-                        "hash": "51f996c8f9210a33bf54f5b28c36a3c41f695a32", 
-                        "title": "fix merge problem", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4883", 
-                        "number": "4883", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wmtan"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4878"
-                        ], 
-                        "hash": "76dfc0d048689ff236600898c899cd3b1172d690", 
-                        "number": "76dfc0d", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ed76a766f63fbc0972c1bf8769a98ac7beb30015", 
-                        "title": "Further integrations in the HLT Run2 menu", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4878", 
-                        "number": "4878", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "perrotta"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "4864"
-                        ], 
-                        "hash": "38b1182d104b9726352a29a6fa7eebc1508e4673", 
-                        "number": "38b1182", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "d5476d2696d6341eeec9e94655912c083d617cab", 
-                        "title": "new BPH paths", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/4864", 
-                        "number": "4864", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lucamartini"
-                    }
-                ], 
-                "hlt_tests": ""
-            }, 
             {
                 "builds": [], 
                 "compared_tags": "CMSSW_7_2_ROOT6_X_2014-08-06-0200-->CMSSW_7_2_ROOT6_X_2014-08-06-1400", 
