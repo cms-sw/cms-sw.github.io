@@ -2,6 +2,7 @@
 from argparse import ArgumentParser
 from os.path import exists
 from sys import exit
+from json import dumps
 import re
 
 RESULTS_RE = "^([0-9.]+)_([^ ]*) (.*) - time date.*exit: (.*)"
@@ -32,4 +33,4 @@ if __name__ == "__main__":
                            "name": workflow,
                            "steps": failedSteps
                           }                                                                                                                                                        
-  print results
+  print dumps(results, sort_keys=True, indent=4, separators=(',', ': '))
