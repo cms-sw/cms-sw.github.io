@@ -6,7 +6,7 @@ from json import dumps
 import re
 
 RESULTS_RE = "^([0-9.]+)_([^ ]*) (.*) - time date.*exit: (.*)"
-FAILED_RE = "Step([0-9])-FAILED"
+STEP_STATUS_RE = "Step([0-9])-(PASSED|FAILED|NOTRUN)"
 
 if __name__ == "__main__":
   parser = ArgumentParser()
@@ -15,7 +15,7 @@ if __name__ == "__main__":
   if not exists(args.input):
     print "Please specify an input file"
     exit(1)
-  
+
   buf = open(args.input).read()
   results = {}
   for l in buf.split("\n"):
@@ -24,13 +24,11 @@ if __name__ == "__main__":
       continue
     workflowId, workflow, steps, exit = r.groups()
     steps = steps.split(" ")
-    failedSteps = [int(re.match(FAILED_RE, s).group(1)) + 1
-                   for s in steps if re.match(FAILED_RE, s)]
-    if not failedSteps:
-      continue
+    stepResults = [re.match(STEP_STATUS_RE, s).group(2)
+                   for s in steps if re.match(STEP_STATUS_RE, s)]
     results[workflowId] = {
-                           "workflowId": workflowId,
+                           "id": workflowId,
                            "name": workflow,
-                           "steps": failedSteps
-                          }                                                                                                                                                        
+                           "steps": stepResults
+                          }
   print dumps(results, sort_keys=True, indent=4, separators=(',', ': '))
