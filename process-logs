@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+
+# Generate a makefile to import all our AFS logs into the cms-sw.github.io
+# repository so that we can happily serve them from there.
+from __future__ import print_function
+from glob import glob
+from argparse import ArgumentParser
+from os.path import join, exists, basename
+import re
+
+if __name__ == "__main__":
+  parser = ArgumentParser()
+  parser.add_argument("--logdir", type=str, help="where to find the logs")
+  parser.add_argument("--filter", type=str, default="")
+  parser.add_argument("-n", "--dry-run", dest="dryRun", action="store_true", default=False)
+  args = parser.parse_args()
+
+  release_match = join(args.logdir, "([^/]*)/www/([^/]*)/([^/]*)/([^/]*)/pyRelValMatrixLogs/run/runall-report-step123-.log")
+
+  # Generate a tuple with
+  # (<release-name>, <release-queue>, <release-path>)
+  globExpr = join(args.logdir, "*/www/*/*/*")
+  releases = [r for r in glob(globExpr) if re.match(".*" + args.filter + ".*", r)]
+  RESULTS_PATH = "pyRelValMatrixLogs/run/runall-report-step123-.log"
+  inputs = [join(r, RESULTS_PATH) for r in releases if exists(join(r, RESULTS_PATH))]
+  outputs = [re.match(release_match, r) for r in inputs]
+  releases = [x.group(4) for x in outputs]
+  dates = [re.match(".*(2[0-9]*-[01][0-9]-[0-3][0-9]-[0-9]*)$", x).group(1) for x in releases]
+  queues = [re.match("(.*)_2[0-9]*-[01][0-9]-[0-3][0-9]-[0-9]*$", x).group(1) for x in releases]
+  architectures = [m.group(1) for m in outputs]
+  zip(architectures, dates, queues)
+  print(architectures)
+  outputs = [join("data/relvals/", x[0], x[1], x[2] + ".json")
+             for x in zip(architectures, dates, queues)]
+  print(outputs)
+  pairs = zip(outputs, inputs)
+  f = open("Makefile", "w")
+  print(".PHONY: all clean", file=f)
+  print("all: " + " ".join(outputs), file=f)
+  print("clean:\n\trm -rf data/relvals", file=f)
+  print("", file=f)
+  for x in pairs:
+    l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-run123-logs $< > $@" % x
+    print(l, file=f)
