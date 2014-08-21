@@ -8,6 +8,9 @@ from argparse import ArgumentParser
 from os.path import join, exists, basename
 import re
 
+RESULTS_PATH = "pyRelValMatrixLogs/run/runall-report-step123-.log"
+UNITTEST_SUMMARY_PATH = "unitTests-summary.log"
+
 if __name__ == "__main__":
   parser = ArgumentParser()
   parser.add_argument("--logdir", type=str, help="where to find the logs")
@@ -21,8 +24,9 @@ if __name__ == "__main__":
   # (<release-name>, <release-queue>, <release-path>)
   globExpr = join(args.logdir, "*/www/*/*/*")
   releases = [r for r in glob(globExpr) if re.match(".*" + args.filter + ".*", r)]
-  RESULTS_PATH = "pyRelValMatrixLogs/run/runall-report-step123-.log"
   inputs = [join(r, RESULTS_PATH) for r in releases if exists(join(r, RESULTS_PATH))]
+  inputsUnitTestSummary = [join(r, UNITTEST_SUMMARY_PATH) for r in releases if exists(join(r, UNITTEST_SUMMARY_PATH))]
+
   outputs = [re.match(release_match, r) for r in inputs]
   releases = [x.group(4) for x in outputs]
   dates = [re.match(".*(2[0-9]*-[01][0-9]-[0-3][0-9]-[0-9]*)$", x).group(1) for x in releases]
@@ -32,18 +36,23 @@ if __name__ == "__main__":
   print(architectures)
   outputs = [join("data/relvals/", x[0], x[1], x[2] + ".json")
              for x in zip(architectures, dates, queues)]
-  print(outputs)
+  outputsUnitTestSummary = [join("data/unitTests/", x[0], x[1], x[2] + ".json")
+             for x in zip(architectures, dates, queues)]
   pairs = zip(outputs, inputs)
+  pairsUnitTestsSummary = zip(outputsUnitTestSummary, inputsUnitTestSummary)
   f = open("Makefile", "w")
   
   # A rule which takes care of converting a few known files in CMSDIST to json.
   
   print(".PHONY: all clean", file=f)
-  print("all: data/cmsdist-config.json " + " ".join(outputs), file=f)
+  print("all: data/cmsdist-config.json " + " ".join(outputs) + " " + " ".join(outputsUnitTestSummary), file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
   print("clean:\n\trm -rf data/relvals", file=f)
   print("", file=f)
   for x in pairs:
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-run123-logs $< > $@" % x
+    print(l, file=f)
+  for x in pairsUnitTestsSummary:
+    l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-unitTestSummary-logs $< > $@" % x
     print(l, file=f)
   
