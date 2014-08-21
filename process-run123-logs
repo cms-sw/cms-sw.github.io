@@ -4,6 +4,7 @@ from os.path import exists
 from sys import exit
 from json import dumps
 import re
+from operator import itemgetter
 
 RESULTS_RE = "^([0-9.]+)_([^ ]*) (.*) - time date.*exit: (.*)"
 STEP_STATUS_RE = "Step([0-9])-(PASSED|FAILED|NOTRUN)"
@@ -17,7 +18,7 @@ if __name__ == "__main__":
     exit(1)
 
   buf = open(args.input).read()
-  results = {}
+  results = []
   for l in buf.split("\n"):
     r = re.match(RESULTS_RE, l)
     if not r:
@@ -26,9 +27,11 @@ if __name__ == "__main__":
     steps = steps.split(" ")
     stepResults = [re.match(STEP_STATUS_RE, s).group(2)
                    for s in steps if re.match(STEP_STATUS_RE, s)]
-    results[workflowId] = {
-                           "id": workflowId,
-                           "name": workflow,
-                           "steps": stepResults
-                          }
+    results.append({
+                   "id": workflowId,
+                    "name": workflow,
+                    "steps": [{"status": x} for x in stepResults],
+                    "order": sum([10-i for (i, x) in enumerate(stepResults) if x == "FAILED"])
+                   })
+  results.sort(key=itemgetter("order", "id"), reverse=True)
   print dumps(results, sort_keys=True, indent=4, separators=(',', ': '))
