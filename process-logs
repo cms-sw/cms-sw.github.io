@@ -35,10 +35,15 @@ if __name__ == "__main__":
   print(outputs)
   pairs = zip(outputs, inputs)
   f = open("Makefile", "w")
+  
+  # A rule which takes care of converting a few known files in CMSDIST to json.
+  
   print(".PHONY: all clean", file=f)
-  print("all: " + " ".join(outputs), file=f)
+  print("all: data/cmsdist-config.json " + " ".join(outputs), file=f)
+  print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
   print("clean:\n\trm -rf data/relvals", file=f)
   print("", file=f)
   for x in pairs:
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-run123-logs $< > $@" % x
     print(l, file=f)
+  
