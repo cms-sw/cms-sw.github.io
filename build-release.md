@@ -178,3 +178,9 @@ then send it with:
     # RELEASETYPE=Production
     # RELEASETYPE=Analysis
     [ ! "X$RELEASETYPE" = X ] && mail -s "$RELEASETYPE release $CMSSW_X_Y_Z now available at CERN." hn-cms-relAnnounce@cern.ch < $HERE/$CMSSW_X_Y_Z-build/announcement-email.txt
+
+## Obsolete instructions
+
+Old instructions can be found at:
+
+https://twiki.cern.ch/twiki/bin/view/CMS/SDTHowToBuildCMSSWRelease
