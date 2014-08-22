@@ -33,7 +33,6 @@ if __name__ == "__main__":
   queues = [re.match("(.*)_2[0-9]*-[01][0-9]-[0-3][0-9]-[0-9]*$", x).group(1) for x in releases]
   architectures = [m.group(1) for m in outputs]
   zip(architectures, dates, queues)
-  print(architectures)
   outputs = [join("data/relvals/", x[0], x[1], x[2] + ".json")
              for x in zip(architectures, dates, queues)]
   outputsUnitTestSummary = [join("data/unitTests/", x[0], x[1], x[2] + ".json")
@@ -41,9 +40,9 @@ if __name__ == "__main__":
   pairs = zip(outputs, inputs)
   pairsUnitTestsSummary = zip(outputsUnitTestSummary, inputsUnitTestSummary)
   f = open("Makefile", "w")
-  
+
   # A rule which takes care of converting a few known files in CMSDIST to json.
-  
+
   print(".PHONY: all clean", file=f)
   print("all: data/cmsdist-config.json " + " ".join(outputs) + " " + " ".join(outputsUnitTestSummary), file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
@@ -55,4 +54,3 @@ if __name__ == "__main__":
   for x in pairsUnitTestsSummary:
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-unitTestSummary-logs $< > $@" % x
     print(l, file=f)
-  
