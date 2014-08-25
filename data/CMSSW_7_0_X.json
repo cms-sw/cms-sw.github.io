@@ -1419,7 +1419,7 @@
                 }
             ], 
             "merged_prs": [], 
-            "hlt_tests": ""
+            "hlt_tests": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/HLT-Validation/CMSSW_7_0_X_2014-08-25-0200/"
         }, 
         {
             "builds": [
@@ -1444,15 +1444,19 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc481", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.0-mon-14/CMSSW_7_0_X_2014-08-25-1400/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.0-mon-14/CMSSW_7_0_X_2014-08-25-1400/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "3"
+                    }
                 }, 
                 {
                     "arch": "slc5_amd64_gcc481", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc5_amd64_gcc481/www/mon/7.0-mon-14/CMSSW_7_0_X_2014-08-25-1400/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc5_amd64_gcc481/www/mon/7.0-mon-14/CMSSW_7_0_X_2014-08-25-1400/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "4"
+                    }
                 }
             ], 
             "relvals": [], 
@@ -1461,7 +1465,20 @@
                 "slc5_amd64_gcc481", 
                 "slc6_amd64_gcc481"
             ], 
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.0-mon-14/CMSSW_7_0_X_2014-08-25-1400/addOnTests.log", 
+                    "details": {}
+                }, 
+                {
+                    "arch": "slc5_amd64_gcc481", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc5_amd64_gcc481/www/mon/7.0-mon-14/CMSSW_7_0_X_2014-08-25-1400/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "merged_prs": [
                 {
                     "hash": "38a327c224495436b2624f1e303db6ddff1967ac", 
