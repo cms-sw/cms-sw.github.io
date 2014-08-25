@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>Relval Details</title>
+
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+	</head>
+	<body>
+		<script type='text/javascript' src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type='text/javascript' src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script type='text/javascript' src="js/renderRelvalsDetails.js"></script>
+	
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-10"  id="header"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-10"  id="results"></div>
+		</div>
+
+	<script>
+        
+	$(document).ready(function () {
+		
+          	var hash = document.location.hash.replace( /^#/, '' );
+
+          	console.log( 'hash: ')
+          	console.log( hash )
+		console.log( document.location.toString() )
+
+          	var parts = hash.split( ';' )
+          	ARCH = parts[ 0 ]
+          	var releaseQueue = parts[ 1 ].substring( 0 , parts[ 1 ].lastIndexOf( "_" ) ) 
+          	var ibDate = parts[ 1 ].substring( parts[ 1 ].lastIndexOf( "_" ) + 1 , parts[ 1 ].length ) 
+          
+                IB = parts[ 1 ]
+	  	console.log( ARCH  ) 		 
+          	console.log( releaseQueue )
+          	console.log( ibDate )
+
+
+          	var jsonFilePath = 'data/relvals/' + ARCH + '/' + ibDate + '/' + releaseQueue +'.json';
+          	console.log( ' I will use this file: ' )
+          	console.log( jsonFilePath )
+ 		
+		toggleSummaryTables = function(){
+
+                        for( var i = 0; i < 5; i++ ){
+
+                                $( '#summaryStep' + (i+1) ).toggle()
+
+                          }
+
+			$( '#summarylabelsTable' ).toggle()
+
+			var toggleLinkText = $( '#span-toggleSummaryLink' )
+			var toggleLinkTextGlyph = $( '#glyph-toggleSummaryLink' )
+
+			if ( toggleLinkText.text() == 'Show summary' ){
+				toggleLinkText.text( 'Hide summary' )
+				toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-up' )
+
+			}else {
+				toggleLinkText.text( 'Show summary' )
+				toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-right' )
+			}
+                }
+
+		toggleHiddenRows = function( ){
+
+			console.log( "Show table" )
+
+			for( var i = MIN_ROWS + 1; i < MAX_ROWS; i++ ){
+
+                                $( '#row' + i + '-' + ARCH ).toggle()
+                          }
+
+			var showAllLinkText = $("#span-showAllLink")
+			var toggleLinkTextGlyph = $( '#glyph-showAllLink' )
+
+			if ( showAllLinkText.text() == 'Show All' ){
+                                showAllLinkText.text( 'Hide ' )
+                                toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-up' )
+
+                        }else {
+                                showAllLinkText.text( 'Show All' )
+                                toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-down' )
+                        }
+
+
+			
+
+
+
+		}
+
+
+          	loadResults = function( results ){
+
+			console.log( 'contents:')
+
+			// this is to indicate the minimun number rows to be shown on the table by default
+			MIN_ROWS = 20
+			MAX_ROWS = results.length
+
+			var table = getTable( results , ARCH , IB )
+			$("#results").append( table )
+
+			var header = getHeader( ARCH , parts[ 1 ] )
+			$("#header").append( header )
+
+			$("#toggleSummaryLink").click( toggleSummaryTables )
+			$("#showAllLink").click( toggleHiddenRows )
+
+
+          	}
+		
+
+		$.getJSON( jsonFilePath , loadResults )
+
+
+
+	  // bind the event when the url has changed
+    /*      $(window).hashchange(hashchanged);
+	
+          function hashchanged(){
+
+            var hash = location.hash.replace( /^#/, '' );
+            
+            console.log( ' hash changed:' )
+            console.log( hash )
+            
+          }
+*/
+	})	
+	
+	</script>
+	</body>
+</html>
