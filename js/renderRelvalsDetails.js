@@ -66,6 +66,27 @@ addShowAllRow = function( table , startRow ){
 }
 
 /**
+ * returns the link address for a given Ib and an arch
+ */
+getlinkAddress = function( arch , ib , step , workflowName , workflowID ){
+
+  var filename = ''
+  if ( step == 0 ){
+    filename = 'step1_dasquery.log'
+  }else{
+    filename = 'step' + ( parseInt( step ) + 1 ) + '_' + workflowName + '.log'
+  }
+   
+  console.log( step ) 
+  console.log( workflowName ) 
+ 
+  var address = 'http://cmssdt.cern.ch/SDT/cgi-bin/buildlogs/' + arch + '/' + ib + '/pyRelValMatrixLogs/run/' + workflowID + '_' + workflowName + '/' + filename
+
+  return address;
+
+}
+
+/**
  * Adds a row to the workflow with the relval result info, it also modifies the statistics
  * as they are until the moment that te workflow is read.
  * The statistics is a array of dictionaries, each position has a dictionary with the entries
@@ -82,6 +103,8 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
   // this is to fill all the rows with cells
   var numCells = 0;
+
+  console.log( linkAddress )
 
   var nothingRun = true;
   for ( var stepNumber in workflowResult.steps ){
@@ -118,7 +141,12 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
       statistics[ stepNumber ][ "TOTAL" ]++;
     }
 
-    row.append( $( '<td>' ).append( resLabel ) )
+    var linkAddress = getlinkAddress( arch , ib , stepNumber , workflowResult.name , workflowResult.id )
+    console.log( linkAddress )
+    var link = $( "<a>" ).attr( "href" , linkAddress )
+    link.append( resLabel )
+
+    row.append( $( '<td>' ).append( link ) )
     numCells++;
   }
 
