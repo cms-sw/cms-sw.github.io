@@ -10,7 +10,7 @@ addSummaryRow = function( table , statistics ){
   var row = $( '<tr>' )
   row.append( $( '<td>' ) )
 
-  var showSummaryLink = getLinkWithGlyph( '#FakeId' , 'Show summary' , 'glyphicon-chevron-right' , 'toggleSummaryLink' )
+  var showSummaryLink = getLinkWithGlyph( ARCH + ';' + IB , 'Show summary' , 'glyphicon-chevron-right' , 'toggleSummaryLink' )
 
   var labelsTable = $( '<table>' ).attr( 'id' , 'summarylabelsTable'  ).attr( 'align' ,'right' ) 
   labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Passed:' ) ) )
