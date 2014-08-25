@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 from argparse import ArgumentParser
-from os.path import exists
+from os.path import exists, join, dirname
 from sys import exit
 from json import dumps
 import re
 from operator import itemgetter
+from pickle import load
 
 RESULTS_RE = "^([0-9.]+)_([^ ]*) (.*) - time date.*exit: (.*)"
 STEP_STATUS_RE = "Step([0-9])-(PASSED|FAILED|NOTRUN)"
@@ -17,6 +18,7 @@ if __name__ == "__main__":
     print "Please specify an input file"
     exit(1)
 
+  # Takes care of the actual results.
   buf = open(args.input).read()
   results = []
   for l in buf.split("\n"):
@@ -33,5 +35,21 @@ if __name__ == "__main__":
                     "steps": [{"status": x} for x in stepResults],
                     "order": sum([10-i for (i, x) in enumerate(stepResults) if x == "FAILED"])
                    })
+  # Does the same for errors and warnings.
+  warningsFile = join(dirname(args.input), "runTheMatrixMsgs.pkl")
+  if exists(warningsFile):
+    warnings = load(open(warningsFile))
+    for result in results:
+      if not str(result["id"]) in warnings:
+        continue
+      data = warnings[result["id"]]
+      for (i, s) in enumerate(result["steps"]):
+        # Apparently we do not have information regarding
+        # errors and warnings of step 5.
+        if i > 3:
+          continue
+        s.update({"errors": data["failed"][i], "warnings": data["warning"][i]})
   results.sort(key=itemgetter("order", "id"), reverse=True)
+  for r in results:
+    r.pop("order")
   print dumps(results, sort_keys=True, indent=4, separators=(',', ': '))
