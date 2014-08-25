@@ -57,7 +57,7 @@ addShowAllRow = function( table , startRow ){
 
   var row = $( '<tr>' )
   var linkCell = $( '<td>' ).attr( 'colspan' , 7 )
-  var showAllLink = getLinkWithGlyph( '#FakeID' , 'Show All' , 'glyphicon-chevron-down' , 'showAllLink' )
+  var showAllLink = getLinkWithGlyph( '#' + ARCH + ';' + IB  , 'Show All' , 'glyphicon-chevron-down' , 'showAllLink' )
 
   linkCell.append( showAllLink )
   row.append( linkCell )
