@@ -19,7 +19,7 @@ genAddSummaryRow = function( genArch , genIB ){
 
     showSummaryLink.click( genToggleSummaryTables( genArch , genIB ) )
 
-    var labelsTable = $( '<table>' ).attr( 'id' , 'summarylabelsTable'  ).attr( 'align' ,'right' ) 
+    var labelsTable = $( '<table>' ).attr( 'id' , 'summarylabelsTable' +'-' + genArch ).attr( 'align' ,'right' ) 
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Passed:' ) ) )
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Failed:' ) ) )
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Not run:' ) ) )
@@ -106,16 +106,54 @@ getlinkAddress = function( arch , ib , step , workflowName , workflowID ){
 /**
  * returns a link to the result log of the relval with the label given as a parameter
  */
-getLinkLabelToResultToResLabel = function( arch , ib , stepNumber , workflowName , workflowId , resLabel ){
+getLinkLabelToResultToResLabel = function( arch , ib , stepNumber , workflowName , workflowId , text ){
  
   var linkAddress = getlinkAddress( arch , ib , stepNumber , workflowName , workflowId )
-  var link = $( "<a>" ).attr( "href" , linkAddress )
-  link.append( resLabel )
+  var link = $( "<a>" ).attr( "href" , linkAddress ) 
+//  link.attr( 'style' , 'color:black' )
+  link.append( $( '<small>' ).text( text ) )
 
   return link
 
 }
 
+/**
+ * creates the cell of the table that describes the workflow name
+ * and adds the commands for each step. they are hidden by default
+ */
+getWorkflowCell = function( workflowID , workflowShortName , steps , arch , ib ){
+
+  var cell = $( '<td>' )
+  cell.append( $( '<span>' ).text( workflowID + ' ' +  workflowShortName + '  ' ) )
+  
+  
+  link = $( "<a>" ).attr( "href" , '#' + arch + ';' + ib )
+  //link.attr( 'style' , 'color:black' ) 
+  link.append( $( '<small>' ).text( 'cmd' ) )
+  cell.append( link )
+
+  cell.append( $( '<br>' ) )
+  
+  var commandsDiv = $( '<div>' )
+
+  commandsDiv.append( $( '<small>' ).append( $( '<strong>' ).text( 'Commands:' ) ) )
+  commandsDiv.append( $( '<br>' ) )
+  
+  for ( var stepNumber in steps ){
+
+    commandsDiv.append( $( '<small>' ).text( 'step' + (parseInt(stepNumber)+1) + ':' ) )
+    commandsDiv.append( $( '<br>' ) )
+    commandsDiv.append( $( '<small>' ).text( 'command' ) )
+    commandsDiv.append( $( '<br>' ) )
+  }
+
+  link.click( genToggleCommands( commandsDiv ) )
+  commandsDiv.hide()
+
+  cell.append( commandsDiv )
+
+  return cell
+}
 /**
  * Adds a row to the workflow with the relval result info, it also modifies the statistics
  * as they are until the moment that te workflow is read.
@@ -128,8 +166,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
   row.append( $( '<td>' ).append( $( '<b>'  ).text( counter ) ) )
 
-  var workflowName = workflowResult.id + ' ' + workflowResult.name.split( '+' )[0]
-  row.append( $( '<td>' ).text( workflowName ) )
+  row.append( getWorkflowCell( workflowResult.id , workflowResult.name.split( '+' )[0] , workflowResult.steps , arch , ib) )
 
   // this is to fill all the rows with cells
   var numCells = 0;
@@ -146,8 +183,10 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
       nothingRun = false;
       resLabel.attr( 'class' , 'label label-success')
 
-      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , resLabel )
-      row.append( $( '<td>' ).append( link ) )
+      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , ' log' )
+      var cell = $( '<td>' ).append( resLabel ).append( link )
+
+      row.append( cell )
 
 
     }else if( text == 'FAILED' ){
@@ -156,8 +195,9 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
       resLabel.attr( 'class' , 'label label-danger')
       row.attr( 'class' , 'danger' )
 
-      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , resLabel )
-      row.append( $( '<td>' ).append( link ) )
+      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , ' log' )
+      var cell = $( '<td>' ).append( resLabel ).append( link )
+      row.append( cell )
 
 
     }else if( text == 'NOTRUN' ){
@@ -426,9 +466,20 @@ getHeader = function( arch, ibName ){
  */
 getLinkWithGlyph = function( linkAddress, text, glyph , id ){
 
-  var link = $( "<a>" ).attr( "href" , linkAddress ).attr( 'id' , id )
-  link.append( $( '<span>' ).attr( 'class' , 'glyphicon ' + glyph ).attr( 'id' , 'glyph-'+id ) )
-  link.append( $( '<span>' ).text( text ).attr( 'id' , 'span-'+id ) )
+  var link = $( "<a>" )
+  link.attr( "href" , linkAddress )
+
+  var span = $( '<span>' ).attr( 'class' , 'glyphicon ' + glyph )
+  var spanText = $( '<span>' ).text( text )
+
+  if( id != '' ){
+    link.attr( 'id' , id )
+    span.attr( 'id' , 'glyph-'+id ) 
+    spanText.attr( 'id' , 'span-'+id )
+  } 
+
+  link.append( span )
+  link.append( spanText )
 
   return link                        
 
@@ -503,7 +554,7 @@ genToggleSummaryTables = function( genArch , genIB ){
 
     }
 
-    $( '#summarylabelsTable-' + genArch + '-' + genIB ).toggle()
+    $( '#summarylabelsTable-' + genArch ).toggle()
 
     var toggleLinkText = $( '#span-toggleSummaryLink-' + genArch + '-' + genIB )
     var toggleLinkTextGlyph = $( '#glyph-toggleSummaryLink-' + genArch + '-' + genIB )
@@ -549,4 +600,18 @@ genToggleHiddenRows = function( genArch , genIB , minRow , maxRow ){
   }
 
   return toggleHiddenRows
+}
+
+/**
+ * Generates a toggler function for the commands Div
+ */
+genToggleCommands = function( commandsDiv ){
+  /**
+   * toggles the command div set before
+   */
+  toggleCommands = function( ){
+    commandsDiv.toggle()
+  }
+
+  return toggleCommands
 }
