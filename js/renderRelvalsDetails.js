@@ -125,8 +125,7 @@ getWorkflowCell = function( workflowID , workflowShortName , steps , arch , ib )
 
   var cell = $( '<td>' )
   cell.append( $( '<span>' ).text( workflowID + ' ' +  workflowShortName + '  ' ) )
-  
-  
+    
   link = $( "<a>" ).attr( "href" , '#' + arch + ';' + ib )
   //link.attr( 'style' , 'color:black' ) 
   link.append( $( '<small>' ).text( 'cmd' ) )
