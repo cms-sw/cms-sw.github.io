@@ -1,0 +1,29 @@
+#! /usr/bin/env python
+
+import pickle
+from os import listdir
+import json
+
+#-----------------------------------------------------------------------------------
+#---- Start
+#-----------------------------------------------------------------------------------
+
+DATA_DIR = 'data'
+RELVALS_DIR = 'relvals'
+
+available_results_relvals = {}
+
+for current_arch in listdir( DATA_DIR + '/' + RELVALS_DIR ):
+  for current_date in listdir( DATA_DIR + '/' + RELVALS_DIR + '/' + current_arch ): 
+    for current_release in listdir( DATA_DIR + '/' + RELVALS_DIR + '/' + current_arch + '/' + current_date ):
+
+      current_ib = current_release.rstrip( '.json' ) + '_' + current_date
+      available_results_relvals[ current_ib ] = current_arch
+      print current_ib + ';' + current_arch
+
+
+file_name = 'data/RelvalsAvailableResults.json'
+out_json = open( file_name , "w" )
+json.dump( available_results_relvals , out_json,indent=4 )
+out_json.close()
+
