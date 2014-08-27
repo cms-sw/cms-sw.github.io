@@ -38,108 +38,53 @@
           	var ibDate = parts[ 1 ].substring( parts[ 1 ].lastIndexOf( "_" ) + 1 , parts[ 1 ].length ) 
           
                 IB = parts[ 1 ]
+		console.log( 'I am asked for the followng arch' )
 	  	console.log( ARCH  ) 		 
-          	console.log( releaseQueue )
-          	console.log( ibDate )
+		console.log( 'For the follwing IB' )
+		console.log( IB )
+
+		ORIGINAL_ARCH = parts[ 0 ]
+
 
 		// I will check which other architectures are available for this IB
-		readAvailableArchs = function(){
+		readAvailableArchs = function( allAvailableArchs ){
 
-		}
+			console.log( 'found this in the file:' )
+			var availArchs = allAvailableArchs[ IB ]
+			console.log( availArchs )
 
-          	var jsonFilePath = 'data/relvals/' + ARCH + '/' + ibDate + '/' + releaseQueue +'.json';
-          	console.log( ' I will use this file: ' )
-          	console.log( jsonFilePath )
- 		
-		toggleSummaryTables = function(){
+			if ( availArchs == null ){
 
-                        for( var i = 0; i < 5; i++ ){
+				var header = getNotFoundIBHeader( IB )
+				$("#header").append( '<br>' )
+				$("#header").append( header )
 
-                                $( '#summaryStep' + (i+1) ).toggle()
+			}else{
 
-                          }
+				var archsList = availArchs.split( ',' ) 
+				 if ( !listContainsString( ORIGINAL_ARCH , archsList ) ){
 
-			$( '#summarylabelsTable' ).toggle()
+					var header = getNotFoundArchHeader( ORIGINAL_ARCH )
+					$("#header").append( header )
+				}
 
-			var toggleLinkText = $( '#span-toggleSummaryLink' )
-			var toggleLinkTextGlyph = $( '#glyph-toggleSummaryLink' )
+				var header = getHeader( ARCH , IB )
+                                $("#header").append( header )
+				var navTabs = getNavTabs( archsList , IB )
+				$("#results").append( navTabs )
+				var tabPanes = getTabPanes( archsList , IB )
+				$("#results").append( tabPanes )
 
-			if ( toggleLinkText.text() == 'Show summary' ){
-				toggleLinkText.text( 'Hide summary' )
-				toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-up' )
-
-			}else {
-				toggleLinkText.text( 'Show summary' )
-				toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-right' )
 			}
-                }
-
-		toggleHiddenRows = function( ){
-
-			console.log( "Show table" )
-
-			for( var i = MIN_ROWS + 1; i < MAX_ROWS; i++ ){
-
-                                $( '#row' + i + '-' + ARCH ).toggle()
-                          }
-
-			var showAllLinkText = $("#span-showAllLink")
-			var toggleLinkTextGlyph = $( '#glyph-showAllLink' )
-
-			if ( showAllLinkText.text() == 'Show All' ){
-                                showAllLinkText.text( 'Hide ' )
-                                toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-up' )
-
-                        }else {
-                                showAllLinkText.text( 'Show All' )
-                                toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-down' )
-                        }
-
-
-			
-
-
 
 		}
 
 
-          	loadResults = function( results ){
-
-			console.log( 'contents:')
-
-			// this is to indicate the minimun number rows to be shown on the table by default
-			MIN_ROWS = 20
-			MAX_ROWS = results.length
-
-			var table = getTable( results , ARCH , IB )
-			$("#results").append( table )
-
-			var header = getHeader( ARCH , parts[ 1 ] )
-			$("#header").append( header )
-
-			$("#toggleSummaryLink").click( toggleSummaryTables )
-			$("#showAllLink").click( toggleHiddenRows )
-
-
-          	}
 		
-
-		$.getJSON( jsonFilePath , loadResults )
-
+		$.getJSON( 'data/RelvalsAvailableResults.json' , readAvailableArchs )
 
 
-	  // bind the event when the url has changed
-    /*      $(window).hashchange(hashchanged);
-	
-          function hashchanged(){
 
-            var hash = location.hash.replace( /^#/, '' );
-            
-            console.log( ' hash changed:' )
-            console.log( hash )
-            
-          }
-*/
 	})	
 	
 	</script>
