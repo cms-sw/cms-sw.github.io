@@ -110,7 +110,7 @@ getLinkLabelToResultToResLabel = function( arch , ib , stepNumber , workflowName
  
   var linkAddress = getlinkAddress( arch , ib , stepNumber , workflowName , workflowId )
   var link = $( "<a>" ).attr( "href" , linkAddress ) 
-//  link.attr( 'style' , 'color:black' )
+  link.attr( 'style' , 'color:black' )
   link.append( $( '<small>' ).text( text ) )
 
   return link
@@ -127,7 +127,7 @@ getWorkflowCell = function( workflowID , workflowShortName , steps , arch , ib )
   cell.append( $( '<span>' ).text( workflowID + ' ' +  workflowShortName + '  ' ) )
     
   link = $( "<a>" ).attr( "href" , '#' + arch + ';' + ib )
-  //link.attr( 'style' , 'color:black' ) 
+ // link.attr( 'style' , 'color:black' ) 
   link.append( $( '<small>' ).text( 'cmd' ) )
   cell.append( link )
 
@@ -182,8 +182,9 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
       nothingRun = false;
       resLabel.attr( 'class' , 'label label-success')
 
-      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , ' log' )
-      var cell = $( '<td>' ).append( resLabel ).append( link )
+      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '' )
+      link.append( resLabel )
+      var cell = $( '<td>' ).append( link )
 
       row.append( cell )
 
@@ -194,8 +195,9 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
       resLabel.attr( 'class' , 'label label-danger')
       row.attr( 'class' , 'danger' )
 
-      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , ' log' )
-      var cell = $( '<td>' ).append( resLabel ).append( link )
+      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '' )
+      link.append( resLabel )
+      var cell = $( '<td>' ).append( link )
       row.append( cell )
 
 
