@@ -1,0 +1,84 @@
+#!/usr/bin/env python
+
+# Process job reports and create summary file with performance information.
+from argparse import ArgumentParser
+from zipfile import ZipFile
+from os.path import exists, join
+from os import fdopen, unlink, makedirs
+from xml.sax import parseString, ContentHandler
+import re
+from hashlib import sha1
+from json import dump, dumps
+from tempfile import mkstemp
+from shutil import move
+
+# Schema of the output
+#
+# {
+#  "<hash>": ["<command>", "<type>"]
+# }
+#
+# <command> is the shell command used.
+# <type> is the type of the command, either CMSDRIVER or DAS.
+# <hash> is the hash of the command, for fast lookup.
+
+if __name__ == "__main__":
+  parser = ArgumentParser()
+  parser.add_argument("input", help="input file")
+  parser.add_argument("output", help="output dir")
+  args = parser.parse_args()
+  # We start with empty workflows
+  results = []
+  if not exists:
+    parser.error("%s does not exist")
+
+  f = ZipFile(args.input)
+  try:
+    [makedirs(join(args.output, x)) for x in "0123456789abcdef"]
+  except:
+    if not exists(args.output):
+      parser.error("Unable to create " + args.output)
+      exit(0)
+
+  for name in f.namelist():
+    m = re.match("([0-9.]+)_([^/]*)/cmdLog", name)
+    if not m:
+      continue
+    workflowId, workflow = m.groups()
+    report = f.read(name)
+    step = 0
+    command = ""
+
+    for l in report.split("\n"):
+      if not l.strip():
+        continue
+      if l.startswith("#"):
+        if step:
+          t = "CMSDRIVER"
+          if "das_client.py" in command:
+            command = re.sub(" --cache.*das-cache.file", "--cache .../das-cache.file", command)
+            t = "DAS"
+            step = 1
+          h = sha1(command).hexdigest()[0:16]
+          # One file per hash
+          (fh, filename) = mkstemp()
+          file = fdopen(fh, "w")
+          dump({"command": command, "type": t}, file)
+          file.close()
+          try:
+            destFile = join(args.output, h[0], h[1:])
+            move(filename, destFile)
+          except:
+            print "Unable to move " + destFile + " into place."
+            unlink(filename)
+          results.append((workflowId + "-" + str(step), h))
+
+        step +=1
+        command = ""
+        continue
+      command += l
+      if step > 6:
+        print report
+        print step
+        parser.error(name)
+  print dumps(dict(results), sort_keys=True, indent=2, separators=(',', ': '))
