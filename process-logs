@@ -10,6 +10,7 @@ import re
 
 RESULTS_PATH = "pyRelValMatrixLogs/run/runall-report-step123-.log"
 UNITTEST_SUMMARY_PATH = "unitTests-summary.log"
+RELVAL_LOGS = "pyRelValMatrixLogs.zip"
 
 if __name__ == "__main__":
   parser = ArgumentParser()
@@ -26,6 +27,7 @@ if __name__ == "__main__":
   releases = [r for r in glob(globExpr) if re.match(".*" + args.filter + ".*", r)]
   inputs = [join(r, RESULTS_PATH) for r in releases if exists(join(r, RESULTS_PATH))]
   inputsUnitTestSummary = [join(r, UNITTEST_SUMMARY_PATH) for r in releases if exists(join(r, UNITTEST_SUMMARY_PATH))]
+  inputsRelvalLogs = [join(r, RELVAL_LOGS) for r in releases if exists(join(r, RELVAL_LOGS))]
 
   outputs = [re.match(release_match, r) for r in inputs]
   releases = [x.group(4) for x in outputs]
@@ -37,14 +39,18 @@ if __name__ == "__main__":
              for x in zip(architectures, dates, queues)]
   outputsUnitTestSummary = [join("data/unitTests/", x[0], x[1], x[2] + ".json")
              for x in zip(architectures, dates, queues)]
+  outputsRelvalCommands = [join("data/commands/", x[0], x[1], x[2] + ".json")
+             for x in zip(architectures, dates, queues)]
   pairs = zip(outputs, inputs)
   pairsUnitTestsSummary = zip(outputsUnitTestSummary, inputsUnitTestSummary)
+  pairsCommands = zip(outputsRelvalCommands, inputsRelvalLogs)
   f = open("Makefile", "w")
 
   # A rule which takes care of converting a few known files in CMSDIST to json.
 
+  allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands
   print(".PHONY: all clean", file=f)
-  print("all: data/cmsdist-config.json " + " ".join(outputs) + " " + " ".join(outputsUnitTestSummary), file=f)
+  print("all: data/cmsdist-config.json " + " ".join(allFiles), file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
   print("clean:\n\trm -rf data/relvals", file=f)
   print("", file=f)
@@ -53,4 +59,7 @@ if __name__ == "__main__":
     print(l, file=f)
   for x in pairsUnitTestsSummary:
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-unitTestSummary-logs $< > $@" % x
+    print(l, file=f)
+  for x in pairsCommands:
+    l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-step-commands $< data/commands/objs > $@" % x
     print(l, file=f)
