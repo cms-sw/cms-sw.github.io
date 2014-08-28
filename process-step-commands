@@ -46,6 +46,8 @@ if __name__ == "__main__":
       continue
     workflowId, workflow = m.groups()
     report = f.read(name)
+    # This is to make sure we have a final transition.
+    report += "\n#"
     step = 0
     command = ""
 
