@@ -440,12 +440,6 @@
         {
             "builds": [
                 {
-                    "arch": "slc6_amd64_gcc481", 
-                    "passed": "passed", 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2014-08-20-1400/new/logAnalysis.pkl", 
-                    "details": {}
-                }, 
-                {
                     "arch": "slc6_amd64_gcc491", 
                     "passed": "passed", 
                     "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.2-wed-14/CMSSW_7_2_X_2014-08-20-1400/new/logAnalysis.pkl", 
@@ -457,14 +451,6 @@
             "compared_tags": "CMSSW_7_2_X_2014-08-20-0200-->CMSSW_7_2_X_2014-08-20-1400", 
             "utests": [
                 {
-                    "arch": "slc6_amd64_gcc481", 
-                    "passed": "failed", 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2014-08-20-1400/unitTests-summary.log", 
-                    "details": {
-                        "num_fails": "3"
-                    }
-                }, 
-                {
                     "arch": "slc6_amd64_gcc491", 
                     "passed": "failed", 
                     "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.2-wed-14/CMSSW_7_2_X_2014-08-20-1400/unitTests-summary.log", 
@@ -474,15 +460,6 @@
                 }
             ], 
             "relvals": [
-                {
-                    "arch": "slc6_amd64_gcc481", 
-                    "passed": false, 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2014-08-20-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                    "details": {
-                        "num_passed": 871, 
-                        "num_failed": 8
-                    }
-                }, 
                 {
                     "arch": "slc6_amd64_gcc491", 
                     "passed": false, 
@@ -495,16 +472,9 @@
             ], 
             "static_checks": "", 
             "tests_archs": [
-                "slc6_amd64_gcc491", 
-                "slc6_amd64_gcc481"
+                "slc6_amd64_gcc491"
             ], 
             "addons": [
-                {
-                    "arch": "slc6_amd64_gcc481", 
-                    "passed": true, 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2014-08-20-1400/addOnTests.log", 
-                    "details": {}
-                }, 
                 {
                     "arch": "slc6_amd64_gcc491", 
                     "passed": true, 
@@ -1964,7 +1934,17 @@
                     }
                 }
             ], 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.2-wed-14/CMSSW_7_2_X_2014-08-27-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 891, 
+                        "num_failed": 0
+                    }
+                }
+            ], 
             "static_checks": "", 
             "tests_archs": [
                 "slc6_amd64_gcc491", 
@@ -1985,6 +1965,54 @@
                 }
             ], 
             "merged_prs": [], 
+            "hlt_tests": ""
+        }, 
+        {
+            "builds": [], 
+            "compared_tags": "CMSSW_7_2_X_2014-08-27-1400-->CMSSW_7_2_X_2014-08-28-0200", 
+            "utests": [], 
+            "relvals": [], 
+            "static_checks": "", 
+            "tests_archs": [], 
+            "addons": [], 
+            "merged_prs": [
+                {
+                    "hash": "7c3eecba421bce8ebd35e7172788ea892dd50181", 
+                    "title": "extend the DQMEDHarvester interface to trigger also Runs and Lumis trans...", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5062", 
+                    "number": "5062", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "deguio"
+                }, 
+                {
+                    "hash": "683ad0a5dd7b661d094c4034e0337df7aadd34f7", 
+                    "title": "Adding to GRun the Higgs Control Triggers (CMSHLT-83)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5072", 
+                    "number": "5072", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "Martin-Grunewald"
+                }, 
+                {
+                    "hash": "cc615465bf50eeb22679512ecd6bf7ccef02f7ec", 
+                    "title": "Comment Out cout", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5078", 
+                    "number": "5078", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "dabelknap"
+                }, 
+                {
+                    "hash": "80b7009828a00c573a5b5dc90fde1bab80d0bfd1", 
+                    "title": "add cms.Sequence to filters", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5073", 
+                    "number": "5073", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "franzoni"
+                }
+            ], 
             "hlt_tests": ""
         }
     ], 
