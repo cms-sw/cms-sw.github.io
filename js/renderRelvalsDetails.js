@@ -131,6 +131,8 @@ getWorkflowCell = function( workflowID , workflowShortName , steps , arch , ib )
 
     if ( steps[ stepNumber ][ 'status' ] != 'NOTRUN' ){
       numToShow++
+    }else{
+      break
     }
 
   }
