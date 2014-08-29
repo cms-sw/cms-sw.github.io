@@ -291,9 +291,9 @@ addRowsTable = function( results , arch , ib , table , progressBar ){
     nothingRun = addWorkflowRow( results[ key ] , table , counter , resultsSummary , arch , ib , results.length )
 
     // it won't reach 100 because
-    var percentage = ( ( counter / results.length ) * 90 ) + 10
+//    var percentage = ( ( counter / results.length ) * 90 ) + 10
 
-    setProgressBar( progressBar , percentage )
+  //  setProgressBar( progressBar , percentage )
     if ( !nothingRun ){
       counter++;
     }
@@ -302,7 +302,7 @@ addRowsTable = function( results , arch , ib , table , progressBar ){
   addSummaryRow = genAddSummaryRow( arch , ib ) 
   addSummaryRow( table , resultsSummary )
 
-  setProgressBar( progressBar , 100 ) 
+//  setProgressBar( progressBar , 100 ) 
 
 }
 
