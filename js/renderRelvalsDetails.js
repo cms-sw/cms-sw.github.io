@@ -416,7 +416,6 @@ generateAddResultsTableToPane = function( tabPaneID , arch , ibName , progressBa
     var table = $( '<table>' )
     $( '#' + tabPaneID ).append( table )
     addRowsTable( results , arch , ibName , table , progressBar )
-    progressDiv.hide()
 
     endDate = new Date()
     console.log( 'end: ' + endDate )
