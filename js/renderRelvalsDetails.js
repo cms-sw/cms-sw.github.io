@@ -259,11 +259,11 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 }
 
 /**
- * Returns the table with the relvals results
+ * Adds to the table with relvals results
  */
-getTable = function( results , arch , ib ){
+addRowsTable = function( results , arch , ib , table ){
 
-  var table = $( '<table>' ).attr( 'class' , 'table table-striped table-condensed' )
+  table.attr( 'class' , 'table table-striped table-condensed' )
   table.attr( 'id' , 'resultsTable-' + arch + '-' + ib ) 
 
   addHeaderToTable( table )
@@ -297,7 +297,6 @@ getTable = function( results , arch , ib ){
   addSummaryRow = genAddSummaryRow( arch , ib ) 
   addSummaryRow( table , resultsSummary )
  
-  return table
 
 }
 
@@ -403,10 +402,20 @@ generateAddResultsTableToPane = function( tabPaneID , arch , ibName ){
   return function( results ){
 
     console.log ( 'modifying' )
-    console.log ( tabPaneID )
-    var table = getTable( results , arch , ibName )
+    console.log ( tabPaneID ) 
 
+    startDate = new Date()
+    console.log( 'start: ' + startDate )
+    var table = $( '<table>' )
     $( '#' + tabPaneID ).append( table )
+    addRowsTable( results , arch , ibName , table )
+
+    endDate = new Date()
+    console.log( 'end: ' + endDate )
+
+    console.log( endDate - startDate )
+
+    
   }
 
 }
