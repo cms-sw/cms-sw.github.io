@@ -261,7 +261,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 /**
  * Adds to the table with relvals results
  */
-addRowsTable = function( results , arch , ib , table ){
+addRowsTable = function( results , arch , ib , table , progressBar ){
 
   table.attr( 'class' , 'table table-striped table-condensed' )
   table.attr( 'id' , 'resultsTable-' + arch + '-' + ib ) 
@@ -289,6 +289,11 @@ addRowsTable = function( results , arch , ib , table ){
   for ( var key in results ){
     // nothingRun is to know if no step was run in the workflow
     nothingRun = addWorkflowRow( results[ key ] , table , counter , resultsSummary , arch , ib , results.length )
+
+    // it won't reach 100 because
+    var percentage = ( ( counter / results.length ) * 90 ) + 10
+
+    setProgressBar( progressBar , percentage )
     if ( !nothingRun ){
       counter++;
     }
@@ -296,7 +301,8 @@ addRowsTable = function( results , arch , ib , table ){
 
   addSummaryRow = genAddSummaryRow( arch , ib ) 
   addSummaryRow( table , resultsSummary )
- 
+
+  setProgressBar( progressBar , 100 ) 
 
 }
 
@@ -397,18 +403,20 @@ getNavTabs = function( archsList , ibName ){
  * It generates a function that 
  * Reads the results of one file, gets the table, and appends it to the tab pane
  */
-generateAddResultsTableToPane = function( tabPaneID , arch , ibName ){
+generateAddResultsTableToPane = function( tabPaneID , arch , ibName , progressBar , progressDiv ){
 
   return function( results ){
 
     console.log ( 'modifying' )
     console.log ( tabPaneID ) 
+    setProgressBar( progressBar , 10 )
 
     startDate = new Date()
     console.log( 'start: ' + startDate )
     var table = $( '<table>' )
     $( '#' + tabPaneID ).append( table )
-    addRowsTable( results , arch , ibName , table )
+    addRowsTable( results , arch , ibName , table , progressBar )
+    progressDiv.hide()
 
     endDate = new Date()
     console.log( 'end: ' + endDate )
@@ -425,9 +433,8 @@ generateAddResultsTableToPane = function( tabPaneID , arch , ibName ){
 /**
  * Creates the tab panes based on the archsList and the IBName
  */
-getTabPanes = function( archsList , ibName ){
+fillTabPanes = function( tabContent , archsList , ibName ){
 
-  var tabContent = $( '<div>' ).attr( 'class' , 'tab-content' )
 
 
   for( var i = 0; i < archsList.length ; i++){
@@ -441,13 +448,21 @@ getTabPanes = function( archsList , ibName ){
    
     var tabPaneID = arch + '-tab' 
     var tabPane = $( '<div>' ).attr( 'class' , tabPaneClass ).attr( 'id' , tabPaneID ) 
-    tabContent.append( tabPane ) 
    
     var ibDate = ibName.substring( ibName.lastIndexOf( "_" ) + 1 , ibName.length ) 
     var releaseQueue = ibName.substring( 0 , ibName.lastIndexOf( "_" ) )
     var jsonFilePath = 'data/relvals/' + arch + '/' + ibDate + '/' + releaseQueue +'.json';
 
-    var addResultsTableToPane = generateAddResultsTableToPane( tabPaneID , arch , ibName )
+    var progressDiv = $( '<div>' ).attr( 'class' , 'progress' )
+    var progressBar = $( '<div>' ).attr( 'class' , 'progress-bar' ).attr( 'role' , 'progressbar' )
+                                  .attr( 'aria-valuenow' , '0' ) .attr( 'aria-valuemin' , '0' )
+                                  .attr( 'aria-valuemax' , '100' ).attr( 'style' , 'width: 0%;' )
+
+    progressDiv.append( progressBar )
+    tabPane.append( progressDiv )   
+
+    tabContent.append( tabPane )
+    var addResultsTableToPane = generateAddResultsTableToPane( tabPaneID , arch , ibName , progressBar , progressDiv )
 
     console.log( 'Reading: ' )
     console.log( jsonFilePath )
@@ -457,7 +472,6 @@ getTabPanes = function( archsList , ibName ){
 
   }
 
-  return tabContent
 
 
 }
@@ -762,4 +776,18 @@ genToggleCommands = function( commandsDiv , numSteps , fileNameCommands , workfl
   }
 
   return toggleCommands
+}
+
+//------------------------------------------------------------------------------------------------
+// Progress Bar
+// -----------------------------------------------------------------------------------------------
+
+/**
+ * sets the progress that arrives as parameter bar filled with a the percentage set as parameter
+ */
+setProgressBar = function ( progressBar , percentage ){
+
+  progressBar.attr( 'style' , 'width: ' + percentage + '%' )
+  progressBar.attr( 'aria-valuenow' , '20' )
+
 }

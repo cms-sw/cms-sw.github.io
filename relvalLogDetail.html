@@ -72,8 +72,9 @@
                                 $("#header").append( header )
 				var navTabs = getNavTabs( archsList , IB )
 				$("#results").append( navTabs )
-				var tabPanes = getTabPanes( archsList , IB )
+				var tabPanes = $( '<div>' ).attr( 'class' , 'tab-content' )
 				$("#results").append( tabPanes )
+ 				fillTabPanes( tabPanes , archsList , IB )
 
 			}
 
