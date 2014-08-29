@@ -41,14 +41,17 @@ if __name__ == "__main__":
              for x in zip(architectures, dates, queues)]
   outputsRelvalCommands = [join("data/commands/", x[0], x[1], x[2] + ".json")
              for x in zip(architectures, dates, queues)]
+  outputsRelvalMsgs = [join("data/messages/", x[0], x[1], x[2] + ".json")
+             for x in zip(architectures, dates, queues)]
   pairs = zip(outputs, inputs)
   pairsUnitTestsSummary = zip(outputsUnitTestSummary, inputsUnitTestSummary)
   pairsCommands = zip(outputsRelvalCommands, inputsRelvalLogs)
+  pairsMessages = zip(outputsRelvalMsgs, inputsRelvalLogs)
   f = open("Makefile", "w")
 
   # A rule which takes care of converting a few known files in CMSDIST to json.
 
-  allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands
+  allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands + outputsRelvalMsgs
   print(".PHONY: all clean", file=f)
   print("all: data/cmsdist-config.json " + " ".join(allFiles), file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
@@ -61,5 +64,8 @@ if __name__ == "__main__":
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-unitTestSummary-logs $< > $@" % x
     print(l, file=f)
   for x in pairsCommands:
+    l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-step-commands $< data/commands/objs > $@" % x
+    print(l, file=f)
+  for x in pairsMessages:
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-step-commands $< data/commands/objs > $@" % x
     print(l, file=f)
