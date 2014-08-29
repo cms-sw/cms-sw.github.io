@@ -441,7 +441,8 @@ getTabPanes = function( archsList , ibName ){
    
     var tabPaneID = arch + '-tab' 
     var tabPane = $( '<div>' ).attr( 'class' , tabPaneClass ).attr( 'id' , tabPaneID ) 
-    
+    tabContent.append( tabPane ) 
+   
     var ibDate = ibName.substring( ibName.lastIndexOf( "_" ) + 1 , ibName.length ) 
     var releaseQueue = ibName.substring( 0 , ibName.lastIndexOf( "_" ) )
     var jsonFilePath = 'data/relvals/' + arch + '/' + ibDate + '/' + releaseQueue +'.json';
@@ -454,7 +455,6 @@ getTabPanes = function( archsList , ibName ){
 
     console.log( 'Finished Reading: ' )
 
-    tabContent.append( tabPane )
   }
 
   return tabContent
