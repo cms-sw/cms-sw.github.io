@@ -290,10 +290,10 @@ addRowsTable = function( results , arch , ib , table , progressBar ){
     // nothingRun is to know if no step was run in the workflow
     nothingRun = addWorkflowRow( results[ key ] , table , counter , resultsSummary , arch , ib , results.length )
 
-    // it won't reach 100 because
-//    var percentage = ( ( counter / results.length ) * 90 ) + 10
+    // it won't reach 100 because I don't count the ones that have no steps run
+    var percentage = ( ( counter / results.length ) * 50 ) + 50
 
-  //  setProgressBar( progressBar , percentage )
+    setProgressBar( progressBar , percentage )
     if ( !nothingRun ){
       counter++;
     }
@@ -302,7 +302,7 @@ addRowsTable = function( results , arch , ib , table , progressBar ){
   addSummaryRow = genAddSummaryRow( arch , ib ) 
   addSummaryRow( table , resultsSummary )
 
-//  setProgressBar( progressBar , 100 ) 
+  setProgressBar( progressBar , 100 ) 
 
 }
 
@@ -409,13 +409,15 @@ generateAddResultsTableToPane = function( tabPaneID , arch , ibName , progressBa
 
     console.log ( 'modifying' )
     console.log ( tabPaneID ) 
-    setProgressBar( progressBar , 10 )
+    setProgressBar( progressBar , 50 )
 
     startDate = new Date()
     console.log( 'start: ' + startDate )
     var table = $( '<table>' )
     $( '#' + tabPaneID ).append( table )
     addRowsTable( results , arch , ibName , table , progressBar )
+
+    progressDiv.hide( 100 )
 
     endDate = new Date()
     console.log( 'end: ' + endDate )
@@ -455,7 +457,8 @@ fillTabPanes = function( tabContent , archsList , ibName ){
     var progressDiv = $( '<div>' ).attr( 'class' , 'progress' )
     var progressBar = $( '<div>' ).attr( 'class' , 'progress-bar' ).attr( 'role' , 'progressbar' )
                                   .attr( 'aria-valuenow' , '0' ) .attr( 'aria-valuemin' , '0' )
-                                  .attr( 'aria-valuemax' , '100' ).attr( 'style' , 'width: 0%;' )
+                                  .attr( 'aria-valuemax' , '100' ).attr( 'style' , 'width: 30%;' )
+                                  .text( 'loading...' )
 
     progressDiv.append( progressBar )
     tabPane.append( progressDiv )   
