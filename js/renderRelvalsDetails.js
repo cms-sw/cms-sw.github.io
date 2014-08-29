@@ -405,6 +405,7 @@ getNavTabs = function( archsList , ibName ){
  */
 generateAddResultsTableToPane = function( tabPaneID , arch , ibName , progressBar , progressDiv ){
 
+
   return function( results ){
 
     console.log ( 'modifying' )
@@ -455,7 +456,7 @@ fillTabPanes = function( tabContent , archsList , ibName ){
     var jsonFilePath = 'data/relvals/' + arch + '/' + ibDate + '/' + releaseQueue +'.json';
 
     var progressDiv = $( '<div>' ).attr( 'class' , 'progress' )
-    var progressBar = $( '<div>' ).attr( 'class' , 'progress-bar' ).attr( 'role' , 'progressbar' )
+    var progressBar = $( '<div>' ).attr( 'class' , 'progress-bar progress-bar-striped active' ).attr( 'role' , 'progressbar' )
                                   .attr( 'aria-valuenow' , '0' ) .attr( 'aria-valuemin' , '0' )
                                   .attr( 'aria-valuemax' , '100' ).attr( 'style' , 'width: 30%;' )
                                   .text( 'loading...' )
