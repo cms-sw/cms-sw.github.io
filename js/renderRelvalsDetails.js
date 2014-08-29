@@ -121,21 +121,10 @@ getLinkLabelToResultToResLabel = function( arch , ib , stepNumber , workflowName
  * creates the cell of the table that describes the workflow name
  * and adds the commands for each step. they are hidden by default
  */
-getWorkflowCell = function( workflowID , workflowShortName , steps , arch , ib ){
+fillWorkflowCell = function( cell , workflowID , workflowShortName , numToShow , arch , ib ){
 
-  var cell = $( '<td>' )
   cell.append( $( '<span>' ).text( workflowID + ' ' +  workflowShortName + '  ' ) )
 
-  var numToShow = 0
-  for ( var stepNumber in steps ){
-
-    if ( steps[ stepNumber ][ 'status' ] != 'NOTRUN' ){
-      numToShow++
-    }else{
-      break
-    }
-
-  }
     
   var link = $( "<a>" ).attr( "href" , '#' + arch  + ';' + ib )
   link.attr( 'showCMD' , 'cmd-div-' + arch + '-' + workflowID + ';' + numToShow )
@@ -159,7 +148,6 @@ getWorkflowCell = function( workflowID , workflowShortName , steps , arch , ib )
 
   cell.append( commandsDiv )
 
-  return cell
 }
 /**
  * Adds a row to the workflow with the relval result info, it also modifies the statistics
@@ -173,10 +161,13 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
   row.append( $( '<td>' ).append( $( '<b>'  ).text( counter ) ) )
 
-  row.append( getWorkflowCell( workflowResult.id , workflowResult.name.split( '+' )[0] , workflowResult.steps , arch , ib ) )
+  var workflowCell = $( '<td>' )
+
+  row.append( workflowCell )
 
   // this is to fill all the rows with cells
   var numCells = 0;
+  var numToShow = 0
 
   var nothingRun = true;
   for ( var stepNumber in workflowResult.steps ){
@@ -186,6 +177,8 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
     var resLabel = $( '<span>' ).text( text )
 
     if( text == 'PASSED' ){
+
+      numToShow++;
 
       nothingRun = false;
       resLabel.attr( 'class' , 'label label-success')
@@ -198,6 +191,8 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
 
     }else if( text == 'FAILED' ){
+
+      numToShow++;
 
       nothingRun = false;
       resLabel.attr( 'class' , 'label label-danger')
@@ -236,6 +231,11 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
   if ( nothingRun ){
     return true;
   }
+
+ 
+  // I add the contents here after the number of workflows to show has been caculated
+  fillWorkflowCell( workflowCell , workflowResult.id , workflowResult.name.split( '+' )[0] , numToShow , arch , ib )
+
 
   // fill the missing cells to have 5 in total
   for ( var numEmpty = 0; numEmpty < 5-numCells; numEmpty++ ){
