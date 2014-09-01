@@ -24,8 +24,7 @@ Please make sure you have docker installed on your machine, either via:
 
 if you use slcX or by following the instructions for your platform on:
 
-http://docs.docker.com/installation
-
+<http://docs.docker.com/installation>
 
 # Running CMSSW docker image
 
@@ -46,4 +45,8 @@ and once this is done you can setup the workarea as usual, e.g.:
 
     scram project CMSSW_7_2_0_pre5
 
-notice that for the moment this only works at CERN.
+notice that for the moment this only works at CERN and for the moment only
+`slc6_amd64_gcc481` is available out of the box. 
+
+For more information you might want to dig into the
+[cms-docker](https://github.com/cms-sw/cms-docker) in GitHub.
