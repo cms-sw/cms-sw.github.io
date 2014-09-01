@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
   # A rule which takes care of converting a few known files in CMSDIST to json.
 
-  allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands + outputsRelvalMsgs
+  allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands
   print(".PHONY: all clean", file=f)
   print("all: data/cmsdist-config.json " + " ".join(allFiles), file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
