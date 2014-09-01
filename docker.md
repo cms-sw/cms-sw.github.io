@@ -29,9 +29,20 @@ if you use slcX or by following the instructions for your platform on:
 # Running CMSSW docker image
 
 The docker image for CMSSW provides you a shell from where you can install CMS
-releases and setup scram area. Using it is as simple as:
+releases and setup scram area. The only limitation is that currently docker has
+an image size limited to 10GB and there is no simple way to change it from the
+command line. In order to overcome this you'll have to create a temporary
+directory on your host machine where the software will be effectively installed.
 
-    docker run -it cmsdocker.cern.ch/builder-slc6_amd64_gcc481
+    mkdir /tmp/$USER/slc6-docker-installation
+
+Done this you can use cms docker image by doing:
+
+    docker run -v /tmp/$USER/slc6-docker-installation:/opt/cms -it cmsdocker.cern.ch/builder-slc6_amd64_gcc481
+
+
+notice you might want to use additional `-v <host-directory>:<target-directory>
+to have persistent storage of datafiles you might produce.
 
 this will present you a bash prompt from which you can install CMSSW via:
 
