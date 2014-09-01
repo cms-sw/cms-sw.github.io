@@ -130,7 +130,7 @@ fillWorkflowCell = function( cell , workflowID , workflowShortName , numToShow ,
   link.attr( 'showCMD' , 'cmd-div-' + arch + '-' + workflowID + ';' + numToShow )
  // link.attr( 'style' , 'color:black' ) 
 
-  link.append( $( '<small>' ).append( $( '<span>').attr( 'class' , 'glyphicon glyphicon-chevron-right' )  ) )
+  link.append( $( '<small>' ).append( $( '<small>' ).append( $( '<span>').attr( 'class' , 'glyphicon glyphicon-chevron-right' )  )  ) )
   link.append( $( '<small>' ).text( 'cmd' ) )
   cell.append( link )
 
