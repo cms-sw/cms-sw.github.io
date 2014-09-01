@@ -31,7 +31,7 @@ if you use slcX or by following the instructions for your platform on:
 The docker image for CMSSW provides you a shell from where you can install CMS
 releases and setup scram area. Using it is as simple as:
 
-    docker run cmsdocker.cern.ch/builder-slc6_amd64_gcc481
+    docker run -it cmsdocker.cern.ch/builder-slc6_amd64_gcc481
 
 this will present you a bash prompt from which you can install CMSSW via:
 
