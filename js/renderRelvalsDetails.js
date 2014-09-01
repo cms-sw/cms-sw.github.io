@@ -1,4 +1,4 @@
-//-------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // RelVals Results
 // ------------------------------------------------------------------------------
 
@@ -65,13 +65,13 @@ genAddSummaryRow = function( genArch , genIB ){
 genAddShowAllRowLink = function( genArch, genIB ){
 
   /**
-   * Adds to the workflos table a row which has a link which toggles the workflows after the 20th
+   * Adds to the workflows table a row which has a link which toggles the workflows after the 20th
    */
   addShowAllRowLink = function( table , startRow , endRow ){
 
     var row = $( '<tr>' )
     var linkCell = $( '<td>' ).attr( 'colspan' , 7 )
-    var showAllLink = getLinkWithGlyph( '#' + genArch + ';' + genIB  , 'Show All' , 'glyphicon-chevron-down' , 'showAllLink'+ '-' + genArch + '-' + genIB )
+    var showAllLink = getLinkWithGlyph( '#' + genArch + ';' + genIB  , 'Show All' , 'glyphicon-chevron-right' , 'showAllLink'+ '-' + genArch + '-' + genIB )
 
     showAllLink.click( genToggleHiddenRows( genArch, genIB , startRow , endRow ) )
 
@@ -129,6 +129,8 @@ fillWorkflowCell = function( cell , workflowID , workflowShortName , numToShow ,
   var link = $( "<a>" ).attr( "href" , '#' + arch  + ';' + ib )
   link.attr( 'showCMD' , 'cmd-div-' + arch + '-' + workflowID + ';' + numToShow )
  // link.attr( 'style' , 'color:black' ) 
+
+  link.append( $( '<small>' ).append( $( '<span>').attr( 'class' , 'glyphicon glyphicon-chevron-right' )  ) )
   link.append( $( '<small>' ).text( 'cmd' ) )
   cell.append( link )
 
@@ -449,7 +451,16 @@ fillTabPanes = function( tabContent , archsList , ibName ){
     }
    
     var tabPaneID = arch + '-tab' 
-    var tabPane = $( '<div>' ).attr( 'class' , tabPaneClass ).attr( 'id' , tabPaneID ) 
+    var tabPane = $( '<div>' ).attr( 'class' , tabPaneClass ).attr( 'id' , tabPaneID )
+
+    var divLinkPrevVersion = $( '<div>' ).attr( 'align' , 'center' )
+    var addressPrevVersion = getAddresstoPrevVersion( arch, ibName )
+    linkToPrevVersion = getLinkWithGlyph( addressPrevVersion , ' Click here to see the previous version' , 'glyphicon-warning-sign' , '' )
+    divLinkPrevVersion.append( linkToPrevVersion )
+
+    tabPane.append( $( '<br>' ) )
+    tabPane.append( divLinkPrevVersion ) 
+    tabPane.append( $( '<br>' ) )
    
     var ibDate = ibName.substring( ibName.lastIndexOf( "_" ) + 1 , ibName.length ) 
     var releaseQueue = ibName.substring( 0 , ibName.lastIndexOf( "_" ) )
@@ -559,11 +570,41 @@ genGetHashCommandsToDiv = function( workflowID , steps , commandsDiv ){
 // ------------------------------------------------------------------------------
 
 /**
+ * generates a link to the previous version of the page
+ */
+getAddresstoPrevVersion = function( arch, ibName ){
+
+  var ibNameParts = ibName.split( '_' )
+  var rel = ibNameParts[ 1 ] + '.' + ibNameParts[ 2 ]
+  var dateParts = ibNameParts[ ibNameParts.length - 1 ].split( '-' )
+  var time = dateParts[ 3 ].replace( '00' , '' )
+
+  var tempDate = new Date( dateParts[ 0 ] , dateParts[ 1 ] - 1 , dateParts[ 2 ] )
+
+  var weekDay = ['sun','mon','tue','wed','thu','fri','sat'][ tempDate.getDay() ]
+
+  console.log( 'Date :' + weekDay )
+  console.log( tempDate )
+  console.log( dateParts[ 1 ] )
+
+
+
+  var dayTimeRel = rel + '-' + weekDay + '-' + time
+
+
+  var link = 'https://cmssdt.cern.ch/SDT/cgi-bin//showMatrixTestLogs.py/' + arch +'/www/' + weekDay + '/' + dayTimeRel + '/' + ibName + '/pyRelValMatrixLogs/run'
+
+  return link
+
+}
+
+/**
  * Returns the structure of the title of the web page
  */
 getHeader = function( arch, ibName ){
 
   var header = $( '<div>' )
+
   var title = $( '<h1>' ).text( 'Integration Build ' + ibName )
 
 
@@ -678,7 +719,7 @@ genToggleSummaryTables = function( genArch , genIB ){
     if ( toggleLinkText.text() == 'Show summary' ){
 
       toggleLinkText.text( 'Hide summary' )
-      toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-up' )
+      toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-down' )
 
      }else {
       toggleLinkText.text( 'Show summary' )
@@ -707,11 +748,11 @@ genToggleHiddenRows = function( genArch , genIB , minRow , maxRow ){
 
     if ( showAllLinkText.text() == 'Show All' ){
       showAllLinkText.text( 'Hide ' )
-      toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-up' )
+      toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-down' )
 
     }else {
       showAllLinkText.text( 'Show All' )
-      toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-down' )
+      toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-right' )
     }
   }
 
@@ -722,6 +763,14 @@ genToggleHiddenRows = function( genArch , genIB , minRow , maxRow ){
 toggleCommands2 = function( ){
 
   console.log( 'new function' )
+
+  var glyph = $( this ).find( 'span.glyphicon') 
+
+  if( glyph.attr( 'class' ) == 'glyphicon glyphicon-chevron-right' ){
+    glyph.attr( 'class' , 'glyphicon glyphicon-chevron-down' )
+  } else {
+    glyph.attr( 'class' , 'glyphicon glyphicon-chevron-right' )
+  }
 
   var urlParts = $(this).attr( 'href').split( ';' )  
   var arch = urlParts[ 0 ].replace( '#' , '' )
