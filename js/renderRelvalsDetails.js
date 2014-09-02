@@ -220,19 +220,9 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
       var cell = $( '<td>' ).append( link )
       row.append( cell )
 
-      if ( errors > 0 ){
+      resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + FAILED_COLOR  )
 
-        resLabel.attr( 'class' , 'label').attr( 'style' , 'background-color:' + FAILED_ERRORS_COLOR )
-
-      }else if ( warnings > 0 ){
-
-        resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + FAILED_WARNINGS_COLOR )
-
-      }else{
-
-        resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + FAILED_COLOR  )
-
-      }
+     
 
 
 
@@ -629,13 +619,12 @@ getAddresstoPrevVersion = function( arch, ibName ){
 }
 
 /**
- * adds to the list group an item with the given parameters
+ * adds to the rwo a cell with the label and the legend
  */
-addLegendItem = function( table , color , itemText , description ){
+addLegendCell = function( row , color , itemText , description ){
 
-  var row = $( '<tr>' )
-  var labelCell = $( '<td>' )
-  var descCell = $( '<td>' )
+  var labelCell = $( '<td>' ).attr( 'style' , 'border: none;' )
+  var descCell = $( '<td>' ).attr( 'style' , 'border: none;' )
   var label = $( '<span>' ).attr( 'style' , 'background-color:' + color ).attr( 'class' , 'label' )
   label.append( $( '<samp>' ).text( itemText ) )
 
@@ -646,7 +635,6 @@ addLegendItem = function( table , color , itemText , description ){
   row.append( labelCell )
   row.append( descCell )
 
-  table.append( row )
 
 }
 
@@ -654,19 +642,21 @@ addLegendItem = function( table , color , itemText , description ){
 /**
  * creates the list that shows the legend for the results
  */
-getLegendTables = function( ){
+getLegendTable = function( ){
 
-  var table = $( '<table>' ).attr( 'class' , 'table table-condensed' )
-  addLegendItem( table , PASSED_COLOR , LABELS_TEXT[ 'PASSED' ] , ' Passed without error or warning messages' )
-  addLegendItem( table , PASSED_WARNINGS_COLOR , LABELS_TEXT[ 'PASSED' ] , ' Passed with warning messages' )
-  addLegendItem( table , PASSED_ERRORS_COLOR , LABELS_TEXT[ 'PASSED' ] , ' Passed with error messages' )
+  var table = $( '<table>' ).attr( 'class' , 'table table-condensed' ).attr( 'style' , 'border: none;' )
 
-  addLegendItem( table , FAILED_COLOR , LABELS_TEXT[ 'FAILED' ] , ' Failed without error or warning messages' )
-  addLegendItem( table , FAILED_WARNINGS_COLOR , LABELS_TEXT[ 'FAILED' ] , ' Failed with warning messages' )
-  addLegendItem( table , FAILED_ERRORS_COLOR , LABELS_TEXT[ 'FAILED' ] , ' Failed with error messages' )
+  var row1 = $( '<tr>' )
+  addLegendCell( row1 , PASSED_COLOR , LABELS_TEXT[ 'PASSED' ] , 'Passed without error or warning messages' )
+  addLegendCell( row1 , PASSED_ERRORS_COLOR , LABELS_TEXT[ 'PASSED' ] , 'Passed with error messages' )
+  addLegendCell( row1 , NOT_RUN_COLOR , LABELS_TEXT[ 'NOTRUN' ] , 'Not run' )
+  table.append( row1 )
 
-  addLegendItem( table , NOT_RUN_COLOR , LABELS_TEXT[ 'NOTRUN' ] , ' Failed with error messages' )
- 
+  var row2 = $( '<tr>' )
+  addLegendCell( row2 , PASSED_WARNINGS_COLOR , LABELS_TEXT[ 'PASSED' ] , 'Passed with warning messages' )
+  addLegendCell( row2 , FAILED_COLOR , LABELS_TEXT[ 'FAILED' ] , 'Failed' )
+  table.append( row2 )
+
 
   return table
 
@@ -681,20 +671,29 @@ getHeader = function( arch, ibName ){
   var header = $( '<div>' )
   var title = $( '<h1>' ).text( 'Integration Build ' + ibName )
   var legendTitle = $( '<h5>' ).text( 'Legend: ' )
+  var legendLink = getLinkWithGlyph( '#' + arch + ';' + ibName , 'Legend' , 'glyphicon-chevron-right' , '' )
 
   header.append( title ).append( $( '<br>' ) )
 
-  header.append( legendTitle )
- 
-  var legendDiv = $( '<div>' ).attr( 'class' , 'col-md-5' )
-  var legendRow = $( '<div>' ).attr( 'class' , 'row' )
-  legendRow.append( legendDiv )
-  legendDiv.append( getLegendTables() )
-  header.append( legendRow )
-
   var linkToMainPage = getLinkWithGlyph( 'https://cmssdt.cern.ch/SDT/html/showIB.html' , ' Back to IB Portal' , 'glyphicon-hand-up' , 'backToMainPageLink' )
 
-  header.append( $( '<br>' ) ).append( linkToMainPage ).append( $( '<hr>' ) ).append( $( '<br>' ) )
+  header.append( $( '<br>' ) ).append( linkToMainPage ).append( $( '<br>' ) )
+  header.append( $( '<br>' ) )
+
+  var legendDiv = $( '<div>' ).attr( 'class' , 'col-md-10' )
+  var legendRow = $( '<div>' ).attr( 'class' , 'row' )
+  legendRow.append( legendDiv )
+  var legendTable = getLegendTable()
+  legendTable.hide()
+  legendDiv.append( legendTable )
+  var toggleLegend = genToggleLegend( legendTable )
+  legendLink.click( toggleLegend )
+
+  header.append( legendLink  )
+  header.append( legendRow )
+
+  header.append( $( '<hr>' ) )
+
 
   return header
 
@@ -841,6 +840,32 @@ genToggleHiddenRows = function( genArch , genIB , minRow , maxRow ){
   return toggleHiddenRows
 }
 
+/**
+ * Generates the function with the table that arrives as a parameter
+ */
+genToggleLegend = function( genTable ){
+  /**
+   * Toggles the table that shows the legend
+   */
+  toggleLegend = function(){
+
+    console.log( 'toggle legend' )
+    var glyph = $( this ).find( 'span.glyphicon' )
+    
+   if( glyph.attr( 'class' ) == 'glyphicon glyphicon-chevron-right' ){
+      glyph.attr( 'class' , 'glyphicon glyphicon-chevron-down' )
+    } else {
+      glyph.attr( 'class' , 'glyphicon glyphicon-chevron-right' )
+    }
+
+
+    genTable.toggle()
+
+  }
+
+  return toggleLegend
+
+}
 
 toggleCommands2 = function( ){
 
@@ -932,10 +957,8 @@ setProgressBar = function ( progressBar , percentage ){
 
 PASSED_COLOR = 'rgb(92, 184, 92)'
 PASSED_WARNINGS_COLOR = 'rgb(92, 145, 92)'
-PASSED_ERRORS_COLOR = 'rgb(69, 83, 69)'
+PASSED_ERRORS_COLOR = 'rgb(230, 188, 99)'
 FAILED_COLOR = 'rgb(217, 83, 79)'
-FAILED_WARNINGS_COLOR = 'rgb(184, 150, 79)'
-FAILED_ERRORS_COLOR = 'rgb(150, 83, 79)'
 NOT_RUN_COLOR = 'rgb(153, 153, 153)' 
 
 LABELS_TEXT = {}
