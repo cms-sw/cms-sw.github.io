@@ -175,15 +175,30 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
   for ( var stepNumber in workflowResult.steps ){
 
     var text = workflowResult.steps[ stepNumber ][ 'status' ]
+    var errors = workflowResult.steps[ stepNumber ][ 'errors' ]
+    var warnings = workflowResult.steps[ stepNumber ][ 'warnings' ]
 
-    var resLabel = $( '<span>' ).text( text )
+    var resLabel = $( '<span>' )
+    resLabel.append( $( '<samp>' ).text( LABELS_TEXT[ text ]) )
 
     if( text == 'PASSED' ){
 
       numToShow++;
 
       nothingRun = false;
-      resLabel.attr( 'class' , 'label label-success')
+      if ( errors > 0 ){
+
+        resLabel.attr( 'class' , 'label').attr( 'style' , 'background-color:' + PASSED_ERRORS_COLOR )
+
+      }else if ( warnings > 0 ){
+
+        resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + PASSED_WARNINGS_COLOR )
+
+      }else{
+
+        resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + PASSED_COLOR )
+
+      }
 
       var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '' )
       link.append( resLabel )
@@ -205,10 +220,25 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
       var cell = $( '<td>' ).append( link )
       row.append( cell )
 
+      if ( errors > 0 ){
+
+        resLabel.attr( 'class' , 'label').attr( 'style' , 'background-color:' + FAILED_ERRORS_COLOR )
+
+      }else if ( warnings > 0 ){
+
+        resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + FAILED_WARNINGS_COLOR )
+
+      }else{
+
+        resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + FAILED_COLOR  )
+
+      }
+
+
 
     }else if( text == 'NOTRUN' ){
 
-      resLabel.attr( 'class' , 'label label-default')
+      resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + NOT_RUN_COLOR )
       row.append( $( '<td>' ).append( resLabel ) )
 
     }else {
@@ -501,7 +531,7 @@ genAddCommandToDiv = function( cmdTextSmall ){
   addCommandToDiv = function( commandInfo ){
 
     var command = commandInfo[ 'command' ] 
-    cmdTextSmall.text( command ) 
+    cmdTextSmall.append( $( '<samp>' ).text( command ) ) 
 
   }
   return addCommandToDiv
@@ -599,16 +629,68 @@ getAddresstoPrevVersion = function( arch, ibName ){
 }
 
 /**
+ * adds to the list group an item with the given parameters
+ */
+addLegendItem = function( table , color , itemText , description ){
+
+  var row = $( '<tr>' )
+  var labelCell = $( '<td>' )
+  var descCell = $( '<td>' )
+  var label = $( '<span>' ).attr( 'style' , 'background-color:' + color ).attr( 'class' , 'label' )
+  label.append( $( '<samp>' ).text( itemText ) )
+
+
+  labelCell.append( label )
+  descCell.append( $( '<span>' ).text( description ) )
+
+  row.append( labelCell )
+  row.append( descCell )
+
+  table.append( row )
+
+}
+
+
+/**
+ * creates the list that shows the legend for the results
+ */
+getLegendTables = function( ){
+
+  var table = $( '<table>' ).attr( 'class' , 'table table-condensed' )
+  addLegendItem( table , PASSED_COLOR , LABELS_TEXT[ 'PASSED' ] , ' Passed without error or warning messages' )
+  addLegendItem( table , PASSED_WARNINGS_COLOR , LABELS_TEXT[ 'PASSED' ] , ' Passed with warning messages' )
+  addLegendItem( table , PASSED_ERRORS_COLOR , LABELS_TEXT[ 'PASSED' ] , ' Passed with error messages' )
+
+  addLegendItem( table , FAILED_COLOR , LABELS_TEXT[ 'FAILED' ] , ' Failed without error or warning messages' )
+  addLegendItem( table , FAILED_WARNINGS_COLOR , LABELS_TEXT[ 'FAILED' ] , ' Failed with warning messages' )
+  addLegendItem( table , FAILED_ERRORS_COLOR , LABELS_TEXT[ 'FAILED' ] , ' Failed with error messages' )
+
+  addLegendItem( table , NOT_RUN_COLOR , LABELS_TEXT[ 'NOTRUN' ] , ' Failed with error messages' )
+ 
+
+  return table
+
+
+}
+
+/**
  * Returns the structure of the title of the web page
  */
 getHeader = function( arch, ibName ){
 
   var header = $( '<div>' )
-
   var title = $( '<h1>' ).text( 'Integration Build ' + ibName )
-
+  var legendTitle = $( '<h5>' ).text( 'Legend: ' )
 
   header.append( title ).append( $( '<br>' ) )
+
+  header.append( legendTitle )
+ 
+  var legendDiv = $( '<div>' ).attr( 'class' , 'col-md-5' )
+  var legendRow = $( '<div>' ).attr( 'class' , 'row' )
+  legendRow.append( legendDiv )
+  legendDiv.append( getLegendTables() )
+  header.append( legendRow )
 
   var linkToMainPage = getLinkWithGlyph( 'https://cmssdt.cern.ch/SDT/html/showIB.html' , ' Back to IB Portal' , 'glyphicon-hand-up' , 'backToMainPageLink' )
 
@@ -843,3 +925,23 @@ setProgressBar = function ( progressBar , percentage ){
   progressBar.attr( 'aria-valuenow' , '20' )
 
 }
+
+//------------------------------------------------------------------------------------------------
+// CONSTANTS
+// -----------------------------------------------------------------------------------------------
+
+PASSED_COLOR = 'rgb(92, 184, 92)'
+PASSED_WARNINGS_COLOR = 'rgb(92, 145, 92)'
+PASSED_ERRORS_COLOR = 'rgb(69, 83, 69)'
+FAILED_COLOR = 'rgb(217, 83, 79)'
+FAILED_WARNINGS_COLOR = 'rgb(184, 150, 79)'
+FAILED_ERRORS_COLOR = 'rgb(150, 83, 79)'
+NOT_RUN_COLOR = 'rgb(153, 153, 153)' 
+
+LABELS_TEXT = {}
+LABELS_TEXT[ 'PASSED' ] = 'Passed'
+LABELS_TEXT[ 'FAILED' ] = 'Failed '
+LABELS_TEXT[ 'NOTRUN' ] = 'NotRun' 
+
+
+
