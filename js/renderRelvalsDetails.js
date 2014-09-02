@@ -91,11 +91,8 @@ genAddShowAllRowLink = function( genArch, genIB ){
 getlinkAddress = function( arch , ib , step , workflowName , workflowID ){
 
   var filename = ''
-  if ( step == 0 ){
-    filename = 'step1_dasquery.log'
-  }else{
-    filename = 'step' + ( parseInt( step ) + 1 ) + '_' + workflowName + '.log'
-  }
+  filename = 'step' + ( parseInt( step ) + 1 ) + '_' + workflowName + '.log'
+  
    
   var address = 'http://cmssdt.cern.ch/SDT/cgi-bin/buildlogs/' + arch + '/' + ib + '/pyRelValMatrixLogs/run/' + workflowID + '_' + workflowName + '/' + filename
 
