@@ -1,11 +1,29 @@
 [
   {
     "errors": [
-      "testUtilitiesStorageFactory"
+      "testFWCoreUtilities"
     ],
+    "name": "FWCore/Utilities",
+    "ok": [
+      "TestHelper_t",
+      "Exception_t",
+      "MallocOpts_t",
+      "Digest_t",
+      "typedefs_t",
+      "HRTime_t",
+      "CRC32Calculator_t",
+      "Guid_t",
+      "EDMException_t",
+      "Math_t",
+      "value_ptr_t"
+    ]
+  },
+  {
+    "errors": [],
     "name": "Utilities/StorageFactory",
     "ok": [
       "test_StorageFactory_Rfio3",
+      "test_StorageFactory_threadsafe",
       "test_StorageFactory_Rfio2",
       "test_StorageFactory_Http2",
       "test_StorageFactory_Http4",
@@ -17,31 +35,9 @@
     ]
   },
   {
-    "errors": [
-      "testUtilitiesRFIOAdaptor"
-    ],
-    "name": "Utilities/RFIOAdaptor",
-    "ok": []
-  },
-  {
-    "errors": [
-      "runtestUtilAlgos"
-    ],
-    "name": "PhysicsTools/UtilAlgos",
-    "ok": []
-  },
-  {
-    "errors": [
-      "runtestPhysicsToolsPatAlgos"
-    ],
-    "name": "PhysicsTools/PatAlgos",
-    "ok": []
-  },
-  {
     "errors": [],
     "name": "Utilities/General",
     "ok": [
-      "TestTBB",
       "test_precomputed_value_sort"
     ]
   },
@@ -56,7 +52,6 @@
     "errors": [],
     "name": "TrackingTools/PatternTools",
     "ok": [
-      "bqueue_t",
       "ClosestApproachInRPhi_t",
       "TrajSizes_t"
     ]
@@ -98,13 +93,6 @@
       "ErrorProp_t",
       "ErrorPropOri_t",
       "Jacobian_t"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "TrackPropagation/RungeKutta",
-    "ok": [
-      "testFastPow"
     ]
   },
   {
@@ -271,13 +259,6 @@
   },
   {
     "errors": [],
-    "name": "RecoTracker/TkSeedGenerator",
-    "ok": [
-      "FastCircle_t"
-    ]
-  },
-  {
-    "errors": [],
     "name": "RecoTauTag/RecoTau",
     "ok": [
       "TestRecoTauTagCombinatoricGenerator"
@@ -287,8 +268,7 @@
     "errors": [],
     "name": "RecoPixelVertexing/PixelTriplets",
     "ok": [
-      "PixelTriplets_InvPrbl_t",
-      "PixelTriplets_InvPrbl_prec"
+      "PixelTriplets_InvPrbl_t"
     ]
   },
   {
@@ -303,6 +283,9 @@
     "errors": [],
     "name": "RecoLuminosity/LumiProducer",
     "ok": [
+      "loadLumiDB",
+      "loadLumiDB-wbm",
+      "loadLumiDB-orcoff",
       "testBoostRegex",
       "testWrite2LumiDB"
     ]
@@ -323,13 +306,6 @@
   },
   {
     "errors": [],
-    "name": "RecoEgamma/EgammaIsolationAlgos",
-    "ok": [
-      "EgammaTowerIso_t"
-    ]
-  },
-  {
-    "errors": [],
     "name": "RecoCaloTools/MetaCollections",
     "ok": [
       "CaloRecHitMetaCollection_t",
@@ -346,10 +322,16 @@
       "testExpressionFit",
       "testIntegralTiming",
       "testRooFitFunction",
-      "test_Poisson",
       "testZMassFitExtLikelihood",
       "testPhysicsToolsUtilities",
       "testZMassFitLikelihood"
+    ]
+  },
+  {
+    "errors": [],
+    "name": "PhysicsTools/UtilAlgos",
+    "ok": [
+      "runtestUtilAlgos"
     ]
   },
   {
@@ -358,6 +340,13 @@
     "ok": [
       "testCrabToyMC.exe",
       "testFeldmanCousinsBinomial.exe"
+    ]
+  },
+  {
+    "errors": [],
+    "name": "PhysicsTools/PatAlgos",
+    "ok": [
+      "runtestPhysicsToolsPatAlgos"
     ]
   },
   {
@@ -401,13 +390,6 @@
     "name": "MuonAnalysis/MomentumScaleCalibration",
     "ok": [
       "TestMuScleFit"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "MagneticField/ParametrizedEngine",
-    "ok": [
-      "TKBfield_t"
     ]
   },
   {
@@ -456,7 +438,6 @@
     "name": "IOPool/Streamer",
     "ok": [
       "RunThis_t",
-      "RunThat_t",
       "EventMessageTest",
       "TestOtherMessage",
       "WriteStreamerFile",
@@ -525,13 +506,6 @@
   },
   {
     "errors": [],
-    "name": "Geometry/CommonTopologies",
-    "ok": [
-      "GeometryCommonTopologiesTestDriver"
-    ]
-  },
-  {
-    "errors": [],
     "name": "Geometry/CommonDetUnit",
     "ok": [
       "testDetSort"
@@ -564,27 +538,6 @@
     "name": "FastSimulation/Validation",
     "ok": [
       "timing"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "FWCore/Utilities",
-    "ok": [
-      "TestHelper_t",
-      "EDGetToken_t",
-      "Exception_t",
-      "MallocOpts_t",
-      "Digest_t",
-      "testFWCoreUtilities",
-      "clone_ptr_t",
-      "typedefs_t",
-      "HRTime_t",
-      "CRC32Calculator_t",
-      "Guid_t",
-      "EDMException_t",
-      "value_ptr_t",
-      "isFinite_t",
-      "InputTag_t"
     ]
   },
   {
@@ -676,9 +629,9 @@
       "TestIntegrationSeriesOfProcesses",
       "CatchStdExceptiontest",
       "TestIntegrationExternalSource",
-      "TestIntegrationProducedSource",
+      "TestIntegrationGeneratedSource",
       "TestIntegrationUnscheduledFailOnOutput",
-      "TestIntegrationGetBy",
+      "TestIntegrationRawSource",
       "TestIntegrationRunMerge",
       "ProcessConfiguration_t",
       "TestIntegrationEventSetup",
@@ -708,7 +661,6 @@
       "TestFWCoreFrameworkStatemachine",
       "TestFWCoreFrameworkCmsRun",
       "TestFWCoreFrameworkStatemachineSH",
-      "TestFWCoreFrameworkProductSelector",
       "TestFWCoreFrameworkTrigMask",
       "TestFWCoreFrameworkeventprocessor",
       "TestFWCoreFrameworkRegistryTemplate",
@@ -722,10 +674,9 @@
       "TestFWCoreFramework",
       "TestFWCoreFrameworkESRefer",
       "TestFWCoreFrameworkEventSelExc",
-      "TestFWCoreFrameworkeventsetup",
       "TestFWCoreFrameworkEventSelOverlap",
       "TestFWCoreFrameworkInputTagFailure",
-      "TestFWCoreFrameworkTBBTasks",
+      "TestFWCoreFrameworkGroupSelector",
       "TestFWCoreFrameworkTrigBit",
       "TestFWCoreFrameworkDeleteEarly"
     ]
@@ -736,13 +687,6 @@
     "ok": [
       "TestRunnerFWCoreFWLite",
       "testFWCoreFWLite"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "FWCore/Concurrency",
-    "ok": [
-      "testFWCoreConcurrency"
     ]
   },
   {
@@ -825,7 +769,6 @@
     "ok": [
       "testCore",
       "clhepToROOTMath",
-      "test_DDRotation",
       "testShapes"
     ]
   },
@@ -861,22 +804,7 @@
     "errors": [],
     "name": "DataFormats/TrackReco",
     "ok": [
-      "testDataFormatsTrackReco",
-      "testHitPattern"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "DataFormats/TestObjects",
-    "ok": [
-      "Enum_t"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "DataFormats/SiPixelCluster",
-    "ok": [
-      "SiPixelCluster_t"
+      "testDataFormatsTrackReco"
     ]
   },
   {
@@ -890,7 +818,6 @@
     "errors": [],
     "name": "DataFormats/Provenance",
     "ok": [
-      "testProductHolderIndexHelper",
       "testDataFormatsProvenance",
       "EntryDescription_t"
     ]
@@ -914,17 +841,14 @@
     "errors": [],
     "name": "DataFormats/Math",
     "ok": [
-      "testMathApproxMath",
-      "DataFormatsDeltaR_t",
+      "DataFormatsVdt_sanity_t",
       "DataFormatsSign_t",
       "DataFormatsSimilarity_t",
-      "DataFormatsExtVec_t",
-      "DataFormatsMulSymMatrix_t",
-      "testMathApproximations",
       "DataFormatsSSEMathFun_t",
       "DataFormatsSSEVec_t",
       "DataFormatsProjectMatrix_t",
       "DataFormatsMatrices_t",
+      "DataFormatsVdt_timings_t",
       "DataFormatsFastMath_t",
       "DataFormatsEta_t"
     ]
@@ -970,6 +894,13 @@
   },
   {
     "errors": [],
+    "name": "DataFormats/HLTReco",
+    "ok": [
+      "testDataFormatsHLTReco"
+    ]
+  },
+  {
+    "errors": [],
     "name": "DataFormats/GeometryVector",
     "ok": [
       "DataFormatsBasicVector_t"
@@ -983,8 +914,7 @@
       "testGeometricSort",
       "PrecisionMixSurface",
       "referencecounted_t",
-      "Bounds_t",
-      "OldFrameTransformTest"
+      "Bounds_t"
     ]
   },
   {
@@ -1060,7 +990,6 @@
       "Ref_t",
       "DetSetVector_t",
       "DetSetNew_t",
-      "DictionaryTools_t",
       "DataFrame_t",
       "exDSTV",
       "Trie_t",
@@ -1071,7 +1000,8 @@
       "testDataFormatsCommon",
       "RefCore_t",
       "Wrapper_t",
-      "RefVector_t"
+      "RefVector_t",
+      "ReflexTools_t"
     ]
   },
   {
@@ -1131,13 +1061,6 @@
     "ok": [
       "TestCondFormatsSiStripObjects",
       "TestSiStripLatency"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "CondFormats/L1TObjects",
-    "ok": [
-      "test_L1GtDefinitions"
     ]
   },
   {
@@ -1290,13 +1213,6 @@
   },
   {
     "errors": [],
-    "name": "CalibMuon/CSCCalibration",
-    "ok": [
-      "testIndexer"
-    ]
-  },
-  {
-    "errors": [],
     "name": "CalibFormats/SiStripObjects",
     "ok": [
       "TestCalibFormatsSiStripObjects"
@@ -1312,13 +1228,6 @@
   },
   {
     "errors": [],
-    "name": "CalibCalorimetry/EcalLaserAnalyzer",
-    "ok": [
-      "print_ecal_geom"
-    ]
-  },
-  {
-    "errors": [],
     "name": "CalibCalorimetry/EcalCorrelatedNoiseAnalysisAlgos",
     "ok": [
       "EcnaGuiEB",
@@ -1326,24 +1235,6 @@
       "EcnaGuiEE",
       "EcnaHistosExample1",
       "EcnaCalculationsExample"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "Alignment/Geners",
-    "ok": [
-      "cmerge",
-      "crecover",
-      "print_items",
-      "GenersTestHelper_t",
-      "cdump"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "Alignment/CommonAlignment",
-    "ok": [
-      "test_AlignableObjectId"
     ]
   }
 ]
