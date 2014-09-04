@@ -41,10 +41,11 @@ Done this you can use cms docker image by doing:
     docker run -v /tmp/$USER/slc6-docker-installation:/opt/cms -it cmsdocker.cern.ch/builder-slc6_amd64_gcc481
 
 
-notice you might want to use additional `-v <host-directory>:<target-directory>
+notice you might want to use additional `-v <host-directory>:<data-directory>`
 to have persistent storage of datafiles you might produce.
 
-this will present you a bash prompt from which you can install CMSSW via:
+The above mentioned command will present you a bash prompt from which you can
+install CMSSW via:
 
     apt-get install <release>
 
