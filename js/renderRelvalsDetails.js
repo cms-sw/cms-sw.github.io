@@ -34,7 +34,7 @@ genAddSummaryRow = function( genArch , genIB ){
   
     row.append( $( '<td>' ).append( linkTable ) )
 
-    for( var i = 0; i < 5; i++ ){
+    for( var i = 0; i < MAX_STEPS; i++ ){
 
       var summaryTable = $( '<table>' ).attr( 'id' , 'summaryStep' +( i+1 ) +'-' + genArch + '-' + genIB ).attr( 'align' ,'left' )
       for ( key in statistics[ i ] ){
@@ -180,6 +180,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
     if( text == 'PASSED' ){
 
+      
       numToShow++;
 
       nothingRun = false;
@@ -235,7 +236,29 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
     }
 
-    statistics[ stepNumber ][ text ]++;
+    // by default steps until step 5 are in the dictionary, If there are more steps I add them
+    if( stepNumber >= MAX_STEPS )
+    {
+      MAX_STEPS = parseInt( stepNumber ) + 1
+      var resultsDict = {
+        "PASSED" : 0,
+        "FAILED" : 0,
+        "NOTRUN" : 0,
+        "TOTAL"  : 0
+      }
+      console.log( 'Modifying MAX_STEPS' )
+      console.log( MAX_STEPS )
+      if ( MAX_STEPS == 51 ){
+        console.log( workflowResult.id )
+      }
+      statistics[ stepNumber ] = resultsDict
+      statistics[ stepNumber ][ text ]++
+
+    }else{
+
+      statistics[ stepNumber ][ text ]++
+
+    }
     
     // when it is not run it doesn't count in the total
     if( text != 'NOTRUN' ){
@@ -257,7 +280,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
 
   // fill the missing cells to have 5 in total
-  for ( var numEmpty = 0; numEmpty < 5-numCells; numEmpty++ ){
+  for ( var numEmpty = 0; numEmpty < DEFAULT_STEPS-numCells; numEmpty++ ){
     row.append( $( '<td>' ) )
   }
 
@@ -285,10 +308,9 @@ addRowsTable = function( results , arch , ib , table , progressBar ){
   table.attr( 'class' , 'table table-striped table-condensed' )
   table.attr( 'id' , 'resultsTable-' + arch + '-' + ib ) 
 
-  addHeaderToTable( table )
 
   var resultsSummary = []
-  for( var i = 0; i < 5 ; i++ ){
+  for( var i = 0; i < MAX_STEPS ; i++ ){
     var resultsDict = {
       "PASSED" : 0,
       "FAILED" : 0,
@@ -321,6 +343,7 @@ addRowsTable = function( results , arch , ib , table , progressBar ){
   addSummaryRow = genAddSummaryRow( arch , ib ) 
   addSummaryRow( table , resultsSummary )
 
+  addHeaderToTable( table )
   setProgressBar( progressBar , 100 ) 
 
 }
@@ -337,7 +360,7 @@ addHeaderToTable = function ( table ) {
   headRow.append( workflowNumber )
   headRow.append( workflowTitle )
 
-  for ( var i = 0; i < 5 ; i++){
+  for ( var i = 0; i < MAX_STEPS ; i++){
 
     var stepTitle = $( '<th>' ).text( "Step " + (i+1) )
     headRow.append( stepTitle )
@@ -721,19 +744,36 @@ getLinkWithGlyph = function( linkAddress, text, glyph , id ){
 }
 
 /**
- * Generates a header that informs the user that there were not found results for the given IB
+ * Generates a header that is created when the user didn't type any hash in te url
  */
+getNoHashHeader = function( ){
+
+  var div = $( '<div>' ).attr( 'class' , 'alert alert-danger' ).attr( 'role' , 'alert' ).attr( 'align' , 'center' )
+  div.text( 'You need to specify which results you want me to show using the format ' )
+  div.append( $( '<strong>' ).text( '#<arch>;<ib>' ) )
+
+ 
+  return div
+
+
+}
+
+/**
+ * Generates a header that informs the user that there were not found results for the given IB
+*/
 getNotFoundIBHeader = function( ibName ){
 
  var div = $( '<div>' ).attr( 'class' , 'alert alert-danger' ).attr( 'role' , 'alert' ).attr( 'align' , 'center' )
  div.text( 'No results were found for the IB ' )
  div.append( $( '<strong>' ).text( ibName) )
 
- 
+
  return div
 
 
 }
+
+
 
 /**
  * Generates a header that alerts that there were not found results for the given arch, anyway, 
@@ -783,7 +823,7 @@ genToggleSummaryTables = function( genArch , genIB ){
 
   toggleSummaryTables = function(){
 
-    for( var i = 0; i < 5; i++ ){
+    for( var i = 0; i < MAX_STEPS; i++ ){
 
       $( '#summaryStep' + (i+1) + '-' + genArch + '-' + genIB ).toggle()
 
@@ -963,5 +1003,6 @@ LABELS_TEXT[ 'PASSED' ] = 'Passed'
 LABELS_TEXT[ 'FAILED' ] = 'Failed '
 LABELS_TEXT[ 'NOTRUN' ] = 'NotRun' 
 
-
+MAX_STEPS=5
+DEFAULT_STEPS=5
 
