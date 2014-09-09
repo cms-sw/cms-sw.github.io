@@ -3172,12 +3172,24 @@
                     }, 
                     {
                         "arch": "slc5_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc5_amd64_gcc481/www/tue/7.0-tue-14/CMSSW_7_0_X_2014-09-09-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc5_amd64_gcc481/www/tue/7.0-tue-14/CMSSW_7_0_X_2014-09-09-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "2"
+                        }
                     }
                 ], 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.0-tue-14/CMSSW_7_0_X_2014-09-09-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 384, 
+                            "num_failed": 185
+                        }
+                    }
+                ], 
                 "static_checks": "", 
                 "tests_archs": [
                     "slc5_amd64_gcc481", 
@@ -3188,6 +3200,12 @@
                         "arch": "slc6_amd64_gcc481", 
                         "passed": true, 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.0-tue-14/CMSSW_7_0_X_2014-09-09-1400/addOnTests.log", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc5_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc5_amd64_gcc481/www/tue/7.0-tue-14/CMSSW_7_0_X_2014-09-09-1400/addOnTests.log", 
                         "details": {}
                     }
                 ], 
@@ -6248,9 +6266,11 @@
                 "utests": [
                     {
                         "arch": "slc5_amd64_gcc462", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc5_amd64_gcc462/www/tue/5.3-tue-14/CMSSW_5_3_X_2014-09-09-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc5_amd64_gcc462/www/tue/5.3-tue-14/CMSSW_5_3_X_2014-09-09-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "relvals": [], 
@@ -6258,8 +6278,36 @@
                 "tests_archs": [
                     "slc5_amd64_gcc462"
                 ], 
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc5_amd64_gcc462", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc5_amd64_gcc462/www/tue/5.3-tue-14/CMSSW_5_3_X_2014-09-09-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "merged_prs": [], 
+                "hlt_tests": ""
+            }, 
+            {
+                "builds": [], 
+                "compared_tags": "CMSSW_5_3_X_2014-09-09-1400-->CMSSW_5_3_X_2014-09-09-1800", 
+                "utests": [], 
+                "relvals": [], 
+                "static_checks": "", 
+                "tests_archs": [], 
+                "addons": [], 
+                "merged_prs": [
+                    {
+                        "hash": "f38cee3be4bc245cdb2b5913dd34bf3f2aba5ef3", 
+                        "title": "backport of TauolaInterface for Tauola 1.1.4 from 7_2_X to 5_3_X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/5130", 
+                        "number": "5130", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "inugent"
+                    }
+                ], 
                 "hlt_tests": ""
             }
         ], 
