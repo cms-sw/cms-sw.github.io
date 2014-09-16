@@ -33,8 +33,21 @@ This is enough to setup releases. In order to have IBs you also need to.
   - `PKGTOOLS_TAG`: the [PKGTOOLS][] branch to be used.
   - `CMSDIST_TAG`: the [CMSDIST][] branch to be used.
   - `RELEASE_QUEUE`: the [CMSSW][] branch to be used.
-
+  
 - Create a new jenkins rule to build the IB.
+  - In Jenkins, click on "New Item", a form to create a new jenkins item will appear.
+  - On "Item name" write ib-`RELEASE_QUEUE`-`ARCHITECTURE`, select the option "Copy existing Item" and write the name of     the rule that was used to build the previous IB, its name should be something like ib-`PREVIOUS_RELEASE_QUEUE`-`ARCHITECTURE` , click on "OK"
+  - Check that the parameters are correct, and then click on save
+  - Do this for each architecture for which you want to create the IB.
+
+- Create a new jenkins rule to validate the IB.
+  - Follow the same procedure to create the build rule. In this case the new name should be validation-`RELEASE_QUEUE`-`ARCHITECTURE`
+  - Do this for each architecture for which you want to create the IB.
+- Remember to make sure that ib-`RELEASE_QUEUE`-`ARCHITECTURE` triggers validation-`RELEASE_QUEUE`-`ARCHITECTURE` after finishing.
+- Add the new ib to the rule schedule-single-ibs
+  - you can do this by clicking on "configure" in the jenkins rule page.
+  - this also needs to be done for each architecture for which you want to create the IB.
+- Add the new cmssw branch ( Release queue ) to the default parameter RELEASE_QUEUES in the Tag Daily IBs job.
 
 [CMSDIST]: https://github.com/cms-sw/cmsdist
 [PKGTOOLS]: https://github.com/cms-sw/pkgtools
