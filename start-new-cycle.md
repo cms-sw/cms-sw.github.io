@@ -22,6 +22,8 @@ The following needs to happen:
 - Modify
   [cms-bot/releases.py](https://github.com/cms-sw/cms-bot/edit/master/releases.py)
   and add the appropriate entry in `RELEASE_BRANCH_MILESTONE` and `RELEASE_MANAGERS` for the new queue.
+  [cms-bot/releases.map](https://github.com/cms-sw/cms-bot/edit/master/releases.map)
+  and add the production architecture entry for the new release cycle
 
 
 This is enough to setup releases. In order to have IBs you also need to.
