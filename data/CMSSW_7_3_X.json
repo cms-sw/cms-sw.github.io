@@ -127,7 +127,7 @@
                     }
                 }
             ], 
-            "static_checks": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-static-analysis/CMSSW_7_3_X_2014-09-17-1400/slc6_amd64_gcc481/llvm-analysis/index.html", 
+            "static_checks": "", 
             "tests_archs": [
                 "slc6_amd64_gcc481"
             ], 
@@ -175,7 +175,7 @@
                     }
                 }
             ], 
-            "static_checks": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-static-analysis/CMSSW_7_3_X_2014-09-18-0200/slc6_amd64_gcc481/llvm-analysis/index.html", 
+            "static_checks": "", 
             "tests_archs": [
                 "slc6_amd64_gcc481"
             ], 
@@ -769,8 +769,18 @@
                     }
                 }
             ], 
-            "relvals": [], 
-            "static_checks": "", 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/sat/7.3-sat-14/CMSSW_7_3_X_2014-09-20-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 855, 
+                        "num_failed": 15
+                    }
+                }
+            ], 
+            "static_checks": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-static-analysis/CMSSW_7_3_X_2014-09-20-1400/slc6_amd64_gcc481/llvm-analysis/index.html", 
             "tests_archs": [
                 "slc6_amd64_gcc481"
             ], 
@@ -783,6 +793,36 @@
                 }
             ], 
             "merged_prs": [], 
+            "hlt_tests": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/HLT-Validation/CMSSW_7_3_X_2014-09-20-1400/"
+        }, 
+        {
+            "builds": [], 
+            "compared_tags": "CMSSW_7_3_X_2014-09-20-1400-->CMSSW_7_3_X_2014-09-21-0200", 
+            "utests": [], 
+            "relvals": [], 
+            "static_checks": "", 
+            "tests_archs": [], 
+            "addons": [], 
+            "merged_prs": [
+                {
+                    "hash": "a7cad857eb73d82bb3c6c5a79d767296d80050f0", 
+                    "title": "Forward port CMSSW_7_2_X into CMSSW_7_3_X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5450", 
+                    "number": "5450", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cms-sw"
+                }, 
+                {
+                    "hash": "381b4227fbda5e8f4dc27243d8189a568154c30a", 
+                    "title": "Avoid division by zero report by static analyzer.", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5315", 
+                    "number": "5315", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "ktf"
+                }
+            ], 
             "hlt_tests": ""
         }
     ], 
