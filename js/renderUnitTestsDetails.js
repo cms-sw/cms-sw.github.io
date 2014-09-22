@@ -297,7 +297,7 @@ addRowsTable = function( results , arch , ib , table ){
   var counter = 1;
   for ( var key in results ){
     
-    addUnitTestRow( results[ key ] , table , counter , arch , ib  )
+    addUnitTestRow( results[ key ] , table , counter , arch , ib  , results.length )
     counter++
   }
 
@@ -345,22 +345,87 @@ getUnitTestLogAddress = function( arch , ib , packageName ){
   return 'http://cmssdt.cern.ch/SDT/cgi-bin/buildlogs/' + arch +'/' + ib + '/unitTestLogs/' + packageName
 
 }
+
+/**
+ * adds the details of the unit tests to the div
+ */
+addUnitTestsDetail = function( uTestDiv , unitTestResult ){
+
+  var listAll = $( '<small>' )
+  var failedList = $( '<span>' )
+  var passedList = $( '<span>' )
+
+  if ( unitTestResult[ 'errors' ].length > 0 ){
+
+    failedList.append( $('<strong>').text( 'Failed: ' ) )
+    var failedText = ''
+    for( var index in unitTestResult[ 'errors' ] ){
+      
+      if ( index < unitTestResult[ 'errors' ].length -1 ){
+        failedText += unitTestResult[ 'errors' ][ index ] + ', '
+      }else{
+        failedText += unitTestResult[ 'errors' ][ index ]
+      }
+
+    }
+    failedList.append( $( '<span>').append( failedText ) )
+    listAll.append( failedList )
+    listAll.append( $( '<br>' ) )
+  }
+
+
+  if ( unitTestResult[ 'ok' ].length > 0 ){
+
+    passedList.append( $('<strong>').text( 'Passed: ' ) )
+    var passedText = ''
+    for( var index in unitTestResult[ 'ok' ] ){
+
+      if ( index < unitTestResult[ 'ok' ].length -1 ){
+        passedText += unitTestResult[ 'ok' ][ index ] + ', '
+      }else{
+        passedText += unitTestResult[ 'ok' ][ index ] 
+      }
+
+    }
+    passedList.append( $( '<span>').append( passedText ) )
+    listAll.append( passedList )
+  }
+
+
+  uTestDiv.append( listAll )
+
+}
+
 /**
  * Adds the unit a row to the table with the unit test results
  * returns true if everything was ok, false if something failed
  */
-addUnitTestRow = function( unitTestResult , table , counter , arch , ib ) {
+addUnitTestRow = function( unitTestResult , table , counter , arch , ib , totalRows ) {
 
   var row = $( '<tr>' ).attr( 'id' , 'row' + counter + '-' + arch )
   table.append( row )
 
   row.append( $( '<td>' ).append( $( '<b>'  ).text( counter ) ) )
-
   var packageCell = $( '<td>' )
 
-  packageCell.text( unitTestResult[ 'name' ] )
-
+  packageCell.text( unitTestResult[ 'name' ] + ' ' )
   row.append( packageCell )
+
+  var link = $( "<a>" ).attr( "href" , '#' + arch + ';' + ib )
+  link.attr( 'showUtest' , 'utests-div-' + arch + '-' + unitTestResult[ 'name' ].replace( '/' , '-' ) )
+  link.append( $( '<small>' ).append( $( '<small>' ).append( $( '<span>').attr( 'class' , 'glyphicon glyphicon-chevron-right' ) ) ) )
+  link.append( $( '<small>' ).text( 'details' ) )
+  packageCell.append( link )
+  link.click( toggleUTestDetails )
+  packageCell.append( $( '<br>' ) )
+
+  var failingUnitTestsDiv = $( '<div>' ).attr( 'id' , 'utests-div-' + arch + '-' + unitTestResult[ 'name' ].replace( '/' , '-' ) )
+  // this atribube indicates if the div has been shown, to avoid filling it again with the commands
+  // each time the user clicks
+  failingUnitTestsDiv.attr( 'wasShown' , 'no' )
+  packageCell.append( failingUnitTestsDiv )
+  addUnitTestsDetail( failingUnitTestsDiv , unitTestResult )
+  failingUnitTestsDiv.hide()
 
   var numFail = unitTestResult[ 'errors' ].length
   
@@ -373,6 +438,18 @@ addUnitTestRow = function( unitTestResult , table , counter , arch , ib ) {
 
   }
 
+  if ( counter > HIDDEN_ROWS_NUMER ){
+
+    row.hide()
+
+  }
+
+  if ( counter == HIDDEN_ROWS_NUMER ){
+
+    addShowAllRowLink = genAddShowAllRowLink( arch , ib )
+    addShowAllRowLink( table , HIDDEN_ROWS_NUMER , totalRows )
+
+  }
 
 }
 
@@ -562,11 +639,96 @@ listContainsString = function( aString , list ){
 }
 
 //-----------------------------------------------------------------------------
+// Generated Links
+//----------------------------------------------------------------------------
+
+/**
+ * Generates the function with the given arch and given IB to take them into account in the id and url
+ */
+genAddShowAllRowLink = function( genArch, genIB ){
+  
+  /**
+   * Adds to the workflows table a row which has a link which toggles the workflows after the HIDDEN_ROWS_NUMERth
+   */
+  addShowAllRowLink = function( table , startRow , endRow ){
+    
+    var row = $( '<tr>' )
+    var linkCell = $( '<td>' ).attr( 'colspan' , 3 )
+    var showAllLink = getLinkWithGlyph( '#' + genArch + ';' + genIB , 'Show All' , 'glyphicon-chevron-right' , 'showAllLink'+ '-' + genArch + '-' + genIB )
+    showAllLink.click( genToggleHiddenRows( genArch, genIB , startRow , endRow ) )
+    linkCell.append( showAllLink )
+    row.append( linkCell )
+    table.append( row )
+  }
+  return addShowAllRowLink
+}
+//-----------------------------------------------------------------------------
 // Togglers
 // ----------------------------------------------------------------------------
+
+/**
+ * * generates a toggler function for the hidden rows
+ * */
+genToggleHiddenRows = function( genArch , genIB , minRow , maxRow ){
+
+  toggleHiddenRows = function( ){
+    
+    for( var i = minRow + 1; i < maxRow; i++ ){
+      $( '#row' + i + '-' + genArch ).toggle()
+    }
+
+    var showAllLinkText = $( '#span-showAllLink-' + genArch + '-' + genIB )
+    var toggleLinkTextGlyph = $( '#glyph-showAllLink-' + genArch + '-' + genIB )
+  
+    if ( showAllLinkText.text() == 'Show All' ){
+
+      showAllLinkText.text( 'Hide ' )
+      toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-down' )
+
+    }else {
+
+      showAllLinkText.text( 'Show All' )
+      toggleLinkTextGlyph.attr( 'class' , 'glyphicon glyphicon-chevron-right' )
+
+    }
+
+  }
+
+
+return toggleHiddenRows
+
+}
+
+/**
+ * generates a function to toggle the div with the details of the unit tests
+ * changes the glyphicon of the link
+ */
+toggleUTestDetails = function( ){
+  
+  var glyph = $( this ).find( 'span.glyphicon')
+
+  if( glyph.attr( 'class' ) == 'glyphicon glyphicon-chevron-right' ){
+    glyph.attr( 'class' , 'glyphicon glyphicon-chevron-down' )
+  } else {
+    glyph.attr( 'class' , 'glyphicon glyphicon-chevron-right' )
+  }
+
+  var utestToShowID = $(this).attr( 'showutest')
+  var divUtestToShow = $( '#' + utestToShowID )
+
+  if ( divUtestToShow.attr( 'wasShown' ) == 'no' ){
+     divUtestToShow.attr( 'wasShown' , 'yes' )
+  }
+
+  divUtestToShow.toggle()
+}
+
+
+
 
 //------------------------------------------------------------------------------------------------
 // CONSTANTS
 // -----------------------------------------------------------------------------------------------
 
-
+// Determines how many rows are shown by default
+HIDDEN_ROWS_NUMER=20
