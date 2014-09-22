@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>Unit Test Details</title>
+
+	<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+	</head>
+	<body>
+		<script type='text/javascript' src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type='text/javascript' src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script type='text/javascript' src="js/renderUnitTestsDetails.js"></script>
+	
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-10"  id="header"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-10"  id="results"></div>
+		</div>
+
+	<script>
+        
+	$(document).ready(function () {
+		
+          	var hash = document.location.hash.replace( /^#/, '' );
+
+          	console.log( 'hash: ')
+          	console.log( hash )
+		console.log( document.location.toString() )
+
+          	var parts = hash.split( ';' )
+          	ARCH = parts[ 0 ]
+          	var releaseQueue = parts[ 1 ].substring( 0 , parts[ 1 ].lastIndexOf( "_" ) ) 
+          	var ibDate = parts[ 1 ].substring( parts[ 1 ].lastIndexOf( "_" ) + 1 , parts[ 1 ].length ) 
+          
+                IB = parts[ 1 ]
+		console.log( 'I am asked for the followng arch' )
+	  	console.log( ARCH  ) 		 
+		console.log( 'For the follwing IB' )
+		console.log( IB )
+
+		ORIGINAL_ARCH = parts[ 0 ]
+
+
+		// I will check which other architectures are available for this IB
+		readAvailableArchs = function( allAvailableArchs ){
+
+			console.log( 'found this in the file:' )
+			var availArchs = allAvailableArchs[ IB ]
+			console.log( availArchs )
+
+			if ( availArchs == null ){
+
+				var header = getNotFoundIBHeader( IB )
+				$("#header").append( '<br>' )
+				$("#header").append( header )
+
+			}else{
+
+				var archsList = availArchs.split( ',' ) 
+				 if ( !listContainsString( ORIGINAL_ARCH , archsList ) ){
+
+					var header = getNotFoundArchHeader( ORIGINAL_ARCH )
+					$("#header").append( header )
+				}
+
+				var header = getHeader( ARCH , IB )
+                                $("#header").append( header )
+				var navTabs = getNavTabs( archsList , IB )
+				$("#results").append( navTabs )
+				var tabPanes = $( '<div>' ).attr( 'class' , 'tab-content' )
+				$("#results").append( tabPanes )
+ 				fillTabPanes( tabPanes , archsList , IB )
+
+			}
+
+		}
+
+
+		
+		$.getJSON( 'data/UnitTestsAvailableResults.json' , readAvailableArchs )
+
+
+
+	})	
+	
+	</script>
+	</body>
+</html>
