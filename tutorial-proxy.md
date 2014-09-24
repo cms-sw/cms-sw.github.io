@@ -50,11 +50,11 @@ then you are connecting to the git server using the [SSH protocol](http://git-sc
 In this case, git relis on ssh to handle the connection; in order to connect
 through a SOCKS proxy you have to configure ssh itself, setting the `ProxyCommand`
 option in your ~/.ssh/config file:
-```
+
     Host github.com
         User                    git
         ProxyCommand            nc -x localhost:1080 %h %p
-```
+
 For more information, see [ssh_config(5)](http://www.openbsd.org/cgi-bin/man.cgi?query=ssh_config&sektion=5&manpath=OpenBSD+Current&arch=amd64&format=html).
 
 
@@ -72,12 +72,10 @@ similar to that used by SSH or GIT.
 
 In this case git uses libcurl to handle the connection; the version of git bundled
 with CMSSW supports different kinds of proxies: SOCKS4, SOCKS4a, SOCKS5, and HTTP/HTTPS.
-In order to connect through any proxy supported by libcurl, you can set the
-`http.proxy` or `https.proxy` git options:
-```
-    git config http.proxy=socks5://localhost:1080
-    git config https.proxy=socks5://localhost:1080
-```
+In order to connect through any proxy supported by libcurl, you can set the `http.proxy` 
+option:
+
+    git config --global http.proxy socks5://localhost:1080
 
 For more information, see the `--proxy` option in [curl(1)](http://curl.haxx.se/docs/manpage.html)
 and the `http.proxy` entry in [git-config(1)](https://www.kernel.org/pub/software/scm/git/docs/git-config.html).
@@ -94,9 +92,8 @@ then you are connecting to the git server using the [GIT protocol](git-scm.com/b
 In this case, it is possible to use a helper command to connect through any kind of proxy.
 A simple script is included with CMSSW, to connect through a SOCKS5 proxy: `git-proxy`.
 You can configure git to use it with
-```
-    git config core.gitproxy "git-proxy"
-    git config socks.proxy "localhost:1080"
-```
+
+    git config --global core.gitproxy "git-proxy"
+    git config --global socks.proxy "localhost:1080"
 
 For more information, see `git-proxy --help`.
