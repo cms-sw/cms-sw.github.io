@@ -1304,9 +1304,11 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc481", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.GEANT10-thu-14/CMSSW_7_3_GEANT10_X_2014-09-25-1400/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.GEANT10-thu-14/CMSSW_7_3_GEANT10_X_2014-09-25-1400/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "0"
+                    }
                 }
             ], 
             "relvals": [], 
@@ -1314,7 +1316,14 @@
             "tests_archs": [
                 "slc6_amd64_gcc481"
             ], 
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.GEANT10-thu-14/CMSSW_7_3_GEANT10_X_2014-09-25-1400/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "merged_prs": [
                 {
                     "is_merge_commit": true, 
@@ -1641,6 +1650,144 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": true, 
                     "author_login": "davidlt"
+                }
+            ], 
+            "hlt_tests": ""
+        }, 
+        {
+            "builds": [], 
+            "compared_tags": "CMSSW_7_3_GEANT10_X_2014-09-25-1400-->CMSSW_7_3_GEANT10_X_2014-09-26-0200", 
+            "utests": [], 
+            "relvals": [], 
+            "static_checks": "", 
+            "tests_archs": [], 
+            "addons": [], 
+            "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "5515"
+                    ], 
+                    "hash": "b0aaa2ed5572aeb0702c7751f4a42e146843a38c", 
+                    "number": "b0aaa2e", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "8e3e72fd5d708086e84c3c5756a2ee696d24e20c", 
+                    "title": "New feature. Thinned collections.", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5515", 
+                    "number": "5515", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "wddgit"
+                }, 
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "5533", 
+                        "5551", 
+                        "5546", 
+                        "5547", 
+                        "5538", 
+                        "5543", 
+                        "5527", 
+                        "5565", 
+                        "5563", 
+                        "5534"
+                    ], 
+                    "hash": "036a04d549a6a2cff279970d4e916a0889e3d027", 
+                    "number": "036a04d", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "2ee5872baa0613e5772e659ea976ef26c0e7d261", 
+                    "title": "73X - Fix PAT Egamma ClassVersions for 70X compatibility", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5534", 
+                    "number": "5534", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "vadler"
+                }, 
+                {
+                    "hash": "5f5fa1b4142a37941eeba84f159ff145f6a2fde4", 
+                    "title": "New HLT jet ptave filter allowing to specify eta ranges for tagging/probeing jet", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5527", 
+                    "number": "5527", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "fruboes"
+                }, 
+                {
+                    "hash": "1cb59870536febaa979dd55ce6b5c9973fc7abc7", 
+                    "title": "Compilation using clang finds yet another unused variable declaration.", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5565", 
+                    "number": "5565", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "gartung"
+                }, 
+                {
+                    "hash": "56f389761e181f889e7c630c50fe1f56ec19b1bf", 
+                    "title": "DQMOffline/Trigger -- cleaning old obsolete DQMOffline top or egamma related files (73X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5546", 
+                    "number": "5546", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "ebouvier"
+                }, 
+                {
+                    "hash": "754ae237938a00e6163f54e3cd4e828df83a7220", 
+                    "title": "removed obsolete calls to flag isData", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5538", 
+                    "number": "5538", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "JetMETdqmval"
+                }, 
+                {
+                    "hash": "833fc9c8c8288e30df5e38d9c9ef78174fda8c4c", 
+                    "title": "Avoid crash of GenParticles2HepMCConverter", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5533", 
+                    "number": "5533", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "jhgoh"
+                }, 
+                {
+                    "hash": "78534b0e397885f5d85f379cd995fcc61e25896e", 
+                    "title": "changing iso lepton path names (73X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5547", 
+                    "number": "5547", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "ebouvier"
+                }, 
+                {
+                    "hash": "cc65a4b42f09a274094e566de822b4505728d5c1", 
+                    "title": "Revert A couple of fixes requested by David A.", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5563", 
+                    "number": "5563", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "cms-sw"
+                }, 
+                {
+                    "hash": "18d7a49659034f4afe52c2d0c9bf7e8e448f7186", 
+                    "title": "Pythia8.200pre2 interface changes", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5551", 
+                    "number": "5551", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "bendavid"
+                }, 
+                {
+                    "hash": "72cb79276ea64fcb001a30b8a70cbffe0d585eac", 
+                    "title": "DQM -- A couple of fixes requested by David A.", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/5543", 
+                    "number": "5543", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "dmitrijus"
                 }
             ], 
             "hlt_tests": ""
