@@ -35,7 +35,17 @@ This is enough to setup releases. In order to have IBs you also need to.
   - `PKGTOOLS_TAG`: the [PKGTOOLS][] branch to be used.
   - `CMSDIST_TAG`: the [CMSDIST][] branch to be used.
   - `RELEASE_QUEUE`: the [CMSSW][] branch to be used.
-  
+
+  The following options are currently only available for `CMSSW_7_2_DEVEL_X` and `CMSSW_7_3_GEANT10_X`:
+
+  - `DISABLED`: optional, if present, regardless of it's value, the associated IB will be disabled.
+  - `ADDITIONAL_TESTS`: optional. Can have one or more of the following values, comma separated:
+    - `HLT`: run special HLT tests
+    - `baseline`: run baseline tests so that pull requests can be checked against this IB.
+    - `static-checks`: run clang static analyser checks.
+    - `dqm-checks`: run dqm specific checks.
+    - If you need to add more, please make sure you modify `build-any-ib` in jenkins as well.
+
 - Create a new jenkins rule to build the IB.
   - In Jenkins, click on "New Item", a form to create a new jenkins item will appear.
   - On "Item name" write ib-`RELEASE_QUEUE`-`ARCHITECTURE`, select the option "Copy existing Item" and write the name of     the rule that was used to build the previous IB, its name should be something like ib-`PREVIOUS_RELEASE_QUEUE`-`ARCHITECTURE` , click on "OK"
