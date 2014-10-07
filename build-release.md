@@ -64,11 +64,8 @@ corresponding tag for PKGTOOLS. For IBs this information is found in the file
     mkdir -p $HERE/$CMSSW_X_Y_Z-build
     cd $HERE/$CMSSW_X_Y_Z-build
     QUEUE=`echo $CMSSW_X_Y_Z | sed -e 's/\(CMSSW_[0-9][0-9]*_[0-9][0-9]*\).*/\1_X/'`
-    git clone git@github.com:cms-sw/cmsdist.git CMSDIST
-    pushd CMSDIST
-      eval $(curl -k -s https://raw.githubusercontent.com/cms-sw/cms-bot/master/config.map | grep "SCRAM_ARCH=$ARCH;" | grep "RELEASE_QUEUE=$QUEUE;")
-      git checkout $CMSDIST_TAG
-    popd
+    eval $(curl -k -s https://raw.githubusercontent.com/cms-sw/cms-bot/master/config.map | grep "SCRAM_ARCH=$ARCH;" | grep "RELEASE_QUEUE=$QUEUE;")
+    git clone -b $CMSDIST_TAG git@github.com:cms-sw/cmsdist.git CMSDIST
     git clone -b $PKGTOOLS_TAG git@github.com:cms-sw/pkgtools.git PKGTOOLS
 
 Now go into the CMSDIST dir and prepare the cmssw.spec (or cmssw-patch.spec for
