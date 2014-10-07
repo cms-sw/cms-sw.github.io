@@ -29,7 +29,7 @@ The following needs to happen:
 This is enough to setup releases. In order to have IBs you also need to.
 
 - [Edit config.map and add the appropriate line for a new
-  IB](https://github.com/cms-sw/cmsdist/edit/IB/CMSSW_7_0_X/stable/config.map).
+  IB](https://github.com/cms-sw/cms-bot/edit/master/config.map).
   The options which need to be provided are:
   - `SCRAM_ARCH`: the architecture for the given IB.
   - `PKGTOOLS_TAG`: the [PKGTOOLS][] branch to be used.

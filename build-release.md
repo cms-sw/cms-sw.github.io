@@ -44,7 +44,7 @@ First of all you need to [create a new release in GitHub](https://github.com/cms
 In order to build you first need to login on your favorite build machine and
 create a working dir, checkout the appropriate version of CMSDIST and the
 corresponding tag for PKGTOOLS. For IBs this information is found in the file
-`CMSDIST/config.map`.
+[cms-bot/config.map](https://github.com/cms-sw/cms-bot/blob/master/config.map).
 
 
     CMSSW_X_Y_Z=<the-release-you-want-to-build>
@@ -66,7 +66,7 @@ corresponding tag for PKGTOOLS. For IBs this information is found in the file
     QUEUE=`echo $CMSSW_X_Y_Z | sed -e 's/\(CMSSW_[0-9][0-9]*_[0-9][0-9]*\).*/\1_X/'`
     git clone git@github.com:cms-sw/cmsdist.git CMSDIST
     pushd CMSDIST
-      eval $(cat config.map | grep "SCRAM_ARCH=$ARCH;" | grep "RELEASE_QUEUE=$QUEUE;")
+      eval $(curl -k -s https://raw.githubusercontent.com/cms-sw/cms-bot/master/config.map | grep "SCRAM_ARCH=$ARCH;" | grep "RELEASE_QUEUE=$QUEUE;")
       git checkout $CMSDIST_TAG
     popd
     git clone -b $PKGTOOLS_TAG git@github.com:cms-sw/pkgtools.git PKGTOOLS
