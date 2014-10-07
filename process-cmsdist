@@ -5,10 +5,10 @@
 from urllib2 import urlopen
 import json
 
-CONFIG_MAP_URL = "https://raw.githubusercontent.com/cms-sw/cmsdist/HEAD/config.map"
+CONFIG_MAP_URL = "https://raw.githubusercontent.com/cms-sw/cms-bot/HEAD/config.map"
 
 if __name__ == "__main__":
-  f = urlopen("https://raw.githubusercontent.com/cms-sw/cmsdist/HEAD/config.map")
+  f = urlopen(CONFIG_MAP_URL)
   lines = f.read()
   entries = [p.strip(";").split(";") for p in lines.split()]
   pairs = [dict([i.split("=") for i in e]) for e in entries]
