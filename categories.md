@@ -21,22 +21,10 @@ related:
 
 ## L2 Conveners
 
-<ul>
+
 {% for category in site.data.categories.categories_to_people %}
-  <li>
-    <b> {{ category[0] | capitalize }} </b>
-    <ul>
-      {% for person in category[1] %}
-        <li>
-          <a href="https://github.com/{{ person }}">
-            {{ person }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </li>
+<b> {{ category[0] }}: </b> {% for person in category[1] %} <a href="https://github.com/{{ person }}"> {{ person }} </a> {% endfor %}
 {% endfor %}
-</ul>
 
 
 ## Package Categories
