@@ -21,11 +21,15 @@ related:
 
 ## L2 Conveners
 
+<ul>
 
-{% for category in site.data.categories.categories_to_people %}
-<b> {{ category[0] }}: </b> {% for person in category[1] %} <a href="https://github.com/{{ person }}"> {{ person }} </a> {% endfor %}
-{% endfor %}
+  {% for category in site.data.categories.categories_to_people %}
+    <li>
+      <b> {{ category[0] }}: </b> {% for person in category[1] %} <a href="https://github.com/{{ person }}"> {{ person }} </a> {% endfor %}
+    </li>
+  {% endfor %}
 
+</ul>
 
 ## Package Categories
 
