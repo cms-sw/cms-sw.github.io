@@ -12,7 +12,9 @@ related:
 <ul>
 {% for person in site.data.categories.L1 %}
   <li>
-    {{ person }}
+    <a href="https://github.com/{{ person }}">
+            {{ person }}
+    </a>
   </li>
 {% endfor %}
 </ul>
@@ -26,7 +28,9 @@ related:
     <ul>
       {% for person in category[1] %}
         <li>
-          {{ person }}
+          <a href="https://github.com/{{ person }}">
+            {{ person }}
+          </a>
         </li>
       {% endfor %}
     </ul>
