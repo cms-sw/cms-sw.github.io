@@ -32,11 +32,11 @@ if you use slcX or by following the instructions for your platform on:
 
 <http://docs.docker.com/installation>
 
-In particular mac and windows user should probably look into:
+In particular mac and windows users should probably look into:
 
 <http://boot2docker.io>
 
-a user mode docker installation.
+for a user mode docker installation (relying on VirtualBox).
 
 On the other hand notice that linux installation will require root access to the
 box or at least to be part of the `docker` UNIX group.
