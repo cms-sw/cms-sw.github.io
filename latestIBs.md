@@ -72,9 +72,9 @@ related:
             {% else %}
               {% assign text_color = 'red'  %}
             {% endif %}  
-            <p style="color:{{ text_color }}">
-             201{{ ib_name_parts[1] }}
-            </p>
+              <small>
+                <a style="color:{{ text_color }}" href="http://cms-sw.github.io/showIB.html#{{ releaseQueue[1][arch]['latest_IB'] }}" > 201{{ ib_name_parts[1] }} </a>                
+              </small>
          {% endif %}
         </td>
       {% endfor %}
