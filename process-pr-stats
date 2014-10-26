@@ -46,11 +46,11 @@ if __name__ == "__main__":
       createdAt = int(issue.created_at.strftime("%s"))
       closedAt = int(issue.closed_at and issue.closed_at.strftime("%s") or datetime.now().strftime("%s"))
       isClosed = issue.closed_at and 1 or 0
-      p = [createdAt, closedAt, issue.number, issue.pull_request and 1 or 0, issue.comments, isClosed, len(labels)]
+      p = [createdAt, closedAt, issue.number, issue.pull_request and 1 or 0, issue.comments, isClosed, len(labels), issue.user.login]
       beforeBegin.append(p)
     print "Saving %s" % filename
     f = open(filename + ".tmp", "w")
-    f.write("Creation,Merge,id,isPr,N. of Comments,Closed,N. Labels\n")
+    f.write("Creation,Merge,id,isPr,N. of Comments,Closed,N. Labels,author\n")
     for p in beforeBegin:
       l = ",".join(str(x) for x in p) + "\n"
       f.write(l)
