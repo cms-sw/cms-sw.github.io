@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+from github import Github
+from argparse import ArgumentParser
+from glob import glob
+from os.path import exists, join, expanduser, basename
+from os import makedirs
+from datetime import datetime
+from os import rename
+
+if __name__ == "__main__":
+  parser = ArgumentParser(usage="%prog <pull-request-id>")
+  args = parser.parse_args()
+
+  gh = Github(login_or_token=open(expanduser("~/.github-token")).read().strip())
+
+  if not exists("data/stats/prs"):
+    makedirs("data/stats/prs")
+  # Filenames is <page>.csv so that we can avoid
+  # parsing ancient PRs.
+
+  repo = gh.get_organization("cms-sw").get_repo("cmssw")
+  iterator = repo.get_issues(sort="created", state="all", direction="asc")
+  for i in xrange(0, 10000):
+    beforeBegin = []
+    filename = "data/stats/prs/%s.csv" % i
+    if exists(filename):
+      f = open(filename, "r")
+      lines = len(f.read().split("\n"))
+      f.close()
+      if lines != 32:
+        print filename + " is too short."
+      else:
+        print "%s exists, skipping." % filename
+        continue
+    try:
+      page = iterator.get_page(i)
+    except:
+      print "Page %s does not exists." % i
+      break
+    if not len(page):
+      break
+
+    print "Processing page %s" % i
+    for issue in page:
+      labels = [l.name for l in issue.labels]
+      createdAt = int(issue.created_at.strftime("%s"))
+      closedAt = int(issue.closed_at and issue.closed_at.strftime("%s") or datetime.now().strftime("%s"))
+      isClosed = issue.closed_at and 1 or 0
+      p = [createdAt, closedAt, issue.number, issue.comments, isClosed, len(labels)]
+      beforeBegin.append(p)
+    print "Saving %s" % filename
+    f = open(filename + ".tmp", "w")
+    f.write("Creation,Merge,id,N. of Comments,Closed,N. Labels\n")
+    for p in beforeBegin:
+      l = ",".join(str(x) for x in p) + "\n"
+      f.write(l)
+    f.close()
+    rename(filename + ".tmp", filename)
