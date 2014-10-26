@@ -14,7 +14,7 @@ RELVAL_LOGS = "pyRelValMatrixLogs.zip"
 
 if __name__ == "__main__":
   parser = ArgumentParser()
-  parser.add_argument("--logdir", type=str, help="where to find the logs")
+  parser.add_argument("--logdir", type=str, help="where to find the logs", required=True)
   parser.add_argument("--filter", type=str, default="")
   parser.add_argument("-n", "--dry-run", dest="dryRun", action="store_true", default=False)
   args = parser.parse_args()
@@ -52,9 +52,10 @@ if __name__ == "__main__":
   # A rule which takes care of converting a few known files in CMSDIST to json.
 
   allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands
-  print(".PHONY: all clean", file=f)
-  print("all: data/cmsdist-config.json " + " ".join(allFiles), file=f)
+  print(".PHONY: all clean pr-stats", file=f)
+  print("all: pr-stats data/cmsdist-config.json " + " ".join(allFiles), file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
+  print("pr-stats:\n\tmkdir -p data/stats && ./process-pr-stats && cat data/stats/prs/*.csv | sort -u -r > data/stats/pr-stats.csv", file=f)
   print("clean:\n\trm -rf data/relvals", file=f)
   print("", file=f)
   for x in pairs:
