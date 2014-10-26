@@ -15,6 +15,11 @@ if __name__ == "__main__":
 
   if not exists("data/stats/prs"):
     makedirs("data/stats/prs")
+
+  # This is the header of the files and will force a rewrite of the file
+  # if a mismatching is found.
+  schema = "Creation,MergeTime,id,isPr,N. of Comments,Closed,N. Labels,author"
+
   # Filenames is <page>.csv so that we can avoid
   # parsing ancient PRs.
 
@@ -25,12 +30,12 @@ if __name__ == "__main__":
     filename = "data/stats/prs/%s.csv" % i
     if exists(filename):
       f = open(filename, "r")
-      lines = len(f.read().split("\n"))
+      lines = f.read().split("\n")
       f.close()
-      if lines != 32:
+      if len(lines) != 32:
         print filename + " is too short."
-      else:
-        print "%s exists, skipping." % filename
+      elif lines[0] == schema:
+        print "%s exists and has the same schema, skipping." % filename
         continue
     try:
       page = iterator.get_page(i)
@@ -44,13 +49,13 @@ if __name__ == "__main__":
     for issue in page:
       labels = [l.name for l in issue.labels]
       createdAt = int(issue.created_at.strftime("%s"))
-      closedAt = int(issue.closed_at and issue.closed_at.strftime("%s") or "NA")
+      closedAt = issue.closed_at and int(issue.closed_at.strftime("%s")) or "NA"
       isClosed = issue.closed_at and 1 or 0
       p = [createdAt, closedAt, issue.number, issue.pull_request and 1 or 0, issue.comments, isClosed, len(labels), issue.user.login]
       beforeBegin.append(p)
     print "Saving %s" % filename
     f = open(filename + ".tmp", "w")
-    f.write("Creation,Merge,id,isPr,N. of Comments,Closed,N. Labels,author\n")
+    f.write(schema + "\n")
     for p in beforeBegin:
       l = ",".join(str(x) for x in p) + "\n"
       f.write(l)
