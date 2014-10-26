@@ -44,7 +44,7 @@ if __name__ == "__main__":
     for issue in page:
       labels = [l.name for l in issue.labels]
       createdAt = int(issue.created_at.strftime("%s"))
-      closedAt = int(issue.closed_at and issue.closed_at.strftime("%s") or datetime.now().strftime("%s"))
+      closedAt = int(issue.closed_at and issue.closed_at.strftime("%s") or "NA")
       isClosed = issue.closed_at and 1 or 0
       p = [createdAt, closedAt, issue.number, issue.pull_request and 1 or 0, issue.comments, isClosed, len(labels), issue.user.login]
       beforeBegin.append(p)
