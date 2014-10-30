@@ -5561,6 +5561,30 @@
                     }
                 ], 
                 "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_2_X_2014-10-30-1400-->CMSSW_7_2_1_patch1", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_2_1_patch1", 
+                "merged_prs": [
+                    {
+                        "hash": "4a42835c1feaf512a6689b2ace22081dade4666f", 
+                        "title": "HLT saveTags fix in filter config - 72X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/5993", 
+                        "number": "5993", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Martin-Grunewald"
+                    }
+                ], 
+                "hlt_tests": "not-found"
             }
         ]
     }, 
@@ -9030,7 +9054,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.DEBUG-thu-14/CMSSW_7_3_DEBUG_X_2014-10-30-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -9043,9 +9074,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.DEBUG-thu-14/CMSSW_7_3_DEBUG_X_2014-10-30-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.DEBUG-thu-14/CMSSW_7_3_DEBUG_X_2014-10-30-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -12730,6 +12763,143 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "davidlange6"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.GEANT10-thu-14/CMSSW_7_3_GEANT10_X_2014-10-30-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_3_GEANT10_X_2014-10-30-0200-->CMSSW_7_3_GEANT10_X_2014-10-30-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.GEANT10-thu-14/CMSSW_7_3_GEANT10_X_2014-10-30-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_3_GEANT10_X_2014-10-30-0200/slc6_amd64_gcc481"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_3_GEANT10_X_2014-10-30-1400", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6104"
+                        ], 
+                        "hash": "ec8394a4425d1c34885eed33f48e04bb7ae088cd", 
+                        "number": "ec8394a", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "191bb3c6774c7b204f251f035a2e1222215ea314", 
+                        "title": "label the processString with _gen for generator specific relvals", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6104", 
+                        "number": "6104", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6036", 
+                            "6102", 
+                            "6069", 
+                            "6052", 
+                            "5977", 
+                            "6074"
+                        ], 
+                        "hash": "883c5be087cc038c5bcd44666aa019f031e7d621", 
+                        "number": "883c5be", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "53b26b4e9c2945d1fcc904c47fa3031449fc73ee", 
+                        "title": "Fix HO timing monitoring", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6052", 
+                        "number": "6052", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "akhukhun"
+                    }, 
+                    {
+                        "hash": "a21f20e35f1d398d140e4074e039631f689dbb3f", 
+                        "title": "Correct a typo in Ele32 path names 73X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6069", 
+                        "number": "6069", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ebouvier"
+                    }, 
+                    {
+                        "hash": "1c012b7781344471d6de0afff800454e14a809be", 
+                        "title": "New flexyble payloads for DT ttrig", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/5977", 
+                        "number": "5977", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "namapane"
+                    }, 
+                    {
+                        "hash": "3f7f7aeb47585bd7696f6a66d328088657e91744", 
+                        "title": "modifications to Razor trigger modules for Run 2 HLT", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6036", 
+                        "number": "6036", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jmduarte"
+                    }, 
+                    {
+                        "hash": "fc6c589f0a3d4d21b3f99bdb9807125b69569208", 
+                        "title": "Update matrix 29 oct14", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6074", 
+                        "number": "6074", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "nancymarinelli"
+                    }, 
+                    {
+                        "hash": "a0e90f1e579bffa9fa12344e178499fa1754f792", 
+                        "title": "shorten more HI relvals that run more than 1 hour", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6102", 
+                        "number": "6102", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6096"
+                        ], 
+                        "hash": "de39632eb3b1aa8468d16c0a3c930e8cee2f5426", 
+                        "number": "de39632", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "7ae5b1934534eb7963a11284070de2aa00e116c2", 
+                        "title": "Event number 32 to 64 bits in IgProf", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6096", 
+                        "number": "6096", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wddgit"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -17927,6 +18097,152 @@
                     }
                 ], 
                 "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.THREADED-thu-14/CMSSW_7_3_THREADED_X_2014-10-30-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.THREADED-thu-14/CMSSW_7_3_THREADED_X_2014-10-30-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_3_THREADED_X_2014-10-30-0200-->CMSSW_7_3_THREADED_X_2014-10-30-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3.THREADED-thu-14/CMSSW_7_3_THREADED_X_2014-10-30-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_3_THREADED_X_2014-10-30-0200/slc6_amd64_gcc481"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_3_THREADED_X_2014-10-30-1400", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6104"
+                        ], 
+                        "hash": "e683c82d211898335f5d3b3f4d6a671ba6078dbe", 
+                        "number": "e683c82", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "191bb3c6774c7b204f251f035a2e1222215ea314", 
+                        "title": "label the processString with _gen for generator specific relvals", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6104", 
+                        "number": "6104", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6102", 
+                            "6052", 
+                            "6036", 
+                            "6069", 
+                            "5977", 
+                            "6074"
+                        ], 
+                        "hash": "779fcb7b9466fc130a8bfe723b026a0d0696526e", 
+                        "number": "779fcb7", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "53b26b4e9c2945d1fcc904c47fa3031449fc73ee", 
+                        "title": "Fix HO timing monitoring", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6052", 
+                        "number": "6052", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "akhukhun"
+                    }, 
+                    {
+                        "hash": "a21f20e35f1d398d140e4074e039631f689dbb3f", 
+                        "title": "Correct a typo in Ele32 path names 73X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6069", 
+                        "number": "6069", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ebouvier"
+                    }, 
+                    {
+                        "hash": "1c012b7781344471d6de0afff800454e14a809be", 
+                        "title": "New flexyble payloads for DT ttrig", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/5977", 
+                        "number": "5977", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "namapane"
+                    }, 
+                    {
+                        "hash": "3f7f7aeb47585bd7696f6a66d328088657e91744", 
+                        "title": "modifications to Razor trigger modules for Run 2 HLT", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6036", 
+                        "number": "6036", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jmduarte"
+                    }, 
+                    {
+                        "hash": "fc6c589f0a3d4d21b3f99bdb9807125b69569208", 
+                        "title": "Update matrix 29 oct14", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6074", 
+                        "number": "6074", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "nancymarinelli"
+                    }, 
+                    {
+                        "hash": "a0e90f1e579bffa9fa12344e178499fa1754f792", 
+                        "title": "shorten more HI relvals that run more than 1 hour", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6102", 
+                        "number": "6102", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6096"
+                        ], 
+                        "hash": "d96323beb799ad756e917c73d49f685b829a180b", 
+                        "number": "d96323b", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "7ae5b1934534eb7963a11284070de2aa00e116c2", 
+                        "title": "Event number 32 to 64 bits in IgProf", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6096", 
+                        "number": "6096", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wddgit"
+                    }
+                ], 
+                "hlt_tests": "not-found"
             }
         ]
     }, 
@@ -20024,7 +20340,20 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-10-30-1400/addOnTests.log", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-10-30-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -20043,15 +20372,19 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-10-30-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-10-30-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }, 
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-10-30-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-10-30-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
