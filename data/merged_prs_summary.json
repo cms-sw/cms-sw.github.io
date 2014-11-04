@@ -6582,15 +6582,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.3.CLANG-tue-02/CMSSW_7_3_CLANG_X_2014-11-04-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.3.CLANG-tue-02/CMSSW_7_3_CLANG_X_2014-11-04-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc481": "Not Found"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.3.CLANG-tue-02/CMSSW_7_3_CLANG_X_2014-11-04-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 167, 
+                            "num_failed": 267
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -12128,7 +12140,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_GEANT10_X_2014-11-02-0200/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.3.GEANT10-tue-02/CMSSW_7_3_GEANT10_X_2014-11-04-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 820, 
+                            "num_failed": 36
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -20504,6 +20526,16 @@
                         "details": {}
                     }, 
                     {
+                        "arch": "osx108_amd64_gcc481", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/osx108_amd64_gcc481/www/tue/7.3-tue-02/CMSSW_7_3_X_2014-11-04-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 2, 
+                            "compError": 2, 
+                            "ignoreWarning": 2
+                        }
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc491", 
                         "passed": "passed", 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.3-tue-02/CMSSW_7_3_X_2014-11-04-0200/new/logAnalysis.pkl", 
@@ -20527,10 +20559,17 @@
                         "details": {
                             "num_fails": "0"
                         }
+                    }, 
+                    {
+                        "arch": "osx108_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/osx108_amd64_gcc481/www/tue/7.3-tue-02/CMSSW_7_3_X_2014-11-04-0200/new/logAnalysis.pkl']", 
+                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_3_X_2014-11-02-0200/slc6_amd64_gcc491", 
+                    "osx108_amd64_gcc481": "Not Found", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2014-11-02-0200/slc6_amd64_gcc481"
                 }, 
                 "relvals": [], 
@@ -20538,6 +20577,7 @@
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
+                    "osx108_amd64_gcc481", 
                     "slc6_amd64_gcc481"
                 ], 
                 "release_name": "CMSSW_7_3_X_2014-11-04-0200", 
