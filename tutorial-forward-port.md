@@ -257,3 +257,39 @@ Push the branch:
 This updates your pull request!
 
 Now wait for the "+1" to arrive.
+
+### Cherry-picking commits for a clean history
+
+Some people have had issues with the above procedure, where extra commits already merged into CMSSW appear in the branch for the pull request.  If this happens to you, the instructions below may help you in cleaning up the history. 
+
+If you need to apply your changes on top of a different point in time (different release, different branch, different ib, whatever), the most basic way is the following.  First list the commits you want to apply, for example with 
+
+    git log --oneline $CMSSW_RELEASE
+
+Then reset your area to the new starting point.  To use a new branch:
+
+    git checkout -b new_starting_point
+
+Or to re-use the current branch (note that this will overwrite your local history in this branch!):
+
+    git reset --hard new_starting_point
+
+Then cherry-pick your commits on top of the new starting point
+
+    git cherry-pick hash1 hash2 hash3 ...
+
+If you expect to run into any conflict, do the cherry-picking one commit at a time, and fix the conflicts as you go.  If you apply them all in one go, git should stop and prompt you to fix things along the way.
+
+If you do not expect conflicts, and/or prefer a more automated way, you can rebase instead of cherry-picking: start from the point where you have done your development, and do:
+
+    git rebase new_starting_point
+
+Sometimes git gets confused while rebasing, and pulls in a lot more code in your local area than cherry-pick. This may not affect the commit history anyway, it will just make rebuilding slower.
+
+Finally, if you need to force git to overwrite a remote branch when pushing, you can us the -f option or prepend a plus to the local branch name.  BE CAREFUL as this will completely replace the remote branch!
+
+    git push -f my-cmssw local_branch:remote_branch
+
+or
+
+    git push my-cmssw +local_branch:remote_branch
