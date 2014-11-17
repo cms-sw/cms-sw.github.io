@@ -36,7 +36,15 @@ In particular mac and windows users should probably look into:
 
 <http://boot2docker.io>
 
-for a user mode docker installation (relying on VirtualBox).
+for a user mode docker installation (relying on VirtualBox). 
+
+Notice that if you want to use CMSSW, you should pass `-s 30000 -m 4096` to
+your `boot2docker init` command or add:
+
+    DiskSize = 30000
+    Memory = 4096
+
+in `~/.boot2docker/profile`.
 
 On the other hand notice that linux installation will require root access to the
 box or at least to be part of the `docker` UNIX group.
