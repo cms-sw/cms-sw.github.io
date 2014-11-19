@@ -5,11 +5,12 @@
             "Configuration/DataProcessing", 
             "Configuration/EventContent", 
             "Configuration/GlobalRuns", 
-            "Configuration/PyReleaseValidation", 
+            "Configuration/StandardSequences"
+        ], 
+        "pdmv": [
             "Configuration/Skimming", 
-            "Configuration/StandardSequences", 
-            "DPGAnalysis/Skims", 
-            "Validation/Tools"
+            "Configuration/PyReleaseValidation", 
+            "DPGAnalysis/Skims"
         ], 
         "core": [
             ".gitignore", 
@@ -70,24 +71,8 @@
             "Utilities/StorageFactory", 
             "Utilities/Testing", 
             "Utilities/Timing", 
-            "Utilities/XrdAdaptor"
-        ], 
-        "visualization": [
-            "Fireworks/Calo", 
-            "Fireworks/Candidates", 
-            "Fireworks/Core", 
-            "Fireworks/Electrons", 
-            "Fireworks/Eve", 
-            "Fireworks/FWInterface", 
-            "Fireworks/GenParticle", 
-            "Fireworks/Geometry", 
-            "Fireworks/Macros", 
-            "Fireworks/Muons", 
-            "Fireworks/ParticleFlow", 
-            "Fireworks/SimData", 
-            "Fireworks/TableWidget", 
-            "Fireworks/Tracks", 
-            "Fireworks/Vertices"
+            "Utilities/XrdAdaptor", 
+            "Validation/Tools"
         ], 
         "geometry": [
             "Configuration/Geometry", 
@@ -145,8 +130,6 @@
             "Geometry/TrackingGeometryAligner", 
             "Geometry/TwentyFivePercentTrackerCommonData", 
             "GeometryReaders/XMLIdealGeometryESSource", 
-            "DataFormats/DetId", 
-            "DataFormats/EcalDetId", 
             "Validation/Geometry", 
             "Validation/MuonRPCGeometry", 
             "SLHCUpgradeSimulations/Geometry", 
@@ -560,30 +543,22 @@
             "Validation/EventGenerator", 
             "IOMC/ParticleGuns"
         ], 
-        "daq": [
-            "Configuration/SiStripDAQ", 
-            "EventFilter/AutoBU", 
-            "EventFilter/Configuration", 
-            "EventFilter/Cosmics", 
-            "EventFilter/ESDigiToRaw", 
-            "EventFilter/EcalDigiToRaw", 
-            "EventFilter/FEDInterface", 
-            "EventFilter/Goodies", 
-            "EventFilter/Message2log4cplus", 
-            "EventFilter/Modules", 
-            "EventFilter/Playback", 
-            "EventFilter/Processor", 
-            "EventFilter/Phase2TrackerRawToDigi", 
-            "EventFilter/RawDataCollector", 
-            "EventFilter/ResourceBroker", 
-            "EventFilter/SMProxyServer", 
-            "EventFilter/ShmBuffer", 
-            "EventFilter/ShmReader", 
-            "EventFilter/SiStripChannelChargeFilter", 
-            "EventFilter/StorageManager", 
-            "EventFilter/Utilities", 
-            "IORawData/DaqSource", 
-            "DataFormats/FEDRawData"
+        "visualization": [
+            "Fireworks/Calo", 
+            "Fireworks/Candidates", 
+            "Fireworks/Core", 
+            "Fireworks/Electrons", 
+            "Fireworks/Eve", 
+            "Fireworks/FWInterface", 
+            "Fireworks/GenParticle", 
+            "Fireworks/Geometry", 
+            "Fireworks/Macros", 
+            "Fireworks/Muons", 
+            "Fireworks/ParticleFlow", 
+            "Fireworks/SimData", 
+            "Fireworks/TableWidget", 
+            "Fireworks/Tracks", 
+            "Fireworks/Vertices"
         ], 
         "reconstruction": [
             "Configuration/EcalTB", 
@@ -1141,6 +1116,8 @@
             "Mixing/Base", 
             "IOMC/EventVertexGenerators", 
             "DataFormats/DTDigi", 
+            "DataFormats/DetId", 
+            "DataFormats/EcalDetId", 
             "DataFormats/EcalDigi", 
             "DataFormats/EcalRawData", 
             "DataFormats/FP420Digi", 
@@ -1263,6 +1240,31 @@
             "TrackPropagation/Geant4e", 
             "Validation/Configuration", 
             "SLHCUpgradeSimulations/L1CaloTrigger"
+        ], 
+        "daq": [
+            "Configuration/SiStripDAQ", 
+            "EventFilter/AutoBU", 
+            "EventFilter/Configuration", 
+            "EventFilter/Cosmics", 
+            "EventFilter/ESDigiToRaw", 
+            "EventFilter/EcalDigiToRaw", 
+            "EventFilter/FEDInterface", 
+            "EventFilter/Goodies", 
+            "EventFilter/Message2log4cplus", 
+            "EventFilter/Modules", 
+            "EventFilter/Playback", 
+            "EventFilter/Processor", 
+            "EventFilter/Phase2TrackerRawToDigi", 
+            "EventFilter/RawDataCollector", 
+            "EventFilter/ResourceBroker", 
+            "EventFilter/SMProxyServer", 
+            "EventFilter/ShmBuffer", 
+            "EventFilter/ShmReader", 
+            "EventFilter/SiStripChannelChargeFilter", 
+            "EventFilter/StorageManager", 
+            "EventFilter/Utilities", 
+            "IORawData/DaqSource", 
+            "DataFormats/FEDRawData"
         ]
     }, 
     "categories_to_people": {
@@ -1279,10 +1281,10 @@
             "nclopezo", 
             "cmsbuild"
         ], 
-        "visualization": [
-            "Dr15Jones", 
-            "alja", 
-            "ktf"
+        "pdmv": [
+            "srimanob", 
+            "boudoul", 
+            "franzoni"
         ], 
         "geometry": [
             "Dr15Jones", 
@@ -1313,15 +1315,20 @@
             "rcastello", 
             "cerminar"
         ], 
+        "operations": [
+            "franzoni", 
+            "davidlange6"
+        ], 
         "generators": [
             "thuer", 
             "covarell", 
             "vciulli", 
             "bendavid"
         ], 
-        "daq": [
-            "mommsen", 
-            "emeschi"
+        "visualization": [
+            "Dr15Jones", 
+            "alja", 
+            "ktf"
         ], 
         "reconstruction": [
             "slava77", 
@@ -1331,19 +1338,16 @@
             "mulhearn"
         ], 
         "dqm": [
-            "ojeda", 
             "deguio", 
-            "rovere", 
             "danduggan"
         ], 
         "simulation": [
             "mdhildreth", 
             "civanch"
         ], 
-        "operations": [
-            "vlimant", 
-            "franzoni", 
-            "davidlange6"
+        "daq": [
+            "mommsen", 
+            "emeschi"
         ]
     }, 
     "people_to_categories": {
@@ -1355,20 +1359,20 @@
         "cmsdoxy": [
             "docs"
         ], 
-        "thuer": [
-            "generators"
+        "srimanob": [
+            "pdmv"
         ], 
         "lveldere": [
             "fastsim"
         ], 
-        "diguida": [
-            "alca"
+        "thuer": [
+            "generators"
         ], 
         "mommsen": [
             "daq"
         ], 
-        "ojeda": [
-            "dqm"
+        "diguida": [
+            "alca"
         ], 
         "covarell": [
             "generators"
@@ -1411,9 +1415,6 @@
         "cerminar": [
             "alca"
         ], 
-        "rovere": [
-            "dqm"
-        ], 
         "perrotta": [
             "hlt"
         ], 
@@ -1423,8 +1424,8 @@
         "ggovi": [
             "db"
         ], 
-        "vlimant": [
-            "operations"
+        "boudoul": [
+            "pdmv"
         ], 
         "vadler": [
             "analysis"
@@ -1444,7 +1445,8 @@
             "tests"
         ], 
         "franzoni": [
-            "operations"
+            "operations", 
+            "pdmv"
         ], 
         "StoyanStoynev": [
             "reconstruction"
