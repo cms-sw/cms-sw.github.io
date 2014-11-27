@@ -22,6 +22,7 @@ genAddSummaryRow = function( genArch , genIB ){
     var labelsTable = $( '<table>' ).attr( 'id' , 'summarylabelsTable' +'-' + genArch ).attr( 'align' ,'right' ) 
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Passed:' ) ) )
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Failed:' ) ) )
+    labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'DAS Error:' ) ) )
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Not run:' ) ) )
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Total:' ) ) )
 
@@ -119,7 +120,6 @@ getLinkLabelToResultToResLabel = function( arch , ib , stepNumber , workflowName
  * and adds the commands for each step. they are hidden by default
  */
 fillWorkflowCell = function( cell , workflowID , workflowShortName , numToShow , arch , ib ){
-
   cell.append( $( '<span>' ).text( workflowID + ' ' +  workflowShortName + '  ' ) )
 
     
@@ -166,6 +166,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
   // this is to fill all the rows with cells
   var numCells = 0;
+  // this is to know how many steps to show when searching for commands
   var numToShow = 0
 
   var nothingRun = true;
@@ -185,23 +186,16 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
       nothingRun = false;
       if ( errors > 0 ){
-
         resLabel.attr( 'class' , 'label').attr( 'style' , 'background-color:' + PASSED_ERRORS_COLOR )
-
       }else if ( warnings > 0 ){
-
         resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + PASSED_WARNINGS_COLOR )
-
       }else{
-
         resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + PASSED_COLOR )
-
       }
 
       var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '' )
       link.append( resLabel )
       var cell = $( '<td>' ).append( link )
-
       row.append( cell )
 
 
@@ -220,14 +214,26 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
       resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + FAILED_COLOR  )
 
-     
-
-
-
     }else if( text == 'NOTRUN' ){
 
       resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + NOT_RUN_COLOR )
       row.append( $( '<td>' ).append( resLabel ) )
+
+    }else if( text == 'DAS_ERROR' ){
+
+      numToShow++;
+
+      nothingRun = false;
+      resLabel.attr( 'class' , 'label label-danger')
+      row.attr( 'class' , 'danger' )
+
+      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '' )
+      link.append( resLabel )
+      var cell = $( '<td>' ).append( link )
+      row.append( cell )
+
+      resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + DAS_ERROR_COLOR  )
+
 
     }else {
 
@@ -276,7 +282,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
  
   // I add the contents here after the number of workflows to show has been caculated
-  fillWorkflowCell( workflowCell , workflowResult.id , workflowResult.name.split( '+' )[0] , numToShow , arch , ib )
+  fillWorkflowCell( workflowCell, workflowResult.id, workflowResult.name.split( '+' )[0], numToShow, arch, ib )
 
 
   // fill the missing cells to have 5 in total
@@ -314,6 +320,7 @@ addRowsTable = function( results , arch , ib , table , progressBar ){
     var resultsDict = {
       "PASSED" : 0,
       "FAILED" : 0,
+      "DAS_ERROR" : 0,
       "NOTRUN" : 0,
       "TOTAL"  : 0
     }
@@ -424,9 +431,6 @@ getNavTabs = function( archsList , ibName ){
 
     var tabLink = $( '<a>' ).attr( 'href' , '#' + archName + '-tab' )
     
-    //var itemID = archName + '-' + ibName + '-tabLiItem'
-   // item.attr( 'id' , itemID )
-   // var tabID = archName + '-' + ibName + '-tab'
     tabLink.click( genShowTab( tabLink ) )
 
     tabLink.text( archName )
@@ -667,14 +671,16 @@ getLegendTable = function( ){
   var table = $( '<table>' ).attr( 'class' , 'table table-condensed' ).attr( 'style' , 'border: none;' )
 
   var row1 = $( '<tr>' )
-  addLegendCell( row1 , PASSED_COLOR , LABELS_TEXT[ 'PASSED' ] , 'Passed without error or warning messages' )
-  addLegendCell( row1 , PASSED_ERRORS_COLOR , LABELS_TEXT[ 'PASSED' ] , 'Passed with error messages' )
-  addLegendCell( row1 , NOT_RUN_COLOR , LABELS_TEXT[ 'NOTRUN' ] , 'Not run' )
+  addLegendCell( row1, PASSED_COLOR, LABELS_TEXT[ 'PASSED' ], 'Passed without error or warning messages' )
+  addLegendCell( row1, PASSED_ERRORS_COLOR, LABELS_TEXT[ 'PASSED' ], 'Passed with error messages' )
+  addLegendCell( row1, NOT_RUN_COLOR, LABELS_TEXT[ 'NOTRUN' ], 'Not run' )
+
   table.append( row1 )
 
   var row2 = $( '<tr>' )
-  addLegendCell( row2 , PASSED_WARNINGS_COLOR , LABELS_TEXT[ 'PASSED' ] , 'Passed with warning messages' )
-  addLegendCell( row2 , FAILED_COLOR , LABELS_TEXT[ 'FAILED' ] , 'Failed' )
+  addLegendCell( row2, PASSED_WARNINGS_COLOR , LABELS_TEXT[ 'PASSED' ], 'Passed with warning messages' )
+  addLegendCell( row2, FAILED_COLOR , LABELS_TEXT[ 'FAILED' ], 'Failed' )
+  addLegendCell( row2, DAS_ERROR_COLOR, LABELS_TEXT[ 'DAS_ERROR' ], 'DAS error' )
   table.append( row2 )
 
 
@@ -704,7 +710,6 @@ getHeader = function( arch, ibName ){
   var legendRow = $( '<div>' ).attr( 'class' , 'row' )
   legendRow.append( legendDiv )
   var legendTable = getLegendTable()
-  legendTable.hide()
   legendDiv.append( legendTable )
   var toggleLegend = genToggleLegend( legendTable )
   legendLink.click( toggleLegend )
@@ -997,11 +1002,13 @@ PASSED_WARNINGS_COLOR = 'rgb(92, 145, 92)'
 PASSED_ERRORS_COLOR = 'rgb(230, 188, 99)'
 FAILED_COLOR = 'rgb(217, 83, 79)'
 NOT_RUN_COLOR = 'rgb(153, 153, 153)' 
+DAS_ERROR_COLOR = 'rgb(255, 153, 204)'
 
 LABELS_TEXT = {}
 LABELS_TEXT[ 'PASSED' ] = 'Passed'
 LABELS_TEXT[ 'FAILED' ] = 'Failed '
 LABELS_TEXT[ 'NOTRUN' ] = 'NotRun' 
+LABELS_TEXT[ 'DAS_ERROR' ] = 'DAS-Err'
 
 MAX_STEPS=5
 DEFAULT_STEPS=5
