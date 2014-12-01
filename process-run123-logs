@@ -34,7 +34,7 @@ if __name__ == "__main__":
                     "name": workflow,
                     "steps": [{"status": x} for x in stepResults],
                     "order": sum([10-i for (i, x) in enumerate(stepResults)
-                                       if x == "FAILED" or x == "DAS_RESULTS" or x == "TIMEOUT"])
+                                       if x == "FAILED" or x == "DAS_ERROR" or x == "TIMEOUT"])
                    })
   # Does the same for errors and warnings.
   warningsFile = join(dirname(args.input), "runTheMatrixMsgs.pkl")
