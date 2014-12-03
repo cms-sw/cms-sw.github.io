@@ -1541,7 +1541,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_2_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c51bb8976319109e52ecb84dc109c5b58c6747eb", 
+                        "title": "RPC DQM occupancy plot bug fix", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6619", 
+                        "number": "6619", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "acimmino"
+                    }, 
+                    {
+                        "hash": "2854fd403731fd0714fe41468e0f8c994689ff28", 
+                        "title": "added setcurrentfolder missing in MuonIsolationDQM.cc", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6743", 
+                        "number": "6743", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "folguera"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -3605,6 +3624,12 @@
                         "passed": true, 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.3-wed-14/CMSSW_7_3_X_2014-12-03-1400/addOnTests.log", 
                         "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.3-wed-14/CMSSW_7_3_X_2014-12-03-1400/addOnTests.log", 
+                        "details": {}
                     }
                 ], 
                 "builds": [
@@ -3633,9 +3658,11 @@
                     }, 
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.3-wed-14/CMSSW_7_3_X_2014-12-03-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.3-wed-14/CMSSW_7_3_X_2014-12-03-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -3697,7 +3724,7 @@
                         "author_login": "vadler"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -3710,7 +3737,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_3_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "9c9b2611df9b5e8bb8d0150ec374b10c559f9986", 
+                        "title": "added setcurrentfolder missing in MuonIsolationDQM.cc", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6742", 
+                        "number": "6742", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "folguera"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -4156,7 +4193,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2014-12-03-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -4175,9 +4219,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2014-12-03-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2014-12-03-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "461"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -4294,6 +4340,34 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_CLANG_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6742", 
+                            "6758"
+                        ], 
+                        "hash": "13057c092b6d9cdbaa44ba17604aebe305edcb15", 
+                        "number": "13057c0", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9c9b2611df9b5e8bb8d0150ec374b10c559f9986", 
+                        "title": "added setcurrentfolder missing in MuonIsolationDQM.cc", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6742", 
+                        "number": "6742", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "folguera"
+                    }, 
+                    {
+                        "hash": "c5c153f4530718508f11c53e2470e4687300c11d", 
+                        "title": "fixing crash when sumw2 is called more than one time", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6758", 
+                        "number": "6758", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -5388,6 +5462,34 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6742", 
+                            "6758"
+                        ], 
+                        "hash": "8cb316dd8d78867e4c58331aa77ee53deee29f89", 
+                        "number": "8cb316d", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9c9b2611df9b5e8bb8d0150ec374b10c559f9986", 
+                        "title": "added setcurrentfolder missing in MuonIsolationDQM.cc", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6742", 
+                        "number": "6742", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "folguera"
+                    }, 
+                    {
+                        "hash": "c5c153f4530718508f11c53e2470e4687300c11d", 
+                        "title": "fixing crash when sumw2 is called more than one time", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6758", 
+                        "number": "6758", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6744", 
                             "6654"
                         ], 
@@ -6138,7 +6240,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_GEANT10_X_2014-12-03-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.GEANT10-wed-02/CMSSW_7_4_GEANT10_X_2014-12-03-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1007, 
+                            "num_failed": 4
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -6405,6 +6517,34 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_GEANT10_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6742", 
+                            "6758"
+                        ], 
+                        "hash": "d9fa03be232e6c34455eccaf5d9a40ffdf970724", 
+                        "number": "d9fa03b", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9c9b2611df9b5e8bb8d0150ec374b10c559f9986", 
+                        "title": "added setcurrentfolder missing in MuonIsolationDQM.cc", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6742", 
+                        "number": "6742", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "folguera"
+                    }, 
+                    {
+                        "hash": "c5c153f4530718508f11c53e2470e4687300c11d", 
+                        "title": "fixing crash when sumw2 is called more than one time", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6758", 
+                        "number": "6758", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -7128,7 +7268,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-14/CMSSW_7_4_ICC_X_2014-12-03-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -7144,15 +7291,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-14/CMSSW_7_4_ICC_X_2014-12-03-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-14/CMSSW_7_4_ICC_X_2014-12-03-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "222"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2014-12-03-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-14/CMSSW_7_4_ICC_X_2014-12-03-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 165, 
+                            "num_failed": 267
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -7252,6 +7411,33 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6742"
+                        ], 
+                        "hash": "d2e1faa8272d1f14c51316c0405e23b8f21ac97b", 
+                        "number": "d2e1faa", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9c9b2611df9b5e8bb8d0150ec374b10c559f9986", 
+                        "title": "added setcurrentfolder missing in MuonIsolationDQM.cc", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6742", 
+                        "number": "6742", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "folguera"
+                    }, 
+                    {
+                        "hash": "c5c153f4530718508f11c53e2470e4687300c11d", 
+                        "title": "fixing crash when sumw2 is called more than one time", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6758", 
+                        "number": "6758", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
                     {
                         "hash": "72fe2b856292ec762f654dffb230b3e7589742d7", 
                         "title": "fix in PFJetID calculation due to change in PFJet fraction calculation", 
@@ -8338,6 +8524,34 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6742", 
+                            "6758"
+                        ], 
+                        "hash": "88b1018be366382f0975c2c7f6e6571897fafc13", 
+                        "number": "88b1018", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9c9b2611df9b5e8bb8d0150ec374b10c559f9986", 
+                        "title": "added setcurrentfolder missing in MuonIsolationDQM.cc", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6742", 
+                        "number": "6742", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "folguera"
+                    }, 
+                    {
+                        "hash": "c5c153f4530718508f11c53e2470e4687300c11d", 
+                        "title": "fixing crash when sumw2 is called more than one time", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6758", 
+                        "number": "6758", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -19947,6 +20161,34 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6742", 
+                            "6758"
+                        ], 
+                        "hash": "427c33bf0ecb1553d01d0e27e3ca1c98e36a20dd", 
+                        "number": "427c33b", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9c9b2611df9b5e8bb8d0150ec374b10c559f9986", 
+                        "title": "added setcurrentfolder missing in MuonIsolationDQM.cc", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6742", 
+                        "number": "6742", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "folguera"
+                    }, 
+                    {
+                        "hash": "c5c153f4530718508f11c53e2470e4687300c11d", 
+                        "title": "fixing crash when sumw2 is called more than one time", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6758", 
+                        "number": "6758", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6744", 
                             "6654"
                         ], 
@@ -22092,6 +22334,33 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6742"
+                        ], 
+                        "hash": "d2e1faa8272d1f14c51316c0405e23b8f21ac97b", 
+                        "number": "d2e1faa", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9c9b2611df9b5e8bb8d0150ec374b10c559f9986", 
+                        "title": "added setcurrentfolder missing in MuonIsolationDQM.cc", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6742", 
+                        "number": "6742", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "folguera"
+                    }, 
+                    {
+                        "hash": "c5c153f4530718508f11c53e2470e4687300c11d", 
+                        "title": "fixing crash when sumw2 is called more than one time", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6758", 
+                        "number": "6758", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
                     {
                         "hash": "72fe2b856292ec762f654dffb230b3e7589742d7", 
                         "title": "fix in PFJetID calculation due to change in PFJet fraction calculation", 
