@@ -1812,7 +1812,26 @@
                 "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2014-12-03-0200/slc6_amd64_gcc491", 
                 "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2014-12-03-0200/slc6_amd64_gcc481"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4-wed-02/CMSSW_7_4_X_2014-12-03-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 992, 
+                        "num_failed": 9
+                    }
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-02/CMSSW_7_4_X_2014-12-03-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 989, 
+                        "num_failed": 10
+                    }
+                }
+            ], 
             "static_checks": "slc6_amd64_gcc491", 
             "isIB": true, 
             "tests_archs": [
@@ -1916,7 +1935,14 @@
             "hlt_tests": "found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-14/CMSSW_7_4_X_2014-12-03-1400/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc481", 
@@ -1929,9 +1955,11 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc481", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-14/CMSSW_7_4_X_2014-12-03-1400/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-14/CMSSW_7_4_X_2014-12-03-1400/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "0"
+                    }
                 }
             ], 
             "cmsdistTags": {
@@ -2037,6 +2065,15 @@
             "tests_archs": [], 
             "release_name": "CMSSW_7_4_X", 
             "merged_prs": [
+                {
+                    "hash": "72fe2b856292ec762f654dffb230b3e7589742d7", 
+                    "title": "fix in PFJetID calculation due to change in PFJet fraction calculation", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6744", 
+                    "number": "6744", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "JetMETdqmval"
+                }, 
                 {
                     "hash": "bfec92a56a506121f3bddaa177c0d287bc94e2e7", 
                     "title": "Drop CA8 jets from RECO/AOD", 
