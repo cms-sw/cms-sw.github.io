@@ -23,6 +23,7 @@ genAddSummaryRow = function( genArch , genIB ){
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Passed:' ) ) )
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Failed:' ) ) )
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'DAS Error:' ) ) )
+    labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Timeout:' ) ) )
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Not run:' ) ) )
     labelsTable.append( $( '<tr>' ).append( $( '<td>' ).text( 'Total:' ) ) )
 
@@ -234,7 +235,22 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
       resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + DAS_ERROR_COLOR  )
 
+    }else if( text == 'TIMEOUT' ){
 
+      numToShow++;
+
+      nothingRun = false;
+      resLabel.attr( 'class' , 'label label-danger')
+      row.attr( 'class' , 'danger' )
+
+      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '' )
+      link.append( resLabel )
+      var cell = $( '<td>' ).append( link )
+      row.append( cell )
+
+      resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + TIMEOUT_COLOR  )
+
+ 
     }else {
 
       resLabel.attr( 'class' , 'label label-default')
@@ -321,6 +337,7 @@ addRowsTable = function( results , arch , ib , table , progressBar ){
       "PASSED" : 0,
       "FAILED" : 0,
       "DAS_ERROR" : 0,
+      "TIMEOUT" : 0,
       "NOTRUN" : 0,
       "TOTAL"  : 0
     }
@@ -683,6 +700,9 @@ getLegendTable = function( ){
   addLegendCell( row2, DAS_ERROR_COLOR, LABELS_TEXT[ 'DAS_ERROR' ], 'DAS error' )
   table.append( row2 )
 
+  var row3 = $( '<tr>' )
+  addLegendCell( row3, TIMEOUT_COLOR, LABELS_TEXT[ 'TIMEOUT' ], 'Timed Out' )
+  table.append( row3 )
 
   return table
 
@@ -1003,12 +1023,14 @@ PASSED_ERRORS_COLOR = 'rgb(230, 188, 99)'
 FAILED_COLOR = 'rgb(217, 83, 79)'
 NOT_RUN_COLOR = 'rgb(153, 153, 153)' 
 DAS_ERROR_COLOR = 'rgb(255, 153, 204)'
+TIMEOUT_COLOR = 'rgb(0, 128, 255)'
 
 LABELS_TEXT = {}
 LABELS_TEXT[ 'PASSED' ] = 'Passed'
 LABELS_TEXT[ 'FAILED' ] = 'Failed '
 LABELS_TEXT[ 'NOTRUN' ] = 'NotRun' 
 LABELS_TEXT[ 'DAS_ERROR' ] = 'DAS-Err'
+LABELS_TEXT[ 'TIMEOUT' ] = 'TimeOut'
 
 MAX_STEPS=5
 DEFAULT_STEPS=5
