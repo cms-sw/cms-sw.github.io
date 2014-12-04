@@ -2234,8 +2234,18 @@
                 "slc6_amd64_gcc491": "IB/CMSSW_7_3_X_2014-12-04-0200/slc6_amd64_gcc491", 
                 "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2014-12-04-0200/slc6_amd64_gcc481"
             }, 
-            "relvals": [], 
-            "static_checks": "not-found", 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.3-thu-02/CMSSW_7_3_X_2014-12-04-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 1006, 
+                        "num_failed": 2
+                    }
+                }
+            ], 
+            "static_checks": "slc6_amd64_gcc491", 
             "isIB": true, 
             "tests_archs": [
                 "slc6_amd64_gcc491", 
@@ -2253,7 +2263,7 @@
                     "author_login": "folguera"
                 }
             ], 
-            "hlt_tests": "not-found"
+            "hlt_tests": "found"
         }, 
         {
             "addons": [], 
@@ -2266,7 +2276,26 @@
             "isIB": false, 
             "tests_archs": [], 
             "release_name": "CMSSW_7_3_X", 
-            "merged_prs": [], 
+            "merged_prs": [
+                {
+                    "hash": "b316c490c2e7c693655d1ca7cc02b73db7d0f921", 
+                    "title": "Update for Top PAG Validation code", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6565", 
+                    "number": "6565", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "ebouvier"
+                }, 
+                {
+                    "hash": "1e5ba5fc9cb81b9eba91a7a78d72d31d5764ea82", 
+                    "title": "hltGetConfiguration: improve handling of input files and datasets (73x)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6754", 
+                    "number": "6754", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "fwyzard"
+                }
+            ], 
             "hlt_tests": "not-found"
         }
     ]
