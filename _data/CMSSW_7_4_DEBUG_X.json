@@ -154,7 +154,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEBUG-thu-14/CMSSW_7_4_DEBUG_X_2014-12-04-1400/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -167,9 +174,11 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEBUG-thu-14/CMSSW_7_4_DEBUG_X_2014-12-04-1400/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEBUG-thu-14/CMSSW_7_4_DEBUG_X_2014-12-04-1400/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
                 }
             ], 
             "cmsdistTags": {
@@ -243,6 +252,24 @@
             "tests_archs": [], 
             "release_name": "CMSSW_7_4_X", 
             "merged_prs": [
+                {
+                    "hash": "c55e40e281d93c28f8e6b79b705a40824e12c2f8", 
+                    "title": "add a customisation fragment to check EventSetup usage", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6783", 
+                    "number": "6783", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "fwyzard"
+                }, 
+                {
+                    "hash": "e4bf1a0fd0635b3596211624e3d6f3b052503888", 
+                    "title": "Forward port of  #6570 and #6637 to 74x", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6657", 
+                    "number": "6657", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "dmitrijus"
+                }, 
                 {
                     "hash": "9cc9b84be1dba6037fa7205e5b68a3bc73221c71", 
                     "title": "74X - update TopRefSel", 

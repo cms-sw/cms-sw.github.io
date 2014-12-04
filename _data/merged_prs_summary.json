@@ -3935,6 +3935,14 @@
                         "passed": "passed", 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-12-04-1400/new/logAnalysis.pkl", 
                         "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-12-04-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
                     }
                 ], 
                 "compared_tags": "CMSSW_7_3_X_2014-12-04-0200-->CMSSW_7_3_X_2014-12-04-1400", 
@@ -3944,16 +3952,24 @@
                         "passed": "unknown", 
                         "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-12-04-1400/new/logAnalysis.pkl']", 
                         "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-12-04-1400/new/logAnalysis.pkl']", 
+                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
-                    "slc6_amd64_gcc491": "IB/CMSSW_7_3_X_2014-12-04-0200/slc6_amd64_gcc491"
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_3_X_2014-12-04-0200/slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2014-12-04-1400/slc6_amd64_gcc481"
                 }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
-                    "slc6_amd64_gcc491"
+                    "slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481"
                 ], 
                 "release_name": "CMSSW_7_3_X_2014-12-04-1400", 
                 "merged_prs": [
@@ -4797,8 +4813,95 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.CLANG-thu-14/CMSSW_7_4_CLANG_X_2014-12-04-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 3586, 
+                            "miscError": 183, 
+                            "compError": 7228, 
+                            "ignoreWarning": 2244, 
+                            "linkError": 2232
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2014-12-04-0200-->CMSSW_7_4_CLANG_X_2014-12-04-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.CLANG-thu-14/CMSSW_7_4_CLANG_X_2014-12-04-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "Not Found"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_CLANG_X_2014-12-04-1400", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6769", 
+                            "6760", 
+                            "6741", 
+                            "6767"
+                        ], 
+                        "hash": "e6d90fffed381b989e130d21725fe7b0ccd7bea5", 
+                        "number": "e6d90ff", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "1c0b4073f192aa913ace7c641bd262286f63f1d1", 
+                        "title": "Fix electron GSF sequence for fastsim HLT (74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6769", 
+                        "number": "6769", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrotta"
+                    }, 
+                    {
+                        "hash": "5431bdf57c86a6e25ab2971b08a0e7fe4a9ab3c1", 
+                        "title": "switch CCC on in Conversion Pattern recognition", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6760", 
+                        "number": "6760", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "VinInn"
+                    }, 
+                    {
+                        "hash": "b4cd00422db1d91e13e54538d4ea537657f32c79", 
+                        "title": "Add SetCurrentFolder Missing in MuonIsolationDQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6741", 
+                        "number": "6741", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "folguera"
+                    }, 
+                    {
+                        "hash": "b02afe9d165878188fcaaf73d369ccb572a36b1a", 
+                        "title": "hltGetConfiguration: add a hilton-specific customisation", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6767", 
+                        "number": "6767", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_CLANG_X_2014-12-04-0200-->CMSSW_7_4_CLANG_X", 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2014-12-04-1400-->CMSSW_7_4_CLANG_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -4872,54 +4975,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "acimmino"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "6769", 
-                            "6760", 
-                            "6741", 
-                            "6767"
-                        ], 
-                        "hash": "e6d90fffed381b989e130d21725fe7b0ccd7bea5", 
-                        "number": "e6d90ff", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "1c0b4073f192aa913ace7c641bd262286f63f1d1", 
-                        "title": "Fix electron GSF sequence for fastsim HLT (74X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6769", 
-                        "number": "6769", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "perrotta"
-                    }, 
-                    {
-                        "hash": "5431bdf57c86a6e25ab2971b08a0e7fe4a9ab3c1", 
-                        "title": "switch CCC on in Conversion Pattern recognition", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6760", 
-                        "number": "6760", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "VinInn"
-                    }, 
-                    {
-                        "hash": "b4cd00422db1d91e13e54538d4ea537657f32c79", 
-                        "title": "Add SetCurrentFolder Missing in MuonIsolationDQM", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6741", 
-                        "number": "6741", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "folguera"
-                    }, 
-                    {
-                        "hash": "b02afe9d165878188fcaaf73d369ccb572a36b1a", 
-                        "title": "hltGetConfiguration: add a hilton-specific customisation", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6767", 
-                        "number": "6767", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "fwyzard"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -5082,7 +5137,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEBUG-thu-14/CMSSW_7_4_DEBUG_X_2014-12-04-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -5095,9 +5157,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEBUG-thu-14/CMSSW_7_4_DEBUG_X_2014-12-04-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEBUG-thu-14/CMSSW_7_4_DEBUG_X_2014-12-04-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "1"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -5171,6 +5235,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "c55e40e281d93c28f8e6b79b705a40824e12c2f8", 
+                        "title": "add a customisation fragment to check EventSetup usage", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6783", 
+                        "number": "6783", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "e4bf1a0fd0635b3596211624e3d6f3b052503888", 
+                        "title": "Forward port of  #6570 and #6637 to 74x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6657", 
+                        "number": "6657", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmitrijus"
+                    }, 
                     {
                         "hash": "9cc9b84be1dba6037fa7205e5b68a3bc73221c71", 
                         "title": "74X - update TopRefSel", 
@@ -7675,7 +7757,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.GEANT10-thu-14/CMSSW_7_4_GEANT10_X_2014-12-04-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -7688,9 +7777,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.GEANT10-thu-14/CMSSW_7_4_GEANT10_X_2014-12-04-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.GEANT10-thu-14/CMSSW_7_4_GEANT10_X_2014-12-04-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -8776,6 +8867,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "c55e40e281d93c28f8e6b79b705a40824e12c2f8", 
+                        "title": "add a customisation fragment to check EventSetup usage", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6783", 
+                        "number": "6783", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "e4bf1a0fd0635b3596211624e3d6f3b052503888", 
+                        "title": "Forward port of  #6570 and #6637 to 74x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6657", 
+                        "number": "6657", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmitrijus"
+                    }, 
                     {
                         "hash": "9cc9b84be1dba6037fa7205e5b68a3bc73221c71", 
                         "title": "74X - update TopRefSel", 
@@ -22458,52 +22567,15 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.4-thu-12/CMSSW_7_4_X_2014-11-27-1200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.4-thu-12/CMSSW_7_4_X_2014-11-27-1200/new/logAnalysis.pkl", 
-                        "details": {}
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_X_2014-11-27-0200-->CMSSW_7_4_X_2014-11-27-1200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.4-thu-12/CMSSW_7_4_X_2014-11-27-1200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc481": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.4-thu-12/CMSSW_7_4_X_2014-11-27-1200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 933, 
-                            "num_failed": 15
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc481"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X_2014-11-27-1200", 
                 "merged_prs": [
                     {
@@ -24198,6 +24270,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "c55e40e281d93c28f8e6b79b705a40824e12c2f8", 
+                        "title": "add a customisation fragment to check EventSetup usage", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6783", 
+                        "number": "6783", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "e4bf1a0fd0635b3596211624e3d6f3b052503888", 
+                        "title": "Forward port of  #6570 and #6637 to 74x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6657", 
+                        "number": "6657", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmitrijus"
+                    }, 
                     {
                         "hash": "9cc9b84be1dba6037fa7205e5b68a3bc73221c71", 
                         "title": "74X - update TopRefSel", 
