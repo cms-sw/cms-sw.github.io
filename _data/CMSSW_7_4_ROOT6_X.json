@@ -1206,7 +1206,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.ROOT6-thu-14/CMSSW_7_4_ROOT6_X_2014-12-04-1400/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -1219,9 +1226,11 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.ROOT6-thu-14/CMSSW_7_4_ROOT6_X_2014-12-04-1400/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.ROOT6-thu-14/CMSSW_7_4_ROOT6_X_2014-12-04-1400/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "6"
+                    }
                 }
             ], 
             "cmsdistTags": {
@@ -1298,6 +1307,44 @@
             "tests_archs": [], 
             "release_name": "CMSSW_7_4_ROOT6_X", 
             "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "6783", 
+                        "6657", 
+                        "6780"
+                    ], 
+                    "hash": "1fc37f629370fd487190acb006030ef8724bde3d", 
+                    "number": "1fc37f6", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "c55e40e281d93c28f8e6b79b705a40824e12c2f8", 
+                    "title": "add a customisation fragment to check EventSetup usage", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6783", 
+                    "number": "6783", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "fwyzard"
+                }, 
+                {
+                    "hash": "e4bf1a0fd0635b3596211624e3d6f3b052503888", 
+                    "title": "Forward port of  #6570 and #6637 to 74x", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6657", 
+                    "number": "6657", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "dmitrijus"
+                }, 
+                {
+                    "hash": "9cc9b84be1dba6037fa7205e5b68a3bc73221c71", 
+                    "title": "74X - update TopRefSel", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6780", 
+                    "number": "6780", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "vadler"
+                }, 
                 {
                     "is_merge_commit": true, 
                     "brought_prs": [
