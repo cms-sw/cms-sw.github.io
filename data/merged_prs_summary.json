@@ -4086,6 +4086,12 @@
                         "passed": true, 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.3-fri-14/CMSSW_7_3_X_2014-12-05-1400/addOnTests.log", 
                         "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2014-12-05-1400/addOnTests.log", 
+                        "details": {}
                     }
                 ], 
                 "builds": [
@@ -4114,9 +4120,11 @@
                     }, 
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2014-12-05-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2014-12-05-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -5752,7 +5760,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
+                        "title": "Fixes and updates to the HLT Run2 menu", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6799", 
+                        "number": "6799", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "perrotta"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -8735,9 +8753,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.GEANT10-fri-14/CMSSW_7_4_GEANT10_X_2014-12-05-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.GEANT10-fri-14/CMSSW_7_4_GEANT10_X_2014-12-05-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -9974,15 +9994,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ICC_X_2014-12-05-0200-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2014-12-05-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "miscError": 14, 
+                            "compError": 2, 
+                            "linkError": 118
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2014-12-05-0200-->CMSSW_7_4_ICC_X_2014-12-05-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2014-12-05-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2014-12-04-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ICC_X_2014-12-05-1400", 
                 "merged_prs": [
                     {
                         "hash": "3f2d886bb78c1218373d5473cea8cd265d247814", 
@@ -10010,6 +10052,30 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "abdoulline"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2014-12-05-1400-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "merged_prs": [
+                    {
+                        "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
+                        "title": "Fixes and updates to the HLT Run2 menu", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6799", 
+                        "number": "6799", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "perrotta"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -23580,15 +23646,35 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_THREADED_X_2014-12-05-0200-->CMSSW_7_4_THREADED_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-05-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2014-12-05-0200-->CMSSW_7_4_THREADED_X_2014-12-05-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-05-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2014-12-04-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_THREADED_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_THREADED_X_2014-12-05-1400", 
                 "merged_prs": [
                     {
                         "is_merge_commit": true, 
@@ -23629,6 +23715,20 @@
                         "author_login": "abdoulline"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2014-12-05-1400-->CMSSW_7_4_THREADED_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_THREADED_X", 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -25838,7 +25938,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2014-12-05-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -25860,15 +25967,17 @@
                 "compared_tags": "CMSSW_7_4_X_2014-12-05-0200-->CMSSW_7_4_X_2014-12-05-1400", 
                 "utests": [
                     {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2014-12-05-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc491", 
                         "passed": "unknown", 
                         "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-14/CMSSW_7_4_X_2014-12-05-1400/new/logAnalysis.pkl']", 
-                        "details": {}
-                    }, 
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2014-12-05-1400/new/logAnalysis.pkl']", 
                         "details": {}
                     }
                 ], 
@@ -25926,7 +26035,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
+                        "title": "Fixes and updates to the HLT Run2 menu", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6799", 
+                        "number": "6799", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "perrotta"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
