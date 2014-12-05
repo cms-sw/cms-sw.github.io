@@ -4159,7 +4159,7 @@
                         "author_login": "Martin-Grunewald"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -5257,34 +5257,40 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_CLANG_X_2014-12-05-0200-->CMSSW_7_4_CLANG_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2014-12-05-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 4293, 
+                            "miscError": 6, 
+                            "compError": 7225, 
+                            "ignoreWarning": 1568, 
+                            "linkError": 2232
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2014-12-05-0200-->CMSSW_7_4_CLANG_X_2014-12-05-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2014-12-05-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "Not Found"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_CLANG_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_CLANG_X_2014-12-05-1400", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "6799"
-                        ], 
-                        "hash": "270ae14670f60e99c9f0925646f9b7c698734ee2", 
-                        "number": "270ae14", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
-                        "title": "Fixes and updates to the HLT Run2 menu", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6799", 
-                        "number": "6799", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "perrotta"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -5322,6 +5328,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "abdoulline"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2014-12-05-1400-->CMSSW_7_4_CLANG_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_CLANG_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6799"
+                        ], 
+                        "hash": "270ae14670f60e99c9f0925646f9b7c698734ee2", 
+                        "number": "270ae14", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
+                        "title": "Fixes and updates to the HLT Run2 menu", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6799", 
+                        "number": "6799", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrotta"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -5798,6 +5837,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "397f232ef1a38935b9701aaa606d58b978320a1c", 
+                        "title": "Calibration stream files are added and the script is improved.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6796", 
+                        "number": "6796", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "batinkov"
+                    }, 
                     {
                         "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
                         "title": "Fixes and updates to the HLT Run2 menu", 
@@ -10077,7 +10125,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2014-12-05-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -10094,15 +10149,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2014-12-05-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2014-12-05-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "222"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2014-12-04-1400/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2014-12-05-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 165, 
+                            "num_failed": 267
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -10152,6 +10219,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "397f232ef1a38935b9701aaa606d58b978320a1c", 
+                        "title": "Calibration stream files are added and the script is improved.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6796", 
+                        "number": "6796", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "batinkov"
+                    }, 
                     {
                         "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
                         "title": "Fixes and updates to the HLT Run2 menu", 
@@ -11691,9 +11767,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2014-12-05-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2014-12-05-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "6"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -23755,7 +23833,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-05-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -23770,9 +23855,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-05-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-05-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -26182,6 +26269,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "397f232ef1a38935b9701aaa606d58b978320a1c", 
+                        "title": "Calibration stream files are added and the script is improved.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6796", 
+                        "number": "6796", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "batinkov"
+                    }, 
                     {
                         "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
                         "title": "Fixes and updates to the HLT Run2 menu", 
