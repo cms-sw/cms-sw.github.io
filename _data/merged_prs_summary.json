@@ -1203,9 +1203,62 @@
                 "hlt_tests": "found"
             }, 
             {
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.2-mon-02/CMSSW_7_2_X_2014-12-08-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.2-mon-02/CMSSW_7_2_X_2014-12-08-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_2_X_2014-12-05-0200-->CMSSW_7_2_X_2014-12-08-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.2-mon-02/CMSSW_7_2_X_2014-12-08-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "2"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_2_X_2014-12-08-0200/slc6_amd64_gcc481"
+                }, 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.2-mon-02/CMSSW_7_2_X_2014-12-08-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 802, 
+                            "num_failed": 28
+                        }
+                    }
+                ], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_2_X_2014-12-08-0200", 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_2_X_2014-12-05-0200-->CMSSW_7_2_X", 
+                "compared_tags": "CMSSW_7_2_X_2014-12-08-0200-->CMSSW_7_2_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -2352,6 +2405,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_3_X", 
                 "merged_prs": [
+                    {
+                        "hash": "96e53c0a62d5326391851ecc566472c7b1ea5f6b", 
+                        "title": "chi2 valuemap and pixelveto", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6806", 
+                        "number": "6806", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "matteosan1"
+                    }, 
                     {
                         "hash": "c1eb1c60a5b7895fa3369bc1953020d9ff2877d3", 
                         "title": "73X: Further HLT cleanup and bug-fixes", 
@@ -3794,7 +3856,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "Not Found"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.CLANG-mon-14/CMSSW_7_4_CLANG_X_2014-12-08-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 152, 
+                            "num_failed": 267
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -3884,12 +3956,60 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6814", 
+                            "6628", 
+                            "6807", 
+                            "6821"
+                        ], 
+                        "hash": "3d96411408fc611816bb02c951e80ff01dbdca52", 
+                        "number": "3d96411", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "52d6253503a0dac8350ee92b60801ec8c5578c80", 
+                        "title": "74X: Further HLT cleanup and bug-fixes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6814", 
+                        "number": "6814", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "hash": "4f72239e7c3e06a2848a67294d9b02cbcd1572c5", 
+                        "title": "Fix of HLT path name in validation code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6821", 
+                        "number": "6821", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "686c8d0cb4efd184576958b29ce4ebe08632883c", 
+                        "title": "extend the AOD content for EXO Long-Lived needs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6628", 
+                        "number": "6628", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "quertenmont"
+                    }, 
+                    {
+                        "hash": "27dda41a9b1d15bfe044d41feb91038acdb5a959", 
+                        "title": "chi2 and pixelveto", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6807", 
+                        "number": "6807", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "matteosan1"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6618", 
                             "6565", 
                             "6813", 
+                            "6798", 
                             "6762", 
                             "6788", 
-                            "6798", 
                             "6686", 
                             "6754", 
                             "6763", 
@@ -4554,7 +4674,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -4570,9 +4697,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -4628,6 +4757,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "4f2181eeb5b838a6c2f88d67cbd9cc71f51f11d4", 
+                        "title": "Revert Nominalcollision2015 default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6830", 
+                        "number": "6830", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-sw"
+                    }, 
                     {
                         "hash": "52d6253503a0dac8350ee92b60801ec8c5578c80", 
                         "title": "74X: Further HLT cleanup and bug-fixes", 
@@ -7898,6 +8036,54 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6814", 
+                            "6628", 
+                            "6807", 
+                            "6821"
+                        ], 
+                        "hash": "0295641c914f7384a9737ea33632323e9d633363", 
+                        "number": "0295641", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "52d6253503a0dac8350ee92b60801ec8c5578c80", 
+                        "title": "74X: Further HLT cleanup and bug-fixes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6814", 
+                        "number": "6814", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "hash": "4f72239e7c3e06a2848a67294d9b02cbcd1572c5", 
+                        "title": "Fix of HLT path name in validation code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6821", 
+                        "number": "6821", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "686c8d0cb4efd184576958b29ce4ebe08632883c", 
+                        "title": "extend the AOD content for EXO Long-Lived needs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6628", 
+                        "number": "6628", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "quertenmont"
+                    }, 
+                    {
+                        "hash": "27dda41a9b1d15bfe044d41feb91038acdb5a959", 
+                        "title": "chi2 and pixelveto", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6807", 
+                        "number": "6807", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "matteosan1"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6618", 
                             "6565", 
                             "6798", 
@@ -9218,6 +9404,15 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "hash": "4f2181eeb5b838a6c2f88d67cbd9cc71f51f11d4", 
+                        "title": "Revert Nominalcollision2015 default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6830", 
+                        "number": "6830", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-sw"
+                    }, 
+                    {
                         "hash": "52d6253503a0dac8350ee92b60801ec8c5578c80", 
                         "title": "74X: Further HLT cleanup and bug-fixes", 
                         "url": "https://github.com/cms-sw/cmssw/pull/6814", 
@@ -9431,56 +9626,15 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT6-mon-14/CMSSW_7_4_ROOT6_X_2014-12-01-1400/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "error", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT6-mon-14/CMSSW_7_4_ROOT6_X_2014-12-01-1400/new/logAnalysis.pkl", 
-                        "details": {
-                            "miscError": 45, 
-                            "ignoreWarning": 45, 
-                            "linkError": 171
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-01-0200-->CMSSW_7_4_ROOT6_X_2014-12-01-1400", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "failed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT6-mon-14/CMSSW_7_4_ROOT6_X_2014-12-01-1400/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "27"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT6-mon-14/CMSSW_7_4_ROOT6_X_2014-12-01-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 175, 
-                            "num_failed": 281
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X_2014-12-01-1400", 
                 "merged_prs": [
                     {
@@ -10870,6 +11024,54 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6814", 
+                            "6628", 
+                            "6807", 
+                            "6821"
+                        ], 
+                        "hash": "db267f33dac1a4189d0ae8c18acfc3e66fccfaa0", 
+                        "number": "db267f3", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "52d6253503a0dac8350ee92b60801ec8c5578c80", 
+                        "title": "74X: Further HLT cleanup and bug-fixes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6814", 
+                        "number": "6814", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "hash": "4f72239e7c3e06a2848a67294d9b02cbcd1572c5", 
+                        "title": "Fix of HLT path name in validation code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6821", 
+                        "number": "6821", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "686c8d0cb4efd184576958b29ce4ebe08632883c", 
+                        "title": "extend the AOD content for EXO Long-Lived needs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6628", 
+                        "number": "6628", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "quertenmont"
+                    }, 
+                    {
+                        "hash": "27dda41a9b1d15bfe044d41feb91038acdb5a959", 
+                        "title": "chi2 and pixelveto", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6807", 
+                        "number": "6807", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "matteosan1"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -12461,6 +12663,54 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6814", 
+                            "6628", 
+                            "6807", 
+                            "6821"
+                        ], 
+                        "hash": "5f094bba8bbf2b8fe153fa58317151bd35927d9f", 
+                        "number": "5f094bb", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "52d6253503a0dac8350ee92b60801ec8c5578c80", 
+                        "title": "74X: Further HLT cleanup and bug-fixes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6814", 
+                        "number": "6814", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "hash": "4f72239e7c3e06a2848a67294d9b02cbcd1572c5", 
+                        "title": "Fix of HLT path name in validation code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6821", 
+                        "number": "6821", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "686c8d0cb4efd184576958b29ce4ebe08632883c", 
+                        "title": "extend the AOD content for EXO Long-Lived needs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6628", 
+                        "number": "6628", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "quertenmont"
+                    }, 
+                    {
+                        "hash": "27dda41a9b1d15bfe044d41feb91038acdb5a959", 
+                        "title": "chi2 and pixelveto", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6807", 
+                        "number": "6807", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "matteosan1"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -14171,6 +14421,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "4f2181eeb5b838a6c2f88d67cbd9cc71f51f11d4", 
+                        "title": "Revert Nominalcollision2015 default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6830", 
+                        "number": "6830", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-sw"
+                    }, 
                     {
                         "hash": "52d6253503a0dac8350ee92b60801ec8c5578c80", 
                         "title": "74X: Further HLT cleanup and bug-fixes", 
