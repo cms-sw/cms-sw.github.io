@@ -90,12 +90,15 @@ genAddShowAllRowLink = function( genArch, genIB ){
 /**
  * returns the link address for a given Ib and an arch
  */
-getlinkAddress = function( arch , ib , step , workflowName , workflowID ){
+getlinkAddress = function( arch , ib , step , workflowName , workflowID, wasDASErr ){
 
   var filename = ''
-  filename = 'step' + ( parseInt( step ) + 1 ) + '_' + workflowName + '.log'
+  if ( !wasDASErr ) {
+    filename = 'step' + ( parseInt( step ) + 1 ) + '_' + workflowName + '.log'
+  }else{
+    filename = 'step1_dasquery.log'
+  }
   
-   
   var address = 'http://cmssdt.cern.ch/SDT/cgi-bin/buildlogs/' + arch + '/' + ib + '/pyRelValMatrixLogs/run/' + workflowID + '_' + workflowName + '/' + filename
 
   return address;
@@ -105,9 +108,9 @@ getlinkAddress = function( arch , ib , step , workflowName , workflowID ){
 /**
  * returns a link to the result log of the relval with the label given as a parameter
  */
-getLinkLabelToResultToResLabel = function( arch , ib , stepNumber , workflowName , workflowId , text ){
- 
-  var linkAddress = getlinkAddress( arch , ib , stepNumber , workflowName , workflowId )
+getLinkLabelToResultToResLabel = function( arch , ib , stepNumber , workflowName , workflowId , text, wasDASErr ){
+  
+  var linkAddress = getlinkAddress( arch , ib , stepNumber , workflowName , workflowId, wasDASErr )
   var link = $( "<a>" ).attr( "href" , linkAddress ) 
   link.attr( 'style' , 'color:black' )
   link.append( $( '<small>' ).text( text ) )
@@ -194,7 +197,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
         resLabel.attr( 'class' , 'label' ).attr( 'style' , 'background-color:' + PASSED_COLOR )
       }
 
-      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '' )
+      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '', false )
       link.append( resLabel )
       var cell = $( '<td>' ).append( link )
       row.append( cell )
@@ -208,7 +211,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
       resLabel.attr( 'class' , 'label label-danger')
       row.attr( 'class' , 'danger' )
 
-      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '' )
+      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '', false )
       link.append( resLabel )
       var cell = $( '<td>' ).append( link )
       row.append( cell )
@@ -228,7 +231,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
       resLabel.attr( 'class' , 'label label-danger')
       row.attr( 'class' , 'danger' )
 
-      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '' )
+      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '', true )
       link.append( resLabel )
       var cell = $( '<td>' ).append( link )
       row.append( cell )
@@ -243,7 +246,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
       resLabel.attr( 'class' , 'label label-danger')
       row.attr( 'class' , 'danger' )
 
-      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '' )
+      var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '', false )
       link.append( resLabel )
       var cell = $( '<td>' ).append( link )
       row.append( cell )
