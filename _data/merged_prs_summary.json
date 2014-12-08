@@ -476,7 +476,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_6_2_X_SLHC", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "5bd94b573fbd85b8d747a180b060c10d2243ba7a", 
+                        "title": "Method2 for phase II", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6811", 
+                        "number": "6811", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "lihux25"
+                    }, 
+                    {
+                        "hash": "88334194ca9e56ab22ebb35fa53ae5797439735e", 
+                        "title": "Set pointers to null in case the destructor tries to delete them", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/1", 
+                        "number": "1", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mark-grimes"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -609,9 +628,52 @@
                 "hlt_tests": "not-found"
             }, 
             {
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.1-mon-02/CMSSW_7_1_X_2014-12-08-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.1-mon-02/CMSSW_7_1_X_2014-12-08-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_1_X_2014-11-30-0200-->CMSSW_7_1_X_2014-12-08-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.1-mon-02/CMSSW_7_1_X_2014-12-08-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "2"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_1_X_2014-12-08-0200/slc6_amd64_gcc481"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_1_X_2014-12-08-0200", 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_1_X_2014-11-30-0200-->CMSSW_7_1_X", 
+                "compared_tags": "CMSSW_7_1_X_2014-12-08-0200-->CMSSW_7_1_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -3618,6 +3680,34 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6785", 
+                            "6776"
+                        ], 
+                        "hash": "3d7206a2b3f07624a388600ef8321be62c63a1f4", 
+                        "number": "3d7206a", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a362d6971a6e9c12c0c7f9d252ea5eb9814ca9dd", 
+                        "title": "Switching default tau MVA input to ConfDB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6776", 
+                        "number": "6776", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jpavel"
+                    }, 
+                    {
+                        "hash": "f9a0c031f1dd9931595b8a24fa860baa82b2784d", 
+                        "title": "postLs1 custom miniaod", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6785", 
+                        "number": "6785", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6790"
                         ], 
                         "hash": "d66fa99922a5ebcc989496e82dda02be48503491", 
@@ -4271,6 +4361,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "a362d6971a6e9c12c0c7f9d252ea5eb9814ca9dd", 
+                        "title": "Switching default tau MVA input to ConfDB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6776", 
+                        "number": "6776", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "jpavel"
+                    }, 
                     {
                         "hash": "f9a0c031f1dd9931595b8a24fa860baa82b2784d", 
                         "title": "postLs1 custom miniaod", 
@@ -5930,6 +6029,34 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6785", 
+                            "6776"
+                        ], 
+                        "hash": "a09aeb9c0d313cf6c64ab4eb088a2c98bc46039d", 
+                        "number": "a09aeb9", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a362d6971a6e9c12c0c7f9d252ea5eb9814ca9dd", 
+                        "title": "Switching default tau MVA input to ConfDB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6776", 
+                        "number": "6776", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jpavel"
+                    }, 
+                    {
+                        "hash": "f9a0c031f1dd9931595b8a24fa860baa82b2784d", 
+                        "title": "postLs1 custom miniaod", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6785", 
+                        "number": "6785", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -7659,6 +7786,34 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6785", 
+                            "6776"
+                        ], 
+                        "hash": "5d2c8eb584f2c74ff6503ec4484ecd9916115812", 
+                        "number": "5d2c8eb", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a362d6971a6e9c12c0c7f9d252ea5eb9814ca9dd", 
+                        "title": "Switching default tau MVA input to ConfDB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6776", 
+                        "number": "6776", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jpavel"
+                    }, 
+                    {
+                        "hash": "f9a0c031f1dd9931595b8a24fa860baa82b2784d", 
+                        "title": "postLs1 custom miniaod", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6785", 
+                        "number": "6785", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6790"
                         ], 
                         "hash": "5d4071e6e79404769346f60dee95b4d5c0d9ba2b", 
@@ -9007,6 +9162,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "a362d6971a6e9c12c0c7f9d252ea5eb9814ca9dd", 
+                        "title": "Switching default tau MVA input to ConfDB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6776", 
+                        "number": "6776", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "jpavel"
+                    }, 
                     {
                         "hash": "f9a0c031f1dd9931595b8a24fa860baa82b2784d", 
                         "title": "postLs1 custom miniaod", 
@@ -10637,6 +10801,34 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6785", 
+                            "6776"
+                        ], 
+                        "hash": "5446a6055e1495739da12ec8e0fe65ba5ef5370a", 
+                        "number": "5446a60", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a362d6971a6e9c12c0c7f9d252ea5eb9814ca9dd", 
+                        "title": "Switching default tau MVA input to ConfDB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6776", 
+                        "number": "6776", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jpavel"
+                    }, 
+                    {
+                        "hash": "f9a0c031f1dd9931595b8a24fa860baa82b2784d", 
+                        "title": "postLs1 custom miniaod", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6785", 
+                        "number": "6785", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -21302,44 +21494,17 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.THREADED-mon-02/CMSSW_7_4_THREADED_X_2014-12-01-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.THREADED-mon-02/CMSSW_7_4_THREADED_X_2014-12-01-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_THREADED_X_2014-11-29-1400-->CMSSW_7_4_THREADED_X_2014-12-01-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.THREADED-mon-02/CMSSW_7_4_THREADED_X_2014-12-01-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2014-12-01-0200/slc6_amd64_gcc491"
                 }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X_2014-12-01-0200", 
                 "merged_prs": [
                     {
@@ -21562,7 +21727,7 @@
                     }
                 ], 
                 "cmsdistTags": {
-                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2014-12-01-0200/slc6_amd64_gcc491"
+                    "slc6_amd64_gcc491": "Not Found"
                 }, 
                 "relvals": [
                     {
@@ -21660,7 +21825,7 @@
                     }
                 ], 
                 "cmsdistTags": {
-                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2014-12-01-0200/slc6_amd64_gcc491"
+                    "slc6_amd64_gcc491": "Not Found"
                 }, 
                 "relvals": [
                     {
@@ -21794,7 +21959,7 @@
                     }
                 ], 
                 "cmsdistTags": {
-                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2014-12-01-0200/slc6_amd64_gcc491"
+                    "slc6_amd64_gcc491": "Not Found"
                 }, 
                 "relvals": [
                     {
@@ -22844,6 +23009,34 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6785", 
+                            "6776"
+                        ], 
+                        "hash": "dc953ba73d0b0c52f4af8fc9930d004990731e76", 
+                        "number": "dc953ba", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a362d6971a6e9c12c0c7f9d252ea5eb9814ca9dd", 
+                        "title": "Switching default tau MVA input to ConfDB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6776", 
+                        "number": "6776", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jpavel"
+                    }, 
+                    {
+                        "hash": "f9a0c031f1dd9931595b8a24fa860baa82b2784d", 
+                        "title": "postLs1 custom miniaod", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6785", 
+                        "number": "6785", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6790"
                         ], 
                         "hash": "1467a37871b2ac01d0ed017569eb93ca585b3fe9", 
@@ -23708,44 +23901,17 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.4-mon-02/CMSSW_7_4_X_2014-12-01-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.4-mon-02/CMSSW_7_4_X_2014-12-01-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_X_2014-11-30-1400-->CMSSW_7_4_X_2014-12-01-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.4-mon-02/CMSSW_7_4_X_2014-12-01-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2014-12-01-0200/slc6_amd64_gcc481"
                 }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc481"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X_2014-12-01-0200", 
                 "merged_prs": [], 
                 "hlt_tests": "not-found"
@@ -23800,7 +23966,7 @@
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "Not Found", 
-                    "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2014-12-01-0200/slc6_amd64_gcc481"
+                    "slc6_amd64_gcc481": "Not Found"
                 }, 
                 "relvals": [
                     {
@@ -23919,7 +24085,7 @@
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "Not Found", 
-                    "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2014-12-01-0200/slc6_amd64_gcc481"
+                    "slc6_amd64_gcc481": "Not Found"
                 }, 
                 "relvals": [
                     {
@@ -24038,7 +24204,7 @@
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "Not Found", 
-                    "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2014-12-01-0200/slc6_amd64_gcc481"
+                    "slc6_amd64_gcc481": "Not Found"
                 }, 
                 "relvals": [
                     {
@@ -25139,6 +25305,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "a362d6971a6e9c12c0c7f9d252ea5eb9814ca9dd", 
+                        "title": "Switching default tau MVA input to ConfDB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6776", 
+                        "number": "6776", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "jpavel"
+                    }, 
                     {
                         "hash": "f9a0c031f1dd9931595b8a24fa860baa82b2784d", 
                         "title": "postLs1 custom miniaod", 
