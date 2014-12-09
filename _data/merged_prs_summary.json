@@ -522,14 +522,14 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_6_2_X_SLHC_2014-12-08-1400-->CMSSW_6_2_X_SLHC", 
+                "compared_tags": "CMSSW_6_2_X_SLHC_2014-12-08-1400-->CMSSW_6_2_0_SLHC21_patch1", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": false, 
                 "tests_archs": [], 
-                "release_name": "CMSSW_6_2_X_SLHC", 
+                "release_name": "CMSSW_6_2_0_SLHC21_patch1", 
                 "merged_prs": [
                     {
                         "hash": "035462d6ffc4b266157ba7d596172bb57d3c47d4", 
@@ -559,6 +559,20 @@
                         "author_login": "boudoul"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_6_2_0_SLHC21_patch1-->CMSSW_6_2_X_SLHC", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_6_2_X_SLHC", 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -2724,7 +2738,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_3_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "97b16dfe8a89ff345104c55f91f3b14840de03a3", 
+                        "title": "Removed unused authentication file for online DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6843", 
+                        "number": "6843", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "diguida"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -12170,15 +12194,33 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-09-0200-->CMSSW_7_4_ROOT6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.ROOT6-tue-14/CMSSW_7_4_ROOT6_X_2014-12-09-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-09-0200-->CMSSW_7_4_ROOT6_X_2014-12-09-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.ROOT6-tue-14/CMSSW_7_4_ROOT6_X_2014-12-09-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2014-12-08-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ROOT6_X_2014-12-09-1400", 
                 "merged_prs": [
                     {
                         "is_merge_commit": true, 
@@ -12199,6 +12241,20 @@
                         "author_login": "cms-sw"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-09-1400-->CMSSW_7_4_ROOT6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
