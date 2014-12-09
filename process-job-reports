@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+
+# Process job reports and create summary file with performance information.
+from argparse import ArgumentParser
+from zipfile import ZipFile
+from os.path import exists, join
+from xml.sax import parseString, ContentHandler
+import re
+import datetime, time
+
+# Schema of the output
+class JobReportHandler(ContentHandler):
+  def __init__(self, what):
+    self.counters = dict((k, 0) for k in what)
+
+  def startElement(self, name, attrs):
+    if name != "Metric":
+      return
+    if not attrs["Name"] in self.counters:
+      return
+    if "nan" in attrs["Value"]:
+      return
+    self.counters[attrs["Name"]] = float(attrs["Value"])
+
+if __name__ == "__main__":
+  parser = ArgumentParser()
+  parser.add_argument("input", nargs="+", help="input file")
+  args = parser.parse_args()
+  # We start with empty workflows
+  results = {}
+
+  printHeader = True
+  for inFile in args.input:
+    f = ZipFile(inFile)
+    table = {}
+    for l in f.namelist():
+      m = re.match("([^/]*)/JobReport([0-9]).xml", l)
+      if not m:
+        continue
+      workflow, step = m.groups()
+      report = f.read(l)
+      handler = JobReportHandler(what=["PeakValueRss", "PeakValueVsize", "TotalJobCPU","TotalJobTime"])
+      try:
+        parseString(report, handler)
+      except:
+        continue
+      for counter, value in handler.counters.items():
+        workflowId = workflow.split("_",1)[0]
+        if not workflowId in table:
+          table[workflowId] = {}
+        table[workflowId][counter + str(step)] = value
+      
+    if printHeader:
+      header = sorted(set([k for (w, r) in table.items() for k in r ]))
+      print "Timestamp",
+      print "WorkflowId",
+      for h in header:
+        print h,
+      print
+      printHeader = False
+
+    inDate = re.match(".*CMSSW_.*(201.*)/.*", inFile).group(1)
+    timestamp = time.mktime(datetime.datetime.strptime(inDate, "%Y-%m-%d-%H%M").timetuple())
+    for k in sorted(table):
+      v = table[k] 
+      print timestamp,
+      print k,
+      for h in header:
+        if h in v:
+          # We do not care about showing less than 1MB changes.
+          # Also we round to 1/100s the ellapsed time.
+          if h.startswith("PeakValue"):
+            print int(v[h]/10),
+          else:
+            print int(v[h]*10),
+        else:
+          print "NA",
+      print
