@@ -6,6 +6,7 @@ from __future__ import print_function
 from glob import glob
 from argparse import ArgumentParser
 from os.path import join, exists, basename
+from collections import defaultdict
 import re
 
 RESULTS_PATH = "pyRelValMatrixLogs/run/runall-report-step123-.log"
@@ -34,6 +35,7 @@ if __name__ == "__main__":
   dates = [re.match(".*(2[0-9]*-[01][0-9]-[0-3][0-9]-[0-9]*)$", x).group(1) for x in releases]
   queues = [re.match("(.*)_2[0-9]*-[01][0-9]-[0-3][0-9]-[0-9]*$", x).group(1) for x in releases]
   architectures = [m.group(1) for m in outputs]
+
   zip(architectures, dates, queues)
   outputs = [join("data/relvals/", x[0], x[1], x[2] + ".json")
              for x in zip(architectures, dates, queues)]
@@ -43,15 +45,18 @@ if __name__ == "__main__":
              for x in zip(architectures, dates, queues)]
   outputsRelvalMsgs = [join("data/messages/", x[0], x[1], x[2] + ".json")
              for x in zip(architectures, dates, queues)]
+  outputsJobReports = [join("data/jobreports", x[0], x[2], x[1] + ".csv")
+             for x in zip(architectures, dates, queues)]
   pairs = zip(outputs, inputs)
   pairsUnitTestsSummary = zip(outputsUnitTestSummary, inputsUnitTestSummary)
   pairsCommands = zip(outputsRelvalCommands, inputsRelvalLogs)
   pairsMessages = zip(outputsRelvalMsgs, inputsRelvalLogs)
+  pairsJobReports = zip(outputsJobReports, inputsRelvalLogs)
   f = open("Makefile", "w")
 
   # A rule which takes care of converting a few known files in CMSDIST to json.
 
-  allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands
+  allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands + outputsJobReports
   print(".PHONY: all clean pr-stats", file=f)
   print("all: pr-stats data/cmsdist-config.json " + " ".join(allFiles), file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
@@ -69,4 +74,7 @@ if __name__ == "__main__":
     print(l, file=f)
   for x in pairsMessages:
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-logs-messages $< data/messages/objs > $@" % x
+    print(l, file=f)
+  for x in pairsJobReports:
+    l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-job-reports $< > $@" % x
     print(l, file=f)
