@@ -1,0 +1,46 @@
+input {
+  file {
+    path => "/cms-sw.github.io/data/stats/prs/*.csv"
+    start_position => "beginning"
+  }
+}
+filter {
+  csv {
+      columns => [
+         "Creation",
+         "MergeTime",
+         "id",
+         "isPr",
+         "N. of Comments",
+         "Closed",
+         "N. Labels",
+         "author"
+      ]
+  }
+}
+
+filter {
+  date {
+     match => ["Creation", UNIX]
+     target => "Creation"
+  }
+  date {
+     match => ["Creation", UNIX]
+     target => "@timestamp"
+  }
+  date {
+     match => ["MergeTime", UNIX]
+     target => "MergeTime"
+  }
+}
+
+output {
+  stdout { codec => rubydebug }
+  elasticsearch {
+    host => "cmskibana.cern.ch"
+    port => "9200"
+    protocol => "http"
+    index => "stats-prs"
+    document_id => "%{id}"
+  }
+}
