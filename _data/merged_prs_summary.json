@@ -100,16 +100,43 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_5_3_23-->CMSSW_5_3_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/5.3-wed-14/CMSSW_5_3_X_2014-12-10-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/5.3-wed-14/CMSSW_5_3_X_2014-12-10-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_5_3_23-->CMSSW_5_3_X_2014-12-10-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/5.3-wed-14/CMSSW_5_3_X_2014-12-10-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "3"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc472": "Not Found"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_5_3_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc472"
+                ], 
+                "release_name": "CMSSW_5_3_X_2014-12-10-1400", 
                 "merged_prs": [
                     {
                         "hash": "8bb4d9d6fb60cc6b293b6b21b30b24d6d2fbaae2", 
@@ -121,6 +148,20 @@
                         "author_login": "bendavid"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_5_3_X_2014-12-10-1400-->CMSSW_5_3_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_5_3_X", 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -4588,6 +4629,44 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6860", 
+                            "6629", 
+                            "6822"
+                        ], 
+                        "hash": "9cacd58799f88ec923355f1e0943fb3c0afe8a33", 
+                        "number": "9cacd58", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c0bd591c46875e21ba7c8914f81bf9bdaf439ad3", 
+                        "title": "injection to testbed wmagent systematized", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6860", 
+                        "number": "6860", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "a3dc753c5d3bb4084b16a0055315c0da58f096b0", 
+                        "title": "Enable cluster splitting in jet core", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6822", 
+                        "number": "6822", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rovere"
+                    }, 
+                    {
+                        "hash": "e9f287af2fb6e9c42e420dff879d70a5bf562281", 
+                        "title": "enable MiniAOD validation for Jet and MET", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6629", 
+                        "number": "6629", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "JetMETdqmval"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6854", 
                             "6847"
                         ], 
@@ -5815,6 +5894,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "7924b3de7f6ae8fbd9cd82aeec51cb3dac552971", 
+                        "title": "Removed poor use of Ref classes in PFTracking and fixed getByToken problem", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6833", 
+                        "number": "6833", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "3071ee1f50bf96c366dd4621e974aef63e125b03", 
+                        "title": "fix obsolete commands in Herwigppdefaults", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6829", 
+                        "number": "6829", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mkirsano"
+                    }, 
                     {
                         "hash": "c0bd591c46875e21ba7c8914f81bf9bdaf439ad3", 
                         "title": "injection to testbed wmagent systematized", 
@@ -7731,6 +7828,72 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6833", 
+                            "6829"
+                        ], 
+                        "hash": "6694d9230e7dcf7a624c88b634ea3c21d2c0fcc4", 
+                        "number": "6694d92", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "7924b3de7f6ae8fbd9cd82aeec51cb3dac552971", 
+                        "title": "Removed poor use of Ref classes in PFTracking and fixed getByToken problem", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6833", 
+                        "number": "6833", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "3071ee1f50bf96c366dd4621e974aef63e125b03", 
+                        "title": "fix obsolete commands in Herwigppdefaults", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6829", 
+                        "number": "6829", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mkirsano"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6860", 
+                            "6629", 
+                            "6822"
+                        ], 
+                        "hash": "0d3d541e7ce1310b091efeed45fd41c3f7b806a5", 
+                        "number": "0d3d541", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c0bd591c46875e21ba7c8914f81bf9bdaf439ad3", 
+                        "title": "injection to testbed wmagent systematized", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6860", 
+                        "number": "6860", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "a3dc753c5d3bb4084b16a0055315c0da58f096b0", 
+                        "title": "Enable cluster splitting in jet core", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6822", 
+                        "number": "6822", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rovere"
+                    }, 
+                    {
+                        "hash": "e9f287af2fb6e9c42e420dff879d70a5bf562281", 
+                        "title": "enable MiniAOD validation for Jet and MET", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6629", 
+                        "number": "6629", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "JetMETdqmval"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -9738,6 +9901,44 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6860", 
+                            "6629", 
+                            "6822"
+                        ], 
+                        "hash": "1cc6b1a54e10832bd1772e6ca5e5e119cc29f41c", 
+                        "number": "1cc6b1a", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c0bd591c46875e21ba7c8914f81bf9bdaf439ad3", 
+                        "title": "injection to testbed wmagent systematized", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6860", 
+                        "number": "6860", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "a3dc753c5d3bb4084b16a0055315c0da58f096b0", 
+                        "title": "Enable cluster splitting in jet core", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6822", 
+                        "number": "6822", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rovere"
+                    }, 
+                    {
+                        "hash": "e9f287af2fb6e9c42e420dff879d70a5bf562281", 
+                        "title": "enable MiniAOD validation for Jet and MET", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6629", 
+                        "number": "6629", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "JetMETdqmval"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6854", 
                             "6847"
                         ], 
@@ -11395,6 +11596,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "7924b3de7f6ae8fbd9cd82aeec51cb3dac552971", 
+                        "title": "Removed poor use of Ref classes in PFTracking and fixed getByToken problem", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6833", 
+                        "number": "6833", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "3071ee1f50bf96c366dd4621e974aef63e125b03", 
+                        "title": "fix obsolete commands in Herwigppdefaults", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6829", 
+                        "number": "6829", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mkirsano"
+                    }, 
                     {
                         "hash": "c0bd591c46875e21ba7c8914f81bf9bdaf439ad3", 
                         "title": "injection to testbed wmagent systematized", 
@@ -13357,6 +13576,53 @@
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "merged_prs": [
                     {
+                        "hash": "84659977b55720dfd7a71d2c3f95db20c2161a1d", 
+                        "title": "Fixes for ORA CArrays and Class attributes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6863", 
+                        "number": "6863", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ggovi"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6860", 
+                            "6629", 
+                            "6822"
+                        ], 
+                        "hash": "a3340957d5693d814745789e8d32d7718920e8d1", 
+                        "number": "a334095", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c0bd591c46875e21ba7c8914f81bf9bdaf439ad3", 
+                        "title": "injection to testbed wmagent systematized", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6860", 
+                        "number": "6860", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "a3dc753c5d3bb4084b16a0055315c0da58f096b0", 
+                        "title": "Enable cluster splitting in jet core", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6822", 
+                        "number": "6822", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rovere"
+                    }, 
+                    {
+                        "hash": "e9f287af2fb6e9c42e420dff879d70a5bf562281", 
+                        "title": "enable MiniAOD validation for Jet and MET", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6629", 
+                        "number": "6629", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "JetMETdqmval"
+                    }, 
+                    {
                         "is_merge_commit": true, 
                         "brought_prs": [
                             "6854", 
@@ -15276,6 +15542,72 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6833", 
+                            "6829"
+                        ], 
+                        "hash": "32c5653bc335244743989b0ce44420952fd5d285", 
+                        "number": "32c5653", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "7924b3de7f6ae8fbd9cd82aeec51cb3dac552971", 
+                        "title": "Removed poor use of Ref classes in PFTracking and fixed getByToken problem", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6833", 
+                        "number": "6833", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "3071ee1f50bf96c366dd4621e974aef63e125b03", 
+                        "title": "fix obsolete commands in Herwigppdefaults", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6829", 
+                        "number": "6829", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mkirsano"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6860", 
+                            "6629", 
+                            "6822"
+                        ], 
+                        "hash": "55508818d90856d9982a1664d86077cb6780b041", 
+                        "number": "5550881", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c0bd591c46875e21ba7c8914f81bf9bdaf439ad3", 
+                        "title": "injection to testbed wmagent systematized", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6860", 
+                        "number": "6860", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "a3dc753c5d3bb4084b16a0055315c0da58f096b0", 
+                        "title": "Enable cluster splitting in jet core", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6822", 
+                        "number": "6822", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rovere"
+                    }, 
+                    {
+                        "hash": "e9f287af2fb6e9c42e420dff879d70a5bf562281", 
+                        "title": "enable MiniAOD validation for Jet and MET", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6629", 
+                        "number": "6629", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "JetMETdqmval"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -17286,6 +17618,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "7924b3de7f6ae8fbd9cd82aeec51cb3dac552971", 
+                        "title": "Removed poor use of Ref classes in PFTracking and fixed getByToken problem", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6833", 
+                        "number": "6833", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "3071ee1f50bf96c366dd4621e974aef63e125b03", 
+                        "title": "fix obsolete commands in Herwigppdefaults", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6829", 
+                        "number": "6829", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mkirsano"
+                    }, 
                     {
                         "hash": "c0bd591c46875e21ba7c8914f81bf9bdaf439ad3", 
                         "title": "injection to testbed wmagent systematized", 
