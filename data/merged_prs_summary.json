@@ -1598,7 +1598,7 @@
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2014-12-04-0200/slc6_amd64_gcc481"
                 }, 
                 "relvals": [], 
-                "static_checks": "slc6_amd64_gcc491", 
+                "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_3_X_2014-12-04-0200", 
@@ -1624,7 +1624,7 @@
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2014-12-04-1400/slc6_amd64_gcc481"
                 }, 
                 "relvals": [], 
-                "static_checks": "slc6_amd64_gcc491", 
+                "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_3_X_2014-12-04-1400", 
@@ -1731,7 +1731,7 @@
                         }
                     }
                 ], 
-                "static_checks": "slc6_amd64_gcc491", 
+                "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -1841,7 +1841,7 @@
                         }
                     }
                 ], 
-                "static_checks": "slc6_amd64_gcc491", 
+                "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -1942,7 +1942,7 @@
                         }
                     }
                 ], 
-                "static_checks": "slc6_amd64_gcc491", 
+                "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -2385,7 +2385,17 @@
                     "slc6_amd64_gcc491": "IB/CMSSW_7_3_X_2014-12-08-1400/slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2014-12-08-0200/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.3-wed-14/CMSSW_7_3_X_2014-12-10-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1006, 
+                            "num_failed": 2
+                        }
+                    }
+                ], 
                 "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
@@ -2489,6 +2499,12 @@
                         "passed": true, 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-12-11-1400/addOnTests.log", 
                         "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-12-11-1400/addOnTests.log", 
+                        "details": {}
                     }
                 ], 
                 "builds": [
@@ -2521,9 +2537,11 @@
                     }, 
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-12-11-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3-thu-14/CMSSW_7_3_X_2014-12-11-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -4662,7 +4680,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_CLANG_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6845"
+                        ], 
+                        "hash": "b15d83fe86f605be2eeb78577641e46eba34189c", 
+                        "number": "b15d83f", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
+                        "title": "Add service callback with path and consumes info", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
+                        "number": "6845", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wddgit"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -5882,7 +5919,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEBUG-thu-14/CMSSW_7_4_DEBUG_X_2014-12-11-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -5898,9 +5942,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEBUG-thu-14/CMSSW_7_4_DEBUG_X_2014-12-11-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEBUG-thu-14/CMSSW_7_4_DEBUG_X_2014-12-11-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -5928,25 +5974,34 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_DEBUG_X_2014-12-11-1400-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.DEBUG-fri-02/CMSSW_7_4_DEBUG_X_2014-12-12-0200/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_DEBUG_X_2014-12-11-1400-->CMSSW_7_4_DEBUG_X_2014-12-12-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.DEBUG-fri-02/CMSSW_7_4_DEBUG_X_2014-12-12-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEBUG_X_2014-12-11-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_DEBUG_X_2014-12-12-0200", 
                 "merged_prs": [
-                    {
-                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
-                        "title": "Add service callback with path and consumes info", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
-                        "number": "6845", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wddgit"
-                    }, 
                     {
                         "hash": "b70d83f6e0c8c813297dec7d04754f23cd68851e", 
                         "title": "adding puppi fix for miniAOD definitions of charged particles", 
@@ -5973,6 +6028,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "battibass"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_DEBUG_X_2014-12-12-0200-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "merged_prs": [
+                    {
+                        "hash": "6132cdf0b9590ed072b72d366287070b41b7626d", 
+                        "title": "Pluspat norun1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6889", 
+                        "number": "6889", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
+                        "title": "Add service callback with path and consumes info", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
+                        "number": "6845", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wddgit"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -6657,54 +6745,15 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.DEVEL-fri-02/CMSSW_7_4_DEVEL_X_2014-12-05-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.DEVEL-fri-02/CMSSW_7_4_DEVEL_X_2014-12-05-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_DEVEL_X_2014-12-04-1400-->CMSSW_7_4_DEVEL_X_2014-12-05-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.DEVEL-fri-02/CMSSW_7_4_DEVEL_X_2014-12-05-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.DEVEL-fri-02/CMSSW_7_4_DEVEL_X_2014-12-05-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 536, 
-                            "num_failed": 199
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X_2014-12-05-0200", 
                 "merged_prs": [
                     {
@@ -8163,7 +8212,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6845"
+                        ], 
+                        "hash": "80fb2613112f7eae3a0bed89fc864192896736c1", 
+                        "number": "80fb261", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
+                        "title": "Add service callback with path and consumes info", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
+                        "number": "6845", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wddgit"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -10274,6 +10342,24 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6845"
+                        ], 
+                        "hash": "75bac64af56cf3f33a6d2f816870060e22b0e2b2", 
+                        "number": "75bac64", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
+                        "title": "Add service callback with path and consumes info", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
+                        "number": "6845", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wddgit"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6851"
                         ], 
                         "hash": "bbccb1e0539d1efbf7a2cd40384f3310505f7822", 
@@ -11948,25 +12034,36 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ICC_X_2014-12-11-1400-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-02/CMSSW_7_4_ICC_X_2014-12-12-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 63
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2014-12-11-1400-->CMSSW_7_4_ICC_X_2014-12-12-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-02/CMSSW_7_4_ICC_X_2014-12-12-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2014-12-11-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ICC_X_2014-12-12-0200", 
                 "merged_prs": [
-                    {
-                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
-                        "title": "Add service callback with path and consumes info", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
-                        "number": "6845", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wddgit"
-                    }, 
                     {
                         "hash": "b70d83f6e0c8c813297dec7d04754f23cd68851e", 
                         "title": "adding puppi fix for miniAOD definitions of charged particles", 
@@ -11993,6 +12090,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "battibass"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2014-12-12-0200-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "merged_prs": [
+                    {
+                        "hash": "6132cdf0b9590ed072b72d366287070b41b7626d", 
+                        "title": "Pluspat norun1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6889", 
+                        "number": "6889", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
+                        "title": "Add service callback with path and consumes info", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
+                        "number": "6845", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wddgit"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -14149,15 +14279,33 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-11-1400-->CMSSW_7_4_ROOT6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-02/CMSSW_7_4_ROOT6_X_2014-12-12-0200/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-11-1400-->CMSSW_7_4_ROOT6_X_2014-12-12-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-02/CMSSW_7_4_ROOT6_X_2014-12-12-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2014-12-11-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ROOT6_X_2014-12-12-0200", 
                 "merged_prs": [
                     {
                         "hash": "94520ad1dfd88493e9ede0618e3e4982ad7eacc4", 
@@ -14231,6 +14379,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "puigh"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-12-0200-->CMSSW_7_4_ROOT6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6845"
+                        ], 
+                        "hash": "a5dbfc4485f8b0b3535e6e435100cc2beb569778", 
+                        "number": "a5dbfc4", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
+                        "title": "Add service callback with path and consumes info", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
+                        "number": "6845", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wddgit"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -16215,7 +16396,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.THREADED-thu-14/CMSSW_7_4_THREADED_X_2014-12-11-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -16230,9 +16418,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.THREADED-thu-14/CMSSW_7_4_THREADED_X_2014-12-11-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.THREADED-thu-14/CMSSW_7_4_THREADED_X_2014-12-11-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -16260,6 +16450,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6845"
+                        ], 
+                        "hash": "aeed0220dbf6f5c80117484ea3799d6240630862", 
+                        "number": "aeed022", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
+                        "title": "Add service callback with path and consumes info", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
+                        "number": "6845", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wddgit"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -16732,7 +16940,7 @@
                     "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2014-12-04-0200/slc6_amd64_gcc481"
                 }, 
                 "relvals": [], 
-                "static_checks": "slc6_amd64_gcc491", 
+                "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X_2014-12-04-0200", 
@@ -16848,7 +17056,7 @@
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2014-12-04-1400/slc6_amd64_gcc491"
                 }, 
                 "relvals": [], 
-                "static_checks": "slc6_amd64_gcc491", 
+                "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X_2014-12-04-1400", 
@@ -16977,7 +17185,7 @@
                         }
                     }
                 ], 
-                "static_checks": "slc6_amd64_gcc491", 
+                "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -17145,7 +17353,7 @@
                         }
                     }
                 ], 
-                "static_checks": "slc6_amd64_gcc491", 
+                "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -18258,6 +18466,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "6132cdf0b9590ed072b72d366287070b41b7626d", 
+                        "title": "Pluspat norun1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6889", 
+                        "number": "6889", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
                     {
                         "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
                         "title": "Add service callback with path and consumes info", 
