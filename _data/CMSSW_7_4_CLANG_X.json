@@ -2291,35 +2291,60 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_CLANG_X_2014-12-13-0200-->CMSSW_7_4_CLANG_X", 
-            "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.CLANG-sat-14/CMSSW_7_4_CLANG_X_2014-12-13-1400/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "error", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.CLANG-sat-14/CMSSW_7_4_CLANG_X_2014-12-13-1400/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 4453, 
+                        "miscError": 146, 
+                        "compError": 7244, 
+                        "ignoreWarning": 1401, 
+                        "linkError": 2232
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_CLANG_X_2014-12-13-0200-->CMSSW_7_4_CLANG_X_2014-12-13-1400", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.CLANG-sat-14/CMSSW_7_4_CLANG_X_2014-12-13-1400/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "461"
+                    }
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "Not Found"
+            }, 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.CLANG-sat-14/CMSSW_7_4_CLANG_X_2014-12-13-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 164, 
+                        "num_failed": 266
+                    }
+                }
+            ], 
             "static_checks": "not-found", 
-            "isIB": false, 
-            "tests_archs": [], 
-            "release_name": "CMSSW_7_4_CLANG_X", 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
+            "release_name": "CMSSW_7_4_CLANG_X_2014-12-13-1400", 
             "merged_prs": [
-                {
-                    "is_merge_commit": true, 
-                    "brought_prs": [
-                        "6879"
-                    ], 
-                    "hash": "4e43b5707819603895e0b0d46df6ab8017238683", 
-                    "number": "4e43b57", 
-                    "from_merge_commit": false
-                }, 
-                {
-                    "hash": "49252ef010f959e06b581e0b3ff8a6f981b3bcc2", 
-                    "title": "74X: Moving HLT config to use 730 template", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6879", 
-                    "number": "6879", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "Martin-Grunewald"
-                }, 
                 {
                     "is_merge_commit": true, 
                     "brought_prs": [
@@ -2375,6 +2400,39 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": true, 
                     "author_login": "bendavid"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [], 
+            "compared_tags": "CMSSW_7_4_CLANG_X_2014-12-13-1400-->CMSSW_7_4_CLANG_X", 
+            "utests": [], 
+            "cmsdistTags": {}, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": false, 
+            "tests_archs": [], 
+            "release_name": "CMSSW_7_4_CLANG_X", 
+            "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "6879"
+                    ], 
+                    "hash": "4e43b5707819603895e0b0d46df6ab8017238683", 
+                    "number": "4e43b57", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "49252ef010f959e06b581e0b3ff8a6f981b3bcc2", 
+                    "title": "74X: Moving HLT config to use 730 template", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6879", 
+                    "number": "6879", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "Martin-Grunewald"
                 }
             ], 
             "hlt_tests": "not-found"
