@@ -6292,6 +6292,15 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "hash": "d7ac5c5b25cb068e3c03eb2de5919e29a10bae25", 
+                        "title": "Sort entries when doing dumpPython", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6882", 
+                        "number": "6882", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
                         "hash": "d56f7566e87162e49911723fc1e34034d0c16060", 
                         "title": "remove nbins factor as done already in 73x", 
                         "url": "https://github.com/cms-sw/cmssw/pull/6891", 
@@ -10825,7 +10834,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_GEANT10_X_2014-12-12-1400/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.GEANT10-fri-14/CMSSW_7_4_GEANT10_X_2014-12-12-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 979, 
+                            "num_failed": 11
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -10938,54 +10957,34 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_GEANT10_X_2014-12-12-1400-->CMSSW_7_4_GEANT10_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.GEANT10-sat-02/CMSSW_7_4_GEANT10_X_2014-12-13-0200/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_GEANT10_X_2014-12-12-1400-->CMSSW_7_4_GEANT10_X_2014-12-13-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.GEANT10-sat-02/CMSSW_7_4_GEANT10_X_2014-12-13-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_GEANT10_X_2014-12-12-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_GEANT10_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_GEANT10_X_2014-12-13-0200", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "6887", 
-                            "6891", 
-                            "6886"
-                        ], 
-                        "hash": "4e29d06d14b26cc3048df9d0b5c14c41ded352d2", 
-                        "number": "4e29d06", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "d56f7566e87162e49911723fc1e34034d0c16060", 
-                        "title": "remove nbins factor as done already in 73x", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6891", 
-                        "number": "6891", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidlange6"
-                    }, 
-                    {
-                        "hash": "edb034e6f89092b5cc9e235af831e947bd001e66", 
-                        "title": "Fix objects saving into filter product", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6887", 
-                        "number": "6887", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "fruboes"
-                    }, 
-                    {
-                        "hash": "953720fd6a0e3d1e2c207b3c2b533f177dfffc71", 
-                        "title": "Migration of standard fullsim/fastsim relvals to Pythia 8", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6886", 
-                        "number": "6886", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "bendavid"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -11059,6 +11058,59 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "violatingcp"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_GEANT10_X_2014-12-13-0200-->CMSSW_7_4_GEANT10_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_GEANT10_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6887", 
+                            "6891", 
+                            "6886"
+                        ], 
+                        "hash": "4e29d06d14b26cc3048df9d0b5c14c41ded352d2", 
+                        "number": "4e29d06", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "d56f7566e87162e49911723fc1e34034d0c16060", 
+                        "title": "remove nbins factor as done already in 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6891", 
+                        "number": "6891", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "edb034e6f89092b5cc9e235af831e947bd001e66", 
+                        "title": "Fix objects saving into filter product", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6887", 
+                        "number": "6887", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fruboes"
+                    }, 
+                    {
+                        "hash": "953720fd6a0e3d1e2c207b3c2b533f177dfffc71", 
+                        "title": "Migration of standard fullsim/fastsim relvals to Pythia 8", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6886", 
+                        "number": "6886", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -12797,6 +12849,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "d7ac5c5b25cb068e3c03eb2de5919e29a10bae25", 
+                        "title": "Sort entries when doing dumpPython", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6882", 
+                        "number": "6882", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "hash": "d56f7566e87162e49911723fc1e34034d0c16060", 
                         "title": "remove nbins factor as done already in 73x", 
@@ -19567,6 +19628,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "d7ac5c5b25cb068e3c03eb2de5919e29a10bae25", 
+                        "title": "Sort entries when doing dumpPython", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6882", 
+                        "number": "6882", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "hash": "d56f7566e87162e49911723fc1e34034d0c16060", 
                         "title": "remove nbins factor as done already in 73x", 
