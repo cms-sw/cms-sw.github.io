@@ -2574,7 +2574,17 @@
                     "osx108_amd64_gcc481": "IB/CMSSW_7_3_X_2014-12-12-1400/osx108_amd64_gcc481", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2014-12-12-1400/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2014-12-12-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1002, 
+                            "num_failed": 3
+                        }
+                    }
+                ], 
                 "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
@@ -6177,6 +6187,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "d56f7566e87162e49911723fc1e34034d0c16060", 
+                        "title": "remove nbins factor as done already in 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6891", 
+                        "number": "6891", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "edb034e6f89092b5cc9e235af831e947bd001e66", 
+                        "title": "Fix objects saving into filter product", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6887", 
+                        "number": "6887", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fruboes"
+                    }, 
                     {
                         "hash": "953720fd6a0e3d1e2c207b3c2b533f177dfffc71", 
                         "title": "Migration of standard fullsim/fastsim relvals to Pythia 8", 
@@ -12461,9 +12489,73 @@
                 "hlt_tests": "not-found"
             }, 
             {
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2014-12-12-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2014-12-12-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "miscError": 21, 
+                            "compError": 63, 
+                            "linkError": 1488
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2014-12-12-0200-->CMSSW_7_4_ICC_X_2014-12-12-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2014-12-12-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "222"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2014-12-12-1400/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ICC_X_2014-12-12-1400", 
+                "merged_prs": [
+                    {
+                        "hash": "6132cdf0b9590ed072b72d366287070b41b7626d", 
+                        "title": "Pluspat norun1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6889", 
+                        "number": "6889", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
+                        "title": "Add service callback with path and consumes info", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
+                        "number": "6845", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wddgit"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_ICC_X_2014-12-12-0200-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_ICC_X_2014-12-12-1400-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -12472,6 +12564,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "d56f7566e87162e49911723fc1e34034d0c16060", 
+                        "title": "remove nbins factor as done already in 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6891", 
+                        "number": "6891", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "edb034e6f89092b5cc9e235af831e947bd001e66", 
+                        "title": "Fix objects saving into filter product", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6887", 
+                        "number": "6887", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fruboes"
+                    }, 
                     {
                         "hash": "953720fd6a0e3d1e2c207b3c2b533f177dfffc71", 
                         "title": "Migration of standard fullsim/fastsim relvals to Pythia 8", 
@@ -12516,24 +12626,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "amartelli"
-                    }, 
-                    {
-                        "hash": "6132cdf0b9590ed072b72d366287070b41b7626d", 
-                        "title": "Pluspat norun1", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6889", 
-                        "number": "6889", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlange6"
-                    }, 
-                    {
-                        "hash": "17b2bbde11784fa0c5d0bd403e38e3daf64bc8b5", 
-                        "title": "Add service callback with path and consumes info", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6845", 
-                        "number": "6845", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wddgit"
                     }, 
                     {
                         "hash": "1264b5e4590494820b948429e524c5b1143aee62", 
@@ -13462,54 +13554,15 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2014-12-05-1400/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2014-12-05-1400/new/logAnalysis.pkl", 
-                        "details": {
-                            "ignoreWarning": 27
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-05-0200-->CMSSW_7_4_ROOT6_X_2014-12-05-1400", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "failed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2014-12-05-1400/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "6"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2014-12-05-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 543, 
-                            "num_failed": 194
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X_2014-12-05-1400", 
                 "merged_prs": [
                     {
@@ -17026,7 +17079,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-12-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -17041,9 +17101,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-12-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-12-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -19218,6 +19280,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "d56f7566e87162e49911723fc1e34034d0c16060", 
+                        "title": "remove nbins factor as done already in 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6891", 
+                        "number": "6891", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "edb034e6f89092b5cc9e235af831e947bd001e66", 
+                        "title": "Fix objects saving into filter product", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6887", 
+                        "number": "6887", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fruboes"
+                    }, 
                     {
                         "hash": "953720fd6a0e3d1e2c207b3c2b533f177dfffc71", 
                         "title": "Migration of standard fullsim/fastsim relvals to Pythia 8", 
