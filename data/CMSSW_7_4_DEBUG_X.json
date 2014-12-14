@@ -3,17 +3,264 @@
     "release_name": "CMSSW_7_4_DEBUG_X", 
     "comparisons": [
         {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_DEBUG_X_2014-12-03-1400-->CMSSW_7_4_DEBUG_X_2014-12-04-0200", 
-            "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "warning", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 1, 
+                        "ignoreWarning": 3
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_DEBUG_X_2014-12-03-1400-->CMSSW_7_4_DEBUG_X_2014-12-08-0200", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "0"
+                    }
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEBUG_X_2014-12-08-0200/slc6_amd64_gcc491"
+            }, 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 1001, 
+                        "num_failed": 4
+                    }
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
-            "tests_archs": [], 
-            "release_name": "CMSSW_7_4_DEBUG_X_2014-12-04-0200", 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
+            "release_name": "CMSSW_7_4_DEBUG_X_2014-12-08-0200", 
             "merged_prs": [
+                {
+                    "hash": "a1b34ee1a842473c43ec9f946728a82414aec46d", 
+                    "title": "Clean l1 configs", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6802", 
+                    "number": "6802", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "deguio"
+                }, 
+                {
+                    "hash": "fe8cca75a8328eca0b13444bcd7f0590c440c9d9", 
+                    "title": "clean and fix thepeg tests", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6752", 
+                    "number": "6752", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "mkirsano"
+                }, 
+                {
+                    "hash": "ed0097b01969e1576079c8e8bb0c452a111494a9", 
+                    "title": "trajectory seeding with arbitrary seeding layers", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6794", 
+                    "number": "6794", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "matt-komm"
+                }, 
+                {
+                    "hash": "c649c57a48f3d98576032f8900ba59a2745d7ab8", 
+                    "title": "If fail to open plugin library also say which plugin was being loaded", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6803", 
+                    "number": "6803", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "Dr15Jones"
+                }, 
+                {
+                    "hash": "397f232ef1a38935b9701aaa606d58b978320a1c", 
+                    "title": "Calibration stream files are added and the script is improved.", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6796", 
+                    "number": "6796", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "batinkov"
+                }, 
+                {
+                    "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
+                    "title": "Fixes and updates to the HLT Run2 menu", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6799", 
+                    "number": "6799", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "perrotta"
+                }, 
+                {
+                    "hash": "3f2d886bb78c1218373d5473cea8cd265d247814", 
+                    "title": "Migrate from getByLabel to consumes/getByToken", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6793", 
+                    "number": "6793", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "fruboes"
+                }, 
+                {
+                    "hash": "0467e3112a2e46a4d42e65ff7fa955ac669b4647", 
+                    "title": "From cmssw 7 3 x 2014 11 30 0200", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6731", 
+                    "number": "6731", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "friccita"
+                }, 
+                {
+                    "hash": "f4151110b03bf4bfd2d0647ff0c7a3ac97cc847d", 
+                    "title": "TimeSlewSim fix for 74X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6787", 
+                    "number": "6787", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "abdoulline"
+                }, 
+                {
+                    "hash": "1d423bcc557db04ff8269d7f339085ade1046d08", 
+                    "title": "Properly handle case where default number of threads requested", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6786", 
+                    "number": "6786", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "Dr15Jones"
+                }, 
+                {
+                    "hash": "679bbaaf37d534d12fbb1291679cac2e6913f230", 
+                    "title": "Nominalcollision2015 default", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6751", 
+                    "number": "6751", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "franzoni"
+                }, 
+                {
+                    "hash": "c55e40e281d93c28f8e6b79b705a40824e12c2f8", 
+                    "title": "add a customisation fragment to check EventSetup usage", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6783", 
+                    "number": "6783", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "fwyzard"
+                }, 
+                {
+                    "hash": "e4bf1a0fd0635b3596211624e3d6f3b052503888", 
+                    "title": "Forward port of  #6570 and #6637 to 74x", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6657", 
+                    "number": "6657", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "dmitrijus"
+                }, 
+                {
+                    "hash": "9cc9b84be1dba6037fa7205e5b68a3bc73221c71", 
+                    "title": "74X - update TopRefSel", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6780", 
+                    "number": "6780", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "vadler"
+                }, 
+                {
+                    "hash": "bdd47e62cb55b63c10bf576e669902fcf182febe", 
+                    "title": "Add profile to DQMGenericClient", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6666", 
+                    "number": "6666", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "makortel"
+                }, 
+                {
+                    "hash": "586ba481bc664f4f8d7c82884a660aca94407de0", 
+                    "title": "porting L1 code to new DQM interface", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6627", 
+                    "number": "6627", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "deguio"
+                }, 
+                {
+                    "hash": "e89763a2e455ea5c2056d65e6b339232213d80b4", 
+                    "title": "fix for icc compiler: added the missing pat:: namespace", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6779", 
+                    "number": "6779", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "smuzaffar"
+                }, 
+                {
+                    "hash": "50bc85f8607dc765bf033a046d4856fc908c5a86", 
+                    "title": "Bugfix for L1 emulator dPhi calculation", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6748", 
+                    "number": "6748", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "apana"
+                }, 
+                {
+                    "hash": "58df7f2219efef5db356beaccbf75295c1100b44", 
+                    "title": "RPC DQM occupancy plot bug fix for 74x", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6764", 
+                    "number": "6764", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "acimmino"
+                }, 
+                {
+                    "hash": "1c0b4073f192aa913ace7c641bd262286f63f1d1", 
+                    "title": "Fix electron GSF sequence for fastsim HLT (74X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6769", 
+                    "number": "6769", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "perrotta"
+                }, 
+                {
+                    "hash": "5431bdf57c86a6e25ab2971b08a0e7fe4a9ab3c1", 
+                    "title": "switch CCC on in Conversion Pattern recognition", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6760", 
+                    "number": "6760", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "VinInn"
+                }, 
+                {
+                    "hash": "b4cd00422db1d91e13e54538d4ea537657f32c79", 
+                    "title": "Add SetCurrentFolder Missing in MuonIsolationDQM", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6741", 
+                    "number": "6741", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "folguera"
+                }, 
+                {
+                    "hash": "b02afe9d165878188fcaaf73d369ccb572a36b1a", 
+                    "title": "hltGetConfiguration: add a hilton-specific customisation", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6767", 
+                    "number": "6767", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "fwyzard"
+                }, 
                 {
                     "hash": "8f95c3e5145bb486d5953d2b5f6333db7266b68c", 
                     "title": "Fix of VertexFromTrackProducer module", 
@@ -112,328 +359,6 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": true, 
                     "author_login": "avetisya"
-                }
-            ], 
-            "hlt_tests": "not-found"
-        }, 
-        {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_DEBUG_X_2014-12-04-0200-->CMSSW_7_4_DEBUG_X_2014-12-04-1400", 
-            "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
-            "static_checks": "not-found", 
-            "isIB": true, 
-            "tests_archs": [], 
-            "release_name": "CMSSW_7_4_DEBUG_X_2014-12-04-1400", 
-            "merged_prs": [
-                {
-                    "hash": "58df7f2219efef5db356beaccbf75295c1100b44", 
-                    "title": "RPC DQM occupancy plot bug fix for 74x", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6764", 
-                    "number": "6764", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "acimmino"
-                }, 
-                {
-                    "hash": "1c0b4073f192aa913ace7c641bd262286f63f1d1", 
-                    "title": "Fix electron GSF sequence for fastsim HLT (74X)", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6769", 
-                    "number": "6769", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "perrotta"
-                }, 
-                {
-                    "hash": "5431bdf57c86a6e25ab2971b08a0e7fe4a9ab3c1", 
-                    "title": "switch CCC on in Conversion Pattern recognition", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6760", 
-                    "number": "6760", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "VinInn"
-                }, 
-                {
-                    "hash": "b4cd00422db1d91e13e54538d4ea537657f32c79", 
-                    "title": "Add SetCurrentFolder Missing in MuonIsolationDQM", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6741", 
-                    "number": "6741", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "folguera"
-                }, 
-                {
-                    "hash": "b02afe9d165878188fcaaf73d369ccb572a36b1a", 
-                    "title": "hltGetConfiguration: add a hilton-specific customisation", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6767", 
-                    "number": "6767", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "fwyzard"
-                }
-            ], 
-            "hlt_tests": "not-found"
-        }, 
-        {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_DEBUG_X_2014-12-04-1400-->CMSSW_7_4_DEBUG_X_2014-12-05-0200", 
-            "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
-            "static_checks": "not-found", 
-            "isIB": true, 
-            "tests_archs": [], 
-            "release_name": "CMSSW_7_4_DEBUG_X_2014-12-05-0200", 
-            "merged_prs": [
-                {
-                    "hash": "1d423bcc557db04ff8269d7f339085ade1046d08", 
-                    "title": "Properly handle case where default number of threads requested", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6786", 
-                    "number": "6786", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "Dr15Jones"
-                }, 
-                {
-                    "hash": "679bbaaf37d534d12fbb1291679cac2e6913f230", 
-                    "title": "Nominalcollision2015 default", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6751", 
-                    "number": "6751", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "franzoni"
-                }, 
-                {
-                    "hash": "c55e40e281d93c28f8e6b79b705a40824e12c2f8", 
-                    "title": "add a customisation fragment to check EventSetup usage", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6783", 
-                    "number": "6783", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "fwyzard"
-                }, 
-                {
-                    "hash": "e4bf1a0fd0635b3596211624e3d6f3b052503888", 
-                    "title": "Forward port of  #6570 and #6637 to 74x", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6657", 
-                    "number": "6657", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "dmitrijus"
-                }, 
-                {
-                    "hash": "9cc9b84be1dba6037fa7205e5b68a3bc73221c71", 
-                    "title": "74X - update TopRefSel", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6780", 
-                    "number": "6780", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "vadler"
-                }, 
-                {
-                    "hash": "bdd47e62cb55b63c10bf576e669902fcf182febe", 
-                    "title": "Add profile to DQMGenericClient", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6666", 
-                    "number": "6666", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "makortel"
-                }, 
-                {
-                    "hash": "586ba481bc664f4f8d7c82884a660aca94407de0", 
-                    "title": "porting L1 code to new DQM interface", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6627", 
-                    "number": "6627", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "deguio"
-                }, 
-                {
-                    "hash": "e89763a2e455ea5c2056d65e6b339232213d80b4", 
-                    "title": "fix for icc compiler: added the missing pat:: namespace", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6779", 
-                    "number": "6779", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "smuzaffar"
-                }, 
-                {
-                    "hash": "50bc85f8607dc765bf033a046d4856fc908c5a86", 
-                    "title": "Bugfix for L1 emulator dPhi calculation", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6748", 
-                    "number": "6748", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "apana"
-                }
-            ], 
-            "hlt_tests": "not-found"
-        }, 
-        {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_DEBUG_X_2014-12-05-0200-->CMSSW_7_4_DEBUG_X_2014-12-05-1400", 
-            "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
-            "static_checks": "not-found", 
-            "isIB": true, 
-            "tests_archs": [], 
-            "release_name": "CMSSW_7_4_DEBUG_X_2014-12-05-1400", 
-            "merged_prs": [
-                {
-                    "hash": "3f2d886bb78c1218373d5473cea8cd265d247814", 
-                    "title": "Migrate from getByLabel to consumes/getByToken", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6793", 
-                    "number": "6793", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "fruboes"
-                }, 
-                {
-                    "hash": "0467e3112a2e46a4d42e65ff7fa955ac669b4647", 
-                    "title": "From cmssw 7 3 x 2014 11 30 0200", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6731", 
-                    "number": "6731", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "friccita"
-                }, 
-                {
-                    "hash": "f4151110b03bf4bfd2d0647ff0c7a3ac97cc847d", 
-                    "title": "TimeSlewSim fix for 74X", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6787", 
-                    "number": "6787", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "abdoulline"
-                }
-            ], 
-            "hlt_tests": "not-found"
-        }, 
-        {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_DEBUG_X_2014-12-05-1400-->CMSSW_7_4_DEBUG_X_2014-12-06-0200", 
-            "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
-            "static_checks": "not-found", 
-            "isIB": true, 
-            "tests_archs": [], 
-            "release_name": "CMSSW_7_4_DEBUG_X_2014-12-06-0200", 
-            "merged_prs": [
-                {
-                    "hash": "c649c57a48f3d98576032f8900ba59a2745d7ab8", 
-                    "title": "If fail to open plugin library also say which plugin was being loaded", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6803", 
-                    "number": "6803", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "Dr15Jones"
-                }, 
-                {
-                    "hash": "397f232ef1a38935b9701aaa606d58b978320a1c", 
-                    "title": "Calibration stream files are added and the script is improved.", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6796", 
-                    "number": "6796", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "batinkov"
-                }, 
-                {
-                    "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
-                    "title": "Fixes and updates to the HLT Run2 menu", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6799", 
-                    "number": "6799", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "perrotta"
-                }
-            ], 
-            "hlt_tests": "not-found"
-        }, 
-        {
-            "addons": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": true, 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/addOnTests.log", 
-                    "details": {}
-                }
-            ], 
-            "builds": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": "warning", 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/new/logAnalysis.pkl", 
-                    "details": {
-                        "compWarning": 1, 
-                        "ignoreWarning": 3
-                    }
-                }
-            ], 
-            "compared_tags": "CMSSW_7_4_DEBUG_X_2014-12-06-0200-->CMSSW_7_4_DEBUG_X_2014-12-08-0200", 
-            "utests": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": "passed", 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/unitTests-summary.log", 
-                    "details": {
-                        "num_fails": "0"
-                    }
-                }
-            ], 
-            "cmsdistTags": {
-                "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEBUG_X_2014-12-08-0200/slc6_amd64_gcc491"
-            }, 
-            "relvals": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": false, 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.DEBUG-mon-02/CMSSW_7_4_DEBUG_X_2014-12-08-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                    "details": {
-                        "num_passed": 1001, 
-                        "num_failed": 4
-                    }
-                }
-            ], 
-            "static_checks": "not-found", 
-            "isIB": true, 
-            "tests_archs": [
-                "slc6_amd64_gcc491"
-            ], 
-            "release_name": "CMSSW_7_4_DEBUG_X_2014-12-08-0200", 
-            "merged_prs": [
-                {
-                    "hash": "a1b34ee1a842473c43ec9f946728a82414aec46d", 
-                    "title": "Clean l1 configs", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6802", 
-                    "number": "6802", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "deguio"
-                }, 
-                {
-                    "hash": "fe8cca75a8328eca0b13444bcd7f0590c440c9d9", 
-                    "title": "clean and fix thepeg tests", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6752", 
-                    "number": "6752", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "mkirsano"
-                }, 
-                {
-                    "hash": "ed0097b01969e1576079c8e8bb0c452a111494a9", 
-                    "title": "trajectory seeding with arbitrary seeding layers", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/6794", 
-                    "number": "6794", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "matt-komm"
                 }
             ], 
             "hlt_tests": "not-found"
