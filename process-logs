@@ -47,16 +47,19 @@ if __name__ == "__main__":
              for x in zip(architectures, dates, queues)]
   outputsJobReports = [join("data/jobreports", x[0], x[2], x[1] + ".csv")
              for x in zip(architectures, dates, queues)]
+  outputsInputFiles = [join("data/inputs", x[0], x[2], x[1] + ".csv")
+             for x in zip(architectures, dates, queues)]
   pairs = zip(outputs, inputs)
   pairsUnitTestsSummary = zip(outputsUnitTestSummary, inputsUnitTestSummary)
   pairsCommands = zip(outputsRelvalCommands, inputsRelvalLogs)
   pairsMessages = zip(outputsRelvalMsgs, inputsRelvalLogs)
   pairsJobReports = zip(outputsJobReports, inputsRelvalLogs)
+  pairsInputFiles = zip(outputsInputFiles, inputsRelvalLogs)
   f = open("Makefile", "w")
 
   # A rule which takes care of converting a few known files in CMSDIST to json.
 
-  allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands + outputsJobReports
+  allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands + outputsJobReports + outputsInputFiles
   print(".PHONY: all clean pr-stats", file=f)
   print("all: pr-stats data/cmsdist-config.json " + " ".join(allFiles), file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
@@ -77,4 +80,7 @@ if __name__ == "__main__":
     print(l, file=f)
   for x in pairsJobReports:
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./process-job-reports $< > $@" % x
+    print(l, file=f)
+  for x in pairsInputFiles:
+    l = "%s: %s\n\tmkdir -p `dirname $@` && ./log-input-files $< > $@" % x
     print(l, file=f)
