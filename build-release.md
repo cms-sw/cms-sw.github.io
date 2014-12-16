@@ -142,7 +142,7 @@ Announced releases are listed in:
 In order to announce a release, first of all create a change log by using the
 jenkins job at:
 
-https://cmssdt.cern.ch/jenkins/job/release-produce-changelog
+[https://cmssdt.cern.ch/jenkins/job/release-produce-changelog]()
 
 This will hopefully populate the change-log at
 `https://github.com/cms-sw/cmssw/releases/<release-name>`
