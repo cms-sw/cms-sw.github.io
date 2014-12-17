@@ -52,21 +52,24 @@ class JobReportHandler(ContentHandler):
       self.printer = ElasticSearchPrinter()
     self.inLFN = False
     self.files = files
+    self.content = ''
 
   def startElement(self, name, attrs):
     if name != "LFN":
       return
+    self.content = ''
     self.inLFN = True 
 
   def characters(self, content):
     if self.inLFN:
-      if self.printer:
-        self.printer(self.release, self.architecture, self.workflow, self.step, content)
-      self.files[content] = 1
+      self.content += content
 
   def endElement(self, name):
     if name != "LFN":
       return
+    if self.printer:
+      self.printer(self.release, self.architecture, self.workflow, self.step, self.content)
+    self.files[self.content] = 1
     self.inLFN = False
 
 if __name__ == "__main__":
