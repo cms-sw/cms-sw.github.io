@@ -1,0 +1,97 @@
+#!/usr/bin/env python
+
+# Process job reports and create summary file with performance information.
+from argparse import ArgumentParser
+from zipfile import ZipFile
+from os.path import exists, join
+from xml.sax import parseString, ContentHandler
+from hashlib import sha1
+from datetime import datetime
+import urllib2, base64, json
+from os import getenv
+
+import re
+
+# Pipes results to elasticsearch.
+class ElasticSearchPrinter(object):
+  def __init__(self):
+    self.hostname = getenv("ES_HOSTNAME")
+    self.user = getenv("ES_USER")
+    self.password = getenv("ES_PASSWORD")
+
+  # We use the REST API because the python one does not seem to work
+  # with our ssl setup.
+  def __call__(self, release, architecture, workflow, step, content):
+    sha1_id = sha1(release + architecture +  workflow + step + content).hexdigest()
+    datepart = "201" + release.split("201")[1]
+    d = datetime.strptime(datepart, "%Y-%m-%d-%H00")
+    payload = {"release": release,
+               "architecture": architecture,
+               "workflow": workflow,
+               "step": step,
+               "file": content
+               }
+    url = "https://%s/ib-files-%s/ib-file-data/%s" % (self.hostname, 
+                                                      d.strftime("%Y.%m"), 
+                                                      sha1_id)
+    request = urllib2.Request(url)
+    if self.user and self.password:
+      base64string = base64.encodestring('%s:%s' % (self.user, self.password)).replace('\n', '')
+      request.add_header("Authorization", "Basic %s" % base64string)
+    request.get_method = lambda: 'PUT'
+    result = urllib2.urlopen(request, data=json.dumps(payload))
+
+class JobReportHandler(ContentHandler):
+  def __init__(self, release, architecture, workflow, step, files):
+    self.release = release
+    self.architecture = architecture
+    self.workflow = workflow
+    self.step = step
+    self.printer = None
+    if getenv("ES_HOSTNAME"):
+      self.printer = ElasticSearchPrinter()
+    self.inLFN = False
+    self.files = files
+
+  def startElement(self, name, attrs):
+    if name != "LFN":
+      return
+    self.inLFN = True 
+
+  def characters(self, content):
+    if self.inLFN:
+      if self.printer:
+        self.printer(self.release, self.architecture, self.workflow, self.step, content)
+      self.files[content] = 1
+
+  def endElement(self, name):
+    if name != "LFN":
+      return
+    self.inLFN = False
+
+if __name__ == "__main__":
+  parser = ArgumentParser()
+  parser.add_argument("input", nargs=1, help="input file")
+  args = parser.parse_args()
+  # We start with empty workflows
+  results = {}
+
+  printHeader = True
+  files = {}
+  for inFile in args.input:
+    m = re.match(".*/([^/]+)/www/.*/([^/]+)/.*", inFile)
+    architecture, release = m.groups()
+    f = ZipFile(inFile)
+    table = {}
+    for l in f.namelist():
+      m = re.match("([^/]*)/JobReport([0-9]).xml", l)
+      if not m:
+        continue
+      workflow, step = m.groups()
+      report = f.read(l)
+      handler = JobReportHandler(release, architecture, workflow, step, files)
+      try:
+        parseString(report, handler)
+      except Exception, e:
+        continue
+  print "\n".join(files.keys())
