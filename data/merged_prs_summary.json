@@ -718,14 +718,14 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_6_2_X_SLHC_2014-12-19-0200-->CMSSW_6_2_X_SLHC", 
+                "compared_tags": "CMSSW_6_2_X_SLHC_2014-12-19-0200-->CMSSW_6_2_0_SLHC22", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": false, 
                 "tests_archs": [], 
-                "release_name": "CMSSW_6_2_X_SLHC", 
+                "release_name": "CMSSW_6_2_0_SLHC22", 
                 "merged_prs": [
                     {
                         "hash": "c61f79395c5f51b760d90a024c277b915dca51c3", 
@@ -737,6 +737,20 @@
                         "author_login": "mark-grimes"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_6_2_0_SLHC22-->CMSSW_6_2_X_SLHC", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_6_2_X_SLHC", 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -3946,7 +3960,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2014-12-19-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -3965,15 +3986,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2014-12-19-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2014-12-19-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "461"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "Not Found"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2014-12-19-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 164, 
+                            "num_failed": 266
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -4060,6 +4093,34 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_CLANG_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6987", 
+                            "6989"
+                        ], 
+                        "hash": "101256e659ad119b1e5414c9a46ed0352fa18f4e", 
+                        "number": "101256e", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "cdd1530435a7dac41bf44cd3ff1f24921462b248", 
+                        "title": "escape all characters not allowed in XML tag names", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6987", 
+                        "number": "6987", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "apfeiffer1"
+                    }, 
+                    {
+                        "hash": "06c608bce2b0bca54b244ce0b95a3b6a70a70347", 
+                        "title": "Fix ProductID problems when using an EDAlias", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6989", 
+                        "number": "6989", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -6027,6 +6088,34 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6989", 
+                            "6987"
+                        ], 
+                        "hash": "d15e8b4e897a724ebba0b0433e312826091b983a", 
+                        "number": "d15e8b4", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "cdd1530435a7dac41bf44cd3ff1f24921462b248", 
+                        "title": "escape all characters not allowed in XML tag names", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6987", 
+                        "number": "6987", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "apfeiffer1"
+                    }, 
+                    {
+                        "hash": "06c608bce2b0bca54b244ce0b95a3b6a70a70347", 
+                        "title": "Fix ProductID problems when using an EDAlias", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6989", 
+                        "number": "6989", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6895", 
                             "6904", 
                             "6924", 
@@ -7736,6 +7825,34 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6987", 
+                            "6989"
+                        ], 
+                        "hash": "8837064754464c5b7d53709fc9b355e782663cfc", 
+                        "number": "8837064", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "cdd1530435a7dac41bf44cd3ff1f24921462b248", 
+                        "title": "escape all characters not allowed in XML tag names", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6987", 
+                        "number": "6987", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "apfeiffer1"
+                    }, 
+                    {
+                        "hash": "06c608bce2b0bca54b244ce0b95a3b6a70a70347", 
+                        "title": "Fix ProductID problems when using an EDAlias", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6989", 
+                        "number": "6989", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6924", 
                             "6968", 
                             "6876", 
@@ -8883,6 +9000,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "cdd1530435a7dac41bf44cd3ff1f24921462b248", 
+                        "title": "escape all characters not allowed in XML tag names", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6987", 
+                        "number": "6987", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "apfeiffer1"
+                    }, 
                     {
                         "hash": "06c608bce2b0bca54b244ce0b95a3b6a70a70347", 
                         "title": "Fix ProductID problems when using an EDAlias", 
@@ -10776,6 +10902,34 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6987", 
+                            "6989"
+                        ], 
+                        "hash": "406ac514424d6d0dc181bf100fd934b009373a13", 
+                        "number": "406ac51", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "cdd1530435a7dac41bf44cd3ff1f24921462b248", 
+                        "title": "escape all characters not allowed in XML tag names", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6987", 
+                        "number": "6987", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "apfeiffer1"
+                    }, 
+                    {
+                        "hash": "06c608bce2b0bca54b244ce0b95a3b6a70a70347", 
+                        "title": "Fix ProductID problems when using an EDAlias", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6989", 
+                        "number": "6989", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "hash": "c619c4312f15035bd2d378222a4a4c50901e68c6", 
                         "title": "Add missing build dependencies", 
@@ -12759,7 +12913,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-19-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -12774,9 +12935,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-19-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2014-12-19-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -12872,6 +13035,34 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "6987", 
+                            "6989"
+                        ], 
+                        "hash": "b750e4dd2dda4ce79929b37376cab3ed9b99b697", 
+                        "number": "b750e4d", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "cdd1530435a7dac41bf44cd3ff1f24921462b248", 
+                        "title": "escape all characters not allowed in XML tag names", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6987", 
+                        "number": "6987", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "apfeiffer1"
+                    }, 
+                    {
+                        "hash": "06c608bce2b0bca54b244ce0b95a3b6a70a70347", 
+                        "title": "Fix ProductID problems when using an EDAlias", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6989", 
+                        "number": "6989", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "6924", 
                             "6968", 
                             "6876", 
@@ -12954,6 +13145,719 @@
         "base_branch": "CMSSW_7_4_X", 
         "release_name": "CMSSW_7_4_X", 
         "comparisons": [
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_0_pre1-->CMSSW_7_4_X_2014-12-08-0200", 
+                "utests": [], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2014-12-08-0200/slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2014-12-08-0200/slc6_amd64_gcc481"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X_2014-12-08-0200", 
+                "merged_prs": [
+                    {
+                        "hash": "a1b34ee1a842473c43ec9f946728a82414aec46d", 
+                        "title": "Clean l1 configs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6802", 
+                        "number": "6802", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "fe8cca75a8328eca0b13444bcd7f0590c440c9d9", 
+                        "title": "clean and fix thepeg tests", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6752", 
+                        "number": "6752", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mkirsano"
+                    }, 
+                    {
+                        "hash": "ed0097b01969e1576079c8e8bb0c452a111494a9", 
+                        "title": "trajectory seeding with arbitrary seeding layers", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6794", 
+                        "number": "6794", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "matt-komm"
+                    }, 
+                    {
+                        "hash": "c649c57a48f3d98576032f8900ba59a2745d7ab8", 
+                        "title": "If fail to open plugin library also say which plugin was being loaded", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6803", 
+                        "number": "6803", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "397f232ef1a38935b9701aaa606d58b978320a1c", 
+                        "title": "Calibration stream files are added and the script is improved.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6796", 
+                        "number": "6796", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "batinkov"
+                    }, 
+                    {
+                        "hash": "491e95ca99d579bc63acb97ff004d0e970963952", 
+                        "title": "Fixes and updates to the HLT Run2 menu", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6799", 
+                        "number": "6799", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "perrotta"
+                    }, 
+                    {
+                        "hash": "3f2d886bb78c1218373d5473cea8cd265d247814", 
+                        "title": "Migrate from getByLabel to consumes/getByToken", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6793", 
+                        "number": "6793", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fruboes"
+                    }, 
+                    {
+                        "hash": "0467e3112a2e46a4d42e65ff7fa955ac669b4647", 
+                        "title": "From cmssw 7 3 x 2014 11 30 0200", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6731", 
+                        "number": "6731", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "friccita"
+                    }, 
+                    {
+                        "hash": "f4151110b03bf4bfd2d0647ff0c7a3ac97cc847d", 
+                        "title": "TimeSlewSim fix for 74X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6787", 
+                        "number": "6787", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "abdoulline"
+                    }, 
+                    {
+                        "hash": "1d423bcc557db04ff8269d7f339085ade1046d08", 
+                        "title": "Properly handle case where default number of threads requested", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6786", 
+                        "number": "6786", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "679bbaaf37d534d12fbb1291679cac2e6913f230", 
+                        "title": "Nominalcollision2015 default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6751", 
+                        "number": "6751", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "c55e40e281d93c28f8e6b79b705a40824e12c2f8", 
+                        "title": "add a customisation fragment to check EventSetup usage", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6783", 
+                        "number": "6783", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "e4bf1a0fd0635b3596211624e3d6f3b052503888", 
+                        "title": "Forward port of  #6570 and #6637 to 74x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6657", 
+                        "number": "6657", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmitrijus"
+                    }, 
+                    {
+                        "hash": "9cc9b84be1dba6037fa7205e5b68a3bc73221c71", 
+                        "title": "74X - update TopRefSel", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6780", 
+                        "number": "6780", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "vadler"
+                    }, 
+                    {
+                        "hash": "bdd47e62cb55b63c10bf576e669902fcf182febe", 
+                        "title": "Add profile to DQMGenericClient", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6666", 
+                        "number": "6666", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "586ba481bc664f4f8d7c82884a660aca94407de0", 
+                        "title": "porting L1 code to new DQM interface", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6627", 
+                        "number": "6627", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e89763a2e455ea5c2056d65e6b339232213d80b4", 
+                        "title": "fix for icc compiler: added the missing pat:: namespace", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6779", 
+                        "number": "6779", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
+                        "hash": "50bc85f8607dc765bf033a046d4856fc908c5a86", 
+                        "title": "Bugfix for L1 emulator dPhi calculation", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6748", 
+                        "number": "6748", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "apana"
+                    }, 
+                    {
+                        "hash": "58df7f2219efef5db356beaccbf75295c1100b44", 
+                        "title": "RPC DQM occupancy plot bug fix for 74x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6764", 
+                        "number": "6764", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "acimmino"
+                    }, 
+                    {
+                        "hash": "1c0b4073f192aa913ace7c641bd262286f63f1d1", 
+                        "title": "Fix electron GSF sequence for fastsim HLT (74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6769", 
+                        "number": "6769", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "perrotta"
+                    }, 
+                    {
+                        "hash": "5431bdf57c86a6e25ab2971b08a0e7fe4a9ab3c1", 
+                        "title": "switch CCC on in Conversion Pattern recognition", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6760", 
+                        "number": "6760", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "VinInn"
+                    }, 
+                    {
+                        "hash": "b4cd00422db1d91e13e54538d4ea537657f32c79", 
+                        "title": "Add SetCurrentFolder Missing in MuonIsolationDQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6741", 
+                        "number": "6741", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "folguera"
+                    }, 
+                    {
+                        "hash": "b02afe9d165878188fcaaf73d369ccb572a36b1a", 
+                        "title": "hltGetConfiguration: add a hilton-specific customisation", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6767", 
+                        "number": "6767", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "8f95c3e5145bb486d5953d2b5f6333db7266b68c", 
+                        "title": "Fix of VertexFromTrackProducer module", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6759", 
+                        "number": "6759", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mbluj"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6742"
+                        ], 
+                        "hash": "d2e1faa8272d1f14c51316c0405e23b8f21ac97b", 
+                        "number": "d2e1faa", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9c9b2611df9b5e8bb8d0150ec374b10c559f9986", 
+                        "title": "added setcurrentfolder missing in MuonIsolationDQM.cc", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6742", 
+                        "number": "6742", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "folguera"
+                    }, 
+                    {
+                        "hash": "c5c153f4530718508f11c53e2470e4687300c11d", 
+                        "title": "fixing crash when sumw2 is called more than one time", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6758", 
+                        "number": "6758", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "72fe2b856292ec762f654dffb230b3e7589742d7", 
+                        "title": "fix in PFJetID calculation due to change in PFJet fraction calculation", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6744", 
+                        "number": "6744", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "JetMETdqmval"
+                    }, 
+                    {
+                        "hash": "bfec92a56a506121f3bddaa177c0d287bc94e2e7", 
+                        "title": "Drop CA8 jets from RECO/AOD", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6654", 
+                        "number": "6654", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ahinzmann"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6707"
+                        ], 
+                        "hash": "58531385b0f8c7e0307645f7e588c3be00362ddf", 
+                        "number": "5853138", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "e7efd652fbbfb9e786fb057bf3e4d9652c914cb6", 
+                        "title": "combine all test plugins in to one", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6756", 
+                        "number": "6756", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
+                        "hash": "963f2a0b9b7ec95e8041d1b6e3c33cacc6cb939c", 
+                        "title": "An initial version of the script used for cleaning the dqmdata area.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6757", 
+                        "number": "6757", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "batinkov"
+                    }, 
+                    {
+                        "hash": "41c8a3f90144ea2ddd7b41b7c45ab40d3ea238e7", 
+                        "title": "fix customization when unschedule mode is used", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6635", 
+                        "number": "6635", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "srimanob"
+                    }, 
+                    {
+                        "hash": "6a1febf6fcd9fd376876ec7760ff710b7079d2d9", 
+                        "title": "Making FED used by HLTL1NumberFilter configurable", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6707", 
+                        "number": "6707", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "avetisya"
+                    }, 
+                    {
+                        "hash": "d9481b3cf731524cbcb5c93fa82b02f161f4cbc2", 
+                        "title": "hltGetConfiguration: improve handling of input files and datasets", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6753", 
+                        "number": "6753", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6718", 
+                            "6535", 
+                            "6735", 
+                            "6649"
+                        ], 
+                        "hash": "d3804afaf4938ad887478e0c08c5eb5eac06f4be", 
+                        "number": "d3804af", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "e520e5c1171dc9df3ba66758067045e3831e206e", 
+                        "title": "add copyMVA parameter in MultiTrackMerger", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6535", 
+                        "number": "6535", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mtosi"
+                    }, 
+                    {
+                        "hash": "8237960b8f7e66c767e389d326916f370551be1c", 
+                        "title": "Phase2-gem06", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6708", 
+                        "number": "6708", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
+                        "hash": "dc128c026b2507ca01a2532399c34b986ed8a729", 
+                        "title": "migration from EDProducer to stream::EDProducer (SeedGeneratorFromProtoTracksEDProducer)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6658", 
+                        "number": "6658", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mtosi"
+                    }, 
+                    {
+                        "hash": "977a72366173cb7d7ec4c018fe3cf2670ecff873", 
+                        "title": "Fix error in stage1 emulator module names", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6649", 
+                        "number": "6649", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "apana"
+                    }, 
+                    {
+                        "hash": "3078e76a6aa0de961e75933ee7af3ae659858ced", 
+                        "title": "daq updates", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6718", 
+                        "number": "6718", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smorovic"
+                    }, 
+                    {
+                        "hash": "ddf400ce3d40efb447cc7cf5ca2d60cb5e091458", 
+                        "title": "73X - update RelVal input", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6735", 
+                        "number": "6735", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "vadler"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6663", 
+                            "6705"
+                        ], 
+                        "hash": "fe309edf0baa8abb583a2329cd4906e046fc2582", 
+                        "number": "fe309ed", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "e1cca96b90fa422a4b94e6ac142381089610564e", 
+                        "title": "L1T: Add missing postls1-customisation of hltL1GtObjectMap", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6663", 
+                        "number": "6663", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "hash": "d704324403d6faae04c776a8acba59c2dedeab8b", 
+                        "title": "Correcting L1 trigger printout and multithreading", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6705", 
+                        "number": "6705", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "avetisya"
+                    }, 
+                    {
+                        "hash": "fcabc93e625664b0235eafce3ca5a5d233d3b520", 
+                        "title": "2015 Development Scenarios", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6631", 
+                        "number": "6631", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "406db266ba8ae5c871d03c748852787711bc5b0e", 
+                        "title": "74X - update RelVal input", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6736", 
+                        "number": "6736", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "vadler"
+                    }, 
+                    {
+                        "hash": "8b4fe6545224024c46457e62f323cd1fd4308495", 
+                        "title": "New Run2 simulation GT for HCal.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6643", 
+                        "number": "6643", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "diguida"
+                    }, 
+                    {
+                        "hash": "7ae51b428eee1ad3c0105178c14bc1ebd2a9bf78", 
+                        "title": "migration from EDProducer to stream::EDProducer (SiStripExcludedFEDListProducer)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6659", 
+                        "number": "6659", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mtosi"
+                    }, 
+                    {
+                        "hash": "ccf304f54da934ac0b471e64051158f6037ea875", 
+                        "title": "migration from EDProducer to stream::EDProducer (PixelVertexProducer)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6662", 
+                        "number": "6662", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mtosi"
+                    }, 
+                    {
+                        "hash": "068deb4b344d2fe07832f67489f2849cbcbaab93", 
+                        "title": "Rel val pythia8 update 7 4 x without tauola option", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6737", 
+                        "number": "6737", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "inugent"
+                    }, 
+                    {
+                        "hash": "0cacb2046020dde5b74849fc19dacc7e21f1cf51", 
+                        "title": "Cleanup unused arguments.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6733", 
+                        "number": "6733", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6721", 
+                            "6725", 
+                            "6682", 
+                            "6712"
+                        ], 
+                        "hash": "c945b7fe7b55909ee2cc4d5255c8d07e27d4e136", 
+                        "number": "c945b7f", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "05ccffb2c657e31e13fdc47c414470ae77aa71db", 
+                        "title": "Several fixes for popcon2dropbox - tested with RunInfo system", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6682", 
+                        "number": "6682", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ggovi"
+                    }, 
+                    {
+                        "hash": "9ee9fcd012dba716026242217419f436dbda7771", 
+                        "title": "miniaod extended everywhere possible", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6712", 
+                        "number": "6712", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "d751f068176fcc12f912838ef4d11916885ddf97", 
+                        "title": "exclude premix relvals from the MatrixReader", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6721", 
+                        "number": "6721", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "b7faacf24c79b69d42edb73ed13390b4916a4002", 
+                        "title": "73X: HLT improved Debug messages in case of Errors", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6725", 
+                        "number": "6725", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "hash": "9b2daeba94dd450510537084807c9a176c92c220", 
+                        "title": "miniaod extended everywhere possible (port 74x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6729", 
+                        "number": "6729", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "2f8f1b3770ee43e634179ff823433c2d861b3f94", 
+                        "title": "74X: HLT improved Debug messages in case of Errors", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6727", 
+                        "number": "6727", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "hash": "4c93c9c4a4f0ef5c4f6495acd23988ab05c518c3", 
+                        "title": "exclude premix relvals from the MatrixReader (port 74x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6722", 
+                        "number": "6722", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "14323ccca1feca098158cfcde726779ab5c36880", 
+                        "title": "HCAL reco speed up by David L.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6669", 
+                        "number": "6669", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "StoyanStoynev"
+                    }, 
+                    {
+                        "hash": "b7539e7667c1ac16c8784867f68cc42d90c302f0", 
+                        "title": "Code cleaning", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6713", 
+                        "number": "6713", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mbluj"
+                    }, 
+                    {
+                        "hash": "e0fbecb69cf40a2c45d9f343831f73ed01125953", 
+                        "title": "add capability to dump condDBv2 payloads", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6673", 
+                        "number": "6673", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "apfeiffer1"
+                    }, 
+                    {
+                        "hash": "8e8e0265e82112946b8c50c8db61ac089f3b79ca", 
+                        "title": "migration from EDFilter to stream::EDFilter (DetectorStateFilter)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6672", 
+                        "number": "6672", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mtosi"
+                    }, 
+                    {
+                        "hash": "d3d1ad1b5f0133cd7ae1c7f9b04c93277a8e2707", 
+                        "title": "74X - update TopRefSel", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6680", 
+                        "number": "6680", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "vadler"
+                    }, 
+                    {
+                        "hash": "004af6e18e6680e22d07548eb63e68ffba0d1a4a", 
+                        "title": "Remove duplicate dictionary", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6694", 
+                        "number": "6694", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "e3d8b873f17087e74dd4da033f7a3db3efca87a2", 
+                        "title": "Migration to multithread friendly modules", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6687", 
+                        "number": "6687", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mbluj"
+                    }, 
+                    {
+                        "hash": "465f4f184c0df055af2cb4d385923918e8ba37e3", 
+                        "title": "Fix warning on gcc 4.9.1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6698", 
+                        "number": "6698", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "hash": "da1523dfd5aca1d722b907d6ea1caf33f5d94b80", 
+                        "title": "LHE wf: temporary fix for IB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6702", 
+                        "number": "6702", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "1db5558ad05efdefb7e45a5b410f5c7300a5517b", 
+                        "title": "Change ConfDB menu path also here", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6701", 
+                        "number": "6701", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6655", 
+                            "6597", 
+                            "6574", 
+                            "6599", 
+                            "6595"
+                        ], 
+                        "hash": "dc3a67ae745a735f93b3e6cfe417d69d2b11fbf6", 
+                        "number": "dc3a67a", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "053a2fcc3f8f5b4ccbb5ab58d67faa4def755db3", 
+                        "title": "fix track cluster remover template definition", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6595", 
+                        "number": "6595", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mtosi"
+                    }, 
+                    {
+                        "hash": "cf500a5724a7386fd7a557fec0340dc12621355a", 
+                        "title": "Fix soft drop jet producer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6655", 
+                        "number": "6655", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ahinzmann"
+                    }, 
+                    {
+                        "hash": "39d666c512251f3b40dc5aa3ba53fffceb301aad", 
+                        "title": "updated PV label for electrons", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6599", 
+                        "number": "6599", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mandrenguyen"
+                    }, 
+                    {
+                        "hash": "bd2313311978a9e6e0300300421dd5f7485dbf48", 
+                        "title": "guard the nPho histograms from double counting", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6574", 
+                        "number": "6574", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "richard-cms"
+                    }, 
+                    {
+                        "hash": "342f8e1870398d423c8286f84d63f1956379558c", 
+                        "title": "L1t run l1t famos bugfix 730", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6597", 
+                        "number": "6597", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-l1t-offline"
+                    }
+                ], 
+                "hlt_tests": "found"
+            }, 
             {
                 "addons": [], 
                 "builds": [], 
@@ -14570,6 +15474,15 @@
                 ], 
                 "builds": [
                     {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-14/CMSSW_7_4_X_2014-12-19-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 1, 
+                            "ignoreWarning": 3
+                        }
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": "passed", 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2014-12-19-1400/new/logAnalysis.pkl", 
@@ -14587,15 +15500,23 @@
                         "details": {
                             "num_fails": "0"
                         }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-14/CMSSW_7_4_X_2014-12-19-1400/new/logAnalysis.pkl']", 
+                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2014-12-19-1400/slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2014-12-19-1400/slc6_amd64_gcc481"
                 }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
+                    "slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481"
                 ], 
                 "release_name": "CMSSW_7_4_X_2014-12-19-1400", 
@@ -14660,6 +15581,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "cdd1530435a7dac41bf44cd3ff1f24921462b248", 
+                        "title": "escape all characters not allowed in XML tag names", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6987", 
+                        "number": "6987", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "apfeiffer1"
+                    }, 
                     {
                         "hash": "06c608bce2b0bca54b244ce0b95a3b6a70a70347", 
                         "title": "Fix ProductID problems when using an EDAlias", 

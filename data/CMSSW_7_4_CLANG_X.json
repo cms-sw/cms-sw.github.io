@@ -1939,7 +1939,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2014-12-19-1400/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -1958,15 +1965,27 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2014-12-19-1400/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2014-12-19-1400/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "461"
+                    }
                 }
             ], 
             "cmsdistTags": {
                 "slc6_amd64_gcc491": "Not Found"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2014-12-19-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 164, 
+                        "num_failed": 266
+                    }
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
@@ -2053,6 +2072,34 @@
             "tests_archs": [], 
             "release_name": "CMSSW_7_4_CLANG_X", 
             "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "6987", 
+                        "6989"
+                    ], 
+                    "hash": "101256e659ad119b1e5414c9a46ed0352fa18f4e", 
+                    "number": "101256e", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "cdd1530435a7dac41bf44cd3ff1f24921462b248", 
+                    "title": "escape all characters not allowed in XML tag names", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6987", 
+                    "number": "6987", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "apfeiffer1"
+                }, 
+                {
+                    "hash": "06c608bce2b0bca54b244ce0b95a3b6a70a70347", 
+                    "title": "Fix ProductID problems when using an EDAlias", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6989", 
+                    "number": "6989", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "Dr15Jones"
+                }, 
                 {
                     "is_merge_commit": true, 
                     "brought_prs": [
