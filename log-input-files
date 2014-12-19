@@ -16,8 +16,7 @@ import re
 class ElasticSearchPrinter(object):
   def __init__(self):
     self.hostname = getenv("ES_HOSTNAME")
-    self.user = getenv("ES_USER")
-    self.password = getenv("ES_PASSWORD")
+    self.auth = getenv("ES_AUTH")
 
   # We use the REST API because the python one does not seem to work
   # with our ssl setup.
@@ -35,8 +34,8 @@ class ElasticSearchPrinter(object):
                                                       d.strftime("%Y.%m"), 
                                                       sha1_id)
     request = urllib2.Request(url)
-    if self.user and self.password:
-      base64string = base64.encodestring('%s:%s' % (self.user, self.password)).replace('\n', '')
+    if self.auth:
+      base64string = base64.encodestring(self.auth).replace('\n', '')
       request.add_header("Authorization", "Basic %s" % base64string)
     request.get_method = lambda: 'PUT'
     result = urllib2.urlopen(request, data=json.dumps(payload))
