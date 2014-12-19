@@ -5883,7 +5883,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.DEVEL-fri-02/CMSSW_7_4_DEVEL_X_2014-12-19-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -5898,9 +5905,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.DEVEL-fri-02/CMSSW_7_4_DEVEL_X_2014-12-19-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.DEVEL-fri-02/CMSSW_7_4_DEVEL_X_2014-12-19-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "1"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -10408,62 +10417,38 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-18-0200-->CMSSW_7_4_ROOT6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-02/CMSSW_7_4_ROOT6_X_2014-12-19-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 4, 
+                            "compError": 23, 
+                            "ignoreWarning": 20
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-18-0200-->CMSSW_7_4_ROOT6_X_2014-12-19-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-02/CMSSW_7_4_ROOT6_X_2014-12-19-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2014-12-16-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ROOT6_X_2014-12-19-0200", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "6977", 
-                            "6974"
-                        ], 
-                        "hash": "64947e9e6a31cd437ce63423ee25aa1722cfb59e", 
-                        "number": "64947e9", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "2ee3c6df968f63d58baef4dea49415cb132c1393", 
-                        "title": "D-Meson hadronic decay redefinitions for EvtGen", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6974", 
-                        "number": "6974", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "kurtejung"
-                    }, 
-                    {
-                        "hash": "823983d1bd22e3fa9e6752be74bc0be1cecb715a", 
-                        "title": "Fix for 3 exo relvals", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6977", 
-                        "number": "6977", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "jalimena"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "6948"
-                        ], 
-                        "hash": "8858a131752acf5acd6120b4851864bcefcabc15", 
-                        "number": "8858a13", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "06a739bda2d134e7fd76f796fd5e6149b10308cf", 
-                        "title": "put back 8 TeV block to herwigpp config", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6948", 
-                        "number": "6948", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "mkirsano"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -10598,6 +10583,67 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "cms-sw"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2014-12-19-0200-->CMSSW_7_4_ROOT6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6977", 
+                            "6974"
+                        ], 
+                        "hash": "64947e9e6a31cd437ce63423ee25aa1722cfb59e", 
+                        "number": "64947e9", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "2ee3c6df968f63d58baef4dea49415cb132c1393", 
+                        "title": "D-Meson hadronic decay redefinitions for EvtGen", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6974", 
+                        "number": "6974", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "kurtejung"
+                    }, 
+                    {
+                        "hash": "823983d1bd22e3fa9e6752be74bc0be1cecb715a", 
+                        "title": "Fix for 3 exo relvals", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6977", 
+                        "number": "6977", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jalimena"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6948"
+                        ], 
+                        "hash": "8858a131752acf5acd6120b4851864bcefcabc15", 
+                        "number": "8858a13", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "06a739bda2d134e7fd76f796fd5e6149b10308cf", 
+                        "title": "put back 8 TeV block to herwigpp config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6948", 
+                        "number": "6948", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mkirsano"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -12315,7 +12361,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2014-12-16-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.THREADED-thu-14/CMSSW_7_4_THREADED_X_2014-12-18-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 395, 
+                            "num_failed": 228
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -12389,8 +12445,61 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-02/CMSSW_7_4_THREADED_X_2014-12-19-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2014-12-18-2300-->CMSSW_7_4_THREADED_X_2014-12-19-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-02/CMSSW_7_4_THREADED_X_2014-12-19-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2014-12-19-0200/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_THREADED_X_2014-12-19-0200", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "6975"
+                        ], 
+                        "hash": "48060d6c2483a8ccd14e203276d01a5f068a9c49", 
+                        "number": "48060d6", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "7408da904c2180e9191f2ec19f0561d54ebbf15a", 
+                        "title": "Restored functionality to print geometry and weights", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6975", 
+                        "number": "6975", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "civanch"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_THREADED_X_2014-12-18-2300-->CMSSW_7_4_THREADED_X", 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2014-12-19-0200-->CMSSW_7_4_THREADED_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -12444,24 +12553,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "mkirsano"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "6975"
-                        ], 
-                        "hash": "48060d6c2483a8ccd14e203276d01a5f068a9c49", 
-                        "number": "48060d6", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "7408da904c2180e9191f2ec19f0561d54ebbf15a", 
-                        "title": "Restored functionality to print geometry and weights", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6975", 
-                        "number": "6975", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "civanch"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -14196,7 +14287,7 @@
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2014-12-17-0200/slc6_amd64_gcc491"
                 }, 
                 "relvals": [], 
-                "static_checks": "not-found", 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491"
