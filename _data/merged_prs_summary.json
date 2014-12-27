@@ -1582,7 +1582,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/sat/7.2-sat-02/CMSSW_7_2_X_2014-12-27-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -1598,9 +1605,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/sat/7.2-sat-02/CMSSW_7_2_X_2014-12-27-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/sat/7.2-sat-02/CMSSW_7_2_X_2014-12-27-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "1"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -1738,57 +1747,19 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.3-fri-14/CMSSW_7_3_X_2014-12-19-1400/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "warning", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.3-fri-14/CMSSW_7_3_X_2014-12-19-1400/new/logAnalysis.pkl", 
-                        "details": {
-                            "compWarning": 1, 
-                            "ignoreWarning": 3
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_3_X_2014-12-17-1400-->CMSSW_7_3_X_2014-12-19-1400", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.3-fri-14/CMSSW_7_3_X_2014-12-19-1400/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_3_X_2014-12-19-1400/slc6_amd64_gcc491", 
                     "osx108_amd64_gcc481": "IB/CMSSW_7_3_X_2014-12-19-1400/osx108_amd64_gcc481", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2014-12-19-1400/slc6_amd64_gcc481"
                 }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.3-fri-14/CMSSW_7_3_X_2014-12-19-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 1006, 
-                            "num_failed": 2
-                        }
-                    }
-                ], 
+                "relvals": [], 
                 "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_3_X_2014-12-19-1400", 
                 "merged_prs": [], 
                 "hlt_tests": "found"
@@ -3249,7 +3220,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_CLANG_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7012"
+                        ], 
+                        "hash": "3a8738498e76aa119c3287bf63edb22fb3d12684", 
+                        "number": "3a87384", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "ebde716fe853096501602b9b524ae3cb473cd9ca", 
+                        "title": "dummy commit to force a patch build", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7012", 
+                        "number": "7012", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -4051,7 +4041,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7012"
+                        ], 
+                        "hash": "8c8b061df408ee334e268232076a576c0be1c13b", 
+                        "number": "8c8b061", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "ebde716fe853096501602b9b524ae3cb473cd9ca", 
+                        "title": "dummy commit to force a patch build", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7012", 
+                        "number": "7012", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -4767,7 +4776,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_GEANT10_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7012"
+                        ], 
+                        "hash": "924e9dbeff152d1058e01d489f5ed0a2e7af9586", 
+                        "number": "924e9db", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "ebde716fe853096501602b9b524ae3cb473cd9ca", 
+                        "title": "dummy commit to force a patch build", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7012", 
+                        "number": "7012", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -5320,7 +5348,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "ebde716fe853096501602b9b524ae3cb473cd9ca", 
+                        "title": "dummy commit to force a patch build", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7012", 
+                        "number": "7012", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "smuzaffar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -6136,7 +6174,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7012"
+                        ], 
+                        "hash": "c36c0e433ca29b11ab967d4947d5f220840e8b7b", 
+                        "number": "c36c0e4", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "ebde716fe853096501602b9b524ae3cb473cd9ca", 
+                        "title": "dummy commit to force a patch build", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7012", 
+                        "number": "7012", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -6964,7 +7021,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7012"
+                        ], 
+                        "hash": "c9134cd60e9b55b0c8088734cf75ab158c6766cd", 
+                        "number": "c9134cd", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "ebde716fe853096501602b9b524ae3cb473cd9ca", 
+                        "title": "dummy commit to force a patch build", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7012", 
+                        "number": "7012", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -7930,7 +8006,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "ebde716fe853096501602b9b524ae3cb473cd9ca", 
+                        "title": "dummy commit to force a patch build", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7012", 
+                        "number": "7012", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "smuzaffar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
