@@ -853,55 +853,15 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-02/CMSSW_7_2_X_2014-12-24-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "error", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-02/CMSSW_7_2_X_2014-12-24-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "linkError": 3, 
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_2_X_2014-12-23-1400-->CMSSW_7_2_X_2014-12-24-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-02/CMSSW_7_2_X_2014-12-24-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc481": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-02/CMSSW_7_2_X_2014-12-24-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 866, 
-                            "num_failed": 8
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc481"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_2_X_2014-12-24-0200", 
                 "merged_prs": [], 
                 "hlt_tests": "found"
@@ -2881,15 +2841,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2014-12-31-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2014-12-31-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "462"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "Not Found"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2014-12-31-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 164, 
+                            "num_failed": 266
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -2910,7 +2882,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_CLANG_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7027"
+                        ], 
+                        "hash": "39abc366adca00a3c7ea8f4d0d944e0bccc71012", 
+                        "number": "39abc36", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c0dc1ce4811c9eb30a7aca8baef729a2cfb41a63", 
+                        "title": "Bugfix in event filtering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7027", 
+                        "number": "7027", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "osschar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -3527,7 +3518,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7027"
+                        ], 
+                        "hash": "73505cf22d5edc83040eee26f62dd2788b1f7827", 
+                        "number": "73505cf", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c0dc1ce4811c9eb30a7aca8baef729a2cfb41a63", 
+                        "title": "Bugfix in event filtering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7027", 
+                        "number": "7027", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "osschar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -4144,7 +4154,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_GEANT10_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7027"
+                        ], 
+                        "hash": "431ac06309ba1c71bd6bfd1f4df0a0d2cf77d0a2", 
+                        "number": "431ac06", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c0dc1ce4811c9eb30a7aca8baef729a2cfb41a63", 
+                        "title": "Bugfix in event filtering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7027", 
+                        "number": "7027", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "osschar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -4674,6 +4703,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "b1c935e929015014bf90cf2e3b143435108d10ac", 
+                        "title": "Still some update to 1p4e34 menu 74X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7031", 
+                        "number": "7031", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "perrotta"
+                    }, 
                     {
                         "hash": "c0dc1ce4811c9eb30a7aca8baef729a2cfb41a63", 
                         "title": "Bugfix in event filtering", 
@@ -5417,7 +5455,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2014-12-28-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-02/CMSSW_7_4_ROOT6_X_2014-12-31-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 971, 
+                            "num_failed": 13
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -5450,12 +5498,40 @@
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7022", 
+                            "7027"
+                        ], 
+                        "hash": "f0cabdf3665e9b9f53fd859b3ececfa268ee02b8", 
+                        "number": "f0cabdf", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c0dc1ce4811c9eb30a7aca8baef729a2cfb41a63", 
+                        "title": "Bugfix in event filtering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7027", 
+                        "number": "7027", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "osschar"
+                    }, 
+                    {
                         "hash": "dc06e3a498cba09d2696a6f89cceae9cc68fb137", 
                         "title": "Remove/modify superfluous member functions of FunctionWithDict.", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7028", 
                         "number": "7028", 
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "f9f43f016c7964507c59535e75f9c0721d230801", 
+                        "title": "Bug fix. Properties of data member are not properties of containing clas...", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7022", 
+                        "number": "7022", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
                         "author_login": "wmtan"
                     }
                 ], 
@@ -6065,7 +6141,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7027"
+                        ], 
+                        "hash": "4bcdd35efa858f2a8f6242c27aa455047f628f8d", 
+                        "number": "4bcdd35", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c0dc1ce4811c9eb30a7aca8baef729a2cfb41a63", 
+                        "title": "Bugfix in event filtering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7027", 
+                        "number": "7027", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "osschar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -7163,6 +7258,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "b1c935e929015014bf90cf2e3b143435108d10ac", 
+                        "title": "Still some update to 1p4e34 menu 74X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7031", 
+                        "number": "7031", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "perrotta"
+                    }, 
                     {
                         "hash": "c0dc1ce4811c9eb30a7aca8baef729a2cfb41a63", 
                         "title": "Bugfix in event filtering", 
