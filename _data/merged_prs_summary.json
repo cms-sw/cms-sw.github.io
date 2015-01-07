@@ -1856,7 +1856,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_3_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "f517b1ec7f6dab5b92959f2dc1d6f04a57ec1fd8", 
+                        "title": "Bugfix in event filtering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7026", 
+                        "number": "7026", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "osschar"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -2732,7 +2742,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-07-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -2751,15 +2768,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-07-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-07-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "462"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "Not Found"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-07-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 164, 
+                            "num_failed": 266
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -3408,7 +3437,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-14/CMSSW_7_4_DEVEL_X_2015-01-07-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -3424,9 +3460,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-14/CMSSW_7_4_DEVEL_X_2015-01-07-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-14/CMSSW_7_4_DEVEL_X_2015-01-07-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -4750,6 +4788,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "ff81dc1313536475f57e3aef29bba36740bee930", 
+                        "title": "Report status to an elasticsearch instance.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7062", 
+                        "number": "7062", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "hash": "6186f3b1dd72a5936cf8a6ebdad3e00cb837f146", 
+                        "title": "Check immediate return status from XrdClFile::Open call.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7063", 
+                        "number": "7063", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bbockelm"
+                    }, 
                     {
                         "hash": "defb15231daafd7a2769bceabdb7c19b8364dcac", 
                         "title": "Fix for ALCAMIN workflows", 
@@ -6333,15 +6389,36 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-07-0200-->CMSSW_7_4_THREADED_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.THREADED-wed-14/CMSSW_7_4_THREADED_X_2015-01-07-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 1, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-07-0200-->CMSSW_7_4_THREADED_X_2015-01-07-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.THREADED-wed-14/CMSSW_7_4_THREADED_X_2015-01-07-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-07-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_THREADED_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_THREADED_X_2015-01-07-1400", 
                 "merged_prs": [
                     {
                         "is_merge_commit": true, 
@@ -6362,6 +6439,20 @@
                         "author_login": "puigh"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-07-1400-->CMSSW_7_4_THREADED_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_THREADED_X", 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -7766,7 +7857,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "ff81dc1313536475f57e3aef29bba36740bee930", 
+                        "title": "Report status to an elasticsearch instance.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7062", 
+                        "number": "7062", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "hash": "6186f3b1dd72a5936cf8a6ebdad3e00cb837f146", 
+                        "title": "Check immediate return status from XrdClFile::Open call.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7063", 
+                        "number": "7063", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bbockelm"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
