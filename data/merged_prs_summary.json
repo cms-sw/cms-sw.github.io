@@ -1377,9 +1377,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.2-thu-02/CMSSW_7_2_X_2015-01-08-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.2-thu-02/CMSSW_7_2_X_2015-01-08-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -2926,7 +2928,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.CLANG-thu-02/CMSSW_7_4_CLANG_X_2015-01-08-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -2945,9 +2954,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.CLANG-thu-02/CMSSW_7_4_CLANG_X_2015-01-08-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.CLANG-thu-02/CMSSW_7_4_CLANG_X_2015-01-08-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "462"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -3022,6 +3033,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_CLANG_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7064"
+                        ], 
+                        "hash": "22d4a47817a0bd24b8d0cbfda2542819de75056b", 
+                        "number": "22d4a47", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9894b83c7975274e850148626cd802c5f61e71c2", 
+                        "title": "Drop unused function.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7064", 
+                        "number": "7064", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ktf"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -3733,6 +3762,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7064"
+                        ], 
+                        "hash": "de558c7faabdc33c16b991db94f7bbe4acd92c65", 
+                        "number": "de558c7", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9894b83c7975274e850148626cd802c5f61e71c2", 
+                        "title": "Drop unused function.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7064", 
+                        "number": "7064", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ktf"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -4583,6 +4630,24 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7064"
+                        ], 
+                        "hash": "a1b9241d186fbba2f4781a7205feeae8b9b65a0e", 
+                        "number": "a1b9241", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9894b83c7975274e850148626cd802c5f61e71c2", 
+                        "title": "Drop unused function.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7064", 
+                        "number": "7064", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7078"
                         ], 
                         "hash": "a5e75ba65a3893062fefddb9796bcc4bef94fdfe", 
@@ -5260,6 +5325,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "8e139c6c48f3f938f17fd9047c11fefbf3dabb5c", 
+                        "title": "No longer use TrackAssociatorByChi2 to get dca to beam spot", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7036", 
+                        "number": "7036", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "hash": "9894b83c7975274e850148626cd802c5f61e71c2", 
                         "title": "Drop unused function.", 
@@ -6274,6 +6348,24 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7064"
+                        ], 
+                        "hash": "d743d7c71872f71f1708c8f3260b4fdb36f0a69d", 
+                        "number": "d743d7c", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9894b83c7975274e850148626cd802c5f61e71c2", 
+                        "title": "Drop unused function.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7064", 
+                        "number": "7064", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7078"
                         ], 
                         "hash": "b83802d1588a6a64946d9e474112bc93b30cff64", 
@@ -7015,34 +7107,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-07-1400-->CMSSW_7_4_THREADED_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.THREADED-thu-02/CMSSW_7_4_THREADED_X_2015-01-08-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 1, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-07-1400-->CMSSW_7_4_THREADED_X_2015-01-08-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.THREADED-thu-02/CMSSW_7_4_THREADED_X_2015-01-08-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-08-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_THREADED_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_THREADED_X_2015-01-08-0200", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7078"
-                        ], 
-                        "hash": "552bd2bccc23cbeda2665992d2bf8e912c9518f2", 
-                        "number": "552bd2b", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "0fd81b76d1ece3309018cafa385cd96a481e4895", 
-                        "title": "Make updated HF for 2015 default", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7078", 
-                        "number": "7078", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "civanch"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -7088,6 +7183,57 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "bbockelm"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-08-0200-->CMSSW_7_4_THREADED_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_THREADED_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7064"
+                        ], 
+                        "hash": "540753bf6c50392324078d69d6f24dc2f813d334", 
+                        "number": "540753b", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "9894b83c7975274e850148626cd802c5f61e71c2", 
+                        "title": "Drop unused function.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7064", 
+                        "number": "7064", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7078"
+                        ], 
+                        "hash": "552bd2bccc23cbeda2665992d2bf8e912c9518f2", 
+                        "number": "552bd2b", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "0fd81b76d1ece3309018cafa385cd96a481e4895", 
+                        "title": "Make updated HF for 2015 default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7078", 
+                        "number": "7078", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "civanch"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -8071,29 +8217,57 @@
                 ], 
                 "release_name": "CMSSW_7_4_X_2015-01-07-1400", 
                 "merged_prs": [], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-01-07-1400-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-02/CMSSW_7_4_X_2015-01-08-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 2, 
+                            "ignoreWarning": 3
+                        }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.4-thu-02/CMSSW_7_4_X_2015-01-08-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-01-07-1400-->CMSSW_7_4_X_2015-01-08-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-02/CMSSW_7_4_X_2015-01-08-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.4-thu-02/CMSSW_7_4_X_2015-01-08-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-01-08-0200/slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-01-08-0200/slc6_amd64_gcc481"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_4_X_2015-01-08-0200", 
                 "merged_prs": [
-                    {
-                        "hash": "9894b83c7975274e850148626cd802c5f61e71c2", 
-                        "title": "Drop unused function.", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7064", 
-                        "number": "7064", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ktf"
-                    }, 
                     {
                         "hash": "0fd81b76d1ece3309018cafa385cd96a481e4895", 
                         "title": "Make updated HF for 2015 default", 
@@ -8129,6 +8303,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "bbockelm"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_X_2015-01-08-0200-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "merged_prs": [
+                    {
+                        "hash": "8e139c6c48f3f938f17fd9047c11fefbf3dabb5c", 
+                        "title": "No longer use TrackAssociatorByChi2 to get dca to beam spot", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7036", 
+                        "number": "7036", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "9894b83c7975274e850148626cd802c5f61e71c2", 
+                        "title": "Drop unused function.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7064", 
+                        "number": "7064", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ktf"
                     }
                 ], 
                 "hlt_tests": "not-found"
