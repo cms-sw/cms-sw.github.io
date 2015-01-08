@@ -206,55 +206,17 @@
         "release_name": "CMSSW_6_2_X_SLHC", 
         "comparisons": [
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc472", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-02/CMSSW_6_2_X_SLHC_2015-01-01-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc472", 
-                        "passed": "warning", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-02/CMSSW_6_2_X_SLHC_2015-01-01-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "compWarning": 16, 
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_6_2_0_SLHC22-->CMSSW_6_2_X_SLHC_2015-01-01-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc472", 
-                        "passed": "failed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-02/CMSSW_6_2_X_SLHC_2015-01-01-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "14"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_X_SLHC_2015-01-01-0200/slc6_amd64_gcc472"
                 }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc472", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-02/CMSSW_6_2_X_SLHC_2015-01-01-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 38, 
-                            "num_failed": 0
-                        }
-                    }
-                ], 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc472"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_6_2_X_SLHC_2015-01-01-0200", 
                 "merged_prs": [
                     {
@@ -1950,8 +1912,18 @@
                     "osx108_amd64_gcc481": "IB/CMSSW_7_3_X_2015-01-08-0200/osx108_amd64_gcc481", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2015-01-04-0200/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3-thu-02/CMSSW_7_3_X_2015-01-08-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1002, 
+                            "num_failed": 3
+                        }
+                    }
+                ], 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -3053,6 +3025,24 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7036"
+                        ], 
+                        "hash": "d7922dc899edbf26604125dd3ba37d877d26cb9a", 
+                        "number": "d7922dc", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8e139c6c48f3f938f17fd9047c11fefbf3dabb5c", 
+                        "title": "No longer use TrackAssociatorByChi2 to get dca to beam spot", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7036", 
+                        "number": "7036", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7064"
                         ], 
                         "hash": "22d4a47817a0bd24b8d0cbfda2542819de75056b", 
@@ -3768,7 +3758,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEVEL-thu-02/CMSSW_7_4_DEVEL_X_2015-01-08-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -3784,9 +3781,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEVEL-thu-02/CMSSW_7_4_DEVEL_X_2015-01-08-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEVEL-thu-02/CMSSW_7_4_DEVEL_X_2015-01-08-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -3861,6 +3860,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7036"
+                        ], 
+                        "hash": "236d88c9d2f3bafbadb5cb19dcf615e552a7aec1", 
+                        "number": "236d88c", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8e139c6c48f3f938f17fd9047c11fefbf3dabb5c", 
+                        "title": "No longer use TrackAssociatorByChi2 to get dca to beam spot", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7036", 
+                        "number": "7036", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -4689,6 +4706,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_GEANT10_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7036"
+                        ], 
+                        "hash": "662d0167be9c0a78609da712c01bad34e00e3a5b", 
+                        "number": "662d016", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8e139c6c48f3f938f17fd9047c11fefbf3dabb5c", 
+                        "title": "No longer use TrackAssociatorByChi2 to get dca to beam spot", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7036", 
+                        "number": "7036", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -6538,6 +6573,24 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7036"
+                        ], 
+                        "hash": "e94187f0cffeeea9802e13312b564de47bab4161", 
+                        "number": "e94187f", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8e139c6c48f3f938f17fd9047c11fefbf3dabb5c", 
+                        "title": "No longer use TrackAssociatorByChi2 to get dca to beam spot", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7036", 
+                        "number": "7036", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7064"
                         ], 
                         "hash": "d743d7c71872f71f1708c8f3260b4fdb36f0a69d", 
@@ -7241,7 +7294,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.THREADED-thu-02/CMSSW_7_4_THREADED_X_2015-01-08-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -7257,9 +7317,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.THREADED-thu-02/CMSSW_7_4_THREADED_X_2015-01-08-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.THREADED-thu-02/CMSSW_7_4_THREADED_X_2015-01-08-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -7334,6 +7396,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7036"
+                        ], 
+                        "hash": "1b69962a53192b42a9be2c1fbe94e86ea953fcf3", 
+                        "number": "1b69962", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8e139c6c48f3f938f17fd9047c11fefbf3dabb5c", 
+                        "title": "No longer use TrackAssociatorByChi2 to get dca to beam spot", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7036", 
+                        "number": "7036", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -8396,9 +8476,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-02/CMSSW_7_4_X_2015-01-08-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-02/CMSSW_7_4_X_2015-01-08-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }, 
                     {
                         "arch": "slc6_amd64_gcc481", 
