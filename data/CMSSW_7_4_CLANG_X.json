@@ -1319,7 +1319,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-14/CMSSW_7_4_CLANG_X_2015-01-11-1400/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -1338,9 +1345,11 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-14/CMSSW_7_4_CLANG_X_2015-01-11-1400/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-14/CMSSW_7_4_CLANG_X_2015-01-11-1400/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "462"
+                    }
                 }
             ], 
             "cmsdistTags": {
@@ -1367,7 +1376,46 @@
             "isIB": false, 
             "tests_archs": [], 
             "release_name": "CMSSW_7_4_CLANG_X", 
-            "merged_prs": [], 
+            "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "7120", 
+                        "7041", 
+                        "7118"
+                    ], 
+                    "hash": "d21be7659a9df6a91820eb85d21761e7840247d9", 
+                    "number": "d21be76", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "f9b37d3df0c69948b5638ce17ac245c17978e48b", 
+                    "title": "also update the run1 HF shower library to v2", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7120", 
+                    "number": "7120", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "davidlange6"
+                }, 
+                {
+                    "hash": "941af5c84a31bcb9beed956e826d3a4ee9a709fd", 
+                    "title": "PF-based b-taggers in the standard Reco", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7041", 
+                    "number": "7041", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "cms-btv-pog"
+                }, 
+                {
+                    "hash": "2d2e0f0527a09e837a5917231ac049c36aac1fef", 
+                    "title": "change to v2 of shower lib", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7118", 
+                    "number": "7118", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "davidlange6"
+                }
+            ], 
             "hlt_tests": "not-found"
         }
     ]
