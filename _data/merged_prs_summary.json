@@ -605,15 +605,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/6.2-mon-14/CMSSW_6_2_X_SLHC_2015-01-12-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/6.2-mon-14/CMSSW_6_2_X_SLHC_2015-01-12-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_X_SLHC_2015-01-11-1400/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/6.2-mon-14/CMSSW_6_2_X_SLHC_2015-01-12-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 38, 
+                            "num_failed": 0
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -640,7 +652,7 @@
                         "author_login": "hengne"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -1554,7 +1566,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc481": "Not Found"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.2-mon-02/CMSSW_7_2_X_2015-01-12-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 866, 
+                            "num_failed": 8
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -3533,6 +3555,44 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7079", 
+                            "7112", 
+                            "7133"
+                        ], 
+                        "hash": "e62ab9957011fafe56d42c0a69c5b171dbd53e21", 
+                        "number": "e62ab99", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "245fbf9410521e27d513bb6c55d1454a571ab6db", 
+                        "title": "Update of VBF HLT filter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7079", 
+                        "number": "7079", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "b95e0206db879845808bb0b428151b2c843bdbfd", 
+                        "title": "Create Bd_Psi2SKpi.dec", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7133", 
+                        "number": "7133", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "heppye"
+                    }, 
+                    {
+                        "hash": "8c7558310ea8d1eb94f75e04a777df2e493b5be4", 
+                        "title": "Fastsim threadsafe dqm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7112", 
+                        "number": "7112", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7054", 
                             "7049", 
                             "7068"
@@ -4881,6 +4941,44 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7079", 
+                            "7112", 
+                            "7133"
+                        ], 
+                        "hash": "46a925359919c3ab96058e99f1844852926d2e7d", 
+                        "number": "46a9253", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "245fbf9410521e27d513bb6c55d1454a571ab6db", 
+                        "title": "Update of VBF HLT filter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7079", 
+                        "number": "7079", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "b95e0206db879845808bb0b428151b2c843bdbfd", 
+                        "title": "Create Bd_Psi2SKpi.dec", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7133", 
+                        "number": "7133", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "heppye"
+                    }, 
+                    {
+                        "hash": "8c7558310ea8d1eb94f75e04a777df2e493b5be4", 
+                        "title": "Fastsim threadsafe dqm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7112", 
+                        "number": "7112", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -6418,7 +6516,46 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_GEANT10_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7079", 
+                            "7112", 
+                            "7133"
+                        ], 
+                        "hash": "823a5e876210954fac7ac92f9aed0e0ea6f53a65", 
+                        "number": "823a5e8", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "245fbf9410521e27d513bb6c55d1454a571ab6db", 
+                        "title": "Update of VBF HLT filter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7079", 
+                        "number": "7079", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "b95e0206db879845808bb0b428151b2c843bdbfd", 
+                        "title": "Create Bd_Psi2SKpi.dec", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7133", 
+                        "number": "7133", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "heppye"
+                    }, 
+                    {
+                        "hash": "8c7558310ea8d1eb94f75e04a777df2e493b5be4", 
+                        "title": "Fastsim threadsafe dqm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7112", 
+                        "number": "7112", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -7630,8 +7767,72 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ICC-mon-14/CMSSW_7_4_ICC_X_2015-01-12-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "miscError": 1, 
+                            "compError": 3, 
+                            "linkError": 26
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-01-12-0200-->CMSSW_7_4_ICC_X_2015-01-12-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ICC-mon-14/CMSSW_7_4_ICC_X_2015-01-12-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-01-11-0200/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ICC_X_2015-01-12-1400", 
+                "merged_prs": [
+                    {
+                        "hash": "2671a0df3b2e4d7c8b1197913f28c5a5eb2af338", 
+                        "title": "Migrating RCTMonitor to new DQM API", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7054", 
+                        "number": "7054", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "vanbesien"
+                    }, 
+                    {
+                        "hash": "14245652436c402cbe4859d298264e40b38ebcf1", 
+                        "title": "Using Hcal FED instead of trigger FED to get HL1Id", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7068", 
+                        "number": "7068", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "vanbesien"
+                    }, 
+                    {
+                        "hash": "8b905f4e33af5511e49a503fd2f9cf1bb33c4211", 
+                        "title": "Migrating PhysicsObjectsMonitor to new DQM API", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7049", 
+                        "number": "7049", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "vanbesien"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_ICC_X_2015-01-12-0200-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-01-12-1400-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -7666,33 +7867,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "lveldere"
-                    }, 
-                    {
-                        "hash": "2671a0df3b2e4d7c8b1197913f28c5a5eb2af338", 
-                        "title": "Migrating RCTMonitor to new DQM API", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7054", 
-                        "number": "7054", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "vanbesien"
-                    }, 
-                    {
-                        "hash": "14245652436c402cbe4859d298264e40b38ebcf1", 
-                        "title": "Using Hcal FED instead of trigger FED to get HL1Id", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7068", 
-                        "number": "7068", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "vanbesien"
-                    }, 
-                    {
-                        "hash": "8b905f4e33af5511e49a503fd2f9cf1bb33c4211", 
-                        "title": "Migrating PhysicsObjectsMonitor to new DQM API", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7049", 
-                        "number": "7049", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "vanbesien"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -9170,7 +9344,46 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7079", 
+                            "7112", 
+                            "7133"
+                        ], 
+                        "hash": "2b349ec5815e47e8e6f2b4aa225221c92ac145c3", 
+                        "number": "2b349ec", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "245fbf9410521e27d513bb6c55d1454a571ab6db", 
+                        "title": "Update of VBF HLT filter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7079", 
+                        "number": "7079", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "b95e0206db879845808bb0b428151b2c843bdbfd", 
+                        "title": "Create Bd_Psi2SKpi.dec", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7133", 
+                        "number": "7133", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "heppye"
+                    }, 
+                    {
+                        "hash": "8c7558310ea8d1eb94f75e04a777df2e493b5be4", 
+                        "title": "Fastsim threadsafe dqm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7112", 
+                        "number": "7112", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -10415,6 +10628,44 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7079", 
+                            "7112", 
+                            "7133"
+                        ], 
+                        "hash": "4832ae4e8b39274cc2a3f8c9858b900fc656e240", 
+                        "number": "4832ae4", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "245fbf9410521e27d513bb6c55d1454a571ab6db", 
+                        "title": "Update of VBF HLT filter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7079", 
+                        "number": "7079", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "b95e0206db879845808bb0b428151b2c843bdbfd", 
+                        "title": "Create Bd_Psi2SKpi.dec", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7133", 
+                        "number": "7133", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "heppye"
+                    }, 
+                    {
+                        "hash": "8c7558310ea8d1eb94f75e04a777df2e493b5be4", 
+                        "title": "Fastsim threadsafe dqm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7112", 
+                        "number": "7112", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
