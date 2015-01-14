@@ -4514,34 +4514,40 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_CLANG_X_2015-01-14-0200-->CMSSW_7_4_CLANG_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-14-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 3636, 
+                            "miscError": 1, 
+                            "compError": 40, 
+                            "ignoreWarning": 1633, 
+                            "linkError": 184
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-01-14-0200-->CMSSW_7_4_CLANG_X_2015-01-14-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-14-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "Not Found"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_CLANG_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_CLANG_X_2015-01-14-1400", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7108"
-                        ], 
-                        "hash": "7cf0d8bec831bd2ba2f927dfa09b43ff1e826ec5", 
-                        "number": "7cf0d8b", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ff55fbb71876ed35ffe1b68b7d91860d78ab9a45", 
-                        "title": "TriggerResultFilters: accept arbitrary Path names", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7108", 
-                        "number": "7108", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "fwyzard"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -4559,6 +4565,67 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "Martin-Grunewald"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-01-14-1400-->CMSSW_7_4_CLANG_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_CLANG_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7141", 
+                            "7055"
+                        ], 
+                        "hash": "2c8e4277000a012157ac40474f24e5945f2419a1", 
+                        "number": "2c8e427", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a7030ab48bb40d32c7809fc4393612f4383d9da8", 
+                        "title": "O2O", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7055", 
+                        "number": "7055", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "depasse"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7108"
+                        ], 
+                        "hash": "7cf0d8bec831bd2ba2f927dfa09b43ff1e826ec5", 
+                        "number": "7cf0d8b", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "57a7c6ab62966865670c63176370cd274707e97f", 
+                        "title": "fix QQH1352T fragments", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7141", 
+                        "number": "7141", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
+                    }, 
+                    {
+                        "hash": "ff55fbb71876ed35ffe1b68b7d91860d78ab9a45", 
+                        "title": "TriggerResultFilters: accept arbitrary Path names", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7108", 
+                        "number": "7108", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -6354,9 +6421,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-14/CMSSW_7_4_DEVEL_X_2015-01-14-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-14/CMSSW_7_4_DEVEL_X_2015-01-14-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -6406,11 +6475,39 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7141", 
+                            "7055"
+                        ], 
+                        "hash": "61dd486ccf0d1c95ce934c159a6735c88543101f", 
+                        "number": "61dd486", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a7030ab48bb40d32c7809fc4393612f4383d9da8", 
+                        "title": "O2O", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7055", 
+                        "number": "7055", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "depasse"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7108"
                         ], 
                         "hash": "1ad359d77e6e66ab9394862f7cdeff80b904a771", 
                         "number": "1ad359d", 
                         "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "57a7c6ab62966865670c63176370cd274707e97f", 
+                        "title": "fix QQH1352T fragments", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7141", 
+                        "number": "7141", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
                     }, 
                     {
                         "hash": "ff55fbb71876ed35ffe1b68b7d91860d78ab9a45", 
@@ -8167,7 +8264,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.GEANT10-wed-14/CMSSW_7_4_GEANT10_X_2015-01-14-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -8234,11 +8338,39 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7141", 
+                            "7055"
+                        ], 
+                        "hash": "77ec7781ea5ad02be3430c81b72a960e1ec6e2f4", 
+                        "number": "77ec778", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a7030ab48bb40d32c7809fc4393612f4383d9da8", 
+                        "title": "O2O", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7055", 
+                        "number": "7055", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "depasse"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7108"
                         ], 
                         "hash": "f968faf005c4e862d8254fa6a463ae0dfa558241", 
                         "number": "f968faf", 
                         "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "57a7c6ab62966865670c63176370cd274707e97f", 
+                        "title": "fix QQH1352T fragments", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7141", 
+                        "number": "7141", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
                     }, 
                     {
                         "hash": "ff55fbb71876ed35ffe1b68b7d91860d78ab9a45", 
@@ -11659,11 +11791,39 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7141", 
+                            "7055"
+                        ], 
+                        "hash": "81bee6f9e736f746156f273d539e968c1b35aa97", 
+                        "number": "81bee6f", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a7030ab48bb40d32c7809fc4393612f4383d9da8", 
+                        "title": "O2O", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7055", 
+                        "number": "7055", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "depasse"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7108"
                         ], 
                         "hash": "6c8ccc133a2722b34e48647c64987bbb39380476", 
                         "number": "6c8ccc1", 
                         "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "57a7c6ab62966865670c63176370cd274707e97f", 
+                        "title": "fix QQH1352T fragments", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7141", 
+                        "number": "7141", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
                     }, 
                     {
                         "hash": "ff55fbb71876ed35ffe1b68b7d91860d78ab9a45", 
@@ -13514,11 +13674,39 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7141", 
+                            "7055"
+                        ], 
+                        "hash": "1ad35d933ad9781966fe6d188ecf613627bf437a", 
+                        "number": "1ad35d9", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a7030ab48bb40d32c7809fc4393612f4383d9da8", 
+                        "title": "O2O", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7055", 
+                        "number": "7055", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "depasse"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7108"
                         ], 
                         "hash": "f43e30f65c134f9139e481546522177e66ea9a11", 
                         "number": "f43e30f", 
                         "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "57a7c6ab62966865670c63176370cd274707e97f", 
+                        "title": "fix QQH1352T fragments", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7141", 
+                        "number": "7141", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
                     }, 
                     {
                         "hash": "ff55fbb71876ed35ffe1b68b7d91860d78ab9a45", 
@@ -13663,54 +13851,15 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-01-07-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-01-07-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_X_2015-01-06-1400-->CMSSW_7_4_X_2015-01-07-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "failed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-01-07-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "11"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc481": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-01-07-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 933, 
-                            "num_failed": 22
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc481"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X_2015-01-07-0200", 
                 "merged_prs": [
                     {
@@ -15793,9 +15942,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4-wed-14/CMSSW_7_4_X_2015-01-14-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4-wed-14/CMSSW_7_4_X_2015-01-14-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }, 
                     {
                         "arch": "slc6_amd64_gcc481", 
