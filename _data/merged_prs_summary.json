@@ -817,7 +817,7 @@
                         "author_login": "mark-grimes"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -2401,6 +2401,12 @@
                         "passed": "passed", 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2015-01-16-1400/new/logAnalysis.pkl", 
                         "details": {}
+                    }, 
+                    {
+                        "arch": "osx108_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/osx108_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2015-01-16-1400/new/logAnalysis.pkl", 
+                        "details": {}
                     }
                 ], 
                 "compared_tags": "CMSSW_7_3_X_2015-01-15-0200-->CMSSW_7_3_X_2015-01-16-1400", 
@@ -2416,10 +2422,17 @@
                         "passed": "unknown", 
                         "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2015-01-16-1400/new/logAnalysis.pkl']", 
                         "details": {}
+                    }, 
+                    {
+                        "arch": "osx108_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/osx108_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2015-01-16-1400/new/logAnalysis.pkl']", 
+                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_3_X_2015-01-11-0200/slc6_amd64_gcc491", 
+                    "osx108_amd64_gcc481": "IB/CMSSW_7_3_X_2015-01-11-0200/osx108_amd64_gcc481", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2015-01-11-0200/slc6_amd64_gcc481"
                 }, 
                 "relvals": [], 
@@ -2427,6 +2440,7 @@
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
+                    "osx108_amd64_gcc481", 
                     "slc6_amd64_gcc481"
                 ], 
                 "release_name": "CMSSW_7_3_X_2015-01-16-1400", 
@@ -15731,94 +15745,34 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-16-0200-->CMSSW_7_4_THREADED_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2015-01-16-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-16-0200-->CMSSW_7_4_THREADED_X_2015-01-16-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2015-01-16-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-13-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_THREADED_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_THREADED_X_2015-01-16-1400", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7189", 
-                            "7194", 
-                            "7188", 
-                            "7191", 
-                            "7213", 
-                            "7216", 
-                            "7212"
-                        ], 
-                        "hash": "34af973cfcdb54664dfafbcc19edff07f1cfa290", 
-                        "number": "34af973", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "f8ef1e52e422e4525d1d0393393d55baf3999cba", 
-                        "title": "Make verbose in HLTExoticaSubAnalysis static const", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7191", 
-                        "number": "7191", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "aa6da9fc67ba7834ec4175b0f0d35b87a9d074eb", 
-                        "title": "Resolve Clang issues in DQMOffline/Trigger", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7212", 
-                        "number": "7212", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "hash": "63430e900481f14209b30b1d2f6902ff0b33d4d2", 
-                        "title": "Small bug fix in HLT-btag validation code", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7213", 
-                        "number": "7213", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "silviodonato"
-                    }, 
-                    {
-                        "hash": "de787ff9a01b6b715806dbfdb19fbb77599d7e61", 
-                        "title": "Make the static zeroSample const", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7188", 
-                        "number": "7188", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "20e4ef7854866138e84d7e36c573413ad12318d1", 
-                        "title": "Turning on KL0 to prevent problem in residual decays", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7194", 
-                        "number": "7194", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "inugent"
-                    }, 
-                    {
-                        "hash": "ea6141a647ce5f2621b2e01c8b98f4a17a9b39a6", 
-                        "title": "Made class statics in TrackingLayer const", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7189", 
-                        "number": "7189", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "8c7e766efaf13f8c75f583423b548814205bb91d", 
-                        "title": "Resolve Clang issues in HLTrigger/btau", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7216", 
-                        "number": "7216", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidlt"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -15920,6 +15874,99 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "silviodonato"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-16-1400-->CMSSW_7_4_THREADED_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_THREADED_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7189", 
+                            "7194", 
+                            "7188", 
+                            "7191", 
+                            "7213", 
+                            "7216", 
+                            "7212"
+                        ], 
+                        "hash": "34af973cfcdb54664dfafbcc19edff07f1cfa290", 
+                        "number": "34af973", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "f8ef1e52e422e4525d1d0393393d55baf3999cba", 
+                        "title": "Make verbose in HLTExoticaSubAnalysis static const", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7191", 
+                        "number": "7191", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "aa6da9fc67ba7834ec4175b0f0d35b87a9d074eb", 
+                        "title": "Resolve Clang issues in DQMOffline/Trigger", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7212", 
+                        "number": "7212", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
+                        "hash": "63430e900481f14209b30b1d2f6902ff0b33d4d2", 
+                        "title": "Small bug fix in HLT-btag validation code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7213", 
+                        "number": "7213", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "de787ff9a01b6b715806dbfdb19fbb77599d7e61", 
+                        "title": "Make the static zeroSample const", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7188", 
+                        "number": "7188", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "20e4ef7854866138e84d7e36c573413ad12318d1", 
+                        "title": "Turning on KL0 to prevent problem in residual decays", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7194", 
+                        "number": "7194", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "inugent"
+                    }, 
+                    {
+                        "hash": "ea6141a647ce5f2621b2e01c8b98f4a17a9b39a6", 
+                        "title": "Made class statics in TrackingLayer const", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7189", 
+                        "number": "7189", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "8c7e766efaf13f8c75f583423b548814205bb91d", 
+                        "title": "Resolve Clang issues in HLTrigger/btau", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7216", 
+                        "number": "7216", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlt"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -18287,8 +18334,137 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-01-16-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-01-16-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-01-16-0200-->CMSSW_7_4_X_2015-01-16-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-01-16-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-01-16-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-01-13-1400/slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-01-13-1400/slc6_amd64_gcc481"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_4_X_2015-01-16-1400", 
+                "merged_prs": [
+                    {
+                        "hash": "8c7e766efaf13f8c75f583423b548814205bb91d", 
+                        "title": "Resolve Clang issues in HLTrigger/btau", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7216", 
+                        "number": "7216", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
+                        "hash": "0487b4bd9895502a7a9c4e3af3df92bb89df7138", 
+                        "title": "Correcting typos and adding new features", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7208", 
+                        "number": "7208", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "eduardburelo"
+                    }, 
+                    {
+                        "hash": "bae448eee8461e1db8683b4b03bee0882ffbc967", 
+                        "title": "Do not add new chunks to already-large splits.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7186", 
+                        "number": "7186", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bbockelm"
+                    }, 
+                    {
+                        "hash": "6e071e722289bc87ee264b9b3f58bf68a83bdffa", 
+                        "title": "datatier 2nd step GEN relval hadronizer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7201", 
+                        "number": "7201", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7081", 
+                            "7181"
+                        ], 
+                        "hash": "1d8e5c703e1ebb5e878b85afd6344c5281f42c17", 
+                        "number": "1d8e5c7", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8d77c7f46dee83de3377516683242064d990d655", 
+                        "title": "ConfigDP new GT connection string functionality and PCL fixes (port from 72X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7181", 
+                        "number": "7181", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cerminar"
+                    }, 
+                    {
+                        "hash": "21d9bf45703e12c5b17ef957ebba5375318b1437", 
+                        "title": "Adjustments for using MixingModule for Heavy Ion simulations", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6982", 
+                        "number": "6982", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "CmsHI"
+                    }, 
+                    {
+                        "hash": "d6932c2913e6993a8044a3d102a82d4673673bba", 
+                        "title": "make muonisolation::IsolatorByNominalEfficiency::ConeSizes::cone_dr const", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7176", 
+                        "number": "7176", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "0663bd86b51e699c79bdc8fd85483f983394486b", 
+                        "title": "Backport in 73X of Update of VBF HLT filter #7079", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7081", 
+                        "number": "7081", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "silviodonato"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-01-16-0200-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_X_2015-01-16-1400-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -18377,88 +18553,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "8c7e766efaf13f8c75f583423b548814205bb91d", 
-                        "title": "Resolve Clang issues in HLTrigger/btau", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7216", 
-                        "number": "7216", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "hash": "0487b4bd9895502a7a9c4e3af3df92bb89df7138", 
-                        "title": "Correcting typos and adding new features", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7208", 
-                        "number": "7208", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "eduardburelo"
-                    }, 
-                    {
-                        "hash": "bae448eee8461e1db8683b4b03bee0882ffbc967", 
-                        "title": "Do not add new chunks to already-large splits.", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7186", 
-                        "number": "7186", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "bbockelm"
-                    }, 
-                    {
-                        "hash": "6e071e722289bc87ee264b9b3f58bf68a83bdffa", 
-                        "title": "datatier 2nd step GEN relval hadronizer", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7201", 
-                        "number": "7201", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "franzoni"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7081", 
-                            "7181"
-                        ], 
-                        "hash": "1d8e5c703e1ebb5e878b85afd6344c5281f42c17", 
-                        "number": "1d8e5c7", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "8d77c7f46dee83de3377516683242064d990d655", 
-                        "title": "ConfigDP new GT connection string functionality and PCL fixes (port from 72X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7181", 
-                        "number": "7181", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "cerminar"
-                    }, 
-                    {
-                        "hash": "21d9bf45703e12c5b17ef957ebba5375318b1437", 
-                        "title": "Adjustments for using MixingModule for Heavy Ion simulations", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/6982", 
-                        "number": "6982", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "CmsHI"
-                    }, 
-                    {
-                        "hash": "d6932c2913e6993a8044a3d102a82d4673673bba", 
-                        "title": "make muonisolation::IsolatorByNominalEfficiency::ConeSizes::cone_dr const", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7176", 
-                        "number": "7176", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "fwyzard"
-                    }, 
-                    {
-                        "hash": "0663bd86b51e699c79bdc8fd85483f983394486b", 
-                        "title": "Backport in 73X of Update of VBF HLT filter #7079", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7081", 
-                        "number": "7081", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "silviodonato"
                     }
                 ], 
                 "hlt_tests": "not-found"
