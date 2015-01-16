@@ -2325,6 +2325,15 @@
             }, 
             "relvals": [
                 {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-14/CMSSW_7_4_X_2015-01-15-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 834, 
+                        "num_failed": 75
+                    }
+                }, 
+                {
                     "arch": "slc6_amd64_gcc481", 
                     "passed": false, 
                     "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.4-thu-14/CMSSW_7_4_X_2015-01-15-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
@@ -2365,25 +2374,50 @@
         }, 
         {
             "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_X_2015-01-15-1400-->CMSSW_7_4_X", 
-            "utests": [], 
-            "cmsdistTags": {}, 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-02/CMSSW_7_4_X_2015-01-16-0200/new/logAnalysis.pkl", 
+                    "details": {}
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-02/CMSSW_7_4_X_2015-01-16-0200/new/logAnalysis.pkl", 
+                    "details": {}
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_X_2015-01-15-1400-->CMSSW_7_4_X_2015-01-16-0200", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-02/CMSSW_7_4_X_2015-01-16-0200/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "0"
+                    }
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "unknown", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-02/CMSSW_7_4_X_2015-01-16-0200/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-01-13-1400/slc6_amd64_gcc491", 
+                "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-01-13-1400/slc6_amd64_gcc481"
+            }, 
             "relvals": [], 
             "static_checks": "not-found", 
-            "isIB": false, 
-            "tests_archs": [], 
-            "release_name": "CMSSW_7_4_X", 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491", 
+                "slc6_amd64_gcc481"
+            ], 
+            "release_name": "CMSSW_7_4_X_2015-01-16-0200", 
             "merged_prs": [
-                {
-                    "hash": "d6932c2913e6993a8044a3d102a82d4673673bba", 
-                    "title": "make muonisolation::IsolatorByNominalEfficiency::ConeSizes::cone_dr const", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7176", 
-                    "number": "7176", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "fwyzard"
-                }, 
                 {
                     "hash": "ec902770a4de2e94a3eed03ba2a996c11f765441", 
                     "title": "Clang SA: add safe class names skip ()::1 ()::2 and boost::()::extents", 
@@ -2410,6 +2444,39 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "davidlange6"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [], 
+            "compared_tags": "CMSSW_7_4_X_2015-01-16-0200-->CMSSW_7_4_X", 
+            "utests": [], 
+            "cmsdistTags": {}, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": false, 
+            "tests_archs": [], 
+            "release_name": "CMSSW_7_4_X", 
+            "merged_prs": [
+                {
+                    "hash": "21d9bf45703e12c5b17ef957ebba5375318b1437", 
+                    "title": "Adjustments for using MixingModule for Heavy Ion simulations", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6982", 
+                    "number": "6982", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "CmsHI"
+                }, 
+                {
+                    "hash": "d6932c2913e6993a8044a3d102a82d4673673bba", 
+                    "title": "make muonisolation::IsolatorByNominalEfficiency::ConeSizes::cone_dr const", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7176", 
+                    "number": "7176", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "fwyzard"
                 }
             ], 
             "hlt_tests": "not-found"
