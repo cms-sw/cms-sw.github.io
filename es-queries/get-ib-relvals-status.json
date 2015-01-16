@@ -1,0 +1,17 @@
+{
+  "sort": [ "architecture","workflow_id","step" ],
+  "fields":[ "workflow_id", "workflow", "step", "status", "architecture" ],
+  "query":{
+    "filtered":{
+        "filter":{
+            "bool":{
+              "must":{
+                "term":{ "release" : "IB_NAME" }
+                     }
+                   }
+                 }
+
+               }
+           },
+  "size" : 10000
+}
