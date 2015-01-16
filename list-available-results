@@ -21,6 +21,9 @@ for current_arch in listdir( DATA_DIR + '/' + RELVALS_DIR ):
     for current_release in listdir( DATA_DIR + '/' + RELVALS_DIR + '/' + current_arch + '/' + current_date ):
 
       current_ib = current_release.rstrip( '.json' ) + '_' + current_date
+      # to avoid confusing the INCOMPLETE with a flavor
+      if '_INCOMPLETE' in current_ib:
+        current_ib = current_ib.replace( '_INCOMPLETE', '' ) + '_INCOMPLETE'
 
       if available_results_relvals.get( current_ib ):
         available_results_relvals[ current_ib ] += ','+current_arch
