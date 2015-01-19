@@ -9598,7 +9598,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-01-18-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ICC-mon-14/CMSSW_7_4_ICC_X_2015-01-19-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 164, 
+                            "num_failed": 266
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -15318,43 +15328,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-01-18-0200-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.4-mon-14/CMSSW_7_4_X_2015-01-19-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 6, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-01-18-0200-->CMSSW_7_4_X_2015-01-19-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.4-mon-14/CMSSW_7_4_X_2015-01-19-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-01-18-0200/slc6_amd64_gcc481"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_4_X_2015-01-19-1400", 
                 "merged_prs": [
-                    {
-                        "hash": "86b4eb1dc5e5019aef6f19be0425a5cefd245986", 
-                        "title": "Fixing typo in HLTJetTagWithMatching", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7261", 
-                        "number": "7261", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "silviodonato"
-                    }, 
-                    {
-                        "hash": "d09a2df3e5bce96f8a199fc3bb5ea5bf0f9f205a", 
-                        "title": "Limited matrix cleanup and make it easy to develop workflows that don't yet work", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7254", 
-                        "number": "7254", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlange6"
-                    }, 
-                    {
-                        "hash": "5a368630914f0b79e4154fbcfded7ff7f40bc261", 
-                        "title": "Make theVerboseLevel constexpr", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7192", 
-                        "number": "7192", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
-                    }, 
                     {
                         "hash": "2bfc22578291bad66a7302079bf666203d0c2cea", 
                         "title": "Validation code for https://its.cern.ch/jira/browse/CMSHLT-203", 
@@ -15405,6 +15409,48 @@
                         "title": "Change all calls to TrackExtra::add to TrackExtra::setHits", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7246", 
                         "number": "7246", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_X_2015-01-19-1400-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "merged_prs": [
+                    {
+                        "hash": "86b4eb1dc5e5019aef6f19be0425a5cefd245986", 
+                        "title": "Fixing typo in HLTJetTagWithMatching", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7261", 
+                        "number": "7261", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "silviodonato"
+                    }, 
+                    {
+                        "hash": "d09a2df3e5bce96f8a199fc3bb5ea5bf0f9f205a", 
+                        "title": "Limited matrix cleanup and make it easy to develop workflows that don't yet work", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7254", 
+                        "number": "7254", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "5a368630914f0b79e4154fbcfded7ff7f40bc261", 
+                        "title": "Make theVerboseLevel constexpr", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7192", 
+                        "number": "7192", 
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "Dr15Jones"
