@@ -1901,15 +1901,27 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.CLANG-mon-02/CMSSW_7_4_CLANG_X_2015-01-19-0200/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.CLANG-mon-02/CMSSW_7_4_CLANG_X_2015-01-19-0200/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "19"
+                    }
                 }
             ], 
             "cmsdistTags": {
                 "slc6_amd64_gcc491": "Not Found"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.CLANG-mon-02/CMSSW_7_4_CLANG_X_2015-01-19-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 163, 
+                        "num_failed": 266
+                    }
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
@@ -1930,7 +1942,26 @@
             "isIB": false, 
             "tests_archs": [], 
             "release_name": "CMSSW_7_4_CLANG_X", 
-            "merged_prs": [], 
+            "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "7246"
+                    ], 
+                    "hash": "4a80a15aa96f7ee393b850719f7dd09c1da7d413", 
+                    "number": "4a80a15", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "5ef3fe720e30b78668ddb60e92efd123f7d3d8af", 
+                    "title": "Change all calls to TrackExtra::add to TrackExtra::setHits", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7246", 
+                    "number": "7246", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "Dr15Jones"
+                }
+            ], 
             "hlt_tests": "not-found"
         }
     ]
