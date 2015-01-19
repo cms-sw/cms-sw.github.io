@@ -158,7 +158,7 @@ fillWorkflowCell = function( cell , workflowID , workflowShortName , numToShow ,
  * The statistics is a array of dictionaries, each position has a dictionary with the entries
  * "passed" , "failed" and "notrun" with the numbers for the step
  */
-addWorkflowRow = function( workflowResult , table , counter , statistics , arch , ib , totalRows ) {
+addWorkflowRow = function( workflowResult, table, counter, statistics, arch, ib, totalRows, areIncomplete ) {
 
   var row = $( '<tr>' ).attr( 'id' , 'row' + counter + '-' + arch )
 
@@ -261,6 +261,11 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 
     }
 
+    //disable links if the results are incomplete
+    if ( areIncomplete ){
+      row.children( 'td' ).children('a').attr( 'href', '#'+arch+';'+ib )
+    }
+
     // by default steps until step 5 are in the dictionary, If there are more steps I add them
     if( stepNumber >= MAX_STEPS )
     {
@@ -294,8 +299,8 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
     numCells++;
   }
 
-  // if no step was run I don't add it
-  if ( nothingRun ){
+  // if no step was run, and the results are complete I don't add it
+  if ( nothingRun && !areIncomplete ){
     return true;
   }
 
@@ -328,7 +333,7 @@ addWorkflowRow = function( workflowResult , table , counter , statistics , arch 
 /**
  * Adds to the table with relvals results
  */
-addRowsTable = function( results , arch , ib , table , progressBar ){
+addRowsTable = function( results , arch , ib , table , progressBar, areIncomplete ){
 
   table.attr( 'class' , 'table table-striped table-condensed' )
   table.attr( 'id' , 'resultsTable-' + arch + '-' + ib ) 
@@ -356,7 +361,7 @@ addRowsTable = function( results , arch , ib , table , progressBar ){
   var counter = 1;
   for ( var key in results ){
     // nothingRun is to know if no step was run in the workflow
-    nothingRun = addWorkflowRow( results[ key ] , table , counter , resultsSummary , arch , ib , results.length )
+    nothingRun = addWorkflowRow( results[ key ] , table , counter , resultsSummary , arch , ib , results.length, areIncomplete )
 
     // it won't reach 100 because I don't count the ones that have no steps run
     var percentage = ( ( counter / results.length ) * 50 ) + 50
@@ -425,9 +430,25 @@ genShowTab = function( tabLink ){
 /**
  * Creates the navtabs with based on the archsList the ibName is for creating the link
  */
-getNavTabs = function( archsList , ibName ){
+getNavTabs = function( archsList, incompleteArchsList, ibName ){
 
   var tabList = $( '<ul>' ).attr( 'class', 'nav nav-tabs').attr( 'role' , 'tablist')
+  var oneSelected = addTabsFromList( archsList, tabList )
+  oneSelected =  oneSelected || addTabsFromList( incompleteArchsList, tabList )
+  if( !oneSelected ){
+     tabList.children('li').last().attr( 'class' , 'active' )
+     console.log( 'list' )
+     CURRENT_ARCH = tabList.children('li').last().children('a').text()
+  }
+
+  return tabList
+}
+
+/**
+ * From a list of archs, it creates and appends tabs to the list. 
+ * oneSelected indicates if there was a tab set as active
+ */
+addTabsFromList = function( archsList, tabList ){
 
   var oneSelected = false;
   for( var i = 0; i < archsList.length ; i ++){
@@ -441,36 +462,26 @@ getNavTabs = function( archsList , ibName ){
       oneSelected = true
       CURRENT_ARCH = archName
     }
-
-    // if none of them is requested the last one is the onq which becomes active
-    if ( i == archsList.length -1 && !oneSelected ){
-      item.attr( 'class' , 'active' )
-      CURRENT_ARCH = archName
-    }
-
-
+                                                             
     var tabLink = $( '<a>' ).attr( 'href' , '#' + archName + '-tab' )
-    
+
     tabLink.click( genShowTab( tabLink ) )
 
     tabLink.text( archName )
-    
+
     item.append( tabLink )
     tabList.append( item )
+
   }
+return oneSelected
 
-  
-
-
-  return tabList
 }
 
 /**
  * It generates a function that 
  * Reads the results of one file, gets the table, and appends it to the tab pane
  */
-generateAddResultsTableToPane = function( tabPaneID , arch , ibName , progressBar , progressDiv ){
-
+generateAddResultsTableToPane = function( tabPaneID, arch, ibName, progressBar, progressDiv, areIncomplete ){
 
   return function( results ){
 
@@ -482,7 +493,7 @@ generateAddResultsTableToPane = function( tabPaneID , arch , ibName , progressBa
     console.log( 'start: ' + startDate )
     var table = $( '<table>' )
     $( '#' + tabPaneID ).append( table )
-    addRowsTable( results , arch , ibName , table , progressBar )
+    addRowsTable( results, arch, ibName, table, progressBar, areIncomplete )
 
     progressDiv.hide( 100 )
 
@@ -496,12 +507,57 @@ generateAddResultsTableToPane = function( tabPaneID , arch , ibName , progressBa
 
 }
 
+/**
+ * fills the tab pane for the case when the results are incomplete
+ */
+fillIncompleteResultTabPanes = function( tabPanes, incompleteArchsList, ibName ){
+
+  for( var i = 0; i < incompleteArchsList.length ; i++){
+
+    var tabPaneClass = 'tab-pane'
+    var arch = incompleteArchsList[ i ]
+    if ( arch == CURRENT_ARCH ){
+      tabPaneClass += ' active'
+    }
+
+    var tabPaneID = arch + '-tab'
+    var tabPane = $( '<div>' ).attr( 'class' , tabPaneClass ).attr( 'id' , tabPaneID )
+ 
+    var incompleteMsgDiv = $( '<div>' ).attr( 'class' , 'alert alert-warning' ).attr( 'role' , 'alert' ).attr( 'align' , 'center' )
+    incompleteMsgDiv.text( 'The results for this architecture are incomplete! The IB validation may be in progress' )
+    tabPane.append( incompleteMsgDiv )
+
+    var ibDate = ibName.substring( ibName.lastIndexOf( "_" ) + 1 , ibName.length )
+    var releaseQueue = ibName.substring( 0 , ibName.lastIndexOf( "_" ) )
+    var jsonFilePath = 'data/relvals/' + arch + '/' + ibDate + '/' + releaseQueue + '_INCOMPLETE' +'.json';
+
+    var progressDiv = $( '<div>' ).attr( 'class' , 'progress' )
+    var progressBar = $( '<div>' ).attr( 'class' , 'progress-bar progress-bar-striped active' ).attr( 'role' , 'progressbar' )
+                                  .attr( 'aria-valuenow' , '0' ) .attr( 'aria-valuemin' , '0' )
+                                  .attr( 'aria-valuemax' , '100' ).attr( 'style' , 'width: 30%;' )
+                                  .text( 'loading...' )
+
+    progressDiv.append( progressBar )
+    tabPane.append( progressDiv )
+    tabPanes.append( tabPane )
+
+    var addResultsTableToPane = generateAddResultsTableToPane( tabPaneID, arch, ibName, progressBar, progressDiv, true )
+    console.log( 'Reading: ' )
+    console.log( jsonFilePath )
+    $.getJSON( jsonFilePath , addResultsTableToPane )
+
+    console.log( 'Finished Reading: ' )
+
+
+  }
+
+}
 
 
 /**
  * Creates the tab panes based on the archsList and the IBName
  */
-fillTabPanes = function( tabContent , archsList , ibName ){
+fillTabPanes = function( tabPanes, archsList, incompleteArchsList, ibName ){
 
 
 
@@ -539,8 +595,8 @@ fillTabPanes = function( tabContent , archsList , ibName ){
     progressDiv.append( progressBar )
     tabPane.append( progressDiv )   
 
-    tabContent.append( tabPane )
-    var addResultsTableToPane = generateAddResultsTableToPane( tabPaneID , arch , ibName , progressBar , progressDiv )
+    tabPanes.append( tabPane )
+    var addResultsTableToPane = generateAddResultsTableToPane( tabPaneID, arch, ibName, progressBar, progressDiv, false )
 
     console.log( 'Reading: ' )
     console.log( jsonFilePath )
@@ -551,6 +607,7 @@ fillTabPanes = function( tabContent , archsList , ibName ){
   }
 
 
+  fillIncompleteResultTabPanes( tabPanes, incompleteArchsList, ibName )
 
 }
 
@@ -819,6 +876,22 @@ getNotFoundArchHeader = function( arch ){
 
 }
 
+/**
+ * Generates a header that alerts that there were no COMPLETE results found for the given arch
+ */
+getIncompleteArchHeader = function( arch ){
+
+ var div = $( '<div>' ).attr( 'class' , 'alert alert-warning' ).attr( 'role' , 'alert' ).attr( 'align' , 'center' )
+ div.text( 'Showing incomplete results for ' )
+ div.append( $( '<strong>' ).text( arch ) )
+
+
+ return div
+
+
+}
+
+
 //-----------------------------------------------------------------------------
 // Helpers
 // ----------------------------------------------------------------------------
@@ -1034,6 +1107,7 @@ LABELS_TEXT[ 'FAILED' ] = 'Failed '
 LABELS_TEXT[ 'NOTRUN' ] = 'NotRun' 
 LABELS_TEXT[ 'DAS_ERROR' ] = 'DAS-Err'
 LABELS_TEXT[ 'TIMEOUT' ] = 'TimeOut'
+LABELS_TEXT[ 'STARTED' ] = 'Started'
 
 MAX_STEPS=5
 DEFAULT_STEPS=5

@@ -57,11 +57,14 @@
 		// I will check which other architectures are available for this IB
 		readAvailableArchs = function( allAvailableArchs ){
 
-			console.log( 'found this in the file:' )
+			console.log( 'Archs with complete results:' )
 			var availArchs = allAvailableArchs[ IB ]
+                        var availArchsIncomplete = allAvailableArchs[ IB + '_INCOMPLETE' ]
 			console.log( availArchs )
+                        console.log( 'Archs with incomplete results' )
+                        console.log( availArchsIncomplete )
 
-			if ( availArchs == null ){
+			if ( availArchs == null && availArchsIncomplete == null ){
 
 				var header = getNotFoundIBHeader( IB )
 				$("#header").append( '<br>' )
@@ -69,20 +72,27 @@
 
 			}else{
 
-				var archsList = availArchs.split( ',' ) 
-				 if ( !listContainsString( ORIGINAL_ARCH , archsList ) ){
+				var archsList = availArchs != null ? availArchs.split( ',' ):[]
+                                var incompleteArchsList = availArchsIncomplete != null ? availArchsIncomplete.split( ',' ):[]
+                                if ( listContainsString( ORIGINAL_ARCH, incompleteArchsList  ) ){
+
+					var header = getIncompleteArchHeader( ORIGINAL_ARCH )
+                                        $("#header").append( header )
+
+                                }else if ( !listContainsString( ORIGINAL_ARCH, archsList ) ){
 
 					var header = getNotFoundArchHeader( ORIGINAL_ARCH )
 					$("#header").append( header )
 				}
+                             
 
-				var header = getHeader( ARCH , IB )
+				var header = getHeader( ARCH, IB )
                                 $("#header").append( header )
-				var navTabs = getNavTabs( archsList , IB )
+				var navTabs = getNavTabs( archsList, incompleteArchsList, IB )
 				$("#results").append( navTabs )
 				var tabPanes = $( '<div>' ).attr( 'class' , 'tab-content' )
 				$("#results").append( tabPanes )
- 				fillTabPanes( tabPanes , archsList , IB )
+ 				fillTabPanes( tabPanes, archsList, incompleteArchsList, IB )
 
 			}
 
