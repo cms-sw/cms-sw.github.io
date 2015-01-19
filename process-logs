@@ -7,11 +7,37 @@ from glob import glob
 from argparse import ArgumentParser
 from os.path import join, exists, basename
 from collections import defaultdict
+from commands import getstatusoutput
+import json
 import re
 
 RESULTS_PATH = "pyRelValMatrixLogs/run/runall-report-step123-.log"
 UNITTEST_SUMMARY_PATH = "unitTests-summary.log"
 RELVAL_LOGS = "pyRelValMatrixLogs.zip"
+ES_HOSTNAME="cmskibana.cern.ch"
+ES_INDEX="ib-matrix*"
+
+#
+# Queries elasticsearch to get the current list of avaiable ib results
+#
+def get_list_avaiable_ib_results( es_hostname, es_index ):
+  query_file = 'es-queries/list-available-ib-results.json'
+  cmd = "curl -s -XPOST http://{hostname}/{index}/_search -d@{path}".format(
+         hostname=es_hostname,
+         index=es_index,
+         path=query_file )
+
+  err, out = getstatusoutput(cmd)
+  if err:
+    print( "Error while getting the list of releases from elasticsearch" )
+    print( out )
+    exit(0)
+
+  response = json.loads( out )
+  ibs = [ x[ 'key' ] for x in response[ 'aggregations' ][ 'IBs' ][ 'buckets' ] ]
+  return ibs
+
+
 
 if __name__ == "__main__":
   parser = ArgumentParser()
@@ -35,7 +61,7 @@ if __name__ == "__main__":
   dates = [re.match(".*(2[0-9]*-[01][0-9]-[0-3][0-9]-[0-9]*)$", x).group(1) for x in releases]
   queues = [re.match("(.*)_2[0-9]*-[01][0-9]-[0-3][0-9]-[0-9]*$", x).group(1) for x in releases]
   architectures = [m.group(1) for m in outputs]
-
+  
   zip(architectures, dates, queues)
   outputs = [join("data/relvals/", x[0], x[1], x[2] + ".json")
              for x in zip(architectures, dates, queues)]
@@ -55,13 +81,24 @@ if __name__ == "__main__":
   pairsMessages = zip(outputsRelvalMsgs, inputsRelvalLogs)
   pairsJobReports = zip(outputsJobReports, inputsRelvalLogs)
   pairsInputFiles = zip(outputsInputFiles, inputsRelvalLogs)
+
+  #Incomplete results
+  available_ibs_es = get_list_avaiable_ib_results( ES_HOSTNAME, ES_INDEX )
+  all_relvals_afs = [x.split('/')[ 10 ] for x in inputsRelvalLogs ]
+
+  incomplete_ibs = list( set( available_ibs_es ) - set( all_relvals_afs ) )
+  print( 'All IBS with results in ES:' )
+  print( available_ibs_es )
+  print( 'Incomplete results ( not in AFS ):' )
+  print( incomplete_ibs )
+
   f = open("Makefile", "w")
 
   # A rule which takes care of converting a few known files in CMSDIST to json.
 
   allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands + outputsJobReports + outputsInputFiles
   print(".PHONY: all clean pr-stats", file=f)
-  print("all: pr-stats ib-files data/cmsdist-config.json " + " ".join(allFiles), file=f)
+  print("all: pr-stats ib-files data/cmsdist-config.json "+" ".join( ["incomplete_relvals_"+x for x in incomplete_ibs] )+" "+" ".join(allFiles), file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
   print("pr-stats:\n\tmkdir -p data/stats && ./process-pr-stats && cat data/stats/prs/*.csv | sort -u -r > data/stats/pr-stats.csv", file=f)
   print("ib-files:\n\tmkdir -p data/inputs && cat data/inputs/*/*/*.csv | sort -u -r > data/inputs/all-ibs.csv", file=f)
@@ -84,4 +121,7 @@ if __name__ == "__main__":
     print(l, file=f)
   for x in pairsInputFiles:
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./log-input-files $< | sort > $@" % x
+    print(l, file=f)
+  for x in incomplete_ibs:
+    l = "incomplete_relvals_%s:\n\t./process-relvals-status-es %s" % (x,x)
     print(l, file=f)
