@@ -1693,9 +1693,12 @@
             "relvals": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "file": "not-ready", 
-                    "passed": true, 
-                    "details": {}
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.THREADED-mon-14/CMSSW_7_4_THREADED_X_2015-01-19-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 931, 
+                        "num_failed": 31
+                    }
                 }
             ], 
             "static_checks": "not-found", 
@@ -1794,34 +1797,37 @@
         }, 
         {
             "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-19-1400-->CMSSW_7_4_THREADED_X", 
-            "utests": [], 
-            "cmsdistTags": {}, 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "warning", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.THREADED-tue-02/CMSSW_7_4_THREADED_X_2015-01-20-0200/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 6, 
+                        "ignoreWarning": 2
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-19-1400-->CMSSW_7_4_THREADED_X_2015-01-20-0200", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "unknown", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.THREADED-tue-02/CMSSW_7_4_THREADED_X_2015-01-20-0200/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-20-0200/slc6_amd64_gcc491"
+            }, 
             "relvals": [], 
             "static_checks": "not-found", 
-            "isIB": false, 
-            "tests_archs": [], 
-            "release_name": "CMSSW_7_4_THREADED_X", 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
+            "release_name": "CMSSW_7_4_THREADED_X_2015-01-20-0200", 
             "merged_prs": [
-                {
-                    "is_merge_commit": true, 
-                    "brought_prs": [
-                        "7273"
-                    ], 
-                    "hash": "3b9c708f2b1c570c7fcfaa3bc89ecc767ad93871", 
-                    "number": "3b9c708", 
-                    "from_merge_commit": false
-                }, 
-                {
-                    "hash": "323235ef4bdea64aedc1d58d73a8d229510fc5d8", 
-                    "title": "PileupJetId falling back to Muon::bestTrack for PFCandidate muon without a trackRef", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7273", 
-                    "number": "7273", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "slava77"
-                }, 
                 {
                     "is_merge_commit": true, 
                     "brought_prs": [
@@ -1885,6 +1891,67 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": true, 
                     "author_login": "Dr15Jones"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [], 
+            "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-20-0200-->CMSSW_7_4_THREADED_X", 
+            "utests": [], 
+            "cmsdistTags": {}, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": false, 
+            "tests_archs": [], 
+            "release_name": "CMSSW_7_4_THREADED_X", 
+            "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "7260", 
+                        "6623"
+                    ], 
+                    "hash": "fa4fe013aeb37effda76234fd85f1a5a8fced5d2", 
+                    "number": "fa4fe01", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "59ba33814bc5bedffc05d570e7a5eeec176c9b90", 
+                    "title": "Update CkfTrajectoryBuilder to handle hitless seeds", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/6623", 
+                    "number": "6623", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "BenjaminRS"
+                }, 
+                {
+                    "hash": "9c13001b98da92c9b42f249fd304e592f21d4895", 
+                    "title": "Migration to multithread safe producers", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7260", 
+                    "number": "7260", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "matteosan1"
+                }, 
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "7273"
+                    ], 
+                    "hash": "3b9c708f2b1c570c7fcfaa3bc89ecc767ad93871", 
+                    "number": "3b9c708", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "323235ef4bdea64aedc1d58d73a8d229510fc5d8", 
+                    "title": "PileupJetId falling back to Muon::bestTrack for PFCandidate muon without a trackRef", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7273", 
+                    "number": "7273", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "slava77"
                 }
             ], 
             "hlt_tests": "not-found"
