@@ -334,25 +334,44 @@
                             "compWarning": 13, 
                             "ignoreWarning": 2
                         }
+                    }, 
+                    {
+                        "arch": "osx108_amd64_gcc472", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/osx108_amd64_gcc472/www/wed/6.2-wed-14/CMSSW_6_2_X_2015-01-21-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 8, 
+                            "ignoreWarning": 7
+                        }
                     }
                 ], 
                 "compared_tags": "CMSSW_6_2_X_2015-01-18-0200-->CMSSW_6_2_X_2015-01-21-1400", 
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/6.2-wed-14/CMSSW_6_2_X_2015-01-21-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "12"
+                        }
+                    }, 
+                    {
+                        "arch": "osx108_amd64_gcc472", 
                         "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/6.2-wed-14/CMSSW_6_2_X_2015-01-21-1400/new/logAnalysis.pkl']", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/osx108_amd64_gcc472/www/wed/6.2-wed-14/CMSSW_6_2_X_2015-01-21-1400/new/logAnalysis.pkl']", 
                         "details": {}
                     }
                 ], 
                 "cmsdistTags": {
-                    "slc6_amd64_gcc472": "IB/CMSSW_6_2_X_2015-01-21-1400/slc6_amd64_gcc472"
+                    "slc6_amd64_gcc472": "IB/CMSSW_6_2_X_2015-01-21-1400/slc6_amd64_gcc472", 
+                    "osx108_amd64_gcc472": "IB/CMSSW_6_2_X_2015-01-21-1400/osx108_amd64_gcc472"
                 }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
-                    "slc6_amd64_gcc472"
+                    "slc6_amd64_gcc472", 
+                    "osx108_amd64_gcc472"
                 ], 
                 "release_name": "CMSSW_6_2_X_2015-01-21-1400", 
                 "merged_prs": [], 
@@ -1192,8 +1211,42 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.1-wed-14/CMSSW_7_1_X_2015-01-21-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_1_X_2015-01-18-0200-->CMSSW_7_1_X_2015-01-21-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.1-wed-14/CMSSW_7_1_X_2015-01-21-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_1_X_2015-01-21-1400/slc6_amd64_gcc481"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_1_X_2015-01-21-1400", 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_1_X_2015-01-18-0200-->CMSSW_7_1_X", 
+                "compared_tags": "CMSSW_7_1_X_2015-01-21-1400-->CMSSW_7_1_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -2011,7 +2064,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2015-01-21-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -2027,9 +2087,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2015-01-21-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2015-01-21-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -5057,9 +5119,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-21-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-21-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "19"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -5068,9 +5132,12 @@
                 "relvals": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-21-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 159, 
+                            "num_failed": 261
+                        }
                     }
                 ], 
                 "static_checks": "not-found", 
@@ -13471,8 +13538,80 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-14/CMSSW_7_4_ROOT6_X_2015-01-21-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 6, 
+                            "ignoreWarning": 20
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-21-0200-->CMSSW_7_4_ROOT6_X_2015-01-21-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-14/CMSSW_7_4_ROOT6_X_2015-01-21-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-01-21-1400/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ROOT6_X_2015-01-21-1400", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7238"
+                        ], 
+                        "hash": "2acd7fef1539c6e8e0d6ff8f995f98c793d86cde", 
+                        "number": "2acd7fe", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "77749df6b8e3900cbd451ecd2a2ee8ff51c45697", 
+                        "title": "CondTools/Ecal: drop VLA of non-POD type", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7238", 
+                        "number": "7238", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7281"
+                        ], 
+                        "hash": "066ccacf71d64d6fdd78e7aa44a799e58cbadac1", 
+                        "number": "066ccac", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "954bbb33650e4b487da6cb8c2729eea5759668be", 
+                        "title": "New fsq jet filtes 74x 20150120 0200", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7281", 
+                        "number": "7281", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fruboes"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-21-0200-->CMSSW_7_4_ROOT6_X", 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-21-1400-->CMSSW_7_4_ROOT6_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -13551,42 +13690,6 @@
                         "title": "Finish const fixes", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7300", 
                         "number": "7300", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "fruboes"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7238"
-                        ], 
-                        "hash": "2acd7fef1539c6e8e0d6ff8f995f98c793d86cde", 
-                        "number": "2acd7fe", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "77749df6b8e3900cbd451ecd2a2ee8ff51c45697", 
-                        "title": "CondTools/Ecal: drop VLA of non-POD type", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7238", 
-                        "number": "7238", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7281"
-                        ], 
-                        "hash": "066ccacf71d64d6fdd78e7aa44a799e58cbadac1", 
-                        "number": "066ccac", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "954bbb33650e4b487da6cb8c2729eea5759668be", 
-                        "title": "New fsq jet filtes 74x 20150120 0200", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7281", 
-                        "number": "7281", 
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "fruboes"
@@ -16137,52 +16240,15 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-01-14-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-01-14-0200/new/logAnalysis.pkl", 
-                        "details": {}
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_X_2015-01-13-1400-->CMSSW_7_4_X_2015-01-14-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-01-14-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-01-14-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 825, 
-                            "num_failed": 81
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X_2015-01-14-0200", 
                 "merged_prs": [
                     {
@@ -17690,13 +17756,13 @@
                 }, 
                 "relvals": [
                     {
-                        "arch": "slc6_amd64_gcc481", 
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
                     }, 
                     {
-                        "arch": "slc6_amd64_gcc491", 
+                        "arch": "slc6_amd64_gcc481", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
