@@ -22339,12 +22339,6 @@
                         "passed": "passed", 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2015-01-16-1400/new/logAnalysis.pkl", 
                         "details": {}
-                    }, 
-                    {
-                        "arch": "osx108_amd64_gcc481", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/osx108_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2015-01-16-1400/new/logAnalysis.pkl", 
-                        "details": {}
                     }
                 ], 
                 "compared_tags": "CMSSW_7_3_X_2015-01-15-0200-->CMSSW_7_3_X_2015-01-16-1400", 
@@ -22364,17 +22358,10 @@
                         "details": {
                             "num_fails": "0"
                         }
-                    }, 
-                    {
-                        "arch": "osx108_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/osx108_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2015-01-16-1400/new/logAnalysis.pkl']", 
-                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "Not Found", 
-                    "osx108_amd64_gcc481": "Not Found", 
                     "slc6_amd64_gcc481": "Not Found"
                 }, 
                 "relvals": [
@@ -22401,7 +22388,6 @@
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
-                    "osx108_amd64_gcc481", 
                     "slc6_amd64_gcc481"
                 ], 
                 "release_name": "CMSSW_7_3_X_2015-01-16-1400", 
@@ -25556,6 +25542,64 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7336", 
+                            "7340", 
+                            "7327", 
+                            "7302", 
+                            "7333"
+                        ], 
+                        "hash": "a43f3d27b656d21fc81a0737366dd842879229a6", 
+                        "number": "a43f3d2", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "1a830b5e42a425dace8b5fae4624e17a99af2c1b", 
+                        "title": "Remove unused variables from test module", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7340", 
+                        "number": "7340", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "9cf505aa5a1933608fcda707d0178dd91566f09a", 
+                        "title": "add dqmio option to promptReco and harvesting scripts", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7327", 
+                        "number": "7327", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "705051fca18802d4a2680a11b0de668a9ba04cd3", 
+                        "title": "Do not call edm::RefVector<>::product in Associators", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7333", 
+                        "number": "7333", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "add4ecddb5705b6b92289fb153c3898f1954f60f", 
+                        "title": "Fastsim new default mix scheme", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7302", 
+                        "number": "7302", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }, 
+                    {
+                        "hash": "03a7a9a713e95c87ad4e4009b20817231cec725e", 
+                        "title": "Cleanup of HLT configs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7336", 
+                        "number": "7336", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7057"
                         ], 
                         "hash": "27a7a675193e5bd17789c463c62ec331c80bf0f5", 
@@ -27986,34 +28030,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_GEANT10_X_2015-01-23-0200-->CMSSW_7_4_GEANT10_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.GEANT10-fri-14/CMSSW_7_4_GEANT10_X_2015-01-23-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 6, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_GEANT10_X_2015-01-23-0200-->CMSSW_7_4_GEANT10_X_2015-01-23-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.GEANT10-fri-14/CMSSW_7_4_GEANT10_X_2015-01-23-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_GEANT10_X_2015-01-21-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_GEANT10_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_GEANT10_X_2015-01-23-1400", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7057"
-                        ], 
-                        "hash": "df367d550fa5c4983e371534be8ad6486f2df326", 
-                        "number": "df367d5", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "66d8100a79afde9791973f1c8abf89bb7ca2bf1f", 
-                        "title": "Clean up likelihood algorithm (parts of code now executed before creation of database object) + updated DBWriter", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7057", 
-                        "number": "7057", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "UAEDF-tomc"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -28049,6 +28096,97 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "nickmccoll"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_GEANT10_X_2015-01-23-1400-->CMSSW_7_4_GEANT10_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_GEANT10_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7336", 
+                            "7340", 
+                            "7327", 
+                            "7302", 
+                            "7333"
+                        ], 
+                        "hash": "2435e0c274fbda2e4bf6fa08facd76eae3400f92", 
+                        "number": "2435e0c", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "1a830b5e42a425dace8b5fae4624e17a99af2c1b", 
+                        "title": "Remove unused variables from test module", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7340", 
+                        "number": "7340", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "9cf505aa5a1933608fcda707d0178dd91566f09a", 
+                        "title": "add dqmio option to promptReco and harvesting scripts", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7327", 
+                        "number": "7327", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "705051fca18802d4a2680a11b0de668a9ba04cd3", 
+                        "title": "Do not call edm::RefVector<>::product in Associators", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7333", 
+                        "number": "7333", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "add4ecddb5705b6b92289fb153c3898f1954f60f", 
+                        "title": "Fastsim new default mix scheme", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7302", 
+                        "number": "7302", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }, 
+                    {
+                        "hash": "03a7a9a713e95c87ad4e4009b20817231cec725e", 
+                        "title": "Cleanup of HLT configs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7336", 
+                        "number": "7336", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7057"
+                        ], 
+                        "hash": "df367d550fa5c4983e371534be8ad6486f2df326", 
+                        "number": "df367d5", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "66d8100a79afde9791973f1c8abf89bb7ca2bf1f", 
+                        "title": "Clean up likelihood algorithm (parts of code now executed before creation of database object) + updated DBWriter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7057", 
+                        "number": "7057", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "UAEDF-tomc"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -30054,8 +30192,63 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2015-01-23-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "miscError": 76, 
+                            "compError": 9, 
+                            "linkError": 513
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-01-23-0200-->CMSSW_7_4_ICC_X_2015-01-23-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2015-01-23-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-01-21-1400/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ICC_X_2015-01-23-1400", 
+                "merged_prs": [
+                    {
+                        "hash": "66d8100a79afde9791973f1c8abf89bb7ca2bf1f", 
+                        "title": "Clean up likelihood algorithm (parts of code now executed before creation of database object) + updated DBWriter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7057", 
+                        "number": "7057", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "UAEDF-tomc"
+                    }, 
+                    {
+                        "hash": "30b4f221ea3e4dfb082027405ad4dedd8dedfd0a", 
+                        "title": "Fix some obscure code in TrackingTruthAccumulator (still functionally identical)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7318", 
+                        "number": "7318", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mark-grimes"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_ICC_X_2015-01-23-0200-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-01-23-1400-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -30065,6 +30258,15 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7327"
+                        ], 
+                        "hash": "a17f08cad9ac9ff33beabf4cc5d9fd41b0175e48", 
+                        "number": "a17f08c", 
+                        "from_merge_commit": false
+                    }, 
+                    {
                         "hash": "1a830b5e42a425dace8b5fae4624e17a99af2c1b", 
                         "title": "Remove unused variables from test module", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7340", 
@@ -30072,6 +30274,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "9cf505aa5a1933608fcda707d0178dd91566f09a", 
+                        "title": "add dqmio option to promptReco and harvesting scripts", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7327", 
+                        "number": "7327", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
                     }, 
                     {
                         "hash": "705051fca18802d4a2680a11b0de668a9ba04cd3", 
@@ -30099,24 +30310,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "Martin-Grunewald"
-                    }, 
-                    {
-                        "hash": "66d8100a79afde9791973f1c8abf89bb7ca2bf1f", 
-                        "title": "Clean up likelihood algorithm (parts of code now executed before creation of database object) + updated DBWriter", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7057", 
-                        "number": "7057", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "UAEDF-tomc"
-                    }, 
-                    {
-                        "hash": "30b4f221ea3e4dfb082027405ad4dedd8dedfd0a", 
-                        "title": "Fix some obscure code in TrackingTruthAccumulator (still functionally identical)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7318", 
-                        "number": "7318", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "mark-grimes"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -32601,7 +32794,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2015-01-23-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -32624,7 +32824,14 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-01-21-1400/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -32683,6 +32890,64 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7336", 
+                            "7340", 
+                            "7327", 
+                            "7302", 
+                            "7333"
+                        ], 
+                        "hash": "e7593f4b9a012a3a2f28dce52512b99eef6caf0a", 
+                        "number": "e7593f4", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "1a830b5e42a425dace8b5fae4624e17a99af2c1b", 
+                        "title": "Remove unused variables from test module", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7340", 
+                        "number": "7340", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "9cf505aa5a1933608fcda707d0178dd91566f09a", 
+                        "title": "add dqmio option to promptReco and harvesting scripts", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7327", 
+                        "number": "7327", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "705051fca18802d4a2680a11b0de668a9ba04cd3", 
+                        "title": "Do not call edm::RefVector<>::product in Associators", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7333", 
+                        "number": "7333", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "add4ecddb5705b6b92289fb153c3898f1954f60f", 
+                        "title": "Fastsim new default mix scheme", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7302", 
+                        "number": "7302", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }, 
+                    {
+                        "hash": "03a7a9a713e95c87ad4e4009b20817231cec725e", 
+                        "title": "Cleanup of HLT configs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7336", 
+                        "number": "7336", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -35240,34 +35505,36 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-23-0200-->CMSSW_7_4_THREADED_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2015-01-23-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 8
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-23-0200-->CMSSW_7_4_THREADED_X_2015-01-23-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-14/CMSSW_7_4_THREADED_X_2015-01-23-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-21-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_THREADED_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_THREADED_X_2015-01-23-1400", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7057"
-                        ], 
-                        "hash": "c3eef595bb0a38b7c88e84fcd5e182b8b3ebae69", 
-                        "number": "c3eef59", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "66d8100a79afde9791973f1c8abf89bb7ca2bf1f", 
-                        "title": "Clean up likelihood algorithm (parts of code now executed before creation of database object) + updated DBWriter", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7057", 
-                        "number": "7057", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "UAEDF-tomc"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -35303,6 +35570,97 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "nickmccoll"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-23-1400-->CMSSW_7_4_THREADED_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_THREADED_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7336", 
+                            "7340", 
+                            "7327", 
+                            "7302", 
+                            "7333"
+                        ], 
+                        "hash": "6c54434e4c01ff614cf2eee74d0868de150c5a2c", 
+                        "number": "6c54434", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "1a830b5e42a425dace8b5fae4624e17a99af2c1b", 
+                        "title": "Remove unused variables from test module", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7340", 
+                        "number": "7340", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "9cf505aa5a1933608fcda707d0178dd91566f09a", 
+                        "title": "add dqmio option to promptReco and harvesting scripts", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7327", 
+                        "number": "7327", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "705051fca18802d4a2680a11b0de668a9ba04cd3", 
+                        "title": "Do not call edm::RefVector<>::product in Associators", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7333", 
+                        "number": "7333", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "add4ecddb5705b6b92289fb153c3898f1954f60f", 
+                        "title": "Fastsim new default mix scheme", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7302", 
+                        "number": "7302", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }, 
+                    {
+                        "hash": "03a7a9a713e95c87ad4e4009b20817231cec725e", 
+                        "title": "Cleanup of HLT configs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7336", 
+                        "number": "7336", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7057"
+                        ], 
+                        "hash": "c3eef595bb0a38b7c88e84fcd5e182b8b3ebae69", 
+                        "number": "c3eef59", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "66d8100a79afde9791973f1c8abf89bb7ca2bf1f", 
+                        "title": "Clean up likelihood algorithm (parts of code now executed before creation of database object) + updated DBWriter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7057", 
+                        "number": "7057", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "UAEDF-tomc"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -36791,13 +37149,13 @@
                 }, 
                 "relvals": [
                     {
-                        "arch": "slc6_amd64_gcc491", 
+                        "arch": "slc6_amd64_gcc481", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
                     }, 
                     {
-                        "arch": "slc6_amd64_gcc481", 
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -37746,15 +38104,24 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-01-23-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-01-23-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-01-22-0200/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -37796,6 +38163,15 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7327"
+                        ], 
+                        "hash": "a17f08cad9ac9ff33beabf4cc5d9fd41b0175e48", 
+                        "number": "a17f08c", 
+                        "from_merge_commit": false
+                    }, 
+                    {
                         "hash": "1a830b5e42a425dace8b5fae4624e17a99af2c1b", 
                         "title": "Remove unused variables from test module", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7340", 
@@ -37803,6 +38179,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "9cf505aa5a1933608fcda707d0178dd91566f09a", 
+                        "title": "add dqmio option to promptReco and harvesting scripts", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7327", 
+                        "number": "7327", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
                     }, 
                     {
                         "hash": "705051fca18802d4a2680a11b0de668a9ba04cd3", 
