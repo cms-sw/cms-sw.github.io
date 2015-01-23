@@ -25452,7 +25452,14 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-01-22-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -28001,7 +28008,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.GEANT10-fri-14/CMSSW_7_4_GEANT10_X_2015-01-23-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -28017,9 +28031,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.GEANT10-fri-14/CMSSW_7_4_GEANT10_X_2015-01-23-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.GEANT10-fri-14/CMSSW_7_4_GEANT10_X_2015-01-23-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -28759,55 +28775,15 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2015-01-16-1400/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "error", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2015-01-16-1400/new/logAnalysis.pkl", 
-                        "details": {
-                            "linkError": 39, 
-                            "compError": 1
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_ICC_X_2015-01-16-0200-->CMSSW_7_4_ICC_X_2015-01-16-1400", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "failed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2015-01-16-1400/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "223"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2015-01-16-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 174, 
-                            "num_failed": 280
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ICC_X_2015-01-16-1400", 
                 "merged_prs": [
                     {
@@ -30206,12 +30182,6 @@
                             "num_passed": 160, 
                             "num_failed": 261
                         }
-                    }, 
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
                     }
                 ], 
                 "static_checks": "not-found", 
@@ -30254,6 +30224,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "5baef11c09f9cb8e9057c349aeeed57fe4f1b71f", 
+                        "title": "L1Skim Fix for HLT", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7344", 
+                        "number": "7344", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "hash": "b1ee9c131064edcf3f4b25ccdb64b90e4048a4c8", 
+                        "title": "New Global Tags for Release Validation in all the supported scenarios.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7339", 
+                        "number": "7339", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "diguida"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -32813,9 +32801,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2015-01-23-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2015-01-23-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -35533,7 +35523,14 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-21-1400/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -38097,6 +38094,15 @@
                 ], 
                 "builds": [
                     {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-01-23-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 6, 
+                            "ignoreWarning": 2
+                        }
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": "error", 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-01-23-1400/new/logAnalysis.pkl", 
@@ -38115,9 +38121,16 @@
                         "details": {
                             "num_fails": "0"
                         }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-01-23-1400/new/logAnalysis.pkl']", 
+                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-01-21-1400/slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-01-22-0200/slc6_amd64_gcc481"
                 }, 
                 "relvals": [
@@ -38131,6 +38144,7 @@
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
+                    "slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481"
                 ], 
                 "release_name": "CMSSW_7_4_X_2015-01-23-1400", 
@@ -38168,6 +38182,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "5baef11c09f9cb8e9057c349aeeed57fe4f1b71f", 
+                        "title": "L1Skim Fix for HLT", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7344", 
+                        "number": "7344", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "hash": "b1ee9c131064edcf3f4b25ccdb64b90e4048a4c8", 
+                        "title": "New Global Tags for Release Validation in all the supported scenarios.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7339", 
+                        "number": "7339", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "diguida"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
