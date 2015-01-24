@@ -18276,7 +18276,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/sat/7.2-sat-14/CMSSW_7_2_X_2015-01-24-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -18292,9 +18299,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/sat/7.2-sat-14/CMSSW_7_2_X_2015-01-24-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/sat/7.2-sat-14/CMSSW_7_2_X_2015-01-24-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -23003,7 +23012,7 @@
                         }
                     }
                 ], 
-                "static_checks": "not-found", 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -23065,6 +23074,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "193806336a8b22ec1777f790f4bc7ca9001a8b81", 
+                        "title": "remove empty source and fix Hgg decay", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7338", 
+                        "number": "7338", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "covarell"
+                    }, 
                     {
                         "hash": "8f2894ccb6d21b42d2b667143fccc7b24ad5dddc", 
                         "title": "Fix thread safety problem in PhysicsTools/MVAComputer", 
@@ -25951,15 +25969,33 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-01-24-0200-->CMSSW_7_4_DEVEL_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.DEVEL-sat-14/CMSSW_7_4_DEVEL_X_2015-01-24-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-01-24-0200-->CMSSW_7_4_DEVEL_X_2015-01-24-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.DEVEL-sat-14/CMSSW_7_4_DEVEL_X_2015-01-24-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-01-24-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_DEVEL_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_DEVEL_X_2015-01-24-1400", 
                 "merged_prs": [
                     {
                         "is_merge_commit": true, 
@@ -25996,6 +26032,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "franzoni"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-01-24-1400-->CMSSW_7_4_DEVEL_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_DEVEL_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7332"
+                        ], 
+                        "hash": "ca5a34a6a1b0a37406622457f6cfee9038b4a53c", 
+                        "number": "ca5a34a", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8f2894ccb6d21b42d2b667143fccc7b24ad5dddc", 
+                        "title": "Fix thread safety problem in PhysicsTools/MVAComputer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7332", 
+                        "number": "7332", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -28719,7 +28788,26 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_GEANT10_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7332"
+                        ], 
+                        "hash": "6c25bf1f0cdb55ed8f368ffbda18b6b370e288d7", 
+                        "number": "6c25bf1", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8f2894ccb6d21b42d2b667143fccc7b24ad5dddc", 
+                        "title": "Fix thread safety problem in PhysicsTools/MVAComputer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7332", 
+                        "number": "7332", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -30922,6 +31010,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "193806336a8b22ec1777f790f4bc7ca9001a8b81", 
+                        "title": "remove empty source and fix Hgg decay", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7338", 
+                        "number": "7338", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "covarell"
+                    }, 
                     {
                         "hash": "8f2894ccb6d21b42d2b667143fccc7b24ad5dddc", 
                         "title": "Fix thread safety problem in PhysicsTools/MVAComputer", 
@@ -33647,15 +33744,33 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-24-0200-->CMSSW_7_4_ROOT6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.ROOT6-sat-14/CMSSW_7_4_ROOT6_X_2015-01-24-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-24-0200-->CMSSW_7_4_ROOT6_X_2015-01-24-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.ROOT6-sat-14/CMSSW_7_4_ROOT6_X_2015-01-24-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-01-24-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ROOT6_X_2015-01-24-1400", 
                 "merged_prs": [
                     {
                         "is_merge_commit": true, 
@@ -33692,6 +33807,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "franzoni"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-24-1400-->CMSSW_7_4_ROOT6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7332"
+                        ], 
+                        "hash": "07f8f78ce504718497145551511cd634e6e0922c", 
+                        "number": "07f8f78", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8f2894ccb6d21b42d2b667143fccc7b24ad5dddc", 
+                        "title": "Fix thread safety problem in PhysicsTools/MVAComputer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7332", 
+                        "number": "7332", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -36470,15 +36618,33 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-24-0200-->CMSSW_7_4_THREADED_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.THREADED-sat-14/CMSSW_7_4_THREADED_X_2015-01-24-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-24-0200-->CMSSW_7_4_THREADED_X_2015-01-24-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.THREADED-sat-14/CMSSW_7_4_THREADED_X_2015-01-24-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-24-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_THREADED_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_THREADED_X_2015-01-24-1400", 
                 "merged_prs": [
                     {
                         "is_merge_commit": true, 
@@ -36515,6 +36681,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "franzoni"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-24-1400-->CMSSW_7_4_THREADED_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_THREADED_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7332"
+                        ], 
+                        "hash": "54d102cb4464827f0755ff887c9ed01083062f5c", 
+                        "number": "54d102c", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8f2894ccb6d21b42d2b667143fccc7b24ad5dddc", 
+                        "title": "Fix thread safety problem in PhysicsTools/MVAComputer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7332", 
+                        "number": "7332", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -37275,55 +37474,15 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4-sat-02/CMSSW_7_4_X_2015-01-17-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "warning", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4-sat-02/CMSSW_7_4_X_2015-01-17-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "compWarning": 8, 
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_X_2015-01-16-1400-->CMSSW_7_4_X_2015-01-17-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4-sat-02/CMSSW_7_4_X_2015-01-17-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4-sat-02/CMSSW_7_4_X_2015-01-17-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 960, 
-                            "num_failed": 17
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X_2015-01-17-0200", 
                 "merged_prs": [
                     {
@@ -38999,6 +39158,15 @@
                 }, 
                 "relvals": [
                     {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-21/CMSSW_7_4_X_2015-01-23-2100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 939, 
+                            "num_failed": 19
+                        }
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": false, 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-21/CMSSW_7_4_X_2015-01-23-2100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
@@ -39206,25 +39374,48 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-01-24-0200-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4-sat-14/CMSSW_7_4_X_2015-01-24-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/sat/7.4-sat-14/CMSSW_7_4_X_2015-01-24-1400/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-01-24-0200-->CMSSW_7_4_X_2015-01-24-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4-sat-14/CMSSW_7_4_X_2015-01-24-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/sat/7.4-sat-14/CMSSW_7_4_X_2015-01-24-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-01-24-0200/slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-01-23-2100/slc6_amd64_gcc481"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_4_X_2015-01-24-1400", 
                 "merged_prs": [
-                    {
-                        "hash": "8f2894ccb6d21b42d2b667143fccc7b24ad5dddc", 
-                        "title": "Fix thread safety problem in PhysicsTools/MVAComputer", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7332", 
-                        "number": "7332", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
-                    }, 
                     {
                         "hash": "bf44b7e12fefedb885c4bf7ac20ab46921243395", 
                         "title": "use functions-calls-db.txt instead of db.txt", 
@@ -39242,6 +39433,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "franzoni"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_X_2015-01-24-1400-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "merged_prs": [
+                    {
+                        "hash": "193806336a8b22ec1777f790f4bc7ca9001a8b81", 
+                        "title": "remove empty source and fix Hgg decay", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7338", 
+                        "number": "7338", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "covarell"
+                    }, 
+                    {
+                        "hash": "8f2894ccb6d21b42d2b667143fccc7b24ad5dddc", 
+                        "title": "Fix thread safety problem in PhysicsTools/MVAComputer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7332", 
+                        "number": "7332", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
                     }
                 ], 
                 "hlt_tests": "not-found"
