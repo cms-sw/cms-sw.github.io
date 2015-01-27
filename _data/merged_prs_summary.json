@@ -1024,7 +1024,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_6_2_X_SLHC", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "1db10f2c53eb731a3f6713eb994206dab44a26fb", 
+                        "title": "HGCAL V6 geometry Z partitions", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7140", 
+                        "number": "7140", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "vandreev11"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -2169,7 +2179,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.2-tue-14/CMSSW_7_2_X_2015-01-27-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -3740,6 +3757,16 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7296", 
+                            "7299"
+                        ], 
+                        "hash": "2c078ef436884d5869c7a4a5e254758207b56a97", 
+                        "number": "2c078ef", 
+                        "from_merge_commit": false
+                    }, 
+                    {
                         "hash": "a6e144b71dfdadb1eb4431a00c332d0c9acb2a92", 
                         "title": "Fix with the correct names of the PF-based alpha-T trigger paths", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7385", 
@@ -3783,6 +3810,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "56497a8782d1bf278cc9011cf759aa1c49316da0", 
+                        "title": "update photon path names in SMP HLT DQM config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7296", 
+                        "number": "7296", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "olivito"
                     }, 
                     {
                         "hash": "aed6d5ed76356dc61aa1b3cba7c6dfff59a2390a", 
@@ -3837,6 +3873,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "e45852b729a4981f9c04224ee5c0d6fc67d793e4", 
+                        "title": "New fsq jet filtes - backport to 73", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7299", 
+                        "number": "7299", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fruboes"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -5775,7 +5820,14 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-01-27-1000/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -5834,34 +5886,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-01-27-1000-->CMSSW_7_4_DEVEL_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.DEVEL-tue-14/CMSSW_7_4_DEVEL_X_2015-01-27-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 6, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-01-27-1000-->CMSSW_7_4_DEVEL_X_2015-01-27-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.DEVEL-tue-14/CMSSW_7_4_DEVEL_X_2015-01-27-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-01-27-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_DEVEL_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_DEVEL_X_2015-01-27-1400", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7347"
-                        ], 
-                        "hash": "c7106e36ca8b4cfea24bd05f8de7956a4d17fb17", 
-                        "number": "c7106e3", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "aed6d5ed76356dc61aa1b3cba7c6dfff59a2390a", 
-                        "title": "New conditions objects for HI jet reconstruction", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7347", 
-                        "number": "7347", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "CmsHI"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -5889,6 +5944,117 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "cms-tsg-storm"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-01-27-1400-->CMSSW_7_4_DEVEL_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_DEVEL_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7315", 
+                            "7364", 
+                            "7296", 
+                            "7385", 
+                            "7299", 
+                            "7383", 
+                            "7386"
+                        ], 
+                        "hash": "edd4dd683110c244a421fcf84b512412a9c88d40", 
+                        "number": "edd4dd6", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a6e144b71dfdadb1eb4431a00c332d0c9acb2a92", 
+                        "title": "Fix with the correct names of the PF-based alpha-T trigger paths", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7385", 
+                        "number": "7385", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrotta"
+                    }, 
+                    {
+                        "hash": "e41630e373055776c4c7ec532e96d78cca8a2573", 
+                        "title": "Updated h2tau electron paths to WP75", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7383", 
+                        "number": "7383", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "slehti"
+                    }, 
+                    {
+                        "hash": "879197417511170612013907b80358d485171739", 
+                        "title": "ElectronAnalyzer.cc  : false lines removed - setBookPrefix and setBookIndex", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7315", 
+                        "number": "7315", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "archiron"
+                    }, 
+                    {
+                        "hash": "c2addf8b9f03f12e1cb731367397bb682a7e8672", 
+                        "title": "update the list of paths monitored by Higgs HLT DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7364", 
+                        "number": "7364", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "HuguesBrun"
+                    }, 
+                    {
+                        "hash": "da33f773d614eb79e939ebd536bcc758b056f605", 
+                        "title": "Default Geometry Validation", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7386", 
+                        "number": "7386", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "56497a8782d1bf278cc9011cf759aa1c49316da0", 
+                        "title": "update photon path names in SMP HLT DQM config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7296", 
+                        "number": "7296", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "olivito"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7347"
+                        ], 
+                        "hash": "c7106e36ca8b4cfea24bd05f8de7956a4d17fb17", 
+                        "number": "c7106e3", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "aed6d5ed76356dc61aa1b3cba7c6dfff59a2390a", 
+                        "title": "New conditions objects for HI jet reconstruction", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7347", 
+                        "number": "7347", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "CmsHI"
+                    }, 
+                    {
+                        "hash": "e45852b729a4981f9c04224ee5c0d6fc67d793e4", 
+                        "title": "New fsq jet filtes - backport to 73", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7299", 
+                        "number": "7299", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fruboes"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -7781,6 +7947,75 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7364", 
+                            "7296", 
+                            "7385", 
+                            "7315", 
+                            "7299", 
+                            "7383", 
+                            "7386"
+                        ], 
+                        "hash": "68c32d9617f4ceb8656bba364db35f853b04cb86", 
+                        "number": "68c32d9", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a6e144b71dfdadb1eb4431a00c332d0c9acb2a92", 
+                        "title": "Fix with the correct names of the PF-based alpha-T trigger paths", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7385", 
+                        "number": "7385", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrotta"
+                    }, 
+                    {
+                        "hash": "e41630e373055776c4c7ec532e96d78cca8a2573", 
+                        "title": "Updated h2tau electron paths to WP75", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7383", 
+                        "number": "7383", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "slehti"
+                    }, 
+                    {
+                        "hash": "879197417511170612013907b80358d485171739", 
+                        "title": "ElectronAnalyzer.cc  : false lines removed - setBookPrefix and setBookIndex", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7315", 
+                        "number": "7315", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "archiron"
+                    }, 
+                    {
+                        "hash": "c2addf8b9f03f12e1cb731367397bb682a7e8672", 
+                        "title": "update the list of paths monitored by Higgs HLT DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7364", 
+                        "number": "7364", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "HuguesBrun"
+                    }, 
+                    {
+                        "hash": "da33f773d614eb79e939ebd536bcc758b056f605", 
+                        "title": "Default Geometry Validation", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7386", 
+                        "number": "7386", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "56497a8782d1bf278cc9011cf759aa1c49316da0", 
+                        "title": "update photon path names in SMP HLT DQM config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7296", 
+                        "number": "7296", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "olivito"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7347"
                         ], 
                         "hash": "fae412e4982be04fe1d5e36c05fe359c4a0b04b6", 
@@ -7869,6 +8104,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "e45852b729a4981f9c04224ee5c0d6fc67d793e4", 
+                        "title": "New fsq jet filtes - backport to 73", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7299", 
+                        "number": "7299", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fruboes"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -9348,6 +9592,16 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7296", 
+                            "7299"
+                        ], 
+                        "hash": "2c078ef436884d5869c7a4a5e254758207b56a97", 
+                        "number": "2c078ef", 
+                        "from_merge_commit": false
+                    }, 
+                    {
                         "hash": "a6e144b71dfdadb1eb4431a00c332d0c9acb2a92", 
                         "title": "Fix with the correct names of the PF-based alpha-T trigger paths", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7385", 
@@ -9391,6 +9645,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "56497a8782d1bf278cc9011cf759aa1c49316da0", 
+                        "title": "update photon path names in SMP HLT DQM config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7296", 
+                        "number": "7296", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "olivito"
                     }, 
                     {
                         "hash": "aed6d5ed76356dc61aa1b3cba7c6dfff59a2390a", 
@@ -9445,6 +9708,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "e45852b729a4981f9c04224ee5c0d6fc67d793e4", 
+                        "title": "New fsq jet filtes - backport to 73", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7299", 
+                        "number": "7299", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fruboes"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -11342,6 +11614,75 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7364", 
+                            "7296", 
+                            "7385", 
+                            "7315", 
+                            "7299", 
+                            "7383", 
+                            "7386"
+                        ], 
+                        "hash": "316cc680c6fde5f429bd791c25c566e8adf20367", 
+                        "number": "316cc68", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a6e144b71dfdadb1eb4431a00c332d0c9acb2a92", 
+                        "title": "Fix with the correct names of the PF-based alpha-T trigger paths", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7385", 
+                        "number": "7385", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrotta"
+                    }, 
+                    {
+                        "hash": "e41630e373055776c4c7ec532e96d78cca8a2573", 
+                        "title": "Updated h2tau electron paths to WP75", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7383", 
+                        "number": "7383", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "slehti"
+                    }, 
+                    {
+                        "hash": "879197417511170612013907b80358d485171739", 
+                        "title": "ElectronAnalyzer.cc  : false lines removed - setBookPrefix and setBookIndex", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7315", 
+                        "number": "7315", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "archiron"
+                    }, 
+                    {
+                        "hash": "c2addf8b9f03f12e1cb731367397bb682a7e8672", 
+                        "title": "update the list of paths monitored by Higgs HLT DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7364", 
+                        "number": "7364", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "HuguesBrun"
+                    }, 
+                    {
+                        "hash": "da33f773d614eb79e939ebd536bcc758b056f605", 
+                        "title": "Default Geometry Validation", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7386", 
+                        "number": "7386", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "56497a8782d1bf278cc9011cf759aa1c49316da0", 
+                        "title": "update photon path names in SMP HLT DQM config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7296", 
+                        "number": "7296", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "olivito"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7347"
                         ], 
                         "hash": "dc03be2ac18857d2258b0dc268c9e8aa919072f9", 
@@ -11430,6 +11771,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "e45852b729a4981f9c04224ee5c0d6fc67d793e4", 
+                        "title": "New fsq jet filtes - backport to 73", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7299", 
+                        "number": "7299", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fruboes"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -13363,34 +13713,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-27-0200-->CMSSW_7_4_THREADED_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.THREADED-tue-14/CMSSW_7_4_THREADED_X_2015-01-27-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 6, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-27-0200-->CMSSW_7_4_THREADED_X_2015-01-27-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.THREADED-tue-14/CMSSW_7_4_THREADED_X_2015-01-27-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-27-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_THREADED_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_THREADED_X_2015-01-27-1400", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7347"
-                        ], 
-                        "hash": "ba35f3a619487d2dc6ef0b9595126c9790d72317", 
-                        "number": "ba35f3a", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "aed6d5ed76356dc61aa1b3cba7c6dfff59a2390a", 
-                        "title": "New conditions objects for HI jet reconstruction", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7347", 
-                        "number": "7347", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "CmsHI"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -13464,6 +13817,117 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "Dr15Jones"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-27-1400-->CMSSW_7_4_THREADED_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_THREADED_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7364", 
+                            "7296", 
+                            "7385", 
+                            "7315", 
+                            "7299", 
+                            "7383", 
+                            "7386"
+                        ], 
+                        "hash": "6da639b31b7d9896834ee99a7ac499b9b1256177", 
+                        "number": "6da639b", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "a6e144b71dfdadb1eb4431a00c332d0c9acb2a92", 
+                        "title": "Fix with the correct names of the PF-based alpha-T trigger paths", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7385", 
+                        "number": "7385", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrotta"
+                    }, 
+                    {
+                        "hash": "e41630e373055776c4c7ec532e96d78cca8a2573", 
+                        "title": "Updated h2tau electron paths to WP75", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7383", 
+                        "number": "7383", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "slehti"
+                    }, 
+                    {
+                        "hash": "879197417511170612013907b80358d485171739", 
+                        "title": "ElectronAnalyzer.cc  : false lines removed - setBookPrefix and setBookIndex", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7315", 
+                        "number": "7315", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "archiron"
+                    }, 
+                    {
+                        "hash": "c2addf8b9f03f12e1cb731367397bb682a7e8672", 
+                        "title": "update the list of paths monitored by Higgs HLT DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7364", 
+                        "number": "7364", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "HuguesBrun"
+                    }, 
+                    {
+                        "hash": "da33f773d614eb79e939ebd536bcc758b056f605", 
+                        "title": "Default Geometry Validation", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7386", 
+                        "number": "7386", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "56497a8782d1bf278cc9011cf759aa1c49316da0", 
+                        "title": "update photon path names in SMP HLT DQM config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7296", 
+                        "number": "7296", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "olivito"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7347"
+                        ], 
+                        "hash": "ba35f3a619487d2dc6ef0b9595126c9790d72317", 
+                        "number": "ba35f3a", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "aed6d5ed76356dc61aa1b3cba7c6dfff59a2390a", 
+                        "title": "New conditions objects for HI jet reconstruction", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7347", 
+                        "number": "7347", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "CmsHI"
+                    }, 
+                    {
+                        "hash": "e45852b729a4981f9c04224ee5c0d6fc67d793e4", 
+                        "title": "New fsq jet filtes - backport to 73", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7299", 
+                        "number": "7299", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fruboes"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -14340,13 +14804,13 @@
                 }, 
                 "relvals": [
                     {
-                        "arch": "slc6_amd64_gcc481", 
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
                     }, 
                     {
-                        "arch": "slc6_amd64_gcc491", 
+                        "arch": "slc6_amd64_gcc481", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -16354,8 +16818,43 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-10/CMSSW_7_4_X_2015-01-27-1000/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 2, 
+                            "ignoreWarning": 8
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_0_pre6-->CMSSW_7_4_X_2015-01-27-1000", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-10/CMSSW_7_4_X_2015-01-27-1000/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-01-27-1000/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_X_2015-01-27-1000", 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_0_pre6-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_X_2015-01-27-1000-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -16364,6 +16863,16 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7296", 
+                            "7299"
+                        ], 
+                        "hash": "2c078ef436884d5869c7a4a5e254758207b56a97", 
+                        "number": "2c078ef", 
+                        "from_merge_commit": false
+                    }, 
                     {
                         "hash": "a6e144b71dfdadb1eb4431a00c332d0c9acb2a92", 
                         "title": "Fix with the correct names of the PF-based alpha-T trigger paths", 
@@ -16410,6 +16919,15 @@
                         "author_login": "ianna"
                     }, 
                     {
+                        "hash": "56497a8782d1bf278cc9011cf759aa1c49316da0", 
+                        "title": "update photon path names in SMP HLT DQM config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7296", 
+                        "number": "7296", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "olivito"
+                    }, 
+                    {
                         "hash": "aed6d5ed76356dc61aa1b3cba7c6dfff59a2390a", 
                         "title": "New conditions objects for HI jet reconstruction", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7347", 
@@ -16435,6 +16953,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "hash": "e45852b729a4981f9c04224ee5c0d6fc67d793e4", 
+                        "title": "New fsq jet filtes - backport to 73", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7299", 
+                        "number": "7299", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fruboes"
                     }
                 ], 
                 "hlt_tests": "not-found"

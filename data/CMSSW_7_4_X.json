@@ -868,13 +868,13 @@
             }, 
             "relvals": [
                 {
-                    "arch": "slc6_amd64_gcc481", 
+                    "arch": "slc6_amd64_gcc491", 
                     "file": "not-ready", 
                     "passed": true, 
                     "details": {}
                 }, 
                 {
-                    "arch": "slc6_amd64_gcc491", 
+                    "arch": "slc6_amd64_gcc481", 
                     "file": "not-ready", 
                     "passed": true, 
                     "details": {}
@@ -2882,8 +2882,43 @@
         }, 
         {
             "addons": [], 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "warning", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-10/CMSSW_7_4_X_2015-01-27-1000/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 2, 
+                        "ignoreWarning": 8
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_0_pre6-->CMSSW_7_4_X_2015-01-27-1000", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "unknown", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-10/CMSSW_7_4_X_2015-01-27-1000/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-01-27-1000/slc6_amd64_gcc491"
+            }, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
+            "release_name": "CMSSW_7_4_X_2015-01-27-1000", 
+            "merged_prs": [], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
             "builds": [], 
-            "compared_tags": "CMSSW_7_4_0_pre6-->CMSSW_7_4_X", 
+            "compared_tags": "CMSSW_7_4_X_2015-01-27-1000-->CMSSW_7_4_X", 
             "utests": [], 
             "cmsdistTags": {}, 
             "relvals": [], 
@@ -2892,6 +2927,16 @@
             "tests_archs": [], 
             "release_name": "CMSSW_7_4_X", 
             "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "7296", 
+                        "7299"
+                    ], 
+                    "hash": "2c078ef436884d5869c7a4a5e254758207b56a97", 
+                    "number": "2c078ef", 
+                    "from_merge_commit": false
+                }, 
                 {
                     "hash": "a6e144b71dfdadb1eb4431a00c332d0c9acb2a92", 
                     "title": "Fix with the correct names of the PF-based alpha-T trigger paths", 
@@ -2938,6 +2983,15 @@
                     "author_login": "ianna"
                 }, 
                 {
+                    "hash": "56497a8782d1bf278cc9011cf759aa1c49316da0", 
+                    "title": "update photon path names in SMP HLT DQM config", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7296", 
+                    "number": "7296", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "olivito"
+                }, 
+                {
                     "hash": "aed6d5ed76356dc61aa1b3cba7c6dfff59a2390a", 
                     "title": "New conditions objects for HI jet reconstruction", 
                     "url": "https://github.com/cms-sw/cmssw/pull/7347", 
@@ -2963,6 +3017,15 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "cms-tsg-storm"
+                }, 
+                {
+                    "hash": "e45852b729a4981f9c04224ee5c0d6fc67d793e4", 
+                    "title": "New fsq jet filtes - backport to 73", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7299", 
+                    "number": "7299", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "fruboes"
                 }
             ], 
             "hlt_tests": "not-found"
