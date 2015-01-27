@@ -3229,7 +3229,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.CLANG-tue-02/CMSSW_7_4_CLANG_X_2015-01-27-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -3440,6 +3447,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "4143a497a73ebaec8604bea418c8d798738497c1", 
+                        "title": "Fastsim pretrkcalo", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7381", 
+                        "number": "7381", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
                     {
                         "hash": "29d3123f4b49d975d5ea33f5621c9059ee643323", 
                         "title": "Bugfixes and clean-up after HI mixing updates", 
@@ -5129,7 +5145,14 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-01-27-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -6994,34 +7017,36 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_GEANT10_X_2015-01-26-0200-->CMSSW_7_4_GEANT10_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.GEANT10-tue-02/CMSSW_7_4_GEANT10_X_2015-01-27-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 8
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_GEANT10_X_2015-01-26-0200-->CMSSW_7_4_GEANT10_X_2015-01-27-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.GEANT10-tue-02/CMSSW_7_4_GEANT10_X_2015-01-27-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_GEANT10_X_2015-01-27-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_GEANT10_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_GEANT10_X_2015-01-27-0200", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7379"
-                        ], 
-                        "hash": "221e179cecd0cb10eb9d9aa878dae67b30a20c07", 
-                        "number": "221e179", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "76d3f9073b5e792373d03167ccdd363092f9213b", 
-                        "title": "removed unnecessary mutable designations from HcalDcsValues", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7379", 
-                        "number": "7379", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Dr15Jones"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -7257,6 +7282,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "boudoul"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_GEANT10_X_2015-01-27-0200-->CMSSW_7_4_GEANT10_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_GEANT10_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7379"
+                        ], 
+                        "hash": "221e179cecd0cb10eb9d9aa878dae67b30a20c07", 
+                        "number": "221e179", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "76d3f9073b5e792373d03167ccdd363092f9213b", 
+                        "title": "removed unnecessary mutable designations from HcalDcsValues", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7379", 
+                        "number": "7379", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -8547,6 +8605,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "4143a497a73ebaec8604bea418c8d798738497c1", 
+                        "title": "Fastsim pretrkcalo", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7381", 
+                        "number": "7381", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
                     {
                         "hash": "29d3123f4b49d975d5ea33f5621c9059ee643323", 
                         "title": "Bugfixes and clean-up after HI mixing updates", 
@@ -10348,34 +10415,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-25-1400-->CMSSW_7_4_ROOT6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.ROOT6-tue-02/CMSSW_7_4_ROOT6_X_2015-01-27-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 6, 
+                            "ignoreWarning": 20
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-25-1400-->CMSSW_7_4_ROOT6_X_2015-01-27-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.ROOT6-tue-02/CMSSW_7_4_ROOT6_X_2015-01-27-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-01-27-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ROOT6_X_2015-01-27-0200", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7379"
-                        ], 
-                        "hash": "5b50e59a186316e51212c5251b502c7a9602aeed", 
-                        "number": "5b50e59", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "76d3f9073b5e792373d03167ccdd363092f9213b", 
-                        "title": "removed unnecessary mutable designations from HcalDcsValues", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7379", 
-                        "number": "7379", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Dr15Jones"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -10614,6 +10684,39 @@
                     }
                 ], 
                 "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-27-0200-->CMSSW_7_4_ROOT6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7379"
+                        ], 
+                        "hash": "5b50e59a186316e51212c5251b502c7a9602aeed", 
+                        "number": "5b50e59", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "76d3f9073b5e792373d03167ccdd363092f9213b", 
+                        "title": "removed unnecessary mutable designations from HcalDcsValues", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7379", 
+                        "number": "7379", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }
+                ], 
+                "hlt_tests": "not-found"
             }
         ]
     }, 
@@ -10629,10 +10732,19 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-19-1400/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [], 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "release_name": "CMSSW_7_4_THREADED_X_2015-01-19-1400", 
                 "merged_prs": [
                     {
@@ -12292,15 +12404,24 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.THREADED-tue-02/CMSSW_7_4_THREADED_X_2015-01-27-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.THREADED-tue-02/CMSSW_7_4_THREADED_X_2015-01-27-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-27-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -13501,13 +13622,13 @@
                 }, 
                 "relvals": [
                     {
-                        "arch": "slc6_amd64_gcc491", 
+                        "arch": "slc6_amd64_gcc481", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
                     }, 
                     {
-                        "arch": "slc6_amd64_gcc481", 
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -15369,6 +15490,15 @@
                 ], 
                 "builds": [
                     {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-02/CMSSW_7_4_X_2015-01-27-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 7, 
+                            "ignoreWarning": 3
+                        }
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": "passed", 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.4-tue-02/CMSSW_7_4_X_2015-01-27-0200/new/logAnalysis.pkl", 
@@ -15384,9 +15514,16 @@
                         "details": {
                             "num_fails": "0"
                         }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-02/CMSSW_7_4_X_2015-01-27-0200/new/logAnalysis.pkl']", 
+                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-01-27-0200/slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-01-26-2000/slc6_amd64_gcc481"
                 }, 
                 "relvals": [
@@ -15400,6 +15537,7 @@
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
+                    "slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481"
                 ], 
                 "release_name": "CMSSW_7_4_X_2015-01-27-0200", 
@@ -15446,6 +15584,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "4143a497a73ebaec8604bea418c8d798738497c1", 
+                        "title": "Fastsim pretrkcalo", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7381", 
+                        "number": "7381", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
                     {
                         "hash": "29d3123f4b49d975d5ea33f5621c9059ee643323", 
                         "title": "Bugfixes and clean-up after HI mixing updates", 
