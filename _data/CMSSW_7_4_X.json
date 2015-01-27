@@ -868,13 +868,13 @@
             }, 
             "relvals": [
                 {
-                    "arch": "slc6_amd64_gcc491", 
+                    "arch": "slc6_amd64_gcc481", 
                     "file": "not-ready", 
                     "passed": true, 
                     "details": {}
                 }, 
                 {
-                    "arch": "slc6_amd64_gcc481", 
+                    "arch": "slc6_amd64_gcc491", 
                     "file": "not-ready", 
                     "passed": true, 
                     "details": {}
@@ -2881,7 +2881,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-10/CMSSW_7_4_X_2015-01-27-1000/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -2897,9 +2904,11 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-10/CMSSW_7_4_X_2015-01-27-1000/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-10/CMSSW_7_4_X_2015-01-27-1000/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "0"
+                    }
                 }
             ], 
             "cmsdistTags": {
@@ -2917,8 +2926,62 @@
         }, 
         {
             "addons": [], 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": "warning", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.4-tue-14/CMSSW_7_4_X_2015-01-27-1400/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 6, 
+                        "ignoreWarning": 2
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_X_2015-01-27-1000-->CMSSW_7_4_X_2015-01-27-1400", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": "unknown", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.4-tue-14/CMSSW_7_4_X_2015-01-27-1400/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-01-27-1400/slc6_amd64_gcc481"
+            }, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc481"
+            ], 
+            "release_name": "CMSSW_7_4_X_2015-01-27-1400", 
+            "merged_prs": [
+                {
+                    "hash": "907eaac7d554c9406616c2abe3809c0a9af9ba55", 
+                    "title": "Fixed thread problems in DQMOffline/Trigger", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7360", 
+                    "number": "7360", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "Dr15Jones"
+                }, 
+                {
+                    "hash": "8a474369b43630c1f91bbc9e73c677184d59b127", 
+                    "title": "Another bunch of updates for the Run2 HLT menu", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7370", 
+                    "number": "7370", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cms-tsg-storm"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
             "builds": [], 
-            "compared_tags": "CMSSW_7_4_X_2015-01-27-1000-->CMSSW_7_4_X", 
+            "compared_tags": "CMSSW_7_4_X_2015-01-27-1400-->CMSSW_7_4_X", 
             "utests": [], 
             "cmsdistTags": {}, 
             "relvals": [], 
@@ -2999,24 +3062,6 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "CmsHI"
-                }, 
-                {
-                    "hash": "907eaac7d554c9406616c2abe3809c0a9af9ba55", 
-                    "title": "Fixed thread problems in DQMOffline/Trigger", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7360", 
-                    "number": "7360", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "Dr15Jones"
-                }, 
-                {
-                    "hash": "8a474369b43630c1f91bbc9e73c677184d59b127", 
-                    "title": "Another bunch of updates for the Run2 HLT menu", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7370", 
-                    "number": "7370", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "cms-tsg-storm"
                 }, 
                 {
                     "hash": "e45852b729a4981f9c04224ee5c0d6fc67d793e4", 
