@@ -1574,9 +1574,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.1-wed-14/CMSSW_7_1_X_2015-01-28-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.1-wed-14/CMSSW_7_1_X_2015-01-28-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "13"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -2583,8 +2585,43 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2015-01-28-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 3, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_2_X_2015-01-28-0200-->CMSSW_7_2_X_2015-01-28-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2015-01-28-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "Not Found"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_2_X_2015-01-28-1400", 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_2_X_2015-01-28-0200-->CMSSW_7_2_X", 
+                "compared_tags": "CMSSW_7_2_X_2015-01-28-1400-->CMSSW_7_2_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -4050,6 +4087,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "612508b10535e52fca6377a9e239f5028a72bb30", 
+                        "title": "Removed unnecessary mutable keyword from PerformancePayloadFromTFormula", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7396", 
+                        "number": "7396", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "hash": "fc1964d696892540aab762d8416d4eebb281d075", 
                         "title": "Remove unused member variable from CastorDbService", 
@@ -6281,12 +6327,6 @@
                             "num_passed": 973, 
                             "num_failed": 10
                         }
-                    }, 
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
                     }
                 ], 
                 "static_checks": "not-found", 
@@ -6415,34 +6455,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-01-28-0200-->CMSSW_7_4_DEVEL_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-14/CMSSW_7_4_DEVEL_X_2015-01-28-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 6, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-01-28-0200-->CMSSW_7_4_DEVEL_X_2015-01-28-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-14/CMSSW_7_4_DEVEL_X_2015-01-28-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-01-28-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_DEVEL_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_DEVEL_X_2015-01-28-1400", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7389"
-                        ], 
-                        "hash": "fec971053f0f99643dcbcd80a2ee25b8daf2095f", 
-                        "number": "fec9710", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "03131167b1d21be4419b0335b3337978fae7b573", 
-                        "title": "FastSim sampling of nuclear interation using Geant4 FTF model", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7389", 
-                        "number": "7389", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "civanch"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -6478,6 +6521,67 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "Martin-Grunewald"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-01-28-1400-->CMSSW_7_4_DEVEL_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_DEVEL_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7398", 
+                            "7396"
+                        ], 
+                        "hash": "a4c0adad394c0b948686c237fefe6d48c33742db", 
+                        "number": "a4c0ada", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "612508b10535e52fca6377a9e239f5028a72bb30", 
+                        "title": "Removed unnecessary mutable keyword from PerformancePayloadFromTFormula", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7396", 
+                        "number": "7396", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "fc1964d696892540aab762d8416d4eebb281d075", 
+                        "title": "Remove unused member variable from CastorDbService", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7398", 
+                        "number": "7398", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7389"
+                        ], 
+                        "hash": "fec971053f0f99643dcbcd80a2ee25b8daf2095f", 
+                        "number": "fec9710", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "03131167b1d21be4419b0335b3337978fae7b573", 
+                        "title": "FastSim sampling of nuclear interation using Geant4 FTF model", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7389", 
+                        "number": "7389", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "civanch"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -8157,6 +8261,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "612508b10535e52fca6377a9e239f5028a72bb30", 
+                        "title": "Removed unnecessary mutable keyword from PerformancePayloadFromTFormula", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7396", 
+                        "number": "7396", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "hash": "fc1964d696892540aab762d8416d4eebb281d075", 
                         "title": "Remove unused member variable from CastorDbService", 
@@ -10202,34 +10315,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-27-1400-->CMSSW_7_4_ROOT6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-14/CMSSW_7_4_ROOT6_X_2015-01-28-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 6, 
+                            "ignoreWarning": 20
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-27-1400-->CMSSW_7_4_ROOT6_X_2015-01-28-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-14/CMSSW_7_4_ROOT6_X_2015-01-28-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-01-28-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ROOT6_X_2015-01-28-1400", 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7389"
-                        ], 
-                        "hash": "290e968ca6c1651d75f910bffc8a3ada2f616572", 
-                        "number": "290e968", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "03131167b1d21be4419b0335b3337978fae7b573", 
-                        "title": "FastSim sampling of nuclear interation using Geant4 FTF model", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7389", 
-                        "number": "7389", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "civanch"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -10379,6 +10495,67 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "fruboes"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-01-28-1400-->CMSSW_7_4_ROOT6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7398", 
+                            "7396"
+                        ], 
+                        "hash": "196a176078f696b3738522b73f7f0f6247a4163b", 
+                        "number": "196a176", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "612508b10535e52fca6377a9e239f5028a72bb30", 
+                        "title": "Removed unnecessary mutable keyword from PerformancePayloadFromTFormula", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7396", 
+                        "number": "7396", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "fc1964d696892540aab762d8416d4eebb281d075", 
+                        "title": "Remove unused member variable from CastorDbService", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7398", 
+                        "number": "7398", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7389"
+                        ], 
+                        "hash": "290e968ca6c1651d75f910bffc8a3ada2f616572", 
+                        "number": "290e968", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "03131167b1d21be4419b0335b3337978fae7b573", 
+                        "title": "FastSim sampling of nuclear interation using Geant4 FTF model", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7389", 
+                        "number": "7389", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "civanch"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -10615,9 +10792,9 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
-                            "7266", 
                             "7270", 
-                            "7165"
+                            "7165", 
+                            "7266"
                         ], 
                         "hash": "19362f1d609fb9fae978c49c61beb891c81cd320", 
                         "number": "19362f1", 
@@ -12568,6 +12745,34 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7398", 
+                            "7396"
+                        ], 
+                        "hash": "04713e6c57860f7529db80db09dbfff53e5a1705", 
+                        "number": "04713e6", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "612508b10535e52fca6377a9e239f5028a72bb30", 
+                        "title": "Removed unnecessary mutable keyword from PerformancePayloadFromTFormula", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7396", 
+                        "number": "7396", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "fc1964d696892540aab762d8416d4eebb281d075", 
+                        "title": "Remove unused member variable from CastorDbService", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7398", 
+                        "number": "7398", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7389"
                         ], 
                         "hash": "e54562e97c34da31fabeeeb33cb141df4c92329d", 
@@ -13494,13 +13699,13 @@
                 }, 
                 "relvals": [
                     {
-                        "arch": "slc6_amd64_gcc491", 
+                        "arch": "slc6_amd64_gcc481", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
                     }, 
                     {
-                        "arch": "slc6_amd64_gcc481", 
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -13653,13 +13858,13 @@
                 }, 
                 "relvals": [
                     {
-                        "arch": "slc6_amd64_gcc491", 
+                        "arch": "slc6_amd64_gcc481", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
                     }, 
                     {
-                        "arch": "slc6_amd64_gcc481", 
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -15778,6 +15983,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "612508b10535e52fca6377a9e239f5028a72bb30", 
+                        "title": "Removed unnecessary mutable keyword from PerformancePayloadFromTFormula", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7396", 
+                        "number": "7396", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
                     {
                         "hash": "fc1964d696892540aab762d8416d4eebb281d075", 
                         "title": "Remove unused member variable from CastorDbService", 
