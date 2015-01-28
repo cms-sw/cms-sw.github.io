@@ -4105,6 +4105,15 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "hash": "e7c6dfc3920b07ee639f518afa7e3398c64028b1", 
+                        "title": "L1Trigger/CSCTrackFinder: disable optimizer on Clang", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7416", 
+                        "number": "7416", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
                         "hash": "cb7bdf87add028ebad09761b1fa6cc11614c34b1", 
                         "title": "Fix for L1 problems observed in 74X FastSim", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7391", 
@@ -8025,25 +8034,38 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ICC_X_2015-01-27-1400-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-02/CMSSW_7_4_ICC_X_2015-01-28-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "miscError": 11, 
+                            "compError": 8, 
+                            "linkError": 1471
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-01-27-1400-->CMSSW_7_4_ICC_X_2015-01-28-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-02/CMSSW_7_4_ICC_X_2015-01-28-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-01-28-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ICC_X_2015-01-28-0200", 
                 "merged_prs": [
-                    {
-                        "hash": "cb7bdf87add028ebad09761b1fa6cc11614c34b1", 
-                        "title": "Fix for L1 problems observed in 74X FastSim", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7391", 
-                        "number": "7391", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Martin-Grunewald"
-                    }, 
                     {
                         "hash": "b7b31fa63df65a97f52885b774bf94dcee5e23f4", 
                         "title": "update edmPythonConfigToCppValidation functionality", 
@@ -8134,6 +8156,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "fruboes"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-01-28-0200-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "merged_prs": [
+                    {
+                        "hash": "e7c6dfc3920b07ee639f518afa7e3398c64028b1", 
+                        "title": "L1Trigger/CSCTrackFinder: disable optimizer on Clang", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7416", 
+                        "number": "7416", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
+                        "hash": "cb7bdf87add028ebad09761b1fa6cc11614c34b1", 
+                        "title": "Fix for L1 problems observed in 74X FastSim", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7391", 
+                        "number": "7391", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Martin-Grunewald"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -12327,7 +12382,14 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-28-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -13357,13 +13419,13 @@
                 }, 
                 "relvals": [
                     {
-                        "arch": "slc6_amd64_gcc481", 
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
                     }, 
                     {
-                        "arch": "slc6_amd64_gcc491", 
+                        "arch": "slc6_amd64_gcc481", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -15559,12 +15621,21 @@
                 "relvals": [
                     {
                         "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-01-28-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 955, 
+                            "num_failed": 16
+                        }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
                     }, 
                     {
-                        "arch": "slc6_amd64_gcc491", 
+                        "arch": "slc6_amd64_gcc481", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -15670,7 +15741,7 @@
                         "author_login": "fruboes"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -15684,6 +15755,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "e7c6dfc3920b07ee639f518afa7e3398c64028b1", 
+                        "title": "L1Trigger/CSCTrackFinder: disable optimizer on Clang", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7416", 
+                        "number": "7416", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
                     {
                         "hash": "cb7bdf87add028ebad09761b1fa6cc11614c34b1", 
                         "title": "Fix for L1 problems observed in 74X FastSim", 
