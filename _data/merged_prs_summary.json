@@ -993,54 +993,17 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.1-wed-14/CMSSW_7_1_X_2015-01-21-1400/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.1-wed-14/CMSSW_7_1_X_2015-01-21-1400/new/logAnalysis.pkl", 
-                        "details": {
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_1_X_2015-01-18-0200-->CMSSW_7_1_X_2015-01-21-1400", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "failed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.1-wed-14/CMSSW_7_1_X_2015-01-21-1400/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "10"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc481": "IB/CMSSW_7_1_X_2015-01-21-1400/slc6_amd64_gcc481"
                 }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.1-wed-14/CMSSW_7_1_X_2015-01-21-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 847, 
-                            "num_failed": 2
-                        }
-                    }
-                ], 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc481"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_1_X_2015-01-21-1400", 
                 "merged_prs": [], 
                 "hlt_tests": "found"
@@ -2342,8 +2305,43 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.2-thu-02/CMSSW_7_2_X_2015-01-29-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 3, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_2_X_2015-01-28-1400-->CMSSW_7_2_X_2015-01-29-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.2-thu-02/CMSSW_7_2_X_2015-01-29-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "Not Found"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_2_X_2015-01-29-0200", 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_2_X_2015-01-28-1400-->CMSSW_7_2_X", 
+                "compared_tags": "CMSSW_7_2_X_2015-01-29-0200-->CMSSW_7_2_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -6486,12 +6484,50 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7426", 
+                            "7431", 
+                            "7436"
+                        ], 
+                        "hash": "728e6e90eb48eb811b7667c2573bcce307c1b311", 
+                        "number": "728e6e9", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "0c4ed1384d1f9ddeecdb887d830007e7b80590f5", 
+                        "title": "Made Reflection::solid a const member function", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7436", 
+                        "number": "7436", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "d753fe09aa48f583bdce39d697dffc09b3e3c7ba", 
+                        "title": "Add minN parameter to HLTMuonTrkFilter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7426", 
+                        "number": "7426", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dildick"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7422", 
                             "7432"
                         ], 
                         "hash": "50cdb710f2716a39fc3e6a9d7e613e264105dbd8", 
                         "number": "50cdb71", 
                         "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "59b5eb25a380a73f03b42f05485355036514aecf", 
+                        "title": "hltIntegrationTests: increase the cmsRun stack size for multithreading", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7431", 
+                        "number": "7431", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
                     }, 
                     {
                         "hash": "bf6c032f2c31bffa3809884d3b4a986f88531783", 
@@ -10401,6 +10437,15 @@
                 "relvals": [
                     {
                         "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-14/CMSSW_7_4_ROOT6_X_2015-01-28-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 971, 
+                            "num_failed": 11
+                        }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -10581,12 +10626,50 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7426", 
+                            "7431", 
+                            "7436"
+                        ], 
+                        "hash": "84caf9b785bc0df290b89ccebb0eee582c1bbf0c", 
+                        "number": "84caf9b", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "0c4ed1384d1f9ddeecdb887d830007e7b80590f5", 
+                        "title": "Made Reflection::solid a const member function", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7436", 
+                        "number": "7436", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7422", 
                             "7432"
                         ], 
                         "hash": "bde24bdb0239a41fb2e9ea8fbcefcedbad20007e", 
                         "number": "bde24bd", 
                         "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "d753fe09aa48f583bdce39d697dffc09b3e3c7ba", 
+                        "title": "Add minN parameter to HLTMuonTrkFilter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7426", 
+                        "number": "7426", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dildick"
+                    }, 
+                    {
+                        "hash": "59b5eb25a380a73f03b42f05485355036514aecf", 
+                        "title": "hltIntegrationTests: increase the cmsRun stack size for multithreading", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7431", 
+                        "number": "7431", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
                     }, 
                     {
                         "hash": "bf6c032f2c31bffa3809884d3b4a986f88531783", 
@@ -12946,12 +13029,50 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7426", 
+                            "7431", 
+                            "7436"
+                        ], 
+                        "hash": "c09d393d71fcd33638d7e96975b59a046582ee0a", 
+                        "number": "c09d393", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "0c4ed1384d1f9ddeecdb887d830007e7b80590f5", 
+                        "title": "Made Reflection::solid a const member function", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7436", 
+                        "number": "7436", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7422", 
                             "7432"
                         ], 
                         "hash": "ff55c1bd5b0aacc8f4caa72e9c8cb674d48bf153", 
                         "number": "ff55c1b", 
                         "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "d753fe09aa48f583bdce39d697dffc09b3e3c7ba", 
+                        "title": "Add minN parameter to HLTMuonTrkFilter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7426", 
+                        "number": "7426", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dildick"
+                    }, 
+                    {
+                        "hash": "59b5eb25a380a73f03b42f05485355036514aecf", 
+                        "title": "hltIntegrationTests: increase the cmsRun stack size for multithreading", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7431", 
+                        "number": "7431", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
                     }, 
                     {
                         "hash": "bf6c032f2c31bffa3809884d3b4a986f88531783", 
@@ -16241,7 +16362,7 @@
                         "author_login": "Martin-Grunewald"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
