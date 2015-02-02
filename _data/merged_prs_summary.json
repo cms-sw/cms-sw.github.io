@@ -554,7 +554,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_6_2_X_SLHC", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "71445fa03367d4b6a5cb26aed1e84357e712882e", 
+                        "title": "Pursue AM code optimization", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7190", 
+                        "number": "7190", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "sviret"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -1882,7 +1892,7 @@
                 ], 
                 "release_name": "CMSSW_7_2_X_2015-02-01-1400", 
                 "merged_prs": [], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [
@@ -1939,7 +1949,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.2-mon-14/CMSSW_7_2_X_2015-02-02-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -1955,9 +1972,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.2-mon-14/CMSSW_7_2_X_2015-02-02-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.2-mon-14/CMSSW_7_2_X_2015-02-02-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -5542,11 +5561,11 @@
                             "7414", 
                             "7443", 
                             "7404", 
-                            "7423", 
                             "7264", 
                             "7388", 
                             "7387", 
                             "6859", 
+                            "7423", 
                             "7448", 
                             "7463"
                         ], 
@@ -5906,6 +5925,44 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7502", 
+                            "7377", 
+                            "7378"
+                        ], 
+                        "hash": "c3c15e0439c269dd8e52c87394d28cc9d51afaf4", 
+                        "number": "c3c15e0", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "09d4d24411d36a40f83c82dc9c2c1fb724cf756b", 
+                        "title": "Removed the need for const_cast in SiStripObjects", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7378", 
+                        "number": "7378", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "df7e14a7f891a5cb2fed6105383cc3e36b04f48d", 
+                        "title": "Removed mutable from SiStripDetCabling::connectionCount", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7377", 
+                        "number": "7377", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "458f1027546bb4cb41aba365ad11457147160672", 
+                        "title": "Fix pyroot FWLite getByLabel to reset Wrapper when branch not found", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7502", 
+                        "number": "7502", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dan131riley"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -9212,6 +9269,44 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7502", 
+                            "7377", 
+                            "7378"
+                        ], 
+                        "hash": "3afecf2f314585d3ff8ca5b4c3055119fa6d69b3", 
+                        "number": "3afecf2", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "09d4d24411d36a40f83c82dc9c2c1fb724cf756b", 
+                        "title": "Removed the need for const_cast in SiStripObjects", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7378", 
+                        "number": "7378", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "df7e14a7f891a5cb2fed6105383cc3e36b04f48d", 
+                        "title": "Removed mutable from SiStripDetCabling::connectionCount", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7377", 
+                        "number": "7377", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "458f1027546bb4cb41aba365ad11457147160672", 
+                        "title": "Fix pyroot FWLite getByLabel to reset Wrapper when branch not found", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7502", 
+                        "number": "7502", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dan131riley"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7479", 
                             "7401"
                         ], 
@@ -11091,6 +11186,44 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7502", 
+                            "7377", 
+                            "7378"
+                        ], 
+                        "hash": "4ce8de482809dc6dcda6c0d9da1c335f3e2f2588", 
+                        "number": "4ce8de4", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "09d4d24411d36a40f83c82dc9c2c1fb724cf756b", 
+                        "title": "Removed the need for const_cast in SiStripObjects", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7378", 
+                        "number": "7378", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "df7e14a7f891a5cb2fed6105383cc3e36b04f48d", 
+                        "title": "Removed mutable from SiStripDetCabling::connectionCount", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7377", 
+                        "number": "7377", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "458f1027546bb4cb41aba365ad11457147160672", 
+                        "title": "Fix pyroot FWLite getByLabel to reset Wrapper when branch not found", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7502", 
+                        "number": "7502", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dan131riley"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
