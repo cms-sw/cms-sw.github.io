@@ -205,7 +205,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_5_3_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "5774d5ac7f0d1c6a5c4ed1b6c9b4a21fc1d31138", 
+                        "title": "Lhe interface update for pythia 8.205 (53x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7464", 
+                        "number": "7464", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bendavid"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -1930,8 +1940,43 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.2-mon-14/CMSSW_7_2_X_2015-02-02-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 3, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_2_X_2015-02-02-0200-->CMSSW_7_2_X_2015-02-02-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.2-mon-14/CMSSW_7_2_X_2015-02-02-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "Not Found"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_2_X_2015-02-02-1400", 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_2_X_2015-02-02-0200-->CMSSW_7_2_X", 
+                "compared_tags": "CMSSW_7_2_X_2015-02-02-1400-->CMSSW_7_2_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -3863,6 +3908,33 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "09d4d24411d36a40f83c82dc9c2c1fb724cf756b", 
+                        "title": "Removed the need for const_cast in SiStripObjects", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7378", 
+                        "number": "7378", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "df7e14a7f891a5cb2fed6105383cc3e36b04f48d", 
+                        "title": "Removed mutable from SiStripDetCabling::connectionCount", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7377", 
+                        "number": "7377", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "458f1027546bb4cb41aba365ad11457147160672", 
+                        "title": "Fix pyroot FWLite getByLabel to reset Wrapper when branch not found", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7502", 
+                        "number": "7502", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dan131riley"
+                    }, 
                     {
                         "hash": "3cd918b06a06aac5bd9107d9e94285dbf6ac162c", 
                         "title": "Adding dxyError and dzError to Candidate", 
@@ -5837,6 +5909,34 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7479", 
+                            "7401"
+                        ], 
+                        "hash": "6b69ef2df984540dc06e4b70791f473fb8121fe3", 
+                        "number": "6b69ef2", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "3cd918b06a06aac5bd9107d9e94285dbf6ac162c", 
+                        "title": "Adding dxyError and dzError to Candidate", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7479", 
+                        "number": "7479", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "arizzi"
+                    }, 
+                    {
+                        "hash": "130c356084ef6c8fc7fcba76f6747b7b6dab2e28", 
+                        "title": "Fix old EvtGen config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7401", 
+                        "number": "7401", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "covarell"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7495"
                         ], 
                         "hash": "765da4ce7de18b9c4f54b020fec0a9dc88fc2713", 
@@ -7274,6 +7374,33 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "09d4d24411d36a40f83c82dc9c2c1fb724cf756b", 
+                        "title": "Removed the need for const_cast in SiStripObjects", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7378", 
+                        "number": "7378", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "df7e14a7f891a5cb2fed6105383cc3e36b04f48d", 
+                        "title": "Removed mutable from SiStripDetCabling::connectionCount", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7377", 
+                        "number": "7377", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "458f1027546bb4cb41aba365ad11457147160672", 
+                        "title": "Fix pyroot FWLite getByLabel to reset Wrapper when branch not found", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7502", 
+                        "number": "7502", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dan131riley"
+                    }, 
                     {
                         "hash": "3cd918b06a06aac5bd9107d9e94285dbf6ac162c", 
                         "title": "Adding dxyError and dzError to Candidate", 
@@ -9082,6 +9209,34 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7479", 
+                            "7401"
+                        ], 
+                        "hash": "73a0b47b43ccba95970222e2a859b624f2e5ed16", 
+                        "number": "73a0b47", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "3cd918b06a06aac5bd9107d9e94285dbf6ac162c", 
+                        "title": "Adding dxyError and dzError to Candidate", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7479", 
+                        "number": "7479", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "arizzi"
+                    }, 
+                    {
+                        "hash": "130c356084ef6c8fc7fcba76f6747b7b6dab2e28", 
+                        "title": "Fix old EvtGen config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7401", 
+                        "number": "7401", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "covarell"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -10936,6 +11091,34 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7479", 
+                            "7401"
+                        ], 
+                        "hash": "943af0dcb409296c281592f1cb2d50f098af0cda", 
+                        "number": "943af0d", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "3cd918b06a06aac5bd9107d9e94285dbf6ac162c", 
+                        "title": "Adding dxyError and dzError to Candidate", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7479", 
+                        "number": "7479", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "arizzi"
+                    }, 
+                    {
+                        "hash": "130c356084ef6c8fc7fcba76f6747b7b6dab2e28", 
+                        "title": "Fix old EvtGen config", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7401", 
+                        "number": "7401", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "covarell"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -14405,6 +14588,33 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "09d4d24411d36a40f83c82dc9c2c1fb724cf756b", 
+                        "title": "Removed the need for const_cast in SiStripObjects", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7378", 
+                        "number": "7378", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "df7e14a7f891a5cb2fed6105383cc3e36b04f48d", 
+                        "title": "Removed mutable from SiStripDetCabling::connectionCount", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7377", 
+                        "number": "7377", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "458f1027546bb4cb41aba365ad11457147160672", 
+                        "title": "Fix pyroot FWLite getByLabel to reset Wrapper when branch not found", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7502", 
+                        "number": "7502", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dan131riley"
+                    }, 
                     {
                         "hash": "3cd918b06a06aac5bd9107d9e94285dbf6ac162c", 
                         "title": "Adding dxyError and dzError to Candidate", 
