@@ -1933,6 +1933,15 @@
             "relvals": [
                 {
                     "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.DEVEL-tue-02/CMSSW_7_4_DEVEL_X_2015-02-03-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 972, 
+                        "num_failed": 15
+                    }
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc491", 
                     "file": "not-ready", 
                     "passed": true, 
                     "details": {}
@@ -2072,110 +2081,38 @@
         }, 
         {
             "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_DEVEL_X_2015-02-03-0200-->CMSSW_7_4_DEVEL_X", 
-            "utests": [], 
-            "cmsdistTags": {}, 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "error", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.DEVEL-tue-14/CMSSW_7_4_DEVEL_X_2015-02-03-1400/new/logAnalysis.pkl", 
+                    "details": {
+                        "linkError": 7, 
+                        "compError": 34, 
+                        "ignoreWarning": 2
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_DEVEL_X_2015-02-03-0200-->CMSSW_7_4_DEVEL_X_2015-02-03-1400", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "unknown", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.DEVEL-tue-14/CMSSW_7_4_DEVEL_X_2015-02-03-1400/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-02-03-0200/slc6_amd64_gcc491"
+            }, 
             "relvals": [], 
             "static_checks": "not-found", 
-            "isIB": false, 
-            "tests_archs": [], 
-            "release_name": "CMSSW_7_4_DEVEL_X", 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
+            "release_name": "CMSSW_7_4_DEVEL_X_2015-02-03-1400", 
             "merged_prs": [
-                {
-                    "is_merge_commit": true, 
-                    "brought_prs": [
-                        "7470", 
-                        "7510", 
-                        "7380"
-                    ], 
-                    "hash": "e9bb42eac3c7c9207b9fa629610563f4d9da54fc", 
-                    "number": "e9bb42e", 
-                    "from_merge_commit": false
-                }, 
-                {
-                    "hash": "2773aeba7f5bd5522d831d2b84fa36b0bc6c8216", 
-                    "title": "Integration of Heppy in 74X", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7470", 
-                    "number": "7470", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "cbernet"
-                }, 
-                {
-                    "hash": "bb1adf2c47a819e19749e4d0906530f04c66fce6", 
-                    "title": "Make DTRecoConditions thread safe", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7380", 
-                    "number": "7380", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "Dr15Jones"
-                }, 
-                {
-                    "hash": "3db8ee2a794b2fa98da2859a18a1f957987181c9", 
-                    "title": "DT migration to MT. was #6360", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7510", 
-                    "number": "7510", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "deguio"
-                }, 
-                {
-                    "is_merge_commit": true, 
-                    "brought_prs": [
-                        "7392", 
-                        "7490", 
-                        "7460"
-                    ], 
-                    "hash": "a72c03a6b24ff3c745e99d44f3f3e77d421ceb82", 
-                    "number": "a72c03a", 
-                    "from_merge_commit": false
-                }, 
-                {
-                    "hash": "5df8efe401a2e0ac3e86211e90a78029115c90b8", 
-                    "title": "fix beamspot for wf for minbias pu events", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7460", 
-                    "number": "7460", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "lveldere"
-                }, 
-                {
-                    "hash": "bf80b1009c9c67c081fa63c904847dd26b06afaf", 
-                    "title": "update the list of path monitored in the muon HLT DQM", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7392", 
-                    "number": "7392", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "HuguesBrun"
-                }, 
-                {
-                    "hash": "3d3b9018f797809e7ed1490cf33cab8c0591a6ce", 
-                    "title": "trends vs LS instead of seconds", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7490", 
-                    "number": "7490", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "threus"
-                }, 
-                {
-                    "is_merge_commit": true, 
-                    "brought_prs": [
-                        "7220"
-                    ], 
-                    "hash": "528fd090f4b1efd30f16a57410d72bcdeda4e578", 
-                    "number": "528fd09", 
-                    "from_merge_commit": false
-                }, 
-                {
-                    "hash": "f52423bb305dd30c8119462ad1a8e26047c5ce51", 
-                    "title": "added missing pixel features from CVS-head", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7220", 
-                    "number": "7220", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "clelange"
-                }, 
                 {
                     "is_merge_commit": true, 
                     "brought_prs": [
@@ -2287,6 +2224,115 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": true, 
                     "author_login": "vasile-ghete"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [], 
+            "compared_tags": "CMSSW_7_4_DEVEL_X_2015-02-03-1400-->CMSSW_7_4_DEVEL_X", 
+            "utests": [], 
+            "cmsdistTags": {}, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": false, 
+            "tests_archs": [], 
+            "release_name": "CMSSW_7_4_DEVEL_X", 
+            "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "7470", 
+                        "7510", 
+                        "7380"
+                    ], 
+                    "hash": "e9bb42eac3c7c9207b9fa629610563f4d9da54fc", 
+                    "number": "e9bb42e", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "2773aeba7f5bd5522d831d2b84fa36b0bc6c8216", 
+                    "title": "Integration of Heppy in 74X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7470", 
+                    "number": "7470", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "cbernet"
+                }, 
+                {
+                    "hash": "bb1adf2c47a819e19749e4d0906530f04c66fce6", 
+                    "title": "Make DTRecoConditions thread safe", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7380", 
+                    "number": "7380", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "Dr15Jones"
+                }, 
+                {
+                    "hash": "3db8ee2a794b2fa98da2859a18a1f957987181c9", 
+                    "title": "DT migration to MT. was #6360", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7510", 
+                    "number": "7510", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "deguio"
+                }, 
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "7392", 
+                        "7490", 
+                        "7460"
+                    ], 
+                    "hash": "a72c03a6b24ff3c745e99d44f3f3e77d421ceb82", 
+                    "number": "a72c03a", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "5df8efe401a2e0ac3e86211e90a78029115c90b8", 
+                    "title": "fix beamspot for wf for minbias pu events", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7460", 
+                    "number": "7460", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "lveldere"
+                }, 
+                {
+                    "hash": "bf80b1009c9c67c081fa63c904847dd26b06afaf", 
+                    "title": "update the list of path monitored in the muon HLT DQM", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7392", 
+                    "number": "7392", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "HuguesBrun"
+                }, 
+                {
+                    "hash": "3d3b9018f797809e7ed1490cf33cab8c0591a6ce", 
+                    "title": "trends vs LS instead of seconds", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7490", 
+                    "number": "7490", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "threus"
+                }, 
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "7220"
+                    ], 
+                    "hash": "528fd090f4b1efd30f16a57410d72bcdeda4e578", 
+                    "number": "528fd09", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "f52423bb305dd30c8119462ad1a8e26047c5ce51", 
+                    "title": "added missing pixel features from CVS-head", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7220", 
+                    "number": "7220", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "clelange"
                 }
             ], 
             "hlt_tests": "not-found"
