@@ -195,7 +195,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/tue/5.3-tue-02/CMSSW_5_3_X_2015-02-03-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc472", 
@@ -211,9 +218,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/tue/5.3-tue-02/CMSSW_5_3_X_2015-02-03-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/tue/5.3-tue-02/CMSSW_5_3_X_2015-02-03-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "1"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -2099,9 +2108,53 @@
                 "hlt_tests": "found"
             }, 
             {
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.2-tue-02/CMSSW_7_2_X_2015-02-03-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.2-tue-02/CMSSW_7_2_X_2015-02-03-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 3, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_2_X_2015-02-02-1400-->CMSSW_7_2_X_2015-02-03-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.2-tue-02/CMSSW_7_2_X_2015-02-03-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "Not Found"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_2_X_2015-02-03-0200", 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_2_X_2015-02-02-1400-->CMSSW_7_2_X", 
+                "compared_tags": "CMSSW_7_2_X_2015-02-03-0200-->CMSSW_7_2_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -4033,25 +4086,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_CLANG_X_2015-02-02-1400-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.CLANG-tue-02/CMSSW_7_4_CLANG_X_2015-02-03-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 20171, 
+                            "ignoreWarning": 74882
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-02-02-1400-->CMSSW_7_4_CLANG_X_2015-02-03-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.CLANG-tue-02/CMSSW_7_4_CLANG_X_2015-02-03-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_CLANG_X_2015-02-03-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_CLANG_X_2015-02-03-0200", 
                 "merged_prs": [
-                    {
-                        "hash": "1fd30ebe81a26def1548fac7f22a04adaaba9379", 
-                        "title": "Add XML file for L1Menu_Collisions2015_50ns_v0 menu", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7444", 
-                        "number": "7444", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "vasile-ghete"
-                    }, 
                     {
                         "hash": "401bc85cc2f40652302119b864afd94e30cf4038", 
                         "title": "Removed construction of RefProd from RefVector", 
@@ -4132,6 +4197,39 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "ktf"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-02-03-0200-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "merged_prs": [
+                    {
+                        "hash": "cfa17a05974ca7f2949cd6b7dc7251ae24efa722", 
+                        "title": "GsfTrackProducer made stream::EDProducer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7497", 
+                        "number": "7497", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "matteosan1"
+                    }, 
+                    {
+                        "hash": "1fd30ebe81a26def1548fac7f22a04adaaba9379", 
+                        "title": "Add XML file for L1Menu_Collisions2015_50ns_v0 menu", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7444", 
+                        "number": "7444", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "vasile-ghete"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -7649,6 +7747,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "cfa17a05974ca7f2949cd6b7dc7251ae24efa722", 
+                        "title": "GsfTrackProducer made stream::EDProducer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7497", 
+                        "number": "7497", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "matteosan1"
+                    }, 
                     {
                         "hash": "1fd30ebe81a26def1548fac7f22a04adaaba9379", 
                         "title": "Add XML file for L1Menu_Collisions2015_50ns_v0 menu", 
@@ -13139,12 +13246,6 @@
             {
                 "addons": [
                     {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4-mon-20/CMSSW_7_4_X_2015-01-26-2000/addOnTests.log", 
-                        "details": {}
-                    }, 
-                    {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": false, 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.4-mon-20/CMSSW_7_4_X_2015-01-26-2000/addOnTests.log", 
@@ -13152,15 +13253,6 @@
                     }
                 ], 
                 "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "warning", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4-mon-20/CMSSW_7_4_X_2015-01-26-2000/new/logAnalysis.pkl", 
-                        "details": {
-                            "compWarning": 7, 
-                            "ignoreWarning": 3
-                        }
-                    }, 
                     {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": "warning", 
@@ -13173,14 +13265,6 @@
                 ], 
                 "compared_tags": "CMSSW_7_4_X_2015-01-25-1400-->CMSSW_7_4_X_2015-01-26-2000", 
                 "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4-mon-20/CMSSW_7_4_X_2015-01-26-2000/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }, 
                     {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": "passed", 
@@ -13208,7 +13292,6 @@
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
-                    "slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481"
                 ], 
                 "release_name": "CMSSW_7_4_X_2015-01-26-2000", 
@@ -15097,6 +15180,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "cfa17a05974ca7f2949cd6b7dc7251ae24efa722", 
+                        "title": "GsfTrackProducer made stream::EDProducer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7497", 
+                        "number": "7497", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "matteosan1"
+                    }, 
                     {
                         "hash": "1fd30ebe81a26def1548fac7f22a04adaaba9379", 
                         "title": "Add XML file for L1Menu_Collisions2015_50ns_v0 menu", 
