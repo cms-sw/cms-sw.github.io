@@ -34,6 +34,11 @@ def get_list_avaiable_ib_results( es_hostname, es_index ):
     exit(0)
 
   response = json.loads( out )
+  if not response.get( 'aggregations' ):
+    print( "It seems that there is no information about the IBs in elasticsearch.\n" \
+           "I can continue, but this should be checked" )
+    return []
+
   ibs = [ x[ 'key' ] for x in response[ 'aggregations' ][ 'IBs' ][ 'buckets' ] ]
   return ibs
 
