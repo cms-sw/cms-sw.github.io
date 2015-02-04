@@ -2458,14 +2458,6 @@
                         "details": {
                             "ignoreWarning": 2
                         }
-                    }, 
-                    {
-                        "arch": "osx108_amd64_gcc481", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/osx108_amd64_gcc481/www/wed/7.3-wed-14/CMSSW_7_3_X_2015-01-28-1400/new/logAnalysis.pkl", 
-                        "details": {
-                            "ignoreWarning": 2
-                        }
                     }
                 ], 
                 "compared_tags": "CMSSW_7_3_X_2015-01-28-0200-->CMSSW_7_3_X_2015-01-28-1400", 
@@ -2477,12 +2469,6 @@
                         "details": {
                             "num_fails": "0"
                         }
-                    }, 
-                    {
-                        "arch": "osx108_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/osx108_amd64_gcc481/www/wed/7.3-wed-14/CMSSW_7_3_X_2015-01-28-1400/new/logAnalysis.pkl']", 
-                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
@@ -2503,7 +2489,6 @@
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
-                    "osx108_amd64_gcc481", 
                     "slc6_amd64_gcc481"
                 ], 
                 "release_name": "CMSSW_7_3_X_2015-01-28-1400", 
@@ -4920,43 +4905,40 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_CLANG_X_2015-02-04-0200-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-02-04-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 22851, 
+                            "miscError": 2, 
+                            "compError": 2, 
+                            "ignoreWarning": 86040, 
+                            "linkError": 146
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-02-04-0200-->CMSSW_7_4_CLANG_X_2015-02-04-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-02-04-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_CLANG_X_2015-02-03-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_CLANG_X_2015-02-04-1400", 
                 "merged_prs": [
-                    {
-                        "hash": "301310a8071a89f426164ff56590a2af13443141", 
-                        "title": "Integration of the new MET significance algorithm", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7163", 
-                        "number": "7163", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "cms-met"
-                    }, 
-                    {
-                        "hash": "29298c7d095e40da13fe173f07d1733db5db6961", 
-                        "title": "Run jet reco properly on miniAOD", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7482", 
-                        "number": "7482", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "rappoccio"
-                    }, 
-                    {
-                        "hash": "76d965daddcb0d84603c8b815782562e47895215", 
-                        "title": "Updated HBHENegativeFlag class to access a1 and a2 functions directly", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7508", 
-                        "number": "7508", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "igv4321"
-                    }, 
                     {
                         "hash": "77d3ff59de303df418ba422f807f1f5ea629789e", 
                         "title": "add preprocessor check on boost version", 
@@ -4983,6 +4965,57 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "lviliani"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-02-04-1400-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "merged_prs": [
+                    {
+                        "hash": "e5ffabd8c9fdfd380784b5d5434ca2d4cb75ff15", 
+                        "title": "Updated PATSecondaryVertexSlimmer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7493", 
+                        "number": "7493", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-btv-pog"
+                    }, 
+                    {
+                        "hash": "301310a8071a89f426164ff56590a2af13443141", 
+                        "title": "Integration of the new MET significance algorithm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7163", 
+                        "number": "7163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-met"
+                    }, 
+                    {
+                        "hash": "29298c7d095e40da13fe173f07d1733db5db6961", 
+                        "title": "Run jet reco properly on miniAOD", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7482", 
+                        "number": "7482", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "76d965daddcb0d84603c8b815782562e47895215", 
+                        "title": "Updated HBHENegativeFlag class to access a1 and a2 functions directly", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7508", 
+                        "number": "7508", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "igv4321"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -5406,55 +5439,17 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-02/CMSSW_7_4_DEVEL_X_2015-01-28-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "warning", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-02/CMSSW_7_4_DEVEL_X_2015-01-28-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "compWarning": 6, 
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_DEVEL_X_2015-01-27-1400-->CMSSW_7_4_DEVEL_X_2015-01-28-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-02/CMSSW_7_4_DEVEL_X_2015-01-28-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-01-28-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-02/CMSSW_7_4_DEVEL_X_2015-01-28-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 973, 
-                            "num_failed": 10
-                        }
-                    }
-                ], 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_DEVEL_X_2015-01-28-0200", 
                 "merged_prs": [
                     {
@@ -9550,6 +9545,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "e5ffabd8c9fdfd380784b5d5434ca2d4cb75ff15", 
+                        "title": "Updated PATSecondaryVertexSlimmer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7493", 
+                        "number": "7493", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-btv-pog"
+                    }, 
                     {
                         "hash": "301310a8071a89f426164ff56590a2af13443141", 
                         "title": "Integration of the new MET significance algorithm", 
@@ -18279,16 +18283,13 @@
                         }
                     }, 
                     {
-                        "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
-                    }, 
-                    {
                         "arch": "slc6_amd64_gcc481", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-02-04-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 961, 
+                            "num_failed": 16
+                        }
                     }
                 ], 
                 "static_checks": "slc6_amd64_gcc491", 
@@ -18606,6 +18607,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "e5ffabd8c9fdfd380784b5d5434ca2d4cb75ff15", 
+                        "title": "Updated PATSecondaryVertexSlimmer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7493", 
+                        "number": "7493", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-btv-pog"
+                    }, 
                     {
                         "hash": "301310a8071a89f426164ff56590a2af13443141", 
                         "title": "Integration of the new MET significance algorithm", 
