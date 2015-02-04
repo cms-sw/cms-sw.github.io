@@ -1,0 +1,15 @@
+{
+    "fields":[ "workflow_id", "architecture", "exception" ],
+    "size" : 20000,
+    "query":{
+        "match":{ 
+            "release": "IB_NAME"
+                },
+        "filtered": {
+            "filter" : {
+               "exists" : { "field" : "exception" }
+                        }
+                     }
+
+             }
+}
