@@ -780,7 +780,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/6.2-wed-14/CMSSW_6_2_X_SLHC_2015-02-04-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc472", 
@@ -793,15 +800,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/6.2-wed-14/CMSSW_6_2_X_SLHC_2015-02-04-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/6.2-wed-14/CMSSW_6_2_X_SLHC_2015-02-04-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_X_SLHC_2015-02-01-1400/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/6.2-wed-14/CMSSW_6_2_X_SLHC_2015-02-04-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 35, 
+                            "num_failed": 1
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -819,7 +838,7 @@
                         "author_login": "mark-grimes"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -1379,55 +1398,15 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-02/CMSSW_7_2_X_2015-01-28-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "error", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-02/CMSSW_7_2_X_2015-01-28-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "linkError": 3, 
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_2_X_2015-01-27-1400-->CMSSW_7_2_X_2015-01-28-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-02/CMSSW_7_2_X_2015-01-28-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc481": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-02/CMSSW_7_2_X_2015-01-28-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 866, 
-                            "num_failed": 8
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc481"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_2_X_2015-01-28-0200", 
                 "merged_prs": [
                     {
@@ -4952,6 +4931,15 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "hash": "301310a8071a89f426164ff56590a2af13443141", 
+                        "title": "Integration of the new MET significance algorithm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7163", 
+                        "number": "7163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-met"
+                    }, 
+                    {
                         "hash": "29298c7d095e40da13fe173f07d1733db5db6961", 
                         "title": "Run jet reco properly on miniAOD", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7482", 
@@ -7558,6 +7546,42 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7163"
+                        ], 
+                        "hash": "86f566e112b08815aef9939de614f81132cca970", 
+                        "number": "86f566e", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "301310a8071a89f426164ff56590a2af13443141", 
+                        "title": "Integration of the new MET significance algorithm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7163", 
+                        "number": "7163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-met"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7482"
+                        ], 
+                        "hash": "d2b13be6cc32efe769df37b9031ab7c86f8c9832", 
+                        "number": "d2b13be", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "29298c7d095e40da13fe173f07d1733db5db6961", 
+                        "title": "Run jet reco properly on miniAOD", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7482", 
+                        "number": "7482", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7508", 
                             "7553"
                         ], 
@@ -7932,38 +7956,16 @@
             }, 
             {
                 "addons": [], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "error", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-02/CMSSW_7_4_ICC_X_2015-01-28-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "miscError": 11, 
-                            "compError": 8, 
-                            "linkError": 1471
-                        }
-                    }
-                ], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_ICC_X_2015-01-27-1400-->CMSSW_7_4_ICC_X_2015-01-28-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "failed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-02/CMSSW_7_4_ICC_X_2015-01-28-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "222"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-01-28-0200/slc6_amd64_gcc491"
                 }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ICC_X_2015-01-28-0200", 
                 "merged_prs": [
                     {
@@ -9548,6 +9550,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "301310a8071a89f426164ff56590a2af13443141", 
+                        "title": "Integration of the new MET significance algorithm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7163", 
+                        "number": "7163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-met"
+                    }, 
                     {
                         "hash": "29298c7d095e40da13fe173f07d1733db5db6961", 
                         "title": "Run jet reco properly on miniAOD", 
@@ -12030,6 +12041,42 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7163"
+                        ], 
+                        "hash": "70c5e3cb48e2496a40c7255b6d8023af3e25ad58", 
+                        "number": "70c5e3c", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "301310a8071a89f426164ff56590a2af13443141", 
+                        "title": "Integration of the new MET significance algorithm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7163", 
+                        "number": "7163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-met"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7482"
+                        ], 
+                        "hash": "685bf3d2cbcacebcd32729d2168b58358c957912", 
+                        "number": "685bf3d", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "29298c7d095e40da13fe173f07d1733db5db6961", 
+                        "title": "Run jet reco properly on miniAOD", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7482", 
+                        "number": "7482", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -14574,6 +14621,42 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7163"
+                        ], 
+                        "hash": "98a3e677633e693e73992a3adec4fc7555a5aee2", 
+                        "number": "98a3e67", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "301310a8071a89f426164ff56590a2af13443141", 
+                        "title": "Integration of the new MET significance algorithm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7163", 
+                        "number": "7163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-met"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7482"
+                        ], 
+                        "hash": "a61a15bc6cde5c85ce7018e5d5861ccf17014e3c", 
+                        "number": "a61a15b", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "29298c7d095e40da13fe173f07d1733db5db6961", 
+                        "title": "Run jet reco properly on miniAOD", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7482", 
+                        "number": "7482", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -18027,6 +18110,15 @@
                 }, 
                 "relvals": [
                     {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-14/CMSSW_7_4_X_2015-02-03-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 956, 
+                            "num_failed": 17
+                        }
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": false, 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.4-tue-14/CMSSW_7_4_X_2015-02-03-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
@@ -18117,7 +18209,7 @@
                         "author_login": "vasile-ghete"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [
@@ -18179,6 +18271,15 @@
                 "relvals": [
                     {
                         "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-02-04-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 969, 
+                            "num_failed": 14
+                        }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -18190,7 +18291,7 @@
                         "details": {}
                     }
                 ], 
-                "static_checks": "not-found", 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -18505,6 +18606,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "301310a8071a89f426164ff56590a2af13443141", 
+                        "title": "Integration of the new MET significance algorithm", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7163", 
+                        "number": "7163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-met"
+                    }, 
                     {
                         "hash": "29298c7d095e40da13fe173f07d1733db5db6961", 
                         "title": "Run jet reco properly on miniAOD", 
