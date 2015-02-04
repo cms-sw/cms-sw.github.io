@@ -73,6 +73,10 @@ if __name__ == "__main__":
       wf_info = groups[ arch ][ wf ]
       wf_id = str( round( wf_info[ 0 ][ 'workflow_id' ][0], 2 ) )
       wf_name = wf_info[ 0 ][ 'workflow' ][0]
+      # Right now all the workflows are run in the same node. 
+      # It could change in the future and also it disturbs less the structure of the file
+      # to add it to each workflow. 
+      hostname = wf_info[ 0 ][ 'hostname' ][0]
       steps = []
       steps_statuses = []
       for step_info in wf_info:
@@ -86,6 +90,7 @@ if __name__ == "__main__":
                    "id": wf_id,
                    "name": wf_name,
                    "steps": steps,
+                   "hostname": hostname, 
                    "order": sum([10-i for (i, x) in enumerate(steps_statuses)
                                          if x == "FAILED" or x == "DAS_ERROR" or x == "TIMEOUT"])
                    }

@@ -360,6 +360,14 @@ addRowsTable = function( results , arch , ib , table , progressBar, areIncomplet
 
   var counter = 1;
   for ( var key in results ){
+    // since all of them are run in the same host, I only get the first result for the hostname
+    if ( counter == 1 && areIncomplete ){
+      hostname = results[ key ][ 'hostname' ]
+      targetMsgDiv = $( '#incompleteMsgDiv-' + arch + '-' + ib )
+      originalText = targetMsgDiv.text()
+      newText = originalText + " in " + hostname
+      targetMsgDiv.text( newText )
+    }
     // nothingRun is to know if no step was run in the workflow
     nothingRun = addWorkflowRow( results[ key ] , table , counter , resultsSummary , arch , ib , results.length, areIncomplete )
 
@@ -524,9 +532,10 @@ fillIncompleteResultTabPanes = function( tabPanes, incompleteArchsList, ibName )
     var tabPane = $( '<div>' ).attr( 'class' , tabPaneClass ).attr( 'id' , tabPaneID )
  
     var incompleteMsgDiv = $( '<div>' ).attr( 'class' , 'alert alert-warning' ).attr( 'role' , 'alert' ).attr( 'align' , 'center' )
-    incompleteMsgDiv.text( 'The results for this architecture are incomplete! The IB validation may be in progress' )
+    incompleteMsgDiv.text( 'The results for this architecture are incomplete! The IB validation should be in progress' )
+    incompleteMsgDiv.attr( 'id', 'incompleteMsgDiv-' + arch + '-' + ibName )
     tabPane.append( incompleteMsgDiv )
-
+    
     var ibDate = ibName.substring( ibName.lastIndexOf( "_" ) + 1 , ibName.length )
     var releaseQueue = ibName.substring( 0 , ibName.lastIndexOf( "_" ) )
     var jsonFilePath = 'data/relvals/' + arch + '/' + ibDate + '/' + releaseQueue + '_INCOMPLETE' +'.json';
