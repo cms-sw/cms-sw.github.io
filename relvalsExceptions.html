@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CMSSW IBs Relvals Exceptions </title>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <script type='text/javascript' src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type='text/javascript' src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="js/renderRelvalsExceptions.js"></script>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10" id="header"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-10" id="results"></div>
+      </div>
+
+    </div>
+
+
+    <script>
+        paintMenu = function ( structure ){
+          menuBar = getMenuBar( structure )
+          $("#results").append( menuBar )
+        }
+      	// Reads the file structre.json to know how to paint the menu and how to paint the tabs.
+        start_load = function( structure ){
+          paintMenu( structure )
+
+          tabs = getTabs( structure )
+          $("#results").append( tabs )
+          
+          tabs_content = getTabPanes( structure )
+          $("#results").append( tabs_content )
+
+          fillTabPanes( structure )
+        }
+
+        $.getJSON( "data/structure.json", start_load )
+
+    </script>
+
+  </body>
+
+</html>
