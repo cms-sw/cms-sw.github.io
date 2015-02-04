@@ -2305,7 +2305,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2015-02-04-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -2321,9 +2328,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2015-02-04-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.2-wed-14/CMSSW_7_2_X_2015-02-04-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -3365,57 +3374,15 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-28-1400/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "error", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-28-1400/new/logAnalysis.pkl", 
-                        "details": {
-                            "compWarning": 22472, 
-                            "linkError": 133, 
-                            "compError": 5, 
-                            "ignoreWarning": 74435
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_CLANG_X_2015-01-28-0200-->CMSSW_7_4_CLANG_X_2015-01-28-1400", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "failed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-28-1400/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "24"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_CLANG_X_2015-01-28-0200/slc6_amd64_gcc491"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-14/CMSSW_7_4_CLANG_X_2015-01-28-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 159, 
-                            "num_failed": 263
-                        }
-                    }
-                ], 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_CLANG_X_2015-01-28-1400", 
                 "merged_prs": [
                     {
@@ -5035,6 +5002,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "7d64db9d12127b3932a7e783552a108cd28142a8", 
+                        "title": "fixed a bug picking up gen particle (electron) of status==3.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7551", 
+                        "number": "7551", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "8d41838d47939ae7e8f1b81f585ec69c2979c0cc", 
+                        "title": "Add DontCountDetsAboveNClusters to standard cosmic seeders", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7521", 
+                        "number": "7521", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rovere"
+                    }, 
                     {
                         "hash": "e5ffabd8c9fdfd380784b5d5434ca2d4cb75ff15", 
                         "title": "Updated PATSecondaryVertexSlimmer", 
@@ -7581,9 +7566,120 @@
                 "hlt_tests": "not-found"
             }, 
             {
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-14/CMSSW_7_4_DEVEL_X_2015-02-04-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-14/CMSSW_7_4_DEVEL_X_2015-02-04-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 2, 
+                            "linkError": 7, 
+                            "compError": 34, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-02-04-0200-->CMSSW_7_4_DEVEL_X_2015-02-04-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.DEVEL-wed-14/CMSSW_7_4_DEVEL_X_2015-02-04-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-02-03-0200/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_DEVEL_X_2015-02-04-1400", 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7540"
+                        ], 
+                        "hash": "261dc743774aa7d562f7b63e8d77388d0981feca", 
+                        "number": "261dc74", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "15b2c7b4f7a4ebf8f9ed39fe70574a2cddfbd618", 
+                        "title": "Commiting a Fix to set currenttype_ and commenting out l1gtEvmDigis", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7540", 
+                        "number": "7540", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "vkhristenko"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7546", 
+                            "7526", 
+                            "7484", 
+                            "7505"
+                        ], 
+                        "hash": "de281d001409dce8e415938eda04501018c8ebac", 
+                        "number": "de281d0", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "04d34bb2f2dd2d4e407464975e4d2bcb9614db3a", 
+                        "title": "Geant4e integration in 7_4_X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7505", 
+                        "number": "7505", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lviliani"
+                    }, 
+                    {
+                        "hash": "701aeccbb82e8bc647a6e6ea402543fd4b50e2bc", 
+                        "title": "RPC DQM Efficiency fix for re4", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7484", 
+                        "number": "7484", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "acimmino"
+                    }, 
+                    {
+                        "hash": "5959c3108e8334bbe5f069df10af4ddfd08a9215", 
+                        "title": "switch on pf patch and nuclear interactions in tracker", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7546", 
+                        "number": "7546", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }, 
+                    {
+                        "hash": "1cee20bac35060c16c3d2f140998f7b894e68f64", 
+                        "title": "Tk data vs MC validation tool", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7526", 
+                        "number": "7526", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "suchandradutta"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-02-04-0200-->CMSSW_7_4_DEVEL_X", 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-02-04-1400-->CMSSW_7_4_DEVEL_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -7673,72 +7769,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "davidlange6"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7540"
-                        ], 
-                        "hash": "261dc743774aa7d562f7b63e8d77388d0981feca", 
-                        "number": "261dc74", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "15b2c7b4f7a4ebf8f9ed39fe70574a2cddfbd618", 
-                        "title": "Commiting a Fix to set currenttype_ and commenting out l1gtEvmDigis", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7540", 
-                        "number": "7540", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "vkhristenko"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "7546", 
-                            "7526", 
-                            "7484", 
-                            "7505"
-                        ], 
-                        "hash": "de281d001409dce8e415938eda04501018c8ebac", 
-                        "number": "de281d0", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "04d34bb2f2dd2d4e407464975e4d2bcb9614db3a", 
-                        "title": "Geant4e integration in 7_4_X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7505", 
-                        "number": "7505", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lviliani"
-                    }, 
-                    {
-                        "hash": "701aeccbb82e8bc647a6e6ea402543fd4b50e2bc", 
-                        "title": "RPC DQM Efficiency fix for re4", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7484", 
-                        "number": "7484", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "acimmino"
-                    }, 
-                    {
-                        "hash": "5959c3108e8334bbe5f069df10af4ddfd08a9215", 
-                        "title": "switch on pf patch and nuclear interactions in tracker", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7546", 
-                        "number": "7546", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lveldere"
-                    }, 
-                    {
-                        "hash": "1cee20bac35060c16c3d2f140998f7b894e68f64", 
-                        "title": "Tk data vs MC validation tool", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7526", 
-                        "number": "7526", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "suchandradutta"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -9606,9 +9636,98 @@
                 "hlt_tests": "not-found"
             }, 
             {
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-14/CMSSW_7_4_ICC_X_2015-02-04-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-14/CMSSW_7_4_ICC_X_2015-02-04-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "miscError": 24, 
+                            "compError": 2, 
+                            "linkError": 20
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-02-04-0200-->CMSSW_7_4_ICC_X_2015-02-04-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-14/CMSSW_7_4_ICC_X_2015-02-04-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "117"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-02-04-1400/slc6_amd64_gcc491"
+                }, 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-14/CMSSW_7_4_ICC_X_2015-02-04-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 160, 
+                            "num_failed": 265
+                        }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ICC_X_2015-02-04-1400", 
+                "merged_prs": [
+                    {
+                        "hash": "77d3ff59de303df418ba422f807f1f5ea629789e", 
+                        "title": "add preprocessor check on boost version", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7553", 
+                        "number": "7553", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "15b2c7b4f7a4ebf8f9ed39fe70574a2cddfbd618", 
+                        "title": "Commiting a Fix to set currenttype_ and commenting out l1gtEvmDigis", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7540", 
+                        "number": "7540", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "vkhristenko"
+                    }, 
+                    {
+                        "hash": "04d34bb2f2dd2d4e407464975e4d2bcb9614db3a", 
+                        "title": "Geant4e integration in 7_4_X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7505", 
+                        "number": "7505", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "lviliani"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_ICC_X_2015-02-04-0200-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-02-04-1400-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -9617,6 +9736,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "7d64db9d12127b3932a7e783552a108cd28142a8", 
+                        "title": "fixed a bug picking up gen particle (electron) of status==3.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7551", 
+                        "number": "7551", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "8d41838d47939ae7e8f1b81f585ec69c2979c0cc", 
+                        "title": "Add DontCountDetsAboveNClusters to standard cosmic seeders", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7521", 
+                        "number": "7521", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rovere"
+                    }, 
                     {
                         "hash": "e5ffabd8c9fdfd380784b5d5434ca2d4cb75ff15", 
                         "title": "Updated PATSecondaryVertexSlimmer", 
@@ -9652,33 +9789,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "igv4321"
-                    }, 
-                    {
-                        "hash": "77d3ff59de303df418ba422f807f1f5ea629789e", 
-                        "title": "add preprocessor check on boost version", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7553", 
-                        "number": "7553", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlange6"
-                    }, 
-                    {
-                        "hash": "15b2c7b4f7a4ebf8f9ed39fe70574a2cddfbd618", 
-                        "title": "Commiting a Fix to set currenttype_ and commenting out l1gtEvmDigis", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7540", 
-                        "number": "7540", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "vkhristenko"
-                    }, 
-                    {
-                        "hash": "04d34bb2f2dd2d4e407464975e4d2bcb9614db3a", 
-                        "title": "Geant4e integration in 7_4_X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7505", 
-                        "number": "7505", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "lviliani"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -12109,7 +12219,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-14/CMSSW_7_4_ROOT6_X_2015-02-04-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -12132,7 +12249,14 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-02-04-1400/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -12839,45 +12963,17 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.THREADED-wed-14/CMSSW_7_4_THREADED_X_2015-01-28-1400/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "warning", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.THREADED-wed-14/CMSSW_7_4_THREADED_X_2015-01-28-1400/new/logAnalysis.pkl", 
-                        "details": {
-                            "compWarning": 6, 
-                            "ignoreWarning": 2
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_THREADED_X_2015-01-28-0200-->CMSSW_7_4_THREADED_X_2015-01-28-1400", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.THREADED-wed-14/CMSSW_7_4_THREADED_X_2015-01-28-1400/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-01-28-1400/slc6_amd64_gcc491"
                 }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X_2015-01-28-1400", 
                 "merged_prs": [
                     {
@@ -14742,7 +14838,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.THREADED-wed-14/CMSSW_7_4_THREADED_X_2015-02-04-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -14760,15 +14863,33 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.THREADED-wed-14/CMSSW_7_4_THREADED_X_2015-02-04-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.THREADED-wed-14/CMSSW_7_4_THREADED_X_2015-02-04-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "1"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-02-03-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.THREADED-wed-14/CMSSW_7_4_THREADED_X_2015-02-04-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 163, 
+                            "num_failed": 263
+                        }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -18777,12 +18898,74 @@
                         "author_login": "clelange"
                     }
                 ], 
+                "hlt_tests": "found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-14/CMSSW_7_4_X_2015-02-04-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-02-04-0200-->CMSSW_7_4_X_2015-02-04-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-14/CMSSW_7_4_X_2015-02-04-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-02-04-1400/slc6_amd64_gcc481"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_4_X_2015-02-04-1400", 
+                "merged_prs": [
+                    {
+                        "hash": "77d3ff59de303df418ba422f807f1f5ea629789e", 
+                        "title": "add preprocessor check on boost version", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7553", 
+                        "number": "7553", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "15b2c7b4f7a4ebf8f9ed39fe70574a2cddfbd618", 
+                        "title": "Commiting a Fix to set currenttype_ and commenting out l1gtEvmDigis", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7540", 
+                        "number": "7540", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "vkhristenko"
+                    }, 
+                    {
+                        "hash": "04d34bb2f2dd2d4e407464975e4d2bcb9614db3a", 
+                        "title": "Geant4e integration in 7_4_X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7505", 
+                        "number": "7505", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "lviliani"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }, 
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-02-04-0200-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_X_2015-02-04-1400-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -18791,6 +18974,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "7d64db9d12127b3932a7e783552a108cd28142a8", 
+                        "title": "fixed a bug picking up gen particle (electron) of status==3.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7551", 
+                        "number": "7551", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "8d41838d47939ae7e8f1b81f585ec69c2979c0cc", 
+                        "title": "Add DontCountDetsAboveNClusters to standard cosmic seeders", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7521", 
+                        "number": "7521", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rovere"
+                    }, 
                     {
                         "hash": "e5ffabd8c9fdfd380784b5d5434ca2d4cb75ff15", 
                         "title": "Updated PATSecondaryVertexSlimmer", 
@@ -18826,33 +19027,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "igv4321"
-                    }, 
-                    {
-                        "hash": "77d3ff59de303df418ba422f807f1f5ea629789e", 
-                        "title": "add preprocessor check on boost version", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7553", 
-                        "number": "7553", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlange6"
-                    }, 
-                    {
-                        "hash": "15b2c7b4f7a4ebf8f9ed39fe70574a2cddfbd618", 
-                        "title": "Commiting a Fix to set currenttype_ and commenting out l1gtEvmDigis", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7540", 
-                        "number": "7540", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "vkhristenko"
-                    }, 
-                    {
-                        "hash": "04d34bb2f2dd2d4e407464975e4d2bcb9614db3a", 
-                        "title": "Geant4e integration in 7_4_X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7505", 
-                        "number": "7505", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "lviliani"
                     }
                 ], 
                 "hlt_tests": "not-found"
