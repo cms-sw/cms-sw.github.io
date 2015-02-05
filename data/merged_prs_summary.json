@@ -853,6 +853,15 @@
                 "release_name": "CMSSW_6_2_X_SLHC", 
                 "merged_prs": [
                     {
+                        "hash": "3f1e783629ebec673edf94139a12cb086a49161b", 
+                        "title": "use release/glimpse is exists otherwise fallback to release/src/glimpse", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7534", 
+                        "number": "7534", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
                         "hash": "43a59ccde3ca0f014ebffb154a9a0e810668c83a", 
                         "title": "Calibration", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7530", 
@@ -2316,7 +2325,7 @@
                 ], 
                 "release_name": "CMSSW_7_2_X_2015-02-04-1400", 
                 "merged_prs": [], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -4972,6 +4981,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "a565dd08dfb6673c67ae55813db26b8a8a7d1b94", 
+                        "title": "HCAL Method2 BX fix and timing adjustment (Fixes from 73X (PR#7492) ported to 74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7547", 
+                        "number": "7547", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "kfiekas"
+                    }, 
+                    {
+                        "hash": "659b07b516061ccfd66e043dcdd2fd8f9ba0a140", 
+                        "title": "Removing unnecessary cout", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7563", 
+                        "number": "7563", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmajumder"
+                    }, 
                     {
                         "hash": "1d7726235aa181c6052ff6a73429c870bbf76991", 
                         "title": "Changed to use track only isolation for PFmuon", 
@@ -9778,6 +9805,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "a565dd08dfb6673c67ae55813db26b8a8a7d1b94", 
+                        "title": "HCAL Method2 BX fix and timing adjustment (Fixes from 73X (PR#7492) ported to 74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7547", 
+                        "number": "7547", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "kfiekas"
+                    }, 
+                    {
+                        "hash": "659b07b516061ccfd66e043dcdd2fd8f9ba0a140", 
+                        "title": "Removing unnecessary cout", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7563", 
+                        "number": "7563", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmajumder"
+                    }, 
                     {
                         "hash": "1d7726235aa181c6052ff6a73429c870bbf76991", 
                         "title": "Changed to use track only isolation for PFmuon", 
@@ -19053,7 +19098,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-14/CMSSW_7_4_X_2015-02-04-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -19068,15 +19120,24 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-14/CMSSW_7_4_X_2015-02-04-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-14/CMSSW_7_4_X_2015-02-04-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-02-04-1400/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -19126,6 +19187,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "a565dd08dfb6673c67ae55813db26b8a8a7d1b94", 
+                        "title": "HCAL Method2 BX fix and timing adjustment (Fixes from 73X (PR#7492) ported to 74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7547", 
+                        "number": "7547", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "kfiekas"
+                    }, 
+                    {
+                        "hash": "659b07b516061ccfd66e043dcdd2fd8f9ba0a140", 
+                        "title": "Removing unnecessary cout", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7563", 
+                        "number": "7563", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmajumder"
+                    }, 
                     {
                         "hash": "1d7726235aa181c6052ff6a73429c870bbf76991", 
                         "title": "Changed to use track only isolation for PFmuon", 
