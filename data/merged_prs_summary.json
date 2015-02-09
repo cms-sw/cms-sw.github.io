@@ -170,7 +170,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_5_3_X_2015-02-09-1000/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/5.3-mon-10/CMSSW_5_3_X_2015-02-09-1000/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 481, 
+                            "num_failed": 10
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -1040,7 +1050,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc481": "IB/CMSSW_7_1_X_2015-02-08-0200/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/mon/7.1-mon-14/CMSSW_7_1_X_2015-02-09-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 836, 
+                            "num_failed": 6
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -2811,7 +2831,7 @@
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2015-02-08-0200/slc6_amd64_gcc481"
                 }, 
                 "relvals": [], 
-                "static_checks": "not-found", 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -4524,6 +4544,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "24d224a9790445fd612c05e29562cdc964590308", 
+                        "title": "std::regex_replace not supported in gcc4.8.1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7635", 
+                        "number": "7635", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
                     {
                         "hash": "6745ec284351c56b48ea5fb4ab5adb0d60581b1a", 
                         "title": "Add functions to handle chargino", 
@@ -6472,6 +6501,24 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7635"
+                        ], 
+                        "hash": "911c79e39d428876e3585061472c0f0f28e7b8ac", 
+                        "number": "911c79e", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "24d224a9790445fd612c05e29562cdc964590308", 
+                        "title": "std::regex_replace not supported in gcc4.8.1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7635", 
+                        "number": "7635", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7574"
                         ], 
                         "hash": "9f724f68f6396dca9eb107cdcae265c95c08648d", 
@@ -7993,9 +8040,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ICC-mon-14/CMSSW_7_4_ICC_X_2015-02-09-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ICC-mon-14/CMSSW_7_4_ICC_X_2015-02-09-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "116"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -8088,6 +8137,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "24d224a9790445fd612c05e29562cdc964590308", 
+                        "title": "std::regex_replace not supported in gcc4.8.1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7635", 
+                        "number": "7635", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
                     {
                         "hash": "6745ec284351c56b48ea5fb4ab5adb0d60581b1a", 
                         "title": "Add functions to handle chargino", 
@@ -9880,7 +9938,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT6-mon-14/CMSSW_7_4_ROOT6_X_2015-02-09-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -9898,15 +9963,24 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT6-mon-14/CMSSW_7_4_ROOT6_X_2015-02-09-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT6-mon-14/CMSSW_7_4_ROOT6_X_2015-02-09-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "1"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-02-04-1400/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -9947,6 +10021,42 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7635"
+                        ], 
+                        "hash": "8cf6ca7b81b878b1d48bf018af28ab198356cd5a", 
+                        "number": "8cf6ca7", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "deca79c881bd984d7222fb1f1ab85de759373051", 
+                        "title": "Go back to conditions database V2", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7639", 
+                        "number": "7639", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "24d224a9790445fd612c05e29562cdc964590308", 
+                        "title": "std::regex_replace not supported in gcc4.8.1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7635", 
+                        "number": "7635", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "03d95556808ea7c080e5ec844a424ea5aa1df204", 
+                        "title": "ROOT6 needs to know about enumerations", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7638", 
+                        "number": "7638", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
                     {
                         "hash": "2ab6792b5d445eaf72247c7c43a4d1f422cf77e0", 
                         "title": "Correct checksums", 
@@ -12027,6 +12137,24 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_THREADED_X", 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7635"
+                        ], 
+                        "hash": "d442eb47a33c25d91ddc573440e32ae72bdb0133", 
+                        "number": "d442eb4", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "24d224a9790445fd612c05e29562cdc964590308", 
+                        "title": "std::regex_replace not supported in gcc4.8.1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7635", 
+                        "number": "7635", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wmtan"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -16110,6 +16238,15 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
+                    {
+                        "hash": "24d224a9790445fd612c05e29562cdc964590308", 
+                        "title": "std::regex_replace not supported in gcc4.8.1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7635", 
+                        "number": "7635", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
                     {
                         "hash": "6745ec284351c56b48ea5fb4ab5adb0d60581b1a", 
                         "title": "Add functions to handle chargino", 
