@@ -161,26 +161,43 @@ loadFilesLists = function( relvasAvailableResults ){
       
     var tabPane = $( '#'+releaseQueue )
     var title = $( '<h3>' ).text( currentIB ).attr( 'id', currentIB )
+
+    title.append( $( '<hr>' ) )
+    title.attr( AVAILABLE_ARCHS_ATTR, exceptionsAvailResults[ currentIB ] )
     tabPane.append( title )   
 
-    var table = $( '<table>' ).attr( 'id', 'table-' + currentIB ).attr( 'class', 'table table-condensed' )
-    table.attr( AVAILABLE_ARCHS_ATTR, exceptionsAvailResults[ currentIB ] )
-    tabPane.append( table )
+    var containerRow = $( '<div>' ).attr( 'class', 'row' )
+    title.after( containerRow )
+    addHeaderRow( containerRow )
+    var containerColumn = $( '<div>' ).attr( 'class', 'col-md-10' )
+    containerColumn.attr( 'id', 'container-' + currentIB )
+    containerRow.append( containerColumn )
 
-    var row = $( '<tr>' )
-    table.append( row )
-
-    var exceptionHeader = $( '<th>' ).text( 'Exception' )
-    row.append( exceptionHeader )
-
-    var workflowHeader = $( '<th>' ).text( 'Workflows' )
-    row.append( workflowHeader )
-
-    tabPane.append( $( '<br>' ) )
-  }
+ }
 
   loadActiveTabPane()
 
+
+}
+
+/**
+ * adds a row to the container of each IB results, with the titles 'Exception', and 'Workflows'
+ */
+addHeaderRow = function( containerRow ){
+
+
+  var exTitleColumn = $( '<div>' ).attr( 'class', 'col-md-8' )
+  containerRow.append( exTitleColumn )
+  var exTitle = $( '<b>' ).text( 'Exception' )
+  exTitleColumn.append( exTitle )
+ 
+  var wfsTitleColumn = $( '<div>' ).attr( 'class', 'col-md-4' )
+  containerRow.append( wfsTitleColumn )
+  var wfsTitle = $( '<b>' ).text( 'Workflows' )
+  wfsTitleColumn.append( wfsTitle )
+
+  var hrCont = $( '<div>' ).attr( 'class', 'col-md-12' )
+  containerRow.append( hrCont.append( $( '<hr>' ) ) )
 
 }
 
@@ -206,24 +223,31 @@ loadTabPane = function( releaseQueue ){
     return 
   }
 
-  var tables = tabPane.children( ".table" )
-  tables.each( loadTable )
+  var titles = tabPane.children( "h3" )
+  titles.each( loadTable )
 
   tabPane.attr( ALREADY_LOADED_ATTR, 'yes' )
 
 }
 
 /**
- * loads a table based on its attributes
+ * loads a table based on its attributes. it knows which IB to use based on the id of the title
+ * It uses the bootstrap grid system to organize the tables
  * it can be called by a .each()
  */
-loadTable = function( table ){
+loadTable = function( title ){
 
-  if( $.isNumeric( table ) ){
-    table = $( this )
+  if( $.isNumeric( title ) ){
+    title = $( this )
   }
-  var ib = table.attr( 'id' ).replace( 'table-', '' )
-  var archs = table.attr( AVAILABLE_ARCHS_ATTR )
+
+  
+
+  var ib = title.attr( 'id' )
+  var archs = title.attr( AVAILABLE_ARCHS_ATTR )
+  console.log( ib )
+  console.log( archs )
+  console.log( '-' )
   var archs_list = archs.split( "," )
   var releaseQueue = ib.substring( 0 , ib.lastIndexOf( "_" ) )
   var ibDate = ib.substring( ib.lastIndexOf( "_" ) + 1 , ib.length )
@@ -231,41 +255,47 @@ loadTable = function( table ){
   for( var i = 0; i < archs_list.length; i++ ){
     current_arch = archs_list[ i ]
     filenameExceptions = 'data/relvals/' + current_arch + '/' + ibDate + '/' + releaseQueue + '_EXCEPTIONS.json'
-    infoAdderFunct = genAddInfoTable( table, current_arch )
+    infoAdderFunct = genAddInfoTable( title, current_arch )
     $.getJSON( filenameExceptions, infoAdderFunct )
 
   }
 
 }
 
-genAddInfoTable = function( table, arch ){
+genAddInfoTable = function( title, arch ){
   /**
-   * Adds the information in the structure to the table for which 
-   * this function is generated
+   * Adds the rows with the information of the exceptions for the title element for which this function
+   * is generated. It uses the bootstrap grid system
    */
   addInfoTable = function( structure ){
-    var ib = table.attr( 'id' ).replace( 'table-', '' )
+    var ib = title.attr( 'id' )
+    var container = $( '#container-' + ib )
 
     var counter = 0
     for( exception in structure ){
       subTableID = IB_EXCEPTIONS_SUBTABLES_IDS[ ib + ',' + exception ]
-      
-      
+           
       if ( subTableID == undefined ){
-        var row = $( '<tr>' )
-        table.append( row )
-        var exCell = $( '<td>' )
-        row.append( exCell )
+
+        var row = $( '<div>' ).attr( 'class', 'row' )
+        container.append( row )
+
+        var exColumn = $( '<div>' ).attr( 'class', 'col-md-8' )
+        row.append( exColumn )
         var samp = $( '<samp>' )
         samp.text( exception )        
+        var paragraph = $( '<p>' ).append( samp )
+        paragraph.attr( 'align', 'justify' ) 
+        exColumn.append( $( '<small>' ).append( paragraph ) )
 
-        exCell.append( $( '<small>' ).append( $( '<p>' ).append( samp ) ) )
+        // create a column for the architectures
+        var archsColumn = $( '<div>' ).attr( 'class', 'col-md-4' )
+        row.append( archsColumn ) 
 
-        // create a subtable for the architectures
-        var subTBLCell = $( '<td>' )
-        row.append( subTBLCell )
-        var subTable = $( '<table>' )
-        subTBLCell.append( subTable )
+        var subTable = $( '<table>' ).attr( 'class', 'table table-condensed' )
+        archsColumn.append( subTable )
+
+        subTable.attr( 'style', 'text-align: left;' )
         var subTableID = ib + '-' + arch + '-' + counter
         subTable.attr( 'id', subTableID )
         IB_EXCEPTIONS_SUBTABLES_IDS[ ib + ',' + exception ] = subTableID
@@ -274,10 +304,8 @@ genAddInfoTable = function( table, arch ){
 
         counter++
       }else {
-        
+       
         subTable = $( '#' + subTableID )
-        console.log( "adding not new to:" )
-        console.log( '#' + subTableID )
         addArchAndWorkflowsSubTable( subTable, structure[ exception ], arch )
 
       }
@@ -290,6 +318,7 @@ genAddInfoTable = function( table, arch ){
   return addInfoTable
 }
 
+
 /**
  * Adds to the archs subtable for an IB the correspongin information
  * of the list of workflows
@@ -301,13 +330,32 @@ addArchAndWorkflowsSubTable = function( subTable, wfList, arch ){
   subTRow.append( archCell )
   var archBold = $( '<b>' ).text( arch + ': ' )
   archCell.append( archBold )
-        
-  var wfsCell = $( '<td>' )
-  subTRow.append( wfsCell )
-  wfsCell.append( $( '<p>' ).append( wfList.join(", ") ) )
 
+  // I already added the column with the architecture name 
+  var columnsAdded = 1
+
+  for( var i = 0; i < wfList.length; i++){
+
+    if( columnsAdded > MAX_COLUMNS_WFS ){
+      subTRow = $( '<tr>' )
+      subTable.append( subTRow )
+      subTRow.append( $( '<td>' ) )
+      columnsAdded = 1
+    }
+
+    currentWF = wfList[ i ]
+    var wfCell = $( '<td>' )
+    subTRow.append( wfCell )
+    wfCell.text( currentWF )
+    columnsAdded++
+
+  }
+
+  subTable.find( "td" ).attr( 'style', 'border-top: 0px' ) 
 }
 
+// max column number for the workflows subtable
+MAX_COLUMNS_WFS = 5
 // custom properties
 ALREADY_LOADED_ATTR = 'already-loaded'
 AVAILABLE_ARCHS_ATTR = 'avialable-archs'
