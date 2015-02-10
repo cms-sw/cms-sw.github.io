@@ -727,7 +727,17 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_6_2_X_SLHC", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "21113ac45c39ccbbbac6adb14ff9fc6bbee2a0a9", 
+                        "title": "Fix cluster-TP association for TrajectorySeeds in QuickTrackAssociatorByHits", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7626", 
+                        "number": "7626", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -2842,7 +2852,44 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_3_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "12ac12a8970486e6bbda98a0816c3705e970ed43", 
+                        "title": "Update on muon NoBPTX path names in HLTriggerOffline/Exotica", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7494", 
+                        "number": "7494", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "cd02c92048af37fcf5bd1796b89e0c812de96e8a", 
+                        "title": "force the online applications to run single thread", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7601", 
+                        "number": "7601", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e691636085dceb9abb8edec517ccb17904f1d85b", 
+                        "title": "Castor online dqm updated config 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7615", 
+                        "number": "7615", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "iik1997"
+                    }, 
+                    {
+                        "hash": "3c0a477c620e0e7a7c80003887f952e22a0753dc", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7622", 
+                        "number": "7622", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-tsg-storm"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -4528,15 +4575,38 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_CLANG_X_2015-02-10-0200-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.CLANG-tue-14/CMSSW_7_4_CLANG_X_2015-02-10-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 22883, 
+                            "linkError": 2, 
+                            "compError": 4, 
+                            "ignoreWarning": 85995
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-02-10-0200-->CMSSW_7_4_CLANG_X_2015-02-10-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.CLANG-tue-14/CMSSW_7_4_CLANG_X_2015-02-10-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_CLANG_X_2015-02-10-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_CLANG_X_2015-02-10-1400", 
                 "merged_prs": [
                     {
                         "hash": "200930b374ef92e16cb7c2ac1bee5458dec07c3c", 
@@ -4600,6 +4670,57 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "inugent"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-02-10-1400-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "merged_prs": [
+                    {
+                        "hash": "b0ed23c4a8ddc3eeb7541f02ec38c84c1c6691a9", 
+                        "title": "Revert go back to conddb1 as default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7654", 
+                        "number": "7654", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-sw"
+                    }, 
+                    {
+                        "hash": "0c260b01c8d88a28390e32ce90b4c91a85cb9f29", 
+                        "title": "update the MAXFEDID according to changes in the FEDNumbering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7634", 
+                        "number": "7634", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "653e03ac4e74ff6bd4ce56dc333e4dfb56dbf73b", 
+                        "title": "Update Material Budget test", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7647", 
+                        "number": "7647", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "cca443b2be25c81bacf6a10c4111b2d44f7ce882", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7621", 
+                        "number": "7621", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-tsg-storm"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -8444,7 +8565,44 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "b0ed23c4a8ddc3eeb7541f02ec38c84c1c6691a9", 
+                        "title": "Revert go back to conddb1 as default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7654", 
+                        "number": "7654", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-sw"
+                    }, 
+                    {
+                        "hash": "0c260b01c8d88a28390e32ce90b4c91a85cb9f29", 
+                        "title": "update the MAXFEDID according to changes in the FEDNumbering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7634", 
+                        "number": "7634", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "653e03ac4e74ff6bd4ce56dc333e4dfb56dbf73b", 
+                        "title": "Update Material Budget test", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7647", 
+                        "number": "7647", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "cca443b2be25c81bacf6a10c4111b2d44f7ce882", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7621", 
+                        "number": "7621", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-tsg-storm"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -15688,6 +15846,12 @@
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
                     }
                 ], 
                 "static_checks": "not-found", 
@@ -15775,7 +15939,44 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "b0ed23c4a8ddc3eeb7541f02ec38c84c1c6691a9", 
+                        "title": "Revert go back to conddb1 as default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7654", 
+                        "number": "7654", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-sw"
+                    }, 
+                    {
+                        "hash": "0c260b01c8d88a28390e32ce90b4c91a85cb9f29", 
+                        "title": "update the MAXFEDID according to changes in the FEDNumbering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7634", 
+                        "number": "7634", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "653e03ac4e74ff6bd4ce56dc333e4dfb56dbf73b", 
+                        "title": "Update Material Budget test", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7647", 
+                        "number": "7647", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "cca443b2be25c81bacf6a10c4111b2d44f7ce882", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7621", 
+                        "number": "7621", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-tsg-storm"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
