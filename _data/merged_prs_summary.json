@@ -2039,8 +2039,43 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.2-tue-14/CMSSW_7_2_X_2015-02-10-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 3, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_2_X_2015-02-10-0200-->CMSSW_7_2_X_2015-02-10-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/tue/7.2-tue-14/CMSSW_7_2_X_2015-02-10-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc481": "Not Found"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc481"
+                ], 
+                "release_name": "CMSSW_7_2_X_2015-02-10-1400", 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_2_X_2015-02-10-0200-->CMSSW_7_2_X", 
+                "compared_tags": "CMSSW_7_2_X_2015-02-10-1400-->CMSSW_7_2_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -4574,7 +4609,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.CLANG-tue-14/CMSSW_7_4_CLANG_X_2015-02-10-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -4687,6 +4729,21 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7591", 
+                            "7537", 
+                            "7601", 
+                            "7622", 
+                            "7615", 
+                            "7494", 
+                            "7492"
+                        ], 
+                        "hash": "e1439dab73f70c66070cc95f0910e2b90ae8d807", 
+                        "number": "e1439da", 
+                        "from_merge_commit": false
+                    }, 
+                    {
                         "hash": "b0ed23c4a8ddc3eeb7541f02ec38c84c1c6691a9", 
                         "title": "Revert go back to conddb1 as default", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7654", 
@@ -4705,6 +4762,42 @@
                         "author_login": "deguio"
                     }, 
                     {
+                        "hash": "12ac12a8970486e6bbda98a0816c3705e970ed43", 
+                        "title": "Update on muon NoBPTX path names in HLTriggerOffline/Exotica", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7494", 
+                        "number": "7494", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "cd02c92048af37fcf5bd1796b89e0c812de96e8a", 
+                        "title": "force the online applications to run single thread", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7601", 
+                        "number": "7601", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e691636085dceb9abb8edec517ccb17904f1d85b", 
+                        "title": "Castor online dqm updated config 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7615", 
+                        "number": "7615", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "iik1997"
+                    }, 
+                    {
+                        "hash": "3c0a477c620e0e7a7c80003887f952e22a0753dc", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7622", 
+                        "number": "7622", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
                         "hash": "653e03ac4e74ff6bd4ce56dc333e4dfb56dbf73b", 
                         "title": "Update Material Budget test", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7647", 
@@ -4721,6 +4814,33 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "hash": "f9c0a78ab7725422470703055ba9a31688951187", 
+                        "title": "use release/glimpse is exists otherwise fallback to release/src/glimpse", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7537", 
+                        "number": "7537", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
+                        "hash": "8e81a8208c38900ddba140bb77d9a995613d7210", 
+                        "title": "HCAL Method2 BX fix and timing adjustment", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7492", 
+                        "number": "7492", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "kfiekas"
+                    }, 
+                    {
+                        "hash": "c3335033ea8e8e001c4a79b655e4b92b330b62b6", 
+                        "title": "fix mem leak in BeamMonitor", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7591", 
+                        "number": "7591", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -5849,14 +5969,14 @@
                             "7518", 
                             "7558", 
                             "7550", 
+                            "7580", 
                             "7520", 
                             "7573", 
                             "7572", 
                             "7531", 
                             "7575", 
                             "7570", 
-                            "7539", 
-                            "7580"
+                            "7539"
                         ], 
                         "hash": "abcd8d25621da1225003a1b3a5d363cd3586c935", 
                         "number": "abcd8d2", 
@@ -6776,6 +6896,97 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7654", 
+                            "7591", 
+                            "7537", 
+                            "7601", 
+                            "7634", 
+                            "7622", 
+                            "7615", 
+                            "7494", 
+                            "7492", 
+                            "7647", 
+                            "7621"
+                        ], 
+                        "hash": "0203d61c3dfc39a0f66b68d5ac3e5e4acf5725a3", 
+                        "number": "0203d61", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "b0ed23c4a8ddc3eeb7541f02ec38c84c1c6691a9", 
+                        "title": "Revert go back to conddb1 as default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7654", 
+                        "number": "7654", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-sw"
+                    }, 
+                    {
+                        "hash": "0c260b01c8d88a28390e32ce90b4c91a85cb9f29", 
+                        "title": "update the MAXFEDID according to changes in the FEDNumbering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7634", 
+                        "number": "7634", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "12ac12a8970486e6bbda98a0816c3705e970ed43", 
+                        "title": "Update on muon NoBPTX path names in HLTriggerOffline/Exotica", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7494", 
+                        "number": "7494", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "cd02c92048af37fcf5bd1796b89e0c812de96e8a", 
+                        "title": "force the online applications to run single thread", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7601", 
+                        "number": "7601", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e691636085dceb9abb8edec517ccb17904f1d85b", 
+                        "title": "Castor online dqm updated config 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7615", 
+                        "number": "7615", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "iik1997"
+                    }, 
+                    {
+                        "hash": "3c0a477c620e0e7a7c80003887f952e22a0753dc", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7622", 
+                        "number": "7622", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "hash": "653e03ac4e74ff6bd4ce56dc333e4dfb56dbf73b", 
+                        "title": "Update Material Budget test", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7647", 
+                        "number": "7647", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "cca443b2be25c81bacf6a10c4111b2d44f7ce882", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7621", 
+                        "number": "7621", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7646", 
                             "7644", 
                             "7643", 
@@ -6858,6 +7069,33 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "inugent"
+                    }, 
+                    {
+                        "hash": "f9c0a78ab7725422470703055ba9a31688951187", 
+                        "title": "use release/glimpse is exists otherwise fallback to release/src/glimpse", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7537", 
+                        "number": "7537", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
+                        "hash": "8e81a8208c38900ddba140bb77d9a995613d7210", 
+                        "title": "HCAL Method2 BX fix and timing adjustment", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7492", 
+                        "number": "7492", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "kfiekas"
+                    }, 
+                    {
+                        "hash": "c3335033ea8e8e001c4a79b655e4b92b330b62b6", 
+                        "title": "fix mem leak in BeamMonitor", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7591", 
+                        "number": "7591", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -8567,6 +8805,21 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7591", 
+                            "7537", 
+                            "7601", 
+                            "7622", 
+                            "7615", 
+                            "7494", 
+                            "7492"
+                        ], 
+                        "hash": "e1439dab73f70c66070cc95f0910e2b90ae8d807", 
+                        "number": "e1439da", 
+                        "from_merge_commit": false
+                    }, 
+                    {
                         "hash": "b0ed23c4a8ddc3eeb7541f02ec38c84c1c6691a9", 
                         "title": "Revert go back to conddb1 as default", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7654", 
@@ -8585,6 +8838,42 @@
                         "author_login": "deguio"
                     }, 
                     {
+                        "hash": "12ac12a8970486e6bbda98a0816c3705e970ed43", 
+                        "title": "Update on muon NoBPTX path names in HLTriggerOffline/Exotica", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7494", 
+                        "number": "7494", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "cd02c92048af37fcf5bd1796b89e0c812de96e8a", 
+                        "title": "force the online applications to run single thread", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7601", 
+                        "number": "7601", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e691636085dceb9abb8edec517ccb17904f1d85b", 
+                        "title": "Castor online dqm updated config 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7615", 
+                        "number": "7615", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "iik1997"
+                    }, 
+                    {
+                        "hash": "3c0a477c620e0e7a7c80003887f952e22a0753dc", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7622", 
+                        "number": "7622", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
                         "hash": "653e03ac4e74ff6bd4ce56dc333e4dfb56dbf73b", 
                         "title": "Update Material Budget test", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7647", 
@@ -8601,6 +8890,33 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "hash": "f9c0a78ab7725422470703055ba9a31688951187", 
+                        "title": "use release/glimpse is exists otherwise fallback to release/src/glimpse", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7537", 
+                        "number": "7537", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
+                        "hash": "8e81a8208c38900ddba140bb77d9a995613d7210", 
+                        "title": "HCAL Method2 BX fix and timing adjustment", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7492", 
+                        "number": "7492", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "kfiekas"
+                    }, 
+                    {
+                        "hash": "c3335033ea8e8e001c4a79b655e4b92b330b62b6", 
+                        "title": "fix mem leak in BeamMonitor", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7591", 
+                        "number": "7591", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -8645,54 +8961,17 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.ROOT6-tue-02/CMSSW_7_4_ROOT6_X_2015-02-03-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.ROOT6-tue-02/CMSSW_7_4_ROOT6_X_2015-02-03-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "ignoreWarning": 20
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_ROOT6_X_2015-02-02-1400-->CMSSW_7_4_ROOT6_X_2015-02-03-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "failed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.ROOT6-tue-02/CMSSW_7_4_ROOT6_X_2015-02-03-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "1"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-02-03-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.ROOT6-tue-02/CMSSW_7_4_ROOT6_X_2015-02-03-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 979, 
-                            "num_failed": 13
-                        }
-                    }
-                ], 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X_2015-02-03-0200", 
                 "merged_prs": [
                     {
@@ -8851,7 +9130,7 @@
                     }
                 ], 
                 "cmsdistTags": {
-                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-02-03-0200/slc6_amd64_gcc491"
+                    "slc6_amd64_gcc491": "Not Found"
                 }, 
                 "relvals": [
                     {
@@ -9015,7 +9294,7 @@
                     }
                 ], 
                 "cmsdistTags": {
-                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-02-03-0200/slc6_amd64_gcc491"
+                    "slc6_amd64_gcc491": "Not Found"
                 }, 
                 "relvals": [
                     {
@@ -9863,14 +10142,14 @@
                             "7518", 
                             "7558", 
                             "7550", 
+                            "7580", 
                             "7520", 
                             "7573", 
                             "7572", 
                             "7531", 
                             "7575", 
                             "7570", 
-                            "7539", 
-                            "7580"
+                            "7539"
                         ], 
                         "hash": "d979aaaedac27c5351b0cfc5987ac58d61315e7f", 
                         "number": "d979aaa", 
@@ -10726,7 +11005,126 @@
                 "isIB": false, 
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7654", 
+                            "7591", 
+                            "7537", 
+                            "7601", 
+                            "7634", 
+                            "7622", 
+                            "7615", 
+                            "7494", 
+                            "7492", 
+                            "7647", 
+                            "7621"
+                        ], 
+                        "hash": "f4835647b2e9ffd076ac4bbb9a452216a223cda1", 
+                        "number": "f483564", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "b0ed23c4a8ddc3eeb7541f02ec38c84c1c6691a9", 
+                        "title": "Revert go back to conddb1 as default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7654", 
+                        "number": "7654", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-sw"
+                    }, 
+                    {
+                        "hash": "0c260b01c8d88a28390e32ce90b4c91a85cb9f29", 
+                        "title": "update the MAXFEDID according to changes in the FEDNumbering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7634", 
+                        "number": "7634", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "12ac12a8970486e6bbda98a0816c3705e970ed43", 
+                        "title": "Update on muon NoBPTX path names in HLTriggerOffline/Exotica", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7494", 
+                        "number": "7494", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "cd02c92048af37fcf5bd1796b89e0c812de96e8a", 
+                        "title": "force the online applications to run single thread", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7601", 
+                        "number": "7601", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e691636085dceb9abb8edec517ccb17904f1d85b", 
+                        "title": "Castor online dqm updated config 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7615", 
+                        "number": "7615", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "iik1997"
+                    }, 
+                    {
+                        "hash": "3c0a477c620e0e7a7c80003887f952e22a0753dc", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7622", 
+                        "number": "7622", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "hash": "653e03ac4e74ff6bd4ce56dc333e4dfb56dbf73b", 
+                        "title": "Update Material Budget test", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7647", 
+                        "number": "7647", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "cca443b2be25c81bacf6a10c4111b2d44f7ce882", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7621", 
+                        "number": "7621", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "hash": "f9c0a78ab7725422470703055ba9a31688951187", 
+                        "title": "use release/glimpse is exists otherwise fallback to release/src/glimpse", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7537", 
+                        "number": "7537", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
+                        "hash": "8e81a8208c38900ddba140bb77d9a995613d7210", 
+                        "title": "HCAL Method2 BX fix and timing adjustment", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7492", 
+                        "number": "7492", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "kfiekas"
+                    }, 
+                    {
+                        "hash": "c3335033ea8e8e001c4a79b655e4b92b330b62b6", 
+                        "title": "fix mem leak in BeamMonitor", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7591", 
+                        "number": "7591", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -11823,6 +12221,7 @@
                         "brought_prs": [
                             "7518", 
                             "7558", 
+                            "7580", 
                             "7520", 
                             "7573", 
                             "7572", 
@@ -11830,8 +12229,7 @@
                             "7575", 
                             "7570", 
                             "7550", 
-                            "7539", 
-                            "7580"
+                            "7539"
                         ], 
                         "hash": "714fb2e152bf60a1f282361c58d9b661f837a761", 
                         "number": "714fb2e", 
@@ -12844,6 +13242,97 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "7654", 
+                            "7591", 
+                            "7537", 
+                            "7601", 
+                            "7634", 
+                            "7622", 
+                            "7615", 
+                            "7494", 
+                            "7492", 
+                            "7647", 
+                            "7621"
+                        ], 
+                        "hash": "34a04b42f950ab77c71edbf55fc340c66180defe", 
+                        "number": "34a04b4", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "b0ed23c4a8ddc3eeb7541f02ec38c84c1c6691a9", 
+                        "title": "Revert go back to conddb1 as default", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7654", 
+                        "number": "7654", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-sw"
+                    }, 
+                    {
+                        "hash": "0c260b01c8d88a28390e32ce90b4c91a85cb9f29", 
+                        "title": "update the MAXFEDID according to changes in the FEDNumbering", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7634", 
+                        "number": "7634", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "12ac12a8970486e6bbda98a0816c3705e970ed43", 
+                        "title": "Update on muon NoBPTX path names in HLTriggerOffline/Exotica", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7494", 
+                        "number": "7494", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "cd02c92048af37fcf5bd1796b89e0c812de96e8a", 
+                        "title": "force the online applications to run single thread", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7601", 
+                        "number": "7601", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e691636085dceb9abb8edec517ccb17904f1d85b", 
+                        "title": "Castor online dqm updated config 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7615", 
+                        "number": "7615", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "iik1997"
+                    }, 
+                    {
+                        "hash": "3c0a477c620e0e7a7c80003887f952e22a0753dc", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7622", 
+                        "number": "7622", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "hash": "653e03ac4e74ff6bd4ce56dc333e4dfb56dbf73b", 
+                        "title": "Update Material Budget test", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7647", 
+                        "number": "7647", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "cca443b2be25c81bacf6a10c4111b2d44f7ce882", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7621", 
+                        "number": "7621", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "7646", 
                             "7644", 
                             "7643", 
@@ -12926,6 +13415,33 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "inugent"
+                    }, 
+                    {
+                        "hash": "f9c0a78ab7725422470703055ba9a31688951187", 
+                        "title": "use release/glimpse is exists otherwise fallback to release/src/glimpse", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7537", 
+                        "number": "7537", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
+                        "hash": "8e81a8208c38900ddba140bb77d9a995613d7210", 
+                        "title": "HCAL Method2 BX fix and timing adjustment", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7492", 
+                        "number": "7492", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "kfiekas"
+                    }, 
+                    {
+                        "hash": "c3335033ea8e8e001c4a79b655e4b92b330b62b6", 
+                        "title": "fix mem leak in BeamMonitor", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7591", 
+                        "number": "7591", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -15941,6 +16457,21 @@
                 "release_name": "CMSSW_7_4_X", 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "7591", 
+                            "7537", 
+                            "7601", 
+                            "7622", 
+                            "7615", 
+                            "7494", 
+                            "7492"
+                        ], 
+                        "hash": "e1439dab73f70c66070cc95f0910e2b90ae8d807", 
+                        "number": "e1439da", 
+                        "from_merge_commit": false
+                    }, 
+                    {
                         "hash": "b0ed23c4a8ddc3eeb7541f02ec38c84c1c6691a9", 
                         "title": "Revert go back to conddb1 as default", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7654", 
@@ -15959,6 +16490,42 @@
                         "author_login": "deguio"
                     }, 
                     {
+                        "hash": "12ac12a8970486e6bbda98a0816c3705e970ed43", 
+                        "title": "Update on muon NoBPTX path names in HLTriggerOffline/Exotica", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7494", 
+                        "number": "7494", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "cd02c92048af37fcf5bd1796b89e0c812de96e8a", 
+                        "title": "force the online applications to run single thread", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7601", 
+                        "number": "7601", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e691636085dceb9abb8edec517ccb17904f1d85b", 
+                        "title": "Castor online dqm updated config 73x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7615", 
+                        "number": "7615", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "iik1997"
+                    }, 
+                    {
+                        "hash": "3c0a477c620e0e7a7c80003887f952e22a0753dc", 
+                        "title": "reimplement edmConfigFromDB working directly with the Java code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7622", 
+                        "number": "7622", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
                         "hash": "653e03ac4e74ff6bd4ce56dc333e4dfb56dbf73b", 
                         "title": "Update Material Budget test", 
                         "url": "https://github.com/cms-sw/cmssw/pull/7647", 
@@ -15975,6 +16542,33 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "hash": "f9c0a78ab7725422470703055ba9a31688951187", 
+                        "title": "use release/glimpse is exists otherwise fallback to release/src/glimpse", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7537", 
+                        "number": "7537", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
+                        "hash": "8e81a8208c38900ddba140bb77d9a995613d7210", 
+                        "title": "HCAL Method2 BX fix and timing adjustment", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7492", 
+                        "number": "7492", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "kfiekas"
+                    }, 
+                    {
+                        "hash": "c3335033ea8e8e001c4a79b655e4b92b330b62b6", 
+                        "title": "fix mem leak in BeamMonitor", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7591", 
+                        "number": "7591", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
                     }
                 ], 
                 "hlt_tests": "not-found"
