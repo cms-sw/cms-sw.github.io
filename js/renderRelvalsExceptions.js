@@ -273,9 +273,9 @@ genAddInfoTable = function( title, arch ){
 
     var counter = 0
     for( exception in structure ){
-      subTableID = IB_EXCEPTIONS_SUBTABLES_IDS[ ib + ',' + exception ]
+      archsParagraphID = IB_EXCEPTIONS_SUBPS_IDS[ ib + ',' + exception ]
            
-      if ( subTableID == undefined ){
+      if ( archsParagraphID == undefined ){
 
         var row = $( '<div>' ).attr( 'class', 'row' )
         container.append( row )
@@ -292,21 +292,21 @@ genAddInfoTable = function( title, arch ){
         var archsColumn = $( '<div>' ).attr( 'class', 'col-md-4' )
         row.append( archsColumn ) 
 
-        var subTable = $( '<table>' ).attr( 'class', 'table table-condensed' )
-        archsColumn.append( subTable )
+        var archsParagraph = $( '<p>' )
+        archsParagraph.attr( 'align', 'justify' )
+        archsColumn.append( archsParagraph )
 
-        subTable.attr( 'style', 'text-align: left;' )
-        var subTableID = ib + '-' + arch + '-' + counter
-        subTable.attr( 'id', subTableID )
-        IB_EXCEPTIONS_SUBTABLES_IDS[ ib + ',' + exception ] = subTableID
+        var archsParagraphID = ib + '-' + arch + '-' + counter
+        archsParagraph.attr( 'id', archsParagraphID )
+        IB_EXCEPTIONS_SUBPS_IDS[ ib + ',' + exception ] = archsParagraphID
 
-        addArchAndWorkflowsSubTable( subTable, structure[ exception ], arch )
+        addArchAndWorkflowsSubTable( archsParagraph, structure[ exception ], arch )
 
         counter++
       }else {
        
-        subTable = $( '#' + subTableID )
-        addArchAndWorkflowsSubTable( subTable, structure[ exception ], arch )
+        archsParagraph = $( '#' + archsParagraphID )
+        addArchAndWorkflowsSubTable( archsParagraph, structure[ exception ], arch )
 
       }
       
@@ -323,35 +323,15 @@ genAddInfoTable = function( title, arch ){
  * Adds to the archs subtable for an IB the correspongin information
  * of the list of workflows
  */
-addArchAndWorkflowsSubTable = function( subTable, wfList, arch ){
-  var subTRow = $( '<tr>' )
-  subTable.append( subTRow )
-  var archCell = $( '<td>' )
-  subTRow.append( archCell )
+addArchAndWorkflowsSubTable = function( archsParagraph, wfList, arch ){
+  
   var archBold = $( '<b>' ).text( arch + ': ' )
-  archCell.append( archBold )
+  archsParagraph.append( archBold )
+   
+  archsParagraph.append( $( '<pre>' ).text( wfList.join(", ") ) )
+  archsParagraph.append( $( '<br>' ) )
 
-  // I already added the column with the architecture name 
-  var columnsAdded = 1
 
-  for( var i = 0; i < wfList.length; i++){
-
-    if( columnsAdded > MAX_COLUMNS_WFS ){
-      subTRow = $( '<tr>' )
-      subTable.append( subTRow )
-      subTRow.append( $( '<td>' ) )
-      columnsAdded = 1
-    }
-
-    currentWF = wfList[ i ]
-    var wfCell = $( '<td>' )
-    subTRow.append( wfCell )
-    wfCell.text( currentWF )
-    columnsAdded++
-
-  }
-
-  subTable.find( "td" ).attr( 'style', 'border-top: 0px' ) 
 }
 
 // max column number for the workflows subtable
@@ -360,5 +340,5 @@ MAX_COLUMNS_WFS = 5
 ALREADY_LOADED_ATTR = 'already-loaded'
 AVAILABLE_ARCHS_ATTR = 'avialable-archs'
 
-IB_EXCEPTIONS_SUBTABLES_IDS = {}
+IB_EXCEPTIONS_SUBPS_IDS = {}
 IB_EXCEOTIONS_ARCHS_TEXT_IDS = {}
