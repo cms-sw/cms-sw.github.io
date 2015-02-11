@@ -52,12 +52,14 @@ addDropDownList = function( navBarUl, releaseName, releaseQueues ){
   for (var i = 0; i < releaseQueues.length; i++){
     var releaseQueue = releaseQueues[i]
     var link = $('<a>').text(releaseQueue).attr("href", '#'+releaseQueue)
+    link.attr( 'id', 'link-to-tab-' + releaseQueue )
     var liReleaseQueue = $('<li>').append(link)
     link.click(function (e) {
       e.preventDefault()
       var tab = $(this).attr('href')
       loadTabPane( tab.replace( '#', '') )
       $('#myTab a[href='+tab+']').tab('show')
+      console.log(   $('#myTab a[href='+tab+']').children().length )
     })
     dropDownMenu.append(liReleaseQueue)
     liReleaseQueue = null
@@ -93,7 +95,7 @@ getTabPanes = function( structure ){
   var tabs_content = $('<div>')
   tabs_content.attr("id","tabs_container").attr( 'class', 'tab-content' )
   var all_releases = structure.all_release_queues
-  
+
   for(var i = 0; i < all_releases.length; i++){
     var releaseQueue = all_releases[i];
     var tab_pane = $('<div>')
@@ -111,8 +113,13 @@ getTabPanes = function( structure ){
     var title_rel_name=$( "<h1>" ).text( releaseQueue )
     tab_pane.append( title_rel_name )
     tab_pane.append( $( "<hr>" ) )
-    tab_pane.append( $( "<br>" ) )
 
+    var ibPagesLink = $( '<a>' )
+    tab_pane.append( ibPagesLink )
+    ibPagesLink.attr( 'href', 'https://cmssdt.cern.ch/SDT/html/showIB.html#' + releaseQueue )
+    ibPagesLink.append( $( '<small>' ).text( 'Back to IB pages') )
+
+    tab_pane.append( $( "<br>" ) )
     tabs_content.append( tab_pane )
   }
 
@@ -128,7 +135,6 @@ getTabPanes = function( structure ){
  * and calls the function to add this information to the tab pane
  */
 fillTabPanes = function( structure ){
-
   $.getJSON( "data/RelvalsAvailableResults.json", loadFilesLists )
 
 }
@@ -162,12 +168,19 @@ loadFilesLists = function( relvasAvailableResults ){
     var tabPane = $( '#'+releaseQueue )
     var title = $( '<h3>' ).text( currentIB ).attr( 'id', currentIB )
 
-    title.append( $( '<hr>' ) )
     title.attr( AVAILABLE_ARCHS_ATTR, exceptionsAvailResults[ currentIB ] )
     tabPane.append( title )   
 
+    var ibPagesLink = $( '<a>' )
+    title.after( ibPagesLink )
+    var hr = $( '<hr>' )
+    ibPagesLink.after( hr )
+
+    ibPagesLink.attr( 'href', 'https://cmssdt.cern.ch/SDT/html/showIB.html#' + currentIB )
+    ibPagesLink.append( $( '<small>' ).text( 'See all results for ' + currentIB ) )
+
     var containerRow = $( '<div>' ).attr( 'class', 'row' )
-    title.after( containerRow )
+    hr.after( containerRow )
     addHeaderRow( containerRow )
     var containerColumn = $( '<div>' ).attr( 'class', 'col-md-10' )
     containerColumn.attr( 'id', 'container-' + currentIB )
@@ -175,8 +188,9 @@ loadFilesLists = function( relvasAvailableResults ){
 
  }
 
-  loadActiveTabPane()
+  process_hash()
 
+  loadActiveTabPane()
 
 }
 
@@ -207,6 +221,8 @@ addHeaderRow = function( containerRow ){
 loadActiveTabPane = function(){
 
   var activeTab = $( '.active' )
+  console.log( activeTab )
+  
   var releaseQueue = activeTab.attr( 'id' )
   loadTabPane( releaseQueue )
 }
@@ -222,7 +238,7 @@ loadTabPane = function( releaseQueue ){
   if ( alreadyLoaded == 'yes' ){
     return 
   }
-
+  console.log( 'loading' + releaseQueue )
   var titles = tabPane.children( "h3" )
   titles.each( loadTable )
 
@@ -245,9 +261,6 @@ loadTable = function( title ){
 
   var ib = title.attr( 'id' )
   var archs = title.attr( AVAILABLE_ARCHS_ATTR )
-  console.log( ib )
-  console.log( archs )
-  console.log( '-' )
   var archs_list = archs.split( "," )
   var releaseQueue = ib.substring( 0 , ib.lastIndexOf( "_" ) )
   var ibDate = ib.substring( ib.lastIndexOf( "_" ) + 1 , ib.length )
@@ -300,18 +313,23 @@ genAddInfoTable = function( title, arch ){
         archsParagraph.attr( 'id', archsParagraphID )
         IB_EXCEPTIONS_SUBPS_IDS[ ib + ',' + exception ] = archsParagraphID
 
-        addArchAndWorkflowsSubTable( archsParagraph, structure[ exception ], arch )
+        addArchAndWorkflowsSubTable( archsParagraph, structure[ exception ], arch, ib )
 
         counter++
       }else {
        
         archsParagraph = $( '#' + archsParagraphID )
-        addArchAndWorkflowsSubTable( archsParagraph, structure[ exception ], arch )
+        addArchAndWorkflowsSubTable( archsParagraph, structure[ exception ], arch, ib )
 
       }
-      
 
     }
+    
+    if ( ib == document.location.toString().split('#')[1] ){
+      scrollTo( ib )
+    }
+
+
 
   }
 
@@ -323,16 +341,58 @@ genAddInfoTable = function( title, arch ){
  * Adds to the archs subtable for an IB the correspongin information
  * of the list of workflows
  */
-addArchAndWorkflowsSubTable = function( archsParagraph, wfList, arch ){
+addArchAndWorkflowsSubTable = function( archsParagraph, wfList, arch, ib ){
   
-  var archBold = $( '<b>' ).text( arch + ': ' )
-  archsParagraph.append( archBold )
+  var archLink = $( '<a>' )
+  archLink.attr( 'href', 'https://cms-sw.github.io/relvalLogDetail.html#' + arch + ';' + ib )
+  archLink.text( arch + ': ' )
+  archsParagraph.append( archLink )
    
   archsParagraph.append( $( '<pre>' ).text( wfList.join(", ") ) )
   archsParagraph.append( $( '<br>' ) )
 
 
 }
+
+// ---------------------------------------------------------------------------------
+// Handle URL
+// ---------------------------------------------------------------------------------
+
+/**
+ * Makes the page scroll to the id given as a parameter
+ */
+scrollTo = function( id ){
+  $('html, body').animate({
+        scrollTop: $( '#' + id ).offset().top
+      }, 1500);
+
+}
+
+// processes the hash given in the url
+process_hash = function( hash ){
+ 
+  var url = document.location.toString()
+  if ( url.match('#') ) {
+             
+ 
+    var hash = url.split('#')[1]
+    var releaseQueue = hash.substring( 0 , hash.lastIndexOf( '_' ) )
+    var lastChar = hash.charAt( hash.length - 1 )
+    if ( lastChar == 'X' || lastChar == 'C' ){
+      $( '#myTab a[href=#' + hash + ']').tab('show')
+    }else {
+      console.log( 'IB' )
+       // the url is asking for an IB
+      $( '#myTab a[href=#' + releaseQueue + ']').tab('show')
+      
+    }
+
+   var activeToCleanup = $( 'li.active' )
+   activeToCleanup.attr( 'class', '' )
+}
+
+}
+
 
 // max column number for the workflows subtable
 MAX_COLUMNS_WFS = 5
@@ -341,4 +401,3 @@ ALREADY_LOADED_ATTR = 'already-loaded'
 AVAILABLE_ARCHS_ATTR = 'avialable-archs'
 
 IB_EXCEPTIONS_SUBPS_IDS = {}
-IB_EXCEOTIONS_ARCHS_TEXT_IDS = {}
