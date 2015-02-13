@@ -2865,7 +2865,17 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_3_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c368fa638c6da0146b1826c7e802ed398f407893", 
+                        "title": "protection agains zero size vector", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7713", 
+                        "number": "7713", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -5043,6 +5053,15 @@
                 "release_name": "CMSSW_7_4_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "accf02fcaf00d87665f97421f5d9d1130f7b3f88", 
+                        "title": "Make hlt_dqm_clientPB to accept the 'runtype=x' parameter.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7688", 
+                        "number": "7688", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmitrijus"
+                    }, 
                     {
                         "hash": "9031b91b8105ca5b551bf0ba9e953ad90122b862", 
                         "title": "Allow SoftKiller to run on packed candidates", 
@@ -7460,6 +7479,15 @@
                 "relvals": [
                     {
                         "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.DEVEL-thu-14/CMSSW_7_4_DEVEL_X_2015-02-12-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 957, 
+                            "num_failed": 15
+                        }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -9860,7 +9888,17 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "accf02fcaf00d87665f97421f5d9d1130f7b3f88", 
+                        "title": "Make hlt_dqm_clientPB to accept the 'runtype=x' parameter.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7688", 
+                        "number": "7688", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmitrijus"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -15115,15 +15153,38 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_THREADED_X_2015-02-12-1400-->CMSSW_7_4_THREADED_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-02/CMSSW_7_4_THREADED_X_2015-02-13-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 2, 
+                            "linkError": 2, 
+                            "compError": 2, 
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-02-12-1400-->CMSSW_7_4_THREADED_X_2015-02-13-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-02/CMSSW_7_4_THREADED_X_2015-02-13-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-02-13-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_THREADED_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_THREADED_X_2015-02-13-0200", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -15154,6 +15215,21 @@
                         "author_login": "Dr15Jones"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-02-13-0200-->CMSSW_7_4_THREADED_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_THREADED_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -18617,16 +18693,13 @@
                 }, 
                 "relvals": [
                     {
-                        "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
-                    }, 
-                    {
                         "arch": "slc6_amd64_gcc481", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.4-thu-14/CMSSW_7_4_X_2015-02-12-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 947, 
+                            "num_failed": 19
+                        }
                     }
                 ], 
                 "static_checks": "not-found", 
@@ -18684,7 +18757,14 @@
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-02-12-1400/slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-02-12-1400/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -18736,7 +18816,17 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "accf02fcaf00d87665f97421f5d9d1130f7b3f88", 
+                        "title": "Make hlt_dqm_clientPB to accept the 'runtype=x' parameter.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7688", 
+                        "number": "7688", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmitrijus"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
