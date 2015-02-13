@@ -739,7 +739,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.1-fri-02/CMSSW_7_1_X_2015-02-13-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -2822,7 +2829,17 @@
                     "osx108_amd64_gcc481": "IB/CMSSW_7_3_X_2015-02-12-0200/osx108_amd64_gcc481", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2015-02-12-0200/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.3-fri-02/CMSSW_7_3_X_2015-02-13-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 996, 
+                            "num_failed": 4
+                        }
+                    }
+                ], 
                 "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
@@ -2893,14 +2910,14 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_3_X_2015-02-13-0200-->CMSSW_7_3_X", 
+                "compared_tags": "CMSSW_7_3_X_2015-02-13-0200-->CMSSW_7_3_2_patch1", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": false, 
                 "tests_archs": [], 
-                "release_name": "CMSSW_7_3_X", 
+                "release_name": "CMSSW_7_3_2_patch1", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -2913,6 +2930,21 @@
                         "author_login": "deguio"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_3_2_patch1-->CMSSW_7_3_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_3_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -5090,6 +5122,24 @@
                 "release_name": "CMSSW_7_4_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "e79b9613f45dfa8f100bf90644fa5bb079215837", 
+                        "title": "Workaround ICC bug.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7583", 
+                        "number": "7583", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "hash": "667aab9dacf48949e2682a82373279f705f38d44", 
+                        "title": "TopQuarkAnalysis/TopEventProducers (TopDecaySubset.cc): fix type mismatch", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7664", 
+                        "number": "7664", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
                     {
                         "hash": "accf02fcaf00d87665f97421f5d9d1130f7b3f88", 
                         "title": "Make hlt_dqm_clientPB to accept the 'runtype=x' parameter.", 
@@ -7632,6 +7682,15 @@
                 "relvals": [
                     {
                         "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.DEVEL-fri-02/CMSSW_7_4_DEVEL_X_2015-02-13-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 934, 
+                            "num_failed": 22
+                        }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
                         "passed": true, 
                         "details": {}
@@ -7643,7 +7702,7 @@
                     "slc6_amd64_gcc491"
                 ], 
                 "release_name": "CMSSW_7_4_DEVEL_X_2015-02-13-0200", 
-                "RVExceptions": null, 
+                "RVExceptions": true, 
                 "merged_prs": [
                     {
                         "hash": "9031b91b8105ca5b551bf0ba9e953ad90122b862", 
@@ -9930,6 +9989,24 @@
                 "release_name": "CMSSW_7_4_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "e79b9613f45dfa8f100bf90644fa5bb079215837", 
+                        "title": "Workaround ICC bug.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7583", 
+                        "number": "7583", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "hash": "667aab9dacf48949e2682a82373279f705f38d44", 
+                        "title": "TopQuarkAnalysis/TopEventProducers (TopDecaySubset.cc): fix type mismatch", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7664", 
+                        "number": "7664", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
                     {
                         "hash": "accf02fcaf00d87665f97421f5d9d1130f7b3f88", 
                         "title": "Make hlt_dqm_clientPB to accept the 'runtype=x' parameter.", 
@@ -12548,7 +12625,14 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-02-13-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -18910,7 +18994,7 @@
                         "details": {}
                     }
                 ], 
-                "static_checks": "not-found", 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -18962,6 +19046,24 @@
                 "release_name": "CMSSW_7_4_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "e79b9613f45dfa8f100bf90644fa5bb079215837", 
+                        "title": "Workaround ICC bug.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7583", 
+                        "number": "7583", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "hash": "667aab9dacf48949e2682a82373279f705f38d44", 
+                        "title": "TopQuarkAnalysis/TopEventProducers (TopDecaySubset.cc): fix type mismatch", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7664", 
+                        "number": "7664", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
                     {
                         "hash": "accf02fcaf00d87665f97421f5d9d1130f7b3f88", 
                         "title": "Make hlt_dqm_clientPB to accept the 'runtype=x' parameter.", 
