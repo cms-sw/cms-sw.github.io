@@ -2983,8 +2983,18 @@
                     "osx108_amd64_gcc481": "IB/CMSSW_7_3_X_2015-02-12-0200/osx108_amd64_gcc481", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2015-02-12-0200/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.3-fri-14/CMSSW_7_3_X_2015-02-13-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1004, 
+                            "num_failed": 2
+                        }
+                    }
+                ], 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -2994,7 +3004,7 @@
                 "release_name": "CMSSW_7_3_X_2015-02-13-1400", 
                 "RVExceptions": null, 
                 "merged_prs": [], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -5143,7 +5153,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2015-02-13-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -5161,9 +5178,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2015-02-13-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-14/CMSSW_7_4_CLANG_X_2015-02-13-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "2"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -10130,8 +10149,82 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2015-02-13-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "miscError": 2, 
+                            "compError": 1, 
+                            "linkError": 5
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-02-13-0200-->CMSSW_7_4_ICC_X_2015-02-13-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-14/CMSSW_7_4_ICC_X_2015-02-13-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-02-13-1400/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ICC_X_2015-02-13-1400", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "688aaf4b3cd4b196e4940793d3156ec731c56e0a", 
+                        "title": "Fast sim wf lukas", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7716", 
+                        "number": "7716", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "e79b9613f45dfa8f100bf90644fa5bb079215837", 
+                        "title": "Workaround ICC bug.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7583", 
+                        "number": "7583", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ktf"
+                    }, 
+                    {
+                        "hash": "667aab9dacf48949e2682a82373279f705f38d44", 
+                        "title": "TopQuarkAnalysis/TopEventProducers (TopDecaySubset.cc): fix type mismatch", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7664", 
+                        "number": "7664", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
+                        "hash": "accf02fcaf00d87665f97421f5d9d1130f7b3f88", 
+                        "title": "Make hlt_dqm_clientPB to accept the 'runtype=x' parameter.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7688", 
+                        "number": "7688", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmitrijus"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_ICC_X_2015-02-13-0200-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-02-13-1400-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -10176,42 +10269,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "cms-tsg-storm"
-                    }, 
-                    {
-                        "hash": "688aaf4b3cd4b196e4940793d3156ec731c56e0a", 
-                        "title": "Fast sim wf lukas", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7716", 
-                        "number": "7716", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "franzoni"
-                    }, 
-                    {
-                        "hash": "e79b9613f45dfa8f100bf90644fa5bb079215837", 
-                        "title": "Workaround ICC bug.", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7583", 
-                        "number": "7583", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ktf"
-                    }, 
-                    {
-                        "hash": "667aab9dacf48949e2682a82373279f705f38d44", 
-                        "title": "TopQuarkAnalysis/TopEventProducers (TopDecaySubset.cc): fix type mismatch", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7664", 
-                        "number": "7664", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "hash": "accf02fcaf00d87665f97421f5d9d1130f7b3f88", 
-                        "title": "Make hlt_dqm_clientPB to accept the 'runtype=x' parameter.", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7688", 
-                        "number": "7688", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "dmitrijus"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -12838,7 +12895,7 @@
                     "slc6_amd64_gcc491"
                 ], 
                 "release_name": "CMSSW_7_4_ROOT6_X_2015-02-13-0200", 
-                "RVExceptions": null, 
+                "RVExceptions": true, 
                 "merged_prs": [
                     {
                         "hash": "d537f560859cd670fd5c0fbbc7a52110fd2b7778", 
@@ -12881,53 +12938,38 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-02-13-0200-->CMSSW_7_4_ROOT6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2015-02-13-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 2, 
+                            "ignoreWarning": 21
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-02-13-0200-->CMSSW_7_4_ROOT6_X_2015-02-13-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-14/CMSSW_7_4_ROOT6_X_2015-02-13-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-02-13-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ROOT6_X_2015-02-13-1400", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "8edc96f8659e00d813a48618c6bddc023a6d2f65", 
-                        "title": "displaced muon validation", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7691", 
-                        "number": "7691", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "abbiendi"
-                    }, 
-                    {
-                        "hash": "2c2b527cd9dbbe56e628de08f3b6b6a8077ff0cd", 
-                        "title": "Update Documentation", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7724", 
-                        "number": "7724", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "ianna"
-                    }, 
-                    {
-                        "hash": "3c3414a3c4744eccd464db96c573524edf43c7d7", 
-                        "title": "Fastsim Tracking: sync track id flag definitions with FullSim", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7705", 
-                        "number": "7705", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lveldere"
-                    }, 
-                    {
-                        "hash": "94aa2c6a9c912334f2ccbcbe141fff56b7ea873e", 
-                        "title": "Update low-mass higgs trigger paths (and a few prescales)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7708", 
-                        "number": "7708", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "cms-tsg-storm"
-                    }, 
                     {
                         "hash": "7057421487cd345a670de74365f26af9f1ad3cc8", 
                         "title": "keep up with checksums in root6 branch", 
@@ -12972,6 +13014,58 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "dmitrijus"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-02-13-1400-->CMSSW_7_4_ROOT6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "8edc96f8659e00d813a48618c6bddc023a6d2f65", 
+                        "title": "displaced muon validation", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7691", 
+                        "number": "7691", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "abbiendi"
+                    }, 
+                    {
+                        "hash": "2c2b527cd9dbbe56e628de08f3b6b6a8077ff0cd", 
+                        "title": "Update Documentation", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7724", 
+                        "number": "7724", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "3c3414a3c4744eccd464db96c573524edf43c7d7", 
+                        "title": "Fastsim Tracking: sync track id flag definitions with FullSim", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7705", 
+                        "number": "7705", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }, 
+                    {
+                        "hash": "94aa2c6a9c912334f2ccbcbe141fff56b7ea873e", 
+                        "title": "Update low-mass higgs trigger paths (and a few prescales)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7708", 
+                        "number": "7708", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -13907,10 +14001,19 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-02-06-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [], 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "release_name": "CMSSW_7_4_THREADED_X_2015-02-06-0200", 
                 "RVExceptions": true, 
                 "merged_prs": [
@@ -19359,7 +19462,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-02-13-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -19374,9 +19484,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-02-13-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.4-fri-14/CMSSW_7_4_X_2015-02-13-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
