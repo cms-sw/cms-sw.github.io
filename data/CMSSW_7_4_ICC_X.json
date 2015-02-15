@@ -13,7 +13,7 @@
             "isIB": true, 
             "tests_archs": [], 
             "release_name": "CMSSW_7_4_ICC_X_2015-02-08-1400", 
-            "RVExceptions": true, 
+            "RVExceptions": null, 
             "merged_prs": [
                 {
                     "hash": "1fc37beda7c6ee4af5dc06193e3ef10b1454099a", 
@@ -88,7 +88,7 @@
                 "slc6_amd64_gcc491"
             ], 
             "release_name": "CMSSW_7_4_ICC_X_2015-02-09-0200", 
-            "RVExceptions": true, 
+            "RVExceptions": null, 
             "merged_prs": [
                 {
                     "hash": "1ee0f5f35cbd23671d9ac75588ceb58b98334723", 
@@ -163,7 +163,7 @@
                 "slc6_amd64_gcc491"
             ], 
             "release_name": "CMSSW_7_4_ICC_X_2015-02-09-1400", 
-            "RVExceptions": true, 
+            "RVExceptions": null, 
             "merged_prs": [
                 {
                     "hash": "2cef07d8d2f37848e18f9c13bf77eba5ccb416aa", 
@@ -630,7 +630,7 @@
                 "slc6_amd64_gcc491"
             ], 
             "release_name": "CMSSW_7_4_ICC_X_2015-02-11-1400", 
-            "RVExceptions": true, 
+            "RVExceptions": null, 
             "merged_prs": [
                 {
                     "hash": "2fd8feca354e8a69c3c82693105a543c6808625b", 
@@ -870,7 +870,7 @@
                 "slc6_amd64_gcc491"
             ], 
             "release_name": "CMSSW_7_4_ICC_X_2015-02-12-1400", 
-            "RVExceptions": true, 
+            "RVExceptions": null, 
             "merged_prs": [
                 {
                     "hash": "edb42d77429a54dae5ab8bf7e4db6d9a8c513c4f", 
@@ -1143,7 +1143,7 @@
                 "slc6_amd64_gcc491"
             ], 
             "release_name": "CMSSW_7_4_ICC_X_2015-02-14-0200", 
-            "RVExceptions": true, 
+            "RVExceptions": null, 
             "merged_prs": [
                 {
                     "hash": "8edc96f8659e00d813a48618c6bddc023a6d2f65", 
@@ -1235,7 +1235,7 @@
                 "slc6_amd64_gcc491"
             ], 
             "release_name": "CMSSW_7_4_ICC_X_2015-02-14-1400", 
-            "RVExceptions": true, 
+            "RVExceptions": null, 
             "merged_prs": [
                 {
                     "hash": "72d69e5efead63f435949542e7124671f6b78a22", 
@@ -1277,9 +1277,84 @@
             "hlt_tests": "not-found"
         }, 
         {
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.ICC-sun-02/CMSSW_7_4_ICC_X_2015-02-15-0200/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "error", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.ICC-sun-02/CMSSW_7_4_ICC_X_2015-02-15-0200/new/logAnalysis.pkl", 
+                    "details": {
+                        "miscError": 2, 
+                        "compError": 1, 
+                        "linkError": 5
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_ICC_X_2015-02-14-1400-->CMSSW_7_4_ICC_X_2015-02-15-0200", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.ICC-sun-02/CMSSW_7_4_ICC_X_2015-02-15-0200/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "116"
+                    }
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-02-15-0200/slc6_amd64_gcc491"
+            }, 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.ICC-sun-02/CMSSW_7_4_ICC_X_2015-02-15-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 155, 
+                        "num_failed": 269
+                    }
+                }
+            ], 
+            "static_checks": "not-found", 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
+            "release_name": "CMSSW_7_4_ICC_X_2015-02-15-0200", 
+            "RVExceptions": null, 
+            "merged_prs": [
+                {
+                    "hash": "f03aa5ccb01cbca30c390ab34ae7d5301c5571d6", 
+                    "title": "Db geom", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7666", 
+                    "number": "7666", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "deguio"
+                }, 
+                {
+                    "hash": "7060f94a11fcb454f1c592205dedfceff5e3369a", 
+                    "title": "Add DQM commands to the run2 era", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7730", 
+                    "number": "7730", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "mark-grimes"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
             "addons": [], 
             "builds": [], 
-            "compared_tags": "CMSSW_7_4_ICC_X_2015-02-14-1400-->CMSSW_7_4_X", 
+            "compared_tags": "CMSSW_7_4_ICC_X_2015-02-15-0200-->CMSSW_7_4_X", 
             "utests": [], 
             "cmsdistTags": {}, 
             "relvals": [], 
@@ -1360,24 +1435,6 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "cms-sw"
-                }, 
-                {
-                    "hash": "f03aa5ccb01cbca30c390ab34ae7d5301c5571d6", 
-                    "title": "Db geom", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7666", 
-                    "number": "7666", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "deguio"
-                }, 
-                {
-                    "hash": "7060f94a11fcb454f1c592205dedfceff5e3369a", 
-                    "title": "Add DQM commands to the run2 era", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/7730", 
-                    "number": "7730", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "mark-grimes"
                 }
             ], 
             "hlt_tests": "not-found"
