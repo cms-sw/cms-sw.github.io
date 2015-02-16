@@ -297,8 +297,7 @@ genAddInfoTable = function( title, arch ){
         row.append( exColumn )
         var samp = $( '<samp>' )
         samp.text( exception )        
-        var paragraph = $( '<p>' ).append( samp )
-        paragraph.attr( 'align', 'justify' ) 
+        var paragraph = $( '<pre>' ).append( samp )
         exColumn.append( $( '<small>' ).append( paragraph ) )
 
         // create a column for the architectures
