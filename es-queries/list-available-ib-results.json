@@ -2,8 +2,12 @@
   "aggs":{
     "IBs":{
       "terms":{"field": "release",
-               "size" : 200
-              }
+               "size" : 100,
+               "order" : { "times" : "desc" }
+              },
+      "aggs":{
+               "times" : { "avg" : { "field" : "start_time" } }
+             }
           }
          },
   "size": 0
