@@ -285,6 +285,10 @@ specifying which package / subsytem whose changes you would like to be notified 
 
 Yes, please have a look at the [CMSSW git tutorial pages](tutorial.html).
 
+For those of you with CERN access there is also a couple of presentations about git / github in CMS you might find useful:
+
+- https://indico.cern.ch/event/286056/session/1/contribution/3/material/slides/0.pdf
+
 ### How do I access the old CVS repository to check what was really there?
 
 The old CVS repository is available *READ-ONLY* by setting:
