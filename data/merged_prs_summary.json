@@ -1292,7 +1292,7 @@
                         "author_login": "heilman"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -1306,7 +1306,17 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_2_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "155b51f0bf7df84565fddbfc7d2f6fe2c6822aa0", 
+                        "title": "bug fix to compute ES cluster shapes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/6917", 
+                        "number": "6917", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "matteosan1"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -2392,8 +2402,18 @@
                     "slc6_amd64_gcc491": "IB/CMSSW_7_3_X_2015-02-17-1400/slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_3_X_2015-02-17-1400/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.3-thu-14/CMSSW_7_3_X_2015-02-19-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 978, 
+                            "num_failed": 9
+                        }
+                    }
+                ], 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -2439,19 +2459,19 @@
                         "author_login": "slava77"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_3_X_2015-02-19-1400-->CMSSW_7_3_X", 
+                "compared_tags": "CMSSW_7_3_X_2015-02-19-1400-->CMSSW_7_3_2_patch3", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": false, 
                 "tests_archs": [], 
-                "release_name": "CMSSW_7_3_X", 
+                "release_name": "CMSSW_7_3_2_patch3", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -2473,6 +2493,21 @@
                         "author_login": "barvic"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_3_2_patch3-->CMSSW_7_3_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_3_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -3967,9 +4002,12 @@
                 "relvals": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.CLANG-thu-14/CMSSW_7_4_CLANG_X_2015-02-19-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 955, 
+                            "num_failed": 39
+                        }
                     }
                 ], 
                 "static_checks": "not-found", 
@@ -4005,6 +4043,33 @@
                 "release_name": "CMSSW_7_4_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "289550d3acd1bc1bc601acbc84f1106bb3b434c3", 
+                        "title": "add specific post-LS1 customisations for 25ns", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7831", 
+                        "number": "7831", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "4aa44c28a7d543c4f756df8273e27a7830ae8a0a", 
+                        "title": "Add new eras to support different Run 2 configurations", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7839", 
+                        "number": "7839", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mark-grimes"
+                    }, 
+                    {
+                        "hash": "925f3c8b606c14e344ef4795a240405f3cbd57c6", 
+                        "title": "Printout reduction1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7863", 
+                        "number": "7863", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
                     {
                         "hash": "f2afbaeac906995a331fa8226a1d5b6e1def3a9d", 
                         "title": "Fix typo in DQMHelper", 
@@ -7114,6 +7179,33 @@
                 "release_name": "CMSSW_7_4_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "289550d3acd1bc1bc601acbc84f1106bb3b434c3", 
+                        "title": "add specific post-LS1 customisations for 25ns", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7831", 
+                        "number": "7831", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "4aa44c28a7d543c4f756df8273e27a7830ae8a0a", 
+                        "title": "Add new eras to support different Run 2 configurations", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7839", 
+                        "number": "7839", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mark-grimes"
+                    }, 
+                    {
+                        "hash": "925f3c8b606c14e344ef4795a240405f3cbd57c6", 
+                        "title": "Printout reduction1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7863", 
+                        "number": "7863", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
                     {
                         "hash": "f2afbaeac906995a331fa8226a1d5b6e1def3a9d", 
                         "title": "Fix typo in DQMHelper", 
@@ -10668,7 +10760,7 @@
                     "slc6_amd64_gcc491"
                 ], 
                 "release_name": "CMSSW_7_4_THREADED_X_2015-02-19-1400", 
-                "RVExceptions": null, 
+                "RVExceptions": true, 
                 "merged_prs": [
                     {
                         "hash": "597ebf1c81d53f4cedb5c4994b1cc6255419e7ee", 
@@ -14314,6 +14406,12 @@
             {
                 "addons": [
                     {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-14/CMSSW_7_4_X_2015-02-19-1400/addOnTests.log", 
+                        "details": {}
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": true, 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.4-thu-14/CMSSW_7_4_X_2015-02-19-1400/addOnTests.log", 
@@ -14340,18 +14438,20 @@
                 "compared_tags": "CMSSW_7_4_X_2015-02-18-1400-->CMSSW_7_4_X_2015-02-19-1400", 
                 "utests": [
                     {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-14/CMSSW_7_4_X_2015-02-19-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": "passed", 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.4-thu-14/CMSSW_7_4_X_2015-02-19-1400/unitTests-summary.log", 
                         "details": {
                             "num_fails": "0"
                         }
-                    }, 
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-14/CMSSW_7_4_X_2015-02-19-1400/new/logAnalysis.pkl']", 
-                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
@@ -14400,6 +14500,33 @@
                 "release_name": "CMSSW_7_4_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "289550d3acd1bc1bc601acbc84f1106bb3b434c3", 
+                        "title": "add specific post-LS1 customisations for 25ns", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7831", 
+                        "number": "7831", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "4aa44c28a7d543c4f756df8273e27a7830ae8a0a", 
+                        "title": "Add new eras to support different Run 2 configurations", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7839", 
+                        "number": "7839", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mark-grimes"
+                    }, 
+                    {
+                        "hash": "925f3c8b606c14e344ef4795a240405f3cbd57c6", 
+                        "title": "Printout reduction1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7863", 
+                        "number": "7863", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
                     {
                         "hash": "f2afbaeac906995a331fa8226a1d5b6e1def3a9d", 
                         "title": "Fix typo in DQMHelper", 
@@ -14739,7 +14866,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.5-thu-14/CMSSW_7_5_X_2015-02-19-1400/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -14764,20 +14898,22 @@
                 "compared_tags": "CMSSW_7_5_X_2015-02-19-0200-->CMSSW_7_5_X_2015-02-19-1400", 
                 "utests": [
                     {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.5-thu-14/CMSSW_7_5_X_2015-02-19-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc491", 
                         "passed": "unknown", 
                         "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.5-thu-14/CMSSW_7_5_X_2015-02-19-1400/new/logAnalysis.pkl']", 
                         "details": {}
-                    }, 
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.5-thu-14/CMSSW_7_5_X_2015-02-19-1400/new/logAnalysis.pkl']", 
-                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
-                    "slc6_amd64_gcc491": "IB/CMSSW_7_5_X_2015-02-19-0200/slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_5_X_2015-02-19-1400/slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_5_X_2015-02-19-1400/slc6_amd64_gcc481"
                 }, 
                 "relvals": [], 
