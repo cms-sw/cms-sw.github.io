@@ -1250,7 +1250,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc481": "IB/CMSSW_7_2_X_2015-02-15-0200/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.2-fri-02/CMSSW_7_2_X_2015-02-20-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 862, 
+                            "num_failed": 9
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -2511,7 +2521,7 @@
                         }
                     }
                 ], 
-                "static_checks": "not-found", 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -7191,26 +7201,39 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ICC_X_2015-02-19-1400-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-02/CMSSW_7_4_ICC_X_2015-02-20-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "miscError": 1, 
+                            "compError": 1, 
+                            "linkError": 4
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-02-19-1400-->CMSSW_7_4_ICC_X_2015-02-20-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ICC-fri-02/CMSSW_7_4_ICC_X_2015-02-20-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-02-20-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "release_name": "CMSSW_7_4_ICC_X_2015-02-20-0200", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "db4cf85f037cb8055bd462e04989496149ee5087", 
-                        "title": "More ICC fixes", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7858", 
-                        "number": "7858", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ktf"
-                    }, 
                     {
                         "hash": "289550d3acd1bc1bc601acbc84f1106bb3b434c3", 
                         "title": "add specific post-LS1 customisations for 25ns", 
@@ -7246,6 +7269,31 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "Dr15Jones"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-02-20-0200-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "release_name": "CMSSW_7_4_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "db4cf85f037cb8055bd462e04989496149ee5087", 
+                        "title": "More ICC fixes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7858", 
+                        "number": "7858", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ktf"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -8111,38 +8159,10 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-02/CMSSW_7_4_ROOT6_X_2015-02-13-0200/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "error", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-02/CMSSW_7_4_ROOT6_X_2015-02-13-0200/new/logAnalysis.pkl", 
-                        "details": {
-                            "compWarning": 2, 
-                            "linkError": 1, 
-                            "compError": 1, 
-                            "ignoreWarning": 21
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_ROOT6_X_2015-02-12-1400-->CMSSW_7_4_ROOT6_X_2015-02-13-0200", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "failed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-02/CMSSW_7_4_ROOT6_X_2015-02-13-0200/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "1"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-02-13-0200/slc6_amd64_gcc491"
                 }, 
@@ -9070,7 +9090,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-02/CMSSW_7_4_ROOT6_X_2015-02-20-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -9086,15 +9113,24 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-02/CMSSW_7_4_ROOT6_X_2015-02-20-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT6-fri-02/CMSSW_7_4_ROOT6_X_2015-02-20-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "1"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-02-20-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -9154,7 +9190,17 @@
                 "tests_archs": [], 
                 "release_name": "CMSSW_7_4_ROOT6_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "db4cf85f037cb8055bd462e04989496149ee5087", 
+                        "title": "More ICC fixes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7858", 
+                        "number": "7858", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ktf"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -10804,7 +10850,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-02/CMSSW_7_4_THREADED_X_2015-02-20-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -10820,9 +10873,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-02/CMSSW_7_4_THREADED_X_2015-02-20-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.THREADED-fri-02/CMSSW_7_4_THREADED_X_2015-02-20-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -12541,32 +12596,13 @@
                 "builds": [], 
                 "compared_tags": "CMSSW_7_4_X_2015-02-08-1400-->CMSSW_7_4_X_2015-02-09-0200", 
                 "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "Not Found", 
-                    "slc6_amd64_gcc481": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc481", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
-                    }, 
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
-                    }
-                ], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491", 
-                    "slc6_amd64_gcc481"
-                ], 
+                "tests_archs": [], 
                 "release_name": "CMSSW_7_4_X_2015-02-09-0200", 
-                "RVExceptions": true, 
+                "RVExceptions": null, 
                 "merged_prs": [
                     {
                         "hash": "1ee0f5f35cbd23671d9ac75588ceb58b98334723", 
@@ -15234,6 +15270,33 @@
                 "release_name": "CMSSW_7_5_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "9383e5857157d9d5478a99e60af2fd2d031f45be", 
+                        "title": "Fix pileup jet id bug", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7834", 
+                        "number": "7834", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ahinzmann"
+                    }, 
+                    {
+                        "hash": "17f0a5ceb71d5b53a241b1989469f04155b493f0", 
+                        "title": "Remove obsolete poisoned headers from the framework", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7874", 
+                        "number": "7874", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "db4cf85f037cb8055bd462e04989496149ee5087", 
+                        "title": "More ICC fixes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7858", 
+                        "number": "7858", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ktf"
+                    }, 
                     {
                         "hash": "1bc9337179856acddab0d574efbda4261a690e3a", 
                         "title": "Clang SA fixes for clang compile errors and report generation errors.", 
