@@ -1,0 +1,14 @@
+{
+  "aggs":{
+    "IBs":{
+      "terms":{"field": "cmssw_version",
+               "size" : 100,
+               "order" : { "times" : "desc" }
+              },
+      "aggs":{
+               "times" : { "avg" : { "field" : "@timestamp" } }
+             }
+          }
+         },
+  "size": 0
+}
