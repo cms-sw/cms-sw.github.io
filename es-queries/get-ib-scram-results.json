@@ -1,0 +1,16 @@
+{
+    "sort": [ "scram_arch", "package" ],
+    "fields":[ "package", "scram_arch", "stop", "start", "architecture", "hostname", "diff" ],
+    "query":{
+        "filtered":{
+            "filter":{
+                "bool":{
+                    "must":{
+                        "term":{ "cmssw_version" : "IB_NAME" }
+                           }
+                       }
+                     } 
+                   }
+             },
+  "size" : 10000
+}

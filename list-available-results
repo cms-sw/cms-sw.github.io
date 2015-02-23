@@ -4,58 +4,58 @@ import pickle
 from os import listdir
 import json
 
+DATA_DIR = 'data'
+RELVALS_DIR = 'relvals'
+UNIT_TESTS_DIR = 'unitTests'
+SCRAM_DIR = 'scram'
+
+#
+# creates a dictionary from the results that it found in testsDir
+#
+def get_dict_available_results( testsDir ):
+
+  resultsDict = {}
+  for current_arch in listdir( DATA_DIR + '/' + testsDir ):
+    for current_date in listdir( DATA_DIR + '/' + testsDir + '/' + current_arch ): 
+      for current_release in listdir( DATA_DIR + '/' + testsDir + '/' + current_arch + '/' + current_date ):
+
+        current_ib = current_release.rstrip( '.json' ) + '_' + current_date
+        # to avoid confusing the INCOMPLETE, and EXCEPTIONS suffixes with a flavor
+        if '_INCOMPLETE' in current_ib:
+          current_ib = current_ib.replace( '_INCOMPLETE', '' ) + '_INCOMPLETE'
+
+        if '_EXCEPTIONS' in current_ib:
+          current_ib = current_ib.replace( '_EXCEPTIONS', '' ) + '_EXCEPTIONS'
+
+        if resultsDict.get( current_ib ):
+          resultsDict[ current_ib ] += ','+current_arch
+        else:
+          resultsDict[ current_ib ] = current_arch
+
+        print 'found resuls in ', testsDir, ' for: ',  current_ib, ';', current_arch
+
+  return resultsDict
+
+#
+# Saves the file in the desired directory
+#
+def saveDict( fileName, dict):
+  out_json = open( fileName , "w" )
+  json.dump( dict, out_json,indent=4 )
+  out_json.close()
+
 #-----------------------------------------------------------------------------------
 #---- Start
 #-----------------------------------------------------------------------------------
 
-DATA_DIR = 'data'
-RELVALS_DIR = 'relvals'
-UNIT_TESTS_DIR = 'unitTests'
+if __name__ == "__main__":
 
+  available_results_relvals = get_dict_available_results( RELVALS_DIR )
+  saveDict( 'data/RelvalsAvailableResults.json', available_results_relvals)
 
-available_results_relvals = {}
-available_results_utests = {}
+  available_results_utests = get_dict_available_results( UNIT_TESTS_DIR )
+  saveDict( 'data/UnitTestsAvailableResults.json', available_results_utests)
 
-for current_arch in listdir( DATA_DIR + '/' + RELVALS_DIR ):
-  for current_date in listdir( DATA_DIR + '/' + RELVALS_DIR + '/' + current_arch ): 
-    for current_release in listdir( DATA_DIR + '/' + RELVALS_DIR + '/' + current_arch + '/' + current_date ):
+  available_results_scram = get_dict_available_results( SCRAM_DIR )
+  saveDict( 'data/ScramAvailableResults.json', available_results_scram)
 
-      current_ib = current_release.rstrip( '.json' ) + '_' + current_date
-      # to avoid confusing the INCOMPLETE, and EXCEPTIONS suffixes with a flavor
-      if '_INCOMPLETE' in current_ib:
-        current_ib = current_ib.replace( '_INCOMPLETE', '' ) + '_INCOMPLETE'
-
-      if '_EXCEPTIONS' in current_ib:
-        current_ib = current_ib.replace( '_EXCEPTIONS', '' ) + '_EXCEPTIONS'
-
-      if available_results_relvals.get( current_ib ):
-        available_results_relvals[ current_ib ] += ','+current_arch
-      else:
-        available_results_relvals[ current_ib ] = current_arch
-
-      print 'found relvals for: ' + current_ib + ';' + current_arch
-
-
-for current_arch in listdir( DATA_DIR + '/' + UNIT_TESTS_DIR ):
-  for current_date in listdir( DATA_DIR + '/' + UNIT_TESTS_DIR + '/' + current_arch ): 
-    for current_release in listdir( DATA_DIR + '/' + UNIT_TESTS_DIR + '/' + current_arch + '/' + current_date ):
-
-      current_ib = current_release.rstrip( '.json' ) + '_' + current_date
-
-      if available_results_utests.get( current_ib ):
-        available_results_utests[ current_ib ] += ','+current_arch
-      else:
-        available_results_utests[ current_ib ] = current_arch
-
-      print 'found unit tests for: ' +current_ib + ';' + current_arch
-
-file_name = 'data/RelvalsAvailableResults.json'
-out_json = open( file_name , "w" )
-json.dump( available_results_relvals , out_json,indent=4 )
-out_json.close()
-
-
-file_name = 'data/UnitTestsAvailableResults.json'
-out_json = open( file_name , "w" )
-json.dump( available_results_utests , out_json,indent=4 )
-out_json.close()
