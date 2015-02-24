@@ -14,8 +14,9 @@ import re
 RESULTS_PATH = "pyRelValMatrixLogs/run/runall-report-step123-.log"
 UNITTEST_SUMMARY_PATH = "unitTests-summary.log"
 RELVAL_LOGS = "pyRelValMatrixLogs.zip"
-ES_HOSTNAME="cmskibana.cern.ch"
-ES_RELVALS_INDEX="ib-matrix*"
+ES_HOSTNAME = "cmskibana.cern.ch"
+ES_RELVALS_INDEX = "ib-matrix*"
+ES_SCRAM_INDEX = "ib-scram-stats*"
 
 #
 # makes a query to get information from elasticsearch
@@ -45,7 +46,7 @@ def get_list_avaiable_ib_rv_results( es_hostname, es_index ):
   response = query_es( query, es_index )
 
   if not response.get( 'aggregations' ):
-    print( "It seems that there is no information about the IBs in elasticsearch.\n" \
+    print( "It seems that there is no information about the relvals for the IBs in elasticsearch.\n" \
            "I can continue, but this should be checked" )
     return []
 
@@ -57,12 +58,12 @@ def get_list_avaiable_ib_rv_results( es_hostname, es_index ):
 #
 #
 def get_list_avaiable_ib_scram_results( es_hostname, es_index ):
-  query_file = 'es-queries/list-available-ib-results.json'
+  query_file = 'es-queries/list-available-scram-results.json'
   query = open( query_file, 'r' ).read()
   response = query_es( query, es_index )
 
   if not response.get( 'aggregations' ):
-    print( "It seems that there is no information about the IBs in elasticsearch.\n" \
+    print( "It seems that there is no information about the scram results of the IBs in elasticsearch.\n" \
            "I can continue, but this should be checked" )
     return []
 
@@ -115,13 +116,23 @@ if __name__ == "__main__":
 
   #Incomplete results
   available_ibs_rv_es = get_list_avaiable_ib_rv_results( ES_HOSTNAME, ES_RELVALS_INDEX )
+  available_ibs_scram_es = get_list_avaiable_ib_scram_results( ES_HOSTNAME, ES_SCRAM_INDEX )
   all_relvals_afs = [x.split('/')[ 10 ] for x in inputsRelvalLogs ]
+  # for now, the list is obtained from the unit tests
+  all_scram_res_afs = [x.split('/')[ 10 ] for x in inputsUnitTestSummary ] 
 
-  incomplete_ibs = list( set( available_ibs_rv_es ) - set( all_relvals_afs ) )
-  print( 'All IBS with results in ES:' )
+  incomplete_ibs_rv = list( set( available_ibs_rv_es ) - set( all_relvals_afs ) )
+  incomplete_ibs_scram = list( set( available_ibs_scram_es ) - set( all_scram_res_afs ) )
+
+  print( 'All IBS with relvals results in ES:' )
   print( available_ibs_rv_es )
-  print( 'Incomplete results ( not in AFS ):' )
-  print( incomplete_ibs )
+  print( 'All IBS with scram results in ES:' )
+  print( available_ibs_scram_es )
+  print( '--------------------' )
+  print( 'Incomplete relvals results ( not in AFS ):' )
+  print( incomplete_ibs_rv )
+  print( 'Incomplete scram results ( not in AFS ):' )
+  print( incomplete_ibs_scram )
 
   f = open("Makefile", "w")
 
@@ -129,8 +140,9 @@ if __name__ == "__main__":
 
   allFiles = outputs + outputsUnitTestSummary + outputsRelvalCommands + outputsJobReports + outputsInputFiles
   print(".PHONY: all clean pr-stats", file=f)
-  print("all: pr-stats ib-files data/cmsdist-config.json "+" ".join( ["incomplete_relvals_"+x for x in incomplete_ibs] )+" "
-         +" ".join( ["relvals_exceptions_"+x for x in available_ibs_rv_es] )+" " +" ".join(allFiles), file=f)
+  print("all: pr-stats ib-files data/cmsdist-config.json "+" ".join( ["incomplete_relvals_"+x for x in incomplete_ibs_rv] )+" "
+         +" ".join( ["relvals_exceptions_"+x for x in available_ibs_rv_es] )+" "+" ".join( ["incomplete_scram_"+x for x in incomplete_ibs_scram] )+" " 
+         +" ".join(allFiles), file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
   print("pr-stats:\n\tmkdir -p data/stats && ./process-pr-stats && cat data/stats/prs/*.csv | sort -u -r > data/stats/pr-stats.csv", file=f)
   print("ib-files:\n\tmkdir -p data/inputs && cat data/inputs/*/*/*.csv | sort -u -r > data/inputs/all-ibs.csv", file=f)
@@ -154,9 +166,12 @@ if __name__ == "__main__":
   for x in pairsInputFiles:
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./log-input-files $< | sort > $@" % x
     print(l, file=f)
-  for x in incomplete_ibs:
+  for x in incomplete_ibs_rv:
     l = "incomplete_relvals_%s:\n\t./process-relvals-status-es %s" % (x,x)
     print(l, file=f)
   for x in available_ibs_rv_es:
     l = "relvals_exceptions_%s:\n\t./process-relvals-exceptions-es %s" % (x,x)
+    print(l, file=f)
+  for x in incomplete_ibs_scram:
+    l = "incomplete_scram_%s:\n\t./process-scram-results-es %s" % (x,x)
     print(l, file=f)
