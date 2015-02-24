@@ -2,6 +2,7 @@
 
 import pickle
 from os import listdir
+import os
 import json
 
 DATA_DIR = 'data'
@@ -15,6 +16,11 @@ SCRAM_DIR = 'scram'
 def get_dict_available_results( testsDir ):
 
   resultsDict = {}
+
+  if not os.path.exists( DATA_DIR + '/' + testsDir ):
+    print( 'Directory not found: ' + DATA_DIR + '/' + testsDir )
+    exit( 1 )   
+
   for current_arch in listdir( DATA_DIR + '/' + testsDir ):
     for current_date in listdir( DATA_DIR + '/' + testsDir + '/' + current_arch ): 
       for current_release in listdir( DATA_DIR + '/' + testsDir + '/' + current_arch + '/' + current_date ):
