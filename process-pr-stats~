@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+from github import Github
+from argparse import ArgumentParser
+from glob import glob
+from os.path import exists, join, expanduser, basename
+from os import makedirs
+from datetime import datetime
+from os import rename
+
+if __name__ == "__main__":
+  parser = ArgumentParser(usage="%prog <pull-request-id>")
+  args = parser.parse_args()
+
+  gh = Github(login_or_token=open(expanduser("~/.github-token")).read().strip())
+
+  if not exists("data/stats/prs"):
+    makedirs("data/stats/prs")
+
+  # This is the header of the files and will force a rewrite of the file
+  # if a mismatching is found.
+  schema = "Creation,MergeTime,id,isPr,N. of Comments,Closed,N. Labels,author"
+
+  # Filenames is <page>.csv so that we can avoid
+  # parsing ancient PRs.
+
+  repo = gh.get_organization("cms-sw").get_repo("cmssw")
+  iterator = repo.get_issues(sort="created", state="all", direction="asc")
+  for i in xrange(0, 10000):
+    beforeBegin = []
+    filename = "data/stats/prs/%s.csv" % i
+    if exists(filename):
+      f = open(filename, "r")
+      lines = f.read().split("\n")
+      f.close()
+      if len(lines) != 32:
+        print filename + " is too short."
+      elif lines[0] == schema:
+        print "%s exists and has the same schema, skipping." % filename
+        continue
+    try:
+      page = iterator.get_page(i)
+    except:
+      print "Page %s does not exists." % i
+      break
+    if not len(page):
+      break
+
+    print "Processing page %s" % i
+    for issue in page:
+      labels = [l.name for l in issue.labels]
+      createdAt = int(issue.created_at.strftime("%s"))
+      closedAt = issue.closed_at and int(issue.closed_at.strftime("%s")) or "NA"
+      isClosed = issue.closed_at and 1 or 0
+      p = [createdAt, closedAt, issue.number, issue.pull_request and 1 or 0, issue.comments, isClosed, len(labels), issue.user.login]
+      beforeBegin.append(p)
+    print "Saving %s" % filename
+    f = open(filename + ".tmp", "w")
+    f.write(schema + "\n")
+    for p in beforeBegin:
+      l = ",".join(str(x) for x in p) + "\n"
+      f.write(l)
+    f.close()
+    rename(filename + ".tmp", filename)

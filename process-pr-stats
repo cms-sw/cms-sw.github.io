@@ -6,58 +6,307 @@ from os.path import exists, join, expanduser, basename
 from os import makedirs
 from datetime import datetime
 from os import rename
+from os import remove
+from collections import OrderedDict
+
+def statusToBinary(startWord, endingWord):
+    if startWord=='alca':
+        if endingWord == "pending":
+            labelsStatus['alca'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['alca'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['alca'] = '01'
+    elif startWord=='analysis':
+        if endingWord == "pending":
+            labelsStatus['analysis'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['analysis'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['analysis'] = '01'
+    elif startWord=='db':
+        if endingWord == "pending":
+            labelsStatus['db'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['db'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['db'] = '01'
+    elif startWord=='core':
+        if endingWord == "pending":
+            labelsStatus['core'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['core'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['core'] = '01'
+    elif startWord=='daq':
+        if endingWord == "pending":
+            labelsStatus['daq'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['daq'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['daq'] = '01'
+    elif startWord=='docs':
+        if endingWord == "docs":
+            labelsStatus['docs'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['docs'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['docs'] = '01'
+    elif startWord=='dqm':
+        if endingWord == "pending":
+            labelsStatus['dqm'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['dqm'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['dqm'] = '01'
+    elif startWord=='fastsim':
+        if endingWord == "pending":
+            labelsStatus['fastsim'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['fastsim'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['fastsim'] = '01'
+    elif startWord=='generators':
+        if endingWord == "pending":
+            labelsStatus['generators'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['generators'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['generators'] = '01'
+    elif startWord=='geometry':
+        if endingWord == "pending":
+            labelsStatus['geometry'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['geometry'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['geometry'] = '01'
+    elif startWord=='l1':
+        if endingWord == "pending":
+            labelsStatus['l1'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['l1'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['l1'] = '01'
+    elif startWord=='operations':
+        if endingWord == "pending":
+            labelsStatus['operations'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['operations'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['operations'] = '01'
+    elif startWord=='pdmv':
+        if endingWord == "pending":
+            labelsStatus['pdmv'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['pdmv'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['pdmv'] = '01'
+    elif startWord=='reconstruction':
+        if endingWord == "pending":
+            labelsStatus['reconstruction'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['reconstruction'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['reconstruction'] = '01'
+    elif startWord=='simulation':
+        if endingWord == "pending":
+            labelsStatus['simulation'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['simulation'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['simulation'] = '01'
+    elif startWord=='tests':
+        if endingWord == "pending":
+            labelsStatus['tests'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['tests'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['tests'] = '01'
+    elif startWord=='visualization':
+        if endingWord == "pending":
+            labelsStatus['visualization'] = "10"
+        elif endingWord == "approved":
+            labelsStatus['visualization'] = "11"
+        elif endingWord == "rejected":
+            labelsStatus['visualization'] = '01'
 
 if __name__ == "__main__":
-  parser = ArgumentParser(usage="%prog <pull-request-id>")
-  args = parser.parse_args()
+    parser = ArgumentParser(usage="%(prog)s <pull-request-id>")
+    parser.add_argument("--ignore-issues", dest="ignoreIssues", action="store_true", default=False,
+                        help="Do you want to ignore not Closed issues?")
 
-  gh = Github(login_or_token=open(expanduser("~/.github-token")).read().strip())
+    #parser.add_argument("--generate-file-with-ids", dest="generateFileWithIds", action="store_true", default=False,
+    #    help="Do you want to execute file with not Closed issues/PR ids??")
+    args = parser.parse_args()
 
-  if not exists("data/stats/prs"):
-    makedirs("data/stats/prs")
 
-  # This is the header of the files and will force a rewrite of the file
-  # if a mismatching is found.
-  schema = "Creation,MergeTime,id,isPr,N. of Comments,Closed,N. Labels,author"
+    gh = Github(login_or_token=open(expanduser("~/.github-token")).read().strip())
 
-  # Filenames is <page>.csv so that we can avoid
-  # parsing ancient PRs.
+    directoryName = "data/stats/prs/"
 
-  repo = gh.get_organization("cms-sw").get_repo("cmssw")
-  iterator = repo.get_issues(sort="created", state="all", direction="asc")
-  for i in xrange(0, 10000):
-    beforeBegin = []
-    filename = "data/stats/prs/%s.csv" % i
-    if exists(filename):
-      f = open(filename, "r")
-      lines = f.read().split("\n")
-      f.close()
-      if len(lines) != 32:
-        print filename + " is too short."
-      elif lines[0] == schema:
-        print "%s exists and has the same schema, skipping." % filename
-        continue
-    try:
-      page = iterator.get_page(i)
-    except:
-      print "Page %s does not exists." % i
-      break
-    if not len(page):
-      break
+    if not exists(directoryName):
+        makedirs(directoryName)
 
-    print "Processing page %s" % i
-    for issue in page:
-      labels = [l.name for l in issue.labels]
-      createdAt = int(issue.created_at.strftime("%s"))
-      closedAt = issue.closed_at and int(issue.closed_at.strftime("%s")) or "NA"
-      isClosed = issue.closed_at and 1 or 0
-      p = [createdAt, closedAt, issue.number, issue.pull_request and 1 or 0, issue.comments, isClosed, len(labels), issue.user.login]
-      beforeBegin.append(p)
-    print "Saving %s" % filename
-    f = open(filename + ".tmp", "w")
-    f.write(schema + "\n")
-    for p in beforeBegin:
-      l = ",".join(str(x) for x in p) + "\n"
-      f.write(l)
-    f.close()
-    rename(filename + ".tmp", filename)
+    # This is the header of the files and will force a rewrite of the file
+    # if a mismatching is found.
+    schema = "Creation,MergeTime,id,isPr,N. of Comments,Closed,N. Labels,author, labelStatus"
+
+    # Filenames is <page>.csv so that we can avoid
+    # parsing accident PRs.
+
+    repo = gh.get_organization("cms-sw").get_repo("cmssw")
+    iterator = repo.get_issues(sort="created", state="all", direction="asc")
+
+    notClosedPRorIssue = []
+    notClosedIssue = []
+    notClosedIds = []
+    issueArray = []
+    decimalStatus = ""
+    labelsStatus = dict([('alca','00'),
+               ('analysis','00'),
+               ('db','00'),
+               ('core','00'),
+               ('daq','00'),
+               ('docs','00'),
+               ('dqm','00'),
+               ('fastsim','00'),
+               ('generators','00'),
+               ('geometry','00'),
+               ('l1','00'),
+               ('operations','00'),
+               ('pdmv','00'),
+               ('reconstruction','00'),
+               ('simulation','00'),
+               ('tests','00'),
+               ('visualization','00')])
+    labelsStatus = OrderedDict(sorted(labelsStatus.items(), key=lambda t: t[0]))
+    # label could have one of 4 status:
+    # 00 - nothing
+    # 01 - rejected
+    # 10 - pending
+    # 11 - approved
+
+    # Read pagesWithNotClosedPR.txt to parse pages, which are not 100% up to date.
+    if exists(directoryName + "pagesWithNotClosedPR.txt"):
+        with open(directoryName + "pagesWithNotClosedPR.txt", "r") as ins:
+            issueAndPRArray = []
+            issueArrayStatus = False
+            issueAndPRArrayStatus = False
+
+            for line in ins:
+                if issueArrayStatus == True and len(line) < 5:
+                    issueArray.append(line.replace("\n", ""))
+                if line == ("Page which has at least one not closed issue:" + "\n"):
+                    issueArrayStatus = True
+
+                if issueAndPRArrayStatus == True:
+                    issueAndPRArray.append(line.replace("\n", ""))
+                if line == ("Page which has at least one not closed issue and at least one not closed PR:" + "\n"):
+                    issueAndPRArrayStatus = True
+                    issueArrayStatus = False
+
+        if args.ignoreIssues == False:
+            for i in issueArray:
+                if exists(directoryName + i + ".csv"):
+                    remove(directoryName + i + ".csv")
+                    print i +".csv has been deleted +1"
+
+        for i in issueAndPRArray:
+            if exists(directoryName + i + ".csv"):
+                remove(directoryName + i +".csv")
+                print i +".csv has been deleted +2"
+
+        remove(directoryName + "pagesWithNotClosedPR.txt")
+
+    #checking if csv file exist
+    for i in xrange(0, 10000):
+        beforeBegin = []
+        filename = directoryName + "%s.csv" % i
+        if exists(filename):
+            f = open(filename, "r")
+            lines = f.read().split("\n")
+            f.close()
+            if len(lines) != 32:
+                print filename + " is too short."
+            elif lines[0] == schema:
+                print "%s exists and has the same schema, skipping." % filename
+                continue
+        try:
+            page = iterator.get_page(i)
+        except:
+            print "Page %s does not exists." % i
+            break
+        if not len(page):
+            break
+
+        # proceesing data if <page>.csv file isn't full
+        print "Processing page %s" % i
+        notClosedIssueCount = 0
+        notClosedPrCount = 0
+        for issue in page:
+            labels = [l.name for l in issue.labels]
+            for label in labels:
+                if "-" in label:
+                    if i == 70:
+                        print label
+                        startWord = label.split('-', 1)[0]
+                        endingWord =label.split('-', 1)[1]
+                        statusToBinary(startWord, endingWord)
+                        binaryStatus = "";
+                        for labelStatus in labelsStatus:
+                            binaryStatus += labelsStatus[labelStatus]
+                        decimalStatus = int(binaryStatus, 2)
+
+            createdAt = int(issue.created_at.strftime("%s"))
+            closedAt = issue.closed_at and int(issue.closed_at.strftime("%s")) or "NA"
+            isClosed = issue.closed_at and 1 or 0
+            isPr = issue.pull_request and 1 or 0
+            if isClosed == 0 and isPr == 1:
+                notClosedPrCount += 1
+                #  if args.generateFileWithIds:
+                #    notClosedIds.append(issue.number)
+            elif isClosed == 0 and isPr == 0:
+                notClosedIssueCount += 1
+                # if args.generateFileWithIds:
+                #   notClosedIds.append(issue.number)
+                # print(dir(issue))
+            p = [createdAt, closedAt, issue.number, isPr, issue.comments, isClosed, len(labels), issue.user.login, decimalStatus]
+            beforeBegin.append(p)
+        if args.ignoreIssues == False:
+            if notClosedIssueCount > 0 and notClosedPrCount == 0:
+                notClosedIssue.append(i)
+            elif notClosedPrCount > 0:
+                notClosedPRorIssue.append(i)
+        elif notClosedPrCount > 0:
+            notClosedPRorIssue.append(i)
+        print "Saving %s" % filename
+        f = open(filename + ".tmp", "w")
+        f.write(schema + "\n")
+        #print(beforeBegin)
+        for p in beforeBegin:
+            l = ",".join(str(x) for x in p) + "\n"
+            f.write(l)
+        f.close()
+        rename(filename + ".tmp", filename)
+
+    for i in notClosedIds:
+        print i
+
+    print str(len(notClosedIssue)) + " files have at least one not closed Issue"
+    print str(len(notClosedPRorIssue)) + " files have at least one not closed Issue or PR"
+
+    if len(notClosedIssue) > 0 or len(notClosedPRorIssue) > 0:
+        f = open(directoryName + "pagesWithNotClosedPR" + ".tmp", "w")
+        f.write("Page which has at least one not closed issue:" + "\n")
+        if args.ignoreIssues:
+            for i in issueArray:
+                f.write(str(i) + "\n")
+        else:
+            for i in notClosedIssue:
+                f.write(str(i) + "\n")
+
+        f.write("Page which has at least one not closed issue and at least one not closed PR:" + "\n")
+        for i in notClosedPRorIssue:
+            f.write(str(i) + "\n")
+        f.close()
+        rename(directoryName + "pagesWithNotClosedPR.tmp", directoryName + "pagesWithNotClosedPR.txt")
