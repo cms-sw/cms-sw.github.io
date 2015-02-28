@@ -1435,7 +1435,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.ROOT6-sat-14/CMSSW_7_4_ROOT6_X_2015-02-28-1400/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -1448,9 +1455,11 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.ROOT6-sat-14/CMSSW_7_4_ROOT6_X_2015-02-28-1400/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.ROOT6-sat-14/CMSSW_7_4_ROOT6_X_2015-02-28-1400/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
                 }
             ], 
             "cmsdistTags": {
@@ -1509,7 +1518,35 @@
             "inProgress": false, 
             "release_name": "CMSSW_7_4_ROOT6_X", 
             "RVExceptions": null, 
-            "merged_prs": [], 
+            "merged_prs": [
+                {
+                    "hash": "3820087d14b16703411b3a6064cf0af8317d6349", 
+                    "title": "Fixed btagging sequence definition", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7995", 
+                    "number": "7995", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "cms-btv-pog"
+                }, 
+                {
+                    "hash": "28054946ee524f85ff5e87d68f1871bfe7652a43", 
+                    "title": "fixes of track collection and vertex selection", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8000", 
+                    "number": "8000", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "threus"
+                }, 
+                {
+                    "hash": "b8665d8f4c6ee24531021f8357be6d295d730de6", 
+                    "title": "Backport of stream migration from 75x to 74x", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/7970", 
+                    "number": "7970", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "rappoccio"
+                }
+            ], 
             "hlt_tests": "not-found"
         }
     ]
