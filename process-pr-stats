@@ -1,33 +1,110 @@
 #!/usr/bin/env python
 from github import Github
 from argparse import ArgumentParser
-from glob import glob
-from os.path import exists, join, expanduser, basename
-from os import makedirs
-from datetime import datetime
-from os import rename
+from os.path import exists, expanduser
+from os import makedirs, rename, remove
+
+DIRECTORY_NAME = "data/stats/prs/"
+
+STATES = {
+  "pending": "P",
+  "approved": "A",
+  "rejected": "R",
+  "started": "S"
+}
+
+POSITIONS = {
+  "alca": 0,
+  "analysis": 1,
+  "db": 2,
+  "daq": 3,
+  "docs": 4,
+  "dqm": 5,
+  "core": 6,
+  "fastsim": 7,
+  "generators": 8,
+  "geometry": 9,
+  "l1": 10,
+  "operations": 11,
+  "pdmv": 12,
+  "reconstruction": 13,
+  "simulation": 14,
+  "tests": 15,
+  "visualization": 16,
+  }
+
+def labelsToState(labels):
+
+  allParts = [x.split("-", 1)
+              for x in labels
+              if "-" in x]
+
+  validParts = [x
+                for x in allParts
+                if x[0] in POSITIONS.keys()]
+
+
+  states = [(STATES[x[1]], POSITIONS[x[0]])
+            for x in validParts]
+
+  iniValue = ["N" for i in xrange(len(POSITIONS))]
+
+  for x in states:
+    iniValue[x[1]] = x[0]
+  return "".join(iniValue)
 
 if __name__ == "__main__":
-  parser = ArgumentParser(usage="%prog <pull-request-id>")
+  parser = ArgumentParser(usage="%(prog)s <pull-request-id>")
+  parser.add_argument("--ignore-issues", dest="ignoreIssues", action="store_true", default=False,
+            help="Ignore not Closed issues")
   args = parser.parse_args()
 
   gh = Github(login_or_token=open(expanduser("~/.github-token")).read().strip())
 
-  if not exists("data/stats/prs"):
-    makedirs("data/stats/prs")
+
+  if not exists(DIRECTORY_NAME):
+    makedirs(DIRECTORY_NAME)
 
   # This is the header of the files and will force a rewrite of the file
   # if a mismatching is found.
-  schema = "Creation,MergeTime,id,isPr,N. of Comments,Closed,N. Labels,author"
+  schema = "Creation,MergeTime,id,isPr,N. of Comments,Closed,N. Labels,author, labelStatus"
 
   # Filenames is <page>.csv so that we can avoid
   # parsing ancient PRs.
 
   repo = gh.get_organization("cms-sw").get_repo("cmssw")
   iterator = repo.get_issues(sort="created", state="all", direction="asc")
+
+  notClosedPR = []
+  notClosedIssue = []
+  issueArray = []
+  prArray = []
+
+  try:
+    with open(DIRECTORY_NAME + "issue.txt", "r") as ins:
+      issueArray = [x for x in ins.read().split("\n") if x]
+  except IOError as ex:
+    pass
+
+  try:
+    with open(DIRECTORY_NAME + "pr.txt", "r") as ins:
+      prArray = [x for x in ins.read().split("\n") if x]
+  except IOError as ex:
+    pass
+
+  deleteFiles = args.ignoreIssues and prArray or set(prArray + issueArray)
+
+  for i in deleteFiles:
+    try:
+      remove(DIRECTORY_NAME + i +".csv")
+      print "removing %s%s.csv" % (DIRECTORY_NAME, i)
+    except IOError as ex:
+      pass
+
+  # checking if csv file exist
   for i in xrange(0, 10000):
     beforeBegin = []
-    filename = "data/stats/prs/%s.csv" % i
+    filename = DIRECTORY_NAME + "%s.csv" % i
     if exists(filename):
       f = open(filename, "r")
       lines = f.read().split("\n")
@@ -45,14 +122,22 @@ if __name__ == "__main__":
     if not len(page):
       break
 
+    # proceesing data if <page>.csv file isn't full
     print "Processing page %s" % i
     for issue in page:
       labels = [l.name for l in issue.labels]
+      decodedLabels = labelsToState(labels)
       createdAt = int(issue.created_at.strftime("%s"))
       closedAt = issue.closed_at and int(issue.closed_at.strftime("%s")) or "NA"
       isClosed = issue.closed_at and 1 or 0
-      p = [createdAt, closedAt, issue.number, issue.pull_request and 1 or 0, issue.comments, isClosed, len(labels), issue.user.login]
+      isPr = issue.pull_request and 1 or 0
+      if (not isClosed) and (isPr == 1):
+        notClosedPR.append(i)
+      elif not isClosed:
+        notClosedIssue.append(i)
+      p = [createdAt, closedAt, issue.number, isPr, issue.comments, isClosed, len(labels), issue.user.login, decodedLabels]
       beforeBegin.append(p)
+
     print "Saving %s" % filename
     f = open(filename + ".tmp", "w")
     f.write(schema + "\n")
@@ -61,3 +146,23 @@ if __name__ == "__main__":
       f.write(l)
     f.close()
     rename(filename + ".tmp", filename)
+
+  notClosedPR = set(notClosedPR)
+  notClosedIssue = set(notClosedIssue)
+
+  try:
+    with open(DIRECTORY_NAME + "pr.tmp", "w") as f:
+      f.write("\n".join(str(x) for x in notClosedPR))
+    rename(DIRECTORY_NAME + "pr.tmp", DIRECTORY_NAME + "pr.txt")
+  except IOError as ex:
+    print "Something went wrong with %spr.txt file. The reason is %s." % (DIRECTORY_NAME, ex.strerror)
+
+  if args.ignoreIssues:
+    notClosedIssue = set(issueArray + notClosedIssue)
+
+  try:
+    with open(DIRECTORY_NAME + "issue.tmp", "w") as f:
+      f.write("\n".join(str(x) for x in notClosedIssue))
+    rename(DIRECTORY_NAME + "issue.tmp", DIRECTORY_NAME + "issue.txt")
+  except IOError as ex:
+    print "Something went wrong with %sissue.txt file. The reason is %s." % (DIRECTORY_NAME, ex.strerror)
