@@ -488,17 +488,54 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_6_2_X_SLHC_2015-03-03-1400-->CMSSW_6_2_X_SLHC", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sat/6.2-sat-02/CMSSW_6_2_X_SLHC_2015-03-07-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sat/6.2-sat-02/CMSSW_6_2_X_SLHC_2015-03-07-0200/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_6_2_X_SLHC_2015-03-03-1400-->CMSSW_6_2_X_SLHC_2015-03-07-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sat/6.2-sat-02/CMSSW_6_2_X_SLHC_2015-03-07-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc472": "IB/CMSSW_6_2_X_SLHC_2015-03-03-1400/slc6_amd64_gcc472"
+                }, 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sat/6.2-sat-02/CMSSW_6_2_X_SLHC_2015-03-07-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 35, 
+                            "num_failed": 1
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc472"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_6_2_X_SLHC", 
+                "release_name": "CMSSW_6_2_X_SLHC_2015-03-07-0200", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -511,6 +548,22 @@
                         "author_login": "emiglior"
                     }
                 ], 
+                "hlt_tests": "found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_6_2_X_SLHC_2015-03-07-0200-->CMSSW_6_2_X_SLHC", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_6_2_X_SLHC", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -2345,8 +2398,79 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-06-0200-->CMSSW_7_4_CLANG_X_2015-03-06-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['not-ready']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_CLANG_X_2015-03-01-0200/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": true, 
+                "release_name": "CMSSW_7_4_CLANG_X_2015-03-06-1400", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "b22faa5b875bca10361240e40d388f64648068ad", 
+                        "title": "Stream migration for JME HLT modules (backport to 74x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8076", 
+                        "number": "8076", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "7148151520169776a0d3325f389e06f4cce21e0d", 
+                        "title": "Soft lepton tagger updates (74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7959", 
+                        "number": "7959", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-btv-pog"
+                    }, 
+                    {
+                        "hash": "1df2112bbcb130ab4f6ded029021f7cea0d7616c", 
+                        "title": "plot bx for all triggers", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7956", 
+                        "number": "7956", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "jingyucms"
+                    }, 
+                    {
+                        "hash": "cebc22c0852b36b074acb483a50493c0cbe77a45", 
+                        "title": "PrimaryVertex sorter fix and store of the score vector - 74X version", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8102", 
+                        "number": "8102", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "arizzi"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-06-0200-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-06-1400-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -2383,42 +2507,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "matteosan1"
-                    }, 
-                    {
-                        "hash": "b22faa5b875bca10361240e40d388f64648068ad", 
-                        "title": "Stream migration for JME HLT modules (backport to 74x)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8076", 
-                        "number": "8076", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "rappoccio"
-                    }, 
-                    {
-                        "hash": "7148151520169776a0d3325f389e06f4cce21e0d", 
-                        "title": "Soft lepton tagger updates (74X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7959", 
-                        "number": "7959", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "cms-btv-pog"
-                    }, 
-                    {
-                        "hash": "1df2112bbcb130ab4f6ded029021f7cea0d7616c", 
-                        "title": "plot bx for all triggers", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7956", 
-                        "number": "7956", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "jingyucms"
-                    }, 
-                    {
-                        "hash": "cebc22c0852b36b074acb483a50493c0cbe77a45", 
-                        "title": "PrimaryVertex sorter fix and store of the score vector - 74X version", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8102", 
-                        "number": "8102", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "arizzi"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -3629,16 +3717,34 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-03-06-1400-->CMSSW_7_4_DEVEL_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-03-06-1400-->CMSSW_7_4_DEVEL_X_2015-03-07-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['not-ready']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-03-01-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_4_DEVEL_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": true, 
+                "release_name": "CMSSW_7_4_DEVEL_X_2015-03-07-0200", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -3669,6 +3775,22 @@
                         "author_login": "matteosan1"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-03-07-0200-->CMSSW_7_4_DEVEL_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_DEVEL_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -4732,45 +4854,36 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ICC_X_2015-03-06-0200-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-03-06-0200-->CMSSW_7_4_ICC_X_2015-03-06-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['not-ready']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-03-01-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": true, 
+                "release_name": "CMSSW_7_4_ICC_X_2015-03-06-1400", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "d941cba6c51dbc8030d2d1edb707cc22f792185b", 
-                        "title": "Remove case FULL from addOn HLT tests (74X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8085", 
-                        "number": "8085", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Martin-Grunewald"
-                    }, 
-                    {
-                        "hash": "369fcd109918a25cf0bdca6dac9329c0fa0e71cd", 
-                        "title": "Root6 version numbers should be known to Root5. (Core)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8104", 
-                        "number": "8104", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wmtan"
-                    }, 
-                    {
-                        "hash": "ec04c8421f87d5a384afc589f853e20d597f2b8d", 
-                        "title": "fix rechitinregions", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8110", 
-                        "number": "8110", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "matteosan1"
-                    }, 
                     {
                         "hash": "b22faa5b875bca10361240e40d388f64648068ad", 
                         "title": "Stream migration for JME HLT modules (backport to 74x)", 
@@ -4808,6 +4921,84 @@
                         "author_login": "arizzi"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-03-06-1400-->CMSSW_7_4_ICC_X_2015-03-07-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['not-ready']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-03-01-0200/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": true, 
+                "release_name": "CMSSW_7_4_ICC_X_2015-03-07-0200", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "d941cba6c51dbc8030d2d1edb707cc22f792185b", 
+                        "title": "Remove case FULL from addOn HLT tests (74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8085", 
+                        "number": "8085", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Martin-Grunewald"
+                    }, 
+                    {
+                        "hash": "369fcd109918a25cf0bdca6dac9329c0fa0e71cd", 
+                        "title": "Root6 version numbers should be known to Root5. (Core)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8104", 
+                        "number": "8104", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "ec04c8421f87d5a384afc589f853e20d597f2b8d", 
+                        "title": "fix rechitinregions", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8110", 
+                        "number": "8110", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "matteosan1"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ICC_X_2015-03-07-0200-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -6133,16 +6324,34 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-03-06-0200-->CMSSW_7_4_ROOT6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-03-06-0200-->CMSSW_7_4_ROOT6_X_2015-03-07-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['not-ready']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-03-04-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": true, 
+                "release_name": "CMSSW_7_4_ROOT6_X_2015-03-07-0200", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -6209,6 +6418,22 @@
                         "author_login": "arizzi"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-03-07-0200-->CMSSW_7_4_ROOT6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -7275,8 +7500,79 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-03-06-0200-->CMSSW_7_4_THREADED_X_2015-03-06-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['not-ready']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_THREADED_X_2015-03-01-0200/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": true, 
+                "release_name": "CMSSW_7_4_THREADED_X_2015-03-06-1400", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "b22faa5b875bca10361240e40d388f64648068ad", 
+                        "title": "Stream migration for JME HLT modules (backport to 74x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8076", 
+                        "number": "8076", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "7148151520169776a0d3325f389e06f4cce21e0d", 
+                        "title": "Soft lepton tagger updates (74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7959", 
+                        "number": "7959", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-btv-pog"
+                    }, 
+                    {
+                        "hash": "1df2112bbcb130ab4f6ded029021f7cea0d7616c", 
+                        "title": "plot bx for all triggers", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/7956", 
+                        "number": "7956", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jingyucms"
+                    }, 
+                    {
+                        "hash": "cebc22c0852b36b074acb483a50493c0cbe77a45", 
+                        "title": "PrimaryVertex sorter fix and store of the score vector - 74X version", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8102", 
+                        "number": "8102", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "arizzi"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_THREADED_X_2015-03-06-0200-->CMSSW_7_4_THREADED_X", 
+                "compared_tags": "CMSSW_7_4_THREADED_X_2015-03-06-1400-->CMSSW_7_4_THREADED_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -7313,42 +7609,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "matteosan1"
-                    }, 
-                    {
-                        "hash": "b22faa5b875bca10361240e40d388f64648068ad", 
-                        "title": "Stream migration for JME HLT modules (backport to 74x)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8076", 
-                        "number": "8076", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "rappoccio"
-                    }, 
-                    {
-                        "hash": "7148151520169776a0d3325f389e06f4cce21e0d", 
-                        "title": "Soft lepton tagger updates (74X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7959", 
-                        "number": "7959", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "cms-btv-pog"
-                    }, 
-                    {
-                        "hash": "1df2112bbcb130ab4f6ded029021f7cea0d7616c", 
-                        "title": "plot bx for all triggers", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7956", 
-                        "number": "7956", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "jingyucms"
-                    }, 
-                    {
-                        "hash": "cebc22c0852b36b074acb483a50493c0cbe77a45", 
-                        "title": "PrimaryVertex sorter fix and store of the score vector - 74X version", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8102", 
-                        "number": "8102", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "arizzi"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -8840,16 +9100,34 @@
         "comparisons": [
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_DEVEL_X_2015-03-06-0200-->CMSSW_7_5_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.DEVEL-sat-02/CMSSW_7_5_DEVEL_X_2015-03-07-0200/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_5_DEVEL_X_2015-03-06-0200-->CMSSW_7_5_DEVEL_X_2015-03-07-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.DEVEL-sat-02/CMSSW_7_5_DEVEL_X_2015-03-07-0200/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "Not Found"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_5_X", 
+                "release_name": "CMSSW_7_5_DEVEL_X_2015-03-07-0200", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -8988,6 +9266,22 @@
                         "author_login": "arizzi"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_5_DEVEL_X_2015-03-07-0200-->CMSSW_7_5_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_5_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
