@@ -61,7 +61,7 @@ var currentTimeInSeconnds = Date.now() / 1000;
 
 AmCharts.ready(function () {
     // PIE CHART
-    loadCSV("data/stats/pr-stats.csv");
+    loadCSV("../data/stats/pr-stats.csv");
 	
 	
 
