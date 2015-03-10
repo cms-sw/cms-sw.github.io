@@ -61,7 +61,9 @@ var currentTimeInSeconnds = Date.now() / 1000;
 
 AmCharts.ready(function () {
     // PIE CHART
-    loadCSV("pr-stats.csv");
+    loadCSV("/data/stats/pr-stats.csv");
+	
+	
 
     chart = new AmCharts.AmPieChart();
     chart.colors = ["#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74", "#754DEB", "#DDDDDD", "#999999", "#333333", "#000000", "#57032A", "#CA9726", "#990000", "#4B0C25"];
