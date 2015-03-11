@@ -363,13 +363,13 @@
             }, 
             "relvals": [
                 {
-                    "arch": "slc6_amd64_gcc481", 
+                    "arch": "slc6_amd64_gcc491", 
                     "file": "not-ready", 
                     "passed": true, 
                     "details": {}
                 }, 
                 {
-                    "arch": "slc6_amd64_gcc491", 
+                    "arch": "slc6_amd64_gcc481", 
                     "file": "not-ready", 
                     "passed": true, 
                     "details": {}
@@ -561,13 +561,13 @@
             }, 
             "relvals": [
                 {
-                    "arch": "slc6_amd64_gcc481", 
+                    "arch": "slc6_amd64_gcc491", 
                     "file": "not-ready", 
                     "passed": true, 
                     "details": {}
                 }, 
                 {
-                    "arch": "slc6_amd64_gcc491", 
+                    "arch": "slc6_amd64_gcc481", 
                     "file": "not-ready", 
                     "passed": true, 
                     "details": {}
@@ -1715,6 +1715,15 @@
                         "num_passed": 1071, 
                         "num_failed": 11
                     }
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-03-11-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 1077, 
+                        "num_failed": 9
+                    }
                 }
             ], 
             "static_checks": "slc6_amd64_gcc491", 
@@ -1725,7 +1734,7 @@
             ], 
             "inProgress": false, 
             "release_name": "CMSSW_7_4_X_2015-03-11-0200", 
-            "RVExceptions": null, 
+            "RVExceptions": true, 
             "merged_prs": [
                 {
                     "hash": "f34fe1b7885382201afc17a6c997c8e34e1b9cf9", 
@@ -1759,16 +1768,36 @@
         }, 
         {
             "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_X_2015-03-11-0200-->CMSSW_7_4_X", 
-            "utests": [], 
-            "cmsdistTags": {}, 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": "warning", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-14/CMSSW_7_4_X_2015-03-11-1400/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 2
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_X_2015-03-11-0200-->CMSSW_7_4_X_2015-03-11-1400", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": "unknown", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-14/CMSSW_7_4_X_2015-03-11-1400/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-03-08-0200/slc6_amd64_gcc481"
+            }, 
             "relvals": [], 
             "static_checks": "not-found", 
-            "isIB": false, 
-            "tests_archs": [], 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc481"
+            ], 
             "inProgress": false, 
-            "release_name": "CMSSW_7_4_X", 
+            "release_name": "CMSSW_7_4_X_2015-03-11-1400", 
             "RVExceptions": null, 
             "merged_prs": [
                 {
@@ -1808,6 +1837,22 @@
                     "author_login": "Dr15Jones"
                 }
             ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [], 
+            "compared_tags": "CMSSW_7_4_X_2015-03-11-1400-->CMSSW_7_4_X", 
+            "utests": [], 
+            "cmsdistTags": {}, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": false, 
+            "tests_archs": [], 
+            "inProgress": false, 
+            "release_name": "CMSSW_7_4_X", 
+            "RVExceptions": null, 
+            "merged_prs": [], 
             "hlt_tests": "not-found"
         }
     ]
