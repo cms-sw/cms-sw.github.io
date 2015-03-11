@@ -3,17 +3,23 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Pending PRs</title>
+    <title>amCharts examples</title>
     <link rel="stylesheet" href="http://bootstrap-table.wenzhixin.net.cn/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.6.0/bootstrap-table.min.css">
+    <link rel="stylesheet" href="http://wenzhixin.net.cn/p/bootstrap-table/src/bootstrap-table.css">
+
 
     <script src="http://extra.amcharts.com/tutorials/loading-data/amcharts/amcharts.js" type="text/javascript"></script>
     <script src="http://extra.amcharts.com/tutorials/loading-data/amcharts/pie.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+
+
     <script src="http://wenzhixin.net.cn/p/bootstrap-table/docs/assets/bootstrap/js/bootstrap.min.js"
             type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.6.0/bootstrap-table.min.js"
-            type="text/javascript"></script>
+    <script src="https://rawgit.com/wenzhixin/bootstrap-table/master/src/bootstrap-table.js"></script>
+
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,15 +37,27 @@
         <div class="col-md-12">
             <div id="chartdiv" style="width: 100%; height: 500px;"></div>
 
-            <button type="button" class="btn btn-default navbar-btn" id="back-btn" onclick="initChart()" >Back to all categories</button>
-            <div class="bs-example" data-example-id="contextual-table" >
-                <table class="table" id="myTable">
+            <button type="button" class="btn btn-default navbar-btn" id="back-btn" onclick="initChart()">Back to all
+                categories
+            </button>
+            <div class="bs-example" data-example-id="contextual-table">
+                <table id="myTable" data-row-style="rowStyle"
+                       data-toggle="table"
+                       data-sort-name="daysOpened"
+                       data-sort-order="asc">
                     <thead>
                     <tr>
-                       <!-- <th>#</th>-->
-                        <th>Pull Request ID</th>
-                        <th>Category</th>
-                        <th>Days opened</th>
+                        <!-- <th>#</th>-->
+                        <th data-field="pr"
+                            data-sortable="true">Pull Request ID
+                        </th>
+                        <th data-field="category"
+                            data-sortable="false">Category
+                        </th>
+                        <th data-field="daysOpened"
+                            data-sortable="true"
+                            data-sorter="customDaysSorter">Days opened
+                        </th>
                     </tr>
                     </thead>
                     <tbody id="tbodyid">
@@ -50,5 +68,6 @@
         </div>
 
 </body>
+
 
 </html>
