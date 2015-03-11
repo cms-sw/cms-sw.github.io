@@ -360,7 +360,7 @@ function changeChartCategory(id) {
     chart.dataProvider = chartData[getCategoryName(id)];
     chart.titles[0].text = "Category: " + getCategoryName(id) + ". Not closed/merged pull requests (" + info[getCategoryName(id)]["totalPR"] + ")";
     chart.validateData();
-    window.history.pushState("object", "Title", "/data/pie-merge.html#category=" + getCategoryName(id));
+    window.history.pushState("object", "Title", "/cms-sw.github.io/stats/pending-prs.html#category=" + getCategoryName(id));
 }
 
 function initChart() {
@@ -377,7 +377,7 @@ function initChart() {
     chart.titles[0].text = "Pending pull requests by categories. Total: " + tempTotal;
     //console.log(chart);
     chart.validateData();
-    window.history.pushState("object", "Title", "/data/pie-merge.html");
+    window.history.pushState("object", "Title", "/cms-sw.github.io/stats/pending-prs.html");
     //chart.validateNow();
     //console.log(info);
 }
