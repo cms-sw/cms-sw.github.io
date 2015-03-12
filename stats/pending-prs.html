@@ -3,8 +3,8 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>amCharts examples</title>
-    <link rel="stylesheet" href="http://bootstrap-table.wenzhixin.net.cn/assets/bootstrap/css/bootstrap.min.css">
+    <title>Pull Requests Statistics</title>
+   <!-- <link rel="stylesheet" href="http://bootstrap-table.wenzhixin.net.cn/assets/bootstrap/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="http://wenzhixin.net.cn/p/bootstrap-table/src/bootstrap-table.css">
 
 
@@ -37,11 +37,40 @@
         <div class="col-md-12">
             <div id="chartdiv" style="width: 100%; height: 500px;"></div>
 
-            <button type="button" class="btn btn-default navbar-btn" id="back-btn" onclick="initChart()">Back to all
+            <!--<button type="button" class="btn btn-default navbar-btn" id="back-btn" onclick="initChart();defaultChartAllCategories=true;">Back to all
                 categories
-            </button>
-            <div class="bs-example" data-example-id="contextual-table">
-                <table id="myTable" data-row-style="rowStyle"
+            </button> -->
+            <div class="bs-example" data-example-id="contextual-table" id="table1">
+                <table id="myTable1" data-row-style="rowStyle"
+                       data-toggle="table"
+                       data-sort-name="daysOpened"
+                       data-sort-order="asc">
+                    <thead>
+                    <tr>
+                        <!-- <th>#</th>-->
+                        <th data-field="pr"
+                            data-sortable="true">Pull Request ID
+                        </th>
+                        <th data-field="category"
+                            data-sortable="false">Category
+                        </th>
+                        <th data-field="daysOpened"
+                            data-sortable="true"
+                            data-sorter="customDaysSorter">Days opened
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbodyid">
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+            <div class="bs-example" data-example-id="contextual-table" id="table2">
+                <table id="myTable2" data-row-style="rowStyle"
                        data-toggle="table"
                        data-sort-name="daysOpened"
                        data-sort-order="asc">

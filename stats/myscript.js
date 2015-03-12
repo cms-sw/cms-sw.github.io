@@ -2,9 +2,10 @@ var chart;
 var allowedToChangeCategory = true;
 var categoryId = 0;
 var categories = {};
-
-
-
+var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
+var defaultChartAllCategories = true;
+var csvData = [];
+var safariIniFirstPop = 0;
 categories[0] = "alca";
 categories[1] = "analysis";
 categories[2] = "db";
@@ -33,8 +34,7 @@ var totalPr = 0;
 var statistics = {};
 for (var i = 0; i < Object.keys(categories).length; i++) {
     statistics[getCategoryName(i)] = {}
-    statistics[getCategoryName(i)]["0 to 3 days"] = 0;
-    statistics[getCategoryName(i)]["3 to 7 days"] = 0;
+    statistics[getCategoryName(i)]["0 to 7 days"] = 0;
     statistics[getCategoryName(i)]["7 to 30 days"] = 0;
     statistics[getCategoryName(i)]["30 + days"] = 0;
     ;
@@ -42,8 +42,7 @@ for (var i = 0; i < Object.keys(categories).length; i++) {
 var idList = {};
 for (var i = 0; i < Object.keys(categories).length; i++) {
     idList[getCategoryName(i)] = {};
-    idList[getCategoryName(i)]["0 to 3 days"] = [];
-    idList[getCategoryName(i)]["3 to 7 days"] = [];
+    idList[getCategoryName(i)]["0 to 7 days"] = [];
     idList[getCategoryName(i)]["7 to 30 days"] = [];
     idList[getCategoryName(i)]["30 + days"] = [];
 }
@@ -55,13 +54,14 @@ for (var i = 0; i < Object.keys(categories).length; i++) {
 var currentTimeInSeconnds = Date.now() / 1000;
 
 
-
-
 AmCharts.ready(function () {
     // PIE CHART
-	loadCSV("../data/stats/pr-stats.csv");
+    loadCSV("../data/stats/pr-stats.csv");
 
     chart = new AmCharts.AmPieChart();
+    var chartCursor = new AmCharts.ChartCursor();
+
+
     chart.colors = ["#FF0F00", "#FF6600", "#FF9E01", "#FCD202", "#F8FF01", "#B0DE09", "#04D215", "#0D8ECF", "#0D52D1", "#2A0CD0", "#8A0CCF", "#CD0D74", "#754DEB", "#DDDDDD", "#999999", "#333333", "#000000", "#57032A", "#CA9726", "#990000", "#4B0C25"];
     chart.dataProvider = chartData['category'];
     chart.titleField = "period";
@@ -93,8 +93,7 @@ AmCharts.ready(function () {
             var title = event.dataItem.title;
             if (event.dataItem.dataContext.id != undefined) {
 
-            }
-            else {
+            } else {
                 //console.log(event);
                 //console.log(event.dataItem.title);
                 //var categoryName = title.slice(10, title.length);
@@ -106,33 +105,58 @@ AmCharts.ready(function () {
             allowedToChangeCategory = false;
         }
         chart.validateData();
+
     });
 
+    chart.addListener("rollOverSlice", function (event) {
+        if (defaultChartAllCategories == true) {
+            $('#chartdiv > div:first-child').css('cursor', 'pointer');
+        }
+    });
 
+    chart.addListener("rollOutSlice", function (event) {
+        if (defaultChartAllCategories == true) {
+            $('#chartdiv > div:first-child').css('cursor', 'default');
+        }
+    });
 
 
     hideTable();
 
     // RELOAD ON BACK BUTTON PRESSED
     window.addEventListener('popstate', function () {
-        location.reload();
+        safariIniFirstPop++;
+        if ((isSafari) && (safariIniFirstPop > 1)) {
+            location.href = location.pathname;
+            window.location = location.pathname;
+        } else if (!isSafari) {
+            window.location.reload();
+            window.location.href = location.pathname;
+            window.location = location.pathname;
+        }
     }, false);
 
     // WRITE
+    var catFromUrl = getUrlParameter('category');
+    var catFromUrlId = getCategoryId(catFromUrl);
 
-  //  console.log("labas+"+getCategoryId(catFromUrl));
-    if (jQuery.isNumeric(catFromUrl)) {
-        console.log("labas="+getCategoryId(catFromUrl));
+    //  console.log("labas+"+getCategoryId(catFromUrl));
+    if (!isNaN(catFromUrlId)) { // #TODO
+        //console.log("labas=" + getCategoryId(catFromUrl));
+        initChart();
+        allowedToChangeCategory = false;
+        defaultChartAllCategories = false;
         changeChartCategory(getCategoryId(catFromUrl));
-        test();
         writeTable(catFromUrl);
     } else {
+        window.history.pushState({}, "Default", "");
         initChart();
-
-        var catFromUrl = getUrlParameter('category');
     }
     chart.write("chartdiv");
+
+    if (!isNaN(catFromUrlId)) {test()};
     chart.validateNow();
+
 });
 
 function loadCSV(file) {
@@ -157,11 +181,7 @@ function loadCSV(file) {
 
     parseCSV(rows);
     getAllCategoryData();
-    //
-
-    //console.log(info);
-
-}
+ }
 
 function parseCSV(rows) {
 
@@ -169,6 +189,7 @@ function parseCSV(rows) {
         if (rows[i]) {
             var column = rows[i].split(",");
 
+            tableData(column);
             var creationTime = column[0];
             var mergeTime = column[1];
             var id = column[2];
@@ -177,46 +198,19 @@ function parseCSV(rows) {
             var labelStatus = column[8];
 
             var date = new Date(column[0] * 1000);
-            // second item is value of the second column
+
             var year = date.getFullYear();
             var month = date.getMonth() + 1;
             var day = date.getDate();
-            /*
-             if ((isPr == "1") && (closed == "0") )  {
-             var pullRequestAlreadyOpenedForSeconds = currentTimeInSeconnds - creationTime;
-             info[getCategoryName(0)]["totalPR"] += 1;
-             if (pullRequestAlreadyOpenedForSeconds <= 60) { //sec
-             statistics[getCategoryName(0)]["0 to 3 days"]++;
-             idList[getCategoryName(0)]["0 to 3 days"].push(id);
-             } else if (pullRequestAlreadyOpenedForSeconds <= 60 * 60) { //sec * min
-             statistics[getCategoryName(0)]["3 to 7 days"]++;
-             idList[getCategoryName(0)]["3 to 7 days"].push(id);
-             } else if (pullRequestAlreadyOpenedForSeconds <= 60 * 60 * 24) { // sec * min * hours
-             statistics[getCategoryName(0)]["7 to 30 days"]++;
-             idList[getCategoryName(0)]["7 to 30 days"].push(id);
-             } else if (pullRequestAlreadyOpenedForSeconds <= 60 * 60 * 24 * 7) { // sec * min * hours * 7
-             statistics[getCategoryName(0)]["30 + days"]++;
-             idList[getCategoryName(0)]["30 + days"].push(id);
-             } else if (pullRequestAlreadyOpenedForSeconds <= 60 * 60 * 24 * 14) {
-             statistics[getCategoryName(0)]["1 week to 2 weeks"]++;
-             idList[getCategoryName(0)]["1 week to 2 weeks"].push(id);
-             } else if (pullRequestAlreadyOpenedForSeconds <= 60 * 60 * 24 * 30) {
-             statistics[getCategoryName(0)]["2 weeks to a month"]++;
-             idList[getCategoryName(0)]["2 weeks to a month"].push(id);
-             } else if (pullRequestAlreadyOpenedForSeconds <= 60 * 60 * 24 * 60) {
-             statistics[getCategoryName(0)]["1 month to a two month"]++;
-             idList[getCategoryName(0)]["1 month to a two month"].push(id);
-             } else {
-             statistics[getCategoryName(0)]["more than two month"]++;
-             idList[getCategoryName(0)]["more than two month"].push(id);
-             }
-             }
-             */
+
             for (var o = 0; o < Object.keys(categories).length; o++) {
                 proceedCategoryData(column, o);
             }
         }
     }
+
+    sortByCreationTime(csvData);
+
 
     for (var counter = 0; counter < Object.keys(categories).length; counter++) {
         var tempArray = [];
@@ -227,20 +221,7 @@ function parseCSV(rows) {
             };
             tempArray.push(dataObject);
         });
-        //       console.log(tempArray);
 
-        /*tempArray.sort(function (a, b) {
-         if (a.date > b.date) {
-         return 1;
-         }
-         if (a.date < b.date) {
-         return -1;
-         }
-         // when a equal to b
-         return 0;
-         });*/
-
-        // console.log(tempArray);
         jQuery.each(tempArray, function (i, val) {
             var dataObject = {
                 period: val.date,
@@ -253,8 +234,8 @@ function parseCSV(rows) {
 }
 
 function writeTable(sliceName) {
-//    console.log(idList[sliceName]);
-    $("#myTable").bootstrapTable();
+    $("#myTable1").bootstrapTable();
+    $("#myTable2").bootstrapTable();
 
     jQuery.each(idList[sliceName], function (period) {
 
@@ -278,20 +259,14 @@ function writeTable(sliceName) {
             var rowColor = success;
 
             if (days < 7) {
-                //   console.log("1");
                 var rowColor = success;
             } else if (days < 30) {
-                //  console.log("2");
                 var rowColor = warning;
             } else if (days >= 30) {
-                //console.log("3");
                 var rowColor = danger;
             }
 
-            //rowColor = success;
             PRid = idList[sliceName][period][i].id;
-            //var string = rowColor + "<td><a href='https://github.com/cms-sw/cmssw/pull/" + PRid + "' target='_blank'>" + PRid + "</td><td>" + period + "</td><td>" + timePassedString + "</td></tr>";
-            // var lol = PRid "=" + "'>"+PRid+"</td><td>"+period+"</td></tr>";
             var PRidWithLink = "<a href='https://github.com/cms-sw/cmssw/pull/" + PRid + "' target='_blank'>" + PRid;
             var row = [];
             row.push({
@@ -301,21 +276,35 @@ function writeTable(sliceName) {
                 daysOpened: timePassedString
             });
 
-            //$('#myTable > tbody:last').append(string);
-
-            $('#myTable').bootstrapTable('append', row);
+            $('#myTable1').bootstrapTable('append', row);
         });
-        PRid = "";
-        //       var string = "<tr><td>" + "<a href='https://github.com/cms-sw/cmssw/pull/" + PRid= + "'>"+PRid+"</td><td>"+sliceName+"</td></tr>"
-
-        //       $('#myTable > tbody:last').append(string);
     });
-    //$('#myTable > tbody:last').append('<tr><td>bla</td></tr>');
+
+    $("#table1").show();
     $("#back-btn").show();
-    $(".bs-example ").show();
+    $("#table2").hide();
 
 }
-// console.log(statistics);
+
+function tableData(column) {
+    var creationTime = column[0];
+    var id = column[2];
+    var isPr = column[3];
+    var closed = column[5];
+    var labelStatus = column[8];
+
+    var hasPendingStatus = false;
+
+    for (var i = 0; i < Object.keys(categories).length; i++ ) {
+        if (labelStatus[i] == "P") {
+            hasPendingStatus = true;
+            break;
+        }
+    }
+    if ((isPr == "1") && (closed == "0") && (hasPendingStatus)) {
+        csvData.push({"Creation": parseInt(creationTime), id: id, "labelStatus": column[8]});
+    }
+}
 function proceedCategoryData(column, categoryNumber) {
     var creationTime = column[0];
     var mergeTime = column[1];
@@ -337,12 +326,9 @@ function proceedCategoryData(column, categoryNumber) {
     //console.log(pullRequestAlreadyOpenedForSeconds);
     var tempObject = {"id": id, "timePassed": pullRequestAlreadyOpenedForSeconds, "labelStatus": labelStatus};
     if ((isPr == "1") && (closed == "0") && ((labelStatus[getCategoryId(categoryName)] == "P"))) {
-        if (pullRequestAlreadyOpenedForSeconds <= 60 * 60 * 24 * 3) { //sec
-            statistics[categoryName]["0 to 3 days"]++;
-            idList[categoryName]["0 to 3 days"].push(tempObject);
-        } else if (pullRequestAlreadyOpenedForSeconds <= 60 * 60 * 24 * 7) { //sec * min
-            statistics[categoryName]["3 to 7 days"]++;
-            idList[categoryName]["3 to 7 days"].push(tempObject);
+        if (pullRequestAlreadyOpenedForSeconds <= 60 * 60 * 24 * 7) { //sec * min
+            statistics[categoryName]["0 to 7 days"]++;
+            idList[categoryName]["0 to 7 days"].push(tempObject);
         } else if (pullRequestAlreadyOpenedForSeconds <= 60 * 60 * 24 * 30) { // sec * min * hours
             statistics[categoryName]["7 to 30 days"]++;
             idList[categoryName]["7 to 30 days"].push(tempObject);
@@ -355,35 +341,78 @@ function proceedCategoryData(column, categoryNumber) {
 }
 
 function changeChartCategory(id) {
-//    console.log(chart);
-    console.log("id="+id);
+    defaultChartAllCategories = false;
+    $('#chartdiv > div:first-child').css('cursor', 'default');
     chart.dataProvider = chartData[getCategoryName(id)];
     chart.titles[0].text = "Category: " + getCategoryName(id) + ". Not closed/merged pull requests (" + info[getCategoryName(id)]["totalPR"] + ")";
     chart.validateData();
-    window.history.pushState("object", "Title", "/cms-sw.github.io/stats/pending-prs.html?category=" + getCategoryName(id));
+    window.history.pushState({category:getCategoryName(id)}, "Title", "?category=" + getCategoryName(id));
 }
 
 function initChart() {
     allowedToChangeCategory = true;
-    //$("#myTable").empty();
     hideTable();
-    //console.log(chart);
-    //console.log(chart.dataProvider);
     chart.dataProvider = chartData['category'];
     var tempTotal = 0;
+
     for (var i = 0; i < Object.keys(categories).length; i++) {
         tempTotal += info[getCategoryName(i)]['totalPR'];
     }
+
     chart.titles[0].text = "Pending pull requests by categories. Total: " + tempTotal;
-    //console.log(chart);
     chart.validateData();
-    window.history.pushState("object", "Title", "/cms-sw.github.io/stats/pending-prs.html");
-    //chart.validateNow();
-    //console.log(info);
+
+    for (var i = 0; i < 20; i++) {
+        var timePassed = currentTimeInSeconnds - csvData[i].Creation;
+
+        var days = Math.floor(timePassed / 86400);
+        timePassed -= days * 86400;
+
+        var hours = Math.floor(timePassed / 3600) % 24;
+        timePassed -= hours * 3600;
+
+        var minutes = Math.floor(timePassed / 60) % 60;
+        timePassed -= minutes * 60;
+
+        var seconds = timePassed % 60;  // in theory the modulus is not required
+        var timePassedString = days + "d " + hours + "h " + minutes + "m ";
+        var warning = 'warning';
+        var success = 'success';
+        var danger = 'danger';
+
+        var rowColor = success;
+
+        if (days < 7) {
+            var rowColor = success;
+        } else if (days < 30) {
+            var rowColor = warning;
+        } else if (days >= 30) {
+            var rowColor = danger;
+        }
+
+        var categoriesPending = "";
+        for (o = 0; o < Object.keys(categories).length; o++) {
+            if (csvData[i].labelStatus[o] == "P") {
+                categoriesPending += getCategoryName(o) + " ";
+            }
+        }
+
+
+        var row = [];
+        var PRidWithLink = "<a href='https://github.com/cms-sw/cmssw/pull/" + csvData[i].id + "' target='_blank'>" + csvData[i].id;
+        row.push({
+            classes: rowColor,
+            pr: PRidWithLink,
+            category: categoriesPending,
+            daysOpened: timePassedString
+        });
+
+        $('#myTable2').bootstrapTable('append', row);
+
+    }
 }
 
 function getAllCategoryData() {
-    //console.log(info);
     for (i = 0; i < Object.keys(categories).length; i++) {
 
         var dataObject = {
@@ -391,20 +420,16 @@ function getAllCategoryData() {
             value: info[getCategoryName(i)]["totalPR"]
         };
 
- //       console.log(info[getCategoryName(i)]["totalPR"]);
+        //       console.log(info[getCategoryName(i)]["totalPR"]);
         chartData['category'].push(dataObject);
     }
-    //console.log(info);
-
 }
 
 function getCategoryName(id) {
-
     return categories[id];
 }
 
 function getCategoryId(categoryName) {
-    //console.log(categories)
     var categoryByName = [];
     jQuery.each(categories, function (i, val) {
         categoryByName[val] = i;
@@ -413,30 +438,22 @@ function getCategoryId(categoryName) {
 }
 
 function test() {
-//    console.log(chart);
-    console.log()
     chart.dataProvider[0].color = "#228B22";
-    chart.dataProvider[1].color = "#228B22";
-    chart.dataProvider[2].color = "#FFD700";
-    chart.dataProvider[3].color = "#FF0000";
+    chart.dataProvider[1].color = "#FFD700";
+    chart.dataProvider[2].color = "#FF0000";
     chart.colorField = "color";
     chart.validateData();
     chart.validateNow();
-    console.log(getCategoryId("alca"));
-    //  console.log(chart);
 }
 
 function rowStyle(row, index) {
-    var classes = ['active', 'success', 'info', 'warning', 'danger'];
-    //   console.log(row['classes']);
     return {
         classes: row['classes']
     };
 }
 
 function customDaysSorter(a, b) {
-//    var firstDate = a.split(" ").length;
-    var aDate = a.match(/\S+/g);
+    var aDate = a.match(/\S+/g); // matching by spaces
     var aDay = aDate[0].slice(0, -1);
     var aHour = aDate[1].slice(0, -1);
     var aMin = aDate[2].slice(0, -1);
@@ -457,8 +474,6 @@ function customDaysSorter(a, b) {
     } else {
         return 0;
     }
-    //  console.log(firstDate);
-    //  console.log("a=" + a + "b="+b);
 }
 
 function getUrlParameter(sParam) {
@@ -473,8 +488,20 @@ function getUrlParameter(sParam) {
 }
 
 function hideTable() {
-    $("#myTable").bootstrapTable('destroy');
-    $(".bs-example ").hide();
+    $("#myTable1").bootstrapTable('destroy');
+    $("#table1").hide();
     $("#back-btn").hide();
 }
 
+function sortByCreationTime(array) {
+
+    array.sort(function (a, b) {
+        if (a.Creation > b.Creation) {
+            return 1;
+        }
+        if (a.Creation < b.Creation) {
+            return -1;
+        }
+        return 0;
+    });
+}
