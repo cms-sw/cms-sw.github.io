@@ -851,8 +851,42 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-02/CMSSW_7_4_CLANG_X_2015-03-15-0200/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "error", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-02/CMSSW_7_4_CLANG_X_2015-03-15-0200/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 22825, 
+                        "linkError": 1, 
+                        "compError": 2, 
+                        "ignoreWarning": 87091
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-14-1400-->CMSSW_7_4_CLANG_X_2015-03-15-0200", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-02/CMSSW_7_4_CLANG_X_2015-03-15-0200/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_CLANG_X_2015-03-15-0200/slc6_amd64_gcc491"
+            }, 
+            "relvals": [
                 {
                     "arch": "slc6_amd64_gcc491", 
                     "file": "not-ready", 
@@ -860,17 +894,125 @@
                     "details": {}
                 }
             ], 
-            "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-14-1400-->CMSSW_7_4_CLANG_X_2015-03-15-1400", 
+            "static_checks": "not-found", 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
+            "inProgress": false, 
+            "release_name": "CMSSW_7_4_CLANG_X_2015-03-15-0200", 
+            "RVExceptions": null, 
+            "merged_prs": [
+                {
+                    "hash": "da11142693a68a42d0e6ee54e274844dc6890683", 
+                    "title": "Update the Run2_HI era to use the latest trigger menu XML file", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8205", 
+                    "number": "8205", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "mark-grimes"
+                }, 
+                {
+                    "hash": "1340a67617a08174d3eb018ffe8edc5afd17a317", 
+                    "title": "MiniAod validation and DQM", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8242", 
+                    "number": "8242", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "franzoni"
+                }, 
+                {
+                    "hash": "d9de35812b9cddc7a38d48dfb678a65859ea0794", 
+                    "title": "ROOT6 checksums must be known to ROOT5", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8228", 
+                    "number": "8228", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "wmtan"
+                }, 
+                {
+                    "hash": "a327776ce6ce113ec2ff7a7c5353d66619f2cf60", 
+                    "title": "Fix compiler warning for QIEXXDataFrames (Backport of #8206)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8207", 
+                    "number": "8207", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "UMN-CMS"
+                }, 
+                {
+                    "hash": "18973801346fcfb68603479aa0712620cf36ef65", 
+                    "title": "Remove unnecessary ROOT5/ROOT6 diffs in CondCore/IOVService", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8239", 
+                    "number": "8239", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "wmtan"
+                }, 
+                {
+                    "hash": "af1025cc90f35146f1e3f2fd7463da6fa257f08f", 
+                    "title": "Remove two remaining unnecessary direct dependencies on rootrflx", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8281", 
+                    "number": "8281", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "wmtan"
+                }, 
+                {
+                    "hash": "6d8480d4f56bd02b82b8e71bcde9547fdeb41014", 
+                    "title": "Back port analysis changes from ROOT6 IB", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8292", 
+                    "number": "8292", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "wmtan"
+                }, 
+                {
+                    "hash": "5f59eb430d37cf52a12dc80db56f350e28f9d41d", 
+                    "title": "Drop unneeded explicit dependency in 7_4_X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8245", 
+                    "number": "8245", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "wmtan"
+                }, 
+                {
+                    "hash": "3d7cafc7fa862b5d502b9e78e9af9c64b603f0bf", 
+                    "title": "New binning for the jet multiplicity histogram in Top DMQ Offline", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8267", 
+                    "number": "8267", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "ebouvier"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "error", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-14/CMSSW_7_4_CLANG_X_2015-03-15-1400/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 18708, 
+                        "linkError": 1, 
+                        "compError": 2, 
+                        "ignoreWarning": 91412
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-15-0200-->CMSSW_7_4_CLANG_X_2015-03-15-1400", 
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
                     "passed": "unknown", 
-                    "file": "['not-ready']", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-14/CMSSW_7_4_CLANG_X_2015-03-15-1400/new/logAnalysis.pkl']", 
                     "details": {}
                 }
             ], 
             "cmsdistTags": {
-                "slc6_amd64_gcc491": "IB/CMSSW_7_4_CLANG_X_2015-03-12-0200/slc6_amd64_gcc491"
+                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_CLANG_X_2015-03-15-1400/slc6_amd64_gcc491"
             }, 
             "relvals": [], 
             "static_checks": "not-found", 
@@ -953,87 +1095,6 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "threus"
-                }, 
-                {
-                    "hash": "da11142693a68a42d0e6ee54e274844dc6890683", 
-                    "title": "Update the Run2_HI era to use the latest trigger menu XML file", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8205", 
-                    "number": "8205", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "mark-grimes"
-                }, 
-                {
-                    "hash": "1340a67617a08174d3eb018ffe8edc5afd17a317", 
-                    "title": "MiniAod validation and DQM", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8242", 
-                    "number": "8242", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "franzoni"
-                }, 
-                {
-                    "hash": "d9de35812b9cddc7a38d48dfb678a65859ea0794", 
-                    "title": "ROOT6 checksums must be known to ROOT5", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8228", 
-                    "number": "8228", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "wmtan"
-                }, 
-                {
-                    "hash": "a327776ce6ce113ec2ff7a7c5353d66619f2cf60", 
-                    "title": "Fix compiler warning for QIEXXDataFrames (Backport of #8206)", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8207", 
-                    "number": "8207", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "UMN-CMS"
-                }, 
-                {
-                    "hash": "18973801346fcfb68603479aa0712620cf36ef65", 
-                    "title": "Remove unnecessary ROOT5/ROOT6 diffs in CondCore/IOVService", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8239", 
-                    "number": "8239", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "wmtan"
-                }, 
-                {
-                    "hash": "af1025cc90f35146f1e3f2fd7463da6fa257f08f", 
-                    "title": "Remove two remaining unnecessary direct dependencies on rootrflx", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8281", 
-                    "number": "8281", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "wmtan"
-                }, 
-                {
-                    "hash": "6d8480d4f56bd02b82b8e71bcde9547fdeb41014", 
-                    "title": "Back port analysis changes from ROOT6 IB", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8292", 
-                    "number": "8292", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "wmtan"
-                }, 
-                {
-                    "hash": "5f59eb430d37cf52a12dc80db56f350e28f9d41d", 
-                    "title": "Drop unneeded explicit dependency in 7_4_X", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8245", 
-                    "number": "8245", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "wmtan"
-                }, 
-                {
-                    "hash": "3d7cafc7fa862b5d502b9e78e9af9c64b603f0bf", 
-                    "title": "New binning for the jet multiplicity histogram in Top DMQ Offline", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8267", 
-                    "number": "8267", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "ebouvier"
                 }, 
                 {
                     "hash": "ad33789565d002dd3328a2a67c065cd4c894f831", 

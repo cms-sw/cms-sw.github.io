@@ -23052,8 +23052,42 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-02/CMSSW_7_4_CLANG_X_2015-03-15-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-02/CMSSW_7_4_CLANG_X_2015-03-15-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 22825, 
+                            "linkError": 1, 
+                            "compError": 2, 
+                            "ignoreWarning": 87091
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-14-1400-->CMSSW_7_4_CLANG_X_2015-03-15-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-02/CMSSW_7_4_CLANG_X_2015-03-15-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "1"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "ERR/CMSSW_7_4_CLANG_X_2015-03-15-0200/slc6_amd64_gcc491"
+                }, 
+                "relvals": [
                     {
                         "arch": "slc6_amd64_gcc491", 
                         "file": "not-ready", 
@@ -23061,17 +23095,125 @@
                         "details": {}
                     }
                 ], 
-                "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-14-1400-->CMSSW_7_4_CLANG_X_2015-03-15-1400", 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_CLANG_X_2015-03-15-0200", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "da11142693a68a42d0e6ee54e274844dc6890683", 
+                        "title": "Update the Run2_HI era to use the latest trigger menu XML file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8205", 
+                        "number": "8205", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mark-grimes"
+                    }, 
+                    {
+                        "hash": "1340a67617a08174d3eb018ffe8edc5afd17a317", 
+                        "title": "MiniAod validation and DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8242", 
+                        "number": "8242", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "franzoni"
+                    }, 
+                    {
+                        "hash": "d9de35812b9cddc7a38d48dfb678a65859ea0794", 
+                        "title": "ROOT6 checksums must be known to ROOT5", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8228", 
+                        "number": "8228", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "a327776ce6ce113ec2ff7a7c5353d66619f2cf60", 
+                        "title": "Fix compiler warning for QIEXXDataFrames (Backport of #8206)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8207", 
+                        "number": "8207", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "UMN-CMS"
+                    }, 
+                    {
+                        "hash": "18973801346fcfb68603479aa0712620cf36ef65", 
+                        "title": "Remove unnecessary ROOT5/ROOT6 diffs in CondCore/IOVService", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8239", 
+                        "number": "8239", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "af1025cc90f35146f1e3f2fd7463da6fa257f08f", 
+                        "title": "Remove two remaining unnecessary direct dependencies on rootrflx", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8281", 
+                        "number": "8281", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "6d8480d4f56bd02b82b8e71bcde9547fdeb41014", 
+                        "title": "Back port analysis changes from ROOT6 IB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8292", 
+                        "number": "8292", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "5f59eb430d37cf52a12dc80db56f350e28f9d41d", 
+                        "title": "Drop unneeded explicit dependency in 7_4_X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8245", 
+                        "number": "8245", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "3d7cafc7fa862b5d502b9e78e9af9c64b603f0bf", 
+                        "title": "New binning for the jet multiplicity histogram in Top DMQ Offline", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8267", 
+                        "number": "8267", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ebouvier"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-14/CMSSW_7_4_CLANG_X_2015-03-15-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 18708, 
+                            "linkError": 1, 
+                            "compError": 2, 
+                            "ignoreWarning": 91412
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-15-0200-->CMSSW_7_4_CLANG_X_2015-03-15-1400", 
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
                         "passed": "unknown", 
-                        "file": "['not-ready']", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.CLANG-sun-14/CMSSW_7_4_CLANG_X_2015-03-15-1400/new/logAnalysis.pkl']", 
                         "details": {}
                     }
                 ], 
                 "cmsdistTags": {
-                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_CLANG_X_2015-03-12-0200/slc6_amd64_gcc491"
+                    "slc6_amd64_gcc491": "ERR/CMSSW_7_4_CLANG_X_2015-03-15-1400/slc6_amd64_gcc491"
                 }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
@@ -23154,87 +23296,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "threus"
-                    }, 
-                    {
-                        "hash": "da11142693a68a42d0e6ee54e274844dc6890683", 
-                        "title": "Update the Run2_HI era to use the latest trigger menu XML file", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8205", 
-                        "number": "8205", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "mark-grimes"
-                    }, 
-                    {
-                        "hash": "1340a67617a08174d3eb018ffe8edc5afd17a317", 
-                        "title": "MiniAod validation and DQM", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8242", 
-                        "number": "8242", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "franzoni"
-                    }, 
-                    {
-                        "hash": "d9de35812b9cddc7a38d48dfb678a65859ea0794", 
-                        "title": "ROOT6 checksums must be known to ROOT5", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8228", 
-                        "number": "8228", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wmtan"
-                    }, 
-                    {
-                        "hash": "a327776ce6ce113ec2ff7a7c5353d66619f2cf60", 
-                        "title": "Fix compiler warning for QIEXXDataFrames (Backport of #8206)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8207", 
-                        "number": "8207", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "UMN-CMS"
-                    }, 
-                    {
-                        "hash": "18973801346fcfb68603479aa0712620cf36ef65", 
-                        "title": "Remove unnecessary ROOT5/ROOT6 diffs in CondCore/IOVService", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8239", 
-                        "number": "8239", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wmtan"
-                    }, 
-                    {
-                        "hash": "af1025cc90f35146f1e3f2fd7463da6fa257f08f", 
-                        "title": "Remove two remaining unnecessary direct dependencies on rootrflx", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8281", 
-                        "number": "8281", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wmtan"
-                    }, 
-                    {
-                        "hash": "6d8480d4f56bd02b82b8e71bcde9547fdeb41014", 
-                        "title": "Back port analysis changes from ROOT6 IB", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8292", 
-                        "number": "8292", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wmtan"
-                    }, 
-                    {
-                        "hash": "5f59eb430d37cf52a12dc80db56f350e28f9d41d", 
-                        "title": "Drop unneeded explicit dependency in 7_4_X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8245", 
-                        "number": "8245", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wmtan"
-                    }, 
-                    {
-                        "hash": "3d7cafc7fa862b5d502b9e78e9af9c64b603f0bf", 
-                        "title": "New binning for the jet multiplicity histogram in Top DMQ Offline", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8267", 
-                        "number": "8267", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ebouvier"
                     }, 
                     {
                         "hash": "ad33789565d002dd3328a2a67c065cd4c894f831", 
@@ -24121,91 +24182,55 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-03-14-1400-->CMSSW_7_4_DEVEL_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.DEVEL-sun-02/CMSSW_7_4_DEVEL_X_2015-03-15-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.DEVEL-sun-02/CMSSW_7_4_DEVEL_X_2015-03-15-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-03-14-1400-->CMSSW_7_4_DEVEL_X_2015-03-15-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.DEVEL-sun-02/CMSSW_7_4_DEVEL_X_2015-03-15-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_DEVEL_X_2015-03-15-0200/slc6_amd64_gcc491"
+                }, 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_4_DEVEL_X", 
+                "release_name": "CMSSW_7_4_DEVEL_X_2015-03-15-0200", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "5ffae36947767da562f250f12e21a6562c2f4a73", 
-                        "title": "Default format for new condition databases moved to v2", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8259", 
-                        "number": "8259", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "ggovi"
-                    }, 
-                    {
-                        "hash": "d1dbe7d1606118772319f1a58e189c767d2646c6", 
-                        "title": "Mini aod substructure pieces overhaul", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8175", 
-                        "number": "8175", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "rappoccio"
-                    }, 
-                    {
-                        "hash": "592ca91724b5ef4a56c8588cf0e5501943622d29", 
-                        "title": "Puppi into mini aod", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8249", 
-                        "number": "8249", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "jshlee"
-                    }, 
-                    {
-                        "hash": "9975094d6d09e6ff9f4462f989b4389ed7d6a9e4", 
-                        "title": "Optimize SiStripMonitorTrack to perform less string operations.", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8266", 
-                        "number": "8266", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "dmitrijus"
-                    }, 
-                    {
-                        "hash": "9d33be3875b7ce0408db8ae8bed04637445d6f4a", 
-                        "title": "IPProducer update: Part 2", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8278", 
-                        "number": "8278", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "cms-btv-pog"
-                    }, 
-                    {
-                        "hash": "f50c43a2a4f77b0afc91bda2cb0a48120c8d64b0", 
-                        "title": "Calling TFormula::SetName leads to thread safety issues", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8289", 
-                        "number": "8289", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "e21486352db618ecf6d4e374fe6a1ad3bb46ae6a", 
-                        "title": "New script and macro to extract occupancy plots from DQM files", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8298", 
-                        "number": "8298", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "venturia"
-                    }, 
-                    {
-                        "hash": "706672a2fc47f9ecb644a5fbf1f773416cf4da26", 
-                        "title": "TK offline shift tools fixes", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8300", 
-                        "number": "8300", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "threus"
-                    }, 
                     {
                         "hash": "da11142693a68a42d0e6ee54e274844dc6890683", 
                         "title": "Update the Run2_HI era to use the latest trigger menu XML file", 
@@ -24295,6 +24320,113 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "VinInn"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_DEVEL_X_2015-03-15-0200-->CMSSW_7_4_DEVEL_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_DEVEL_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "e76d4bb9509862f626029f97396d16b762463554", 
+                        "title": "re-enable the kOutOfTime filtering in PF-rechits", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8224", 
+                        "number": "8224", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "emanueledimarco"
+                    }, 
+                    {
+                        "hash": "b873b91d93c35ee3b2947bb195918c08a898f05d", 
+                        "title": "Electron analyzer correction for 7_4_X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8272", 
+                        "number": "8272", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "archiron"
+                    }, 
+                    {
+                        "hash": "5ffae36947767da562f250f12e21a6562c2f4a73", 
+                        "title": "Default format for new condition databases moved to v2", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8259", 
+                        "number": "8259", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ggovi"
+                    }, 
+                    {
+                        "hash": "d1dbe7d1606118772319f1a58e189c767d2646c6", 
+                        "title": "Mini aod substructure pieces overhaul", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8175", 
+                        "number": "8175", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "592ca91724b5ef4a56c8588cf0e5501943622d29", 
+                        "title": "Puppi into mini aod", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8249", 
+                        "number": "8249", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jshlee"
+                    }, 
+                    {
+                        "hash": "9975094d6d09e6ff9f4462f989b4389ed7d6a9e4", 
+                        "title": "Optimize SiStripMonitorTrack to perform less string operations.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8266", 
+                        "number": "8266", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dmitrijus"
+                    }, 
+                    {
+                        "hash": "9d33be3875b7ce0408db8ae8bed04637445d6f4a", 
+                        "title": "IPProducer update: Part 2", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8278", 
+                        "number": "8278", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-btv-pog"
+                    }, 
+                    {
+                        "hash": "f50c43a2a4f77b0afc91bda2cb0a48120c8d64b0", 
+                        "title": "Calling TFormula::SetName leads to thread safety issues", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8289", 
+                        "number": "8289", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "e21486352db618ecf6d4e374fe6a1ad3bb46ae6a", 
+                        "title": "New script and macro to extract occupancy plots from DQM files", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8298", 
+                        "number": "8298", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "venturia"
+                    }, 
+                    {
+                        "hash": "706672a2fc47f9ecb644a5fbf1f773416cf4da26", 
+                        "title": "TK offline shift tools fixes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8300", 
+                        "number": "8300", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "threus"
                     }, 
                     {
                         "hash": "ad33789565d002dd3328a2a67c065cd4c894f831", 
@@ -25268,7 +25400,7 @@
                 "tests_archs": [
                     "slc6_amd64_gcc491"
                 ], 
-                "inProgress": true, 
+                "inProgress": false, 
                 "release_name": "CMSSW_7_4_ICC_X_2015-03-15-0200", 
                 "RVExceptions": true, 
                 "merged_prs": [
@@ -25361,9 +25493,11 @@
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.ICC-sun-14/CMSSW_7_4_ICC_X_2015-03-15-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 7
+                        }
                     }
                 ], 
                 "compared_tags": "CMSSW_7_4_ICC_X_2015-03-15-0200-->CMSSW_7_4_ICC_X_2015-03-15-1400", 
@@ -25371,7 +25505,7 @@
                     {
                         "arch": "slc6_amd64_gcc491", 
                         "passed": "unknown", 
-                        "file": "['not-ready']", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4.ICC-sun-14/CMSSW_7_4_ICC_X_2015-03-15-1400/new/logAnalysis.pkl']", 
                         "details": {}
                     }
                 ], 
@@ -26295,8 +26429,42 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-03-15-0200-->CMSSW_7_4_ROOT6_X_2015-03-15-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['not-ready']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT6_X_2015-03-15-0200/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": true, 
+                "release_name": "CMSSW_7_4_ROOT6_X_2015-03-15-1400", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-03-15-0200-->CMSSW_7_4_ROOT6_X", 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-03-15-1400-->CMSSW_7_4_ROOT6_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -26470,7 +26638,7 @@
                 ], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_THREADED_X_2015-03-10-0200", 
-                "RVExceptions": null, 
+                "RVExceptions": true, 
                 "merged_prs": [
                     {
                         "hash": "0b0537922e08bc5df0352505093dcd275fb2aa36", 
@@ -27315,6 +27483,24 @@
                 "release_name": "CMSSW_7_4_THREADED_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "e76d4bb9509862f626029f97396d16b762463554", 
+                        "title": "re-enable the kOutOfTime filtering in PF-rechits", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8224", 
+                        "number": "8224", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "emanueledimarco"
+                    }, 
+                    {
+                        "hash": "b873b91d93c35ee3b2947bb195918c08a898f05d", 
+                        "title": "Electron analyzer correction for 7_4_X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8272", 
+                        "number": "8272", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "archiron"
+                    }, 
                     {
                         "hash": "5ffae36947767da562f250f12e21a6562c2f4a73", 
                         "title": "Default format for new condition databases moved to v2", 
@@ -28957,7 +29143,7 @@
                 ], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_X_2015-03-10-0200", 
-                "RVExceptions": null, 
+                "RVExceptions": true, 
                 "merged_prs": [
                     {
                         "hash": "0b0537922e08bc5df0352505093dcd275fb2aa36", 
@@ -29185,7 +29371,7 @@
                 ], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_X_2015-03-11-0200", 
-                "RVExceptions": null, 
+                "RVExceptions": true, 
                 "merged_prs": [
                     {
                         "hash": "f34fe1b7885382201afc17a6c997c8e34e1b9cf9", 
@@ -30033,36 +30219,50 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-03-15-0200-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-03-15-0200-->CMSSW_7_4_X_2015-03-15-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['not-ready']", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": "unknown", 
+                        "file": "['not-ready']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-03-15-0200/slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-03-15-0200/slc6_amd64_gcc481"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_4_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491", 
+                    "slc6_amd64_gcc481"
+                ], 
+                "inProgress": true, 
+                "release_name": "CMSSW_7_4_X_2015-03-15-1400", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "e76d4bb9509862f626029f97396d16b762463554", 
-                        "title": "re-enable the kOutOfTime filtering in PF-rechits", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8224", 
-                        "number": "8224", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "emanueledimarco"
-                    }, 
-                    {
-                        "hash": "b873b91d93c35ee3b2947bb195918c08a898f05d", 
-                        "title": "Electron analyzer correction for 7_4_X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8272", 
-                        "number": "8272", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "archiron"
-                    }, 
                     {
                         "hash": "5ffae36947767da562f250f12e21a6562c2f4a73", 
                         "title": "Default format for new condition databases moved to v2", 
@@ -30152,6 +30352,41 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "gpetruc"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_X_2015-03-15-1400-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "e76d4bb9509862f626029f97396d16b762463554", 
+                        "title": "re-enable the kOutOfTime filtering in PF-rechits", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8224", 
+                        "number": "8224", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "emanueledimarco"
+                    }, 
+                    {
+                        "hash": "b873b91d93c35ee3b2947bb195918c08a898f05d", 
+                        "title": "Electron analyzer correction for 7_4_X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8272", 
+                        "number": "8272", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "archiron"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -30517,7 +30752,7 @@
                 ], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_DEVEL_X_2015-03-10-1400", 
-                "RVExceptions": null, 
+                "RVExceptions": true, 
                 "merged_prs": [
                     {
                         "hash": "b2d4a72bf49b9609823203ab3a5e08992fd953ed", 
@@ -31471,6 +31706,24 @@
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
+                        "hash": "56eeafee33797bc4ddd5deb02dfc73fa416be5d7", 
+                        "title": "Updates in HLTriggerOffline/SUSYBSM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8177", 
+                        "number": "8177", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "jruizvar"
+                    }, 
+                    {
+                        "hash": "c193b22b4d87e51ba808a0a3931197b1dfac6c33", 
+                        "title": "Switch to JetCorrectorParametersCollection compatibility DB object with new Global Tags", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8212", 
+                        "number": "8212", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "diguida"
+                    }, 
+                    {
                         "hash": "385894d459c9c2eaf07b26c5ddbab1220a13a8f0", 
                         "title": "fixed array boundary limit", 
                         "url": "https://github.com/cms-sw/cmssw/pull/8254", 
@@ -32016,7 +32269,7 @@
                 ], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_X_2015-03-10-1400", 
-                "RVExceptions": null, 
+                "RVExceptions": true, 
                 "merged_prs": [
                     {
                         "hash": "b2d4a72bf49b9609823203ab3a5e08992fd953ed", 
@@ -32349,7 +32602,7 @@
                 ], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_X_2015-03-11-1400", 
-                "RVExceptions": null, 
+                "RVExceptions": true, 
                 "merged_prs": [
                     {
                         "hash": "e77f29550c0479874fc0b3de8a81f81aeb2a0599", 
@@ -33299,6 +33552,24 @@
                 "release_name": "CMSSW_7_5_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "56eeafee33797bc4ddd5deb02dfc73fa416be5d7", 
+                        "title": "Updates in HLTriggerOffline/SUSYBSM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8177", 
+                        "number": "8177", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "jruizvar"
+                    }, 
+                    {
+                        "hash": "c193b22b4d87e51ba808a0a3931197b1dfac6c33", 
+                        "title": "Switch to JetCorrectorParametersCollection compatibility DB object with new Global Tags", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8212", 
+                        "number": "8212", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "diguida"
+                    }, 
                     {
                         "hash": "385894d459c9c2eaf07b26c5ddbab1220a13a8f0", 
                         "title": "fixed array boundary limit", 

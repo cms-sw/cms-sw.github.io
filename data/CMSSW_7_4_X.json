@@ -1545,7 +1545,7 @@
             ], 
             "inProgress": false, 
             "release_name": "CMSSW_7_4_X_2015-03-10-0200", 
-            "RVExceptions": null, 
+            "RVExceptions": true, 
             "merged_prs": [
                 {
                     "hash": "0b0537922e08bc5df0352505093dcd275fb2aa36", 
@@ -1773,7 +1773,7 @@
             ], 
             "inProgress": false, 
             "release_name": "CMSSW_7_4_X_2015-03-11-0200", 
-            "RVExceptions": null, 
+            "RVExceptions": true, 
             "merged_prs": [
                 {
                     "hash": "f34fe1b7885382201afc17a6c997c8e34e1b9cf9", 
@@ -2621,36 +2621,50 @@
         }, 
         {
             "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_X_2015-03-15-0200-->CMSSW_7_4_X", 
-            "utests": [], 
-            "cmsdistTags": {}, 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "file": "not-ready", 
+                    "passed": true, 
+                    "details": {}
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "file": "not-ready", 
+                    "passed": true, 
+                    "details": {}
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_X_2015-03-15-0200-->CMSSW_7_4_X_2015-03-15-1400", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "unknown", 
+                    "file": "['not-ready']", 
+                    "details": {}
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc481", 
+                    "passed": "unknown", 
+                    "file": "['not-ready']", 
+                    "details": {}
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-03-15-0200/slc6_amd64_gcc491", 
+                "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-03-15-0200/slc6_amd64_gcc481"
+            }, 
             "relvals": [], 
             "static_checks": "not-found", 
-            "isIB": false, 
-            "tests_archs": [], 
-            "inProgress": false, 
-            "release_name": "CMSSW_7_4_X", 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491", 
+                "slc6_amd64_gcc481"
+            ], 
+            "inProgress": true, 
+            "release_name": "CMSSW_7_4_X_2015-03-15-1400", 
             "RVExceptions": null, 
             "merged_prs": [
-                {
-                    "hash": "e76d4bb9509862f626029f97396d16b762463554", 
-                    "title": "re-enable the kOutOfTime filtering in PF-rechits", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8224", 
-                    "number": "8224", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "emanueledimarco"
-                }, 
-                {
-                    "hash": "b873b91d93c35ee3b2947bb195918c08a898f05d", 
-                    "title": "Electron analyzer correction for 7_4_X", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/8272", 
-                    "number": "8272", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "archiron"
-                }, 
                 {
                     "hash": "5ffae36947767da562f250f12e21a6562c2f4a73", 
                     "title": "Default format for new condition databases moved to v2", 
@@ -2740,6 +2754,41 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": true, 
                     "author_login": "gpetruc"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [], 
+            "compared_tags": "CMSSW_7_4_X_2015-03-15-1400-->CMSSW_7_4_X", 
+            "utests": [], 
+            "cmsdistTags": {}, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": false, 
+            "tests_archs": [], 
+            "inProgress": false, 
+            "release_name": "CMSSW_7_4_X", 
+            "RVExceptions": null, 
+            "merged_prs": [
+                {
+                    "hash": "e76d4bb9509862f626029f97396d16b762463554", 
+                    "title": "re-enable the kOutOfTime filtering in PF-rechits", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8224", 
+                    "number": "8224", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "emanueledimarco"
+                }, 
+                {
+                    "hash": "b873b91d93c35ee3b2947bb195918c08a898f05d", 
+                    "title": "Electron analyzer correction for 7_4_X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8272", 
+                    "number": "8272", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "archiron"
                 }
             ], 
             "hlt_tests": "not-found"
