@@ -129,7 +129,7 @@ AmCharts.ready(function () {
     changeChartCategory(categoriesIds[catFromUrl]);
     writeTable(catFromUrl);
   } else {
-    window.history.pushState({}, "Default", "/data/pie-merge.html");
+    window.history.pushState({}, "Default", "");
     initChart();
   }
 });
