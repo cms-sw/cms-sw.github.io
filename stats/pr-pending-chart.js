@@ -59,7 +59,7 @@ var safariIniFirstPop = 0;
 
 
 AmCharts.ready(function () {
-  var rows = loadCSV("pr-stats.csv");
+  var rows = loadCSV("../data/stats/pr-stats.csv");
   parseCSV(rows);
   getMainChartData();
 
