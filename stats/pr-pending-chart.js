@@ -59,7 +59,7 @@ var safariIniFirstPop = 0;
 
 
 AmCharts.ready(function () {
-  var rows = loadCSV("../data/stats/pr-stats.csv");
+  var rows = loadCSV("pr-stats.csv");
   parseCSV(rows);
   getMainChartData();
 
@@ -129,7 +129,7 @@ AmCharts.ready(function () {
     changeChartCategory(categoriesIds[catFromUrl]);
     writeTable(catFromUrl);
   } else {
-    window.history.pushState({}, "Default", "");
+    window.history.pushState({}, "Default", "/data/pie-merge.html");
     initChart();
   }
 });
@@ -185,7 +185,9 @@ function parseCSV(rows) {
 
 function writeTable(sliceName) {
   $("#myTable1").bootstrapTable();
+  //$("#myTable1").bootstrapTable('togglePagination');
   $("#myTable2").bootstrapTable();
+  //$("#myTable2").bootstrapTable('togglePagination');
   jQuery.each(idList[sliceName], function (period) {
 
     jQuery.each(idList[sliceName][period], function (i, PRid) {
