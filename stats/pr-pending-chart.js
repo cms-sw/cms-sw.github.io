@@ -122,17 +122,28 @@ AmCharts.ready(function () {
   }, false);
 
   var catFromUrl = getUrlParameter('category');
+
+//  window.history.pushState({}, "Default", "");
+
   if (!isNaN(categoriesIds[catFromUrl])) {
     initChart();
     allowedToChangeCategory = false;
     defaultChartAllCategories = false;
     changeChartCategory(categoriesIds[catFromUrl]);
     writeTable(catFromUrl);
+  } else if ((typeof(catFromUrl) != "undefined") && (catFromUrl.length > 0)) {
+    wrongCategory();
   } else {
-    window.history.pushState({}, "Default", "");
     initChart();
   }
 });
+
+function wrongCategory() {
+  $( "#chartdiv").empty();
+  $( "#table1").remove();
+  $( "#table2").remove();
+  $( "#chartdiv" ).append( "<p>The data in link is not correct</p>" );
+}
 
 function loadCSV(file) {
   if (window.XMLHttpRequest) {
