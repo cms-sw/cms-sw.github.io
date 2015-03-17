@@ -138,13 +138,6 @@ AmCharts.ready(function () {
   }
 });
 
-function wrongCategory() {
-  $( "#chartdiv").empty();
-  $( "#table1").remove();
-  $( "#table2").remove();
-  $( "#chartdiv" ).append( "<p>The data in link is not correct</p>" );
-}
-
 function loadCSV(file) {
   if (window.XMLHttpRequest) {
     // IE7+, Firefox, Chrome, Opera, Safari
@@ -196,9 +189,7 @@ function parseCSV(rows) {
 
 function writeTable(sliceName) {
   $("#myTable1").bootstrapTable();
-  //$("#myTable1").bootstrapTable('togglePagination');
   $("#myTable2").bootstrapTable();
-  //$("#myTable2").bootstrapTable('togglePagination');
   jQuery.each(idList[sliceName], function (period) {
 
     jQuery.each(idList[sliceName][period], function (i, PRid) {
@@ -360,6 +351,13 @@ function rowStyle(row) {
   return {
     classes: row['classes']
   };
+}
+
+function wrongCategory() {
+    $("#chartdiv").empty();
+    $("#table1").remove();
+    $("#table2").remove();
+    $("#wrongUrl").show();
 }
 
 function customDaysSorter(a, b) {
