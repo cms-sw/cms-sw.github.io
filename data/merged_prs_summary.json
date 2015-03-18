@@ -20175,7 +20175,7 @@
                 ], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_CLANG_X_2015-03-14-1400", 
-                "RVExceptions": true, 
+                "RVExceptions": null, 
                 "merged_prs": [
                     {
                         "hash": "eed840cf5f7d854bedfb453b78680f5332e4926a", 
@@ -23652,7 +23652,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-02/CMSSW_7_4_ICC_X_2015-03-18-0200/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -23669,15 +23676,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-02/CMSSW_7_4_ICC_X_2015-03-18-0200/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-02/CMSSW_7_4_ICC_X_2015-03-18-0200/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "115"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ICC_X_2015-03-16-1400/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ICC-wed-02/CMSSW_7_4_ICC_X_2015-03-18-0200/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 175, 
+                            "num_failed": 287
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -24047,14 +24066,7 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-03-12-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
-                    }
-                ], 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -24460,14 +24472,7 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT6_X_2015-03-15-0200/slc6_amd64_gcc491"
                 }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
-                    }
-                ], 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -24603,27 +24608,36 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-03-16-0200-->CMSSW_7_4_ROOT6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "file": "not-ready", 
+                        "passed": true, 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-03-16-0200-->CMSSW_7_4_ROOT6_X_2015-03-18-0200", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['not-ready']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT6_X_2015-03-16-0200/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": true, 
+                "release_name": "CMSSW_7_4_ROOT6_X_2015-03-18-0200", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "3a9542275ec8ba056c266c361e00159a5df82296", 
-                        "title": "Fix in two scripts to monitor the SiStrip DB objects", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8301", 
-                        "number": "8301", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "venturia"
-                    }, 
                     {
                         "hash": "faa2e65b0f5495bf4c991cee9e3a15865b738628", 
                         "title": "trim hep top tagger combinatorics", 
@@ -25046,6 +25060,32 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "gpetruc"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ROOT6_X_2015-03-18-0200-->CMSSW_7_4_ROOT6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_ROOT6_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "3a9542275ec8ba056c266c361e00159a5df82296", 
+                        "title": "Fix in two scripts to monitor the SiStrip DB objects", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8301", 
+                        "number": "8301", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "venturia"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -29441,6 +29481,15 @@
                 ], 
                 "builds": [
                     {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-03-18-0200/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 2, 
+                            "ignoreWarning": 2
+                        }
+                    }, 
+                    {
                         "arch": "slc6_amd64_gcc481", 
                         "passed": "passed", 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-03-18-0200/new/logAnalysis.pkl", 
@@ -29458,9 +29507,16 @@
                         "details": {
                             "num_fails": "0"
                         }
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4-wed-02/CMSSW_7_4_X_2015-03-18-0200/new/logAnalysis.pkl']", 
+                        "details": {}
                     }
                 ], 
                 "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-03-16-0200/slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481": "IB/CMSSW_7_4_X_2015-03-15-0200/slc6_amd64_gcc481"
                 }, 
                 "relvals": [
@@ -29474,6 +29530,7 @@
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
+                    "slc6_amd64_gcc491", 
                     "slc6_amd64_gcc481"
                 ], 
                 "inProgress": false, 
@@ -32977,7 +33034,7 @@
                         "details": {}
                     }
                 ], 
-                "static_checks": "not-found", 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491", 
@@ -33015,7 +33072,7 @@
                         "author_login": "gpetruc"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
