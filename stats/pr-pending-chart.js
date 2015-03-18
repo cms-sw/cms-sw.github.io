@@ -105,7 +105,7 @@ AmCharts.ready(function () {
     if ((safari) && (safariIniFirstPop > 1)) {
       location.href = location.pathname;
       window.location = location.pathname;
-    } else {
+    } else if (!safari) {
       window.location.href = location.pathname;
       window.location = location.pathname;
     }
