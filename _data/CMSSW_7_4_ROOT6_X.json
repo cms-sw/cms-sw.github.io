@@ -335,14 +335,7 @@
             "cmsdistTags": {
                 "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-03-12-0200/slc6_amd64_gcc491"
             }, 
-            "relvals": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "file": "not-ready", 
-                    "passed": true, 
-                    "details": {}
-                }
-            ], 
+            "relvals": [], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
@@ -497,7 +490,14 @@
             "cmsdistTags": {
                 "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-03-12-0200/slc6_amd64_gcc491"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "file": "not-ready", 
+                    "passed": true, 
+                    "details": {}
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
@@ -579,7 +579,14 @@
             "cmsdistTags": {
                 "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT6_X_2015-03-12-0200/slc6_amd64_gcc491"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "file": "not-ready", 
+                    "passed": true, 
+                    "details": {}
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
@@ -809,9 +816,13 @@
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "file": "not-ready", 
-                    "passed": true, 
-                    "details": {}
+                    "passed": "error", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-02/CMSSW_7_4_ROOT6_X_2015-03-18-0200/new/logAnalysis.pkl", 
+                    "details": {
+                        "linkError": 1, 
+                        "compError": 2, 
+                        "ignoreWarning": 21
+                    }
                 }
             ], 
             "compared_tags": "CMSSW_7_4_ROOT6_X_2015-03-16-0200-->CMSSW_7_4_ROOT6_X_2015-03-18-0200", 
@@ -819,12 +830,12 @@
                 {
                     "arch": "slc6_amd64_gcc491", 
                     "passed": "unknown", 
-                    "file": "['not-ready']", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-02/CMSSW_7_4_ROOT6_X_2015-03-18-0200/new/logAnalysis.pkl']", 
                     "details": {}
                 }
             ], 
             "cmsdistTags": {
-                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT6_X_2015-03-16-0200/slc6_amd64_gcc491"
+                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT6_X_2015-03-18-0200/slc6_amd64_gcc491"
             }, 
             "relvals": [], 
             "static_checks": "not-found", 
@@ -832,7 +843,7 @@
             "tests_archs": [
                 "slc6_amd64_gcc491"
             ], 
-            "inProgress": true, 
+            "inProgress": false, 
             "release_name": "CMSSW_7_4_ROOT6_X_2015-03-18-0200", 
             "RVExceptions": null, 
             "merged_prs": [
@@ -1276,6 +1287,51 @@
             "release_name": "CMSSW_7_4_ROOT6_X", 
             "RVExceptions": null, 
             "merged_prs": [
+                {
+                    "hash": "8a56432b1521164a4ad38292ad4b82f408f1bb58", 
+                    "title": "HLT Module for Saving DIGIs of Rechits for Pi0/Eta Calibration Stream [74X]", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8311", 
+                    "number": "8311", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "hardenbr"
+                }, 
+                {
+                    "hash": "998cb2fdf1b3bc1b79c1384b5b284928a24c67c0", 
+                    "title": "Port back from ROOT6 IB for commonality (Reco)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8362", 
+                    "number": "8362", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "wmtan"
+                }, 
+                {
+                    "hash": "082fcaf0e483bfbd5ad398d8fe386ac0f5203c7e", 
+                    "title": "port of 8342 from 73X to 74X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8374", 
+                    "number": "8374", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "VinInn"
+                }, 
+                {
+                    "hash": "a100ce9afc265f958a83bb9a51d29fe5dfe9b7f6", 
+                    "title": "Port back from ROOT6 IB for commonality (Sim)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8364", 
+                    "number": "8364", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "wmtan"
+                }, 
+                {
+                    "hash": "4149b475cfaae1101f7adbb9740444eeb084ee95", 
+                    "title": "Port back from ROOT6 IB for commonality (L1)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8365", 
+                    "number": "8365", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "wmtan"
+                }, 
                 {
                     "hash": "3a9542275ec8ba056c266c361e00159a5df82296", 
                     "title": "Fix in two scripts to monitor the SiStrip DB objects", 
