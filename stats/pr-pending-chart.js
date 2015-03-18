@@ -72,18 +72,9 @@ AmCharts.ready(function () {
   chart.outlineThickness = 3;
   chart.balloonText = "";
   chart.labelText = "[[title]]: [[value]] PRs";
-
   chart.depth3D = 15;
   chart.angle = 30;
-
   chart.addTitle("");
-
-  legend = new AmCharts.AmLegend();
-  legend.align = "center";
-  legend.markerType = "circle";
-  legend.switchable = false;
-
-  //chart.addLegend(legend);
   chart.write("chartdiv");
 
   chart.addListener("clickSlice", function (event) {
@@ -114,17 +105,13 @@ AmCharts.ready(function () {
     if ((safari) && (safariIniFirstPop > 1)) {
       location.href = location.pathname;
       window.location = location.pathname;
-    } else if (!safari) {
-      window.location.reload();
+    } else {
       window.location.href = location.pathname;
       window.location = location.pathname;
     }
   }, false);
 
   var catFromUrl = getUrlParameter('category');
-
-//  window.history.pushState({}, "Default", "");
-
   if (!isNaN(categoriesIds[catFromUrl])) {
     initChart();
     allowedToChangeCategory = false;
@@ -188,8 +175,8 @@ function parseCSV(rows) {
 }
 
 function writeTable(sliceName) {
-  $("#myTable1").bootstrapTable();
-  $("#myTable2").bootstrapTable();
+    $("#myTable1").bootstrapTable();
+    $("#myTable2").bootstrapTable();
   jQuery.each(idList[sliceName], function (period) {
 
     jQuery.each(idList[sliceName][period], function (i, PRid) {
@@ -218,11 +205,8 @@ function writeTable(sliceName) {
       $('#myTable1').bootstrapTable('append', row);
     });
   });
-
-  $("#table1").show();
-  $("#back-btn").show();
   $("#table2").hide();
-
+  $("#table1").show();
 }
 
 function tableData(column) {
@@ -295,8 +279,6 @@ function initChart() {
     var timePassedInSeconds = currentTimeInSeconds - csvData[i].Creation;
     var days = Math.floor(timePassedInSeconds / ONE_DAY_IN_SECONDS);
     var timePassedString = secondsToDateString(timePassedInSeconds);
-
-    var rowColor = "success";
 
     if (days < 7) {
       var rowColor = "success";
@@ -397,7 +379,8 @@ function secondsToDateString(seconds) {
 
 function getUrlParameter(sParam) {
   var sPageURL = window.location.search.substring(1);
-  var sURLVariables = sPageURL.split('&');
+    console.log(window.location);
+    var sURLVariables = sPageURL.split('&');
   for (var i = 0; i < sURLVariables.length; i++) {
     var sParameterName = sURLVariables[i].split('=');
     if (sParameterName[0] == sParam) {
