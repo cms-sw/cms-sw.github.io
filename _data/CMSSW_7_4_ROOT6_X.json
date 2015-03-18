@@ -830,12 +830,19 @@
             ], 
             "inProgress": false, 
             "release_name": "CMSSW_7_4_ROOT6_X_2015-03-16-0200", 
-            "RVExceptions": true, 
+            "RVExceptions": null, 
             "merged_prs": [], 
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-02/CMSSW_7_4_ROOT6_X_2015-03-18-0200/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -852,15 +859,24 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-02/CMSSW_7_4_ROOT6_X_2015-03-18-0200/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT6-wed-02/CMSSW_7_4_ROOT6_X_2015-03-18-0200/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
                 }
             ], 
             "cmsdistTags": {
                 "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT6_X_2015-03-18-0200/slc6_amd64_gcc491"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "file": "not-ready", 
+                    "passed": true, 
+                    "details": {}
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
@@ -1320,7 +1336,7 @@
                 }
             ], 
             "cmsdistTags": {
-                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT6_X_2015-03-18-0200/slc6_amd64_gcc491"
+                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT6_X_2015-03-18-1400/slc6_amd64_gcc491"
             }, 
             "relvals": [], 
             "static_checks": "not-found", 
@@ -1328,7 +1344,7 @@
             "tests_archs": [
                 "slc6_amd64_gcc491"
             ], 
-            "inProgress": true, 
+            "inProgress": false, 
             "release_name": "CMSSW_7_4_ROOT6_X_2015-03-18-1400", 
             "RVExceptions": null, 
             "merged_prs": [
@@ -1358,6 +1374,24 @@
             "release_name": "CMSSW_7_4_ROOT6_X", 
             "RVExceptions": null, 
             "merged_prs": [
+                {
+                    "hash": "fe37ad1abbc780c70c05766f22316161361c9442", 
+                    "title": "HCAL Cosmics reco configuration update for 74X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8376", 
+                    "number": "8376", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "abdoulline"
+                }, 
+                {
+                    "hash": "8423d37f37c5812f2772768eed11979c3fe32c9f", 
+                    "title": "ROOT6 checksums needed in ROOT5", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8387", 
+                    "number": "8387", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "wmtan"
+                }, 
                 {
                     "hash": "66a488d99bef4d39673c8f3545249add5e8a5f99", 
                     "title": "Fix checksums to fix build errors", 
