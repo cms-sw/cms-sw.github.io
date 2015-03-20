@@ -88,11 +88,22 @@
             "builds": [], 
             "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-10-0200-->CMSSW_7_4_CLANG_X_2015-03-10-1400", 
             "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "Not Found"
+            }, 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "file": "not-ready", 
+                    "passed": true, 
+                    "details": {}
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
-            "tests_archs": [], 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
             "inProgress": false, 
             "release_name": "CMSSW_7_4_CLANG_X_2015-03-10-1400", 
             "RVExceptions": null, 
@@ -659,7 +670,14 @@
             "cmsdistTags": {
                 "slc6_amd64_gcc491": "ERR/CMSSW_7_4_CLANG_X_2015-03-15-0200/slc6_amd64_gcc491"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "file": "not-ready", 
+                    "passed": true, 
+                    "details": {}
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
@@ -1740,9 +1758,14 @@
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "file": "not-ready", 
-                    "passed": true, 
-                    "details": {}
+                    "passed": "error", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-11/CMSSW_7_4_CLANG_X_2015-03-20-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 9999, 
+                        "linkError": 4, 
+                        "compError": 3, 
+                        "ignoreWarning": 82430
+                    }
                 }
             ], 
             "compared_tags": "CMSSW_7_4_CLANG_X_2015-03-19-2300-->CMSSW_7_4_CLANG_X_2015-03-20-1100", 
@@ -1750,7 +1773,7 @@
                 {
                     "arch": "slc6_amd64_gcc491", 
                     "passed": "unknown", 
-                    "file": "['not-ready']", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.CLANG-fri-11/CMSSW_7_4_CLANG_X_2015-03-20-1100/new/logAnalysis.pkl']", 
                     "details": {}
                 }
             ], 
@@ -1783,6 +1806,33 @@
             "release_name": "CMSSW_7_4_X", 
             "RVExceptions": null, 
             "merged_prs": [
+                {
+                    "hash": "8d050943f2429b6ca1270dbbe7d30da1612da024", 
+                    "title": "Transition to Minuit2 for BeamSpotProducer", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8386", 
+                    "number": "8386", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "MilanoBicocca-pix"
+                }, 
+                {
+                    "hash": "4e0a26af221d41c6fc31bc3c70434dd0afc1aaf5", 
+                    "title": "UnHardWire Plugins for HLT 74X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8390", 
+                    "number": "8390", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cms-tsg-storm"
+                }, 
+                {
+                    "hash": "4e8f93e1915fef1468e64be430e15d9fb12b012a", 
+                    "title": "Fix puppi event content and JEC", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8377", 
+                    "number": "8377", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "gpetruc"
+                }, 
                 {
                     "hash": "76380aa7d5f3149149db776594daaeb9bb98c86f", 
                     "title": "MultiThreading of HLTcore plugins", 
