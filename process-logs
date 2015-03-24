@@ -30,9 +30,14 @@ def query_es( query, es_index ):
   if err:
     print( "Error while querying elasticsearch" )
     print( out )
-    exit(0)
+    return {}
 
-  response = json.loads( out )
+  try:
+    response = json.loads( out )
+  except Exception as e:
+    print ('Error loading elasticsearch response')
+    print( 'Reason: ' + str(e) )
+    return {}
 
   return response
 
