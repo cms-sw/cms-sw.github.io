@@ -19,7 +19,7 @@ def get_dict_available_results( testsDir ):
 
   if not os.path.exists( DATA_DIR + '/' + testsDir ):
     print( 'Directory not found: ' + DATA_DIR + '/' + testsDir )
-    exit( 1 )   
+    return resultsDict   
 
   for current_arch in listdir( DATA_DIR + '/' + testsDir ):
     for current_date in listdir( DATA_DIR + '/' + testsDir + '/' + current_arch ): 
@@ -38,7 +38,7 @@ def get_dict_available_results( testsDir ):
         else:
           resultsDict[ current_ib ] = current_arch
 
-        print 'found resuls in ', testsDir, ' for: ',  current_ib, ';', current_arch
+        print 'found results in ', testsDir, ' for: ',  current_ib, ';', current_arch
 
   return resultsDict
 
