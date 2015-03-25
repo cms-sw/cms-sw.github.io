@@ -175,7 +175,7 @@ if __name__ == "__main__":
     l = "incomplete_relvals_%s:\n\t./process-relvals-status-es %s" % (x,x)
     print(l, file=f)
   for x in available_ibs_rv_es:
-    l = "relvals_exceptions_%s:\n\t./process-relvals-exceptions-es %s" % (x,x)
+    l = "relvals_exceptions_%s:\n\ttimeout 60 ./process-relvals-exceptions-es %s" % (x,x)
     print(l, file=f)
   for x in incomplete_ibs_scram:
     l = "incomplete_scram_%s:\n\t./process-scram-results-es %s" % (x,x)
