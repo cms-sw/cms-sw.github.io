@@ -11,10 +11,9 @@ import re
 # that were found in the relvals. 
 # It then creates the corresponding json files with the results that it finds. 
 
-ES_HOSTNAME="cmskibana.cern.ch"
-ES_INDEX="ib-matrix*"
 GET_ALL_INFO_EXCEPTIONS_QUERY_FILE="es-queries/get-wf-arch-exception-from-ib.json"
 JSON_OUT_FILE_TEMPLATE="data/relvals/{arch}/{date}/{release_queue}_EXCEPTIONS.json"
+JSON_RELVALS_FILE_TEMPLATE="data/relvals/{arch}/{date}/{release_queue}.json"
 
 #
 # makes a query to get information from elasticsearch
@@ -30,8 +29,13 @@ def query_es( query ):
     print( out )
     exit(0)
 
-  response = json.loads( out )
-
+  try:
+    response = json.loads( out )
+  except Exception as e:
+    print ('Error loading elasticsearch response')
+    print( 'Reason: ' + str(e) )
+    return {}
+  return {}
   return response
 
 #
@@ -87,7 +91,13 @@ def organize_exceptions( all_info_exceptions ):
 if __name__ == "__main__":
   parser = ArgumentParser()
   parser.add_argument("input")
+  parser.add_argument("--es_hostname", type=str, help="elasticsearch hostname", required=True)
+  parser.add_argument("--es_rv_index", type=str, help="elasticsearch relvals index", required=True)
   args = parser.parse_args()
+
+  ES_HOSTNAME = args.es_hostname
+  ES_INDEX = args.es_rv_index
+
   if ( not args.input ):
     print "Please specify an IB to query"
     exit(1)

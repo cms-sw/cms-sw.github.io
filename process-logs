@@ -14,9 +14,6 @@ import re
 RESULTS_PATH = "pyRelValMatrixLogs/run/runall-report-step123-.log"
 UNITTEST_SUMMARY_PATH = "unitTests-summary.log"
 RELVAL_LOGS = "pyRelValMatrixLogs.zip"
-ES_HOSTNAME = "cmskibana.cern.ch"
-ES_RELVALS_INDEX = "ib-matrix*"
-ES_SCRAM_INDEX = "ib-scram-stats*"
 
 #
 # makes a query to get information from elasticsearch
@@ -79,9 +76,16 @@ def get_list_avaiable_ib_scram_results( es_hostname, es_index ):
 if __name__ == "__main__":
   parser = ArgumentParser()
   parser.add_argument("--logdir", type=str, help="where to find the logs", required=True)
+  parser.add_argument("--es_hostname", type=str, help="elasticsearch hostname", required=True)
+  parser.add_argument("--es_rv_index", type=str, help="elasticsearch relvals index", required=True)
+  parser.add_argument("--es_scram_index", type=str, help="elasticsearch scram index", required=True)
   parser.add_argument("--filter", type=str, default="")
   parser.add_argument("-n", "--dry-run", dest="dryRun", action="store_true", default=False)
   args = parser.parse_args()
+
+  ES_HOSTNAME = args.es_hostname
+  ES_RELVALS_INDEX = args.es_rv_index
+  ES_SCRAM_INDEX = args.es_scram_index
 
   release_match = join(args.logdir, "([^/]*)/www/([^/]*)/([^/]*)/([^/]*)/pyRelValMatrixLogs/run/runall-report-step123-.log")
 
@@ -172,11 +176,11 @@ if __name__ == "__main__":
     l = "%s: %s\n\tmkdir -p `dirname $@` && ./log-input-files $< | sort > $@" % x
     print(l, file=f)
   for x in incomplete_ibs_rv:
-    l = "incomplete_relvals_%s:\n\t./process-relvals-status-es %s" % (x,x)
+    l = "incomplete_relvals_%s:\n\ttimeout 60 ./process-relvals-status-es %s --es_hostname %s --es_rv_index %s" % (x,x,ES_HOSTNAME,ES_RELVALS_INDEX)
     print(l, file=f)
   for x in available_ibs_rv_es:
-    l = "relvals_exceptions_%s:\n\ttimeout 60 ./process-relvals-exceptions-es %s" % (x,x)
+    l = "relvals_exceptions_%s:\n\ttimeout 60 ./process-relvals-exceptions-es %s --es_hostname %s --es_rv_index %s" % (x,x,ES_HOSTNAME,ES_RELVALS_INDEX)
     print(l, file=f)
   for x in incomplete_ibs_scram:
-    l = "incomplete_scram_%s:\n\t./process-scram-results-es %s" % (x,x)
+    l = "incomplete_scram_%s:\n\ttimeout 60 ./process-scram-results-es %s --es_hostname %s --es_scram_index %s" % (x,x,ES_HOSTNAME,ES_SCRAM_INDEX)
     print(l, file=f)
