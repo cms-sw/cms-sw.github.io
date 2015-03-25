@@ -9,8 +9,6 @@ import os
 # Given an IB, it queries the information from elasticsearch and creates the 
 # corresponding json files with the results that it finds. 
 
-ES_HOSTNAME="cmskibana.cern.ch"
-ES_INDEX="ib-matrix*"
 QUERY_FILE="es-queries/get-ib-relvals-status.json"
 JSON_OUT_FILE_TEMPLATE="data/relvals/{arch}/{date}/{release_queue}_INCOMPLETE.json"
 
@@ -41,7 +39,13 @@ def get_ib_data( ib ):
 if __name__ == "__main__":
   parser = ArgumentParser()
   parser.add_argument("input")
+  parser.add_argument("--es_hostname", type=str, help="elasticsearch hostname", required=True)
+  parser.add_argument("--es_rv_index", type=str, help="elasticsearch relvals index", required=True)
   args = parser.parse_args()
+
+  ES_HOSTNAME = args.es_hostname
+  ES_INDEX = args.es_rv_index
+
   if ( not args.input ):
     print "Please specify an IB to query, and the base " \
           "directory of the repository"
