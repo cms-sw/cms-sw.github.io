@@ -3,6 +3,8 @@ from github import Github
 from argparse import ArgumentParser
 from os.path import exists, expanduser
 from os import makedirs, rename, remove
+from datetime import datetime
+from time import mktime
 
 DIRECTORY_NAME = "data/stats/prs/"
 
@@ -67,7 +69,7 @@ if __name__ == "__main__":
 
   # This is the header of the files and will force a rewrite of the file
   # if a mismatching is found.
-  schema = "Creation,MergeTime,id,isPr,N. of Comments,Closed,N. Labels,author, labelStatus"
+  schema = "Creation,MergeTime,id,isPr,N. of Comments,Closed,N. Labels,author, labelStatus, lastUpdateTime"
 
   # Filenames is <page>.csv so that we can avoid
   # parsing ancient PRs.
@@ -98,7 +100,7 @@ if __name__ == "__main__":
     try:
       remove(DIRECTORY_NAME + i +".csv")
       print "removing %s%s.csv" % (DIRECTORY_NAME, i)
-    except IOError as ex:
+    except OSError as ex:
       pass
 
   # checking if csv file exist
@@ -131,11 +133,13 @@ if __name__ == "__main__":
       closedAt = issue.closed_at and int(issue.closed_at.strftime("%s")) or "NA"
       isClosed = issue.closed_at and 1 or 0
       isPr = issue.pull_request and 1 or 0
+      updateAt = int(mktime(datetime.strptime(str(issue.updated_at), "%Y-%m-%d %H:%M:%S").timetuple()))
+
       if (not isClosed) and (isPr == 1):
         notClosedPR.append(i)
       elif not isClosed:
         notClosedIssue.append(i)
-      p = [createdAt, closedAt, issue.number, isPr, issue.comments, isClosed, len(labels), issue.user.login, decodedLabels]
+      p = [createdAt, closedAt, issue.number, isPr, issue.comments, isClosed, len(labels), issue.user.login, decodedLabels, updateAt]
       beforeBegin.append(p)
 
     print "Saving %s" % filename
