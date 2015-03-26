@@ -10,6 +10,7 @@ from collections import defaultdict
 from commands import getstatusoutput
 import json
 import re
+from datetime import datetime, timedelta
 
 RESULTS_PATH = "pyRelValMatrixLogs/run/runall-report-step123-.log"
 UNITTEST_SUMMARY_PATH = "unitTests-summary.log"
@@ -58,7 +59,6 @@ def get_list_avaiable_ib_rv_results( es_hostname, es_index ):
 #
 # Queries elasticsearch to get the current list of avaiable ib results for SCRAM
 #
-#
 def get_list_avaiable_ib_scram_results( es_hostname, es_index ):
   query_file = 'es-queries/list-available-scram-results.json'
   query = open( query_file, 'r' ).read()
@@ -72,6 +72,14 @@ def get_list_avaiable_ib_scram_results( es_hostname, es_index ):
   ibs = [ x[ 'key' ] for x in response[ 'aggregations' ][ 'IBs' ][ 'buckets' ] ]
   return ibs
 
+#
+# Removes form the list the IBs that are older than the date stated in the parameters.
+# the date needs to be in the "IB" format. For example "2015-03-21-2300"
+# returns a new list without the old IBs
+#
+def remove_too_old_ibs( earliest_date, ib_list ):
+ 
+  return [ib for ib in ib_list if ( ib[ ib.rfind( '_' )+1:: ] >= earliest_date )]
 
 if __name__ == "__main__":
   parser = ArgumentParser()
@@ -131,17 +139,29 @@ if __name__ == "__main__":
   all_scram_res_afs = [x.split('/')[ 10 ] for x in inputsUnitTestSummary ] 
 
   incomplete_ibs_rv = list( set( available_ibs_rv_es ) - set( all_relvals_afs ) )
+  dates.sort()
+  incomplete_ibs_rv = remove_too_old_ibs( dates[0], incomplete_ibs_rv )
   incomplete_ibs_scram = list( set( available_ibs_scram_es ) - set( all_scram_res_afs ) )
+  incomplete_ibs_scram = remove_too_old_ibs( dates[0], incomplete_ibs_scram )
+  too_old_for_exceptions = datetime.now() - timedelta(days=2)
+  ib_date_exception_limit = too_old_for_exceptions.strftime('%Y-%m-%d-%H00')
+  ibs_to_check_exceptions = remove_too_old_ibs( ib_date_exception_limit, available_ibs_rv_es )
 
   print( 'All IBS with relvals results in ES:' )
   print( available_ibs_rv_es )
   print( 'All IBS with scram results in ES:' )
   print( available_ibs_scram_es )
   print( '--------------------' )
-  print( 'Incomplete relvals results ( not in AFS ):' )
+  print( 'Incomplete relvals results ( not in AFS ) older than %s:' % dates[0] )
   print( incomplete_ibs_rv )
-  print( 'Incomplete scram results ( not in AFS ):' )
+  print( 'Incomplete scram results ( not in AFS ) older than %s:' % dates[0] )
   print( incomplete_ibs_scram )
+  print( '------------' )
+  print( 'Results in AFS:')
+  print( all_relvals_afs ) 
+  print( '---------' )
+  print( 'Ibs for which I will check exceptions ( more recent than %s ):' % ib_date_exception_limit )
+  print( ibs_to_check_exceptions )
 
   f = open("Makefile", "w")
 
@@ -151,7 +171,7 @@ if __name__ == "__main__":
   print(".PHONY: all clean pr-stats", file=f)
   print("all: pr-stats ib-files data/cmsdist-config.json "+" ".join( ["incomplete_relvals_"+x for x in incomplete_ibs_rv] )+" "
          +" ".join( ["relvals_exceptions_"+x for x in available_ibs_rv_es] )+" "+" ".join( ["incomplete_scram_"+x for x in incomplete_ibs_scram] )+" " 
-         +" ".join(allFiles), file=f)
+         +" ".join(allFiles)+" clean_up_old_files", file=f)
   print("data/cmsdist-config.json:\n\tmkdir -p `dirname $@` && ./process-cmsdist > $@", file=f)
   print("pr-stats:\n\tmkdir -p data/stats && ./process-pr-stats && cat data/stats/prs/*.csv | sort -u -r > data/stats/pr-stats.csv", file=f)
   print("ib-files:\n\tmkdir -p data/inputs && cat data/inputs/*/*/*.csv | sort -u -r > data/inputs/all-ibs.csv", file=f)
@@ -184,3 +204,5 @@ if __name__ == "__main__":
   for x in incomplete_ibs_scram:
     l = "incomplete_scram_%s:\n\ttimeout 60 ./process-scram-results-es %s --es_hostname %s --es_scram_index %s" % (x,x,ES_HOSTNAME,ES_SCRAM_INDEX)
     print(l, file=f)
+  # print a rule for cleaning up the old files
+  print( "clean_up_old_files:\n\t./cleanup-old-results -d %s" % dates[0], file=f )
