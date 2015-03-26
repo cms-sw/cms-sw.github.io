@@ -1,0 +1,49 @@
+#! /usr/bin/env python
+
+from os import listdir
+import os
+from argparse import ArgumentParser
+import shutil
+
+DATA_DIR='data'
+DIRECTORIES_TO_CLEAN = [ 'relvals', 'unitTests', 'scram' ]
+
+#
+# clean up the results in the given directory that are older than the date given as a parameter
+# the IB date must be in the same format as in the IBs
+#
+def clean_up_results( result_dir, earliest_date ):
+  
+  if not os.path.exists( DATA_DIR + '/' + result_dir ):
+    print( 'Directory not found: ' + DATA_DIR + '/' + result_dir )
+    return
+
+  for current_arch in listdir( DATA_DIR + '/' + result_dir ):
+    for current_date in listdir( DATA_DIR + '/' + result_dir + '/' + current_arch ):
+      if current_date < earliest_date:
+        to_delete = DATA_DIR + '/' + result_dir + '/' + current_arch + '/' + current_date
+        if args.dryRun:
+          print( 'Not deleting (dry-run): %s' % to_delete )
+        else:
+          print( 'Deleting: %s because it was too old' % to_delete )
+          shutil.rmtree( to_delete )
+          
+
+
+#-----------------------------------------------------------------------------------
+#---- Start
+#-----------------------------------------------------------------------------------
+
+if __name__ == "__main__":
+
+  parser = ArgumentParser()
+  parser.add_argument("-d","--date", type=str, help="Results older than this date will be deleted. "
+                                                    "The date must be in the same format as it is in the IBs"
+                                                    , required=True)
+  parser.add_argument("-n", "--dry-run", dest="dryRun", help="Don't actually delete anything", action="store_true", default=False)
+  args = parser.parse_args()
+
+  earliest_date = args.date
+
+  for dir in DIRECTORIES_TO_CLEAN:
+    clean_up_results( dir, earliest_date )
