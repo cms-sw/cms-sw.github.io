@@ -4414,7 +4414,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-23/CMSSW_6_2_X_SLHC_2015-03-26-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc472", 
@@ -4427,15 +4434,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-23/CMSSW_6_2_X_SLHC_2015-03-26-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-23/CMSSW_6_2_X_SLHC_2015-03-26-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_X_SLHC_2015-03-22-2300/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-23/CMSSW_6_2_X_SLHC_2015-03-26-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 35, 
+                            "num_failed": 1
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -6369,7 +6388,7 @@
                 "tests_archs": [], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_CLANG_X_2015-03-18-2300", 
-                "RVExceptions": true, 
+                "RVExceptions": null, 
                 "merged_prs": [
                     {
                         "hash": "fe37ad1abbc780c70c05766f22316161361c9442", 
@@ -6433,7 +6452,7 @@
                 "tests_archs": [], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_CLANG_X_2015-03-19-1100", 
-                "RVExceptions": true, 
+                "RVExceptions": null, 
                 "merged_prs": [], 
                 "hlt_tests": "not-found"
             }, 
@@ -9051,25 +9070,14 @@
                 "builds": [], 
                 "compared_tags": "CMSSW_7_4_ICC_X_2015-03-18-1400-->CMSSW_7_4_ICC_X_2015-03-18-2300", 
                 "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "Not Found"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "file": "not-ready", 
-                        "passed": true, 
-                        "details": {}
-                    }
-                ], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_ICC_X_2015-03-18-2300", 
-                "RVExceptions": true, 
+                "RVExceptions": null, 
                 "merged_prs": [
                     {
                         "hash": "fe37ad1abbc780c70c05766f22316161361c9442", 
@@ -10236,7 +10244,7 @@
                 "tests_archs": [], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_ROOT6_X_2015-03-18-2300", 
-                "RVExceptions": true, 
+                "RVExceptions": null, 
                 "merged_prs": [
                     {
                         "hash": "fe37ad1abbc780c70c05766f22316161361c9442", 
@@ -11466,7 +11474,7 @@
                 "tests_archs": [], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_THREADED_X_2015-03-18-2300", 
-                "RVExceptions": true, 
+                "RVExceptions": null, 
                 "merged_prs": [
                     {
                         "hash": "fe37ad1abbc780c70c05766f22316161361c9442", 
@@ -13661,7 +13669,7 @@
                 "tests_archs": [], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_X_2015-03-18-2300", 
-                "RVExceptions": true, 
+                "RVExceptions": null, 
                 "merged_prs": [
                     {
                         "hash": "fe37ad1abbc780c70c05766f22316161361c9442", 
@@ -16812,16 +16820,36 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-03-25-2300-->CMSSW_7_5_ROOT5_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.5.ROOT5-thu-23/CMSSW_7_5_ROOT5_X_2015-03-26-2300/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-03-25-2300-->CMSSW_7_5_ROOT5_X_2015-03-26-2300", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.5.ROOT5-thu-23/CMSSW_7_5_ROOT5_X_2015-03-26-2300/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "Not Found"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_5_ROOT5_X", 
+                "release_name": "CMSSW_7_5_ROOT5_X_2015-03-26-2300", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -16978,6 +17006,22 @@
                         "author_login": "Dr15Jones"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-03-26-2300-->CMSSW_7_5_ROOT5_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_5_ROOT5_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -17299,7 +17343,7 @@
                 "tests_archs": [], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_X_2015-03-18-2300", 
-                "RVExceptions": true, 
+                "RVExceptions": null, 
                 "merged_prs": [
                     {
                         "hash": "5ea474a282f0d220ae64ed3443488e613348fe44", 
@@ -18897,7 +18941,7 @@
                         }
                     }
                 ], 
-                "static_checks": "not-found", 
+                "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
                     "slc6_amd64_gcc491"
@@ -18916,7 +18960,7 @@
                         "author_login": "Dr15Jones"
                     }
                 ], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
