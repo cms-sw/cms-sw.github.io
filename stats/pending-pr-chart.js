@@ -1,6 +1,8 @@
 var ONE_HOUR_IN_SECONDS = 60 * 60;
 var ONE_DAY_IN_SECONDS = ONE_HOUR_IN_SECONDS * 24;
+var SAFARI = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
+var safariIniFirstPop = 0;
 var dataObject;
 var chart;
 var csvData = [];
@@ -25,6 +27,12 @@ var categories = {
     16: "visualization"
 };
 var numberOfCategories = Object.keys(categories).length;
+
+var categoriesIds = {};
+for (var i = 0; i < numberOfCategories; i++) {
+  categoriesIds[categories[i]] = i;
+}
+
 
 var statistics = {};
 var idList = {};
@@ -81,9 +89,10 @@ AmCharts.ready(function () {
     graph.valueField = "0 to 7 days";
     graph.type = "column";
     graph.lineAlpha = 0;
+    graph.alphaField = "alpha";
     graph.fillAlphas = 1;
     graph.lineColor = "#008000";
-    graph.balloonText = "<span style='color:#555555;'>[[category]]</span><br><span style='font-size:14px'>[[title]]:<b>[[value]]</b></span>";
+    graph.balloonText = "";
     chart.addGraph(graph);
 
     // second graph              
@@ -93,9 +102,10 @@ AmCharts.ready(function () {
     graph.valueField = "7 to 30 days";
     graph.type = "column";
     graph.lineAlpha = 0;
+    graph.alphaField = "alpha";
     graph.fillAlphas = 1;
     graph.lineColor = "#FFD700";
-    graph.balloonText = "<span style='color:#555555;'>[[category]]</span><br><span style='font-size:14px'>[[title]]:<b>[[value]]</b></span>";
+    graph.balloonText = "";
     chart.addGraph(graph);
 
     // third graph                              
@@ -105,9 +115,10 @@ AmCharts.ready(function () {
     graph.valueField = "30 + days";
     graph.type = "column";
     graph.lineAlpha = 0;
+    graph.alphaField = "alpha";
     graph.fillAlphas = 1;
     graph.lineColor = "#FF0000";
-    graph.balloonText = "<span style='color:#555555;'>[[category]]</span><br><span style='font-size:14px'>[[title]]:<b>[[value]]</b></span>";
+    graph.balloonText = "";
     chart.addGraph(graph);
 
     // LEGEND                  
@@ -126,6 +137,9 @@ AmCharts.ready(function () {
     chart.addListener("clickGraphItem", function (event) {
         $("#table1").hide();
         changeCategoryData(event.item.category);
+        hideOtherBars(categoriesIds[event.item.category])
+        
+        chart.validateData();
     });
 
     chart.addListener("rollOverGraphItem", function (event) {
@@ -136,11 +150,33 @@ AmCharts.ready(function () {
         $('#chartdiv').css('cursor', 'default');
     });
 
+    window.addEventListener('popstate', function () {
+        safariIniFirstPop++; // safari initialize popstate on load, so we need to ignore it
+        if ((SAFARI) && (safariIniFirstPop > 1)) {
+          //location.href = location.pathname;
+          window.location = location.pathname;
+        } else if (!SAFARI) {
+          //window.location.href = location.pathname;
+          window.location = location.href;
+        }
+    }, false);
+
+
 
     $("#table2").hide();
 
     writeMainTable();
-    //changeCategoryData('analysis');
+    var catFromUrl = getUrlParameter('category');
+    if (!isNaN(categoriesIds[catFromUrl])) {
+        $("#table1").hide();
+        changeCategoryData(catFromUrl);
+        hideOtherBars(categoriesIds[catFromUrl]);
+        chart.validateData();
+    }   else if ((typeof(catFromUrl) != "undefined") && (catFromUrl.length > 0)) {
+   //     wrongCategory();
+    }   else {
+
+    }
 });
 
 function writeMainTable() {
@@ -149,15 +185,8 @@ function writeMainTable() {
         var days = Math.floor(timePassedInSeconds / ONE_DAY_IN_SECONDS);
         var timePassedString = secondsToDateString(timePassedInSeconds);
         var timePassedFromLastUpdate = secondsToDateString(currentTimeInSeconds - csvData[i].lastUpdateTime);
-        // console.log(timePassedFromLastUpdate);
 
-        if (days < 7) {
-            var rowColor = "green";
-        } else if (days < 30) {
-            var rowColor = "yellow";
-        } else if (days >= 30) {
-            var rowColor = "red";
-        }
+        var rowColor = rowColorFromDays(days);
 
         var categoriesPending = "";
         for (o = 0; o < numberOfCategories; o++) {
@@ -166,12 +195,15 @@ function writeMainTable() {
             }
         }
 
+        var testStatus = testStatusFromLabel(csvData[i].labelStatus);
+
         var row = [];
         var PRidWithLink = "<a href='https://github.com/cms-sw/cmssw/pull/" + csvData[i].id + "' target='_blank'>" + csvData[i].id;
         row.push({
             classes: rowColor,
             pr: PRidWithLink,
             category: categoriesPending,
+            testStatus: testStatus,
             daysOpened: timePassedString,
             lastUpdate: timePassedFromLastUpdate
         });
@@ -180,17 +212,6 @@ function writeMainTable() {
 
     }
 
-}
-// this method sets chart 2D/3D
-function setDepth() {
-    if (document.getElementById("rb1").checked) {
-        chart.depth3D = 0;
-        chart.angle = 0;
-    } else {
-        chart.depth3D = 25;
-        chart.angle = 30;
-    }
-    chart.validateNow();
 }
 
 function loadCSV(file) {
@@ -339,6 +360,8 @@ function customDaysSorter(a, b) {
 
 
 function changeCategoryData(category) {
+    window.history.pushState({category: category}, "Title", "?category=" + category);
+
     $("#table2").show();
     $("#backbtn").show();
 
@@ -359,24 +382,20 @@ function changeCategoryData(category) {
                 }
             }
 
-            if (days < 7) {
-                var rowColor = "green";
-            } else if (days < 30) {
-                var rowColor = "yellow";
-            } else if (days >= 30) {
-                var rowColor = "red";
-            }
+            var testStatus = testStatusFromLabel(idList[category][period][i].labelStatus);
 
-            PRid = idList[category][period][i].id;
-            var PRidWithLink = "<a href='https://github.com/cms-sw/cmssw/pull/" + PRid + "' target='_blank'>" + PRid;
+            var rowColor = rowColorFromDays(days);
+
+            var PRidWithLink = "<a href='https://github.com/cms-sw/cmssw/pull/" + idList[category][period][i].id + "' target='_blank'>" + idList[category][period][i].id;
+            
             var row = [];
             row.push({
                 classes: rowColor,
                 pr: PRidWithLink,
+                testStatus : testStatus,
                 category: categoriesPending,
                 daysOpened: timePassedString,
                 lastUpdate: timePassedFromLastUpdate
-
             });
 
             $('#myTable2').bootstrapTable('append', row);
@@ -388,4 +407,65 @@ function showMainData() {
     $("#backbtn").hide();
     $("#table2").hide();
     $("#table1").show();
+    allBarsVisible();
+}
+
+function allBarsVisible() {
+    for (var i = 0; i < numberOfCategories; i++) {
+        chartData[i].alpha = 1;
+    }
+    chart.validateData();
+}
+
+function hideOtherBars(catId) {
+    console.log(catId);
+    for (var i = 0; i <numberOfCategories; i++) {
+            if (i != catId) {
+                chartData[i].alpha = 0.15;
+            } else {
+                chartData[i].alpha = 1;
+            }
+        }
+}
+
+function testStatusFromLabel(labelStatus) {
+    var labelTestStatus = labelStatus[categoriesIds['tests']];
+    switch(labelTestStatus) {
+    case "A":
+        return "Approved";
+        break;
+    case "P":
+        return "Pending";
+        break;
+    case "R":
+        return "Rejected";
+    case "S":
+        return "Started"
+    default:
+        return "";
+    }
+}
+
+function rowColorFromDays(days) {
+        if (days < 7) {
+            return "green";
+        } else if (days < 30) {
+            return "yellow";
+        } else if (days >= 30) {
+            return "red";
+        } else {
+            return "";
+        }
+}
+
+function getUrlParameter(sParam) {
+  var sPageURL = window.location.search.substring(1);
+    console.log(window.location);
+    var sURLVariables = sPageURL.split('&');
+  for (var i = 0; i < sURLVariables.length; i++) {
+    var sParameterName = sURLVariables[i].split('=');
+    if (sParameterName[0] == sParam) {
+      return sParameterName[1];
+    }
+  }
 }
