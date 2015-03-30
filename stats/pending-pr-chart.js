@@ -408,6 +408,7 @@ function showMainData() {
     $("#table2").hide();
     $("#table1").show();
     allBarsVisible();
+    window.history.pushState({}, "Title", location.pathname);
 }
 
 function allBarsVisible() {
