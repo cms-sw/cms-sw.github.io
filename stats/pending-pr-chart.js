@@ -50,6 +50,8 @@ for (var i = 0; i < numberOfCategories; i++) {
     info[categories[i]]["totalPR"] = 0;
 }
 var currentTimeInSeconds = Date.now() / 1000;
+var clickGraphItem = false;
+var chartWithAllCats = true;
 
 AmCharts.ready(function () {
     var rows = loadCSV("../data/stats/pr-stats.csv");
@@ -61,7 +63,6 @@ AmCharts.ready(function () {
     chart.categoryField = "category";
     chart.plotAreaBorderAlpha = 0.2;
     chart.startDuration = 1;
-    chart.fontSize = 12;
     chart.startDuration = 0;
     chart.addTitle("Pending Pull request for each category");
 
@@ -72,12 +73,17 @@ AmCharts.ready(function () {
     categoryAxis.axisAlpha = 0;
     categoryAxis.gridPosition = "start";
     categoryAxis.labelRotation = 30;
+    categoryAxis.titleFontSize = 17;
 
+    categoryAxis.title = "Categories";
 
     // value
     var valueAxis = new AmCharts.ValueAxis();
     valueAxis.stackType = "regular";
     valueAxis.gridAlpha = 0.1;
+    valueAxis.title = "Pull Requests";
+    valueAxis.titleFontSize = 17;
+
 
     chart.addValueAxis(valueAxis);
 
@@ -138,16 +144,23 @@ AmCharts.ready(function () {
         $("#table1").hide();
         changeCategoryData(event.item.category);
         hideOtherBars(categoriesIds[event.item.category])
-        
+        clickGraphItem = true;
         chart.validateData();
-    });
+    });   
 
     chart.addListener("rollOverGraphItem", function (event) {
         $('#chartdiv').css('cursor', 'pointer');
+        clickGraphItem=false;
     });
 
     chart.addListener("rollOutGraphItem", function (event) {
         $('#chartdiv').css('cursor', 'default');
+    });
+
+    $('#chartdiv').on('click', function(e) {
+        if ((!clickGraphItem) && (!chartWithAllCats)) {
+            showMainData();
+        }
     });
 
     window.addEventListener('popstate', function () {
@@ -326,7 +339,8 @@ function secondsToDateString(seconds) {
 
     var minutes = Math.floor(seconds / 60) % 60;
 
-    return days + "d " + hours + "h " + minutes + "m";
+    //return days + "d " + hours + "h " + minutes + "m";
+    return days + " days";
 }
 
 function rowStyle(row) {
@@ -338,20 +352,14 @@ function rowStyle(row) {
 
 function customDaysSorter(a, b) {
     var aDate = a.match(/\S+/g); // matching by spaces
-    var aDay = aDate[0].slice(0, -1);
-    var aHour = aDate[1].slice(0, -1);
-    var aMin = aDate[2].slice(0, -1);
+    var aDay = parseInt(aDate[0]);
+
     var bDate = b.match(/\S+/g);
-    var bDay = bDate[0].slice(0, -1);
-    var bHour = bDate[1].slice(0, -1);
-    var bMin = bDate[2].slice(0, -1);
+    var bDay = parseInt(bDate[0]);
 
-    var aTotalSec = aMin * 60 + aHour * ONE_HOUR_IN_SECONDS + aDay * ONE_DAY_IN_SECONDS;
-    var bTotalSec = bMin * 60 + bHour * ONE_HOUR_IN_SECONDS + bDay * ONE_DAY_IN_SECONDS;
-
-    if (aTotalSec < bTotalSec) {
+    if (aDay < bDay) {
         return 1;
-    } else if (aTotalSec > bTotalSec) {
+    } else if (aDay > bDay) {
         return -1;
     } else {
         return 0;
@@ -361,7 +369,7 @@ function customDaysSorter(a, b) {
 
 function changeCategoryData(category) {
     window.history.pushState({category: category}, "Title", "?category=" + category);
-
+    chartWithAllCats = false;
     $("#table2").show();
     $("#backbtn").show();
 
@@ -404,6 +412,7 @@ function changeCategoryData(category) {
 }
 
 function showMainData() {
+    chartWithAllCats = true;
     $("#backbtn").hide();
     $("#table2").hide();
     $("#table1").show();
@@ -419,7 +428,6 @@ function allBarsVisible() {
 }
 
 function hideOtherBars(catId) {
-    console.log(catId);
     for (var i = 0; i <numberOfCategories; i++) {
             if (i != catId) {
                 chartData[i].alpha = 0.15;
@@ -461,7 +469,6 @@ function rowColorFromDays(days) {
 
 function getUrlParameter(sParam) {
   var sPageURL = window.location.search.substring(1);
-    console.log(window.location);
     var sURLVariables = sPageURL.split('&');
   for (var i = 0; i < sURLVariables.length; i++) {
     var sParameterName = sURLVariables[i].split('=');
