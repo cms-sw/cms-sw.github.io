@@ -10,8 +10,6 @@ import re
 # Given an IB, it queries the information from elasticsearch about the scram information 
 # It then creates the corresponding json files with the results that it finds. 
 
-ES_HOSTNAME="cmskibana.cern.ch"
-ES_INDEX="ib-scram-stats*"
 GET_ALL_INFO_EXCEPTIONS_QUERY_FILE="es-queries/get-ib-scram-results.json"
 JSON_OUT_FILE_TEMPLATE="data/scram/{arch}/{date}/{release_queue}_INCOMPLETE.json"
 
@@ -106,6 +104,13 @@ def organize_results( all_info_scram ):
 if __name__ == "__main__":
   parser = ArgumentParser()
   parser.add_argument("input")
+  parser.add_argument("--es_hostname", type=str, help="elasticsearch hostname", required=True)
+  parser.add_argument("--es_scram_index", type=str, help="elasticsearch scram index", required=True)
+  args = parser.parse_args()
+
+  ES_HOSTNAME = args.es_hostname
+  ES_INDEX = args.es_scram_index
+
   args = parser.parse_args()
   if ( not args.input ):
     print "Please specify an IB to query"
