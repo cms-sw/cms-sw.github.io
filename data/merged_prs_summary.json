@@ -1366,50 +1366,6 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_3_2_patch3-->CMSSW_7_3_2_patch4", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_3_2_patch4", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "hash": "c749a4d87117930767b7c727aaef23964af2f175", 
-                        "title": "Removing exception in BTag HLT validation", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7881", 
-                        "number": "7881", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "silviodonato"
-                    }, 
-                    {
-                        "hash": "5b68a24f4ec01ae51b01e87795350af700d3fc28", 
-                        "title": "Pixel cluster dqm fix 73x", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7914", 
-                        "number": "7914", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "danduggan"
-                    }, 
-                    {
-                        "hash": "ca119a4b7d79f936ac1115e6dfd12234a1f3245d", 
-                        "title": "Copy back detailed pede exit code file (backport)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/7759", 
-                        "number": "7759", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "frmeier"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
                 "compared_tags": "CMSSW_7_3_2_patch4-->CMSSW_7_3_2_patch5", 
                 "utests": [], 
                 "cmsdistTags": {}, 
@@ -7449,9 +7405,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.DEVEL-tue-14/CMSSW_7_4_DEVEL_X_2015-03-31-1400/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4.DEVEL-tue-14/CMSSW_7_4_DEVEL_X_2015-03-31-1400/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -28303,36 +28261,38 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-03-30-2300-->CMSSW_7_5_ROOT5_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.5.ROOT5-tue-14/CMSSW_7_5_ROOT5_X_2015-03-31-1400/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-03-30-2300-->CMSSW_7_5_ROOT5_X_2015-03-31-1400", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.5.ROOT5-tue-14/CMSSW_7_5_ROOT5_X_2015-03-31-1400/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_5_ROOT5_X_2015-03-31-1400/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_5_ROOT5_X", 
+                "release_name": "CMSSW_7_5_ROOT5_X_2015-03-31-1400", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "f6106edd92f155c1a2ae12814fed927550994d33", 
-                        "title": "Add heavy ion EventPlane histograms to the Centrality DQM code", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8449", 
-                        "number": "8449", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "satan1028"
-                    }, 
-                    {
-                        "hash": "d5373a3e94949c62ba8f60cec4a0f4d229ec4ea0", 
-                        "title": "remove asserts in hcal tp emulator", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/8604", 
-                        "number": "8604", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "akhukhun"
-                    }, 
                     {
                         "hash": "48fbd2a25b2e41476ee5fbfb643298a14a2f479c", 
                         "title": "Move CMSSW_7_4_X to be ROOT6 based.", 
@@ -28485,6 +28445,41 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "manuelfs"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-03-31-1400-->CMSSW_7_5_ROOT5_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_5_ROOT5_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "f6106edd92f155c1a2ae12814fed927550994d33", 
+                        "title": "Add heavy ion EventPlane histograms to the Centrality DQM code", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8449", 
+                        "number": "8449", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "satan1028"
+                    }, 
+                    {
+                        "hash": "d5373a3e94949c62ba8f60cec4a0f4d229ec4ea0", 
+                        "title": "remove asserts in hcal tp emulator", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8604", 
+                        "number": "8604", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "akhukhun"
                     }
                 ], 
                 "hlt_tests": "not-found"
