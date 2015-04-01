@@ -26,11 +26,18 @@ var categories = {
     15: "tests",
     16: "visualization"
 };
+var labelsForTestStatus = {
+    "A": "Approved",
+    "P": "Pending",
+    "R": "Rejected",
+    "S": "Started"
+};
+
 var numberOfCategories = Object.keys(categories).length;
 
 var categoriesIds = {};
 for (var i = 0; i < numberOfCategories; i++) {
-  categoriesIds[categories[i]] = i;
+    categoriesIds[categories[i]] = i;
 }
 
 
@@ -53,7 +60,7 @@ var currentTimeInSeconds = Date.now() / 1000;
 var clickGraphItem = false;
 var chartWithAllCats = true;
 
-AmCharts.ready(function () {
+AmCharts.ready(function() {
     var rows = loadCSV("../data/stats/pr-stats.csv");
     parseCSV(rows);
 
@@ -140,20 +147,20 @@ AmCharts.ready(function () {
     // WRITE
     chart.write("chartdiv");
 
-    chart.addListener("clickGraphItem", function (event) {
+    chart.addListener("clickGraphItem", function(event) {
         $("#table1").hide();
         changeCategoryData(event.item.category);
         hideOtherBars(categoriesIds[event.item.category])
         clickGraphItem = true;
         chart.validateData();
-    });   
-
-    chart.addListener("rollOverGraphItem", function (event) {
-        $('#chartdiv').css('cursor', 'pointer');
-        clickGraphItem=false;
     });
 
-    chart.addListener("rollOutGraphItem", function (event) {
+    chart.addListener("rollOverGraphItem", function(event) {
+        $('#chartdiv').css('cursor', 'pointer');
+        clickGraphItem = false;
+    });
+
+    chart.addListener("rollOutGraphItem", function(event) {
         $('#chartdiv').css('cursor', 'default');
     });
 
@@ -163,18 +170,15 @@ AmCharts.ready(function () {
         }
     });
 
-    window.addEventListener('popstate', function () {
-        safariIniFirstPop++; // safari initialize popstate on load, so we need to ignore it
+    window.addEventListener('popstate', function() {
+        // safari initialize popstate on load, so we need to ignore it
+        safariIniFirstPop++;
         if ((SAFARI) && (safariIniFirstPop > 1)) {
-          //location.href = location.pathname;
-          window.location = location.pathname;
+            window.location = location.pathname;
         } else if (!SAFARI) {
-          //window.location.href = location.pathname;
-          window.location = location.href;
+            window.location = location.href;
         }
     }, false);
-
-
 
     $("#table2").hide();
 
@@ -185,9 +189,9 @@ AmCharts.ready(function () {
         changeCategoryData(catFromUrl);
         hideOtherBars(categoriesIds[catFromUrl]);
         chart.validateData();
-    }   else if ((typeof(catFromUrl) != "undefined") && (catFromUrl.length > 0)) {
-   //     wrongCategory();
-    }   else {
+    } else if ((typeof(catFromUrl) != "undefined") && (catFromUrl.length > 0)) {
+        //     wrongCategory();
+    } else {
 
     }
 });
@@ -198,7 +202,7 @@ function writeMainTable() {
         var days = Math.floor(timePassedInSeconds / ONE_DAY_IN_SECONDS);
         var timePassedString = secondsToDateString(timePassedInSeconds);
         var timePassedFromLastUpdate = secondsToDateString(currentTimeInSeconds - csvData[i].lastUpdateTime);
-
+        var milestoneTitle = csvData[i].milestoneTitle;
         var rowColor = rowColorFromDays(days);
 
         var categoriesPending = "";
@@ -218,7 +222,8 @@ function writeMainTable() {
             category: categoriesPending,
             testStatus: testStatus,
             daysOpened: timePassedString,
-            lastUpdate: timePassedFromLastUpdate
+            lastUpdate: timePassedFromLastUpdate,
+            milestone: milestoneTitle
         });
 
         $('#myTable1').bootstrapTable('append', row);
@@ -262,12 +267,12 @@ function parseCSV(rows) {
         }
     }
 
-    jQuery.each(statistics, function (i) {
+    jQuery.each(statistics, function(i) {
         dataObject = {
             category: i
         };
 
-        jQuery.each(statistics[i], function (g) {
+        jQuery.each(statistics[i], function(g) {
             dataObject[g] = statistics[i][g];
         });
         chartData.push(dataObject);
@@ -282,14 +287,15 @@ function proceedCategoryData(column, categoryNumber) {
     var closed = column[5];
     var labelStatus = column[8];
     var lastUpdateTime = column[9];
-
+    var milestoneTitle = column[10];
     var categoryName = categories[categoryNumber];
     var pullRequestAlreadyOpenedForSeconds = currentTimeInSeconds - creationTime;
     var tempObject = {
         "id": id,
         "timePassed": pullRequestAlreadyOpenedForSeconds,
         "labelStatus": labelStatus,
-        "lastUpdateTime": lastUpdateTime
+        "lastUpdateTime": lastUpdateTime,
+        "milestoneTitle": milestoneTitle
     };
     if ((isPr == "1") && (closed == "0") && ((labelStatus[categoryNumber] == "P"))) {
         if (pullRequestAlreadyOpenedForSeconds <= ONE_DAY_IN_SECONDS * 7) {
@@ -324,22 +330,14 @@ function tableData(column) {
             "Creation": parseInt(creationTime),
             id: id,
             "labelStatus": column[8],
-            "lastUpdateTime": column[9]
+            "lastUpdateTime": column[9],
+            "milestoneTitle": column[10]
         });
     }
 }
 
 function secondsToDateString(seconds) {
-    // format d-h-m for e.g. "250d 16h 36m"
     var days = Math.floor(seconds / ONE_DAY_IN_SECONDS);
-    seconds -= days * ONE_DAY_IN_SECONDS;
-
-    var hours = Math.floor(seconds / ONE_HOUR_IN_SECONDS) % 24;
-    seconds -= hours * ONE_HOUR_IN_SECONDS;
-
-    var minutes = Math.floor(seconds / 60) % 60;
-
-    //return days + "d " + hours + "h " + minutes + "m";
     return days + " days";
 }
 
@@ -368,21 +366,23 @@ function customDaysSorter(a, b) {
 
 
 function changeCategoryData(category) {
-    window.history.pushState({category: category}, "Title", "?category=" + category);
+    window.history.pushState({
+        category: category
+    }, "Title", "?category=" + category);
     chartWithAllCats = false;
     $("#table2").show();
     $("#backbtn").show();
 
     $("#myTable2").bootstrapTable('destroy')
     $("#myTable2").bootstrapTable();
-    jQuery.each(idList[category], function (period) {
+    jQuery.each(idList[category], function(period) {
 
-        jQuery.each(idList[category][period], function (i, PRid) {
+        jQuery.each(idList[category][period], function(i, PRid) {
             var timePassed = idList[category][period][i].timePassed;
             var days = Math.floor(timePassed / ONE_DAY_IN_SECONDS);
             var timePassedString = secondsToDateString(idList[category][period][i].timePassed);
             var timePassedFromLastUpdate = secondsToDateString(currentTimeInSeconds - idList[category][period][i].lastUpdateTime);
-
+            var milestoneTitle = idList[category][period][i].milestoneTitle;
             var categoriesPending = "";
             for (o = 0; o < numberOfCategories; o++) {
                 if (idList[category][period][i].labelStatus[o] == "P") {
@@ -391,19 +391,18 @@ function changeCategoryData(category) {
             }
 
             var testStatus = testStatusFromLabel(idList[category][period][i].labelStatus);
-
             var rowColor = rowColorFromDays(days);
-
             var PRidWithLink = "<a href='https://github.com/cms-sw/cmssw/pull/" + idList[category][period][i].id + "' target='_blank'>" + idList[category][period][i].id;
-            
             var row = [];
+
             row.push({
                 classes: rowColor,
                 pr: PRidWithLink,
-                testStatus : testStatus,
+                testStatus: testStatus,
                 category: categoriesPending,
                 daysOpened: timePassedString,
-                lastUpdate: timePassedFromLastUpdate
+                lastUpdate: timePassedFromLastUpdate,
+                milestone: milestoneTitle
             });
 
             $('#myTable2').bootstrapTable('append', row);
@@ -428,52 +427,44 @@ function allBarsVisible() {
 }
 
 function hideOtherBars(catId) {
-    for (var i = 0; i <numberOfCategories; i++) {
-            if (i != catId) {
-                chartData[i].alpha = 0.15;
-            } else {
-                chartData[i].alpha = 1;
-            }
+    for (var i = 0; i < numberOfCategories; i++) {
+        if (i != catId) {
+            chartData[i].alpha = 0.15;
+        } else {
+            chartData[i].alpha = 1;
         }
+    }
 }
 
 function testStatusFromLabel(labelStatus) {
     var labelTestStatus = labelStatus[categoriesIds['tests']];
-    switch(labelTestStatus) {
-    case "A":
-        return "Approved";
-        break;
-    case "P":
-        return "Pending";
-        break;
-    case "R":
-        return "Rejected";
-    case "S":
-        return "Started"
-    default:
-        return "";
+
+    if (typeof labelsForTestStatus[labelTestStatus] === 'undefined') {
+        return "Undefined";
+    } else {
+        return labelsForTestStatus[labelTestStatus];
     }
 }
 
 function rowColorFromDays(days) {
-        if (days < 7) {
-            return "green";
-        } else if (days < 30) {
-            return "yellow";
-        } else if (days >= 30) {
-            return "red";
-        } else {
-            return "";
-        }
+    if (days < 7) {
+        return "green";
+    } else if (days < 30) {
+        return "yellow";
+    } else if (days >= 30) {
+        return "red";
+    } else {
+        return "";
+    }
 }
 
 function getUrlParameter(sParam) {
-  var sPageURL = window.location.search.substring(1);
+    var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
-  for (var i = 0; i < sURLVariables.length; i++) {
-    var sParameterName = sURLVariables[i].split('=');
-    if (sParameterName[0] == sParam) {
-      return sParameterName[1];
+    for (var i = 0; i < sURLVariables.length; i++) {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+        }
     }
-  }
 }
