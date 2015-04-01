@@ -1279,7 +1279,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-11/CMSSW_7_4_CLANG_X_2015-04-01-1100/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -1298,15 +1305,27 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-11/CMSSW_7_4_CLANG_X_2015-04-01-1100/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-11/CMSSW_7_4_CLANG_X_2015-04-01-1100/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "461"
+                    }
                 }
             ], 
             "cmsdistTags": {
                 "slc6_amd64_gcc491": "ERR/CMSSW_7_4_CLANG_X_2015-04-01-1100/slc6_amd64_gcc491"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.CLANG-wed-11/CMSSW_7_4_CLANG_X_2015-04-01-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 177, 
+                        "num_failed": 291
+                    }
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
@@ -1370,6 +1389,60 @@
             "RVExceptions": null, 
             "merged_prs": [
                 {
+                    "hash": "9b47387f3af02652795fac46b2c3c012b8af11db", 
+                    "title": "Revert Develop validation post processor", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8632", 
+                    "number": "8632", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cms-sw"
+                }, 
+                {
+                    "hash": "a1d061bf9e66d4e9e0b56c6efcfc67883c1cec89", 
+                    "title": "Cms l1t last minute 740", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8532", 
+                    "number": "8532", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cms-l1t-offline"
+                }, 
+                {
+                    "hash": "d246b217d215fbc3a05b740451bf399265a1d9b7", 
+                    "title": "Fix the index in the dEdxHitAssociation", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8548", 
+                    "number": "8548", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "quertenmont"
+                }, 
+                {
+                    "hash": "8f8dd7bcdd9c93e46c9f942738bf1cbac725c510", 
+                    "title": "Remove unnecessary link dependency and blank line (Code commonality)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8622", 
+                    "number": "8622", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "wmtan"
+                }, 
+                {
+                    "hash": "43fdfecfc1119113f6554b7519b01a145bac51b9", 
+                    "title": "ConfigDP changes for DQMIO", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8629", 
+                    "number": "8629", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cerminar"
+                }, 
+                {
+                    "hash": "91135ce21bbe6f7c100735db97e303bdbc20da44", 
+                    "title": "MiniAOD tweaks", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/8577", 
+                    "number": "8577", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "ferencek"
+                }, 
+                {
                     "hash": "30e5192b31d31481c037570d83cc3e1f99e8cd59", 
                     "title": "HLT updates after 740pre9", 
                     "url": "https://github.com/cms-sw/cmssw/pull/8525", 
@@ -1377,6 +1450,15 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "cms-tsg-storm"
+                }, 
+                {
+                    "hash": "3b347ba7bc075bba3d87247713ad2a6d5870bc81", 
+                    "title": "Stage 1 ET sum algorithm development finished except dijet phi (iPhi HT)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/22", 
+                    "number": "22", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "cms-l1t-offline"
                 }
             ], 
             "hlt_tests": "not-found"
