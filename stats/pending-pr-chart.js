@@ -26,11 +26,12 @@ var categories = {
     15: "tests",
     16: "visualization"
 };
+
 var labelsForTestStatus = {
-    "A": "Approved",
-    "P": "Pending",
-    "R": "Rejected",
-    "S": "Started"
+    "A": "<span class='label label-success'>Approved</span>",
+    "P": "<span class='label label-warning'>Pending</span>",
+    "R": "<span class='label label-danger'>Rejected</span>",
+    "S": "<span class='label label-warning'>Started</span>"
 };
 
 var numberOfCategories = Object.keys(categories).length;
@@ -207,8 +208,15 @@ function writeMainTable() {
 
         var categoriesPending = "";
         for (o = 0; o < numberOfCategories; o++) {
-            if (csvData[i].labelStatus[o] == "P") {
-                categoriesPending += categories[o] + " ";
+            var labelLetter = csvData[i].labelStatus[o];
+            if (labelLetter == "P") {
+                categoriesPending += "<span class='label label-warning'>" + categories[o] + "</span>" + " ";
+            } else if (labelLetter == "A") {
+                categoriesPending += "<span class='label label-success'>" + categories[o] + "</span>" + " ";
+            } else if (labelLetter == "R") {
+                categoriesPending += "<span class='label label-danger'>" + categories[o] + "</span>" + " ";
+            } else if (labelLetter == "S") {
+                categoriesPending += "<span class='label label-warning'>" + categories[o] + "</span>" + " ";
             }
         }
 
@@ -383,10 +391,18 @@ function changeCategoryData(category) {
             var timePassedString = secondsToDateString(idList[category][period][i].timePassed);
             var timePassedFromLastUpdate = secondsToDateString(currentTimeInSeconds - idList[category][period][i].lastUpdateTime);
             var milestoneTitle = idList[category][period][i].milestoneTitle;
+
             var categoriesPending = "";
             for (o = 0; o < numberOfCategories; o++) {
-                if (idList[category][period][i].labelStatus[o] == "P") {
-                    categoriesPending += categories[o] + " ";
+                var labelLetter = idList[category][period][i].labelStatus[o];
+                if (labelLetter == "P") {
+                    categoriesPending += "<span class='label label-warning'>" + categories[o] + "</span>" + " ";
+                } else if (labelLetter == "A") {
+                    categoriesPending += "<span class='label label-success'>" + categories[o] + "</span>" + " ";
+                } else if (labelLetter == "R") {
+                    categoriesPending += "<span class='label label-danger'>" + categories[o] + "</span>" + " ";
+                } else if (labelLetter == "S") {
+                    categoriesPending += "<span class='label label-warning'>" + categories[o] + "</span>" + " ";
                 }
             }
 
