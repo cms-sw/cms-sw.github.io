@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Top 30 contributors</title>
+        <script src="../js/amcharts.js" type="text/javascript"></script>
+        <script src="../js/serial.js" type="text/javascript"></script>
+        <script src="../js/jquery-1.10.2.js"></script>
+
+        <script type="text/javascript">
+            var chart;
+            var statistics = {};
+            var processedDataArray = [];
+            var chartData = [];
+
+
+            AmCharts.ready(function() {
+
+
+                var rows = loadCSV("../data/stats/pr-stats.csv");
+                parseCSV(rows);
+                sortAndPushData();
+
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+                chart.dataProvider = chartData;
+                chart.categoryField = "author";
+                // this single line makes the chart a bar chart,
+                // try to set it to false - your bars will turn to columns
+                chart.rotate = true;
+                // the following two lines makes chart 3D
+
+                // AXES
+                // Category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.gridPosition = "start";
+                categoryAxis.axisColor = "#DADADA";
+                categoryAxis.fillAlpha = 1;
+                categoryAxis.gridAlpha = 0;
+                categoryAxis.fillColor = "#FAFAFA";
+                categoryAxis.forceShowField = "forceShow";
+                categoryAxis.title = "Contributors";
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisColor = "#DADADA";
+                valueAxis.title = "Pull Requests per contributor";
+                valueAxis.gridAlpha = 0.1;
+                //valueAxis.minimum = 0;
+                chart.addValueAxis(valueAxis);
+
+                // GRAPH
+                var graph = new AmCharts.AmGraph();
+                graph.title = "value";
+                graph.valueField = "value";
+                graph.type = "column";
+                graph.balloonText = "[[author]] made [[value]] PRs";
+                graph.lineAlpha = 0;
+                graph.fillColors = "#80B1D3";
+                graph.labelText = "[[value]]";
+                graph.fillAlphas = 1;
+                chart.addGraph(graph);
+                chart.addTitle("Top 30 contributors");
+                chart.creditsPosition = "top-right";
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+
+            function loadCSV(file) {
+                if (window.XMLHttpRequest) {
+                    // IE7+, Firefox, Chrome, Opera, Safari
+                    var request = new XMLHttpRequest();
+                } else {
+                    // code for IE6, IE5
+                    var request = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+                request.open('GET', file, false);
+                request.send();
+
+                var data = request.responseText;
+                //replace UNIX new lines
+                data = data.replace(/\r\n/g, "\n");
+                //replace MAC new lines
+                data = data.replace(/\r/g, "\n");
+                //split into rows
+                return data.split("\n");
+
+            }
+
+
+
+            function parseCSV(rows) {
+                for (var i = 1; i < rows.length; i++) {
+                    if (rows[i]) {
+                        var column = rows[i].split(",");
+                        processData(column);
+                    }
+                }
+            }
+
+            function processData(column) {
+                var author = column[7];
+                if (statistics[author] == null) {
+                    statistics[author] = 1;
+                } else {
+                    statistics[author]++;
+                }
+            }
+
+            function sortAndPushData() {
+
+                jQuery.each(statistics, function(i, val) {
+                    processedDataArray.push({
+                        "author": i,
+                        "value": val,
+                        "forceShow": true
+                    });
+                });
+
+                processedDataArray.sort(function(a, b) {
+                    if (a.value > b.value) {
+                        return -1;
+                    }
+                    if (a.value < b.value) {
+                        return 1;
+                    }
+                    // when a equal to b
+                    return 0;
+                });
+
+                for (var i = 0; i < 30; i++) {
+                    chartData.push(processedDataArray[i]);
+                }
+
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="chartdiv" style="width: 500px; height: 600px;"></div>
+    </body>
+
+</html>
