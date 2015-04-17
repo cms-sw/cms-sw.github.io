@@ -805,7 +805,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-23/CMSSW_6_2_X_SLHC_2015-04-16-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc472", 
@@ -818,15 +825,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-23/CMSSW_6_2_X_SLHC_2015-04-16-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-23/CMSSW_6_2_X_SLHC_2015-04-16-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_X_SLHC_2015-04-14-2300/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/6.2-thu-23/CMSSW_6_2_X_SLHC_2015-04-16-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 35, 
+                            "num_failed": 1
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -1388,7 +1407,17 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_2_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "a8776ac9b67a1a532b352e1204366b9c93e9e508", 
+                        "title": "Prepare MuScleFit for run2", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8700", 
+                        "number": "8700", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "emiglior"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -6046,9 +6075,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.5.DEVEL-thu-23/CMSSW_7_5_DEVEL_X_2015-04-16-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.5.DEVEL-thu-23/CMSSW_7_5_DEVEL_X_2015-04-16-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "1"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -6079,7 +6110,53 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "bee32ebbbd2eb867f1a9d95fdbc6fbd5f3f82bf8", 
+                        "title": "fix broken DQM tests", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8690", 
+                        "number": "8690", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "f5a38a6b149763ee444be97999ed6770d353bdc3", 
+                        "title": "Macros need to compile in ROOT6 (CommonTools)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8713", 
+                        "number": "8713", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "384083be347bb3a8742b349938d10a0671b4861d", 
+                        "title": "Macros need to compile in ROOT6 (Analysis)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8714", 
+                        "number": "8714", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "d704f96376ab0fa5e9901cf76db643dd2c81379a", 
+                        "title": "Fixing reversed distance in accessing subjet collections", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8754", 
+                        "number": "8754", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "99c984a62c2184475434c5508282daecb7f732ea", 
+                        "title": "ECAL unpacker: consider the ADC hysteresis in the gain switches", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8759", 
+                        "number": "8759", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "emanueledimarco"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -7529,7 +7606,53 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "bee32ebbbd2eb867f1a9d95fdbc6fbd5f3f82bf8", 
+                        "title": "fix broken DQM tests", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8690", 
+                        "number": "8690", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "f5a38a6b149763ee444be97999ed6770d353bdc3", 
+                        "title": "Macros need to compile in ROOT6 (CommonTools)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8713", 
+                        "number": "8713", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "384083be347bb3a8742b349938d10a0671b4861d", 
+                        "title": "Macros need to compile in ROOT6 (Analysis)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8714", 
+                        "number": "8714", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "d704f96376ab0fa5e9901cf76db643dd2c81379a", 
+                        "title": "Fixing reversed distance in accessing subjet collections", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8754", 
+                        "number": "8754", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "99c984a62c2184475434c5508282daecb7f732ea", 
+                        "title": "ECAL unpacker: consider the ADC hysteresis in the gain switches", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8759", 
+                        "number": "8759", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "emanueledimarco"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -9656,7 +9779,53 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "bee32ebbbd2eb867f1a9d95fdbc6fbd5f3f82bf8", 
+                        "title": "fix broken DQM tests", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8690", 
+                        "number": "8690", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "f5a38a6b149763ee444be97999ed6770d353bdc3", 
+                        "title": "Macros need to compile in ROOT6 (CommonTools)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8713", 
+                        "number": "8713", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "384083be347bb3a8742b349938d10a0671b4861d", 
+                        "title": "Macros need to compile in ROOT6 (Analysis)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8714", 
+                        "number": "8714", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "d704f96376ab0fa5e9901cf76db643dd2c81379a", 
+                        "title": "Fixing reversed distance in accessing subjet collections", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8754", 
+                        "number": "8754", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "99c984a62c2184475434c5508282daecb7f732ea", 
+                        "title": "ECAL unpacker: consider the ADC hysteresis in the gain switches", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/8759", 
+                        "number": "8759", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "emanueledimarco"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
