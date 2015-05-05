@@ -35,9 +35,12 @@ E.g. for `cmssdt_mesos`:
 
 ```
 {
-"url": localhost:5050/health
+"url": "localhost:5050/health"
 }
 ```
+
+where `localhost:5050/health` is a URL which returns with 200 when Mesos is up
+and running.
 
 Once you are done, you will get a summary page with the details for the metric
 and a puppet snippet, e.g.:
