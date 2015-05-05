@@ -54,7 +54,7 @@ the metric to run. Before you do so, make sure you click on "Change state to
 pending" so that the metric is actually acknowledged from the CERN/IT
 monitoring support.
 
-After puppet runs[^2][], but before the metric enters production, you can check
+After puppet runs [^2][], but before the metric enters production, you can check
 it by running:
 
 ```
@@ -85,10 +85,6 @@ and CERN/IT has of course documentation about their infrastructure:
 
 <https://metricmgr.cern.ch/help/>
 
-[^1]: You can find the full list by going to that web page, clicking on
-"Metrics" and then searching for `cmssdt_`. Current list of metrics include,
-`cmssdt_mesos`, `cmssdt_marathon` which check the return code for the
-associated web pages.
+[^1]: You can find the full list by going to that web page, clicking on "Metrics" and then searching for `cmssdt_`. Current list of metrics include, `cmssdt_mesos`, `cmssdt_marathon` which check the return code for the associated web pages.
 
-[^2]: In order to try out a puppet configuration interactively, you can go to the
-machine in question and invoke `puppet agent -t -v`.
+[^2]: In order to try out a puppet configuration interactively, you can go to the machine in question and invoke `puppet agent -t -v`.
