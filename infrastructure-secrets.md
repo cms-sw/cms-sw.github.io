@@ -8,7 +8,8 @@ related:
 
 Managing secrets using CERN puppet infrastructure is well documented at
 <http://configdocs.web.cern.ch/configdocs/secrets/README.html> and related
-pages.
+pages. One thing we will assume is that you are logged in to a machine where
+you have access to the `tbag` command, e.g. `aiadm`.
 
 Secrets get stored in a secure database inside the CERN network and will be
 available to the puppet manifest using the `teigi` puppet resource class.
@@ -21,15 +22,13 @@ For example if you want to store a secret file `secret.txt` for the hostgroup
 This will store the secret in the secure storage. You can then deploy it in
 `/some/secret/path` by adding:
 
-```
-teigi::secret {"unique_resource_name":
-  key => "secretname",
-  path => "/some/secret/path/secret.txt" 
-  owner => "root",
-  group => "root",
-  mode  => "0400"
-}
-```
+    teigi::secret {"unique_resource_name":
+      key => "secretname",
+      path => "/some/secret/path/secret.txt" 
+      owner => "root",
+      group => "root",
+      mode  => "0400"
+    }
 
 to your puppet manifest.
 
