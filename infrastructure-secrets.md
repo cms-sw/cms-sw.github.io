@@ -24,7 +24,7 @@ This will store the secret in the secure storage. You can then deploy it in
 
     teigi::secret {"unique_resource_name":
       key => "secretname",
-      path => "/some/secret/path/secret.txt" 
+      path => "/some/secret/path/secret.txt",
       owner => "root",
       group => "root",
       mode  => "0400"
