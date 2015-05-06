@@ -1,3 +1,11 @@
+---
+title: CMS Offline Software
+layout: default
+related:
+ - { name: Project page, link: 'https://github.com/cms-sw/cmssw' }
+ - { name: Feedback, link: 'https://github.com/cms-sw/cmssw/issues/new' }
+---
+
 Managing secrets using CERN puppet infrastructure is well documented at
 <http://configdocs.web.cern.ch/configdocs/secrets/README.html> and related
 pages.
