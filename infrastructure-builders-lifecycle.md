@@ -27,7 +27,7 @@ We have in particular three masters, each running on a separate OpenStack availa
 
 # Useful recipes:
 
-## Setting up the OpenStack environment:
+### Setting up the OpenStack environment:
 
 First of all make sure you have all the rights to create machines in OpenStack
 and to administer them via Puppet. In particular you'll have to have rights for
@@ -56,7 +56,7 @@ You can now execute the various OpenStack commands, using the CLI tool called `n
 - `nova flavor-list`: list available flavors of virtual machines (i.e. how many
   CPUs, RAM).
 
-## Creating a slave  
+### Creating a slave  
 
 Creation of slaves in CERN Foreman setup is described at <http://cern.ch/config/nodes/createnode.html>. The short recipe for build machine is:
 
@@ -67,17 +67,20 @@ Creation of slaves in CERN Foreman setup is described at <http://cern.ch/config/
   care of provisioning the machine and putting it in Foreman, so that it will
   receive from it the Puppet configuration:
 
+      MACHINE_NAME=<cmsbuildXX>
+
       ai-bs-vm -g vocmssdt/sdt/builder \
                -i "SLC6 CERN Server - x86_64 [2015-02-10]" \
                --nova-sshkey cmsbuild \
                --nova-flavor hep2.12 \
-               <cmsbuildXX>
+               --nova-attach-new-volume vdc=1TB \
+               $MACHINE_NAME
 
   This will spawn a new machine. You can check the boot status either in the
   OpenStack GUI or via `nova list`. The `cmsbuild` key used is available from
   the cmsbuild user AFS account. Of course you should change the name of the machine (`<cmsbuildXX>` in the example) use a current image and flavor.
 
-## Deleting a slave
+### Deleting a slave
 
 Similarly the documentation to delete a slave is found at:
 
@@ -88,3 +91,4 @@ the recipe for destoying slaves is:
 - Login to `aiadm.cern.ch`.
 - Setup the environment with `~/private/cmssdt-openrc.sh`
 - Delete the machine with `ai-kill-vm <cmsbuildXX>`
+- Delete the previously attached volumes.
