@@ -76,9 +76,11 @@ Creation of slaves in CERN Foreman setup is described at <http://cern.ch/config/
                --nova-attach-new-volume vdc=1TB \
                $MACHINE_NAME
 
-  This will spawn a new machine. You can check the boot status either in the
-  OpenStack GUI or via `nova list`. The `cmsbuild` key used is available from
-  the cmsbuild user AFS account. Of course you should change the name of the machine (`<cmsbuildXX>` in the example) use a current image and flavor.
+This will spawn a new machine. You can check the boot status either in the
+OpenStack GUI or via `nova list`. The `cmsbuild` key used is the ssh key
+available from the cmsbuild user AFS account. Of course you should change the
+name of the machine (`<cmsbuildXX>` in the example) use a current image and
+flavor.
 
 ### Deleting a slave
 
