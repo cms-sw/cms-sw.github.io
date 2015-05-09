@@ -1925,7 +1925,26 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_6_2_SLHCDEV_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "9023"
+                        ], 
+                        "hash": "95d2616521221e8248bf7df4b979fca61b5b0013", 
+                        "number": "95d2616", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "16001a6005ae52ec1e9ce5cd725aefeb7ea4ff00", 
+                        "title": "Small change to #9016 (Fix of the Linking in PF for forward tracks)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9023", 
+                        "number": "9023", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mark-grimes"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -41977,15 +41996,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.ICC-sat-11/CMSSW_7_5_ICC_X_2015-05-09-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.ICC-sat-11/CMSSW_7_5_ICC_X_2015-05-09-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "120"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_5_ICC_X_2015-05-08-2300/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.ICC-sat-11/CMSSW_7_5_ICC_X_2015-05-09-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 176, 
+                            "num_failed": 302
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -52728,7 +52759,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_5_ROOT5_X_2015-05-08-2300/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.5.ROOT5-fri-23/CMSSW_7_5_ROOT5_X_2015-05-08-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1111, 
+                            "num_failed": 14
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
