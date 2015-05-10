@@ -19,7 +19,8 @@ In order to create a new metric you just need to go to the `Manage > Add
 Metric` menu item and create a new one with the following information:
 
 - Metric class: what you are actually monitoring, e.g. we use `url.httpcode`
-  for checking the return code from a web page.
+  for checking the return code from a web page [^bug][] or `system.exitCode` to execute a
+  command and check the exit code.
 - Metric name: a mnemonic name associated to the metric, e.g. `cmssdt_mesos`.
 - Description: some sensible description of what you are monitoring.
 - Period: the interval period for polling the metric (e.g. 600 seconds for
@@ -40,7 +41,14 @@ E.g. for `cmssdt_mesos`:
 ```
 
 where `localhost:5050/master/health` is a URL which returns with 200 when Mesos is up
-and running.
+and running. Alternatively, if you use `system.exitCode` you need something like:
+
+```
+{
+ "cmdline": "/usr/bin/curl -s -o /dev/null http://localhost:5050/master/health/", 
+ "timeout": 10
+}
+```
 
 Once you are done, you will get a summary page with the details for the metric
 and a puppet snippet, e.g.:
@@ -88,3 +96,5 @@ and CERN/IT has of course documentation about their infrastructure:
 [^1]: You can find the full list by going to that web page, clicking on "Metrics" and then searching for `cmssdt_`. Current list of metrics include, `cmssdt_mesos`, `cmssdt_marathon` which check the return code for the associated web pages.
 
 [^2]: In order to try out a puppet configuration interactively, you can go to the machine in question and invoke `puppet agent -t -v`.
+
+[^bug]: Due to a bug in `url.httpcode` if the server is not running the metric will fail. A better alternative is to use "system.exitCode" and invoke curl.
