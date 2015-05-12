@@ -12,8 +12,8 @@ Sometimes we need to use docker images to build our software, so  that they can 
 
 - Clone the `cmssw/cms-docker` repository:
 
-    git clone https://github.com/cms-sw/cms-docker
-    cd cms-docker
+      git clone https://github.com/cms-sw/cms-docker
+      cd cms-docker
    
 - Create a new directory for the image you want to create, e.g. `slc7-vanilla`:
 
