@@ -1,3 +1,11 @@
+---
+title: CMS Offline Software
+layout: default
+related:
+ - { name: Project page, link: 'https://github.com/cms-sw/cmssw' }
+ - { name: Feedback, link: 'https://github.com/cms-sw/cmssw/issues/new' }
+---
+
 Updating docker build image
 
 Sometimes we need to use docker images to build our software, so  that they can deployed on a different OS. In order to do so you need to:
