@@ -6,7 +6,13 @@ related:
  - { name: Feedback, link: 'https://github.com/cms-sw/cmssw/issues/new' }
 ---
 
-Updating docker build image
+## Prerequites:
+
+- Make sure you have the docker client [^docker-setup].
+- Make sure you can run docker by adding yourself to the docker UNIX group [^docker-group].
+- Register yourself in [Docker Hub][docker-hub].
+
+## Updating docker build image
 
 Sometimes we need to use docker images to build our software, so  that they can deployed on a different OS. In order to do so you need to:
 
@@ -79,6 +85,26 @@ Sometimes we need to use docker images to build our software, so  that they can 
 
       docker build -t cmssw/slc7-vanilla slc7-vanilla
 
-- Push the image to dockerhub.
+- You can now verify that you did everything right by doing, for example:
+
+      $ docker run -it cmssw/slc7-vanilla cat /etc/redhat-release
+      CentOS Linux release 7.1.1503 (Core)
+
+- Push your changes to github:
+
+      git commit -m 'New SLC7 image' slc7-vanilla
+      git push
+
+- Push the image itself to dockerhub:
 
       docker push cmssw/slc7-vanilla
+
+  notice that unless you specify an actual docker repository, using
+  `cmssw/slc7-vanilla` means "push to the [official Docker Hub repository for
+  the cmssw Organization][docker-cmssw]".
+
+[^docker-setup]: On SLC6, `yum install docker-io`. On CC7, `yum install docker`. On Mac, use [boot2docker](http://boot2docker.io). If you are unable to run docker on your machine, you can use cmsdevXX ones.
+[^docker-group]: `usermod -a -G docker <username>`
+
+[docker-cmssw]: https://registry.hub.docker.com/repos/cmssw/
+[docker-hub]: https://hub.docker.com/account/signup/
