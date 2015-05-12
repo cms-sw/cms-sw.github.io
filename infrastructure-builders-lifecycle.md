@@ -14,16 +14,30 @@ services. They are in general provisioned using [CERN Openstack
 Infrastructure](http://openstack.cern.ch) and configured using [CERN Puppet /
 Foreman setup](http://cern.ch/config).
 
-Masters belong to the hostgroup `vocmssdt/sdt/mesos/master` while slaves belong to `vocmssdt/sdt/builder`. The configuration of those hostgroups can be found in the GIT repository <https://git.cern.ch/web/it-puppet-hostgroup-vocmssdt.git>, in particular in:
+Masters belong to the hostgroup `vocmssdt/sdt/mesos/master` while slaves belong
+to `vocmssdt/sdt/builder`. The configuration of those hostgroups can be found in
+the GIT repository <https://git.cern.ch/web/it-puppet-hostgroup-vocmssdt.git>,
+in particular in:
 
 - [/code/manifests/sdt/mesos/master.pp](https://git.cern.ch/web/it-puppet-hostgroup-vocmssdt.git/blob/HEAD:/code/manifests/sdt/mesos/master.pp)  for the master.
 - [/code/manifests/sdt/builder.pp](https://git.cern.ch/web/it-puppet-hostgroup-vocmssdt.git/blob/HEAD:/code/manifests/sdt/mesos/master.pp)  for the slaves.
 
-We have in particular three masters, each running on a separate OpenStack availability zone which work in an High Availability (HA) mode which allows the ensamble to continue working correctly and scheduling jobs. In particular the masters run the following services:
+We have in particular three masters, each running on a separate OpenStack
+availability zone which work in an High Availability (HA) mode which allows the
+ensamble to continue working correctly and scheduling jobs. In particular the
+masters run the following services:
 
-- The [**Mesos Master**](http://mesos.apache.org) service: Mesos is used to schedule some of the Jenkins jobs automatically on the cluster and to automate deployment of some of the services, in particular using the Marathon setup.
-- The [**ZooKeeper**](https://zookeeper.apache.org): the backend which keeps track of Mesos distributed state, actually providing the HA setup.
-- The [**Marathon**](https://mesosphere.github.io/marathon/) service: a simple Platform as a Service (PaaS) implemented as a Mesos framework which allows to define, launch and monitor long running services on the slaves. It relays on Mesos to do the resource management.
+- The [**Mesos Master**](http://mesos.apache.org) service: Mesos is used to
+  schedule some of the Jenkins jobs automatically on the cluster and to automate
+  deployment of some of the services, in particular using the Marathon setup.
+
+- The [**ZooKeeper**](https://zookeeper.apache.org): the backend which keeps
+  track of Mesos distributed state, actually providing the HA setup.
+
+- The [**Marathon**](https://mesosphere.github.io/marathon/) service: a simple
+  Platform as a Service (PaaS) implemented as a Mesos framework which allows to
+  define, launch and monitor long running services on the slaves. It relays on
+  Mesos to do the resource management.
 
 # Useful recipes:
 
