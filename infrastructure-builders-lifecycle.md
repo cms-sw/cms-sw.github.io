@@ -70,9 +70,15 @@ You can now execute the various OpenStack commands, using the CLI tool called `n
 - `nova flavor-list`: list available flavors of virtual machines (i.e. how many
   CPUs, RAM).
 
+Before you can continue to create a slave, make also sure you import the SSH key
+required by build machines into your openstack configuration (use the "Access &
+Security" tab and use "Import key") and that you call it `cmsbuild`.
+
 ### Creating a slave  
 
-Creation of slaves in CERN Foreman setup is described at <http://cern.ch/config/nodes/createnode.html>. The short recipe for build machine is:
+Creation of slaves in CERN Foreman setup is described at
+<http://cern.ch/config/nodes/createnode.html>. The short recipe for build
+machine is:
 
 - Login to `aiadm.cern.ch`.
 - Set up your OpenStack environment (once) and source the `~/private/cmssdt-openrc.sh` file, entering the password when prompted.
@@ -94,7 +100,8 @@ This will spawn a new machine. You can check the boot status either in the
 OpenStack GUI or via `nova list`. The `cmsbuild` key used is the ssh key
 available from the cmsbuild user AFS account. Of course you should change the
 name of the machine (`<cmsbuildXX>` in the example) and use a current image and
-flavor.
+flavor. If you have issues about the ssh key, make sure you imported it in your
+account (see the Setting up the OpenStack environment) part.
 
 ### Deleting a slave
 
