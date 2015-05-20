@@ -5943,7 +5943,26 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_6_2_X_SLHC", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "fac67e73990ff458bee89a9921700a463f8dc1f9", 
+                        "title": "Use shrink_to_fit on the PFRecHit collections", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9106", 
+                        "number": "9106", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mark-grimes"
+                    }, 
+                    {
+                        "hash": "a87d91dd7ac643d2420ed954813d575797271491", 
+                        "title": "Use shrink_to_fit on TrackProducer collections", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9147", 
+                        "number": "9147", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mark-grimes"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -18787,55 +18806,17 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-23/CMSSW_7_4_X_2015-05-12-2300/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "warning", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-23/CMSSW_7_4_X_2015-05-12-2300/new/logAnalysis.pkl", 
-                        "details": {
-                            "compWarning": 2, 
-                            "ignoreWarning": 20
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_4_2-->CMSSW_7_4_X_2015-05-12-2300", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-23/CMSSW_7_4_X_2015-05-12-2300/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-05-12-2300/slc6_amd64_gcc491"
                 }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.4-tue-23/CMSSW_7_4_X_2015-05-12-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 1078, 
-                            "num_failed": 12
-                        }
-                    }
-                ], 
+                "relvals": [], 
                 "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "tests_archs": [], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_X_2015-05-12-2300", 
                 "RVExceptions": null, 
@@ -23451,27 +23432,38 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_ICC_X_2015-05-19-1100-->CMSSW_7_5_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.5.ICC-wed-11/CMSSW_7_5_ICC_X_2015-05-20-1100/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 1
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_5_ICC_X_2015-05-19-1100-->CMSSW_7_5_ICC_X_2015-05-20-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.5.ICC-wed-11/CMSSW_7_5_ICC_X_2015-05-20-1100/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_5_ICC_X_2015-05-19-1100/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_5_X", 
+                "release_name": "CMSSW_7_5_ICC_X_2015-05-20-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "83151f6f1086270a53346945e2da73f332e5298a", 
-                        "title": "PixelJetPuId  multi-threading (75X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9139", 
-                        "number": "9139", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "silviodonato"
-                    }, 
                     {
                         "hash": "ed0a626c6d30e5edbb98fd3318b0b424c5f1ffab", 
                         "title": "Make 10MB the default stack size for additional threads", 
@@ -23725,6 +23717,32 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "wouf"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_5_ICC_X_2015-05-20-1100-->CMSSW_7_5_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_5_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "83151f6f1086270a53346945e2da73f332e5298a", 
+                        "title": "PixelJetPuId  multi-threading (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9139", 
+                        "number": "9139", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "silviodonato"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -29393,7 +29411,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "ERR/CMSSW_7_5_X_2015-05-19-1100/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.5-tue-11/CMSSW_7_5_X_2015-05-19-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1050, 
+                            "num_failed": 35
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
