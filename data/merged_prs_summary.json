@@ -6103,7 +6103,17 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_6_2_X_SLHC", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "a84edd863b71f9c77e5e234a95523bfec1cae3e2", 
+                        "title": "Swap with empty vectors to free up memory in ElectronSeedProducer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9194", 
+                        "number": "9194", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mark-grimes"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -26091,11 +26101,11 @@
                             "9062", 
                             "9124", 
                             "9066", 
-                            "9102", 
                             "9082", 
                             "9099", 
                             "9132", 
                             "9020", 
+                            "9102", 
                             "9116"
                         ], 
                         "hash": "c124d7988db23116e93e2d5a5ed695f191a2d6d9", 
@@ -26776,6 +26786,54 @@
                 "release_name": "CMSSW_7_5_ROOT5_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "9195", 
+                            "9161", 
+                            "9178", 
+                            "9057"
+                        ], 
+                        "hash": "564f340ef9e8853e5f39663300bd72a8d89dcaa9", 
+                        "number": "564f340", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "abaa279e55a6df7746772e6c12d8d5879a88034f", 
+                        "title": "New dataformat/producer for Heavy Ion AOD photons", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9057", 
+                        "number": "9057", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "richard-cms"
+                    }, 
+                    {
+                        "hash": "515ea0ba4a1ce5646ec1501d5faedf033426b4de", 
+                        "title": "Fix our tests for the new frozen menus", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9161", 
+                        "number": "9161", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "hash": "b0cd5ad8150d721e5c64d3431e6b172ee6ec7557", 
+                        "title": "Remove mutable from RefCore users", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9178", 
+                        "number": "9178", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "0c23e20a935985c2e04d9a41feae1474acd27bd4", 
+                        "title": "Add missing include of header boost/shared_ptr.hpp", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9195", 
+                        "number": "9195", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "wmtan"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -31149,54 +31207,39 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_X_2015-05-20-1100-->CMSSW_7_5_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.5-wed-23/CMSSW_7_5_X_2015-05-20-2300/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 2, 
+                            "ignoreWarning": 14
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_5_X_2015-05-20-1100-->CMSSW_7_5_X_2015-05-20-2300", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.5-wed-23/CMSSW_7_5_X_2015-05-20-2300/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_5_X_2015-05-19-2300/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_5_X", 
+                "release_name": "CMSSW_7_5_X_2015-05-20-2300", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "abaa279e55a6df7746772e6c12d8d5879a88034f", 
-                        "title": "New dataformat/producer for Heavy Ion AOD photons", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9057", 
-                        "number": "9057", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "richard-cms"
-                    }, 
-                    {
-                        "hash": "515ea0ba4a1ce5646ec1501d5faedf033426b4de", 
-                        "title": "Fix our tests for the new frozen menus", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9161", 
-                        "number": "9161", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "cms-tsg-storm"
-                    }, 
-                    {
-                        "hash": "b0cd5ad8150d721e5c64d3431e6b172ee6ec7557", 
-                        "title": "Remove mutable from RefCore users", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9178", 
-                        "number": "9178", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "0c23e20a935985c2e04d9a41feae1474acd27bd4", 
-                        "title": "Add missing include of header boost/shared_ptr.hpp", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9195", 
-                        "number": "9195", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wmtan"
-                    }, 
                     {
                         "hash": "8beb70aea830b573ca202601880ff05e028ab8d2", 
                         "title": "adding ME0 for recolocal", 
@@ -31286,6 +31329,59 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "silviodonato"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_5_X_2015-05-20-2300-->CMSSW_7_5_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_5_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "abaa279e55a6df7746772e6c12d8d5879a88034f", 
+                        "title": "New dataformat/producer for Heavy Ion AOD photons", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9057", 
+                        "number": "9057", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "richard-cms"
+                    }, 
+                    {
+                        "hash": "515ea0ba4a1ce5646ec1501d5faedf033426b4de", 
+                        "title": "Fix our tests for the new frozen menus", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9161", 
+                        "number": "9161", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-tsg-storm"
+                    }, 
+                    {
+                        "hash": "b0cd5ad8150d721e5c64d3431e6b172ee6ec7557", 
+                        "title": "Remove mutable from RefCore users", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9178", 
+                        "number": "9178", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "0c23e20a935985c2e04d9a41feae1474acd27bd4", 
+                        "title": "Add missing include of header boost/shared_ptr.hpp", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9195", 
+                        "number": "9195", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
                     }
                 ], 
                 "hlt_tests": "not-found"
