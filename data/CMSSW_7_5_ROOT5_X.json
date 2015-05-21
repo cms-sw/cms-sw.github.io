@@ -2073,7 +2073,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.5.ROOT5-thu-11/CMSSW_7_5_ROOT5_X_2015-05-21-1100/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -2091,15 +2098,27 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.5.ROOT5-thu-11/CMSSW_7_5_ROOT5_X_2015-05-21-1100/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.5.ROOT5-thu-11/CMSSW_7_5_ROOT5_X_2015-05-21-1100/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "153"
+                    }
                 }
             ], 
             "cmsdistTags": {
                 "slc6_amd64_gcc491": "ERR/CMSSW_7_5_ROOT5_X_2015-05-21-1100/slc6_amd64_gcc491"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.5.ROOT5-thu-11/CMSSW_7_5_ROOT5_X_2015-05-21-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 178, 
+                        "num_failed": 302
+                    }
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
@@ -2222,6 +2241,34 @@
             "release_name": "CMSSW_7_5_ROOT5_X", 
             "RVExceptions": null, 
             "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "9202", 
+                        "9186"
+                    ], 
+                    "hash": "b13ef0ad8bb4a2df7eca1492bd169ab4bca0cd7e", 
+                    "number": "b13ef0a", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "c697ac09c3c592080417c887ba910a681af4ff63", 
+                    "title": "FastSim: fix trackref in ConversionTrackCollection", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9202", 
+                    "number": "9202", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "lveldere"
+                }, 
+                {
+                    "hash": "8317c2176d9747255e15fecda5286fc428dad583", 
+                    "title": "Protection for pt=0 ghost candidates in jet flavor clustering", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9186", 
+                    "number": "9186", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "cms-btv-pog"
+                }, 
                 {
                     "is_merge_commit": true, 
                     "brought_prs": [
