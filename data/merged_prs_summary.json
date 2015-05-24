@@ -19299,7 +19299,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT5_X_2015-05-18-1100/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.4.ROOT5-sat-23/CMSSW_7_4_ROOT5_X_2015-05-23-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1081, 
+                            "num_failed": 12
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -26866,36 +26876,39 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_ICC_X_2015-05-23-1100-->CMSSW_7_5_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.ICC-sat-23/CMSSW_7_5_ICC_X_2015-05-23-2300/new/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 5, 
+                            "compError": 8
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_5_ICC_X_2015-05-23-1100-->CMSSW_7_5_ICC_X_2015-05-23-2300", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.ICC-sat-23/CMSSW_7_5_ICC_X_2015-05-23-2300/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_5_ICC_X_2015-05-23-1100/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_5_X", 
+                "release_name": "CMSSW_7_5_ICC_X_2015-05-23-2300", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "0593ac1629c0e2a6c69e2abd99b3b78f6669e42e", 
-                        "title": "Trim FastjetJetProducer memory (forward port #9203)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9206", 
-                        "number": "9206", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "mark-grimes"
-                    }, 
-                    {
-                        "hash": "6fa06214773b6e892063156ffcfcad1a9a1b1f4d", 
-                        "title": "enable CSVv2 in combinedMVA instead of CSV", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9208", 
-                        "number": "9208", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "cms-btv-pog"
-                    }, 
                     {
                         "hash": "ce83cfe5ae478dec63dff7b138790969ce77ded8", 
                         "title": "fix for root5 in TrackBase", 
@@ -26958,6 +26971,41 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "BetterWang"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_5_ICC_X_2015-05-23-2300-->CMSSW_7_5_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_5_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "0593ac1629c0e2a6c69e2abd99b3b78f6669e42e", 
+                        "title": "Trim FastjetJetProducer memory (forward port #9203)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9206", 
+                        "number": "9206", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mark-grimes"
+                    }, 
+                    {
+                        "hash": "6fa06214773b6e892063156ffcfcad1a9a1b1f4d", 
+                        "title": "enable CSVv2 in combinedMVA instead of CSV", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9208", 
+                        "number": "9208", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-btv-pog"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -29425,64 +29473,41 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-05-23-1100-->CMSSW_7_5_ROOT5_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.ROOT5-sat-23/CMSSW_7_5_ROOT5_X_2015-05-23-2300/new/logAnalysis.pkl", 
+                        "details": {
+                            "miscError": 148, 
+                            "compError": 117, 
+                            "ignoreWarning": 2, 
+                            "linkError": 1311
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-05-23-1100-->CMSSW_7_5_ROOT5_X_2015-05-23-2300", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.ROOT5-sat-23/CMSSW_7_5_ROOT5_X_2015-05-23-2300/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "ERR/CMSSW_7_5_ROOT5_X_2015-05-23-2300/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_5_ROOT5_X", 
+                "release_name": "CMSSW_7_5_ROOT5_X_2015-05-23-2300", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "9208", 
-                            "9206"
-                        ], 
-                        "hash": "f771c521bb97e119f0a4e5cb3d5494c52e88b0fe", 
-                        "number": "f771c52", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "0593ac1629c0e2a6c69e2abd99b3b78f6669e42e", 
-                        "title": "Trim FastjetJetProducer memory (forward port #9203)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9206", 
-                        "number": "9206", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "mark-grimes"
-                    }, 
-                    {
-                        "hash": "6fa06214773b6e892063156ffcfcad1a9a1b1f4d", 
-                        "title": "enable CSVv2 in combinedMVA instead of CSV", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9208", 
-                        "number": "9208", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "cms-btv-pog"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "9218"
-                        ], 
-                        "hash": "3b9e68a94e4f220dc62e9ac7dc380126deddcce2", 
-                        "number": "3b9e68a", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "ce83cfe5ae478dec63dff7b138790969ce77ded8", 
-                        "title": "fix for root5 in TrackBase", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9218", 
-                        "number": "9218", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "VinInn"
-                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -29608,6 +29633,69 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "BetterWang"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-05-23-2300-->CMSSW_7_5_ROOT5_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_5_ROOT5_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "9208", 
+                            "9206"
+                        ], 
+                        "hash": "f771c521bb97e119f0a4e5cb3d5494c52e88b0fe", 
+                        "number": "f771c52", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "0593ac1629c0e2a6c69e2abd99b3b78f6669e42e", 
+                        "title": "Trim FastjetJetProducer memory (forward port #9203)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9206", 
+                        "number": "9206", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mark-grimes"
+                    }, 
+                    {
+                        "hash": "6fa06214773b6e892063156ffcfcad1a9a1b1f4d", 
+                        "title": "enable CSVv2 in combinedMVA instead of CSV", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9208", 
+                        "number": "9208", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-btv-pog"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "9218"
+                        ], 
+                        "hash": "3b9e68a94e4f220dc62e9ac7dc380126deddcce2", 
+                        "number": "3b9e68a", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "ce83cfe5ae478dec63dff7b138790969ce77ded8", 
+                        "title": "fix for root5 in TrackBase", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9218", 
+                        "number": "9218", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "VinInn"
                     }
                 ], 
                 "hlt_tests": "not-found"
