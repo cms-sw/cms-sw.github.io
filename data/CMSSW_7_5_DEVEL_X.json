@@ -976,7 +976,6 @@
                         "9108", 
                         "9077", 
                         "9212", 
-                        "1433", 
                         "8210", 
                         "9379", 
                         "9176", 
@@ -984,7 +983,6 @@
                         "9164", 
                         "9187", 
                         "9337", 
-                        "1440", 
                         "9442", 
                         "9454", 
                         "9130", 
@@ -2296,16 +2294,38 @@
         }, 
         {
             "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_5_DEVEL_X_2015-06-09-2300-->CMSSW_7_5_ROOT64_X", 
-            "utests": [], 
-            "cmsdistTags": {}, 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "error", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.5.DEVEL-wed-11/CMSSW_7_5_DEVEL_X_2015-06-10-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 6, 
+                        "linkError": 2, 
+                        "ignoreWarning": 20
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_5_DEVEL_X_2015-06-09-2300-->CMSSW_7_5_DEVEL_X_2015-06-10-1100", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "unknown", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.5.DEVEL-wed-11/CMSSW_7_5_DEVEL_X_2015-06-10-1100/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "ERR/CMSSW_7_5_DEVEL_X_2015-06-10-1100/slc6_amd64_gcc491"
+            }, 
             "relvals": [], 
             "static_checks": "not-found", 
-            "isIB": false, 
-            "tests_archs": [], 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
             "inProgress": false, 
-            "release_name": "CMSSW_7_5_ROOT64_X", 
+            "release_name": "CMSSW_7_5_DEVEL_X_2015-06-10-1100", 
             "RVExceptions": null, 
             "merged_prs": [
                 {
@@ -2355,6 +2375,123 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": true, 
                     "author_login": "davidlt"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [], 
+            "compared_tags": "CMSSW_7_5_DEVEL_X_2015-06-10-1100-->CMSSW_7_5_ROOT64_X", 
+            "utests": [], 
+            "cmsdistTags": {}, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": false, 
+            "tests_archs": [], 
+            "inProgress": false, 
+            "release_name": "CMSSW_7_5_ROOT64_X", 
+            "RVExceptions": null, 
+            "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "9406", 
+                        "11", 
+                        "9529", 
+                        "1433", 
+                        "1440", 
+                        "9083", 
+                        "9514", 
+                        "9", 
+                        "9279", 
+                        "9526", 
+                        "9519"
+                    ], 
+                    "hash": "31b12e60866a4298d52e85df9f6f156c82826131", 
+                    "number": "31b12e6", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "e47b70f8230b17ed0992beba4cc27f5c312e26b3", 
+                    "title": "Gemcsc segment 75X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9083", 
+                    "number": "9083", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "pietverwilligen"
+                }, 
+                {
+                    "hash": "13f1a1c1d532f4c345867ece12287505ffbb3647", 
+                    "title": "add support for ConfDB v2 to hltConfigFromDB", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9514", 
+                    "number": "9514", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "fwyzard"
+                }, 
+                {
+                    "hash": "c91ccf27b584d90de49ef17205a1bbfc1635e8c9", 
+                    "title": "complete the recoMuon validation workflow for cosmic muons", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9279", 
+                    "number": "9279", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "abbiendi"
+                }, 
+                {
+                    "hash": "d0a31a5abe1fd4b7c20e788f3b7a0eed3acd2182", 
+                    "title": "Fixes to vertex validation", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9519", 
+                    "number": "9519", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "makortel"
+                }, 
+                {
+                    "hash": "f82f47d5429ab60d5f838531f88b6d9a1ca44ac2", 
+                    "title": "HLT updates on top of the menu in CMSSW_744 - 75X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9406", 
+                    "number": "9406", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "cms-tsg-storm"
+                }, 
+                {
+                    "hash": "62e031296ac51e1a216977f2e5aecf9aa875c9f1", 
+                    "title": "BUGFIX to ME0 SimHit", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9526", 
+                    "number": "9526", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "clacaputo"
+                }, 
+                {
+                    "hash": "7814f7e532aad0bedb37cea9b273c1a653fccd21", 
+                    "title": "add script PlotFromMillepedeRes", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9529", 
+                    "number": "9529", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "eavdeeva"
+                }, 
+                {
+                    "hash": "5ce6c99577df4b44a7fb4d84caee10d6802b603d", 
+                    "title": "PRToFixMess_GEMCSCSegment_PR_v4", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11", 
+                    "number": "11", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "cms-sw"
+                }, 
+                {
+                    "hash": "3a1cd22db6a3e04519cc57962b1738ca446e1ca5", 
+                    "title": "PRToFixMess_GEMCSCSegment_PR_v3", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9", 
+                    "number": "9", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "cms-sw"
                 }
             ], 
             "hlt_tests": "not-found"
