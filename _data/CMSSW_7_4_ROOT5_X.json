@@ -935,77 +935,61 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_ROOT5_X_2015-06-09-2300-->CMSSW_7_4_ROOT5_X", 
-            "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT5-wed-11/CMSSW_7_4_ROOT5_X_2015-06-10-1100/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "error", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT5-wed-11/CMSSW_7_4_ROOT5_X_2015-06-10-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "linkError": 910, 
+                        "miscError": 70, 
+                        "compError": 12, 
+                        "ignoreWarning": 2
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_ROOT5_X_2015-06-09-2300-->CMSSW_7_4_ROOT5_X_2015-06-10-1100", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT5-wed-11/CMSSW_7_4_ROOT5_X_2015-06-10-1100/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "60"
+                    }
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT5_X_2015-06-10-1100/slc6_amd64_gcc491"
+            }, 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.4.ROOT5-wed-11/CMSSW_7_4_ROOT5_X_2015-06-10-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 176, 
+                        "num_failed": 291
+                    }
+                }
+            ], 
             "static_checks": "not-found", 
-            "isIB": false, 
-            "tests_archs": [], 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
             "inProgress": false, 
-            "release_name": "CMSSW_7_4_ROOT5_X", 
+            "release_name": "CMSSW_7_4_ROOT5_X_2015-06-10-1100", 
             "RVExceptions": null, 
             "merged_prs": [
-                {
-                    "is_merge_commit": true, 
-                    "brought_prs": [
-                        "9210", 
-                        "9382", 
-                        "9072", 
-                        "9233", 
-                        "9504"
-                    ], 
-                    "hash": "4deb0daaf526c885fee43985c67e0fa9194b67c4", 
-                    "number": "4deb0da", 
-                    "from_merge_commit": false
-                }, 
-                {
-                    "hash": "67e07d7e93146a03f0529fe6844038705c4ffe87", 
-                    "title": "Properly zero terminate a string in DQMEventInfo.", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/9504", 
-                    "number": "9504", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "dmitrijus"
-                }, 
-                {
-                    "hash": "9eda215fd54c758d28b1f82fab01b7f4568e174c", 
-                    "title": "Multi-threading support added for Heavy Ions HLT modules", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/9072", 
-                    "number": "9072", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "kkrajczar"
-                }, 
-                {
-                    "hash": "dd352982f5600be9b47917c84eed6c28b992f5f1", 
-                    "title": "Trim FastjetJetProducer memory (forward port #9203 to 74X)", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/9210", 
-                    "number": "9210", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "mark-grimes"
-                }, 
-                {
-                    "hash": "4d4524fc505497e606e87826b97df9208bcbdcbc", 
-                    "title": "7_4_X_AlCaPhiSym_ringCut", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/9233", 
-                    "number": "9233", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "bmarzocc"
-                }, 
-                {
-                    "hash": "8d74ed3e0e0561cf10611f173816c884cea0eabc", 
-                    "title": "HeavyIon EP code backport", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/9382", 
-                    "number": "9382", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "BetterWang"
-                }, 
                 {
                     "is_merge_commit": true, 
                     "brought_prs": [
@@ -1101,6 +1085,81 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": true, 
                     "author_login": "deguio"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [], 
+            "compared_tags": "CMSSW_7_4_ROOT5_X_2015-06-10-1100-->CMSSW_7_4_ROOT5_X", 
+            "utests": [], 
+            "cmsdistTags": {}, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": false, 
+            "tests_archs": [], 
+            "inProgress": false, 
+            "release_name": "CMSSW_7_4_ROOT5_X", 
+            "RVExceptions": null, 
+            "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "9210", 
+                        "9382", 
+                        "9072", 
+                        "9233", 
+                        "9504"
+                    ], 
+                    "hash": "4deb0daaf526c885fee43985c67e0fa9194b67c4", 
+                    "number": "4deb0da", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "67e07d7e93146a03f0529fe6844038705c4ffe87", 
+                    "title": "Properly zero terminate a string in DQMEventInfo.", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9504", 
+                    "number": "9504", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "dmitrijus"
+                }, 
+                {
+                    "hash": "9eda215fd54c758d28b1f82fab01b7f4568e174c", 
+                    "title": "Multi-threading support added for Heavy Ions HLT modules", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9072", 
+                    "number": "9072", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "kkrajczar"
+                }, 
+                {
+                    "hash": "dd352982f5600be9b47917c84eed6c28b992f5f1", 
+                    "title": "Trim FastjetJetProducer memory (forward port #9203 to 74X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9210", 
+                    "number": "9210", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "mark-grimes"
+                }, 
+                {
+                    "hash": "4d4524fc505497e606e87826b97df9208bcbdcbc", 
+                    "title": "7_4_X_AlCaPhiSym_ringCut", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9233", 
+                    "number": "9233", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "bmarzocc"
+                }, 
+                {
+                    "hash": "8d74ed3e0e0561cf10611f173816c884cea0eabc", 
+                    "title": "HeavyIon EP code backport", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9382", 
+                    "number": "9382", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "BetterWang"
                 }
             ], 
             "hlt_tests": "not-found"
