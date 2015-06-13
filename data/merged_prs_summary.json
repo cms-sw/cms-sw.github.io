@@ -19478,28 +19478,61 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT5_X_2015-06-11-2300-->CMSSW_7_4_ROOT5_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT5-fri-11/CMSSW_7_4_ROOT5_X_2015-06-12-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT5-fri-11/CMSSW_7_4_ROOT5_X_2015-06-12-1100/new/logAnalysis.pkl", 
+                        "details": {
+                            "miscError": 9, 
+                            "compError": 95, 
+                            "ignoreWarning": 2, 
+                            "linkError": 268
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_ROOT5_X_2015-06-11-2300-->CMSSW_7_4_ROOT5_X_2015-06-12-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT5-fri-11/CMSSW_7_4_ROOT5_X_2015-06-12-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "18"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT5_X_2015-06-12-1100/slc6_amd64_gcc491"
+                }, 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4.ROOT5-fri-11/CMSSW_7_4_ROOT5_X_2015-06-12-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 176, 
+                            "num_failed": 291
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_4_ROOT5_X", 
+                "release_name": "CMSSW_7_4_ROOT5_X_2015-06-12-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "7a66305162f1ff7133eaa9043f8eaf9a73f0bc5f", 
-                        "title": "Fix checksums and use typedef to fix build errors", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9577", 
-                        "number": "9577", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wmtan"
-                    }, 
                     {
                         "hash": "bf03f7431538425ba707511f1b2ceea93dfadfb4", 
                         "title": "Revert kCanRebin is replaced with SetCanExtend in online beamspot co\u2026", 
@@ -19535,6 +19568,32 @@
                         "number": "9581", 
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
+                        "author_login": "wmtan"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_ROOT5_X_2015-06-12-1100-->CMSSW_7_4_ROOT5_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_ROOT5_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "7a66305162f1ff7133eaa9043f8eaf9a73f0bc5f", 
+                        "title": "Fix checksums and use typedef to fix build errors", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9577", 
+                        "number": "9577", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
                         "author_login": "wmtan"
                     }
                 ], 
