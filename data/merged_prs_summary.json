@@ -2033,7 +2033,26 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_6_2_SLHCDEV_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "713f0609ceb212a000ee1c32ed848a6ce27bc5e9", 
+                        "title": "Fixing StackedTracker Geom + 2023Muondev Synchronized", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9488", 
+                        "number": "9488", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "boudoul"
+                    }, 
+                    {
+                        "hash": "f3fbe26bd609047205293b6e0738e6d92a51e426", 
+                        "title": "fixed Phase2TrackerDigitizer to accept Inner Pixel and Outer Tracker Detectors", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9516", 
+                        "number": "9516", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "suchandradutta"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -21190,16 +21209,34 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-06-14-1100-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4-mon-11/CMSSW_7_4_X_2015-06-15-1100/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-06-14-1100-->CMSSW_7_4_X_2015-06-15-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4-mon-11/CMSSW_7_4_X_2015-06-15-1100/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-06-14-1100/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_4_X", 
+                "release_name": "CMSSW_7_4_X_2015-06-15-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -21212,6 +21249,22 @@
                         "author_login": "igv4321"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_X_2015-06-15-1100-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -24934,7 +24987,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.5.DEVEL-mon-11/CMSSW_7_5_DEVEL_X_2015-06-15-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -24947,9 +25007,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.5.DEVEL-mon-11/CMSSW_7_5_DEVEL_X_2015-06-15-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.5.DEVEL-mon-11/CMSSW_7_5_DEVEL_X_2015-06-15-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "1"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -24990,7 +25052,36 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_ROOT64_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "9537", 
+                            "9593"
+                        ], 
+                        "hash": "996a802534608b4872191ff06126e3e86b376934", 
+                        "number": "996a802", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "cfa9f3ca2c04c0386c1790d8abfd6d3a03cd03b1", 
+                        "title": "FastSim : HF : Shower Library: safe handling of pointers", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9537", 
+                        "number": "9537", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }, 
+                    {
+                        "hash": "6f18b1e571e3635bfda14956c6a164ed7469241f", 
+                        "title": "Updated GT for online DQM (75X version)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9593", 
+                        "number": "9593", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "diguida"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
