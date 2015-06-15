@@ -138,21 +138,134 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_ROOT5_X_2015-06-03-2300-->CMSSW_7_4_ROOT5_X_2015-06-06-1100", 
-            "utests": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT5-mon-11/CMSSW_7_4_ROOT5_X_2015-06-08-1100/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "error", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT5-mon-11/CMSSW_7_4_ROOT5_X_2015-06-08-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "miscError": 2, 
+                        "ignoreWarning": 2, 
+                        "linkError": 31
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_4_ROOT5_X_2015-06-03-2300-->CMSSW_7_4_ROOT5_X_2015-06-08-1100", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT5-mon-11/CMSSW_7_4_ROOT5_X_2015-06-08-1100/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
+                }
+            ], 
             "cmsdistTags": {
-                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT5_X_2015-06-06-1100/slc6_amd64_gcc491"
+                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT5_X_2015-06-08-1100/slc6_amd64_gcc491"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT5-mon-11/CMSSW_7_4_ROOT5_X_2015-06-08-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 1075, 
+                        "num_failed": 12
+                    }
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
-            "tests_archs": [], 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
             "inProgress": false, 
-            "release_name": "CMSSW_7_4_ROOT5_X_2015-06-06-1100", 
+            "release_name": "CMSSW_7_4_ROOT5_X_2015-06-08-1100", 
             "RVExceptions": null, 
             "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "9325"
+                    ], 
+                    "hash": "ee1baeb55b019a7d22f6c0c7baada599377b90b1", 
+                    "number": "ee1baeb", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "e220f0ebaee47aa2e26070409b8875dad490aa86", 
+                    "title": "backport of HLT Hbb filter for 74X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9325", 
+                    "number": "9325", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "jmduarte"
+                }, 
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "9310", 
+                        "9444", 
+                        "9262"
+                    ], 
+                    "hash": "52ef2353fd0780ed1d76a8503a31ddf6c559ce99", 
+                    "number": "52ef235", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "8f29c05b65c4669f326942bb1a8ecdb9c4d7d4f1", 
+                    "title": "Fix use-after-free bug in typeCode", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9310", 
+                    "number": "9310", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "davidlt"
+                }, 
+                {
+                    "hash": "0844fbe1318d4f2d1b072174292d6e67bc00d335", 
+                    "title": "adding missing information of CSC ME3/1", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9262", 
+                    "number": "9262", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "rjwang"
+                }, 
+                {
+                    "hash": "2f62e59e4cb62972d0056f3243d97428f0b5cb76", 
+                    "title": "Strip online dqm cfg", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9444", 
+                    "number": "9444", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "threus"
+                }, 
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "9483"
+                    ], 
+                    "hash": "6730f37a714e312f0f60c0dfebf00cea76ceec2d", 
+                    "number": "6730f37", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "a8db4d815bcdb06c9476df48589085c94be50746", 
+                    "title": "Avoid deadlock by taking SharedResource lock first", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9483", 
+                    "number": "9483", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "Dr15Jones"
+                }, 
                 {
                     "is_merge_commit": true, 
                     "brought_prs": [
@@ -276,157 +389,6 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": true, 
                     "author_login": "KiSooLee"
-                }
-            ], 
-            "hlt_tests": "not-found"
-        }, 
-        {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_4_ROOT5_X_2015-06-06-1100-->CMSSW_7_4_ROOT5_X_2015-06-06-2300", 
-            "utests": [], 
-            "cmsdistTags": {
-                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT5_X_2015-06-06-2300/slc6_amd64_gcc491"
-            }, 
-            "relvals": [], 
-            "static_checks": "not-found", 
-            "isIB": true, 
-            "tests_archs": [], 
-            "inProgress": false, 
-            "release_name": "CMSSW_7_4_ROOT5_X_2015-06-06-2300", 
-            "RVExceptions": null, 
-            "merged_prs": [
-                {
-                    "is_merge_commit": true, 
-                    "brought_prs": [
-                        "9310", 
-                        "9444", 
-                        "9262"
-                    ], 
-                    "hash": "52ef2353fd0780ed1d76a8503a31ddf6c559ce99", 
-                    "number": "52ef235", 
-                    "from_merge_commit": false
-                }, 
-                {
-                    "hash": "8f29c05b65c4669f326942bb1a8ecdb9c4d7d4f1", 
-                    "title": "Fix use-after-free bug in typeCode", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/9310", 
-                    "number": "9310", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "davidlt"
-                }, 
-                {
-                    "hash": "0844fbe1318d4f2d1b072174292d6e67bc00d335", 
-                    "title": "adding missing information of CSC ME3/1", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/9262", 
-                    "number": "9262", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "rjwang"
-                }, 
-                {
-                    "hash": "2f62e59e4cb62972d0056f3243d97428f0b5cb76", 
-                    "title": "Strip online dqm cfg", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/9444", 
-                    "number": "9444", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "threus"
-                }, 
-                {
-                    "is_merge_commit": true, 
-                    "brought_prs": [
-                        "9483"
-                    ], 
-                    "hash": "6730f37a714e312f0f60c0dfebf00cea76ceec2d", 
-                    "number": "6730f37", 
-                    "from_merge_commit": false
-                }, 
-                {
-                    "hash": "a8db4d815bcdb06c9476df48589085c94be50746", 
-                    "title": "Avoid deadlock by taking SharedResource lock first", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/9483", 
-                    "number": "9483", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "Dr15Jones"
-                }
-            ], 
-            "hlt_tests": "not-found"
-        }, 
-        {
-            "addons": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": true, 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT5-mon-11/CMSSW_7_4_ROOT5_X_2015-06-08-1100/addOnTests.log", 
-                    "details": {}
-                }
-            ], 
-            "builds": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": "error", 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT5-mon-11/CMSSW_7_4_ROOT5_X_2015-06-08-1100/new/logAnalysis.pkl", 
-                    "details": {
-                        "miscError": 2, 
-                        "ignoreWarning": 2, 
-                        "linkError": 31
-                    }
-                }
-            ], 
-            "compared_tags": "CMSSW_7_4_ROOT5_X_2015-06-06-2300-->CMSSW_7_4_ROOT5_X_2015-06-08-1100", 
-            "utests": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": "failed", 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT5-mon-11/CMSSW_7_4_ROOT5_X_2015-06-08-1100/unitTests-summary.log", 
-                    "details": {
-                        "num_fails": "1"
-                    }
-                }
-            ], 
-            "cmsdistTags": {
-                "slc6_amd64_gcc491": "ERR/CMSSW_7_4_ROOT5_X_2015-06-08-1100/slc6_amd64_gcc491"
-            }, 
-            "relvals": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": false, 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4.ROOT5-mon-11/CMSSW_7_4_ROOT5_X_2015-06-08-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                    "details": {
-                        "num_passed": 1075, 
-                        "num_failed": 12
-                    }
-                }
-            ], 
-            "static_checks": "not-found", 
-            "isIB": true, 
-            "tests_archs": [
-                "slc6_amd64_gcc491"
-            ], 
-            "inProgress": false, 
-            "release_name": "CMSSW_7_4_ROOT5_X_2015-06-08-1100", 
-            "RVExceptions": null, 
-            "merged_prs": [
-                {
-                    "is_merge_commit": true, 
-                    "brought_prs": [
-                        "9325"
-                    ], 
-                    "hash": "ee1baeb55b019a7d22f6c0c7baada599377b90b1", 
-                    "number": "ee1baeb", 
-                    "from_merge_commit": false
-                }, 
-                {
-                    "hash": "e220f0ebaee47aa2e26070409b8875dad490aa86", 
-                    "title": "backport of HLT Hbb filter for 74X", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/9325", 
-                    "number": "9325", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": true, 
-                    "author_login": "jmduarte"
                 }
             ], 
             "hlt_tests": "not-found"
