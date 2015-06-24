@@ -167,16 +167,50 @@
         }, 
         {
             "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_6_X_2015-06-23-2300-->CMSSW_7_6_X", 
-            "utests": [], 
-            "cmsdistTags": {}, 
+            "builds": [
+                {
+                    "arch": "slc7_amd64_gcc491", 
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc491/www/wed/7.6-wed-11/CMSSW_7_6_X_2015-06-24-1100/new/logAnalysis.pkl", 
+                    "details": {}
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.6-wed-11/CMSSW_7_6_X_2015-06-24-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "ignoreWarning": 7
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_6_X_2015-06-23-2300-->CMSSW_7_6_X_2015-06-24-1100", 
+            "utests": [
+                {
+                    "arch": "slc7_amd64_gcc491", 
+                    "passed": "unknown", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc491/www/wed/7.6-wed-11/CMSSW_7_6_X_2015-06-24-1100/new/logAnalysis.pkl']", 
+                    "details": {}
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "unknown", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.6-wed-11/CMSSW_7_6_X_2015-06-24-1100/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "Not Found", 
+                "slc7_amd64_gcc491": "Not Found"
+            }, 
             "relvals": [], 
             "static_checks": "not-found", 
-            "isIB": false, 
-            "tests_archs": [], 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc491", 
+                "slc7_amd64_gcc491"
+            ], 
             "inProgress": false, 
-            "release_name": "CMSSW_7_6_X", 
+            "release_name": "CMSSW_7_6_X_2015-06-24-1100", 
             "RVExceptions": null, 
             "merged_prs": [
                 {
@@ -205,6 +239,81 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "rafaellopesdesa"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [], 
+            "compared_tags": "CMSSW_7_6_X_2015-06-24-1100-->CMSSW_7_6_X", 
+            "utests": [], 
+            "cmsdistTags": {}, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": false, 
+            "tests_archs": [], 
+            "inProgress": false, 
+            "release_name": "CMSSW_7_6_X", 
+            "RVExceptions": null, 
+            "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "9704", 
+                        "9702", 
+                        "9381", 
+                        "9726", 
+                        "9725"
+                    ], 
+                    "hash": "68b4ccfc9d6f7b0ae0980969622686957e61fc9a", 
+                    "number": "68b4ccf", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "f9bbfeec1dd49f3a673ab36634f93178084cfc84", 
+                    "title": "Fix out of bound array in photon uncertainty calculation", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9381", 
+                    "number": "9381", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "rafaellopesdesa"
+                }, 
+                {
+                    "hash": "b08c9131719e6e61f0fef5a677e3ec08196d8599", 
+                    "title": "Replace getProcessParameterSet in PrescaleService", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9702", 
+                    "number": "9702", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "wddgit"
+                }, 
+                {
+                    "hash": "2260434992f52efe9825de4bca3f338455153882", 
+                    "title": "consistently use momentum at POCA for PFDisplacedVertex momentum computations (same as  #9703  from 74X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9704", 
+                    "number": "9704", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "slava77"
+                }, 
+                {
+                    "hash": "b543765b95fe64a231fb9fd807ce05a1cc3be129", 
+                    "title": "the canonical type of std::atomic<T*> in template <T> edm::AtomicPtrC\u2026", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9726", 
+                    "number": "9726", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "gartung"
+                }, 
+                {
+                    "hash": "5640574f104d5b496793bec472b30b9e1aeaa5ed", 
+                    "title": "Bug fix so will compile -O0 -g", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/9725", 
+                    "number": "9725", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "wddgit"
                 }
             ], 
             "hlt_tests": "not-found"
