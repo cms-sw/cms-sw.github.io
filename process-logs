@@ -15,6 +15,7 @@ from datetime import datetime, timedelta
 RESULTS_PATH = "pyRelValMatrixLogs/run/runall-report-step123-.log"
 UNITTEST_SUMMARY_PATH = "unitTests-summary.log"
 RELVAL_LOGS = "pyRelValMatrixLogs.zip"
+BUILD_LOGS = "new/html-logs.zip"
 
 #
 # makes a query to get information from elasticsearch
@@ -95,13 +96,13 @@ if __name__ == "__main__":
   ES_RELVALS_INDEX = args.es_rv_index
   ES_SCRAM_INDEX = args.es_scram_index
 
-  release_match = join(args.logdir, "([^/]*)/www/([^/]*)/([^/]*)/([^/]*)/pyRelValMatrixLogs/run/runall-report-step123-.log")
+  release_match = join(args.logdir, "([^/]*)/www/([^/]*)/([^/]*)/([^/]*)/"+BUILD_LOGS)
 
   # Generate a tuple with
   # (<release-name>, <release-queue>, <release-path>)
   globExpr = join(args.logdir, "*/www/*/*/*")
   releases = [r for r in glob(globExpr) if re.match(".*" + args.filter + ".*", r)]
-  inputs = [join(r, RESULTS_PATH) for r in releases if exists(join(r, RESULTS_PATH))]
+  inputs = [join(r, BUILD_LOGS) for r in releases if exists(join(r, BUILD_LOGS))]
   inputsUnitTestSummary = [join(r, UNITTEST_SUMMARY_PATH) for r in releases if exists(join(r, UNITTEST_SUMMARY_PATH))]
   inputsRelvalLogs = [join(r, RELVAL_LOGS) for r in releases if exists(join(r, RELVAL_LOGS))]
 
@@ -136,7 +137,7 @@ if __name__ == "__main__":
   available_ibs_scram_es = get_list_avaiable_ib_scram_results( ES_HOSTNAME, ES_SCRAM_INDEX )
   all_relvals_afs = [x.split('/')[ 10 ] for x in inputsRelvalLogs ]
   # for now, the list is obtained from the unit tests
-  all_scram_res_afs = [x.split('/')[ 10 ] for x in inputsUnitTestSummary ] 
+  all_scram_res_afs = [x.split('/')[ 10 ] for x in iinputsUnitTestSummary ]
 
   incomplete_ibs_rv = list( set( available_ibs_rv_es ) - set( all_relvals_afs ) )
   dates.sort()
