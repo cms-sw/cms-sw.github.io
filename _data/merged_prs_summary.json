@@ -24528,7 +24528,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.6.CLANG-fri-23/CMSSW_7_6_CLANG_X_2015-06-26-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -27499,66 +27506,38 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_THREADED_X_2015-06-25-2300-->CMSSW_7_6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.6.THREADED-fri-23/CMSSW_7_6_THREADED_X_2015-06-26-2300/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 20
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_6_THREADED_X_2015-06-25-2300-->CMSSW_7_6_THREADED_X_2015-06-26-2300", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.6.THREADED-fri-23/CMSSW_7_6_THREADED_X_2015-06-26-2300/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_6_THREADED_X_2015-06-26-2300/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_6_X", 
+                "release_name": "CMSSW_7_6_THREADED_X_2015-06-26-2300", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "9894", 
-                            "9845", 
-                            "9832", 
-                            "9909"
-                        ], 
-                        "hash": "83c3cc486a126ed64fa3c86147209e4d63a11d6a", 
-                        "number": "83c3cc4", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "2f125eb43e4fa74bf1083485539703fb391b95fe", 
-                        "title": "Hcal SpecPars in All Scenarios", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9832", 
-                        "number": "9832", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "ianna"
-                    }, 
-                    {
-                        "hash": "e56b6ac689f9733edef4c268c4fb5c29ffe73d45", 
-                        "title": "Update to handle trigger paths with DiSC prefix", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9845", 
-                        "number": "9845", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "matteosan1"
-                    }, 
-                    {
-                        "hash": "cc73f6cf2618b0c02d3862388f2fc01f243ef469", 
-                        "title": "Fix huge memory leaks in DQM/L1TMonitorClient (port to 75x)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9894", 
-                        "number": "9894", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "dmitrijus"
-                    }, 
-                    {
-                        "hash": "35a3192f8de2a159a8017202dc1aac9a4ee714de", 
-                        "title": "Fix alignment track selector multi threaded friendly for 75X (fwdport of #9906)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9909", 
-                        "number": "9909", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "mmusich"
-                    }, 
                     {
                         "hash": "9dd1b62384b5b14d8d864d7c01c9dd99fc717cd8", 
                         "title": "Fix alignment track selector multi threaded friendly for 76X (fwdport of #9906)", 
@@ -27651,6 +27630,71 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "davidlange6"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_6_THREADED_X_2015-06-26-2300-->CMSSW_7_6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_6_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "9894", 
+                            "9845", 
+                            "9832", 
+                            "9909"
+                        ], 
+                        "hash": "83c3cc486a126ed64fa3c86147209e4d63a11d6a", 
+                        "number": "83c3cc4", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "2f125eb43e4fa74bf1083485539703fb391b95fe", 
+                        "title": "Hcal SpecPars in All Scenarios", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9832", 
+                        "number": "9832", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ianna"
+                    }, 
+                    {
+                        "hash": "e56b6ac689f9733edef4c268c4fb5c29ffe73d45", 
+                        "title": "Update to handle trigger paths with DiSC prefix", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9845", 
+                        "number": "9845", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "matteosan1"
+                    }, 
+                    {
+                        "hash": "cc73f6cf2618b0c02d3862388f2fc01f243ef469", 
+                        "title": "Fix huge memory leaks in DQM/L1TMonitorClient (port to 75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9894", 
+                        "number": "9894", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dmitrijus"
+                    }, 
+                    {
+                        "hash": "35a3192f8de2a159a8017202dc1aac9a4ee714de", 
+                        "title": "Fix alignment track selector multi threaded friendly for 75X (fwdport of #9906)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/9909", 
+                        "number": "9909", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mmusich"
                     }
                 ], 
                 "hlt_tests": "not-found"
