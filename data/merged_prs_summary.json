@@ -13218,7 +13218,17 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_ROOT5_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "537217c303df012bd1faf0e3b64663cb7f026c46", 
+                        "title": "Comment out ROOT6 specific call in ROOT5 release", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10136", 
+                        "number": "10136", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -16395,9 +16405,55 @@
                 "hlt_tests": "not-found"
             }, 
             {
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-07-12-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-07-12-2300/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 2, 
+                            "ignoreWarning": 20
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-07-12-1100-->CMSSW_7_4_X_2015-07-12-2300", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-07-12-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-07-12-2300/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_X_2015-07-12-2300", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-07-12-1100-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_X_2015-07-12-2300-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -17896,7 +17952,17 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_ROOT5_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "d3ca48a9dbc7b2cd20225924ac9c3d4319c66e85", 
+                        "title": "Back out ROOT6 specific change from ROOT 5 release", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10139", 
+                        "number": "10139", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -22315,6 +22381,15 @@
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
+                        "hash": "2240aec89bdf3478034b5ce83bf2ae1010ef087f", 
+                        "title": "Fix bug in DataFormats/FWLite/python/__init__.py", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10158", 
+                        "number": "10158", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "lgray"
+                    }, 
+                    {
                         "hash": "2a7db997ccca599dfc81e9ead8b26594624206cb", 
                         "title": "Replace getProcessParameterSet", 
                         "url": "https://github.com/cms-sw/cmssw/pull/9871", 
@@ -24318,61 +24393,6 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_6_THREADED_X_2015-06-28-2300-->CMSSW_7_6_THREADED_X_2015-06-29-1100", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_6_THREADED_X_2015-06-29-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "9117", 
-                            "9630", 
-                            "9677"
-                        ], 
-                        "hash": "da5c13a29df2678dfff15c8a3d1bb720ef9762c1", 
-                        "number": "da5c13a", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "4dc14a55620c7cf0513165f08d7ea52e840ce202", 
-                        "title": "New MET correction/uncertainty tool", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9117", 
-                        "number": "9117", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "mmarionncern"
-                    }, 
-                    {
-                        "hash": "6aec287ed812fbbc4102c55a39820c02f9da4680", 
-                        "title": "Add module for validating tracks in miniAOD and fix track-to-PackedCandidate association", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9630", 
-                        "number": "9630", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "makortel"
-                    }, 
-                    {
-                        "hash": "3114b4c55eb70f7d61fad083a96d66e93e0787f4", 
-                        "title": "small changes for performance optimization", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/9677", 
-                        "number": "9677", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "ngrenz"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
                 "compared_tags": "CMSSW_7_6_THREADED_X_2015-06-29-1100-->CMSSW_7_6_THREADED_X_2015-06-29-2300", 
                 "utests": [], 
                 "cmsdistTags": {}, 
@@ -26340,7 +26360,17 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_6_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "2240aec89bdf3478034b5ce83bf2ae1010ef087f", 
+                        "title": "Fix bug in DataFormats/FWLite/python/__init__.py", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10158", 
+                        "number": "10158", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "lgray"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -28667,7 +28697,17 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_6_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "2240aec89bdf3478034b5ce83bf2ae1010ef087f", 
+                        "title": "Fix bug in DataFormats/FWLite/python/__init__.py", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10158", 
+                        "number": "10158", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "lgray"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
