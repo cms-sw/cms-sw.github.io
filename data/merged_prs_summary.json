@@ -13326,7 +13326,56 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_ROOT5_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "10186", 
+                            "10167", 
+                            "10160", 
+                            "10190"
+                        ], 
+                        "hash": "767599f8ef4778373d424f865e41072aae820ad1", 
+                        "number": "767599f", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "298e9fab5b3cccaa884ab85679efb88bad684b2c", 
+                        "title": "remove printout and add _nodrop to hotline", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10190", 
+                        "number": "10190", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "hash": "1a35af4c4ce13c587baf5cec2c2ebecc54ffea8c", 
+                        "title": "Fix bug in DataFormats/FWLite/python/__init__.py (74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10160", 
+                        "number": "10160", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "b9d546d7fb5080e4207bccc2d98cf86e0543c950", 
+                        "title": "RelVals for PCL (74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10167", 
+                        "number": "10167", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cerminar"
+                    }, 
+                    {
+                        "hash": "58a56085250e8b037dbce5d6fc8ef531d33b1482", 
+                        "title": "allow combined alca output to select events and pick up only the needed outputs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10186", 
+                        "number": "10186", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlange6"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -19965,7 +20014,7 @@
                 "release_name": "CMSSW_7_5_X_2015-07-12-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [
@@ -24847,16 +24896,34 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_THREADED_X_2015-07-13-2300-->CMSSW_7_6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.6.THREADED-tue-11/CMSSW_7_6_THREADED_X_2015-07-14-1100/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_6_THREADED_X_2015-07-13-2300-->CMSSW_7_6_THREADED_X_2015-07-14-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.6.THREADED-tue-11/CMSSW_7_6_THREADED_X_2015-07-14-1100/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_6_THREADED_X_2015-07-13-1100/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_6_X", 
+                "release_name": "CMSSW_7_6_THREADED_X_2015-07-14-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -24869,6 +24936,22 @@
                         "author_login": "ianna"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_6_THREADED_X_2015-07-14-1100-->CMSSW_7_6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_6_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -26842,7 +26925,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.6-tue-11/CMSSW_7_6_X_2015-07-14-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -26857,9 +26947,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.6-tue-11/CMSSW_7_6_X_2015-07-14-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.6-tue-11/CMSSW_7_6_X_2015-07-14-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "2"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
