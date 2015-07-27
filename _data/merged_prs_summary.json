@@ -1629,7 +1629,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/5.3-mon-18/CMSSW_5_3_X_2015-07-27-1800/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc472", 
@@ -1645,9 +1652,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/5.3-mon-18/CMSSW_5_3_X_2015-07-27-1800/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/5.3-mon-18/CMSSW_5_3_X_2015-07-27-1800/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "13"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -15855,16 +15864,37 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-07-24-2300-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4-mon-18/CMSSW_7_4_X_2015-07-27-1800/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 2, 
+                            "ignoreWarning": 20
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-07-24-2300-->CMSSW_7_4_X_2015-07-27-1800", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.4-mon-18/CMSSW_7_4_X_2015-07-27-1800/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-07-27-1800/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_4_X", 
+                "release_name": "CMSSW_7_4_X_2015-07-27-1800", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -15877,6 +15907,22 @@
                         "author_login": "suchandradutta"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_X_2015-07-27-1800-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -17074,6 +17120,15 @@
                 "release_name": "CMSSW_7_5_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "d72d8a39c72261c68d3b3850f715ad6aa2398e37", 
+                        "title": "correct gangedME11a flag", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10010", 
+                        "number": "10010", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rjwang"
+                    }, 
                     {
                         "hash": "971de505d7639cf1eebdff8289fa5ede2e203e98", 
                         "title": "Update WpM_13TeV_TuneCUETP8M1_cfi.py", 
@@ -18599,6 +18654,15 @@
                 "release_name": "CMSSW_7_5_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "d72d8a39c72261c68d3b3850f715ad6aa2398e37", 
+                        "title": "correct gangedME11a flag", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10010", 
+                        "number": "10010", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rjwang"
+                    }, 
                     {
                         "hash": "971de505d7639cf1eebdff8289fa5ede2e203e98", 
                         "title": "Update WpM_13TeV_TuneCUETP8M1_cfi.py", 
@@ -21522,6 +21586,24 @@
                 "release_name": "CMSSW_7_6_ROOT64_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "10315"
+                        ], 
+                        "hash": "35783f9dac9e2da97eadee45470e94fef78f2c3e", 
+                        "number": "35783f9", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "37107a0dcf52a03e1034b35fe974b61d5e41d869", 
+                        "title": "Remove vestigial (and huge) GBRForest when running with PFEGAlgo", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10315", 
+                        "number": "10315", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
