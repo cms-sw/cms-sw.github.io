@@ -1049,7 +1049,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.6.THREADED-tue-23/CMSSW_7_6_THREADED_X_2015-08-04-2300/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -1062,15 +1069,27 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.6.THREADED-tue-23/CMSSW_7_6_THREADED_X_2015-08-04-2300/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.6.THREADED-tue-23/CMSSW_7_6_THREADED_X_2015-08-04-2300/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
                 }
             ], 
             "cmsdistTags": {
                 "slc6_amd64_gcc491": "IB/CMSSW_7_6_THREADED_X_2015-08-02-1000/slc6_amd64_gcc491"
             }, 
-            "relvals": [], 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.6.THREADED-tue-23/CMSSW_7_6_THREADED_X_2015-08-04-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 184, 
+                        "num_failed": 2
+                    }
+                }
+            ], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
@@ -1161,6 +1180,15 @@
             "release_name": "CMSSW_7_6_X", 
             "RVExceptions": null, 
             "merged_prs": [
+                {
+                    "hash": "9a463f39e6cf02242ddab8944918515e85aad7f2", 
+                    "title": "Revert adding HLT object monitoring to HLT online DQM", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/10579", 
+                    "number": "10579", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cms-sw"
+                }, 
                 {
                     "hash": "e7499f08413cb4931c5dbaad48103ed3804b2d5b", 
                     "title": "Cleaning of RecoTauTag/HLTProducers package", 
