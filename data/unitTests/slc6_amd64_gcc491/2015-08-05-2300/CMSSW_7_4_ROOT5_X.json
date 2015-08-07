@@ -1,24 +1,17 @@
 [
   {
-    "errors": [
-      "HcalGeometryTest"
-    ],
-    "name": "Geometry/HcalTowerAlgo",
-    "ok": []
-  },
-  {
     "errors": [],
     "name": "Utilities/StorageFactory",
     "ok": [
-      "test_StorageFactory_Mkstemp",
-      "test_StorageFactory_Rfio3",
-      "test_StorageFactory_Local2",
-      "test_StorageFactory_Http",
-      "test_StorageFactory_Rfio2",
-      "test_StorageFactory_Http2",
       "test_StorageFactory_Http4",
       "test_StorageFactory_Local",
-      "test_StorageFactory_Local3"
+      "test_StorageFactory_Http2",
+      "test_StorageFactory_Rfio3",
+      "test_StorageFactory_Mkstemp",
+      "test_StorageFactory_Local3",
+      "test_StorageFactory_Local2",
+      "test_StorageFactory_Http",
+      "test_StorageFactory_Rfio2"
     ]
   },
   {
@@ -33,17 +26,17 @@
     "errors": [],
     "name": "TrackingTools/TrajectoryState",
     "ok": [
-      "testTSOS",
       "testProxy",
-      "testChurn"
+      "testChurn",
+      "testTSOS"
     ]
   },
   {
     "errors": [],
     "name": "TrackingTools/PatternTools",
     "ok": [
-      "bqueue_t",
       "ClosestApproachInRPhi_t",
+      "bqueue_t",
       "TrajSizes_t"
     ]
   },
@@ -89,8 +82,8 @@
     "name": "TrackingTools/AnalyticalJacobians",
     "ok": [
       "ErrorProp_t",
-      "ErrorPropOri_t",
-      "Jacobian_t"
+      "Jacobian_t",
+      "ErrorPropOri_t"
     ]
   },
   {
@@ -203,22 +196,22 @@
     "errors": [],
     "name": "SimG4Core/Geometry",
     "ok": [
-      "Trap_",
-      "Polycone_",
-      "Polyhedra_",
-      "Tubs_",
-      "Cons_",
-      "Sphere_",
+      "EllipticalTube_",
       "Box_",
-      "Torus_",
-      "testVolumes",
+      "Para_",
+      "Trap_",
+      "Parallelepiped_",
+      "Tubs_",
+      "Sphere_",
+      "Orb_",
       "PseudoTrap_",
       "TruncTubs_",
-      "Parallelepiped_",
-      "EllipticalTube_",
-      "Para_",
-      "Orb_",
-      "Ellipsoid_"
+      "Cons_",
+      "Torus_",
+      "Ellipsoid_",
+      "Polyhedra_",
+      "testVolumes",
+      "Polycone_"
     ]
   },
   {
@@ -232,20 +225,20 @@
     "errors": [],
     "name": "SimCalorimetry/HcalSimAlgos",
     "ok": [
-      "HcalTimeSlewTest",
-      "HPDIonFeedbackTest",
       "readHPDLibrary",
+      "HPDIonFeedbackTest",
+      "HcalShapeIntegratorTest",
       "writeHPDLibrary",
       "HcalDigitizerTest",
-      "HcalShapeIntegratorTest"
+      "HcalTimeSlewTest"
     ]
   },
   {
     "errors": [],
     "name": "SimCalorimetry/EcalSimAlgos",
     "ok": [
-      "testEcalShape",
-      "testCorrNoise"
+      "testCorrNoise",
+      "testEcalShape"
     ]
   },
   {
@@ -315,6 +308,14 @@
   },
   {
     "errors": [],
+    "name": "RecoLuminosity/LumiProducer",
+    "ok": [
+      "testBoostRegex",
+      "testWrite2LumiDB"
+    ]
+  },
+  {
+    "errors": [],
     "name": "RecoLocalCalo/EcalRecAlgos",
     "ok": [
       "testEcalSeverity"
@@ -339,15 +340,15 @@
     "name": "PhysicsTools/Utilities",
     "ok": [
       "testZMassFitExtLikelihood",
-      "testSideBandSubtraction",
       "testZMassFitSimple",
-      "testZMassFitLikelihood",
-      "testZMassFit",
-      "testIntegralTiming",
-      "test_Poisson",
-      "testRooFitFunction",
+      "testExpressionFit",
       "testPhysicsToolsUtilities",
-      "testExpressionFit"
+      "testSideBandSubtraction",
+      "testRooFitFunction",
+      "testIntegralTiming",
+      "testZMassFit",
+      "testZMassFitLikelihood",
+      "test_Poisson"
     ]
   },
   {
@@ -397,8 +398,8 @@
     "errors": [],
     "name": "PhysicsTools/CondLiteIO",
     "ok": [
-      "TestRunnerPhysicsToolsCondLiteIO",
-      "testPhysicsToolsCondLiteIO"
+      "testPhysicsToolsCondLiteIO",
+      "TestRunnerPhysicsToolsCondLiteIO"
     ]
   },
   {
@@ -440,13 +441,13 @@
     "errors": [],
     "name": "L1Trigger/GlobalCaloTrigger",
     "ok": [
-      "testJetEtCalibrationLut",
-      "printMap",
       "testJetFinalStage",
-      "testJetFinder",
-      "testEtTypes",
+      "printMap",
+      "testElectronSorter",
       "testGctMap",
-      "testElectronSorter"
+      "testJetEtCalibrationLut",
+      "testJetFinder",
+      "testEtTypes"
     ]
   },
   {
@@ -467,11 +468,11 @@
     "errors": [],
     "name": "IOPool/Streamer",
     "ok": [
-      "ReadStreamerFile",
-      "RunThat_t",
-      "WriteStreamerFile",
       "RunThis_t",
-      "EventMessageTest"
+      "RunThat_t",
+      "ReadStreamerFile",
+      "EventMessageTest",
+      "WriteStreamerFile"
     ]
   },
   {
@@ -508,6 +509,13 @@
     "name": "IOMC/RandomEngine",
     "ok": [
       "TestIOMCRandomEngineService"
+    ]
+  },
+  {
+    "errors": [],
+    "name": "Geometry/HcalTowerAlgo",
+    "ok": [
+      "HcalGeometryTest"
     ]
   },
   {
@@ -572,23 +580,23 @@
     "errors": [],
     "name": "FWCore/Utilities",
     "ok": [
-      "RunningAverage_t",
-      "Digest_t",
-      "testFWCoreUtilities",
-      "clone_ptr_t",
-      "InputTag_t",
-      "typedefs_t",
-      "value_ptr_t",
       "EDMException_t",
+      "Guid_t",
+      "testFWCoreUtilities",
+      "typedefs_t",
+      "Digest_t",
+      "atomic_value_ptr_t",
       "isFinite_t",
+      "TestHelper_t",
+      "CRC32Calculator_t",
+      "InputTag_t",
       "EDGetToken_t",
       "Exception_t",
-      "MallocOpts_t",
+      "clone_ptr_t",
       "HRTime_t",
-      "Guid_t",
-      "atomic_value_ptr_t",
-      "CRC32Calculator_t",
-      "TestHelper_t"
+      "value_ptr_t",
+      "MallocOpts_t",
+      "RunningAverage_t"
     ]
   },
   {
@@ -609,19 +617,15 @@
     "errors": [],
     "name": "FWCore/ServiceRegistry",
     "ok": [
-      "testServiceRegistry",
-      "servicesmanager_order"
+      "servicesmanager_order",
+      "testServiceRegistry"
     ]
   },
   {
     "errors": [],
-    "name": "FWCore/ROOTTests",
+    "name": "FWCore/RootAutoLibraryLoader",
     "ok": [
-      "root_threaded_tformula_test",
-      "root_threaded_read_test",
-      "root_threaded_tprofile_test",
-      "root_threaded_write_test",
-      "root_threaded_tclass_methods_test"
+      "testFWCoreRootAutoLibraryLoader"
     ]
   },
   {
@@ -636,17 +640,17 @@
     "name": "FWCore/PluginManager",
     "ok": [
       "TestFWCorePluginManagerPluginManager",
+      "TestFWCorePluginManagerPluginFactory",
       "TestFWCorePluginManagerPluginFactoryManager",
-      "TestFWCorePluginManagerCacheParser",
-      "TestFWCorePluginManagerPluginFactory"
+      "TestFWCorePluginManagerCacheParser"
     ]
   },
   {
     "errors": [],
     "name": "FWCore/ParameterSet",
     "ok": [
-      "testParameterSet",
       "TestFWCoreParameterSetDescription",
+      "testParameterSet",
       "TestFWCoreParameterSetDriver"
     ]
   },
@@ -661,99 +665,99 @@
     "errors": [],
     "name": "FWCore/MessageService",
     "ok": [
-      "unitTestsGroup_2",
-      "unitTestsLimits",
-      "unitTestsGroup_1",
+      "unitTestsGroup_5",
       "unitTestsGroup_d",
+      "unitTestsGroup_2",
+      "standAloneWithMessageLogger",
+      "unitTestsGroup_1",
+      "unitTestsStatistics",
+      "unitTestsLimits",
+      "makeJobReport",
+      "testLoggerInCmsRun",
+      "unitTestsGroup_4",
       "unitTestsGroup_3",
       "unitTestsGroup_6",
-      "makeJobReport",
-      "unitTestsStatistics",
-      "unitTestsGroup_4",
-      "unitTestsGroup_5",
-      "standAloneWithMessageLogger",
-      "trivial_main",
-      "testLoggerInCmsRun"
+      "trivial_main"
     ]
   },
   {
     "errors": [],
     "name": "FWCore/Integration",
     "ok": [
-      "CatchCmsExceptiontest",
-      "TestIntegrationThinningTests",
-      "ProcessHistory_t",
-      "TestIntegrationServiceExample",
-      "TestIntegrationRunMerge",
-      "TestIntegrationSeriesOfProcesses",
-      "TestIntegrationRefAlias",
-      "TestIntegrationHierarchyExample",
-      "TestIntegrationUnscheduledFailOnOutput",
-      "ProcessConfiguration_t",
-      "TestIntegrationExternalSource",
-      "TestIntegrationRefMerge",
-      "TestSubProcess",
-      "TestIntegrationParentless",
-      "TestIntegrationEventHistory",
-      "TestIntegrationEventSetup",
       "TestIntegrationRef",
-      "TestIntegrationView",
-      "TestFWCoreIntegrationStandalone",
-      "TestIntegrationParameterSet",
-      "TestIntegrationGetBy",
-      "CatchStdExceptiontest",
       "TestIntegrationProducedSource",
-      "TestIntegrationTransRef"
+      "CatchCmsExceptiontest",
+      "TestIntegrationEventHistory",
+      "TestIntegrationRefAlias",
+      "TestIntegrationExternalSource",
+      "ProcessHistory_t",
+      "TestIntegrationRunMerge",
+      "TestIntegrationParentless",
+      "TestIntegrationEventSetup",
+      "TestFWCoreIntegrationStandalone",
+      "TestIntegrationSeriesOfProcesses",
+      "TestIntegrationGetBy",
+      "ProcessConfiguration_t",
+      "TestIntegrationView",
+      "CatchStdExceptiontest",
+      "TestIntegrationHierarchyExample",
+      "TestIntegrationParameterSet",
+      "TestIntegrationUnscheduledFailOnOutput",
+      "TestSubProcess",
+      "TestIntegrationThinningTests",
+      "TestIntegrationRefMerge",
+      "TestIntegrationTransRef",
+      "TestIntegrationServiceExample"
     ]
   },
   {
     "errors": [],
     "name": "FWCore/Framework",
     "ok": [
-      "TestFWCoreFrameworkeventprincipal",
-      "TestFWCoreFrameworkReplace",
-      "TestFWCoreFrameworkStatemachineSH",
-      "TestFWCoreFramework",
-      "TestFWCoreFrameworkeventprocessor",
-      "TestFWCoreFrameworkGlobalStreamOne",
-      "TestFWCoreFrameworkUnscheduled",
-      "TestFWCoreFrameworkStatemachine",
-      "TestFWCoreFrameworkEventSelExc",
-      "TestFWCoreFrameworkTrigBit",
-      "TestFWCoreFrameworkDeleteEarly",
-      "TestFWCoreOutputModuleUtilities",
-      "TestFWCoreFrameworkTBBTasks",
-      "TestXMLSafeException",
-      "TestFWCoreFrameworkRegistryTemplate",
-      "TestFWCoreFrameworkeventsetup",
-      "TestFWCoreFrameworkESProducerLooper",
-      "TestFWCoreFrameworkCmsRun",
-      "TestFWCoreFrameworkEvent",
       "TestFWCoreFrameworkView",
-      "TestFWCoreFrameworkESRefer",
       "TestFWCoreFrameworkEventSelOverlap",
-      "TestFWCoreFrameworkProductSelector",
-      "TestFWCoreFrameworkEarlyTerminationSignal",
+      "TestFWCoreFramework",
+      "TestFWCoreFrameworkTrigMask",
+      "TestFWCoreFrameworkRegistryTemplate",
+      "TestFWCoreFrameworkTBBTasks",
+      "TestFWCoreFrameworkDeleteEarly",
+      "TestFWCoreFrameworkUnscheduled",
       "TestFWCoreFrameworkEventSelWildcard",
       "TestFWCoreFrameworkInputTagFailure",
-      "TestFWCoreFrameworkTrigMask",
-      "TestFWCoreFrameworkEventSelector"
+      "TestFWCoreOutputModuleUtilities",
+      "TestFWCoreFrameworkStatemachineSH",
+      "TestFWCoreFrameworkEarlyTerminationSignal",
+      "TestFWCoreFrameworkTrigBit",
+      "TestFWCoreFrameworkESProducerLooper",
+      "TestFWCoreFrameworkCmsRun",
+      "TestFWCoreFrameworkEventSelector",
+      "TestFWCoreFrameworkStatemachine",
+      "TestFWCoreFrameworkeventsetup",
+      "TestFWCoreFrameworkGlobalStreamOne",
+      "TestXMLSafeException",
+      "TestFWCoreFrameworkESRefer",
+      "TestFWCoreFrameworkEventSelExc",
+      "TestFWCoreFrameworkeventprincipal",
+      "TestFWCoreFrameworkProductSelector",
+      "TestFWCoreFrameworkEvent",
+      "TestFWCoreFrameworkeventprocessor",
+      "TestFWCoreFrameworkReplace"
     ]
   },
   {
     "errors": [],
     "name": "FWCore/FWLite",
     "ok": [
-      "TestRunnerFWCoreFWLite",
-      "testFWCoreFWLite"
+      "testFWCoreFWLite",
+      "TestRunnerFWCoreFWLite"
     ]
   },
   {
     "errors": [],
     "name": "FWCore/Concurrency",
     "ok": [
-      "testFWCoreConcurrency",
-      "test_xercesInitialize"
+      "test_xercesInitialize",
+      "testFWCoreConcurrency"
     ]
   },
   {
@@ -782,13 +786,13 @@
     "name": "DetectorDescription/RegressionTest",
     "ok": [
       "DetectorDescriptionRegressionTestDOMCount",
-      "algorithm_plugin_test",
+      "reg_ddcore",
       "reg_ddparser",
+      "DDCompareCPV",
+      "const_dump",
       "testrot",
       "DetectorDescriptionRegressionTestDDErrorReport",
-      "const_dump",
-      "reg_ddcore",
-      "DDCompareCPV"
+      "algorithm_plugin_test"
     ]
   },
   {
@@ -796,23 +800,22 @@
     "name": "DetectorDescription/Parser",
     "ok": [
       "DetectorDescriptionParserTE",
-      "dumpDDExpandedView",
-      "testDoc",
       "testmat",
-      "testNew",
+      "testDoc",
       "testDDCompactView",
-      "dumpDDCompactView"
+      "dumpDDCompactView",
+      "dumpDDExpandedView",
+      "testNew"
     ]
   },
   {
     "errors": [],
     "name": "DetectorDescription/Core",
     "ok": [
+      "testCore",
       "clhepToROOTMath",
-      "testShapes",
       "test_DDRotation",
-      "testStrVector",
-      "testCore"
+      "testShapes"
     ]
   },
   {
@@ -855,8 +858,8 @@
     "errors": [],
     "name": "DataFormats/TrackReco",
     "ok": [
-      "testDataFormatsTrackReco",
-      "testHitPattern"
+      "testHitPattern",
+      "testDataFormatsTrackReco"
     ]
   },
   {
@@ -884,9 +887,9 @@
     "errors": [],
     "name": "DataFormats/Provenance",
     "ok": [
-      "testProductHolderIndexHelper",
+      "testDataFormatsProvenance",
       "EntryDescription_t",
-      "testDataFormatsProvenance"
+      "testProductHolderIndexHelper"
     ]
   },
   {
@@ -900,31 +903,31 @@
     "errors": [],
     "name": "DataFormats/MuonDetId",
     "ok": [
-      "testMuonDetId",
-      "testCSCDetId"
+      "testCSCDetId",
+      "testMuonDetId"
     ]
   },
   {
     "errors": [],
     "name": "DataFormats/Math",
     "ok": [
-      "DataFormatsMulSymMatrix_t",
-      "DataFormatsProjectMatrix_t",
-      "DataFormatsMatrices_t",
-      "DataFormatsSSEMathFun_t",
-      "DataFormatsSimilarityFast_t",
-      "DataFormatsExtVec_t",
-      "DataFormatsSSEVec_t",
-      "testMathApproximations",
-      "DataFormatsDeltaR_t",
-      "DataFormatsEta_t",
-      "testAtan2",
-      "DataFormatsFastMath_t",
       "testAtan2VDT",
-      "DataFormatsSign_t",
+      "DataFormatsFastMath_t",
+      "DataFormatsSSEVec_t",
+      "testAtan2FastMath",
+      "DataFormatsSimilarityFast_t",
       "testMathApproxMath",
+      "testMathApproximations",
+      "DataFormatsSSEMathFun_t",
+      "DataFormatsExtVec_t",
+      "DataFormatsMulSymMatrix_t",
+      "DataFormatsEta_t",
+      "DataFormatsSign_t",
       "DataFormatsSimilarity_t",
-      "testAtan2FastMath"
+      "testAtan2",
+      "DataFormatsMatrices_t",
+      "DataFormatsDeltaR_t",
+      "DataFormatsProjectMatrix_t"
     ]
   },
   {
@@ -945,10 +948,10 @@
     "errors": [],
     "name": "DataFormats/L1GlobalCaloTrigger",
     "ok": [
-      "testL1GctHtMiss",
       "testL1GlobalCaloRegionDetId",
-      "testGctDataFormats",
-      "testL1GctInternHtMiss"
+      "testL1GctHtMiss",
+      "testL1GctInternHtMiss",
+      "testGctDataFormats"
     ]
   },
   {
@@ -978,12 +981,12 @@
     "errors": [],
     "name": "DataFormats/GeometrySurface",
     "ok": [
-      "PrecisionMixSurface",
-      "FrameTransformTest",
-      "Bounds_t",
       "OldFrameTransformTest",
+      "FrameTransformTest",
       "referencecounted_t",
-      "testGeometricSort"
+      "testGeometricSort",
+      "Bounds_t",
+      "PrecisionMixSurface"
     ]
   },
   {
@@ -997,9 +1000,8 @@
     "errors": [],
     "name": "DataFormats/FWLite",
     "ok": [
-      "testDataFormatsFWLite",
-      "testDataFormatsFWLiteMakeInput",
-      "TestRunnerDataFormatsFWLite"
+      "TestRunnerDataFormatsFWLite",
+      "testDataFormatsFWLite"
     ]
   },
   {
@@ -1034,13 +1036,13 @@
     "errors": [],
     "name": "DataFormats/EcalDetId",
     "ok": [
-      "testEcalDetIdLoop",
-      "testScHashedIndex",
       "printEEDetId",
       "testEcalContainer",
+      "testEcalDetIdLoop",
+      "testScHashedIndex",
+      "testEEHashedIndex",
       "printEBDetId",
       "testEBHashedIndex",
-      "testEEHashedIndex",
       "testEcalDetId"
     ]
   },
@@ -1055,23 +1057,23 @@
     "errors": [],
     "name": "DataFormats/Common",
     "ok": [
-      "RefVector_t",
-      "testBoostRange",
-      "DataFrame_t",
+      "exTrie",
+      "MapOfVectors_t",
       "DictionaryTools_t",
-      "testMultiAssociation",
-      "RefCore_t",
-      "Wrapper_t",
       "Ref_t",
+      "RefCore_t",
+      "Trie_t",
+      "RefVector_t",
+      "OwnVector_t",
+      "testMultiAssociation",
+      "testDataFormatsCommon",
+      "Wrapper_t",
+      "DetSetNew_t",
+      "exDSTV",
+      "testBoostRange",
       "DetSetVector_t",
       "traits_t",
-      "exTrie",
-      "OwnVector_t",
-      "testDataFormatsCommon",
-      "Trie_t",
-      "MapOfVectors_t",
-      "exDSTV",
-      "DetSetNew_t"
+      "DataFrame_t"
     ]
   },
   {
@@ -1107,16 +1109,16 @@
     "name": "DQMServices/Core",
     "ok": [
       "DQMTestStandaloneBuildOfDQMStore",
-      "DQMFastMatchTest",
-      "DQMQualityTestsExample"
+      "DQMQualityTestsExample",
+      "DQMFastMatchTest"
     ]
   },
   {
     "errors": [],
     "name": "DQMServices/Components",
     "ok": [
-      "runFastHadd",
-      "runTheWhiteRabbit"
+      "runTheWhiteRabbit",
+      "runFastHadd"
     ]
   },
   {
@@ -1130,9 +1132,9 @@
     "errors": [],
     "name": "CondFormats/SiStripObjects",
     "ok": [
+      "TestCondFormatsSiStripObjects",
       "testSerializationSiStripObjects",
-      "TestSiStripLatency",
-      "TestCondFormatsSiStripObjects"
+      "TestSiStripLatency"
     ]
   },
   {
@@ -1153,8 +1155,8 @@
     "errors": [],
     "name": "CondFormats/RunInfo",
     "ok": [
-      "fromXML",
-      "testSerializationRunInfo"
+      "testSerializationRunInfo",
+      "fromXML"
     ]
   },
   {
@@ -1282,8 +1284,8 @@
     "errors": [],
     "name": "CondFormats/DTObjects",
     "ok": [
-      "testDTBufferTree",
-      "testSerializationDTObjects"
+      "testSerializationDTObjects",
+      "testDTBufferTree"
     ]
   },
   {
@@ -1297,12 +1299,12 @@
     "errors": [],
     "name": "CondFormats/Common",
     "ok": [
-      "hash64_t",
-      "SmallWORMDict_t",
-      "UpdateStamp_t",
       "testSerializationCommon",
+      "hash64_t",
+      "exIOVSequence",
       "exCondTime",
-      "exIOVSequence"
+      "SmallWORMDict_t",
+      "UpdateStamp_t"
     ]
   },
   {
@@ -1339,10 +1341,10 @@
     "errors": [],
     "name": "CondFormats/BTauObjects",
     "ok": [
-      "testBTagCalibrationReader",
       "testSerializationBTauObjects",
+      "testBTagEntry",
       "testBTagCalibration",
-      "testBTagEntry"
+      "testBTagCalibrationReader"
     ]
   },
   {
@@ -1364,30 +1366,30 @@
     "errors": [],
     "name": "CondCore/ORA",
     "ok": [
-      "testNamedReference",
-      "testORA_8",
       "testORA_9",
-      "testContainerLock",
-      "testORA_0",
-      "testORA_4",
-      "testORA_3",
       "testORAIO",
-      "testORABasicException",
-      "testNestedArrays",
-      "testORA_7",
-      "testORA_5",
-      "testORARecordDetails",
-      "testOId",
-      "testORA_11",
       "testORAInit",
-      "testORA_6",
+      "testOId",
       "testORARecord",
+      "testORA_10",
       "testORA_1",
-      "testORAUtility",
-      "testORA_2",
-      "testORA_12",
+      "testNamedReference",
+      "testORA_11",
+      "testORA_0",
       "testNameService",
-      "testORA_10"
+      "testORA_3",
+      "testORA_4",
+      "testORA_7",
+      "testContainerLock",
+      "testORA_2",
+      "testORA_8",
+      "testORA_5",
+      "testORA_12",
+      "testNestedArrays",
+      "testORARecordDetails",
+      "testORA_6",
+      "testORAUtility",
+      "testORABasicException"
     ]
   },
   {
@@ -1401,9 +1403,9 @@
     "errors": [],
     "name": "CondCore/IOVService",
     "ok": [
+      "testIOVDelete",
       "testqueryPContainer",
-      "testIOVCopy",
-      "testIOVDelete"
+      "testIOVCopy"
     ]
   },
   {
@@ -1411,43 +1413,38 @@
     "name": "CondCore/DBCommon",
     "ok": [
       "testTechnologyPlugin",
-      "testDbSessionIO",
-      "testCipher",
-      "testDbConnection",
-      "unittest_DBLogger",
-      "testMultipleConnection",
       "testCoralSQLPrinting",
-      "testSingleConnection",
-      "testCondObjCopy",
-      "testDbSession",
-      "testCondTime",
-      "testSequenceManager",
-      "testDbScopedTransaction",
       "testDbTransaction",
-      "testBlobStreaming"
+      "testDbScopedTransaction",
+      "testCondObjCopy",
+      "testDbConnection",
+      "testSequenceManager",
+      "testDbSession",
+      "testMultipleConnection",
+      "testDbSessionIO",
+      "testSingleConnection",
+      "unittest_DBLogger",
+      "testBlobStreaming",
+      "testCipher",
+      "testCondTime"
     ]
   },
   {
     "errors": [],
     "name": "CondCore/CondDB",
     "ok": [
-      "testPayloadProxy",
-      "testConditionDatabase_2",
-      "testConditionDatabase_1",
-      "testFrontier",
+      "testRootStreaming",
       "testConditionDatabase_0",
-      "testRootStreaming"
+      "testPayloadProxy",
+      "testFrontier"
     ]
   },
   {
     "errors": [],
     "name": "CommonTools/Utils",
     "ok": [
-      "ExpressionEvaluatorUnitTest",
-      "testExpressionEvaluator",
-      "ExprEvalPopen_t",
-      "testCommonToolsUtil",
-      "testCommonToolsUtilThreaded"
+      "testCommonToolsUtilThreaded",
+      "testCommonToolsUtil"
     ]
   },
   {
@@ -1497,8 +1494,8 @@
     "errors": [],
     "name": "CalibCalorimetry/HcalAlgos",
     "ok": [
-      "HcalPulseContainmentTest",
-      "HcalShapeIntegrator"
+      "HcalShapeIntegrator",
+      "HcalPulseContainmentTest"
     ]
   },
   {
@@ -1512,23 +1509,23 @@
     "errors": [],
     "name": "CalibCalorimetry/EcalCorrelatedNoiseAnalysisAlgos",
     "ok": [
-      "EcnaHistosExample2",
-      "EcnaHistosExample1",
-      "EcnaCalculationsExample",
+      "EcnaGuiEB",
       "EcnaGuiEE",
-      "EcnaGuiEB"
+      "EcnaCalculationsExample",
+      "EcnaHistosExample2",
+      "EcnaHistosExample1"
     ]
   },
   {
     "errors": [],
     "name": "Alignment/Geners",
     "ok": [
-      "cdump",
-      "gssa_dump",
       "crecover",
       "print_items",
-      "cmerge",
-      "GenersTestHelper_t"
+      "cdump",
+      "GenersTestHelper_t",
+      "gssa_dump",
+      "cmerge"
     ]
   },
   {
