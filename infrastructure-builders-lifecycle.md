@@ -94,6 +94,8 @@ machine is:
                --nova-sshkey cmsbuild \
                --nova-flavor hep2.12 \
                --nova-attach-new-volume vdc=1TB \
+               --landb-mainuser cms-service-sdt \
+               --landb-responsible cms-service-sdt \
                $MACHINE_NAME
 
 This will spawn a new machine. You can check the boot status either in the
