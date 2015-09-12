@@ -198,7 +198,7 @@ in particular people working on lxplus can use:
 
     export CMSSW_GIT_REFERENCE=/afs/cern.ch/cms/git-cmssw-mirror/cmssw.git
 
-or in case you have CVMFS available you can set it too:
+or in case you have CVMFS available you can set it to:
 
     export CMSSW_GIT_REFERENCE=/cvmfs/cms.cern.ch/cmssw.git
 
