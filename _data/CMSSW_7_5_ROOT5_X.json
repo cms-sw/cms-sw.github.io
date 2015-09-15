@@ -973,7 +973,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.5.ROOT5-tue-11/CMSSW_7_5_ROOT5_X_2015-09-15-1100/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -990,9 +997,11 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.5.ROOT5-tue-11/CMSSW_7_5_ROOT5_X_2015-09-15-1100/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/tue/7.5.ROOT5-tue-11/CMSSW_7_5_ROOT5_X_2015-09-15-1100/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "10"
+                    }
                 }
             ], 
             "cmsdistTags": {
@@ -1023,7 +1032,66 @@
             "inProgress": false, 
             "release_name": "CMSSW_7_5_ROOT5_X", 
             "RVExceptions": null, 
-            "merged_prs": [], 
+            "merged_prs": [
+                {
+                    "is_merge_commit": true, 
+                    "brought_prs": [
+                        "11157", 
+                        "11116", 
+                        "11042", 
+                        "10968", 
+                        "11207"
+                    ], 
+                    "hash": "1667cb412c44fe2826b0e0881eb6e57f34b9d4d8", 
+                    "number": "1667cb4", 
+                    "from_merge_commit": false
+                }, 
+                {
+                    "hash": "e2ba8f12412024da7f1e2c8dee9c4009ff32aa9e", 
+                    "title": "Fix premature end of run in DAQ (75X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11157", 
+                    "number": "11157", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "smorovic"
+                }, 
+                {
+                    "hash": "952ffd5f7724ca3d8666011259e85e70425686ea", 
+                    "title": "migrate modules used by the HLT menu to multithreading (L1) (75x)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/10968", 
+                    "number": "10968", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "fwyzard"
+                }, 
+                {
+                    "hash": "1cfbe573d4948d1c58a90b989e3d90f21c4383fc", 
+                    "title": "75X 25ns HLT round three", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11042", 
+                    "number": "11042", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "cms-tsg-storm"
+                }, 
+                {
+                    "hash": "72ecc3d06de3415fc8726f254b79e2c14eee5c43", 
+                    "title": "Streamer output modules ported to one::OutputModule (75X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11116", 
+                    "number": "11116", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "smorovic"
+                }, 
+                {
+                    "hash": "33582764b9bb9e507fabdc514e978209295001c8", 
+                    "title": "add protection for rare infinite loop in ecal multifit (75X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11207", 
+                    "number": "11207", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": true, 
+                    "author_login": "bendavid"
+                }
+            ], 
             "hlt_tests": "not-found"
         }
     ]
