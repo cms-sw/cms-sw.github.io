@@ -1881,7 +1881,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/thu/5.3-thu-11/CMSSW_5_3_X_2015-09-17-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc472", 
@@ -13031,7 +13038,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.1-thu-11/CMSSW_7_1_X_2015-09-17-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -13044,9 +13058,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.1-thu-11/CMSSW_7_1_X_2015-09-17-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/thu/7.1-thu-11/CMSSW_7_1_X_2015-09-17-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "2"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -14178,7 +14194,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_ROOT5_X_2015-09-16-1100/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.ROOT5-thu-11/CMSSW_7_4_ROOT5_X_2015-09-17-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 507, 
+                            "num_failed": 254
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -23519,6 +23545,15 @@
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
+                        "hash": "3af8dc0a322edf9bda52163887827324f53bc6de", 
+                        "title": "Dependency Violation fixed: Added exception", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11328", 
+                        "number": "11328", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
                         "is_merge_commit": true, 
                         "brought_prs": [
                             "11255", 
@@ -25294,6 +25329,24 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "11328"
+                        ], 
+                        "hash": "735bd977e236022d7af733153b8ea2f6b5f92c28", 
+                        "number": "735bd97", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "3af8dc0a322edf9bda52163887827324f53bc6de", 
+                        "title": "Dependency Violation fixed: Added exception", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11328", 
+                        "number": "11328", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "smuzaffar"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "11198", 
                             "11178", 
                             "11260", 
@@ -26045,6 +26098,15 @@
                 "release_name": "CMSSW_7_6_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "3af8dc0a322edf9bda52163887827324f53bc6de", 
+                        "title": "Dependency Violation fixed: Added exception", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11328", 
+                        "number": "11328", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "smuzaffar"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -27673,8 +27735,42 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/thu/7.6.THREADED-thu-11/CMSSW_7_6_THREADED_X_2015-09-17-1100/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_6_THREADED_X_2015-09-16-2300-->CMSSW_7_6_THREADED_X_2015-09-17-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/thu/7.6.THREADED-thu-11/CMSSW_7_6_THREADED_X_2015-09-17-1100/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc493": "IB/CMSSW_7_6_THREADED_X_2015-09-15-2300/slc6_amd64_gcc493"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc493"
+                ], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_6_THREADED_X_2015-09-17-1100", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_6_THREADED_X_2015-09-16-2300-->CMSSW_7_6_X", 
+                "compared_tags": "CMSSW_7_6_THREADED_X_2015-09-17-1100-->CMSSW_7_6_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -27685,6 +27781,15 @@
                 "release_name": "CMSSW_7_6_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "3af8dc0a322edf9bda52163887827324f53bc6de", 
+                        "title": "Dependency Violation fixed: Added exception", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11328", 
+                        "number": "11328", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "smuzaffar"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -28975,56 +29080,18 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc493", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6-wed-11/CMSSW_7_6_X_2015-09-09-1100/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc493", 
-                        "passed": "warning", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6-wed-11/CMSSW_7_6_X_2015-09-09-1100/new/logAnalysis.pkl", 
-                        "details": {
-                            "compWarning": 6, 
-                            "ignoreWarning": 8
-                        }
-                    }
-                ], 
+                "addons": [], 
+                "builds": [], 
                 "compared_tags": "CMSSW_7_6_X_2015-09-08-2300-->CMSSW_7_6_X_2015-09-09-1100", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc493", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6-wed-11/CMSSW_7_6_X_2015-09-09-1100/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc493": "IB/CMSSW_7_6_X_2015-09-09-1100/slc6_amd64_gcc493", 
                     "slc7_amd64_gcc493": "IB/CMSSW_7_6_X_2015-09-09-1100/slc7_amd64_gcc493"
                 }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc493", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6-wed-11/CMSSW_7_6_X_2015-09-09-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 1054, 
-                            "num_failed": 11
-                        }
-                    }
-                ], 
+                "relvals": [], 
                 "static_checks": "slc6_amd64_gcc493", 
                 "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc493"
-                ], 
+                "tests_archs": [], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_6_X_2015-09-09-1100", 
                 "RVExceptions": null, 
@@ -30903,6 +30970,15 @@
                 "release_name": "CMSSW_7_6_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "3af8dc0a322edf9bda52163887827324f53bc6de", 
+                        "title": "Dependency Violation fixed: Added exception", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11328", 
+                        "number": "11328", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "smuzaffar"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
