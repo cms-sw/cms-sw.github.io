@@ -13472,7 +13472,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.1-fri-11/CMSSW_7_1_X_2015-09-18-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -13485,9 +13492,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.1-fri-11/CMSSW_7_1_X_2015-09-18-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.1-fri-11/CMSSW_7_1_X_2015-09-18-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "2"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -19279,7 +19288,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-09-13-1100/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-23/CMSSW_7_4_X_2015-09-17-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 958, 
+                            "num_failed": 16
+                        }
+                    }
+                ], 
                 "static_checks": "slc6_amd64_gcc491", 
                 "isIB": true, 
                 "tests_archs": [
@@ -19339,8 +19358,54 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-11/CMSSW_7_4_X_2015-09-18-1100/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-09-17-2300-->CMSSW_7_4_X_2015-09-18-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.4-fri-11/CMSSW_7_4_X_2015-09-18-1100/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-09-13-1100/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_X_2015-09-18-1100", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "5f32591b5380a3f89f1ba8d524082701c592be83", 
+                        "title": "74x Fireworks: Adjust camera position when open 3D region", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11215", 
+                        "number": "11215", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "alja"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-09-17-2300-->CMSSW_7_4_X", 
+                "compared_tags": "CMSSW_7_4_X_2015-09-18-1100-->CMSSW_7_4_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -19359,15 +19424,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "hroskes"
-                    }, 
-                    {
-                        "hash": "5f32591b5380a3f89f1ba8d524082701c592be83", 
-                        "title": "74x Fireworks: Adjust camera position when open 3D region", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11215", 
-                        "number": "11215", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "alja"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -21599,8 +21655,63 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.5.THREADED-fri-11/CMSSW_7_5_THREADED_X_2015-09-18-1100/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_5_THREADED_X_2015-09-17-2300-->CMSSW_7_5_THREADED_X_2015-09-18-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/fri/7.5.THREADED-fri-11/CMSSW_7_5_THREADED_X_2015-09-18-1100/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_5_THREADED_X_2015-09-13-1100/slc6_amd64_gcc491"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_5_THREADED_X_2015-09-18-1100", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "c4fc9b915175c5377e5b16faa35410d6c720e262", 
+                        "title": "Migrate to ecalMultifit. Remove timing qT patch", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11275", 
+                        "number": "11275", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mbandrews"
+                    }, 
+                    {
+                        "hash": "3a56461af3cbd834bb56cd3d5dee979668c95556", 
+                        "title": "add sigmaietaiphi for photon regression inputs (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11281", 
+                        "number": "11281", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fcouderc"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_5_THREADED_X_2015-09-17-2300-->CMSSW_7_5_X", 
+                "compared_tags": "CMSSW_7_5_THREADED_X_2015-09-18-1100-->CMSSW_7_5_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -21619,24 +21730,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "bachtis"
-                    }, 
-                    {
-                        "hash": "c4fc9b915175c5377e5b16faa35410d6c720e262", 
-                        "title": "Migrate to ecalMultifit. Remove timing qT patch", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11275", 
-                        "number": "11275", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "mbandrews"
-                    }, 
-                    {
-                        "hash": "3a56461af3cbd834bb56cd3d5dee979668c95556", 
-                        "title": "add sigmaietaiphi for photon regression inputs (75X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11281", 
-                        "number": "11281", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "fcouderc"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -24654,57 +24747,40 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_CLANG_X_2015-09-17-2300-->CMSSW_7_6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/fri/7.6.CLANG-fri-11/CMSSW_7_6_CLANG_X_2015-09-18-1100/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 5905, 
+                            "linkError": 21, 
+                            "ignoreWarning": 68694
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_6_CLANG_X_2015-09-17-2300-->CMSSW_7_6_CLANG_X_2015-09-18-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/fri/7.6.CLANG-fri-11/CMSSW_7_6_CLANG_X_2015-09-18-1100/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc493": "ERR/CMSSW_7_6_CLANG_X_2015-09-18-1100/slc6_amd64_gcc493"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc493"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_6_X", 
+                "release_name": "CMSSW_7_6_CLANG_X_2015-09-18-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11283", 
-                            "11281", 
-                            "11275", 
-                            "11294"
-                        ], 
-                        "hash": "5d6fb10a75359974b194765f655c366295534c42", 
-                        "number": "5d6fb10", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "c2cdca0e4a7a45bf43359540203ef6efbab31b36", 
-                        "title": "Fix in PF reconstruction for the  spike at MET=0.0 - 75X version of #11280", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11283", 
-                        "number": "11283", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "bachtis"
-                    }, 
-                    {
-                        "hash": "c4fc9b915175c5377e5b16faa35410d6c720e262", 
-                        "title": "Migrate to ecalMultifit. Remove timing qT patch", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11275", 
-                        "number": "11275", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "mbandrews"
-                    }, 
-                    {
-                        "hash": "3a56461af3cbd834bb56cd3d5dee979668c95556", 
-                        "title": "add sigmaietaiphi for photon regression inputs (75X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11281", 
-                        "number": "11281", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "fcouderc"
-                    }, 
                     {
                         "hash": "846734d7d2ea8bc3678c96b9a9c8c341db644e6f", 
                         "title": "Make surface deformation plots much faster", 
@@ -24794,6 +24870,62 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "smuzaffar"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_6_CLANG_X_2015-09-18-1100-->CMSSW_7_6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_6_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11283", 
+                            "11281", 
+                            "11275", 
+                            "11294"
+                        ], 
+                        "hash": "5d6fb10a75359974b194765f655c366295534c42", 
+                        "number": "5d6fb10", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c2cdca0e4a7a45bf43359540203ef6efbab31b36", 
+                        "title": "Fix in PF reconstruction for the  spike at MET=0.0 - 75X version of #11280", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11283", 
+                        "number": "11283", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bachtis"
+                    }, 
+                    {
+                        "hash": "c4fc9b915175c5377e5b16faa35410d6c720e262", 
+                        "title": "Migrate to ecalMultifit. Remove timing qT patch", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11275", 
+                        "number": "11275", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mbandrews"
+                    }, 
+                    {
+                        "hash": "3a56461af3cbd834bb56cd3d5dee979668c95556", 
+                        "title": "add sigmaietaiphi for photon regression inputs (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11281", 
+                        "number": "11281", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fcouderc"
                     }, 
                     {
                         "hash": "152bf8237e56ef7603961fb0e0372675ff4fe13a", 
@@ -26799,6 +26931,45 @@
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
+                            "11283", 
+                            "11281", 
+                            "11275", 
+                            "11294"
+                        ], 
+                        "hash": "9b4d93d707e863f49a8653dd7b1dcfc9681ee015", 
+                        "number": "9b4d93d", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "c2cdca0e4a7a45bf43359540203ef6efbab31b36", 
+                        "title": "Fix in PF reconstruction for the  spike at MET=0.0 - 75X version of #11280", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11283", 
+                        "number": "11283", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bachtis"
+                    }, 
+                    {
+                        "hash": "c4fc9b915175c5377e5b16faa35410d6c720e262", 
+                        "title": "Migrate to ecalMultifit. Remove timing qT patch", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11275", 
+                        "number": "11275", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mbandrews"
+                    }, 
+                    {
+                        "hash": "3a56461af3cbd834bb56cd3d5dee979668c95556", 
+                        "title": "add sigmaietaiphi for photon regression inputs (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11281", 
+                        "number": "11281", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fcouderc"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
                             "11308", 
                             "11276", 
                             "11325", 
@@ -26911,6 +27082,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "smuzaffar"
+                    }, 
+                    {
+                        "hash": "152bf8237e56ef7603961fb0e0372675ff4fe13a", 
+                        "title": "75X 25ns HLT - round four", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11294", 
+                        "number": "11294", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-tsg-storm"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -27815,7 +27995,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/fri/7.6.ICC-fri-11/CMSSW_7_6_ICC_X_2015-09-18-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc493", 
@@ -27832,15 +28019,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc493", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/fri/7.6.ICC-fri-11/CMSSW_7_6_ICC_X_2015-09-18-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/fri/7.6.ICC-fri-11/CMSSW_7_6_ICC_X_2015-09-18-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "485"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc493": "IB/CMSSW_7_6_ICC_X_2015-09-17-2300/slc6_amd64_gcc493"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/fri/7.6.ICC-fri-11/CMSSW_7_6_ICC_X_2015-09-18-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 191, 
+                            "num_failed": 324
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -32850,6 +33049,15 @@
                     "slc7_amd64_gcc493": "IB/CMSSW_7_6_X_2015-09-15-2300/slc7_amd64_gcc493"
                 }, 
                 "relvals": [
+                    {
+                        "arch": "slc7_amd64_gcc493", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/thu/7.6-thu-11/CMSSW_7_6_X_2015-09-17-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1038, 
+                            "num_failed": 26
+                        }
+                    }, 
                     {
                         "arch": "slc6_amd64_gcc493", 
                         "passed": false, 
