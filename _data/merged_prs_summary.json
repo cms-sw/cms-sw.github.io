@@ -2911,15 +2911,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sun/6.2.SLHCDEV-sun-23/CMSSW_6_2_SLHCDEV_X_2015-09-20-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sun/6.2.SLHCDEV-sun-23/CMSSW_6_2_SLHCDEV_X_2015-09-20-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_SLHCDEV_X_2015-09-20-1100/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sun/6.2.SLHCDEV-sun-23/CMSSW_6_2_SLHCDEV_X_2015-09-20-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 35, 
+                            "num_failed": 1
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -14356,7 +14368,7 @@
                 "release_name": "CMSSW_7_1_X_2015-09-20-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -23066,7 +23078,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_5_THREADED_X_2015-09-13-1100/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.THREADED-sat-23/CMSSW_7_5_THREADED_X_2015-09-19-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 946, 
+                            "num_failed": 58
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -24716,44 +24738,7 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_6_CLANG_X_2015-09-08-1100-->CMSSW_7_6_CLANG_X_2015-09-08-2300", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc493": "IB/CMSSW_7_6_CLANG_X_2015-09-08-2300/slc6_amd64_gcc493"
-                }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_6_CLANG_X_2015-09-08-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "hash": "f545ad8c549260a724d5c675a5b8160b9623bdb8", 
-                        "title": "Update test gem rec hit analyzer", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11079", 
-                        "number": "11079", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "pietverwilligen"
-                    }, 
-                    {
-                        "hash": "37dd994a27d04cfa77fa278a63028887372e2b3c", 
-                        "title": "Top trigger names for 25 ns 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11035", 
-                        "number": "11035", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ebouvier"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_CLANG_X_2015-09-08-2300-->CMSSW_7_6_CLANG_X_2015-09-09-1100", 
+                "compared_tags": "CMSSW_7_6_CLANG_X_2015-09-08-1100-->CMSSW_7_6_CLANG_X_2015-09-09-1100", 
                 "utests": [], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc493": "IB/CMSSW_7_6_CLANG_X_2015-09-09-1100/slc6_amd64_gcc493"
@@ -24792,6 +24777,24 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "VinInn"
+                    }, 
+                    {
+                        "hash": "f545ad8c549260a724d5c675a5b8160b9623bdb8", 
+                        "title": "Update test gem rec hit analyzer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11079", 
+                        "number": "11079", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "pietverwilligen"
+                    }, 
+                    {
+                        "hash": "37dd994a27d04cfa77fa278a63028887372e2b3c", 
+                        "title": "Top trigger names for 25 ns 76X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11035", 
+                        "number": "11035", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ebouvier"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -26731,62 +26734,7 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_6_DEVEL_X_2015-09-07-1100-->CMSSW_7_6_DEVEL_X_2015-09-07-1800", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc493": "IB/CMSSW_7_6_DEVEL_X_2015-09-07-1800/slc6_amd64_gcc493"
-                }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_6_DEVEL_X_2015-09-07-1800", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11167"
-                        ], 
-                        "hash": "d29839f39a202cbb24ab4c51893fdc4d638dde46", 
-                        "number": "d29839f", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "4d989e14632ac992927ff52064e5fc07c83fb50f", 
-                        "title": "75x Fireworks: auto-detect configuration after opening first file -- git reattempt 2", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11167", 
-                        "number": "11167", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "alja"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_DEVEL_X_2015-09-07-1800-->CMSSW_7_6_DEVEL_X_2015-09-07-2300", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc493": "IB/CMSSW_7_6_DEVEL_X_2015-09-07-2300/slc6_amd64_gcc493"
-                }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_6_DEVEL_X_2015-09-07-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_DEVEL_X_2015-09-07-2300-->CMSSW_7_6_DEVEL_X_2015-09-08-1100", 
+                "compared_tags": "CMSSW_7_6_DEVEL_X_2015-09-07-1100-->CMSSW_7_6_DEVEL_X_2015-09-08-1100", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -26854,6 +26802,24 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "dmitrijus"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11167"
+                        ], 
+                        "hash": "d29839f39a202cbb24ab4c51893fdc4d638dde46", 
+                        "number": "d29839f", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "4d989e14632ac992927ff52064e5fc07c83fb50f", 
+                        "title": "75x Fireworks: auto-detect configuration after opening first file -- git reattempt 2", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11167", 
+                        "number": "11167", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "alja"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -32719,7 +32685,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc493": "IB/CMSSW_7_6_THREADED_X_2015-09-20-1100/slc6_amd64_gcc493"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/sun/7.6.THREADED-sun-11/CMSSW_7_6_THREADED_X_2015-09-20-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1054, 
+                            "num_failed": 22
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
