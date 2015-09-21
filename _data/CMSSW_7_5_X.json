@@ -3,19 +3,112 @@
     "release_name": "CMSSW_7_5_X", 
     "comparisons": [
         {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_5_2-->CMSSW_7_5_X_2015-09-09-2300", 
-            "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.5-sun-11/CMSSW_7_5_X_2015-09-13-1100/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.5-sun-11/CMSSW_7_5_X_2015-09-13-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "ignoreWarning": 22
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_5_2-->CMSSW_7_5_X_2015-09-13-1100", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.5-sun-11/CMSSW_7_5_X_2015-09-13-1100/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc491": "IB/CMSSW_7_5_X_2015-09-13-1100/slc6_amd64_gcc491"
+            }, 
+            "relvals": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.5-sun-11/CMSSW_7_5_X_2015-09-13-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 1045, 
+                        "num_failed": 13
+                    }
+                }
+            ], 
             "static_checks": "slc6_amd64_gcc491", 
             "isIB": true, 
-            "tests_archs": [], 
+            "tests_archs": [
+                "slc6_amd64_gcc491"
+            ], 
             "inProgress": false, 
-            "release_name": "CMSSW_7_5_X_2015-09-09-2300", 
+            "release_name": "CMSSW_7_5_X_2015-09-13-1100", 
             "RVExceptions": null, 
             "merged_prs": [
+                {
+                    "hash": "5de67168d0ac3de0ae0260d452c43c8328d6337b", 
+                    "title": "75x Fireworks: Adjust camera position when open 3D region", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11217", 
+                    "number": "11217", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "alja"
+                }, 
+                {
+                    "hash": "d48196b9a9d7c6b28268a0acc97829643149edd3", 
+                    "title": "Hlt tau validation update75x", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/10265", 
+                    "number": "10265", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "slehti"
+                }, 
+                {
+                    "hash": "2dfa7b1048927556bd633694d5e498296a05efcf", 
+                    "title": "migrate modules used by the HLT menu to multithreading (HLT) (75x)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/10967", 
+                    "number": "10967", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "fwyzard"
+                }, 
+                {
+                    "hash": "2aadff22c7f8e5b409fa38bd577cb24f750ae625", 
+                    "title": "Electron object modifier 75X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11160", 
+                    "number": "11160", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "matteosan1"
+                }, 
+                {
+                    "hash": "9508616790d567f9d413f48f12da2d8821fb63c2", 
+                    "title": "cleanup of uninitialized reads reported by valgrind (backport of #11173 )", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11175", 
+                    "number": "11175", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "slava77"
+                }, 
+                {
+                    "hash": "64d81fe5766fa9e87a252c7ab30b76fed7f7490b", 
+                    "title": "Added a new path in DiPhoton category. (Backport from #11063)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11064", 
+                    "number": "11064", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "ndaci"
+                }, 
                 {
                     "hash": "686c711863de8554566fcdd801fae245b92b1936", 
                     "title": "Backport of new pileup jet ID for MiniAOD re-processing", 
@@ -467,149 +560,6 @@
                     "author_login": "gpetruc"
                 }
             ], 
-            "hlt_tests": "found"
-        }, 
-        {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_5_X_2015-09-09-2300-->CMSSW_7_5_X_2015-09-10-2300", 
-            "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
-            "static_checks": "not-found", 
-            "isIB": true, 
-            "tests_archs": [], 
-            "inProgress": false, 
-            "release_name": "CMSSW_7_5_X_2015-09-10-2300", 
-            "RVExceptions": null, 
-            "merged_prs": [
-                {
-                    "hash": "64d81fe5766fa9e87a252c7ab30b76fed7f7490b", 
-                    "title": "Added a new path in DiPhoton category. (Backport from #11063)", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/11064", 
-                    "number": "11064", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "ndaci"
-                }
-            ], 
-            "hlt_tests": "found"
-        }, 
-        {
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_5_X_2015-09-10-2300-->CMSSW_7_5_X_2015-09-11-1100", 
-            "utests": [], 
-            "cmsdistTags": {}, 
-            "relvals": [], 
-            "static_checks": "slc6_amd64_gcc491", 
-            "isIB": true, 
-            "tests_archs": [], 
-            "inProgress": false, 
-            "release_name": "CMSSW_7_5_X_2015-09-11-1100", 
-            "RVExceptions": null, 
-            "merged_prs": [
-                {
-                    "hash": "5de67168d0ac3de0ae0260d452c43c8328d6337b", 
-                    "title": "75x Fireworks: Adjust camera position when open 3D region", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/11217", 
-                    "number": "11217", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "alja"
-                }, 
-                {
-                    "hash": "d48196b9a9d7c6b28268a0acc97829643149edd3", 
-                    "title": "Hlt tau validation update75x", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/10265", 
-                    "number": "10265", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "slehti"
-                }, 
-                {
-                    "hash": "2dfa7b1048927556bd633694d5e498296a05efcf", 
-                    "title": "migrate modules used by the HLT menu to multithreading (HLT) (75x)", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/10967", 
-                    "number": "10967", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "fwyzard"
-                }, 
-                {
-                    "hash": "2aadff22c7f8e5b409fa38bd577cb24f750ae625", 
-                    "title": "Electron object modifier 75X", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/11160", 
-                    "number": "11160", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "matteosan1"
-                }, 
-                {
-                    "hash": "9508616790d567f9d413f48f12da2d8821fb63c2", 
-                    "title": "cleanup of uninitialized reads reported by valgrind (backport of #11173 )", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/11175", 
-                    "number": "11175", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "slava77"
-                }
-            ], 
-            "hlt_tests": "found"
-        }, 
-        {
-            "addons": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": true, 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.5-sun-11/CMSSW_7_5_X_2015-09-13-1100/addOnTests.log", 
-                    "details": {}
-                }
-            ], 
-            "builds": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": "passed", 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.5-sun-11/CMSSW_7_5_X_2015-09-13-1100/new/logAnalysis.pkl", 
-                    "details": {
-                        "ignoreWarning": 22
-                    }
-                }
-            ], 
-            "compared_tags": "CMSSW_7_5_X_2015-09-11-1100-->CMSSW_7_5_X_2015-09-13-1100", 
-            "utests": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": "failed", 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.5-sun-11/CMSSW_7_5_X_2015-09-13-1100/unitTests-summary.log", 
-                    "details": {
-                        "num_fails": "1"
-                    }
-                }
-            ], 
-            "cmsdistTags": {
-                "slc6_amd64_gcc491": "IB/CMSSW_7_5_X_2015-09-13-1100/slc6_amd64_gcc491"
-            }, 
-            "relvals": [
-                {
-                    "arch": "slc6_amd64_gcc491", 
-                    "passed": false, 
-                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.5-sun-11/CMSSW_7_5_X_2015-09-13-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                    "details": {
-                        "num_passed": 1045, 
-                        "num_failed": 13
-                    }
-                }
-            ], 
-            "static_checks": "slc6_amd64_gcc491", 
-            "isIB": true, 
-            "tests_archs": [
-                "slc6_amd64_gcc491"
-            ], 
-            "inProgress": false, 
-            "release_name": "CMSSW_7_5_X_2015-09-13-1100", 
-            "RVExceptions": null, 
-            "merged_prs": [], 
             "hlt_tests": "found"
         }, 
         {
