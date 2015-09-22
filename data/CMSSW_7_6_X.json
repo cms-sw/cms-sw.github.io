@@ -3650,31 +3650,56 @@
             "hlt_tests": "found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc7_amd64_gcc493", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/tue/7.6-tue-11/CMSSW_7_6_X_2015-09-22-1100/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc7_amd64_gcc493", 
                     "passed": "passed", 
                     "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/tue/7.6-tue-11/CMSSW_7_6_X_2015-09-22-1100/new/logAnalysis.pkl", 
                     "details": {}
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc493", 
+                    "passed": "warning", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/tue/7.6-tue-11/CMSSW_7_6_X_2015-09-22-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 6
+                    }
                 }
             ], 
             "compared_tags": "CMSSW_7_6_X_2015-09-21-2300-->CMSSW_7_6_X_2015-09-22-1100", 
             "utests": [
                 {
                     "arch": "slc7_amd64_gcc493", 
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/tue/7.6-tue-11/CMSSW_7_6_X_2015-09-22-1100/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "2"
+                    }
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc493", 
                     "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/tue/7.6-tue-11/CMSSW_7_6_X_2015-09-22-1100/new/logAnalysis.pkl']", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/tue/7.6-tue-11/CMSSW_7_6_X_2015-09-22-1100/new/logAnalysis.pkl']", 
                     "details": {}
                 }
             ], 
             "cmsdistTags": {
+                "slc6_amd64_gcc493": "IB/CMSSW_7_6_X_2015-09-20-1100/slc6_amd64_gcc493", 
                 "slc7_amd64_gcc493": "IB/CMSSW_7_6_X_2015-09-20-2300/slc7_amd64_gcc493"
             }, 
             "relvals": [], 
             "static_checks": "not-found", 
             "isIB": true, 
             "tests_archs": [
+                "slc6_amd64_gcc493", 
                 "slc7_amd64_gcc493"
             ], 
             "inProgress": false, 
@@ -3697,6 +3722,15 @@
             "release_name": "CMSSW_7_6_X", 
             "RVExceptions": null, 
             "merged_prs": [
+                {
+                    "hash": "822e280674914e1af7e99a93c3242c9f0e30c974", 
+                    "title": "bsunanda:Run2-hcx25 Enable runing GEN-SIM-DIGI step with modified Hcal geometry definition", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/10353", 
+                    "number": "10353", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "bsunanda"
+                }, 
                 {
                     "hash": "f64a700605db55bb83a005ce0bcf129eeaa662fa", 
                     "title": "Preparing to include Method 3 result into HBHERecHit", 
