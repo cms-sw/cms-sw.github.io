@@ -3245,15 +3245,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/6.2.SLHCDEV-wed-11/CMSSW_6_2_SLHCDEV_X_2015-09-23-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/6.2.SLHCDEV-wed-11/CMSSW_6_2_SLHCDEV_X_2015-09-23-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_SLHCDEV_X_2015-09-20-1100/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/wed/6.2.SLHCDEV-wed-11/CMSSW_6_2_SLHCDEV_X_2015-09-23-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 35, 
+                            "num_failed": 1
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -16047,7 +16059,96 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_4_ROOT5_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11399", 
+                            "11314", 
+                            "11361", 
+                            "11232", 
+                            "11313", 
+                            "11185", 
+                            "11415", 
+                            "11282"
+                        ], 
+                        "hash": "ac98a225259d86193cad9b6c96d8bfc5559108d2", 
+                        "number": "ac98a22", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "851f7bf87538ff3ea57fc016e1701e933c283b16", 
+                        "title": "avoid empty FED occupancy plot in offline Pixel DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11185", 
+                        "number": "11185", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fioriNTU"
+                    }, 
+                    {
+                        "hash": "ed6ac7702bcd42b5513220155f19f7e7b29f502e", 
+                        "title": "VID fix & core unit tests + Regression ValueMap Producer code cleanup. (74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11232", 
+                        "number": "11232", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "bc5d806aff1828f0ebdc56f69259f8e993e22459", 
+                        "title": "add sigmaietaiphi for photon regression inputs (74X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11282", 
+                        "number": "11282", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fcouderc"
+                    }, 
+                    {
+                        "hash": "0dce8ecea012499a0f3392a4cc664e4c8919136d", 
+                        "title": "ThroughputServiceClient: add more throughput plots", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11313", 
+                        "number": "11313", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "3de92b7e19400d74991ef98bacb8a5ba677a748a", 
+                        "title": "DQMStore::removeElement: do not remove non-existing MEs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11314", 
+                        "number": "11314", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "b5df74115243e362f1d76af57edd3c1aebd5817b", 
+                        "title": "Adding new trigger names to B2G DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11361", 
+                        "number": "11361", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "drankincms"
+                    }, 
+                    {
+                        "hash": "958819800b522aa1a0ee7b08e0362dac3a1829b1", 
+                        "title": "Position calc fix", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11415", 
+                        "number": "11415", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "argiro"
+                    }, 
+                    {
+                        "hash": "97751539e6bdac5b1d964f7cf29879ad83bc498f", 
+                        "title": "Change mayConsume to conditional consumes in PATJetProducer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11399", 
+                        "number": "11399", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "Dr15Jones"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -22469,7 +22570,66 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_ROOT5_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11286", 
+                            "10853", 
+                            "10671", 
+                            "11360", 
+                            "11300"
+                        ], 
+                        "hash": "8432502f8b65892703b52d74a27efe14e6ca6b39", 
+                        "number": "8432502", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "01e471a902ee9d8944334d88b704c0e4b9e73523", 
+                        "title": "Convert all remaining RECO & MiniAOD modules that are executed to threaded FW (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10671", 
+                        "number": "10671", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "2d7dad721df20c03ad83b3dd09a3bc04e6569a55", 
+                        "title": "Adding fastjet shape correction for analysis in 75x (port of #11285)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11286", 
+                        "number": "11286", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "4fd9033c67055d95cf59c7dd0d83bbb29745a1c3", 
+                        "title": "CorrectedJetProducer: change into a global::EDProducer (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11300", 
+                        "number": "11300", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "704228d68c70eb5c42e596baae4f161a48ee62bd", 
+                        "title": "rivet with lhe weights", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10853", 
+                        "number": "10853", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrozzi"
+                    }, 
+                    {
+                        "hash": "ec16a0814752acefa5024b5168ec2d425a2b4aa8", 
+                        "title": "Adding new trigger names to B2G DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11360", 
+                        "number": "11360", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "drankincms"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -26968,6 +27128,61 @@
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11337", 
+                            "11231", 
+                            "11291", 
+                            "11286", 
+                            "11224", 
+                            "11374", 
+                            "11163", 
+                            "10853", 
+                            "10671", 
+                            "11360", 
+                            "11300"
+                        ], 
+                        "hash": "2315273a3ba054696c8f7f330192c8468c3177b7", 
+                        "number": "2315273", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "01e471a902ee9d8944334d88b704c0e4b9e73523", 
+                        "title": "Convert all remaining RECO & MiniAOD modules that are executed to threaded FW (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10671", 
+                        "number": "10671", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "2d7dad721df20c03ad83b3dd09a3bc04e6569a55", 
+                        "title": "Adding fastjet shape correction for analysis in 75x (port of #11285)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11286", 
+                        "number": "11286", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "4fd9033c67055d95cf59c7dd0d83bbb29745a1c3", 
+                        "title": "CorrectedJetProducer: change into a global::EDProducer (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11300", 
+                        "number": "11300", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "704228d68c70eb5c42e596baae4f161a48ee62bd", 
+                        "title": "rivet with lhe weights", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10853", 
+                        "number": "10853", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrozzi"
+                    }, 
+                    {
                         "hash": "73a43c2bd0b355e2596181ab9dd879b8ea735f66", 
                         "title": "Update Higgs Dalitz paths", 
                         "url": "https://github.com/cms-sw/cmssw/pull/11340", 
@@ -26975,6 +27190,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "jasperlauwers"
+                    }, 
+                    {
+                        "hash": "ec16a0814752acefa5024b5168ec2d425a2b4aa8", 
+                        "title": "Adding new trigger names to B2G DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11360", 
+                        "number": "11360", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "drankincms"
                     }, 
                     {
                         "hash": "d28c3bf0366c8d4942c50d7890ce427c434fd434", 
@@ -27020,6 +27244,60 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "ggovi"
+                    }, 
+                    {
+                        "hash": "0f6658e35756d5ca2f2d5ea61ab2e4227d1b8871", 
+                        "title": "HeavyIon: Add E/p cut to electrons and extend event content for electron collections. (75X backport of #11223)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11224", 
+                        "number": "11224", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "richard-cms"
+                    }, 
+                    {
+                        "hash": "e123132e57c66fd2a075eb8afec435d0aa82bc0d", 
+                        "title": "fix errors in tracking summary map 75x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11291", 
+                        "number": "11291", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fioriNTU"
+                    }, 
+                    {
+                        "hash": "deec2c6f387ff7fc94ae67d398bbab92f60c8aef", 
+                        "title": "VID fix & core unit tests + Regression ValueMap Producer code cleanup. (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11231", 
+                        "number": "11231", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "5c46450e5e30586f24e4de775f4a853edc001474", 
+                        "title": "adapt to the new merger logic", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11337", 
+                        "number": "11337", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e93f00fab79f85478b6c9da5c26430f21d910eae", 
+                        "title": "Finally fix segfault!", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11163", 
+                        "number": "11163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "hroskes"
+                    }, 
+                    {
+                        "hash": "a2368c49b1301d1262fca82206d61a1d2527c7b3", 
+                        "title": "more robust protection against infinite loops in Ecal multifit (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11374", 
+                        "number": "11374", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -29024,7 +29302,186 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_6_ROOT64_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11337", 
+                            "11231", 
+                            "11291", 
+                            "11286", 
+                            "11224", 
+                            "11340", 
+                            "11374", 
+                            "11163", 
+                            "10853", 
+                            "10671", 
+                            "11341", 
+                            "11422", 
+                            "11381", 
+                            "11372", 
+                            "11360", 
+                            "11300", 
+                            "10986"
+                        ], 
+                        "hash": "4d2e0e3ebbdce2f35e4f9fe239ba7702184126ce", 
+                        "number": "4d2e0e3", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "01e471a902ee9d8944334d88b704c0e4b9e73523", 
+                        "title": "Convert all remaining RECO & MiniAOD modules that are executed to threaded FW (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10671", 
+                        "number": "10671", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "2d7dad721df20c03ad83b3dd09a3bc04e6569a55", 
+                        "title": "Adding fastjet shape correction for analysis in 75x (port of #11285)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11286", 
+                        "number": "11286", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "4fd9033c67055d95cf59c7dd0d83bbb29745a1c3", 
+                        "title": "CorrectedJetProducer: change into a global::EDProducer (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11300", 
+                        "number": "11300", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "704228d68c70eb5c42e596baae4f161a48ee62bd", 
+                        "title": "rivet with lhe weights", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10853", 
+                        "number": "10853", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrozzi"
+                    }, 
+                    {
+                        "hash": "73a43c2bd0b355e2596181ab9dd879b8ea735f66", 
+                        "title": "Update Higgs Dalitz paths", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11340", 
+                        "number": "11340", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "jasperlauwers"
+                    }, 
+                    {
+                        "hash": "ec16a0814752acefa5024b5168ec2d425a2b4aa8", 
+                        "title": "Adding new trigger names to B2G DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11360", 
+                        "number": "11360", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "drankincms"
+                    }, 
+                    {
+                        "hash": "d28c3bf0366c8d4942c50d7890ce427c434fd434", 
+                        "title": "retune of cluster multiplicity regions", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11341", 
+                        "number": "11341", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fioriNTU"
+                    }, 
+                    {
+                        "hash": "cf41ddb15f6b7eca0a2bb69291a88f6b06041b07", 
+                        "title": "L1 Stage 1 MET fixes", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11372", 
+                        "number": "11372", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "richard-cms"
+                    }, 
+                    {
+                        "hash": "677104479a62382901db0aaf798e79279832a05f", 
+                        "title": "Templated BVertex plugins", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11381", 
+                        "number": "11381", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "cms-btv-pog"
+                    }, 
+                    {
+                        "hash": "bc56c08756548c82c164f6398a131c1879931363", 
+                        "title": "Remove use of ROOT global gRandom", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11422", 
+                        "number": "11422", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dan131riley"
+                    }, 
+                    {
+                        "hash": "a8003580f52fb23821aeddcc50bfc83fb4e50a97", 
+                        "title": "Fix for PoolDBESSource_cfi - properly moved to V2", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10986", 
+                        "number": "10986", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "ggovi"
+                    }, 
+                    {
+                        "hash": "0f6658e35756d5ca2f2d5ea61ab2e4227d1b8871", 
+                        "title": "HeavyIon: Add E/p cut to electrons and extend event content for electron collections. (75X backport of #11223)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11224", 
+                        "number": "11224", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "richard-cms"
+                    }, 
+                    {
+                        "hash": "e123132e57c66fd2a075eb8afec435d0aa82bc0d", 
+                        "title": "fix errors in tracking summary map 75x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11291", 
+                        "number": "11291", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fioriNTU"
+                    }, 
+                    {
+                        "hash": "deec2c6f387ff7fc94ae67d398bbab92f60c8aef", 
+                        "title": "VID fix & core unit tests + Regression ValueMap Producer code cleanup. (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11231", 
+                        "number": "11231", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "5c46450e5e30586f24e4de775f4a853edc001474", 
+                        "title": "adapt to the new merger logic", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11337", 
+                        "number": "11337", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e93f00fab79f85478b6c9da5c26430f21d910eae", 
+                        "title": "Finally fix segfault!", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11163", 
+                        "number": "11163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "hroskes"
+                    }, 
+                    {
+                        "hash": "a2368c49b1301d1262fca82206d61a1d2527c7b3", 
+                        "title": "more robust protection against infinite loops in Ecal multifit (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11374", 
+                        "number": "11374", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -30776,6 +31233,61 @@
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11337", 
+                            "11231", 
+                            "11291", 
+                            "11286", 
+                            "11224", 
+                            "11374", 
+                            "11163", 
+                            "10853", 
+                            "10671", 
+                            "11360", 
+                            "11300"
+                        ], 
+                        "hash": "2315273a3ba054696c8f7f330192c8468c3177b7", 
+                        "number": "2315273", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "01e471a902ee9d8944334d88b704c0e4b9e73523", 
+                        "title": "Convert all remaining RECO & MiniAOD modules that are executed to threaded FW (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10671", 
+                        "number": "10671", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "2d7dad721df20c03ad83b3dd09a3bc04e6569a55", 
+                        "title": "Adding fastjet shape correction for analysis in 75x (port of #11285)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11286", 
+                        "number": "11286", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "4fd9033c67055d95cf59c7dd0d83bbb29745a1c3", 
+                        "title": "CorrectedJetProducer: change into a global::EDProducer (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11300", 
+                        "number": "11300", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "704228d68c70eb5c42e596baae4f161a48ee62bd", 
+                        "title": "rivet with lhe weights", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10853", 
+                        "number": "10853", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrozzi"
+                    }, 
+                    {
                         "hash": "73a43c2bd0b355e2596181ab9dd879b8ea735f66", 
                         "title": "Update Higgs Dalitz paths", 
                         "url": "https://github.com/cms-sw/cmssw/pull/11340", 
@@ -30783,6 +31295,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "jasperlauwers"
+                    }, 
+                    {
+                        "hash": "ec16a0814752acefa5024b5168ec2d425a2b4aa8", 
+                        "title": "Adding new trigger names to B2G DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11360", 
+                        "number": "11360", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "drankincms"
                     }, 
                     {
                         "hash": "d28c3bf0366c8d4942c50d7890ce427c434fd434", 
@@ -30828,6 +31349,60 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "ggovi"
+                    }, 
+                    {
+                        "hash": "0f6658e35756d5ca2f2d5ea61ab2e4227d1b8871", 
+                        "title": "HeavyIon: Add E/p cut to electrons and extend event content for electron collections. (75X backport of #11223)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11224", 
+                        "number": "11224", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "richard-cms"
+                    }, 
+                    {
+                        "hash": "e123132e57c66fd2a075eb8afec435d0aa82bc0d", 
+                        "title": "fix errors in tracking summary map 75x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11291", 
+                        "number": "11291", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fioriNTU"
+                    }, 
+                    {
+                        "hash": "deec2c6f387ff7fc94ae67d398bbab92f60c8aef", 
+                        "title": "VID fix & core unit tests + Regression ValueMap Producer code cleanup. (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11231", 
+                        "number": "11231", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "5c46450e5e30586f24e4de775f4a853edc001474", 
+                        "title": "adapt to the new merger logic", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11337", 
+                        "number": "11337", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e93f00fab79f85478b6c9da5c26430f21d910eae", 
+                        "title": "Finally fix segfault!", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11163", 
+                        "number": "11163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "hroskes"
+                    }, 
+                    {
+                        "hash": "a2368c49b1301d1262fca82206d61a1d2527c7b3", 
+                        "title": "more robust protection against infinite loops in Ecal multifit (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11374", 
+                        "number": "11374", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -32600,6 +33175,61 @@
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11337", 
+                            "11231", 
+                            "11291", 
+                            "11286", 
+                            "11224", 
+                            "11374", 
+                            "11163", 
+                            "10853", 
+                            "10671", 
+                            "11360", 
+                            "11300"
+                        ], 
+                        "hash": "2315273a3ba054696c8f7f330192c8468c3177b7", 
+                        "number": "2315273", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "01e471a902ee9d8944334d88b704c0e4b9e73523", 
+                        "title": "Convert all remaining RECO & MiniAOD modules that are executed to threaded FW (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10671", 
+                        "number": "10671", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "2d7dad721df20c03ad83b3dd09a3bc04e6569a55", 
+                        "title": "Adding fastjet shape correction for analysis in 75x (port of #11285)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11286", 
+                        "number": "11286", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "4fd9033c67055d95cf59c7dd0d83bbb29745a1c3", 
+                        "title": "CorrectedJetProducer: change into a global::EDProducer (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11300", 
+                        "number": "11300", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "704228d68c70eb5c42e596baae4f161a48ee62bd", 
+                        "title": "rivet with lhe weights", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10853", 
+                        "number": "10853", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrozzi"
+                    }, 
+                    {
                         "hash": "73a43c2bd0b355e2596181ab9dd879b8ea735f66", 
                         "title": "Update Higgs Dalitz paths", 
                         "url": "https://github.com/cms-sw/cmssw/pull/11340", 
@@ -32607,6 +33237,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "jasperlauwers"
+                    }, 
+                    {
+                        "hash": "ec16a0814752acefa5024b5168ec2d425a2b4aa8", 
+                        "title": "Adding new trigger names to B2G DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11360", 
+                        "number": "11360", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "drankincms"
                     }, 
                     {
                         "hash": "d28c3bf0366c8d4942c50d7890ce427c434fd434", 
@@ -32652,6 +33291,60 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "ggovi"
+                    }, 
+                    {
+                        "hash": "0f6658e35756d5ca2f2d5ea61ab2e4227d1b8871", 
+                        "title": "HeavyIon: Add E/p cut to electrons and extend event content for electron collections. (75X backport of #11223)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11224", 
+                        "number": "11224", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "richard-cms"
+                    }, 
+                    {
+                        "hash": "e123132e57c66fd2a075eb8afec435d0aa82bc0d", 
+                        "title": "fix errors in tracking summary map 75x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11291", 
+                        "number": "11291", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fioriNTU"
+                    }, 
+                    {
+                        "hash": "deec2c6f387ff7fc94ae67d398bbab92f60c8aef", 
+                        "title": "VID fix & core unit tests + Regression ValueMap Producer code cleanup. (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11231", 
+                        "number": "11231", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "5c46450e5e30586f24e4de775f4a853edc001474", 
+                        "title": "adapt to the new merger logic", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11337", 
+                        "number": "11337", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e93f00fab79f85478b6c9da5c26430f21d910eae", 
+                        "title": "Finally fix segfault!", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11163", 
+                        "number": "11163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "hroskes"
+                    }, 
+                    {
+                        "hash": "a2368c49b1301d1262fca82206d61a1d2527c7b3", 
+                        "title": "more robust protection against infinite loops in Ecal multifit (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11374", 
+                        "number": "11374", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -36337,7 +37030,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc7_amd64_gcc493", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/tue/7.6-tue-23/CMSSW_7_6_X_2015-09-22-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc7_amd64_gcc493", 
@@ -36355,9 +37055,11 @@
                 "utests": [
                     {
                         "arch": "slc7_amd64_gcc493", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/tue/7.6-tue-23/CMSSW_7_6_X_2015-09-22-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/tue/7.6-tue-23/CMSSW_7_6_X_2015-09-22-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "385"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -36418,6 +37120,61 @@
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11337", 
+                            "11231", 
+                            "11291", 
+                            "11286", 
+                            "11224", 
+                            "11374", 
+                            "11163", 
+                            "10853", 
+                            "10671", 
+                            "11360", 
+                            "11300"
+                        ], 
+                        "hash": "2315273a3ba054696c8f7f330192c8468c3177b7", 
+                        "number": "2315273", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "01e471a902ee9d8944334d88b704c0e4b9e73523", 
+                        "title": "Convert all remaining RECO & MiniAOD modules that are executed to threaded FW (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10671", 
+                        "number": "10671", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "2d7dad721df20c03ad83b3dd09a3bc04e6569a55", 
+                        "title": "Adding fastjet shape correction for analysis in 75x (port of #11285)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11286", 
+                        "number": "11286", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "4fd9033c67055d95cf59c7dd0d83bbb29745a1c3", 
+                        "title": "CorrectedJetProducer: change into a global::EDProducer (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11300", 
+                        "number": "11300", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "704228d68c70eb5c42e596baae4f161a48ee62bd", 
+                        "title": "rivet with lhe weights", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10853", 
+                        "number": "10853", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "perrozzi"
+                    }, 
+                    {
                         "hash": "73a43c2bd0b355e2596181ab9dd879b8ea735f66", 
                         "title": "Update Higgs Dalitz paths", 
                         "url": "https://github.com/cms-sw/cmssw/pull/11340", 
@@ -36425,6 +37182,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "jasperlauwers"
+                    }, 
+                    {
+                        "hash": "ec16a0814752acefa5024b5168ec2d425a2b4aa8", 
+                        "title": "Adding new trigger names to B2G DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11360", 
+                        "number": "11360", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "drankincms"
                     }, 
                     {
                         "hash": "d28c3bf0366c8d4942c50d7890ce427c434fd434", 
@@ -36470,6 +37236,60 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "ggovi"
+                    }, 
+                    {
+                        "hash": "0f6658e35756d5ca2f2d5ea61ab2e4227d1b8871", 
+                        "title": "HeavyIon: Add E/p cut to electrons and extend event content for electron collections. (75X backport of #11223)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11224", 
+                        "number": "11224", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "richard-cms"
+                    }, 
+                    {
+                        "hash": "e123132e57c66fd2a075eb8afec435d0aa82bc0d", 
+                        "title": "fix errors in tracking summary map 75x", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11291", 
+                        "number": "11291", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "fioriNTU"
+                    }, 
+                    {
+                        "hash": "deec2c6f387ff7fc94ae67d398bbab92f60c8aef", 
+                        "title": "VID fix & core unit tests + Regression ValueMap Producer code cleanup. (75X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11231", 
+                        "number": "11231", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "5c46450e5e30586f24e4de775f4a853edc001474", 
+                        "title": "adapt to the new merger logic", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11337", 
+                        "number": "11337", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "deguio"
+                    }, 
+                    {
+                        "hash": "e93f00fab79f85478b6c9da5c26430f21d910eae", 
+                        "title": "Finally fix segfault!", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11163", 
+                        "number": "11163", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "hroskes"
+                    }, 
+                    {
+                        "hash": "a2368c49b1301d1262fca82206d61a1d2527c7b3", 
+                        "title": "more robust protection against infinite loops in Ecal multifit (75x)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11374", 
+                        "number": "11374", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bendavid"
                     }
                 ], 
                 "hlt_tests": "not-found"
