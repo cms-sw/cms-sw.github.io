@@ -3600,6 +3600,12 @@
         {
             "addons": [
                 {
+                    "arch": "slc7_amd64_gcc493", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/wed/7.6-wed-23/CMSSW_7_6_X_2015-09-23-2300/addOnTests.log", 
+                    "details": {}
+                }, 
+                {
                     "arch": "slc6_amd64_gcc493", 
                     "passed": true, 
                     "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6-wed-23/CMSSW_7_6_X_2015-09-23-2300/addOnTests.log", 
@@ -3629,18 +3635,20 @@
             "compared_tags": "CMSSW_7_6_X_2015-09-22-2300-->CMSSW_7_6_X_2015-09-23-2300", 
             "utests": [
                 {
+                    "arch": "slc7_amd64_gcc493", 
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/wed/7.6-wed-23/CMSSW_7_6_X_2015-09-23-2300/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
+                }, 
+                {
                     "arch": "slc6_amd64_gcc493", 
                     "passed": "passed", 
                     "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6-wed-23/CMSSW_7_6_X_2015-09-23-2300/unitTests-summary.log", 
                     "details": {
                         "num_fails": "0"
                     }
-                }, 
-                {
-                    "arch": "slc7_amd64_gcc493", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/wed/7.6-wed-23/CMSSW_7_6_X_2015-09-23-2300/new/logAnalysis.pkl']", 
-                    "details": {}
                 }
             ], 
             "cmsdistTags": {
@@ -3835,36 +3843,36 @@
         }, 
         {
             "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_6_X_2015-09-23-2300-->CMSSW_7_6_X", 
-            "utests": [], 
-            "cmsdistTags": {}, 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc493", 
+                    "passed": "passed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/thu/7.6-thu-11/CMSSW_7_6_X_2015-09-24-1100/new/logAnalysis.pkl", 
+                    "details": {}
+                }
+            ], 
+            "compared_tags": "CMSSW_7_6_X_2015-09-23-2300-->CMSSW_7_6_X_2015-09-24-1100", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc493", 
+                    "passed": "unknown", 
+                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/thu/7.6-thu-11/CMSSW_7_6_X_2015-09-24-1100/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
+            "cmsdistTags": {
+                "slc6_amd64_gcc493": "IB/CMSSW_7_6_X_2015-09-23-2300/slc6_amd64_gcc493"
+            }, 
             "relvals": [], 
             "static_checks": "not-found", 
-            "isIB": false, 
-            "tests_archs": [], 
+            "isIB": true, 
+            "tests_archs": [
+                "slc6_amd64_gcc493"
+            ], 
             "inProgress": false, 
-            "release_name": "CMSSW_7_6_X", 
+            "release_name": "CMSSW_7_6_X_2015-09-24-1100", 
             "RVExceptions": null, 
             "merged_prs": [
-                {
-                    "hash": "5d662939a808e81f35007612a334d7bbf98968f7", 
-                    "title": "Baseline_tilted trackerPhase2 geometry", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/11249", 
-                    "number": "11249", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "boudoul"
-                }, 
-                {
-                    "hash": "bc1aec127af58a95931d445201a82d74e25793bc", 
-                    "title": "remove cout (just used for testing)", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/11450", 
-                    "number": "11450", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "covarell"
-                }, 
                 {
                     "hash": "104d1093307e95b805676ea0e887982579d755ad", 
                     "title": "DQM module updates for Dilepton+HT250 and Dilepton+HT300 paths (CMSHLT587)", 
@@ -3972,6 +3980,41 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "ggovi"
+                }
+            ], 
+            "hlt_tests": "not-found"
+        }, 
+        {
+            "addons": [], 
+            "builds": [], 
+            "compared_tags": "CMSSW_7_6_X_2015-09-24-1100-->CMSSW_7_6_X", 
+            "utests": [], 
+            "cmsdistTags": {}, 
+            "relvals": [], 
+            "static_checks": "not-found", 
+            "isIB": false, 
+            "tests_archs": [], 
+            "inProgress": false, 
+            "release_name": "CMSSW_7_6_X", 
+            "RVExceptions": null, 
+            "merged_prs": [
+                {
+                    "hash": "5d662939a808e81f35007612a334d7bbf98968f7", 
+                    "title": "Baseline_tilted trackerPhase2 geometry", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11249", 
+                    "number": "11249", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "boudoul"
+                }, 
+                {
+                    "hash": "bc1aec127af58a95931d445201a82d74e25793bc", 
+                    "title": "remove cout (just used for testing)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11450", 
+                    "number": "11450", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "covarell"
                 }
             ], 
             "hlt_tests": "not-found"
