@@ -4013,6 +4013,12 @@
         {
             "addons": [
                 {
+                    "arch": "slc7_amd64_gcc493", 
+                    "passed": false, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/thu/7.6-thu-23/CMSSW_7_6_X_2015-09-24-2300/addOnTests.log", 
+                    "details": {}
+                }, 
+                {
                     "arch": "slc6_amd64_gcc493", 
                     "passed": true, 
                     "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/thu/7.6-thu-23/CMSSW_7_6_X_2015-09-24-2300/addOnTests.log", 
@@ -4036,18 +4042,20 @@
             "compared_tags": "CMSSW_7_6_X_2015-09-24-1100-->CMSSW_7_6_X_2015-09-24-2300", 
             "utests": [
                 {
+                    "arch": "slc7_amd64_gcc493", 
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/thu/7.6-thu-23/CMSSW_7_6_X_2015-09-24-2300/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
+                }, 
+                {
                     "arch": "slc6_amd64_gcc493", 
                     "passed": "failed", 
                     "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/thu/7.6-thu-23/CMSSW_7_6_X_2015-09-24-2300/unitTests-summary.log", 
                     "details": {
                         "num_fails": "1"
                     }
-                }, 
-                {
-                    "arch": "slc7_amd64_gcc493", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/thu/7.6-thu-23/CMSSW_7_6_X_2015-09-24-2300/new/logAnalysis.pkl']", 
-                    "details": {}
                 }
             ], 
             "cmsdistTags": {
@@ -4126,7 +4134,17 @@
             "inProgress": false, 
             "release_name": "CMSSW_7_6_X", 
             "RVExceptions": null, 
-            "merged_prs": [], 
+            "merged_prs": [
+                {
+                    "hash": "4c1b93eaa2ce273da8c24d3bec37286d6e4a7574", 
+                    "title": "Remove lumi-offset from HF LUTs", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/10032", 
+                    "number": "10032", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "akhukhun"
+                }
+            ], 
             "hlt_tests": "not-found"
         }
     ]
