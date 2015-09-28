@@ -2406,9 +2406,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/5.3-mon-11/CMSSW_5_3_X_2015-09-28-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/5.3-mon-11/CMSSW_5_3_X_2015-09-28-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "10"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -7965,15 +7967,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/6.2-mon-11/CMSSW_6_2_X_SLHC_2015-09-28-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/6.2-mon-11/CMSSW_6_2_X_SLHC_2015-09-28-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_X_SLHC_2015-09-27-1100/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/mon/6.2-mon-11/CMSSW_6_2_X_SLHC_2015-09-28-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 35, 
+                            "num_failed": 1
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -20954,63 +20968,17 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": true, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
-                "builds": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/new/logAnalysis.pkl", 
-                        "details": {}
-                    }, 
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "error", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/new_FWLITE/logAnalysis.pkl", 
-                        "details": {
-                            "linkError": 27, 
-                            "compError": 2
-                        }
-                    }
-                ], 
-                "compared_tags": "CMSSW_7_4_X_2015-09-27-1100-->CMSSW_7_4_X_2015-09-27-2300", 
-                "utests": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": "passed", 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "0"
-                        }
-                    }
-                ], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-09-27-1100/slc6_amd64_gcc491"
-                }, 
-                "relvals": [
-                    {
-                        "arch": "slc6_amd64_gcc491", 
-                        "passed": false, 
-                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 958, 
-                            "num_failed": 16
-                        }
-                    }
-                ], 
-                "static_checks": "slc6_amd64_gcc491", 
-                "isIB": true, 
-                "tests_archs": [
-                    "slc6_amd64_gcc491"
-                ], 
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_X_2015-09-27-1100-->CMSSW_7_4_13", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_4_X_2015-09-27-2300", 
+                "release_name": "CMSSW_7_4_13", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -21050,6 +21018,68 @@
                         "author_login": "ndaci"
                     }
                 ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/new/logAnalysis.pkl", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/new_FWLITE/logAnalysis.pkl", 
+                        "details": {
+                            "linkError": 27, 
+                            "compError": 2
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_13-->CMSSW_7_4_X_2015-09-27-2300", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-09-27-1100/slc6_amd64_gcc491"
+                }, 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 958, 
+                            "num_failed": 16
+                        }
+                    }
+                ], 
+                "static_checks": "slc6_amd64_gcc491", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_X_2015-09-27-2300", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
                 "hlt_tests": "found"
             }, 
             {
@@ -22838,7 +22868,17 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "cf458ff1473b9435b41a3aeafb571d50410fc55e", 
+                        "title": "Change mayConsume to conditional consumes in PATJetProducer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11400", 
+                        "number": "11400", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -24568,7 +24608,17 @@
                 "inProgress": false, 
                 "release_name": "CMSSW_7_5_X", 
                 "RVExceptions": null, 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "cf458ff1473b9435b41a3aeafb571d50410fc55e", 
+                        "title": "Change mayConsume to conditional consumes in PATJetProducer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11400", 
+                        "number": "11400", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }
         ]
@@ -26086,6 +26136,15 @@
                 "release_name": "CMSSW_7_6_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "a6562166ac1e8fb882faf43dcd0be7f591413883", 
+                        "title": "Ctagging 76 integration", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11122", 
+                        "number": "11122", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mverzett"
+                    }, 
                     {
                         "hash": "f842f73572196bf8394361e46d5de533f944f120", 
                         "title": "adding schema to db shortcut name", 
@@ -29198,6 +29257,15 @@
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
+                        "hash": "a6562166ac1e8fb882faf43dcd0be7f591413883", 
+                        "title": "Ctagging 76 integration", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11122", 
+                        "number": "11122", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mverzett"
+                    }, 
+                    {
                         "hash": "f842f73572196bf8394361e46d5de533f944f120", 
                         "title": "adding schema to db shortcut name", 
                         "url": "https://github.com/cms-sw/cmssw/pull/11459", 
@@ -30624,6 +30692,15 @@
                 "release_name": "CMSSW_7_6_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "a6562166ac1e8fb882faf43dcd0be7f591413883", 
+                        "title": "Ctagging 76 integration", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11122", 
+                        "number": "11122", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mverzett"
+                    }, 
                     {
                         "hash": "f842f73572196bf8394361e46d5de533f944f120", 
                         "title": "adding schema to db shortcut name", 
@@ -34855,6 +34932,15 @@
                 "release_name": "CMSSW_7_6_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "a6562166ac1e8fb882faf43dcd0be7f591413883", 
+                        "title": "Ctagging 76 integration", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11122", 
+                        "number": "11122", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mverzett"
+                    }, 
                     {
                         "hash": "f842f73572196bf8394361e46d5de533f944f120", 
                         "title": "adding schema to db shortcut name", 
