@@ -2377,7 +2377,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sun/5.3-sun-23/CMSSW_5_3_X_2015-09-27-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc472", 
@@ -2390,9 +2397,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sun/5.3-sun-23/CMSSW_5_3_X_2015-09-27-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sun/5.3-sun-23/CMSSW_5_3_X_2015-09-27-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "10"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -2408,7 +2417,7 @@
                 "release_name": "CMSSW_5_3_X_2015-09-27-2300", 
                 "RVExceptions": null, 
                 "merged_prs": [], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -3154,7 +3163,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sun/6.2.SLHCDEV-sun-23/CMSSW_6_2_SLHCDEV_X_2015-09-27-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc472", 
@@ -3167,15 +3183,27 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sun/6.2.SLHCDEV-sun-23/CMSSW_6_2_SLHCDEV_X_2015-09-27-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sun/6.2.SLHCDEV-sun-23/CMSSW_6_2_SLHCDEV_X_2015-09-27-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_SLHCDEV_X_2015-09-27-1100/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sun/6.2.SLHCDEV-sun-23/CMSSW_6_2_SLHCDEV_X_2015-09-27-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 35, 
+                            "num_failed": 1
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -14752,111 +14780,6 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_4_ROOT5_X_2015-09-16-1100-->CMSSW_7_4_ROOT5_X_2015-09-16-2300", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_4_ROOT5_X_2015-09-16-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11222", 
-                            "11133", 
-                            "11177", 
-                            "11210", 
-                            "11257", 
-                            "11156", 
-                            "11241", 
-                            "11267"
-                        ], 
-                        "hash": "ab738aef01d253ded90998828095dde14f3b754a", 
-                        "number": "ab738ae", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "28b8d247b5e3079d61d5dfbaa05fa0703a3032fc", 
-                        "title": "Fix premature end of run in DAQ (74X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11156", 
-                        "number": "11156", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "smorovic"
-                    }, 
-                    {
-                        "hash": "886c2d06e5bee72f4821c6739f9f32efa66351c6", 
-                        "title": "cleanup of uninitialized reads reported by valgrind (backport of #11173 )", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11177", 
-                        "number": "11177", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "slava77"
-                    }, 
-                    {
-                        "hash": "32794354b74bb0f4362950a6ea1c2442c283bc64", 
-                        "title": "update GT for online processing", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11257", 
-                        "number": "11257", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "deguio"
-                    }, 
-                    {
-                        "hash": "37018fbb7dbe11e066a35f7f380e07b4f392b19e", 
-                        "title": "Add scouting electron", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11133", 
-                        "number": "11133", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidsheffield"
-                    }, 
-                    {
-                        "hash": "cbf639dca104c8e4dadfbd38e86ec5ebc35d70c7", 
-                        "title": "edmCheckMultithreading: check for non multithreading-compliant modules", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11241", 
-                        "number": "11241", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "fwyzard"
-                    }, 
-                    {
-                        "hash": "6122c50656f6166c4e6edd2791ac5a11ac1734be", 
-                        "title": "Make ROOT5 checksums known to ROOT6", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11210", 
-                        "number": "11210", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "wmtan"
-                    }, 
-                    {
-                        "hash": "c66dd73a6d50cca4e800b91ea17e4f3e02c93390", 
-                        "title": "Cleaning of pat::MET data format", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11222", 
-                        "number": "11222", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "cms-met"
-                    }, 
-                    {
-                        "hash": "2fa2ca29a558089b303b13942fcee4863aa76701", 
-                        "title": "don't pass puppi NaNs to pseudojet methods", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11267", 
-                        "number": "11267", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "slava77"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
                 "compared_tags": "CMSSW_7_4_ROOT5_X_2015-09-16-2300-->CMSSW_7_4_ROOT5_X_2015-09-17-1100", 
                 "utests": [], 
                 "cmsdistTags": {}, 
@@ -21329,16 +21252,34 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_4_X_2015-09-27-1100-->CMSSW_7_4_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_4_X_2015-09-27-1100-->CMSSW_7_4_X_2015-09-27-2300", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sun/7.4-sun-23/CMSSW_7_4_X_2015-09-27-2300/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-09-27-1100/slc6_amd64_gcc491"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc491"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_4_X", 
+                "release_name": "CMSSW_7_4_X_2015-09-27-2300", 
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
@@ -21379,6 +21320,22 @@
                     }
                 ], 
                 "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_4_X_2015-09-27-2300-->CMSSW_7_4_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_4_X", 
+                "RVExceptions": null, 
+                "merged_prs": [], 
+                "hlt_tests": "not-found"
             }
         ]
     }, 
@@ -21386,183 +21343,6 @@
         "base_branch": "CMSSW_7_5_ROOT5_X", 
         "release_name": "CMSSW_7_5_ROOT5_X", 
         "comparisons": [
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-09-16-2300-->CMSSW_7_5_ROOT5_X_2015-09-17-1100", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "ERR/CMSSW_7_5_ROOT5_X_2015-09-17-1100/slc6_amd64_gcc491"
-                }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_5_ROOT5_X_2015-09-17-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-09-17-1100-->CMSSW_7_5_ROOT5_X_2015-09-17-2300", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "ERR/CMSSW_7_5_ROOT5_X_2015-09-17-2300/slc6_amd64_gcc491"
-                }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_5_ROOT5_X_2015-09-17-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11294"
-                        ], 
-                        "hash": "e728d117aa011fe83fd121288d3c0bfa056c4d03", 
-                        "number": "e728d11", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "152bf8237e56ef7603961fb0e0372675ff4fe13a", 
-                        "title": "75X 25ns HLT - round four", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11294", 
-                        "number": "11294", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "cms-tsg-storm"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11255", 
-                            "11269", 
-                            "11299"
-                        ], 
-                        "hash": "2b8aa06153dd0db05456990f2e75a86e2aabc07e", 
-                        "number": "2b8aa06", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "0de92fb7f16a9691547582adb9696ab0e565a250", 
-                        "title": "Fix in PCL for SiPixel alignment (75X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11255", 
-                        "number": "11255", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "cerminar"
-                    }, 
-                    {
-                        "hash": "32be3168b69f410f9a34cc379a47b276c81bea19", 
-                        "title": "don't pass puppi NaNs to pseudojet methods (port of #11267 to 75X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11269", 
-                        "number": "11269", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "slava77"
-                    }, 
-                    {
-                        "hash": "fe888316c8e6dd4006d20b733441e95ca91c9242", 
-                        "title": "Make ROOT5 checksums known in ROOT6 (7_5_X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11299", 
-                        "number": "11299", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "wmtan"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-09-17-2300-->CMSSW_7_5_ROOT5_X_2015-09-18-1100", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "ERR/CMSSW_7_5_ROOT5_X_2015-09-18-1100/slc6_amd64_gcc491"
-                }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_5_ROOT5_X_2015-09-18-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11281", 
-                            "11275"
-                        ], 
-                        "hash": "5f67efc2ea7468265a5438afc519e797ed54332e", 
-                        "number": "5f67efc", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "c4fc9b915175c5377e5b16faa35410d6c720e262", 
-                        "title": "Migrate to ecalMultifit. Remove timing qT patch", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11275", 
-                        "number": "11275", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "mbandrews"
-                    }, 
-                    {
-                        "hash": "3a56461af3cbd834bb56cd3d5dee979668c95556", 
-                        "title": "add sigmaietaiphi for photon regression inputs (75X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11281", 
-                        "number": "11281", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "fcouderc"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_5_ROOT5_X_2015-09-18-1100-->CMSSW_7_5_ROOT5_X_2015-09-18-2300", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc491": "ERR/CMSSW_7_5_ROOT5_X_2015-09-18-2300/slc6_amd64_gcc491"
-                }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_5_ROOT5_X_2015-09-18-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11283"
-                        ], 
-                        "hash": "688a820b84eb6b90a3b18ac7ba35668df42e1513", 
-                        "number": "688a820", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "c2cdca0e4a7a45bf43359540203ef6efbab31b36", 
-                        "title": "Fix in PF reconstruction for the  spike at MET=0.0 - 75X version of #11280", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11283", 
-                        "number": "11283", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "bachtis"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
             {
                 "addons": [], 
                 "builds": [], 
@@ -23664,7 +23444,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_5_THREADED_X_2015-09-23-2300/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/sat/7.5.THREADED-sat-23/CMSSW_7_5_THREADED_X_2015-09-26-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 982, 
+                            "num_failed": 45
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -35183,14 +34973,32 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/sun/7.6.THREADED-sun-23/CMSSW_7_6_THREADED_X_2015-09-27-2300/new/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
                 "compared_tags": "CMSSW_7_6_THREADED_X_2015-09-27-1100-->CMSSW_7_6_THREADED_X_2015-09-27-2300", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/sun/7.6.THREADED-sun-23/CMSSW_7_6_THREADED_X_2015-09-27-2300/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc493": "IB/CMSSW_7_6_THREADED_X_2015-09-27-1100/slc6_amd64_gcc493"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
-                "tests_archs": [], 
+                "tests_archs": [
+                    "slc6_amd64_gcc493"
+                ], 
                 "inProgress": false, 
                 "release_name": "CMSSW_7_6_THREADED_X_2015-09-27-2300", 
                 "RVExceptions": null, 
@@ -39529,6 +39337,12 @@
                         "arch": "slc7_amd64_gcc493", 
                         "passed": true, 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/sun/7.6-sun-11/CMSSW_7_6_X_2015-09-27-1100/addOnTests.log", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/sun/7.6-sun-11/CMSSW_7_6_X_2015-09-27-1100/addOnTests.log", 
                         "details": {}
                     }
                 ], 
