@@ -25646,7 +25646,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/wed/7.5-wed-11/CMSSW_7_5_X_2015-09-30-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -27464,9 +27471,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc493", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6.CLANG-wed-11/CMSSW_7_6_CLANG_X_2015-09-30-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6.CLANG-wed-11/CMSSW_7_6_CLANG_X_2015-09-30-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "3"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -31296,55 +31305,61 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_ICC_X_2015-09-29-2300-->CMSSW_7_6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6.ICC-wed-11/CMSSW_7_6_ICC_X_2015-09-30-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6.ICC-wed-11/CMSSW_7_6_ICC_X_2015-09-30-1100/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 6, 
+                            "miscError": 52, 
+                            "compError": 118, 
+                            "linkError": 662
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_6_ICC_X_2015-09-29-2300-->CMSSW_7_6_ICC_X_2015-09-30-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6.ICC-wed-11/CMSSW_7_6_ICC_X_2015-09-30-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "83"
+                        }
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc493": "IB/CMSSW_7_6_ICC_X_2015-09-30-1100/slc6_amd64_gcc493"
+                }, 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6.ICC-wed-11/CMSSW_7_6_ICC_X_2015-09-30-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 191, 
+                            "num_failed": 324
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc493"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_6_X", 
+                "release_name": "CMSSW_7_6_ICC_X_2015-09-30-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "9087f9b34c86c57c3b3bef7e263468cb7e8fc1f4", 
-                        "title": "Revert PR #11216 in 7_4_X propagated to 7_6_X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11565", 
-                        "number": "11565", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "aescalante"
-                    }, 
-                    {
-                        "hash": "5fae60380fb813a186d7dec38bfaea54ce8a0342", 
-                        "title": "Lowering SeverityLevel of HFDigiTime and HBHEFlatNoise flags for 25ns data", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11481", 
-                        "number": "11481", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "abdoulline"
-                    }, 
-                    {
-                        "hash": "3106b78af7544f381979a28848b12bd0860926a5", 
-                        "title": "bsunanda:Run2-alca19 Fix for the crash in the relval for AlCa step with IsoTrack", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/10178", 
-                        "number": "10178", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "bsunanda"
-                    }, 
-                    {
-                        "hash": "b8ac33e03620cc755b3ad0a4f42a309a7bf41591", 
-                        "title": "JER integration into conditions database", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/10448", 
-                        "number": "10448", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "blinkseb"
-                    }, 
                     {
                         "hash": "4191dccee2870bd455cbf99e07d4ae943ab3a560", 
                         "title": "Electron and Photon Regressions in RECO (76X)", 
@@ -31407,6 +31422,59 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "sushilchauhan"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_6_ICC_X_2015-09-30-1100-->CMSSW_7_6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_6_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "9087f9b34c86c57c3b3bef7e263468cb7e8fc1f4", 
+                        "title": "Revert PR #11216 in 7_4_X propagated to 7_6_X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11565", 
+                        "number": "11565", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "aescalante"
+                    }, 
+                    {
+                        "hash": "5fae60380fb813a186d7dec38bfaea54ce8a0342", 
+                        "title": "Lowering SeverityLevel of HFDigiTime and HBHEFlatNoise flags for 25ns data", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11481", 
+                        "number": "11481", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "abdoulline"
+                    }, 
+                    {
+                        "hash": "3106b78af7544f381979a28848b12bd0860926a5", 
+                        "title": "bsunanda:Run2-alca19 Fix for the crash in the relval for AlCa step with IsoTrack", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10178", 
+                        "number": "10178", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
+                        "hash": "b8ac33e03620cc755b3ad0a4f42a309a7bf41591", 
+                        "title": "JER integration into conditions database", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10448", 
+                        "number": "10448", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "blinkseb"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -37787,7 +37855,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": true, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6-wed-11/CMSSW_7_6_X_2015-09-30-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc493", 
