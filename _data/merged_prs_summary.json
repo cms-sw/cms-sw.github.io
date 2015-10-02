@@ -15364,7 +15364,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc481": "IB/CMSSW_7_1_X_2015-09-27-1100/slc6_amd64_gcc481"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc481/www/fri/7.1-fri-11/CMSSW_7_1_X_2015-10-02-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 857, 
+                            "num_failed": 27
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -28563,45 +28573,39 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_CLANG_X_2015-10-01-2300-->CMSSW_7_6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "warning", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/fri/7.6.CLANG-fri-11/CMSSW_7_6_CLANG_X_2015-10-02-1100/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 5514, 
+                            "ignoreWarning": 69395
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_6_CLANG_X_2015-10-01-2300-->CMSSW_7_6_CLANG_X_2015-10-02-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/fri/7.6.CLANG-fri-11/CMSSW_7_6_CLANG_X_2015-10-02-1100/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc493": "ERR/CMSSW_7_6_CLANG_X_2015-10-02-1100/slc6_amd64_gcc493"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc493"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_6_X", 
+                "release_name": "CMSSW_7_6_CLANG_X_2015-10-02-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "8f6e05077e4c0e3630e28923b8c4f77f5cc494a6", 
-                        "title": "Add pcc info to WBM text file and update PCC x-section", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11580", 
-                        "number": "11580", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "mojoe137"
-                    }, 
-                    {
-                        "hash": "c5086a2e5ec107317200047e51b85555efc20a3a", 
-                        "title": "Do not use private 'XrdCl::FileSystem::FileSystem(const XrdCl::FileSystem&)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11606", 
-                        "number": "11606", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "hash": "3c72b423d2afa74dd68909bbb0b1dceed59806ac", 
-                        "title": "update release deps check script", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11623", 
-                        "number": "11623", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "smuzaffar"
-                    }, 
                     {
                         "hash": "35183372ce8e7233990a896d554b4b7096fa5f2b", 
                         "title": "Do not use CSC Bad Chambers list during muon reconstruction", 
@@ -28646,6 +28650,50 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "gartung"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_6_CLANG_X_2015-10-02-1100-->CMSSW_7_6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_6_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "8f6e05077e4c0e3630e28923b8c4f77f5cc494a6", 
+                        "title": "Add pcc info to WBM text file and update PCC x-section", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11580", 
+                        "number": "11580", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mojoe137"
+                    }, 
+                    {
+                        "hash": "c5086a2e5ec107317200047e51b85555efc20a3a", 
+                        "title": "Do not use private 'XrdCl::FileSystem::FileSystem(const XrdCl::FileSystem&)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11606", 
+                        "number": "11606", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
+                        "hash": "3c72b423d2afa74dd68909bbb0b1dceed59806ac", 
+                        "title": "update release deps check script", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11623", 
+                        "number": "11623", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "smuzaffar"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -31017,6 +31065,34 @@
                 "release_name": "CMSSW_7_6_ROOT64_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11580", 
+                            "11606"
+                        ], 
+                        "hash": "9582b650b3d99f134aaa6c1631c0879d06e1d514", 
+                        "number": "9582b65", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "8f6e05077e4c0e3630e28923b8c4f77f5cc494a6", 
+                        "title": "Add pcc info to WBM text file and update PCC x-section", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11580", 
+                        "number": "11580", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "mojoe137"
+                    }, 
+                    {
+                        "hash": "c5086a2e5ec107317200047e51b85555efc20a3a", 
+                        "title": "Do not use private 'XrdCl::FileSystem::FileSystem(const XrdCl::FileSystem&)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11606", 
+                        "number": "11606", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlt"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -35070,9 +35146,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc493", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/fri/7.6.THREADED-fri-11/CMSSW_7_6_THREADED_X_2015-10-02-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/fri/7.6.THREADED-fri-11/CMSSW_7_6_THREADED_X_2015-10-02-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "3"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
