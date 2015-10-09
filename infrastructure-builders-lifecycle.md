@@ -74,9 +74,9 @@ Before you can continue to create a slave, make also sure you import the SSH key
 required by build machines into your openstack configuration (use the "Access &
 Security" tab and use "Import key") and that you call it `cmsbuild`.
 
-### Creating a slave  
+### Creating an Instance  
 
-Creation of slaves in CERN Foreman setup is described at
+Creation of instances in CERN Foreman setup is described at
 <http://cern.ch/config/nodes/createnode.html>. The short recipe for build
 machine is:
 
@@ -105,9 +105,9 @@ name of the machine (`<cmsbuildXX>` in the example) and use a current image and
 flavor. If you have issues about the ssh key, make sure you imported it in your
 account (see the Setting up the OpenStack environment) part.
 
-### Deleting a slave
+### Deleting an Instance
 
-Similarly the documentation to delete a slave is found at:
+Similarly the documentation to delete an instance is found at:
 
 <http://configdocs.web.cern.ch/configdocs/nodes/deletenode.html>
 
