@@ -775,7 +775,14 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc491", 
+                    "passed": true, 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.5.THREADED-mon-11/CMSSW_7_5_THREADED_X_2015-10-12-1100/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "builds": [
                 {
                     "arch": "slc6_amd64_gcc491", 
@@ -788,9 +795,11 @@
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc491", 
-                    "passed": "unknown", 
-                    "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.5.THREADED-mon-11/CMSSW_7_5_THREADED_X_2015-10-12-1100/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/mon/7.5.THREADED-mon-11/CMSSW_7_5_THREADED_X_2015-10-12-1100/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
                 }
             ], 
             "cmsdistTags": {
@@ -822,6 +831,15 @@
             "release_name": "CMSSW_7_5_X", 
             "RVExceptions": null, 
             "merged_prs": [
+                {
+                    "hash": "3f6207988f28177776ebfd2a8a09076199fadb80", 
+                    "title": "hltDiff: compare TriggerResults event by event (75x)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11509", 
+                    "number": "11509", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "fwyzard"
+                }, 
                 {
                     "hash": "ed469b240d3f6094d52ee042d05a8bd09c74ee01", 
                     "title": "Change the type1 jet pt threshold from 10 to 15 GeV", 
