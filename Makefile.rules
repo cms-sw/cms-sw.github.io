@@ -1,0 +1,59 @@
+.PHONY: all pr-stats ib-files clean clean_up_old_files
+.DEFAULT_GOAL := all
+START_DATE :=
+ALL_RULES  := 
+ALL_INPUTS :=
+define RunCommand
+  @if [ -e $$< ] ;  then \
+    [ -d $$(@D) ] || mkdir -p $$(@D) &&\
+    echo $1 &&\
+    ($1 > $$@) || rm -f $$@;\
+  else \
+    rm -f $$@ ;\
+  fi
+endef
+
+#dir,arch,queue,date
+define ProcessLogs
+START_DATE := $(firstword $(sort $(START_DATE) $4))
+ALL_INPUTS += data/inputs/$2/$3/$4.csv
+ALL_RULES  += data/relvals/$2/$4/$3.json data/unitTests/$2/$4/$3.json data/commands/$2/$4/$3.json data/jobreports/$2/$3/$4.csv data/inputs/$2/$3/$4.csv
+data/relvals/$2/$4/$3.json: $1/pyRelValMatrixLogs/run/runall-report-step123-.log
+	$(call RunCommand,./process-run123-logs $$<)
+data/unitTests/$2/$4/$3.json: $1/unitTests-summary.log
+	$(call RunCommand,./process-unitTestSummary-logs $$<)
+data/commands/$2/$4/$3.json: $1/pyRelValMatrixLogs.zip
+	$(call RunCommand,./process-step-commands $$< data/commands/objs)
+data/jobreports/$2/$3/$4.csv: $1/pyRelValMatrixLogs.zip
+	$(call RunCommand,./process-job-reports $$<)
+data/inputs/$2/$3/$4.csv: $1/pyRelValMatrixLogs.zip
+	$(call RunCommand,./log-input-files $$< | sort)
+endef
+
+-include Releases.mk
+
+%/pyRelValMatrixLogs/run/runall-report-step123-.log:
+	@:
+%/unitTests-summary.log:
+	@:
+%/pyRelValMatrixLogs.zip:
+	@:
+data/cmsdist-config.json:
+	[ -d $(@D) ] || mkdir -p $(@D) &&\
+	./process-cmsdist > $@
+pr-stats:
+	mkdir -p data/stats && ./process-pr-stats && cat data/stats/prs/*.csv | sort -u -r > data/stats/pr-stats.csv
+ib-files: $(ALL_INPUTS)
+	mkdir -p data/inputs && cat data/inputs/*/*/*.csv | sort -u -r > data/inputs/all-ibs.csv
+clean:
+	rm -rf data/relvals
+	rm -rf data/unitTests
+	rm -rf data/commands
+	rm -rf data/jobreports
+	rm -rf data/inputs
+	rm -rf data/stats
+clean_up_old_files: $(ALL_RULES)
+	./cleanup-old-results -d $(START_DATE)
+
+all: data/cmsdist-config.json ib-files pr-stats clean_up_old_files
+	@echo Done all
