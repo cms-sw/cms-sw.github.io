@@ -16672,7 +16672,14 @@
                 "hlt_tests": "not-found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4.ROOT5-thu-11/CMSSW_7_4_ROOT5_X_2015-10-15-1100/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc491", 
@@ -22372,9 +22379,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc491", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-11/CMSSW_7_4_X_2015-10-15-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc491/www/thu/7.4-thu-11/CMSSW_7_4_X_2015-10-15-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -30057,7 +30066,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc493": "ERR/CMSSW_7_6_DEVEL_X_2015-10-14-2300/slc6_amd64_gcc493"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/wed/7.6.DEVEL-wed-23/CMSSW_7_6_DEVEL_X_2015-10-14-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 1070, 
+                            "num_failed": 53
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -32170,90 +32189,41 @@
             }, 
             {
                 "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_ICC_X_2015-10-14-2300-->CMSSW_7_6_X", 
-                "utests": [], 
-                "cmsdistTags": {}, 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "error", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/thu/7.6.ICC-thu-11/CMSSW_7_6_ICC_X_2015-10-15-1100/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 94, 
+                            "miscError": 28, 
+                            "compError": 119, 
+                            "linkError": 665
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_7_6_ICC_X_2015-10-14-2300-->CMSSW_7_6_ICC_X_2015-10-15-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "unknown", 
+                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc493/www/thu/7.6.ICC-thu-11/CMSSW_7_6_ICC_X_2015-10-15-1100/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc493": "IB/CMSSW_7_6_ICC_X_2015-10-15-1100/slc6_amd64_gcc493"
+                }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
-                "isIB": false, 
-                "tests_archs": [], 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc493"
+                ], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_6_X", 
+                "release_name": "CMSSW_7_6_ICC_X_2015-10-15-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [
-                    {
-                        "hash": "7f785613d78bb2b0e1b7e08a485ef5ecb6c16c6d", 
-                        "title": "Removed JetIdCleaning from SUSY path names (CMSHLT-601 for 76X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11683", 
-                        "number": "11683", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "mrcarver"
-                    }, 
-                    {
-                        "hash": "b546fe6797e1843212fb8536e6fc257eeea2877b", 
-                        "title": "Added new categories (DSTJets", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11694", 
-                        "number": "11694", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ndaci"
-                    }, 
-                    {
-                        "hash": "8ce0b758baca01603be5ad14422ede9f8396b11f", 
-                        "title": "Removed old LazyGetter calls from HLTDummyCollections", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11810", 
-                        "number": "11810", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "699a0be6c8d105e65d188d1e3c76ddb5c358eb84", 
-                        "title": "Remove use of non-const static in pat::UserData<>", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11759", 
-                        "number": "11759", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "7a09da11a1163f8f49f2780f2f62e8326fd6250d", 
-                        "title": "cppcheck: Prefer prefix ++/-- operators for non-primitive types", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11727", 
-                        "number": "11727", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "serval2412"
-                    }, 
-                    {
-                        "hash": "25f6cd942ada132bf8e802082e5828f392820f7c", 
-                        "title": "Tuning the CSC Halo filter parameters", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11737", 
-                        "number": "11737", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "lathomas"
-                    }, 
-                    {
-                        "hash": "c99efc69435e8f6e34df2d9d92098aaa3676dd78", 
-                        "title": "New Global Tags with cleanup and fixes for all scenarios.", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11800", 
-                        "number": "11800", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "diguida"
-                    }, 
-                    {
-                        "hash": "645270607f7101d0eefdc2ecb8ec340cc9b53c68", 
-                        "title": "Removed unused HITSiStripRawToClustersRoI", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11812", 
-                        "number": "11812", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
-                    }, 
                     {
                         "hash": "3c18fcb140fbebbdbbb5568b1ad99acdf0e7e90a", 
                         "title": "bsunanda:Run2-hcx42 Bug fix for HcalTopology", 
@@ -32454,6 +32424,95 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "slava77"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
+                "builds": [], 
+                "compared_tags": "CMSSW_7_6_ICC_X_2015-10-15-1100-->CMSSW_7_6_X", 
+                "utests": [], 
+                "cmsdistTags": {}, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "tests_archs": [], 
+                "inProgress": false, 
+                "release_name": "CMSSW_7_6_X", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "hash": "7f785613d78bb2b0e1b7e08a485ef5ecb6c16c6d", 
+                        "title": "Removed JetIdCleaning from SUSY path names (CMSHLT-601 for 76X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11683", 
+                        "number": "11683", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mrcarver"
+                    }, 
+                    {
+                        "hash": "b546fe6797e1843212fb8536e6fc257eeea2877b", 
+                        "title": "Added new categories (DSTJets", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11694", 
+                        "number": "11694", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ndaci"
+                    }, 
+                    {
+                        "hash": "8ce0b758baca01603be5ad14422ede9f8396b11f", 
+                        "title": "Removed old LazyGetter calls from HLTDummyCollections", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11810", 
+                        "number": "11810", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "699a0be6c8d105e65d188d1e3c76ddb5c358eb84", 
+                        "title": "Remove use of non-const static in pat::UserData<>", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11759", 
+                        "number": "11759", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "7a09da11a1163f8f49f2780f2f62e8326fd6250d", 
+                        "title": "cppcheck: Prefer prefix ++/-- operators for non-primitive types", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11727", 
+                        "number": "11727", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "serval2412"
+                    }, 
+                    {
+                        "hash": "25f6cd942ada132bf8e802082e5828f392820f7c", 
+                        "title": "Tuning the CSC Halo filter parameters", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11737", 
+                        "number": "11737", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "lathomas"
+                    }, 
+                    {
+                        "hash": "c99efc69435e8f6e34df2d9d92098aaa3676dd78", 
+                        "title": "New Global Tags with cleanup and fixes for all scenarios.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11800", 
+                        "number": "11800", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "diguida"
+                    }, 
+                    {
+                        "hash": "645270607f7101d0eefdc2ecb8ec340cc9b53c68", 
+                        "title": "Removed unused HITSiStripRawToClustersRoI", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11812", 
+                        "number": "11812", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -36917,7 +36976,7 @@
                 "addons": [
                     {
                         "arch": "slc7_amd64_gcc493", 
-                        "passed": false, 
+                        "passed": true, 
                         "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc7_amd64_gcc493/www/thu/7.6-thu-11/CMSSW_7_6_X_2015-10-15-1100/addOnTests.log", 
                         "details": {}
                     }
