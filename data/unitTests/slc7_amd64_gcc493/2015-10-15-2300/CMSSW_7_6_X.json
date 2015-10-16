@@ -1,24 +1,32 @@
 [
   {
     "errors": [
-      "runtestRecoEgammaPhotonIdentification"
+      "testRecoMETMETProducers"
     ],
-    "name": "RecoEgamma/PhotonIdentification",
+    "name": "RecoMET/METProducers",
     "ok": []
   },
   {
     "errors": [
-      "runtestRecoEgammaElectronIdentification"
+      "testTechnologyPlugin"
     ],
-    "name": "RecoEgamma/ElectronIdentification",
-    "ok": []
-  },
-  {
-    "errors": [
-      "runtestPhysicsToolsPatAlgos"
-    ],
-    "name": "PhysicsTools/PatAlgos",
-    "ok": []
+    "name": "CondCore/DBCommon",
+    "ok": [
+      "testCipher",
+      "testSingleConnection",
+      "testSequenceManager",
+      "testDbConnection",
+      "testDbTransaction",
+      "testDbSessionIO",
+      "testBlobStreaming",
+      "testMultipleConnection",
+      "testDbScopedTransaction",
+      "testDbSession",
+      "testCondTime",
+      "testCoralSQLPrinting",
+      "unittest_DBLogger",
+      "testCondObjCopy"
+    ]
   },
   {
     "errors": [],
@@ -322,21 +330,6 @@
   },
   {
     "errors": [],
-    "name": "RecoMET/METProducers",
-    "ok": [
-      "testRecoMETMETProducers"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "RecoLuminosity/LumiProducer",
-    "ok": [
-      "testWrite2LumiDB",
-      "testBoostRegex"
-    ]
-  },
-  {
-    "errors": [],
     "name": "RecoLocalCalo/EcalRecAlgos",
     "ok": [
       "testEcalSeverity"
@@ -347,6 +340,20 @@
     "name": "RecoJets/JetProducers",
     "ok": [
       "test-large-voronoi-area"
+    ]
+  },
+  {
+    "errors": [],
+    "name": "RecoEgamma/PhotonIdentification",
+    "ok": [
+      "runtestRecoEgammaPhotonIdentification"
+    ]
+  },
+  {
+    "errors": [],
+    "name": "RecoEgamma/ElectronIdentification",
+    "ok": [
+      "runtestRecoEgammaElectronIdentification"
     ]
   },
   {
@@ -385,6 +392,13 @@
     "ok": [
       "testCrabToyMC.exe",
       "testFeldmanCousinsBinomial.exe"
+    ]
+  },
+  {
+    "errors": [],
+    "name": "PhysicsTools/PatAlgos",
+    "ok": [
+      "runtestPhysicsToolsPatAlgos"
     ]
   },
   {
@@ -473,6 +487,13 @@
   },
   {
     "errors": [],
+    "name": "JetMETCorrections/Modules",
+    "ok": [
+      "TestJetMETCorrectionsModulesJetResolutionObject"
+    ]
+  },
+  {
+    "errors": [],
     "name": "IOPool/TFileAdaptor",
     "ok": [
       "test_TFileAdaptor_TFile"
@@ -527,13 +548,6 @@
   },
   {
     "errors": [],
-    "name": "Geometry/HcalTowerAlgo",
-    "ok": [
-      "HcalGeometryTest"
-    ]
-  },
-  {
-    "errors": [],
     "name": "Geometry/EcalTestBeam",
     "ok": [
       "testEcalTBCrystalMap",
@@ -559,14 +573,6 @@
     "name": "Geometry/CommonDetUnit",
     "ok": [
       "testDetSort"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "Geometry/CaloTopology",
-    "ok": [
-      "testCaloTowerTopology",
-      "testHcalTopology"
     ]
   },
   {
@@ -637,9 +643,13 @@
   },
   {
     "errors": [],
-    "name": "FWCore/RootAutoLibraryLoader",
+    "name": "FWCore/ROOTTests",
     "ok": [
-      "testFWCoreRootAutoLibraryLoader"
+      "root_threaded_tformula_test",
+      "root_threaded_tprofile_test",
+      "root_threaded_read_test",
+      "root_threaded_tclass_methods_test",
+      "root_threaded_write_test"
     ]
   },
   {
@@ -732,6 +742,7 @@
       "TestFWCoreFrameworkESRefer",
       "TestFWCoreFrameworkDeleteEarly",
       "TestFWCoreFrameworkTrigBit",
+      "TestFWCoreFrameworkMayConsumesDeadlock",
       "TestFWCoreFrameworkProductSelector",
       "TestFWCoreFrameworkReplace",
       "TestFWCoreFrameworkTBBTasks",
@@ -827,6 +838,7 @@
     "name": "DetectorDescription/Core",
     "ok": [
       "testCore",
+      "testStrVector",
       "testShapes",
       "test_DDRotation",
       "clhepToROOTMath"
@@ -904,6 +916,13 @@
       "EntryDescription_t",
       "testDataFormatsProvenance",
       "testProductHolderIndexHelper"
+    ]
+  },
+  {
+    "errors": [],
+    "name": "DataFormats/PatCandidates",
+    "ok": [
+      "testDataFormatsPatCandidates"
     ]
   },
   {
@@ -1014,6 +1033,7 @@
     "errors": [],
     "name": "DataFormats/FWLite",
     "ok": [
+      "testDataFormatsFWLiteMakeInput",
       "testDataFormatsFWLite",
       "TestRunnerDataFormatsFWLite"
     ]
@@ -1370,6 +1390,13 @@
   },
   {
     "errors": [],
+    "name": "CondCore/Utilities",
+    "ok": [
+      "testBasicPayload"
+    ]
+  },
+  {
+    "errors": [],
     "name": "CondCore/TagCollection",
     "ok": [
       "testPfnEditor",
@@ -1424,33 +1451,14 @@
   },
   {
     "errors": [],
-    "name": "CondCore/DBCommon",
-    "ok": [
-      "testCipher",
-      "testSingleConnection",
-      "testSequenceManager",
-      "testDbConnection",
-      "testDbTransaction",
-      "testDbSessionIO",
-      "testBlobStreaming",
-      "testMultipleConnection",
-      "testDbScopedTransaction",
-      "testTechnologyPlugin",
-      "testDbSession",
-      "testCondTime",
-      "testCoralSQLPrinting",
-      "unittest_DBLogger",
-      "testCondObjCopy"
-    ]
-  },
-  {
-    "errors": [],
     "name": "CondCore/CondDB",
     "ok": [
       "testFrontier",
       "testRootStreaming",
+      "testConditionDatabase_2",
+      "testReadWritePayloads",
       "testPayloadProxy",
-      "testConditionDatabase_0"
+      "testConditionDatabase_1"
     ]
   },
   {
@@ -1458,7 +1466,9 @@
     "name": "CommonTools/Utils",
     "ok": [
       "testCommonToolsUtilThreaded",
-      "testCommonToolsUtil"
+      "testExpressionEvaluator",
+      "ExpressionEvaluatorUnitTest",
+      "ExprEvalPopen_t"
     ]
   },
   {
