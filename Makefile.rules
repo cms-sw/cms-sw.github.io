@@ -88,5 +88,5 @@ $(TIMESTAMP_FILE): $(ALL_RULES)
 	  [ -e $$file ] || continue ;\
 	  echo "`date -r $$file +%Y%m%d%H%M.%S` $$file" >> $@;\
 	done
-all: data/cmsdist-config.json ib-files clean_up_old_files $(TIMESTAMP_FILE)
+all: data/cmsdist-config.json ib-files clean_up_old_files pr-stats $(TIMESTAMP_FILE)
 	@echo Done all
