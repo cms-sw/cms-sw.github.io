@@ -2565,9 +2565,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sat/5.3-sat-11/CMSSW_5_3_X_2015-10-17-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sat/5.3-sat-11/CMSSW_5_3_X_2015-10-17-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "10"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -3575,7 +3577,17 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_SLHCDEV_X_2015-10-11-1100/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/afs/cern.ch/cms/sw/ReleaseCandidates/slc6_amd64_gcc472/www/sat/6.2.SLHCDEV-sat-11/CMSSW_6_2_SLHCDEV_X_2015-10-17-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 35, 
+                            "num_failed": 1
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -31608,6 +31620,24 @@
                 "release_name": "CMSSW_7_6_ROOT64_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11862"
+                        ], 
+                        "hash": "666dc44c7d7f773d6e0bf079cb724a1fae4352eb", 
+                        "number": "666dc44", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "0a16351fbf1c7be48fa27c72b54e4c250fbb3e75", 
+                        "title": "guard against era being none", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11862", 
+                        "number": "11862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlange6"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
