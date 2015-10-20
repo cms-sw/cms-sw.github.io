@@ -105,7 +105,7 @@ available from the cmsbuild user AFS account. Of course you should change the
 name of the machine (`<cmsbuildXX>` in the example) and use a current image and
 flavor. If you have issues about the ssh key, make sure you imported it in your
 account (see the Setting up the OpenStack environment) part. Fore more options you can use ai-bs-vm --help.
-After the machine is created , you may need to change the /etc/resolv.conf file to have ipv4 addresses for name servers , othervise puppet agent will not be able to connect to the master.
+After the machine is created , you may need to change the /etc/resolv.conf file to have ipv4 addresses for name servers , othervise puppet agent will not be able to connect to the master. Also , you need to write a file system to /vdc by using mkfs.ext3 or mkfs.ext4 etc manually and then run puppet agent for mounting it properly. 
 
 ### Deleting an Instance
 
