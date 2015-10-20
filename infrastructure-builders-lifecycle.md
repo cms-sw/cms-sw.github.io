@@ -90,6 +90,7 @@ machine is:
       MACHINE_NAME=<cmsbuildXX>
 
       ai-bs-vm -g vocmssdt/sdt/builder \
+               --foreman-environment cmssdt_test \ 
                -i "SLC6 CERN Server - x86_64 [2015-02-10]" \
                --nova-sshkey cmsbuild \
                --nova-flavor hep2.12 \
@@ -97,13 +98,14 @@ machine is:
                --landb-mainuser cms-service-sdt \
                --landb-responsible cms-service-sdt \
                $MACHINE_NAME
-
+        
 This will spawn a new machine. You can check the boot status either in the
 OpenStack GUI or via `nova list`. The `cmsbuild` key used is the ssh key
 available from the cmsbuild user AFS account. Of course you should change the
 name of the machine (`<cmsbuildXX>` in the example) and use a current image and
 flavor. If you have issues about the ssh key, make sure you imported it in your
-account (see the Setting up the OpenStack environment) part.
+account (see the Setting up the OpenStack environment) part. Fore more options you can use ai-bs-vm --help.
+After the machine is created , you may need to change the /etc/resolv.conf file to have ipv4 addresses for name servers , othervise puppet agent will not be able to connect to the master.
 
 ### Deleting an Instance
 
