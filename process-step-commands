@@ -2,7 +2,6 @@
 
 # Process job reports and create summary file with performance information.
 from argparse import ArgumentParser
-from zipfile import ZipFile
 from os.path import exists, join
 from os import fdopen, unlink, makedirs
 from xml.sax import parseString, ContentHandler
@@ -11,6 +10,8 @@ from hashlib import sha1
 from json import dump, dumps
 from tempfile import mkstemp
 from shutil import move
+from cmsutils import getRelValsFiles, readRelValFile
+
 
 # Schema of the output
 #
@@ -32,7 +33,7 @@ if __name__ == "__main__":
   if not exists:
     parser.error("%s does not exist")
 
-  f = ZipFile(args.input)
+  inFiles, zipFile = getRelValsFiles(args.input, "*/cmdLog", ".*/cmdLog")
   try:
     [makedirs(join(args.output, x)) for x in "0123456789abcdef"]
   except:
@@ -40,13 +41,11 @@ if __name__ == "__main__":
       parser.error("Unable to create " + args.output)
       exit(0)
 
-  for name in f.namelist():
-    m = re.match("([0-9.]+)_([^/]*)/cmdLog", name)
-    if not m:
-      continue
-    workflowId, workflow = m.groups()
-    report = f.read(name)
-    # This is to make sure we have a final transition.
+  for name in inFiles:
+    m = re.match("(.*/|)([0-9.]+)_([^/]*)/cmdLog", name)
+    if not m: continue
+    xpath, workflowId, workflow = m.groups()
+    report = readRelValFile(name,zipFile)
     report += "\n#"
     step = 0
     command = ""

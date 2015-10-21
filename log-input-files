@@ -2,14 +2,12 @@
 
 # Process job reports and create summary file with performance information.
 from argparse import ArgumentParser
-from zipfile import ZipFile
-from os.path import exists, join
 from xml.sax import parseString, ContentHandler
 from hashlib import sha1
 from datetime import datetime
 import urllib2, base64, json
 from os import getenv
-
+from cmsutils import getRelValsFiles, readRelValFile
 import re
 
 # Pipes results to elasticsearch.
@@ -83,17 +81,14 @@ if __name__ == "__main__":
   for inFile in args.input:
     m = re.match(".*/([^/]+)/www/.*/([^/]+)/.*", inFile)
     architecture, release = m.groups()
-    f = ZipFile(inFile)
+    inFiles, zipFile = getRelValsFiles(inFile, "*/JobReport*.xml", ".*/JobReport([0-9]).xml")
     table = {}
-    for l in f.namelist():
-      m = re.match("([^/]*)/JobReport([0-9]).xml", l)
-      if not m:
-        continue
-      workflow, step = m.groups()
-      report = f.read(l)
-      handler = JobReportHandler(release, architecture, workflow, step, files)
+    for l in inFiles:
+      m = re.match("(.+/|)([^/]+)/JobReport([0-9]).xml", l)
+      if not m: continue
+      handler = JobReportHandler(release, architecture, m.group(2), m.group(3), files)
       try:
-        parseString(report, handler)
+        parseString(readRelValFile(l,zipFile), handler)
       except Exception, e:
         continue
   print "\n".join(files.keys())
