@@ -49,7 +49,10 @@ if __name__ == "__main__":
         # errors and warnings of step 5.
         if i > 3:
           continue
-        s.update({"errors": data["failed"][i], "warnings": data["warning"][i]})
+        try:
+          s.update({"errors": data["failed"][i], "warnings": data["warning"][i]})
+        except:
+          print "ERROR: Unable to read information from ",warningsFile
   results.sort(key=itemgetter("order", "id"), reverse=True)
   for r in results:
     r.pop("order")
