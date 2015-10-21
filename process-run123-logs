@@ -53,7 +53,8 @@ if __name__ == "__main__":
         try:
           s.update({"errors": data["failed"][i], "warnings": data["warning"][i]})
         except:
-          sys.stderr.write("ERROR: Unable to read information from "+warningsFile)
+          sys.stderr.write("ERROR: Unable to read information from "+warningsFile+"\n")
+          sys.exit(1)
   results.sort(key=itemgetter("order", "id"), reverse=True)
   for r in results:
     r.pop("order")
