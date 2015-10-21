@@ -2,11 +2,11 @@
 
 # Process job reports and create summary file with performance information.
 from argparse import ArgumentParser
-from zipfile import ZipFile
 from os.path import exists, join
 from xml.sax import parseString, ContentHandler
 import re
 import datetime, time
+from cmsutils import getRelValsFiles, readRelValFile
 
 # Schema of the output
 class JobReportHandler(ContentHandler):
@@ -31,17 +31,15 @@ if __name__ == "__main__":
 
   printHeader = True
   for inFile in args.input:
-    f = ZipFile(inFile)
+    inFiles, zipFile = getRelValsFiles(inFile, "*/JobReport*.xml", ".*/JobReport([0-9]).xml")
     table = {}
-    for l in f.namelist():
-      m = re.match("([^/]*)/JobReport([0-9]).xml", l)
-      if not m:
-        continue
-      workflow, step = m.groups()
-      report = f.read(l)
+    for l in inFiles:
+      m = re.match("(.+/|)([^/]+)/JobReport([0-9]).xml", l)
+      if not m: continue
+      xpath, workflow, step = m.groups()
       handler = JobReportHandler(what=["PeakValueRss", "PeakValueVsize", "TotalJobCPU","TotalJobTime"])
       try:
-        parseString(report, handler)
+        parseString(readRelValFile(l,zipFile), handler)
       except:
         continue
       for counter, value in handler.counters.items():
@@ -59,7 +57,7 @@ if __name__ == "__main__":
       print
       printHeader = False
 
-    inDate = re.match(".*CMSSW_.*(201.*)/.*", inFile).group(1)
+    inDate = re.match(".*CMSSW_.*(20\d\d.*)/.*", inFile).group(1)
     timestamp = time.mktime(datetime.datetime.strptime(inDate, "%Y-%m-%d-%H%M").timetuple())
     for k in sorted(table):
       v = table[k] 
