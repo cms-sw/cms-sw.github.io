@@ -45,10 +45,9 @@ if __name__ == "__main__":
       if not str(result["id"]) in warnings:
         continue
       data = warnings[result["id"]]
+      dlen = len(data["failed"])
       for (i, s) in enumerate(result["steps"]):
-        # Apparently we do not have information regarding
-        # errors and warnings of step 5.
-        if i > 3: continue
+        if (i >= dlen): break
         try:
           s.update({"errors": data["failed"][i], "warnings": data["warning"][i]})
         except:
