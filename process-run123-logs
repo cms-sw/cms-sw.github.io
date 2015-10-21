@@ -48,13 +48,12 @@ if __name__ == "__main__":
       for (i, s) in enumerate(result["steps"]):
         # Apparently we do not have information regarding
         # errors and warnings of step 5.
-        if i > 3:
-          continue
+        if i > 3: continue
         try:
           s.update({"errors": data["failed"][i], "warnings": data["warning"][i]})
         except:
           sys.stderr.write("ERROR: Reading "+warningsFile+"\n")
-          sys.stderr.write("ERROR: "+str(result["id"])+","+str(data)+"\n")
+          sys.stderr.write("ERROR: "+str(i)+","+str(result["id"])+","+str(data)+"\n")
           sys.exit(1)
   results.sort(key=itemgetter("order", "id"), reverse=True)
   for r in results:
