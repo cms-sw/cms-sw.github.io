@@ -6,6 +6,7 @@ from json import dumps
 import re
 from operator import itemgetter
 from pickle import load
+import sys
 
 RESULTS_RE = "^([0-9.]+)_([^ ]*) (.*) - time date.*exit: (.*)"
 STEP_STATUS_RE = "Step([0-9])-(PASSED|FAILED|NOTRUN|DAS_ERROR|TIMEOUT)"
@@ -52,7 +53,7 @@ if __name__ == "__main__":
         try:
           s.update({"errors": data["failed"][i], "warnings": data["warning"][i]})
         except:
-          print "ERROR: Unable to read information from ",warningsFile
+          sys.stderr.write("ERROR: Unable to read information from "+warningsFile)
   results.sort(key=itemgetter("order", "id"), reverse=True)
   for r in results:
     r.pop("order")
