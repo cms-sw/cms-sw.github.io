@@ -80,18 +80,18 @@ add_qa_link_to_row = function(row, arch,release_name){
  */
 get_tests_url = function(type,file) {
   var link_parts = file.split('/')
-         
+  var si=4      
   var details_link = ""
   if (type == 'utests' || type =='builds'){
-    details_link="https://cmssdt.cern.ch/SDT/cgi-bin/showBuildLogs.py/" + link_parts[6] + '/'
-                                                                +link_parts[7]+'/'+link_parts[8]+'/'+link_parts[9]
-                                                                +'/'+link_parts[10]
+    details_link="https://cmssdt.cern.ch/SDT/cgi-bin/showBuildLogs.py/" + link_parts[si] + '/'
+                                                                +link_parts[si+1]+'/'+link_parts[si+2]+'/'+link_parts[si+3]
+                                                                +'/'+link_parts[si+4]
 
   }else if(type == 'relvals'){
-    details_link="https://cms-sw.github.io/relvalLogDetail.html#" + link_parts[6] + ';' + link_parts[10] 
+    details_link="https://cms-sw.github.io/relvalLogDetail.html#" + link_parts[si] + ';' + link_parts[si+4] 
   }else if(type == 'addons'){
-    details_link = "https://cmssdt.cern.ch/SDT/cgi-bin//showAddOnLogs.py/" + link_parts[6] + '/'
-                                                                +link_parts[7]+'/'+link_parts[8]+'/'+link_parts[9]+'/'+link_parts[10]
+    details_link = "https://cmssdt.cern.ch/SDT/cgi-bin//showAddOnLogs.py/" + link_parts[si] + '/'
+                                                                +link_parts[si+1]+'/'+link_parts[si+2]+'/'+link_parts[si+3]+'/'+link_parts[si+4]
                                                                 +'/'+'addOnTests'+'/'
 
   }
