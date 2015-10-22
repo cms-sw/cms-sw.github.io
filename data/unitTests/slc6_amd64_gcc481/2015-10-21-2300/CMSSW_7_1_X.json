@@ -1,9 +1,16 @@
 [
   {
     "errors": [
-      "HcalGeometryTest"
+      "runtestUtilAlgos"
     ],
-    "name": "Geometry/HcalTowerAlgo",
+    "name": "PhysicsTools/UtilAlgos",
+    "ok": []
+  },
+  {
+    "errors": [
+      "runtestPhysicsToolsPatAlgos"
+    ],
+    "name": "PhysicsTools/PatAlgos",
     "ok": []
   },
   {
@@ -278,13 +285,6 @@
   },
   {
     "errors": [],
-    "name": "RecoTracker/FinalTrackSelectors",
-    "ok": [
-      "trackAlgoPriorityOrder_t"
-    ]
-  },
-  {
-    "errors": [],
     "name": "RecoTauTag/RecoTau",
     "ok": [
       "TestRecoTauTagCombinatoricGenerator"
@@ -315,6 +315,14 @@
   },
   {
     "errors": [],
+    "name": "RecoLuminosity/LumiProducer",
+    "ok": [
+      "testWrite2LumiDB",
+      "testBoostRegex"
+    ]
+  },
+  {
+    "errors": [],
     "name": "RecoLocalCalo/EcalRecAlgos",
     "ok": [
       "testEcalSeverity"
@@ -325,20 +333,6 @@
     "name": "RecoJets/JetProducers",
     "ok": [
       "test-large-voronoi-area"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "RecoEgamma/PhotonIdentification",
-    "ok": [
-      "runtestRecoEgammaPhotonIdentification"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "RecoEgamma/ElectronIdentification",
-    "ok": [
-      "runtestRecoEgammaElectronIdentification"
     ]
   },
   {
@@ -366,13 +360,6 @@
   },
   {
     "errors": [],
-    "name": "PhysicsTools/UtilAlgos",
-    "ok": [
-      "runtestUtilAlgos"
-    ]
-  },
-  {
-    "errors": [],
     "name": "PhysicsTools/RooStatsCms",
     "ok": [
       "testFeldmanCousinsBinomial.exe",
@@ -381,23 +368,9 @@
   },
   {
     "errors": [],
-    "name": "PhysicsTools/PatAlgos",
-    "ok": [
-      "runtestPhysicsToolsPatAlgos"
-    ]
-  },
-  {
-    "errors": [],
     "name": "PhysicsTools/MVATrainer",
     "ok": [
       "testMVATrainer"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "PhysicsTools/MVAComputer",
-    "ok": [
-      "testPhysicsToolsMVAComputer"
     ]
   },
   {
@@ -434,6 +407,13 @@
     "name": "MuonAnalysis/MomentumScaleCalibration",
     "ok": [
       "TestMuScleFit"
+    ]
+  },
+  {
+    "errors": [],
+    "name": "MagneticField/ParametrizedEngine",
+    "ok": [
+      "TKBfield_t"
     ]
   },
   {
@@ -481,9 +461,13 @@
     "errors": [],
     "name": "IOPool/Streamer",
     "ok": [
+      "Eventmsg_t.cppunit",
       "RunThis_t",
       "WriteStreamerFile",
+      "TestOtherMessage",
       "RunThat_t",
+      "WriteDQMToFile",
+      "EventBuffer_t",
       "EventMessageTest",
       "ReadStreamerFile"
     ]
@@ -522,6 +506,13 @@
     "name": "IOMC/RandomEngine",
     "ok": [
       "TestIOMCRandomEngineService"
+    ]
+  },
+  {
+    "errors": [],
+    "name": "Geometry/HcalTowerAlgo",
+    "ok": [
+      "HcalGeometryTest"
     ]
   },
   {
@@ -588,7 +579,6 @@
     "ok": [
       "Guid_t",
       "EDGetToken_t",
-      "RunningAverage_t",
       "atomic_value_ptr_t",
       "Exception_t",
       "CRC32Calculator_t",
@@ -629,13 +619,9 @@
   },
   {
     "errors": [],
-    "name": "FWCore/ROOTTests",
+    "name": "FWCore/RootAutoLibraryLoader",
     "ok": [
-      "root_threaded_tformula_test",
-      "root_threaded_write_test",
-      "root_threaded_read_test",
-      "root_threaded_tprofile_test",
-      "root_threaded_tclass_methods_test"
+      "testFWCoreRootAutoLibraryLoader"
     ]
   },
   {
@@ -704,7 +690,6 @@
       "TestSubProcess",
       "TestIntegrationParameterSet",
       "TestFWCoreIntegrationStandalone",
-      "TestIntegrationThinningTests",
       "TestIntegrationRef",
       "TestIntegrationUnscheduledFailOnOutput",
       "CatchCmsExceptiontest",
@@ -716,8 +701,7 @@
       "TestIntegrationEventSetup",
       "ProcessHistory_t",
       "TestIntegrationServiceExample",
-      "TestIntegrationRunMerge",
-      "TestIntegrationRefAlias"
+      "TestIntegrationRunMerge"
     ]
   },
   {
@@ -730,7 +714,6 @@
       "TestFWCoreOutputModuleUtilities",
       "TestFWCoreFrameworkView",
       "TestFWCoreFrameworkTBBTasks",
-      "TestFWCoreFrameworkEarlyTerminationSignal",
       "TestFWCoreFrameworkReplace",
       "TestFWCoreFramework",
       "TestFWCoreFrameworkStatemachine",
@@ -801,7 +784,7 @@
       "DetectorDescriptionRegressionTestDOMCount",
       "DDCompareCPV",
       "DetectorDescriptionRegressionTestDDErrorReport",
-      "algorithm_plugin_test",
+      "DDErrorReport",
       "reg_ddcore"
     ]
   },
@@ -823,7 +806,6 @@
     "name": "DetectorDescription/Core",
     "ok": [
       "testShapes",
-      "testStrVector",
       "testCore",
       "test_DDRotation",
       "clhepToROOTMath"
@@ -861,7 +843,6 @@
     "errors": [],
     "name": "DataFormats/TrackerRecHit2D",
     "ok": [
-      "testOmniClusterRef",
       "mayown_t"
     ]
   },
@@ -1011,7 +992,6 @@
     "errors": [],
     "name": "DataFormats/FWLite",
     "ok": [
-      "testDataFormatsFWLiteMakeInput",
       "TestRunnerDataFormatsFWLite",
       "testDataFormatsFWLite"
     ]
@@ -1167,8 +1147,7 @@
     "errors": [],
     "name": "CondFormats/RunInfo",
     "ok": [
-      "testSerializationRunInfo",
-      "fromXML"
+      "testSerializationRunInfo"
     ]
   },
   {
@@ -1197,13 +1176,6 @@
     "name": "CondFormats/OptAlignObjects",
     "ok": [
       "testSerializationOptAlignObjects"
-    ]
-  },
-  {
-    "errors": [],
-    "name": "CondFormats/MFObjects",
-    "ok": [
-      "testSerializationMFObjects"
     ]
   },
   {
@@ -1353,9 +1325,6 @@
     "errors": [],
     "name": "CondFormats/BTauObjects",
     "ok": [
-      "testBTagCalibration",
-      "testBTagCalibrationReader",
-      "testBTagEntry",
       "testSerializationBTauObjects"
     ]
   },
@@ -1448,20 +1417,14 @@
       "testRootStreaming",
       "testFrontier",
       "testConditionDatabase_0",
-      "testConditionDatabase_2",
-      "testPayloadProxy",
-      "testConditionDatabase_1"
+      "testPayloadProxy"
     ]
   },
   {
     "errors": [],
     "name": "CommonTools/Utils",
     "ok": [
-      "testExpressionEvaluator",
-      "testCommonToolsUtilThreaded",
-      "ExpressionEvaluatorUnitTest",
-      "testCommonToolsUtil",
-      "ExprEvalPopen_t"
+      "testCommonToolsUtil"
     ]
   },
   {
