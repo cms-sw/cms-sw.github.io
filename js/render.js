@@ -78,17 +78,27 @@ add_qa_link_to_row = function(row, arch,release_name){
 /**
  * returns the url for the tests, type can be unit tests, relvals or addons
  */
-get_tests_url = function(type,file) {
+get_tests_url = function( type, file, arch, ib ) {
   var link_parts = file.split('/')
-  var si=4      
+  var si=4
   var details_link = ""
   if (type == 'utests' || type =='builds'){
-    details_link="https://cmssdt.cern.ch/SDT/cgi-bin/showBuildLogs.py/" + link_parts[si] + '/'
+
+    if( file == 'not-ready' ){
+      details_link = "http://cms-sw.github.io/scramDetail.html#" + arch + ";" + ib 
+    }else{
+
+      details_link="https://cmssdt.cern.ch/SDT/cgi-bin/showBuildLogs.py/" + link_parts[si] + '/'
                                                                 +link_parts[si+1]+'/'+link_parts[si+2]+'/'+link_parts[si+3]
                                                                 +'/'+link_parts[si+4]
+   }
 
   }else if(type == 'relvals'){
-    details_link="https://cms-sw.github.io/relvalLogDetail.html#" + link_parts[si] + ';' + link_parts[si+4] 
+    if ( file == 'not-ready' ){
+      details_link="https://cms-sw.github.io/relvalLogDetail.html#" + arch + ';' + ib
+    }else {
+      details_link="https://cms-sw.github.io/relvalLogDetail.html#" + link_parts[si] + ';' + link_parts[si+4] 
+    }
   }else if(type == 'addons'){
     details_link = "https://cmssdt.cern.ch/SDT/cgi-bin//showAddOnLogs.py/" + link_parts[si] + '/'
                                                                 +link_parts[si+1]+'/'+link_parts[si+2]+'/'+link_parts[si+3]+'/'+link_parts[si+4]
@@ -113,7 +123,7 @@ get_result_tests =  function (arch,tests){
 /**
  * Adds the results of the tests to a row of the table
  */
-add_tests_to_row = function( tests , row , arch , type ){
+add_tests_to_row = function( tests, row, arch, type, ib ){
 
 
   // just add a blank cell if tere are no results for that kind of tests
@@ -158,7 +168,12 @@ add_tests_to_row = function( tests , row , arch , type ){
    
   }else if (type == 'builds'){
 
-    if (result == 'passed'){
+    incomplete = file == 'not-ready'
+
+    if ( incomplete ){
+        r_class = "label label-info"
+        test_label = "Not complete"
+    }else if (result == 'passed'){
       r_class = "label label-success"
       test_label = 'See Details'
     }else if (result == 'warning'){
@@ -172,7 +187,10 @@ add_tests_to_row = function( tests , row , arch , type ){
       test_label = ( compError + linkError + miscError ) + " Errors"
     }
   }else if (type == 'relvals'){
- 
+
+      r_class = result? "label label-success" : "label label-danger"
+      incomplete = file == 'not-ready'
+
       if ( result ){
 
         r_class = "label label-success"
@@ -188,6 +206,8 @@ add_tests_to_row = function( tests , row , arch , type ){
         r_class = "label label-primary"
       }
 
+
+
   }else{
       r_class = result? "label label-success" : "label label-danger"
   }
@@ -198,7 +218,7 @@ add_tests_to_row = function( tests , row , arch , type ){
 
   res_label.attr("class", r_class)
   var link_parts = file.split('/')
-  var details_url = get_tests_url(type,file)
+  var details_url = get_tests_url( type, file, arch, ib )
   var r_link = $("<a></a>").attr("href", details_url)
 
   r_link.append(res_label)
@@ -210,11 +230,12 @@ add_tests_to_row = function( tests , row , arch , type ){
 
 /**
  * Generates the static analyzer link and adds it to the cell for the IB
+ * isFound is equal to te architecture where the test is found, if not found
+ * the value is 'not-found'
  */
 add_static_analyzer_link = function ( title_cell , isFound , currentTag ){
-  if ( isFound == 'found'){
-    // for now the arch is hardcoded, this needs to be changed eventually
-    var url = 'https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-static-analysis/' + currentTag + '/slc6_amd64_gcc481/llvm-analysis/index.html'
+  if ( isFound != 'not-found'){
+    var url = 'https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-static-analysis/' + currentTag + '/'+isFound+'/llvm-analysis/index.html'
     var sa_link = $("<a></a>").attr("href", url)
     sa_link.append($('<span class="glyphicon glyphicon-eye-open"></span>'))
     sa_link.append($('<span></span>').text(' Static Analyzer'))
@@ -236,14 +257,43 @@ add_static_analyzer_link = function ( title_cell , isFound , currentTag ){
 /**
  * Generates the hlt tests link link and adds it to the cell for the IB
  */
-add_hlt_tests_link = function ( title_cell , isFound , currentTag ){
+add_hlt_tests_link = function ( title_cell, isFound, currentTag ){
   if ( isFound == 'found' ){
     var url = 'https://cmssdt.cern.ch/SDT/jenkins-artifacts/HLT-Validation/' + currentTag 
     var sa_link = $("<a></a>").attr("href", url)
     sa_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
     sa_link.append($('<span></span>').text(' HLT Validation'))
     title_cell.append(sa_link)
+    title_cell.append($("<br>"))
   }
+}
+
+/**
+ * Generates the link to the Relvals Exception Page if the results were found
+ * and addsit to the cell for the IB
+ */
+add_rv_exceptions_link = function ( title_cell, isFound, currentTag ){
+
+  if ( isFound ){
+    var url = 'http://cms-sw.github.io/relvalsExceptions.html#' + currentTag
+    var sa_link = $("<a></a>").attr("href", url)
+    sa_link.append($('<span class="glyphicon glyphicon-warning-sign"></span>'))
+    sa_link.append($('<span></span>').text(' Relvals Exceptions Summary'))
+    title_cell.append(sa_link)
+  }
+
+}
+
+/**
+ * Generates the link to the Relvals Exception Page for the given release queue
+ */
+get_rv_exceptions_link_rq = function ( releaseQueue ){
+
+  var url = 'http://cms-sw.github.io/relvalsExceptions.html#' + releaseQueue
+  var sa_link = $("<a></a>").attr("href", url)
+  sa_link.text('Relvals Exceptions Summary for ' + releaseQueue )
+  return sa_link
+
 }
 
 /**
@@ -252,44 +302,78 @@ add_hlt_tests_link = function ( title_cell , isFound , currentTag ){
 addTagLink = function( titleCell , currentTag ){
 
   var isIB = currentTag.indexOf( '-' ) >= 0
-  
+  isTopOfBranch = !isIB && currentTag.indexOf( 'X' ) >= 0
+ 
   if( isIB ) {
+
     var url = 'https://github.com/cms-sw/cmssw/tree/' + currentTag
     var tagLink = $( "<a>" ).attr( "href" , url )
     tagLink.append( $('<span class="glyphicon glyphicon-tag">') )
     tagLink.append( $('<span>').text(' IB Tag') )
     titleCell.append( tagLink )
+
+  }else if( isTopOfBranch ){
+
+    var url = 'https://github.com/cms-sw/cmssw/commits/' + currentTag
+    var tagLink = $( "<a>" ).attr( "href" , url )
+    tagLink.append( $('<span class="glyphicon glyphicon-list">') )
+    tagLink.append( $('<span>').text(' See Branch') )
+    titleCell.append( tagLink )
+
   }else{
+
     var url = 'https://github.com/cms-sw/cmssw/releases/tag/' + currentTag
     var tagLink = $( "<a>" ).attr( "href" , url )
     tagLink.append( $('<span class="glyphicon glyphicon-tag">') )
     tagLink.append( $('<span>').text(' Release') )
     titleCell.append( tagLink )
+
   }
 
 
 }
 
 /**
+ * Adds an indicator that informs that the IB is currently being built
+ */
+addInProgressWarning = function( titleCell, currentTag ){
+
+  var progressSpan = $( '<b>' ).text( 'This IB is currently being built' )
+  var progressGlyph = $( '<span>' ).attr( 'class', 'glyphicon glyphicon-hourglass' )
+
+  titleCell.append( progressGlyph )
+  titleCell.append( progressSpan )
+  titleCell.append( $('<br>') )
+}
+
+/**
  * writes a table with the comparison lates tag, and the information about the IB if it is an IB
  */
-write_comp_IB_table =  function( comparison , tab_pane ){
+write_comp_IB_table =  function( comparison, tab_pane ){
 
   var current_tag = comparison.compared_tags.split("-->")[1]
+  isTopOfBranch = ( current_tag.indexOf( '-' ) == -1 ) && ( current_tag.indexOf( 'X' ) >= 0 )
+
   var title_compared_tags = $("<h3><b></b></h3>").text(current_tag)
- 
-   
+  if ( isTopOfBranch ){
+    title_compared_tags.text( 'Next IB:')
+  }
+
   var titleTable = $('<table class="table table-condensed"></table>')
   titleTable.attr( 'id' , current_tag )
   tab_pane.append( titleTable )
 
   var title_cell = $('<td>').append(title_compared_tags)
+  if( comparison[ 'inProgress' ] ){
+    addInProgressWarning( title_cell, current_tag )
+  }
   addTagLink( title_cell , current_tag )
   title_cell.append($('<br>'))
  
   add_static_analyzer_link( title_cell , comparison.static_checks , current_tag )
   title_cell.append($('<br>'))
-   add_hlt_tests_link( title_cell , comparison.hlt_tests , current_tag )
+  add_hlt_tests_link( title_cell , comparison.hlt_tests , current_tag )
+  add_rv_exceptions_link( title_cell , comparison.RVExceptions , current_tag )
 
   var title_row = $('<tr>')
   var relvals_results = comparison.relvals
@@ -322,12 +406,12 @@ write_comp_IB_table =  function( comparison , tab_pane ){
       var ar_row = $( '<tr>' )
       titleTable.append(ar_row)
       var ar_cell = $( '<td>' )
-      fill_arch_cell( ar_cell , architectures[ i ] , comparison.cmsdistTags , current_tag )
+      fill_arch_cell( ar_cell, architectures[ i ], comparison.cmsdistTags, current_tag )
       ar_row.append(ar_cell)
-      add_tests_to_row( building_results , ar_row , architectures[i] , 'builds' )
-      add_tests_to_row( uTests_results, ar_row, architectures[i] , 'utests' )
-      add_tests_to_row(relvals_results,ar_row,architectures[i],'relvals')
-      add_tests_to_row(addons_results,ar_row,architectures[i],'addons')
+      add_tests_to_row( building_results , ar_row , architectures[i] , 'builds', current_tag )
+      add_tests_to_row( uTests_results, ar_row, architectures[i] , 'utests', current_tag )
+      add_tests_to_row(relvals_results,ar_row,architectures[i],'relvals', current_tag)
+      add_tests_to_row(addons_results,ar_row,architectures[i],'addons', current_tag)
       add_qa_link_to_row(ar_row,architectures[i],current_tag)
      }
 
@@ -335,6 +419,7 @@ write_comp_IB_table =  function( comparison , tab_pane ){
 
 
 }
+
 
 /**
  * fills the arch cell with a link to the cmsdist tag used to build that IB if 
@@ -347,28 +432,35 @@ fill_arch_cell = function( cell , architecture , cmsdistTags , current_tag ){
     cell.text( architecture )
   }else{
     
-    var tagName = cmsdistTags[ architecture ]
-    var intendedTagName = 'IB/'.concat( current_tag ,'/', architecture )
+    var tagName = cmsdistTags[ architecture ] 
+    var intendedTagName1 = 'IB/'.concat( current_tag ,'/', architecture )
+    var intendedTagName2 = 'ERR/'.concat( current_tag ,'/', architecture )
+
     var link = $( '<a>' )
     link.attr( 'href' , 'https://github.com/cms-sw/cmsdist/commits/' + tagName )
     var tooltipText = ''
-    
+   
+    var isPatchSmall = $( '<small>' )
+     
     if( tagName == 'Not Found' ){
       cell.text( architecture )
       return      
-    }else if ( tagName != intendedTagName ){
+    }else if ( tagName != intendedTagName1 && tagName != intendedTagName2 ){
       tooltipText = 'Used same cmsdist tag as ' + tagName.replace( 'IB/' , '').replace( '/' + architecture , '')
+      var baseIB = tagName.split( '/' )[ 1 ]
+      var previousDate = baseIB.substring( baseIB.lastIndexOf( '_' ) + 1, baseIB.length )
+      var baseIBLink = $( '<a>' ).attr( 'href' , '#' + baseIB ).text( 'Patch from ' + previousDate )
+      isPatchSmall.append( baseIBLink )
     }else { 
-
       tooltipText = 'See cmsdist tag used for this build'
-
+      isPatchSmall.text( 'Full Build' )
     }
 
- 
     link.text( architecture )
-    cell.append( link ).attr( 'data-toggle' , 'tooltip' )
-    cell.append( link ).attr( 'data-placement' , 'right' )
-    cell.append( link ).attr( 'title' , tooltipText )
+    cell.append( link )
+    cell.attr( 'data-toggle' , 'tooltip' ).attr( 'data-placement' , 'right' ).attr( 'title' , tooltipText )
+    cell.append( $( '<br>' ) )
+    cell.append( isPatchSmall )
 
   }
 
@@ -516,6 +608,10 @@ checkHasToScroll = function ( releaseName ){
   var url = document.location.toString();
   console.log( 'option2' )
   var hash = url.split('#')[1]
+  if( hash == undefined ){
+    return
+  }
+ 
   var requiredReleaseName = hash.substring( 0 , hash.lastIndexOf( '_' ) )
   var lastChar = requiredReleaseName.charAt( requiredReleaseName.length - 1 )
 
