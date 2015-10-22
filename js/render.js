@@ -172,9 +172,7 @@ add_tests_to_row = function( tests , row , arch , type ){
       test_label = ( compError + linkError + miscError ) + " Errors"
     }
   }else if (type == 'relvals'){
-
-      r_class = result? "label label-success" : "label label-danger"
-
+ 
       if ( result ){
 
         r_class = "label label-success"
@@ -185,7 +183,10 @@ add_tests_to_row = function( tests , row , arch , type ){
         r_class = "label label-danger"
         test_label = "Pass: " + testDetails.num_passed + " Fail: " + testDetails.num_failed
       }
-
+      if ( result_tests.done == false )
+      {
+        r_class = "label label-primary"
+      }
 
   }else{
       r_class = result? "label label-success" : "label label-danger"
