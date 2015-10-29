@@ -2542,7 +2542,7 @@
                 "release_name": "CMSSW_5_3_X_2015-10-29-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -3500,15 +3500,28 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/data/sdt/buildlogs/slc6_amd64_gcc472/www/thu/6.2.SLHCDEV-thu-11/CMSSW_6_2_SLHCDEV_X_2015-10-29-1100/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc472/www/thu/6.2.SLHCDEV-thu-11/CMSSW_6_2_SLHCDEV_X_2015-10-29-1100/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "14"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc472": "IB/CMSSW_6_2_SLHCDEV_X_2015-10-25-1100/slc6_amd64_gcc472"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "done": false, 
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": false, 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc472/www/thu/6.2.SLHCDEV-thu-11/CMSSW_6_2_SLHCDEV_X_2015-10-29-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 35, 
+                            "num_failed": 1
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -28290,7 +28303,7 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/slc7_amd64_gcc493/www/wed/7.6-wed-23/CMSSW_7_6_X_2015-10-28-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 684, 
+                            "num_passed": 686, 
                             "num_failed": 16
                         }
                     }, 
@@ -31016,8 +31029,64 @@
             }, 
             {
                 "addons": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "warning", 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/thu/8.0.CLANG-thu-11/CMSSW_8_0_CLANG_X_2015-10-29-1100/new/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 4776, 
+                            "ignoreWarning": 61115
+                        }
+                    }
+                ], 
+                "compared_tags": "CMSSW_8_0_CLANG_X_2015-10-28-2300-->CMSSW_8_0_CLANG_X_2015-10-29-1100", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc493", 
+                        "passed": "unknown", 
+                        "file": "['/data/sdt/buildlogs/slc6_amd64_gcc493/www/thu/8.0.CLANG-thu-11/CMSSW_8_0_CLANG_X_2015-10-29-1100/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc493": "IB/CMSSW_8_0_CLANG_X_2015-10-25-1100/slc6_amd64_gcc493"
+                }, 
+                "relvals": [], 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "tests_archs": [
+                    "slc6_amd64_gcc493"
+                ], 
+                "inProgress": false, 
+                "release_name": "CMSSW_8_0_CLANG_X_2015-10-29-1100", 
+                "RVExceptions": null, 
+                "merged_prs": [
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "11790"
+                        ], 
+                        "hash": "05cc8469d268d7b2b60032f44586c1eab9cdb3d6", 
+                        "number": "05cc846", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "2510690882f0464b6cbfc51d30096020b6aea1e2", 
+                        "title": "FastSim : muon validation : use fastsim era to define fastsim customs", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11790", 
+                        "number": "11790", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "lveldere"
+                    }
+                ], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_8_0_CLANG_X_2015-10-28-2300-->CMSSW_8_0_X", 
+                "compared_tags": "CMSSW_8_0_CLANG_X_2015-10-29-1100-->CMSSW_8_0_X", 
                 "utests": [], 
                 "cmsdistTags": {}, 
                 "relvals": [], 
@@ -31028,6 +31097,24 @@
                 "release_name": "CMSSW_8_0_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "0d4b85b6610d7f8744c2acfe02f6cc621df1ecf9", 
+                        "title": "new plots for ECAL DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11878", 
+                        "number": "11878", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mengleisun"
+                    }, 
+                    {
+                        "hash": "95416b3c4c330c169f2d6752bb472e4a0d8a3bc1", 
+                        "title": "Use rand(0) instead of ran(0) for compatibility with Intel Fortran (i\u2026", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11893", 
+                        "number": "11893", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
                     {
                         "hash": "b2b7c1fcea18832b0289d07e17a9eb077d7a2a48", 
                         "title": "Implemented new cumulative histograms and made independent from any \u2026", 
@@ -31099,24 +31186,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "fojensen"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11790"
-                        ], 
-                        "hash": "05cc8469d268d7b2b60032f44586c1eab9cdb3d6", 
-                        "number": "05cc846", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "2510690882f0464b6cbfc51d30096020b6aea1e2", 
-                        "title": "FastSim : muon validation : use fastsim era to define fastsim customs", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11790", 
-                        "number": "11790", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lveldere"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -36244,6 +36313,24 @@
                 "RVExceptions": null, 
                 "merged_prs": [
                     {
+                        "hash": "0d4b85b6610d7f8744c2acfe02f6cc621df1ecf9", 
+                        "title": "new plots for ECAL DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11878", 
+                        "number": "11878", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mengleisun"
+                    }, 
+                    {
+                        "hash": "95416b3c4c330c169f2d6752bb472e4a0d8a3bc1", 
+                        "title": "Use rand(0) instead of ran(0) for compatibility with Intel Fortran (i\u2026", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11893", 
+                        "number": "11893", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
                         "hash": "b2b7c1fcea18832b0289d07e17a9eb077d7a2a48", 
                         "title": "Implemented new cumulative histograms and made independent from any \u2026", 
                         "url": "https://github.com/cms-sw/cmssw/pull/12046", 
@@ -38735,6 +38822,24 @@
                 "release_name": "CMSSW_8_0_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "0d4b85b6610d7f8744c2acfe02f6cc621df1ecf9", 
+                        "title": "new plots for ECAL DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11878", 
+                        "number": "11878", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mengleisun"
+                    }, 
+                    {
+                        "hash": "95416b3c4c330c169f2d6752bb472e4a0d8a3bc1", 
+                        "title": "Use rand(0) instead of ran(0) for compatibility with Intel Fortran (i\u2026", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11893", 
+                        "number": "11893", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
                     {
                         "hash": "b2b7c1fcea18832b0289d07e17a9eb077d7a2a48", 
                         "title": "Implemented new cumulative histograms and made independent from any \u2026", 
@@ -41663,7 +41768,7 @@
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/slc7_amd64_gcc493/www/wed/8.0-wed-23/CMSSW_8_0_X_2015-10-28-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 468, 
+                            "num_passed": 484, 
                             "num_failed": 0
                         }
                     }, 
@@ -41827,6 +41932,24 @@
                 "release_name": "CMSSW_8_0_X", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "0d4b85b6610d7f8744c2acfe02f6cc621df1ecf9", 
+                        "title": "new plots for ECAL DQM", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11878", 
+                        "number": "11878", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "mengleisun"
+                    }, 
+                    {
+                        "hash": "95416b3c4c330c169f2d6752bb472e4a0d8a3bc1", 
+                        "title": "Use rand(0) instead of ran(0) for compatibility with Intel Fortran (i\u2026", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11893", 
+                        "number": "11893", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
                     {
                         "hash": "b2b7c1fcea18832b0289d07e17a9eb077d7a2a48", 
                         "title": "Implemented new cumulative histograms and made independent from any \u2026", 
