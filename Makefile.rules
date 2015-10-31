@@ -1,5 +1,7 @@
 .PHONY: all pr-stats ib-files clean clean_up_old_files FORCE_TARGET
 .DEFAULT_GOAL   := all
+empty:=
+space:=$(epmty) $(empty)
 SCRIPT_DIRECTORY :=$(dir $(strip $(lastword $(MAKEFILE_LIST))))
 TIMESTAMP_FILE  := data/timestamps.txt
 START_DATE      :=
@@ -8,6 +10,8 @@ ALL_INPUTS      :=
 ALL_UNITTESTS   := 
 ALL_JOB_REPORTS := 
 ALL_COMMANDS    := 
+ALL_WF_TIMES    :=
+WF_TIMES        :=
 
 ifeq ($(strip $(FORCE_BUILD)),yes)
 FORCE_BUILD:=FORCE_TARGET
@@ -37,6 +41,8 @@ ALL_INPUTS       += data/inputs/$2/$3/$4.csv
 ALL_UNIT_TESTS   += data/unitTests/$2/$4/$3.json
 ALL_JOB_REPORTS  += data/jobreports/$2/$3/$4.csv
 ALL_COMMANDS     += data/commands/$2/$4/$3.json
+WF_TIMES_$2_$3   += $(wildcard $1/pyRelValMatrixLogs/run/relval-times.json)
+WF_TIMES         += $2_$3
 data/relvals/$2/$4/$3.json: $1/pyRelValMatrixLogs/run/runall-report-step123-.log set_timestamps $(FORCE_BUILD)
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-run123-logs $$<)
 data/unitTests/$2/$4/$3.json: $1/unitTests-summary.log set_timestamps $(FORCE_BUILD)
@@ -46,11 +52,20 @@ data/commands/$2/$4/$3.json: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUIL
 data/jobreports/$2/$3/$4.csv: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-job-reports $$<)
 data/inputs/$2/$3/$4.csv: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
-	$(call RunCommand,$(SCRIPT_DIRECTORY)/log-input-files $$< | sort)
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/log-input-files $$< | sort) 
+endef
+
+define RelValTimes
+ALL_WF_TIMES += data/relvaltime/$1/$2.json
+data/relvaltime/$1/$2.json: $(WF_TIMES_$(1)_$(2))
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/relval-times.py $$^)
 endef
 
 -include Releases.mk
-ALL_RULES  := $(ALL_RELVALS) $(ALL_INPUTS) $(ALL_UNIT_TESTS) $(ALL_JOB_REPORTS) $(ALL_COMMANDS)
+
+WF_TIMES := $(sort $(WF_TIMES))
+$(foreach r,$(WF_TIMES),$(eval $(call RelValTimes,$(word 1,$(subst _CMSSW_,$(space),$r)),CMSSW_$(word 2,$(subst _CMSSW_,$(space),$r)))))
+ALL_RULES  := $(ALL_RELVALS) $(ALL_INPUTS) $(ALL_UNIT_TESTS) $(ALL_JOB_REPORTS) $(ALL_COMMANDS) $(ALL_WF_TIMES)
 
 FORCE_TARGET:
 	@:
@@ -59,6 +74,8 @@ FORCE_TARGET:
 %/unitTests-summary.log:
 	@:
 %/pyRelValMatrixLogs.zip:
+	@:
+%/pyRelValMatrixLogs/run/relval-times.json:
 	@:
 data/cmsdist-config.json: FORCE_TARGET
 	[ -d $(@D) ] || mkdir -p $(@D) &&\
@@ -74,6 +91,7 @@ clean:
 	rm -rf data/jobreports
 	rm -rf data/inputs
 	rm -rf data/stats
+	rm -rf data/relvaltimes
 clean_up_old_files: $(ALL_RULES)
 	$(SCRIPT_DIRECTORY)/cleanup-old-results -d "$(START_DATE)"
 set_timestamps: FORCE_TARGET
