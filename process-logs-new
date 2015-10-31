@@ -5,6 +5,6 @@ dir=sys.argv[1]
 
 for dir in glob.glob(os.path.join(dir,'*','www','*','*','CMSSW_*','new')):
   dir = re.sub("/new$","",dir)
-  m = re.match("^.*?/([^/]+)/www/[a-z]{3}/[^[/]+/(CMSSW_[^X]+X(_[A-Z]+|))_(\d\d\d\d-\d\d-\d\d-\d\d00)$",dir)
+  m = re.match("^.*?/([^/]+)/www/[a-z]{3}/[^/]+/(CMSSW_[^X]+X(_[A-Z]+|))_(\d\d\d\d-\d\d-\d\d-\d\d00)$",dir)
   if m:
     print '$(eval $(call ProcessLogs,'+dir+','+m.group(1)+','+m.group(2)+','+m.group(4)+'))'
