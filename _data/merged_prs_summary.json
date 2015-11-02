@@ -15952,7 +15952,14 @@
                 "hlt_tests": "found"
             }, 
             {
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc481", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc481/www/sun/7.1-sun-23/CMSSW_7_1_X_2015-11-01-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "builds": [
                     {
                         "arch": "slc6_amd64_gcc481", 
@@ -15983,7 +15990,7 @@
                 "release_name": "CMSSW_7_1_X_2015-11-01-2300", 
                 "RVExceptions": null, 
                 "merged_prs": [], 
-                "hlt_tests": "not-found"
+                "hlt_tests": "found"
             }, 
             {
                 "addons": [], 
@@ -17253,8 +17260,8 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc491/www/sun/7.4.ROOT5-sun-11/CMSSW_7_4_ROOT5_X_2015-11-01-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 443, 
-                            "num_failed": 240
+                            "num_passed": 479, 
+                            "num_failed": 252
                         }
                     }
                 ], 
@@ -30109,7 +30116,7 @@
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-11/CMSSW_7_6_X_2015-11-01-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 424, 
+                            "num_passed": 510, 
                             "num_failed": 0
                         }
                     }
@@ -30183,7 +30190,7 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/slc7_amd64_gcc493/www/sun/7.6-sun-23/CMSSW_7_6_X_2015-11-01-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 1125, 
+                            "num_passed": 1131, 
                             "num_failed": 13
                         }
                     }
@@ -35997,19 +36004,73 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_8_0_ICC_X_2015-10-21-1100-->CMSSW_8_0_ICC_X_2015-10-23-1100", 
+                "compared_tags": "CMSSW_8_0_ICC_X_2015-10-21-1100-->CMSSW_8_0_ICC_X_2015-10-23-2300", 
                 "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc493": "ERR/CMSSW_8_0_ICC_X_2015-10-23-1100/slc6_amd64_gcc493"
-                }, 
+                "cmsdistTags": {}, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [], 
                 "inProgress": false, 
-                "release_name": "CMSSW_8_0_ICC_X_2015-10-23-1100", 
+                "release_name": "CMSSW_8_0_ICC_X_2015-10-23-2300", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "a361ad05b52979a25a9b278c84a830737673b3b3", 
+                        "title": "Use next() built-in", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12017", 
+                        "number": "12017", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ericvaandering"
+                    }, 
+                    {
+                        "hash": "d4ddd7fde5161bdc018679b7e7c1e41d52e201b7", 
+                        "title": "Hcal det id protect again invalid IDs in digitizer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12066", 
+                        "number": "12066", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "10176", 
+                            "11956", 
+                            "11751"
+                        ], 
+                        "hash": "a722a22c3ccf48bb3c4c4ace64aad2094cddd776", 
+                        "number": "a722a22", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "f80f4f3501d4e8613b69473af5d2de1b3e3f7833", 
+                        "title": "bsunanda:Run2-alca18 Restore Olgas code and modify the others to do both NZS and iterative analysis", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10176", 
+                        "number": "10176", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
+                        "hash": "a3c724e6a67b66ef46a4690e7a41d6731b9a21c5", 
+                        "title": "Adding HBHENegativeNoise bit to HcalRecHitFlagsToBeExcluded - 76X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11751", 
+                        "number": "11751", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dertexaner"
+                    }, 
+                    {
+                        "hash": "7a6fad6d282869429ca4793ad9ef63888079a3fd", 
+                        "title": "MuonAnalysis/MomentumScaleCalibration: remove intrusive macros breaking libstdc++", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11956", 
+                        "number": "11956", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlt"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -36366,79 +36427,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "makortel"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_8_0_ICC_X_2015-10-23-1100-->CMSSW_8_0_ICC_X_2015-10-23-2300", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_8_0_ICC_X_2015-10-23-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "hash": "a361ad05b52979a25a9b278c84a830737673b3b3", 
-                        "title": "Use next() built-in", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12017", 
-                        "number": "12017", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ericvaandering"
-                    }, 
-                    {
-                        "hash": "d4ddd7fde5161bdc018679b7e7c1e41d52e201b7", 
-                        "title": "Hcal det id protect again invalid IDs in digitizer", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12066", 
-                        "number": "12066", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlange6"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "10176", 
-                            "11956", 
-                            "11751"
-                        ], 
-                        "hash": "a722a22c3ccf48bb3c4c4ace64aad2094cddd776", 
-                        "number": "a722a22", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "f80f4f3501d4e8613b69473af5d2de1b3e3f7833", 
-                        "title": "bsunanda:Run2-alca18 Restore Olgas code and modify the others to do both NZS and iterative analysis", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/10176", 
-                        "number": "10176", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "bsunanda"
-                    }, 
-                    {
-                        "hash": "a3c724e6a67b66ef46a4690e7a41d6731b9a21c5", 
-                        "title": "Adding HBHENegativeNoise bit to HcalRecHitFlagsToBeExcluded - 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11751", 
-                        "number": "11751", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "dertexaner"
-                    }, 
-                    {
-                        "hash": "7a6fad6d282869429ca4793ad9ef63888079a3fd", 
-                        "title": "MuonAnalysis/MomentumScaleCalibration: remove intrusive macros breaking libstdc++", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11956", 
-                        "number": "11956", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidlt"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -38381,7 +38369,7 @@
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/8.0.ICC-sun-11/CMSSW_8_0_ICC_X_2015-11-01-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 88, 
+                            "num_passed": 161, 
                             "num_failed": 0
                         }
                     }
@@ -39143,19 +39131,75 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_8_0_THREADED_X_2015-10-22-2300-->CMSSW_8_0_THREADED_X_2015-10-23-1100", 
+                "compared_tags": "CMSSW_8_0_THREADED_X_2015-10-22-2300-->CMSSW_8_0_THREADED_X_2015-10-23-2300", 
                 "utests": [], 
                 "cmsdistTags": {
-                    "slc6_amd64_gcc493": "IB/CMSSW_8_0_THREADED_X_2015-10-23-1100/slc6_amd64_gcc493"
+                    "slc6_amd64_gcc493": "IB/CMSSW_8_0_THREADED_X_2015-10-23-2300/slc6_amd64_gcc493"
                 }, 
                 "relvals": [], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [], 
                 "inProgress": false, 
-                "release_name": "CMSSW_8_0_THREADED_X_2015-10-23-1100", 
+                "release_name": "CMSSW_8_0_THREADED_X_2015-10-23-2300", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "a361ad05b52979a25a9b278c84a830737673b3b3", 
+                        "title": "Use next() built-in", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12017", 
+                        "number": "12017", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "ericvaandering"
+                    }, 
+                    {
+                        "hash": "d4ddd7fde5161bdc018679b7e7c1e41d52e201b7", 
+                        "title": "Hcal det id protect again invalid IDs in digitizer", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12066", 
+                        "number": "12066", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlange6"
+                    }, 
+                    {
+                        "is_merge_commit": true, 
+                        "brought_prs": [
+                            "10176", 
+                            "11956", 
+                            "11751"
+                        ], 
+                        "hash": "a722a22c3ccf48bb3c4c4ace64aad2094cddd776", 
+                        "number": "a722a22", 
+                        "from_merge_commit": false
+                    }, 
+                    {
+                        "hash": "f80f4f3501d4e8613b69473af5d2de1b3e3f7833", 
+                        "title": "bsunanda:Run2-alca18 Restore Olgas code and modify the others to do both NZS and iterative analysis", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10176", 
+                        "number": "10176", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
+                        "hash": "a3c724e6a67b66ef46a4690e7a41d6731b9a21c5", 
+                        "title": "Adding HBHENegativeNoise bit to HcalRecHitFlagsToBeExcluded - 76X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11751", 
+                        "number": "11751", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "dertexaner"
+                    }, 
+                    {
+                        "hash": "7a6fad6d282869429ca4793ad9ef63888079a3fd", 
+                        "title": "MuonAnalysis/MomentumScaleCalibration: remove intrusive macros breaking libstdc++", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11956", 
+                        "number": "11956", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "davidlt"
+                    }, 
                     {
                         "is_merge_commit": true, 
                         "brought_prs": [
@@ -39309,81 +39353,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "lgray"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_8_0_THREADED_X_2015-10-23-1100-->CMSSW_8_0_THREADED_X_2015-10-23-2300", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc493": "IB/CMSSW_8_0_THREADED_X_2015-10-23-2300/slc6_amd64_gcc493"
-                }, 
-                "relvals": [], 
-                "static_checks": "not-found", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_8_0_THREADED_X_2015-10-23-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "hash": "a361ad05b52979a25a9b278c84a830737673b3b3", 
-                        "title": "Use next() built-in", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12017", 
-                        "number": "12017", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ericvaandering"
-                    }, 
-                    {
-                        "hash": "d4ddd7fde5161bdc018679b7e7c1e41d52e201b7", 
-                        "title": "Hcal det id protect again invalid IDs in digitizer", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12066", 
-                        "number": "12066", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlange6"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "10176", 
-                            "11956", 
-                            "11751"
-                        ], 
-                        "hash": "a722a22c3ccf48bb3c4c4ace64aad2094cddd776", 
-                        "number": "a722a22", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "f80f4f3501d4e8613b69473af5d2de1b3e3f7833", 
-                        "title": "bsunanda:Run2-alca18 Restore Olgas code and modify the others to do both NZS and iterative analysis", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/10176", 
-                        "number": "10176", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "bsunanda"
-                    }, 
-                    {
-                        "hash": "a3c724e6a67b66ef46a4690e7a41d6731b9a21c5", 
-                        "title": "Adding HBHENegativeNoise bit to HcalRecHitFlagsToBeExcluded - 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11751", 
-                        "number": "11751", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "dertexaner"
-                    }, 
-                    {
-                        "hash": "7a6fad6d282869429ca4793ad9ef63888079a3fd", 
-                        "title": "MuonAnalysis/MomentumScaleCalibration: remove intrusive macros breaking libstdc++", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11956", 
-                        "number": "11956", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidlt"
                     }
                 ], 
                 "hlt_tests": "not-found"
@@ -45164,8 +45133,8 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/8.0-sun-11/CMSSW_8_0_X_2015-11-01-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 0, 
-                            "num_failed": 1
+                            "num_passed": 1113, 
+                            "num_failed": 5
                         }
                     }
                 ], 
