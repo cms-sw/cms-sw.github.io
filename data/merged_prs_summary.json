@@ -2504,9 +2504,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/data/sdt/buildlogs/slc6_amd64_gcc472/www/mon/5.3-mon-23/CMSSW_5_3_X_2015-11-02-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc472/www/mon/5.3-mon-23/CMSSW_5_3_X_2015-11-02-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "5"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -2519,7 +2521,7 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc472/www/mon/5.3-mon-23/CMSSW_5_3_X_2015-11-02-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 369, 
+                            "num_passed": 384, 
                             "num_failed": 9
                         }
                     }
@@ -15357,9 +15359,11 @@
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc481", 
-                        "passed": "unknown", 
-                        "file": "['/data/sdt/buildlogs/slc6_amd64_gcc481/www/mon/7.1-mon-23/CMSSW_7_1_X_2015-11-02-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc481/www/mon/7.1-mon-23/CMSSW_7_1_X_2015-11-02-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "5"
+                        }
                     }
                 ], 
                 "cmsdistTags": {
@@ -15372,8 +15376,8 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc481/www/mon/7.1-mon-23/CMSSW_7_1_X_2015-11-02-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 711, 
-                            "num_failed": 17
+                            "num_passed": 802, 
+                            "num_failed": 32
                         }
                     }
                 ], 
@@ -16465,8 +16469,8 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc491/www/mon/7.4.ROOT5-mon-23/CMSSW_7_4_ROOT5_X_2015-11-02-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 149, 
-                            "num_failed": 72
+                            "num_passed": 252, 
+                            "num_failed": 124
                         }
                     }
                 ], 
@@ -22261,7 +22265,18 @@
                 "cmsdistTags": {
                     "slc6_amd64_gcc491": "IB/CMSSW_7_4_X_2015-11-02-2300/slc6_amd64_gcc491"
                 }, 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "done": false, 
+                        "arch": "slc6_amd64_gcc491", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc491/www/mon/7.4-mon-23/CMSSW_7_4_X_2015-11-02-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 13, 
+                            "num_failed": 0
+                        }
+                    }
+                ], 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "tests_archs": [
@@ -23220,8 +23235,8 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc491/www/mon/7.5-mon-23/CMSSW_7_5_X_2015-11-02-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 694, 
-                            "num_failed": 13
+                            "num_passed": 751, 
+                            "num_failed": 14
                         }
                     }
                 ], 
@@ -24525,17 +24540,281 @@
             {
                 "addons": [], 
                 "builds": [], 
-                "compared_tags": "CMSSW_7_6_0_pre7-->CMSSW_7_6_X_2015-10-20-2300", 
+                "compared_tags": "CMSSW_7_6_0_pre7-->CMSSW_7_6_X_2015-10-25-1100", 
                 "utests": [], 
-                "cmsdistTags": {}, 
+                "cmsdistTags": {
+                    "slc6_amd64_gcc493": "IB/CMSSW_7_6_X_2015-10-25-1100/slc6_amd64_gcc493", 
+                    "slc7_amd64_gcc493": "IB/CMSSW_7_6_X_2015-10-25-1100/slc7_amd64_gcc493"
+                }, 
                 "relvals": [], 
                 "static_checks": "slc6_amd64_gcc493", 
                 "isIB": true, 
                 "tests_archs": [], 
                 "inProgress": false, 
-                "release_name": "CMSSW_7_6_X_2015-10-20-2300", 
+                "release_name": "CMSSW_7_6_X_2015-10-25-1100", 
                 "RVExceptions": null, 
                 "merged_prs": [
+                    {
+                        "hash": "c1218ea29d29faf90e45503fc2c8ace63741526f", 
+                        "title": "Fireworks/Core: remove intrusive macros breaking libstdc++", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11957", 
+                        "number": "11957", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
+                        "hash": "e5934c5fa55da2dfe08985324a788b91dc4a66a3", 
+                        "title": "Set ROOT histogram fitting to be thread-safe", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12031", 
+                        "number": "12031", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "2e21e9276f6a689da15ed7f82f20d878f4af79ec", 
+                        "title": "raise exception if MINIAOD is requested in HeavyIonsRun2 (same as #12075)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12076", 
+                        "number": "12076", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "slava77"
+                    }, 
+                    {
+                        "hash": "24cd96a93a2eab7853123c8c4221c2059eb7c13d", 
+                        "title": "Remove unused package DQM/PhysicsHWW", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12020", 
+                        "number": "12020", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmitrijus"
+                    }, 
+                    {
+                        "hash": "9e1de84a546b6589fc9a47e977e5a74b33ee3e52", 
+                        "title": "Fix statics in CastorDigiMonitor.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11813", 
+                        "number": "11813", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dmitrijus"
+                    }, 
+                    {
+                        "hash": "4117962774944b76dd13244890b283c843213da4", 
+                        "title": "fix era typo", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12064", 
+                        "number": "12064", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "hengne"
+                    }, 
+                    {
+                        "hash": "f80f4f3501d4e8613b69473af5d2de1b3e3f7833", 
+                        "title": "bsunanda:Run2-alca18 Restore Olgas code and modify the others to do both NZS and iterative analysis", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/10176", 
+                        "number": "10176", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
+                        "hash": "a3c724e6a67b66ef46a4690e7a41d6731b9a21c5", 
+                        "title": "Adding HBHENegativeNoise bit to HcalRecHitFlagsToBeExcluded - 76X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11751", 
+                        "number": "11751", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dertexaner"
+                    }, 
+                    {
+                        "hash": "7a6fad6d282869429ca4793ad9ef63888079a3fd", 
+                        "title": "MuonAnalysis/MomentumScaleCalibration: remove intrusive macros breaking libstdc++", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11956", 
+                        "number": "11956", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
+                        "hash": "65edc5fe1f3b15d330266d33cbc1c710b1be511e", 
+                        "title": "HBHE isolated noise reflagger retuning for Run2", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11726", 
+                        "number": "11726", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dertexaner"
+                    }, 
+                    {
+                        "hash": "ed87a907ee04989eb7cf97ff3732624aaaef6f7d", 
+                        "title": "3prong1pi0 new dms", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11766", 
+                        "number": "11766", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-tau-pog"
+                    }, 
+                    {
+                        "hash": "2dd6291facd275599485bff732cb2edf42901c77", 
+                        "title": "Hcal simple reconstructor with method3", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11769", 
+                        "number": "11769", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "igv4321"
+                    }, 
+                    {
+                        "hash": "ba3b4fc668091efe58def7b976371513826b7d65", 
+                        "title": "EcalRechitsDigis fix save behavior to check for end of list 76X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12041", 
+                        "number": "12041", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "hardenbr"
+                    }, 
+                    {
+                        "hash": "9646719957e3db3615ba2284e51ad8339b9a337a", 
+                        "title": "update to PUPPI;speedup", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11671", 
+                        "number": "11671", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "nhanvtran"
+                    }, 
+                    {
+                        "hash": "ec3ff717c3e939af521ae39dc05a17d76fbf0248", 
+                        "title": "Switch default HBHENoiseFilter settings to Run2-25ns configuration V2 - 76X", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11789", 
+                        "number": "11789", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "dertexaner"
+                    }, 
+                    {
+                        "hash": "af341822ebb73db71d5a2ad07e1167e84a3e0353", 
+                        "title": "PCC ntupler 76x - October2015", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11832", 
+                        "number": "11832", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "capalmer85"
+                    }, 
+                    {
+                        "hash": "167604ec01ce263eb0b2aff50da18d7c8a80d573", 
+                        "title": "Adding no-HF grid-based rho (76x forward-port #11773)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11855", 
+                        "number": "11855", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "rappoccio"
+                    }, 
+                    {
+                        "hash": "e9dcb7fb7bce86fa0b4d8140f2d94f9e77983a5c", 
+                        "title": "add a label to indentify the PFProducer calibrations", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12044", 
+                        "number": "12044", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fwyzard"
+                    }, 
+                    {
+                        "hash": "7c3fcc33cdf7d8c24711f0b56cf407325d8fca65", 
+                        "title": "Fastsim: HF: use shower library also for run1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11783", 
+                        "number": "11783", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "lveldere"
+                    }, 
+                    {
+                        "hash": "51b686665a9c71459fc449aa781abf158985d89d", 
+                        "title": "Fix failing relval missing new ECAL digi params (76X)", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12028", 
+                        "number": "12028", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "lgray"
+                    }, 
+                    {
+                        "hash": "a500572ab64bc603383707328f8950e77a3065aa", 
+                        "title": "Change cMVAv2 range in DQM to [-1", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11969", 
+                        "number": "11969", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "pablodecm"
+                    }, 
+                    {
+                        "hash": "b19e163222d47ff95226171cb1e316c016ae0748", 
+                        "title": "Removed static analyzer errors from RecoLocalTracker", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11991", 
+                        "number": "11991", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "nickmccoll"
+                    }, 
+                    {
+                        "hash": "553351eaa263cd8d375a483767cdef13c2fde833", 
+                        "title": "Make ClusterMultiplicityFilter multithread safe", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12024", 
+                        "number": "12024", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "nickmccoll"
+                    }, 
+                    {
+                        "hash": "69b9e4c820101eeb033d1160876a3272a21e5879", 
+                        "title": "Fix packed gen particle copy and move ctors", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/12000", 
+                        "number": "12000", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "wmtan"
+                    }, 
+                    {
+                        "hash": "20f305bf86219869ae6d0cfbdb072c14c00b0da1", 
+                        "title": "Remove last usage of edm::LazyGetter and edm::RefGetter", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11965", 
+                        "number": "11965", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
+                    }, 
+                    {
+                        "hash": "76acbb8a1cb15f7acef641c1a93fcc3f63ebb57c", 
+                        "title": "added FEVTDEBUGHLT as output of step2 data relvals", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11811", 
+                        "number": "11811", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fabozzi"
+                    }, 
+                    {
+                        "hash": "b5c02542bccb32fd97d2b2927acf784d3cfa6859", 
+                        "title": "Remove intrusive macros breaking libstdc++", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11953", 
+                        "number": "11953", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
+                        "hash": "8b919377f0f3689d019f4e72ee090fe8bd366734", 
+                        "title": "Remove intrusive macros breaking libstdc++", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11954", 
+                        "number": "11954", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
+                        "hash": "9c4636084a689e7ab1c352db808f4a1aa25a41f9", 
+                        "title": "Fix TrackingVertex->TrackingParticle links in premixing", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11854", 
+                        "number": "11854", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
                     {
                         "hash": "f01082fc35c7587f522525672e8f468cc1ef4a09", 
                         "title": "drop Alignment/CocoaAnalysis package which is sub-set of Alignment/CocoaFit", 
@@ -25619,6 +25898,15 @@
                         "author_login": "Dr15Jones"
                     }, 
                     {
+                        "hash": "4aedf7837d8b1ed4ac90f68529de9443d4ff9854", 
+                        "title": "adding 3prong1pi0 decay mode to NewDMs only", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/11", 
+                        "number": "11", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "anehrkor"
+                    }, 
+                    {
                         "hash": "967d35493e50cb456719c00c51364786048f3117", 
                         "title": "Fix mistakes in hcal customise function", 
                         "url": "https://github.com/cms-sw/cmssw/pull/11474", 
@@ -25628,380 +25916,6 @@
                         "author_login": "davidlange6"
                     }
                 ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_X_2015-10-20-2300-->CMSSW_7_6_X_2015-10-21-1100", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_6_X_2015-10-21-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_X_2015-10-21-1100-->CMSSW_7_6_X_2015-10-22-2300", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_6_X_2015-10-22-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "hash": "7c3fcc33cdf7d8c24711f0b56cf407325d8fca65", 
-                        "title": "Fastsim: HF: use shower library also for run1", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11783", 
-                        "number": "11783", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "lveldere"
-                    }, 
-                    {
-                        "hash": "51b686665a9c71459fc449aa781abf158985d89d", 
-                        "title": "Fix failing relval missing new ECAL digi params (76X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12028", 
-                        "number": "12028", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "lgray"
-                    }, 
-                    {
-                        "hash": "a500572ab64bc603383707328f8950e77a3065aa", 
-                        "title": "Change cMVAv2 range in DQM to [-1", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11969", 
-                        "number": "11969", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "pablodecm"
-                    }, 
-                    {
-                        "hash": "b19e163222d47ff95226171cb1e316c016ae0748", 
-                        "title": "Removed static analyzer errors from RecoLocalTracker", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11991", 
-                        "number": "11991", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "nickmccoll"
-                    }, 
-                    {
-                        "hash": "553351eaa263cd8d375a483767cdef13c2fde833", 
-                        "title": "Make ClusterMultiplicityFilter multithread safe", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12024", 
-                        "number": "12024", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "nickmccoll"
-                    }, 
-                    {
-                        "hash": "69b9e4c820101eeb033d1160876a3272a21e5879", 
-                        "title": "Fix packed gen particle copy and move ctors", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12000", 
-                        "number": "12000", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wmtan"
-                    }, 
-                    {
-                        "hash": "20f305bf86219869ae6d0cfbdb072c14c00b0da1", 
-                        "title": "Remove last usage of edm::LazyGetter and edm::RefGetter", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11965", 
-                        "number": "11965", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "76acbb8a1cb15f7acef641c1a93fcc3f63ebb57c", 
-                        "title": "added FEVTDEBUGHLT as output of step2 data relvals", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11811", 
-                        "number": "11811", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "fabozzi"
-                    }, 
-                    {
-                        "hash": "b5c02542bccb32fd97d2b2927acf784d3cfa6859", 
-                        "title": "Remove intrusive macros breaking libstdc++", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11953", 
-                        "number": "11953", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "hash": "8b919377f0f3689d019f4e72ee090fe8bd366734", 
-                        "title": "Remove intrusive macros breaking libstdc++", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11954", 
-                        "number": "11954", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "hash": "9c4636084a689e7ab1c352db808f4a1aa25a41f9", 
-                        "title": "Fix TrackingVertex->TrackingParticle links in premixing", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11854", 
-                        "number": "11854", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "makortel"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_X_2015-10-22-2300-->CMSSW_7_6_X_2015-10-23-1100", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc493": "IB/CMSSW_7_6_X_2015-10-23-1100/slc6_amd64_gcc493"
-                }, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_6_X_2015-10-23-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "hash": "65edc5fe1f3b15d330266d33cbc1c710b1be511e", 
-                        "title": "HBHE isolated noise reflagger retuning for Run2", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11726", 
-                        "number": "11726", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "dertexaner"
-                    }, 
-                    {
-                        "hash": "ed87a907ee04989eb7cf97ff3732624aaaef6f7d", 
-                        "title": "3prong1pi0 new dms", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11766", 
-                        "number": "11766", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "cms-tau-pog"
-                    }, 
-                    {
-                        "hash": "2dd6291facd275599485bff732cb2edf42901c77", 
-                        "title": "Hcal simple reconstructor with method3", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11769", 
-                        "number": "11769", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "igv4321"
-                    }, 
-                    {
-                        "hash": "ba3b4fc668091efe58def7b976371513826b7d65", 
-                        "title": "EcalRechitsDigis fix save behavior to check for end of list 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12041", 
-                        "number": "12041", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "hardenbr"
-                    }, 
-                    {
-                        "hash": "9646719957e3db3615ba2284e51ad8339b9a337a", 
-                        "title": "update to PUPPI;speedup", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11671", 
-                        "number": "11671", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "nhanvtran"
-                    }, 
-                    {
-                        "hash": "ec3ff717c3e939af521ae39dc05a17d76fbf0248", 
-                        "title": "Switch default HBHENoiseFilter settings to Run2-25ns configuration V2 - 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11789", 
-                        "number": "11789", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "dertexaner"
-                    }, 
-                    {
-                        "hash": "af341822ebb73db71d5a2ad07e1167e84a3e0353", 
-                        "title": "PCC ntupler 76x - October2015", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11832", 
-                        "number": "11832", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "capalmer85"
-                    }, 
-                    {
-                        "hash": "167604ec01ce263eb0b2aff50da18d7c8a80d573", 
-                        "title": "Adding no-HF grid-based rho (76x forward-port #11773)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11855", 
-                        "number": "11855", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "rappoccio"
-                    }, 
-                    {
-                        "hash": "e9dcb7fb7bce86fa0b4d8140f2d94f9e77983a5c", 
-                        "title": "add a label to indentify the PFProducer calibrations", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12044", 
-                        "number": "12044", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "fwyzard"
-                    }, 
-                    {
-                        "hash": "4aedf7837d8b1ed4ac90f68529de9443d4ff9854", 
-                        "title": "adding 3prong1pi0 decay mode to NewDMs only", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11", 
-                        "number": "11", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "anehrkor"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_X_2015-10-23-1100-->CMSSW_7_6_X_2015-10-24-1100", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_6_X_2015-10-24-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "hash": "c1218ea29d29faf90e45503fc2c8ace63741526f", 
-                        "title": "Fireworks/Core: remove intrusive macros breaking libstdc++", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11957", 
-                        "number": "11957", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "hash": "e5934c5fa55da2dfe08985324a788b91dc4a66a3", 
-                        "title": "Set ROOT histogram fitting to be thread-safe", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12031", 
-                        "number": "12031", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "2e21e9276f6a689da15ed7f82f20d878f4af79ec", 
-                        "title": "raise exception if MINIAOD is requested in HeavyIonsRun2 (same as #12075)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12076", 
-                        "number": "12076", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "slava77"
-                    }, 
-                    {
-                        "hash": "24cd96a93a2eab7853123c8c4221c2059eb7c13d", 
-                        "title": "Remove unused package DQM/PhysicsHWW", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12020", 
-                        "number": "12020", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "dmitrijus"
-                    }, 
-                    {
-                        "hash": "9e1de84a546b6589fc9a47e977e5a74b33ee3e52", 
-                        "title": "Fix statics in CastorDigiMonitor.", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11813", 
-                        "number": "11813", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "dmitrijus"
-                    }, 
-                    {
-                        "hash": "4117962774944b76dd13244890b283c843213da4", 
-                        "title": "fix era typo", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12064", 
-                        "number": "12064", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "hengne"
-                    }, 
-                    {
-                        "hash": "f80f4f3501d4e8613b69473af5d2de1b3e3f7833", 
-                        "title": "bsunanda:Run2-alca18 Restore Olgas code and modify the others to do both NZS and iterative analysis", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/10176", 
-                        "number": "10176", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "bsunanda"
-                    }, 
-                    {
-                        "hash": "a3c724e6a67b66ef46a4690e7a41d6731b9a21c5", 
-                        "title": "Adding HBHENegativeNoise bit to HcalRecHitFlagsToBeExcluded - 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11751", 
-                        "number": "11751", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "dertexaner"
-                    }, 
-                    {
-                        "hash": "7a6fad6d282869429ca4793ad9ef63888079a3fd", 
-                        "title": "MuonAnalysis/MomentumScaleCalibration: remove intrusive macros breaking libstdc++", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11956", 
-                        "number": "11956", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlt"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_X_2015-10-24-1100-->CMSSW_7_6_X_2015-10-24-2300", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_6_X_2015-10-24-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_7_6_X_2015-10-24-2300-->CMSSW_7_6_X_2015-10-25-1100", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc493": "IB/CMSSW_7_6_X_2015-10-25-1100/slc6_amd64_gcc493", 
-                    "slc7_amd64_gcc493": "IB/CMSSW_7_6_X_2015-10-25-1100/slc7_amd64_gcc493"
-                }, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_7_6_X_2015-10-25-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [], 
                 "hlt_tests": "found"
             }, 
             {
@@ -33707,8 +33621,8 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/mon/8.0.ICC-mon-11/CMSSW_8_0_ICC_X_2015-11-02-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 929, 
-                            "num_failed": 8
+                            "num_passed": 990, 
+                            "num_failed": 9
                         }
                     }
                 ], 
@@ -35685,765 +35599,6 @@
         "base_branch": "CMSSW_8_0_X", 
         "release_name": "CMSSW_8_0_X", 
         "comparisons": [
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_8_0_X_2015-10-20-1100-->CMSSW_8_0_X_2015-10-20-2300", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_8_0_X_2015-10-20-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11976", 
-                            "11981"
-                        ], 
-                        "hash": "6b16de370881dd8ef339d34811b3d1e176c02b80", 
-                        "number": "6b16de3", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "f01082fc35c7587f522525672e8f468cc1ef4a09", 
-                        "title": "drop Alignment/CocoaAnalysis package which is sub-set of Alignment/CocoaFit", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11976", 
-                        "number": "11976", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "smuzaffar"
-                    }, 
-                    {
-                        "hash": "0200960fe369c6eca8cd40749e61fca578f6f98c", 
-                        "title": "Eras for TSG tests", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11981", 
-                        "number": "11981", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Martin-Grunewald"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11738"
-                        ], 
-                        "hash": "f2886668a0dd40ede0186af65ae82b1f082d9cc9", 
-                        "number": "f288666", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "3e46e44ae642d84281f6624ecd308a518fde424c", 
-                        "title": "EGM ID Updates from recipes (76X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11738", 
-                        "number": "11738", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lgray"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11743", 
-                            "11497", 
-                            "11828", 
-                            "11972"
-                        ], 
-                        "hash": "e09f3bf9881aa7c6653521f7204ce1f227b1c8f8", 
-                        "number": "e09f3bf", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "656a234fcbe071b10543383dc17f4aa6ed7c5d5f", 
-                        "title": "Switch default HBHENoiseFilter settings to Run2-25ns configuration V2 - 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11912", 
-                        "number": "11912", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "dertexaner"
-                    }, 
-                    {
-                        "hash": "548ffa43fae6c347f1add0c4fd560b1025153254", 
-                        "title": "Python3 and recent python 2 use sys.maxsize and no sys.maxint", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11961", 
-                        "number": "11961", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ericvaandering"
-                    }, 
-                    {
-                        "hash": "b0396f0fa214392822cd43780ef6f47fe7913858", 
-                        "title": "Prevent V0 sim2reco candidate to share the same TrackRef", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11972", 
-                        "number": "11972", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "rovere"
-                    }, 
-                    {
-                        "hash": "e295eacfa1cdaf23ef33f08194635acf0d1d8008", 
-                        "title": "Rename Create Bd_JpsiKPi.dec to Bd_JpsiKPi.dec", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11943", 
-                        "number": "11943", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "heppye"
-                    }, 
-                    {
-                        "hash": "a9d34eda0694d9c925a4162ff598dee5448c4f1b", 
-                        "title": "merge SLHC updates for CaloTowers", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11497", 
-                        "number": "11497", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "kpedro88"
-                    }, 
-                    {
-                        "hash": "e87efd36cf6b97301fa92ef8656b70b0010a44b6", 
-                        "title": "Fix problems found by static analyzer in DataFormats/Scalers", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11743", 
-                        "number": "11743", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "hash": "d3ba289206b348a70d2d1e47ae446ff4ac89a526", 
-                        "title": "No more cmsStage etc. scripts", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11828", 
-                        "number": "11828", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "hroskes"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_8_0_X_2015-10-20-2300-->CMSSW_8_0_X_2015-10-21-1100", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_8_0_X_2015-10-21-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "hash": "91a38cacb6a002af6524e08430f2d2ddfcd6730c", 
-                        "title": "Hcal simple reconstructor with method3", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11918", 
-                        "number": "11918", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "igv4321"
-                    }, 
-                    {
-                        "hash": "ae198fc3c705da5a7b286a200ef3446521bd6945", 
-                        "title": "Fix clang warnings in geometry classes.", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11983", 
-                        "number": "11983", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "lgray"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_8_0_X_2015-10-21-1100-->CMSSW_8_0_X_2015-10-22-1100", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc493": "IB/CMSSW_8_0_X_2015-10-22-1100/slc6_amd64_gcc493"
-                }, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_8_0_X_2015-10-22-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11991", 
-                            "11969", 
-                            "12024"
-                        ], 
-                        "hash": "0c49b1921a4c0a550a66aed29e3ef73774a1d7ef", 
-                        "number": "0c49b19", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "f95c06f08c3f1bd12d9e09d196ae8119eba5b4ed", 
-                        "title": "PCC ntupler 76x - October2015", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11899", 
-                        "number": "11899", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "capalmer85"
-                    }, 
-                    {
-                        "hash": "ad972f54982881fc841da0e77c0cabd2ab78adfa", 
-                        "title": "Adding HBHENegativeNoise bit to HcalRecHitFlagsToBeExcluded - 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11924", 
-                        "number": "11924", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "dertexaner"
-                    }, 
-                    {
-                        "hash": "a500572ab64bc603383707328f8950e77a3065aa", 
-                        "title": "Change cMVAv2 range in DQM to [-1", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11969", 
-                        "number": "11969", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "pablodecm"
-                    }, 
-                    {
-                        "hash": "b19e163222d47ff95226171cb1e316c016ae0748", 
-                        "title": "Removed static analyzer errors from RecoLocalTracker", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11991", 
-                        "number": "11991", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "nickmccoll"
-                    }, 
-                    {
-                        "hash": "785c5008ee46220545183788d0a1856384a77731", 
-                        "title": "xreadlines is obsolete", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12005", 
-                        "number": "12005", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ericvaandering"
-                    }, 
-                    {
-                        "hash": "b1ce034fa46fbb74501947e04e2662bfffa68c20", 
-                        "title": "types module is deprecated", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12011", 
-                        "number": "12011", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ericvaandering"
-                    }, 
-                    {
-                        "hash": "553351eaa263cd8d375a483767cdef13c2fde833", 
-                        "title": "Make ClusterMultiplicityFilter multithread safe", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12024", 
-                        "number": "12024", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "nickmccoll"
-                    }, 
-                    {
-                        "hash": "a75807f994cbd216f7a9d524a98dca7fff31f982", 
-                        "title": "Removed static analyzer errors from RecoLocalTracker", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12026", 
-                        "number": "12026", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "nickmccoll"
-                    }, 
-                    {
-                        "hash": "9487b63be1341fa6220b9b22c398b641430fc9db", 
-                        "title": "StandardError is now Exception", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11997", 
-                        "number": "11997", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ericvaandering"
-                    }, 
-                    {
-                        "hash": "5a2c8399cd236e74317c28952b3640c4d78319e4", 
-                        "title": "Removed LazyGetter from SiPixelClusterShapeCache", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12035", 
-                        "number": "12035", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "12000"
-                        ], 
-                        "hash": "60f7e932b632c194aea5bc4d98681c6e45341bc2", 
-                        "number": "60f7e93", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "69b9e4c820101eeb033d1160876a3272a21e5879", 
-                        "title": "Fix packed gen particle copy and move ctors", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12000", 
-                        "number": "12000", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "wmtan"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11965"
-                        ], 
-                        "hash": "d3f78f4dae3bc3de0aa06fa78b8feaab1273ab54", 
-                        "number": "d3f78f4", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "20f305bf86219869ae6d0cfbdb072c14c00b0da1", 
-                        "title": "Remove last usage of edm::LazyGetter and edm::RefGetter", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11965", 
-                        "number": "11965", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11953", 
-                            "11811", 
-                            "11854", 
-                            "11954"
-                        ], 
-                        "hash": "bdcaf8af6dd83d00c6923b510c51e90513551f0a", 
-                        "number": "bdcaf8a", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "76acbb8a1cb15f7acef641c1a93fcc3f63ebb57c", 
-                        "title": "added FEVTDEBUGHLT as output of step2 data relvals", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11811", 
-                        "number": "11811", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "fabozzi"
-                    }, 
-                    {
-                        "hash": "b5c02542bccb32fd97d2b2927acf784d3cfa6859", 
-                        "title": "Remove intrusive macros breaking libstdc++", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11953", 
-                        "number": "11953", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "hash": "8b919377f0f3689d019f4e72ee090fe8bd366734", 
-                        "title": "Remove intrusive macros breaking libstdc++", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11954", 
-                        "number": "11954", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "hash": "9c4636084a689e7ab1c352db808f4a1aa25a41f9", 
-                        "title": "Fix TrackingVertex->TrackingParticle links in premixing", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11854", 
-                        "number": "11854", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "makortel"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_8_0_X_2015-10-22-1100-->CMSSW_8_0_X_2015-10-22-2300", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_8_0_X_2015-10-22-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "hash": "f8ad597d9760d6bcc797756b006307615d0f6d51", 
-                        "title": "Fastsim: HF: use shower library also for run1", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11916", 
-                        "number": "11916", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "lveldere"
-                    }, 
-                    {
-                        "hash": "720eb29db57cfe8e08522e82ef79d5b51a1ae5ab", 
-                        "title": "Fix failing relval missing new ECAL digi params (80X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12027", 
-                        "number": "12027", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "lgray"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_8_0_X_2015-10-22-2300-->CMSSW_8_0_X_2015-10-24-1100", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_8_0_X_2015-10-24-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "12031", 
-                            "11957"
-                        ], 
-                        "hash": "1ee140f441905fb177a0350de6b8a6a87f15b017", 
-                        "number": "1ee140f", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "c1218ea29d29faf90e45503fc2c8ace63741526f", 
-                        "title": "Fireworks/Core: remove intrusive macros breaking libstdc++", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11957", 
-                        "number": "11957", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "hash": "e5934c5fa55da2dfe08985324a788b91dc4a66a3", 
-                        "title": "Set ROOT histogram fitting to be thread-safe", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12031", 
-                        "number": "12031", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "12076", 
-                            "12020", 
-                            "12064", 
-                            "11813"
-                        ], 
-                        "hash": "e6ab2f505bb4e12ff0a5d186a9fe19040ee2018a", 
-                        "number": "e6ab2f5", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "d8f6e550da7de96645849ad80ee21c1f80cda938", 
-                        "title": "fix a typo in --era specification", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12065", 
-                        "number": "12065", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "hengne"
-                    }, 
-                    {
-                        "hash": "2e21e9276f6a689da15ed7f82f20d878f4af79ec", 
-                        "title": "raise exception if MINIAOD is requested in HeavyIonsRun2 (same as #12075)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12076", 
-                        "number": "12076", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "slava77"
-                    }, 
-                    {
-                        "hash": "24cd96a93a2eab7853123c8c4221c2059eb7c13d", 
-                        "title": "Remove unused package DQM/PhysicsHWW", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12020", 
-                        "number": "12020", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "dmitrijus"
-                    }, 
-                    {
-                        "hash": "9e1de84a546b6589fc9a47e977e5a74b33ee3e52", 
-                        "title": "Fix statics in CastorDigiMonitor.", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11813", 
-                        "number": "11813", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "dmitrijus"
-                    }, 
-                    {
-                        "hash": "4117962774944b76dd13244890b283c843213da4", 
-                        "title": "fix era typo", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12064", 
-                        "number": "12064", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "hengne"
-                    }, 
-                    {
-                        "hash": "a361ad05b52979a25a9b278c84a830737673b3b3", 
-                        "title": "Use next() built-in", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12017", 
-                        "number": "12017", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ericvaandering"
-                    }, 
-                    {
-                        "hash": "d4ddd7fde5161bdc018679b7e7c1e41d52e201b7", 
-                        "title": "Hcal det id protect again invalid IDs in digitizer", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12066", 
-                        "number": "12066", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "davidlange6"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "10176", 
-                            "11956", 
-                            "11751"
-                        ], 
-                        "hash": "a722a22c3ccf48bb3c4c4ace64aad2094cddd776", 
-                        "number": "a722a22", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "f80f4f3501d4e8613b69473af5d2de1b3e3f7833", 
-                        "title": "bsunanda:Run2-alca18 Restore Olgas code and modify the others to do both NZS and iterative analysis", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/10176", 
-                        "number": "10176", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "bsunanda"
-                    }, 
-                    {
-                        "hash": "a3c724e6a67b66ef46a4690e7a41d6731b9a21c5", 
-                        "title": "Adding HBHENegativeNoise bit to HcalRecHitFlagsToBeExcluded - 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11751", 
-                        "number": "11751", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "dertexaner"
-                    }, 
-                    {
-                        "hash": "7a6fad6d282869429ca4793ad9ef63888079a3fd", 
-                        "title": "MuonAnalysis/MomentumScaleCalibration: remove intrusive macros breaking libstdc++", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11956", 
-                        "number": "11956", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "davidlt"
-                    }, 
-                    {
-                        "is_merge_commit": true, 
-                        "brought_prs": [
-                            "11671", 
-                            "11855", 
-                            "12044", 
-                            "11783", 
-                            "12028", 
-                            "11832", 
-                            "11726", 
-                            "11789", 
-                            "11766", 
-                            "11769", 
-                            "12041"
-                        ], 
-                        "hash": "681b336000f4bf305dfe6502d8ef81c0d25287ec", 
-                        "number": "681b336", 
-                        "from_merge_commit": false
-                    }, 
-                    {
-                        "hash": "a5197a9c245b6973c4ff229348e4ba5dd28951cd", 
-                        "title": "Use preferred form of not-equal since python 3 eliminates <>", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11960", 
-                        "number": "11960", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ericvaandering"
-                    }, 
-                    {
-                        "hash": "6bedb11ff76e054df21283d783bb9b0a4fac45e1", 
-                        "title": "Replace has_key with in for dictionaries", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12004", 
-                        "number": "12004", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ericvaandering"
-                    }, 
-                    {
-                        "hash": "65edc5fe1f3b15d330266d33cbc1c710b1be511e", 
-                        "title": "HBHE isolated noise reflagger retuning for Run2", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11726", 
-                        "number": "11726", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "dertexaner"
-                    }, 
-                    {
-                        "hash": "ed87a907ee04989eb7cf97ff3732624aaaef6f7d", 
-                        "title": "3prong1pi0 new dms", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11766", 
-                        "number": "11766", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "cms-tau-pog"
-                    }, 
-                    {
-                        "hash": "2dd6291facd275599485bff732cb2edf42901c77", 
-                        "title": "Hcal simple reconstructor with method3", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11769", 
-                        "number": "11769", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "igv4321"
-                    }, 
-                    {
-                        "hash": "ba3b4fc668091efe58def7b976371513826b7d65", 
-                        "title": "EcalRechitsDigis fix save behavior to check for end of list 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12041", 
-                        "number": "12041", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "hardenbr"
-                    }, 
-                    {
-                        "hash": "9646719957e3db3615ba2284e51ad8339b9a337a", 
-                        "title": "update to PUPPI;speedup", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11671", 
-                        "number": "11671", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "nhanvtran"
-                    }, 
-                    {
-                        "hash": "ec3ff717c3e939af521ae39dc05a17d76fbf0248", 
-                        "title": "Switch default HBHENoiseFilter settings to Run2-25ns configuration V2 - 76X", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11789", 
-                        "number": "11789", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "dertexaner"
-                    }, 
-                    {
-                        "hash": "af341822ebb73db71d5a2ad07e1167e84a3e0353", 
-                        "title": "PCC ntupler 76x - October2015", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11832", 
-                        "number": "11832", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "capalmer85"
-                    }, 
-                    {
-                        "hash": "167604ec01ce263eb0b2aff50da18d7c8a80d573", 
-                        "title": "Adding no-HF grid-based rho (76x forward-port #11773)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11855", 
-                        "number": "11855", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "rappoccio"
-                    }, 
-                    {
-                        "hash": "e9dcb7fb7bce86fa0b4d8140f2d94f9e77983a5c", 
-                        "title": "add a label to indentify the PFProducer calibrations", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12044", 
-                        "number": "12044", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "fwyzard"
-                    }, 
-                    {
-                        "hash": "8b1004f27425ca8f62d42ea1c483d9788c6cb120", 
-                        "title": "Adding no-HF grid-based rho : 76x forward-port #11773", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11875", 
-                        "number": "11875", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "rappoccio"
-                    }, 
-                    {
-                        "hash": "a328daabce19b85911c5fe5ae244d19f7012c32e", 
-                        "title": "update to PUPPI;speedup", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11884", 
-                        "number": "11884", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "nhanvtran"
-                    }, 
-                    {
-                        "hash": "7c3fcc33cdf7d8c24711f0b56cf407325d8fca65", 
-                        "title": "Fastsim: HF: use shower library also for run1", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/11783", 
-                        "number": "11783", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lveldere"
-                    }, 
-                    {
-                        "hash": "51b686665a9c71459fc449aa781abf158985d89d", 
-                        "title": "Fix failing relval missing new ECAL digi params (76X)", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/12028", 
-                        "number": "12028", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "lgray"
-                    }
-                ], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_8_0_X_2015-10-24-1100-->CMSSW_8_0_X_2015-10-24-2300", 
-                "utests": [], 
-                "cmsdistTags": {}, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_8_0_X_2015-10-24-2300", 
-                "RVExceptions": null, 
-                "merged_prs": [], 
-                "hlt_tests": "not-found"
-            }, 
-            {
-                "addons": [], 
-                "builds": [], 
-                "compared_tags": "CMSSW_8_0_X_2015-10-24-2300-->CMSSW_8_0_X_2015-10-25-1100", 
-                "utests": [], 
-                "cmsdistTags": {
-                    "slc6_amd64_gcc493": "ERR/CMSSW_8_0_X_2015-10-25-1100/slc6_amd64_gcc493", 
-                    "slc7_amd64_gcc493": "IB/CMSSW_8_0_X_2015-10-25-1100/slc7_amd64_gcc493"
-                }, 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc493", 
-                "isIB": true, 
-                "tests_archs": [], 
-                "inProgress": false, 
-                "release_name": "CMSSW_8_0_X_2015-10-25-1100", 
-                "RVExceptions": null, 
-                "merged_prs": [], 
-                "hlt_tests": "not-found"
-            }, 
             {
                 "addons": [
                     {
