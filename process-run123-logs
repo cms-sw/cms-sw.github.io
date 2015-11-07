@@ -31,10 +31,11 @@ if __name__ == "__main__":
     stepResults = [re.match(STEP_STATUS_RE, s).group(2)
                    for s in steps if re.match(STEP_STATUS_RE, s)]
     results.append({
-                   "id": workflowId,
+                    "id": workflowId,
+                    "fid": float(workflowId),
                     "name": workflow,
                     "steps": [{"status": x} for x in stepResults],
-                    "order": sum([10-i for (i, x) in enumerate(stepResults)
+                    "order": sum([i-10 for (i, x) in enumerate(stepResults)
                                        if x == "FAILED" or x == "DAS_ERROR" or x == "TIMEOUT"])
                    })
   # Does the same for errors and warnings.
@@ -54,7 +55,8 @@ if __name__ == "__main__":
           sys.stderr.write("ERROR: Reading "+warningsFile+"\n")
           sys.stderr.write("ERROR: "+str(i)+","+str(result["id"])+","+str(data)+"\n")
           sys.exit(1)
-  results.sort(key=itemgetter("order", "id"), reverse=True)
+  results.sort(key=itemgetter("order", "fid"))
   for r in results:
+    r.pop("fid")
     r.pop("order")
   print dumps(results, sort_keys=True, indent=4, separators=(',', ': '))
