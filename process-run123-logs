@@ -27,6 +27,11 @@ if __name__ == "__main__":
     if not r:
       continue
     workflowId, workflow, steps, exit = r.groups()
+    exitcode = 0
+    for c in exit.split(" "):
+      if re.match("^[1-9][0-9]*$",c):
+        exitcode=int(c)
+        break
     steps = steps.split(" ")
     stepResults = [re.match(STEP_STATUS_RE, s).group(2)
                    for s in steps if re.match(STEP_STATUS_RE, s)]
@@ -34,6 +39,7 @@ if __name__ == "__main__":
                     "id": workflowId,
                     "fid": float(workflowId),
                     "name": workflow,
+                    "exitcode": exitcode,
                     "steps": [{"status": x} for x in stepResults],
                     "order": sum([i-10 for (i, x) in enumerate(stepResults)
                                        if x == "FAILED" or x == "DAS_ERROR" or x == "TIMEOUT"])
