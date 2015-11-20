@@ -174,7 +174,7 @@ addWorkflowRow = function( workflowResult, table, counter, statistics, arch, ib,
   var numToShow = 0
 
   var nothingRun = true;
-  var errCode = "0"
+  var errCode = LABELS_TEXT[ 'FAILED' ]
   if ("exitcode" in workflowResult){errCode = workflowResult.exitcode;}
   for ( var stepNumber in workflowResult.steps ){
 
