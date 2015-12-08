@@ -200,7 +200,7 @@ in particular people working on lxplus can use:
 
 or in case you have CVMFS available you can set it to:
 
-    export CMSSW_GIT_REFERENCE=/cvmfs/cms.cern.ch/cmssw.git
+    export CMSSW_GIT_REFERENCE=/cvmfs/cms.cern.ch/cmssw.git.daily
 
 ### How do I setup a local mirror?
 
