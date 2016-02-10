@@ -59,7 +59,7 @@ an image size limited to 10GB and there is no simple way to change it from the
 command line. In order to overcome this you'll have to create a temporary
 directory on your host machine where the software will be effectively installed.
 
-    mkdir /tmp/$USER/slc6-docker-installation
+    mkdir -p /tmp/$USER/slc6-docker-installation
 
 Done this you can use cms docker image by doing:
 
