@@ -5,6 +5,7 @@ from os.path import exists, expanduser
 from os import makedirs, rename, remove
 from datetime import datetime
 from time import mktime
+import re
 
 DIRECTORY_NAME = "data/stats/prs/"
 
@@ -104,6 +105,7 @@ if __name__ == "__main__":
       pass
 
   # checking if csv file exist
+  REnotcomp= re.compile('^\d+,NA,.+')
   for i in xrange(0, 10000):
     beforeBegin = []
     filename = DIRECTORY_NAME + "%s.csv" % i
@@ -114,8 +116,14 @@ if __name__ == "__main__":
       if len(lines) != 32:
         print filename + " is too short."
       elif lines[0] == schema:
-        print "%s exists and has the same schema, skipping." % filename
-        continue
+        all_comp = True
+        for l in lines:
+          if REnotcomp.match(l):
+            all_comp = False
+            break
+        if all_comp:
+          print "%s exists and has the same schema, skipping." % filename
+          continue
     try:
       page = iterator.get_page(i)
     except:
