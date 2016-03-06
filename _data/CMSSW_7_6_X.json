@@ -205,25 +205,98 @@
             "hlt_tests": "not-found"
         }, 
         {
-            "fwlite": [], 
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_6_3_patch2-->CMSSW_7_6_X_2016-02-21-0000", 
-            "valgrind": "not-found", 
-            "utests": [], 
-            "dqm_tests": "not-found", 
-            "relvals": [], 
-            "static_checks": "not-found", 
+            "fwlite": [
+                {
+                    "arch": "slc6_amd64_gcc493", 
+                    "passed": "warning", 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/new_FWLITE/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 6
+                    }
+                }
+            ], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc493", 
+                    "passed": true, 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc493", 
+                    "passed": "warning", 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 6, 
+                        "ignoreWarning": 8
+                    }
+                }, 
+                {
+                    "arch": "slc7_amd64_gcc493", 
+                    "passed": "warning", 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 6, 
+                        "ignoreWarning": 8
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_7_6_3_patch2-->CMSSW_7_6_X_2016-02-28-0000", 
+            "valgrind": "found", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc493", 
+                    "passed": "failed", 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "3"
+                    }
+                }, 
+                {
+                    "arch": "slc7_amd64_gcc493", 
+                    "passed": "unknown", 
+                    "file": "['/data/sdt/buildlogs/slc7_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
+            "dqm_tests": "found", 
+            "relvals": [
+                {
+                    "done": true, 
+                    "arch": "slc6_amd64_gcc493", 
+                    "passed": false, 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 1387, 
+                        "num_failed": 46
+                    }
+                }
+            ], 
+            "static_checks": "slc6_amd64_gcc493", 
             "cmsdistTags": {
-                "slc6_amd64_gcc493": "IB/CMSSW_7_6_X_2016-02-21-0000/slc6_amd64_gcc493", 
-                "slc7_amd64_gcc493": "IB/CMSSW_7_6_X_2016-02-21-0000/slc7_amd64_gcc493"
+                "slc6_amd64_gcc493": "IB/CMSSW_7_6_X_2016-02-28-0000/slc6_amd64_gcc493", 
+                "slc7_amd64_gcc493": "IB/CMSSW_7_6_X_2016-02-28-0000/slc7_amd64_gcc493"
             }, 
             "isIB": true, 
             "inProgress": false, 
-            "release_name": "CMSSW_7_6_X_2016-02-21-0000", 
-            "tests_archs": [], 
+            "release_name": "CMSSW_7_6_X_2016-02-28-0000", 
+            "tests_archs": [
+                "slc6_amd64_gcc493", 
+                "slc7_amd64_gcc493"
+            ], 
             "RVExceptions": null, 
             "merged_prs": [
+                {
+                    "hash": "abba1be663fab2c6384446a6f3ab98044596b13b", 
+                    "title": "Fix for the reconnect-each-run policy in CondDBESSource 76X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/12393", 
+                    "number": "12393", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "diguida"
+                }, 
                 {
                     "hash": "58019fbe85ee6a3ec5fabb8dfe69168f6edc89e1", 
                     "title": "Fix signed muon tagger", 
@@ -279,6 +352,15 @@
                     "author_login": "davidlt"
                 }, 
                 {
+                    "hash": "7100f26a063b65ee740df611fd592cede60920c8", 
+                    "title": "cppcheck: some fixes for 4 modules", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/11857", 
+                    "number": "11857", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "serval2412"
+                }, 
+                {
                     "hash": "151e7766514a4ada14935a3334a60509af03f101", 
                     "title": "Update to MVA MET: Fullfills \"consumes\" call requirement, Bugfix for the calculation of the covariance matrix, updated path to weight files", 
                     "url": "https://github.com/cms-sw/cmssw/pull/13086", 
@@ -286,6 +368,15 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "cms-met"
+                }, 
+                {
+                    "hash": "209259505b3e19a33b13d88b54c05d82793f3109", 
+                    "title": "Updated N-subjettiness computation in BoostedDoubleSecondaryVertex tagger", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/12988", 
+                    "number": "12988", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cms-btv-pog"
                 }, 
                 {
                     "hash": "5f36e28484ba1968cb793e0a5866313712b80576", 
@@ -297,13 +388,13 @@
                     "author_login": "cms-btv-pog"
                 }, 
                 {
-                    "hash": "abba1be663fab2c6384446a6f3ab98044596b13b", 
-                    "title": "Fix for the reconnect-each-run policy in CondDBESSource 76X", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/12393", 
-                    "number": "12393", 
+                    "hash": "09ad603d8a89007ae9608b4f4bf843edc1aa0d0e", 
+                    "title": "Ep combination protection reco 76", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/13301", 
+                    "number": "13301", 
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
-                    "author_login": "diguida"
+                    "author_login": "rafaellopesdesa"
                 }, 
                 {
                     "hash": "743eabac5a41b0d4b879c7016d8a9a90785337af", 
@@ -351,57 +442,10 @@
                     "author_login": "mmusich"
                 }, 
                 {
-                    "hash": "7100f26a063b65ee740df611fd592cede60920c8", 
-                    "title": "cppcheck: some fixes for 4 modules", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/11857", 
-                    "number": "11857", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "serval2412"
-                }, 
-                {
-                    "hash": "209259505b3e19a33b13d88b54c05d82793f3109", 
-                    "title": "Updated N-subjettiness computation in BoostedDoubleSecondaryVertex tagger", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/12988", 
-                    "number": "12988", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "cms-btv-pog"
-                }
-            ], 
-            "hlt_tests": "not-found"
-        }, 
-        {
-            "fwlite": [], 
-            "addons": [], 
-            "builds": [], 
-            "compared_tags": "CMSSW_7_6_X_2016-02-21-0000-->CMSSW_7_6_X_2016-02-23-2300", 
-            "valgrind": "not-found", 
-            "utests": [], 
-            "dqm_tests": "not-found", 
-            "relvals": [], 
-            "static_checks": "not-found", 
-            "cmsdistTags": {}, 
-            "isIB": true, 
-            "inProgress": false, 
-            "release_name": "CMSSW_7_6_X_2016-02-23-2300", 
-            "tests_archs": [], 
-            "RVExceptions": null, 
-            "merged_prs": [
-                {
                     "hash": "522245d37829544e4ce6231830c2ee356f5884ee", 
                     "title": "Optional extra high energy protection for Ep combination usage", 
                     "url": "https://github.com/cms-sw/cmssw/pull/13293", 
                     "number": "13293", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "rafaellopesdesa"
-                }, 
-                {
-                    "hash": "09ad603d8a89007ae9608b4f4bf843edc1aa0d0e", 
-                    "title": "Ep combination protection reco 76", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/13301", 
-                    "number": "13301", 
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "rafaellopesdesa"
@@ -416,92 +460,6 @@
                     "author_login": "hengne"
                 }
             ], 
-            "hlt_tests": "not-found"
-        }, 
-        {
-            "fwlite": [
-                {
-                    "arch": "slc6_amd64_gcc493", 
-                    "passed": "warning", 
-                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/new_FWLITE/logAnalysis.pkl", 
-                    "details": {
-                        "compWarning": 6
-                    }
-                }
-            ], 
-            "addons": [
-                {
-                    "arch": "slc6_amd64_gcc493", 
-                    "passed": true, 
-                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/addOnTests.log", 
-                    "details": {}
-                }
-            ], 
-            "builds": [
-                {
-                    "arch": "slc6_amd64_gcc493", 
-                    "passed": "warning", 
-                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/new/logAnalysis.pkl", 
-                    "details": {
-                        "compWarning": 6, 
-                        "ignoreWarning": 8
-                    }
-                }, 
-                {
-                    "arch": "slc7_amd64_gcc493", 
-                    "passed": "warning", 
-                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/new/logAnalysis.pkl", 
-                    "details": {
-                        "compWarning": 6, 
-                        "ignoreWarning": 8
-                    }
-                }
-            ], 
-            "compared_tags": "CMSSW_7_6_X_2016-02-23-2300-->CMSSW_7_6_X_2016-02-28-0000", 
-            "valgrind": "found", 
-            "utests": [
-                {
-                    "arch": "slc6_amd64_gcc493", 
-                    "passed": "failed", 
-                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/unitTests-summary.log", 
-                    "details": {
-                        "num_fails": "3"
-                    }
-                }, 
-                {
-                    "arch": "slc7_amd64_gcc493", 
-                    "passed": "unknown", 
-                    "file": "['/data/sdt/buildlogs/slc7_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/new/logAnalysis.pkl']", 
-                    "details": {}
-                }
-            ], 
-            "dqm_tests": "found", 
-            "relvals": [
-                {
-                    "done": true, 
-                    "arch": "slc6_amd64_gcc493", 
-                    "passed": false, 
-                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc493/www/sun/7.6-sun-00/CMSSW_7_6_X_2016-02-28-0000/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                    "details": {
-                        "num_passed": 1387, 
-                        "num_failed": 46
-                    }
-                }
-            ], 
-            "static_checks": "slc6_amd64_gcc493", 
-            "cmsdistTags": {
-                "slc6_amd64_gcc493": "IB/CMSSW_7_6_X_2016-02-28-0000/slc6_amd64_gcc493", 
-                "slc7_amd64_gcc493": "IB/CMSSW_7_6_X_2016-02-28-0000/slc7_amd64_gcc493"
-            }, 
-            "isIB": true, 
-            "inProgress": false, 
-            "release_name": "CMSSW_7_6_X_2016-02-28-0000", 
-            "tests_archs": [
-                "slc6_amd64_gcc493", 
-                "slc7_amd64_gcc493"
-            ], 
-            "RVExceptions": null, 
-            "merged_prs": [], 
             "hlt_tests": "found"
         }, 
         {
