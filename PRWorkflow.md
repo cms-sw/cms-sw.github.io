@@ -1,3 +1,13 @@
+---
+title: CMS Offline Software
+layout: default
+related:
+ - { name: Project page, link: 'https://github.com/cms-sw/cmssw' }
+ - { name: Feedback, link: 'https://github.com/cms-sw/cmssw/issues/new' }
+redirect_from:
+ - /cmssw/PRWorkflow.html
+---
+
 ##Workflow for pull requests to CMSSW
 
 This page is a short summary of the process we use for accepting code changes from CMS developers into CMSSW. It assumes knowledge of the CMSSW software and computing environment. 
