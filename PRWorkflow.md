@@ -7,7 +7,7 @@ Questions or problems? You can
 - Ask a question in the [CMS software development hypernews forum](https://hypernews.cern.ch/HyperNews/CMS/get/swDevelopment.html) 
 
 ### Before making your pull request
-- Confirm that you have checked out all dependencies, have a clean build, and all unit tests succeed
+Confirm that you have checked out all dependencies, have a clean build, and all unit tests succeed
 ```
 cd src
 scram b distclean 
@@ -15,7 +15,7 @@ git cms-checkdeps -A;
 scram b -j 8
 scram b runtests
 ```
- - Run a basic battery of tests
+Run a basic battery of tests
 ```
 runTheMatrix.py -l limited -i all
 ```
@@ -23,19 +23,19 @@ If these tests are successful, your code changes should also pass the basic chec
 
 ### Initial pull request 
    - [This tutorial](tutorial.html) provides instructions for making a pull request to CMSSW
-   - New developments should be always submitted to the development release of CMSSW. The default in the CMSSW repository is always the development release.
-   - Pull requests including new packages [Too be filled in]
+   - New developments should be always submitted to the development release of CMSSW. The default branch in the CMSSW repository is always the development release, so the default branch is the correct one when you make your pull request.
+   - Pull requests including new packages require an extra check in order to review the code organization in CMSSW [Too be filled in]
    
 ### Code review
    - Once your pull request is submitted, it is assigned a set of categories (e.g., "reconsturction") based on which packages have been changed. The mapping of code package to group is [here](https://github.com/cms-sw/cms-bot/blob/master/categories.py). Here is an example showing a new pull request with labels added and its milestone release (e.g., "CMSSW_8_0_X")
 ![PR](images/PR_addLabels.png)
-   - The responsibles for those categories get an automatic email (from cmsbuild) asking them to review the proposed changes. Until their review is complete, your pull request has a label that indicates it is waiting for their signature (e.g., "reconstruction-pending")
+   - The [category managers](https://github.com/cms-sw/cms-bot/blob/master/categories.py) for those categories get an automatic email asking them to review the proposed changes. Until their review is complete, your pull request has a label that indicates it is waiting for their signature (e.g., "reconstruction-pending")
    - In addition, your PR will get labels for "tests-pending", "comparisons-pending" and "orp-pending". These are explained in the following steps.
-   - Code managers can trigger a set of standard pull request tests by responding to the pull request issue in github with "please test"
+   - Category managers can trigger a set of standard pull request tests by responding to the pull request issue in github with "please test"
 ![PR](images/PR_pleaseTest.png)
    - After a few hours, the results of these tests are available ("tests-approved" label), including some low statistics physics comparisons ("comparisons-available" label). You might find it useful to check these results in case of problems. Sometimes these tests are affected by problems in the underlying integration build or computing infrastructure. If the errors do not appear to be from your pull request, do not worry. 
 ![PR](images/PR_comparisonDone.png)
-   - Code review can come via comments on the proposed changes or other discussion (typically in your github issue). Once each reviewing group is satisfied, they will sign your pull request ("+1"), and the corresponding label changes from "pending" to "approved" (e.g., "reconstruction-approved")
+   - Code review can come via comments on the proposed changes or other discussion (typically in your github issue). Once each category manager is satisfied, they will sign your pull request ("+1"), and the corresponding label changes from "pending" to "approved" (e.g., "reconstruction-approved")
 ![PR](images/PR_reviewerComplete.png)
    - In case of no answers or slow answers from groups, it is useful to follow up either in your github issue, via mail or via the groups regular meeting
    - The last approval is from the release management team ("orp-approved"), after which your pull request will enter the CMSSW repository.
@@ -48,5 +48,6 @@ If these tests are successful, your code changes should also pass the basic chec
 
 ### Backporting
    - After your pull request has been accepted into the development release, it may be considered for use in older releases if there is a production or analysis use case for it. If this is the case, you can start the process by making a new pull request in the release cycle where your changes are required. Be sure to check if you have rebased your changes properly before submitting the pull request (easiest way is to check the differences that gitHub identifies before submitting your pull request.
-   - For simple pull requests, a successful set of tests in the integration build system may be sufficient. However, most often your pull request should be tested in a full release and through the release validation system ("relvals"). 
+   - For simple pull requests, a successful set of tests in the integration build system may be sufficient. However, most often your pull request should be tested in a full release and through the release validation system ("relvals").
+   - Backporting requests are discussed weekly in the release operations meeting (Tuesdays at 1700 CERN time). To have your request added to the agenda, simply bring it to the attention of the appropriate category managers.
 
