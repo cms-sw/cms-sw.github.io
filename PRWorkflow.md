@@ -8,16 +8,18 @@ redirect_from:
  - /cmssw/PRWorkflow.html
 ---
 
+
 ##Workflow for pull requests to CMSSW
 
 This page is a short summary of the process we use for accepting code changes from CMS developers into CMSSW. It assumes knowledge of the CMSSW software and computing environment. 
 
 Questions or problems? You can
-- Open a gitHub issue at https://github.com/cms-sw/cmssw/issues
+- Open a [gitHub issue](https://github.com/cms-sw/cmssw/issues)
 - Ask a question in the [CMS software development hypernews forum](https://hypernews.cern.ch/HyperNews/CMS/get/swDevelopment.html) 
 
 ### Before making your pull request
 Confirm that you have checked out all dependencies, have a clean build, and all unit tests succeed
+
 ```
 cd src
 scram b distclean 
@@ -25,10 +27,13 @@ git cms-checkdeps -a
 scram b -j 8
 scram b runtests
 ```
+
 Run a basic battery of tests
+
 ```
 runTheMatrix.py -l limited -i all
 ```
+
 If these tests are successful, your code changes should also pass the basic checks done during the pull request testing procedure. Some tests, in particular the runTheMatrix.py tests require data available at sites such as CERN.
 
 ### Initial pull request 
