@@ -27,7 +27,7 @@ If these tests are successful, your code changes should also pass the basic chec
    - Pull requests including new packages [Too be filled in]
    
 ### Code review
-   - Once your pull request is submitted, it is assigned a set of categories (e.g., "reconsturction") based on which packages have been changed. Here is an example showing a new pull request with labels added and its milestone release (e.g., "CMSSW_8_0_X")
+   - Once your pull request is submitted, it is assigned a set of categories (e.g., "reconsturction") based on which packages have been changed. The mapping of code package to group is [here](https://github.com/cms-sw/cms-bot/blob/master/categories.py). Here is an example showing a new pull request with labels added and its milestone release (e.g., "CMSSW_8_0_X")
 ![PR](images/PR_addLabels.png)
    - The responsibles for those categories get an automatic email (from cmsbuild) asking them to review the proposed changes. Until their review is complete, your pull request has a label that indicates it is waiting for their signature (e.g., "reconstruction-pending")
    - In addition, your PR will get labels for "tests-pending", "comparisons-pending" and "orp-pending". These are explained in the following steps.
