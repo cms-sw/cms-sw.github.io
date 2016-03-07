@@ -144,7 +144,7 @@ Or change the "base branch", i.e. the one to which you want to have your changes
 
 Remember to *write a sensible comment*, check that gitHubs summary of your changes are as expected,
 and click on Send Pull Request. There are several issues to consider before *clicking*
-   - It is important to provide both a descriptive title and a complete description of the changes. The pull request titles are used to make release notes and should be descriptive of your changes in the context of CMSSW more so than simply your task or your project. For example, "Committing my code", or "Fixing our reconstruction" are not as descriptive as "Fix numerical instability in DT local reconstruction". More complete information should be included in the description to help the code review process go smoothly.
+   - It is important to provide both a descriptive title and a complete description of the changes (here is a [nice HOWTO](https://wiki.openstack.org/wiki/GitCommitMessages)). The pull request titles are used to make release notes and should be descriptive of your changes in the context of CMSSW more so than simply your task or your project. For example, "Committing my code", or "Fixing our reconstruction" are not as descriptive as "Fix numerical instability in DT local reconstruction". More complete information should be included in the description to help the code review process go smoothly.
    - It is also useful to check that the changes that github proposes as your pull request correspond to (only) the changes that you 
 have made during your developments. Using the wrong base branch may result in hundreds of changes
 being included in your pull request that you did not intend. The easiest way to check this is simply 
