@@ -33,13 +33,13 @@ If these tests are successful, your code changes should also pass the basic chec
    - In addition, your PR will get labels for "tests-pending", "comparisons-pending" and "orp-pending". These are explained in the following steps.
    - Code managers can trigger a set of standard pull request tests by responding to the pull request issue in github with "please test"
 ![PR](images/PR_pleaseTest.png)
-   - After a few hours, the results of these tests are available ("tests-approved" label), including some low statistics physics comparisons ("comparisons-available" label). You might find it useful to check these results in case of problems. Sometimes these tests are affected by problems in the underlying integration build or computing infrastructure. If the errors do not appear to be from your pull request, do not worry.
+   - After a few hours, the results of these tests are available ("tests-approved" label), including some low statistics physics comparisons ("comparisons-available" label). You might find it useful to check these results in case of problems. Sometimes these tests are affected by problems in the underlying integration build or computing infrastructure. If the errors do not appear to be from your pull request, do not worry. 
 ![PR](images/PR_comparisonDone.png)
    - Code review can come via comments on the proposed changes or other discussion (typically in your github issue). Once each reviewing group is satisfied, they will sign your pull request ("+1"), and the corresponding label changes from "pending" to "approved" (e.g., "reconstruction-approved")
 ![PR](images/PR_reviewerComplete.png)
    - In case of no answers or slow answers from groups, it is useful to follow up either in your github issue, via mail or via the groups regular meeting
    - The last approval is from the release management team ("orp-approved"), after which your pull request will enter the CMSSW repository.
-![PR](images/PR_orpApproval)
+![PR](images/PR_orpApproval.png)
 
 ### Check the Integration Build
    - Twice per day, we run a more complete set of tests. The main web page for these results is [here](https://cmssdt.cern.ch/SDT/html/showIB.html). You can check this page a day after your pull request is accepted to check for issues with your pull request. 
