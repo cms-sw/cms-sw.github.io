@@ -1,8 +1,9 @@
 ##Workflow for pull requests to CMSSW
 
-### Before your pull request
-- Test your code:
- - Confirm that you have checked out all dependencies and have a clean build 
+This page is a short summary of the process we use for accepting code changes from CMS developers into CMSSW. It assumes knowledge of the CMSSW software and computing environment. 
+
+### Before making your pull request
+- Confirm that you have checked out all dependencies and have a clean build 
 ```
 cd src
 scram b distclean 
