@@ -1,7 +1,20 @@
-##Workflow for pull requests to CMSSW (Draft)
+##Workflow for pull requests to CMSSW
 
 ### Before your pull request
-
+- Test your code:
+ - Confirm that you have checked out all dependencies and have a clean build 
+```
+cd src
+scram b distclean 
+git cms-checkdeps -A; 
+scram b -j 8
+scram b runtests
+```
+ - Run a basic battery of tests
+```
+runTheMatrix.py -s -i all
+```
+If these tests are successful, your code changes should also pass the basic checks done during the pull request testing procedure.
 
 ### Initial pull request 
    - [This tutorial](tutorial.html) provides instructions for making a pull request to CMSSW
