@@ -14,8 +14,8 @@ redirect_from:
 This page is a short summary of the process we use for accepting code changes from CMS developers into CMSSW. It assumes knowledge of the CMSSW software and computing environment. 
 
 Questions or problems? You can
-- Open a [gitHub issue](https://github.com/cms-sw/cmssw/issues)
-- Ask a question in the [CMS software development hypernews forum](https://hypernews.cern.ch/HyperNews/CMS/get/swDevelopment.html) 
+   - Open a [gitHub issue](https://github.com/cms-sw/cmssw/issues)
+   - Ask a question in the [CMS software development hypernews forum](https://hypernews.cern.ch/HyperNews/CMS/get/swDevelopment.html) 
 
 ### Before making your pull request
 Confirm that you have checked out all dependencies, have a clean build, and all unit tests succeed
