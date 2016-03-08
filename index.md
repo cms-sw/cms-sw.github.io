@@ -12,7 +12,7 @@ redirect_from:
 # Welcome to CMS and CMSSW
 
 <tr>
-    <td> <img src="images/jets_v1.png" alt="Drawing" style="width: 250px;" align="center"/> </td>
+    <td> <img src="images/jets_v1.png" alt="Drawing" width="50%" align="center"/> </td>
 </tr> 
 
 The LHC smashes groups of protons together at close to the speed of light: 40
