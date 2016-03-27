@@ -30,6 +30,14 @@ define RunCommand
     rm -f $$@ ;\
   fi
 endef
+define set_times
+  @for file in $(1) ; do \
+    stamp="`grep \" $$file\$$\" $(TIMESTAMP_FILE)`" ;\
+    [ "X$$stamp" = "X" ] && continue ;\
+    [ -e $$file ] || continue;\
+    touch -t $$stamp ;\
+  done
+endef
 
 pyRelValFile=$(if $(strip $(wildcard $(1)/pyRelValPartialLogs)),$(1)/pyRelValPartialLogs,$(1)/pyRelValMatrixLogs.zip)
 
@@ -96,13 +104,13 @@ clean_up_old_files: $(ALL_RULES)
 	$(SCRIPT_DIRECTORY)/cleanup-old-results -d "$(START_DATE)"
 set_timestamps: FORCE_TARGET
 	@touch -t 198001010101.00 $@
-	@[ -e $(TIMESTAMP_FILE) ] || exit 0;\
-	for file in $(ALL_RULES) ; do \
-	  stamp="`grep \" $$file\$$\" $(TIMESTAMP_FILE)`" ;\
-	  [ "X$$stamp" = "X" ] && continue ;\
-	  [ -e $$file ] || continue;\
-	  touch -t $$stamp ;\
-	done
+	@[ -e $(TIMESTAMP_FILE) ] || exit 0
+	@$(call set_times,$(ALL_RELVALS))
+	@$(call set_times,$(ALL_INPUTS))
+	@$(call set_times,$(ALL_UNIT_TESTS))
+	@$(call set_times,$(ALL_JOB_REPORTS))
+	@$(call set_times,$(ALL_COMMANDS))
+	@$(call set_times,$(ALL_WF_TIMES))
 $(TIMESTAMP_FILE): $(ALL_RULES)
 	@rm -f $@ && rm -f set_timestamps && touch $@ && \
 	for file in $(ALL_RULES) ; do\
