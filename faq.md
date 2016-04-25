@@ -271,11 +271,10 @@ Simply close it using the standard GitHub GUI when looking at it.
 
 ### How do I receive notifications about pull requests for a given package / subsystem?
 
-Please open an issue at
+Please make a Pull Request to https://github.com/cms-sw/cms-bot repository with changes in either
 
-https://github.com/cms-sw/cmssw/issues/new
-
-specifying which package / subsytem whose changes you would like to be notified about.
+* https://github.com/cms-sw/cms-bot/blob/master/watchers.yaml to get notifications for packages/subsystems OR
+* https://github.com/cms-sw/cms-bot/blob/master/category-watchers.yaml to get notifications for all packages of a category
 
 ### Do you have a nice tutorial on how to develop CMSSW on git?
 
