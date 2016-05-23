@@ -56,7 +56,7 @@ if __name__ == "__main__":
       if l.startswith("#"):
         if step:
           t = "CMSDRIVER"
-          if "das_client.py" in command:
+          if "das_client" in command:
             command = re.sub(" --cache.*das-cache.file", "--cache .../das-cache.file", command)
             t = "DAS"
             step = 1
