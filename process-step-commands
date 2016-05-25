@@ -57,7 +57,7 @@ if __name__ == "__main__":
         if step:
           t = "CMSDRIVER"
           if "das_client" in command:
-            command = re.sub(" --cache.*das-cache.file", "--cache .../das-cache.file", command)
+            command = re.sub(" --cache.*das-cache.file", " --cache .../das-cache.file", command)
             t = "DAS"
             step = 1
           h = sha1(command).hexdigest()[0:16]
