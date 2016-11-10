@@ -8,36 +8,15 @@ related:
 
 # Cluster architecture description:
 
-The CMS build infrastructure consists of two kinds of nodes, masters,
+The CMS build infrastructure consists of nodes,
 responsible for scheduling jobs, and slaves, responsible to execute jobs and
 services. They are in general provisioned using [CERN Openstack
 Infrastructure](http://openstack.cern.ch) and configured using [CERN Puppet /
 Foreman setup](http://cern.ch/config).
 
-Masters belong to the hostgroup `vocmssdt/sdt/mesos/master` while slaves belong
-to `vocmssdt/sdt/builder`. The configuration of those hostgroups can be found in
-the GIT repository <https://git.cern.ch/web/it-puppet-hostgroup-vocmssdt.git>,
-in particular in:
-
-- [/code/manifests/sdt/mesos/master.pp](https://git.cern.ch/web/it-puppet-hostgroup-vocmssdt.git/blob/HEAD:/code/manifests/sdt/mesos/master.pp)  for the master.
-- [/code/manifests/sdt/builder.pp](https://git.cern.ch/web/it-puppet-hostgroup-vocmssdt.git/blob/HEAD:/code/manifests/sdt/mesos/master.pp)  for the slaves.
-
-We have in particular three masters, each running on a separate OpenStack
-availability zone which work in an High Availability (HA) mode which allows the
-ensamble to continue working correctly and scheduling jobs. In particular the
-masters run the following services:
-
-- The [**Mesos Master**](http://mesos.apache.org) service: Mesos is used to
-  schedule some of the Jenkins jobs automatically on the cluster and to automate
-  deployment of some of the services, in particular using the Marathon setup.
-
-- The [**ZooKeeper**](https://zookeeper.apache.org): the backend which keeps
-  track of Mesos distributed state, actually providing the HA setup.
-
-- The [**Marathon**](https://mesosphere.github.io/marathon/) service: a simple
-  Platform as a Service (PaaS) implemented as a Mesos framework which allows to
-  define, launch and monitor long running services on the slaves. It relays on
-  Mesos to do the resource management.
+The build slave nodes belong to `vocmssdt/sdt/builder`. The configuration of those 
+hostgroups can be found in the GIT repository <https://git.cern.ch/web/it-puppet-hostgroup-vocmssdt.git>,
+in particular in: [/code/manifests/sdt/builder.pp].
 
 # Useful recipes:
 
@@ -45,30 +24,24 @@ masters run the following services:
 
 First of all make sure you have all the rights to create machines in OpenStack
 and to administer them via Puppet. In particular you'll have to have rights for
-the "CMS SDT build" OpenStack project. You'll need to go to the CERN OpenStack
+the "CMS SDT build" OpenStack project. 
+
+The following E-groups membership is required for creating puppetized openstack VMs:
+
+-aiadmins ( to log into aiadm servers )
+
+-cms-git-vocmssdt-admins
+
+After the user/account is enrolled/added in the above e-groups , the account must login
+once to CERN foreman web page ( othervise it will have problems registering the vm with foreman).
+
+You'll need to go to the CERN OpenStack
 portal, select "Current Project > CMS SDT build" in the top bar and then go to
 the [Access and
 Security](https://openstack.cern.ch/dashboard/project/access_and_security/) tab
 and then select again "API access". You can then click "Download OpenStack RC
 file" which you'll have to copy in a safe place (say
-`~/private/cmssdt-openrc.sh`) on either `lxplus` or `aiadm`. If you do not see
-the openstack project or any of the above steps fails, most likely you are
-lacking the right permissions and access, in which case, please contact the CMS
-VOC (Ivan Glushkov at this point). You'll have to do this step only once.
-
-Now you can log in to `aiadm.cern.ch` and source the OpenStack credentials you just downloaded:
-
-      source ~/private/cmssdt-openrc.sh
-
-you'll be prompted for password which will be put in your shell environment. Make sure you do not cut and paste your environment around.
-You can now execute the various OpenStack commands, using the CLI tool called `nova`, while an exhaustive list of all the available options can be optained via `nova help`, for the process of spawning new machines you probably only care about:
-
-- `nova list`: list the machines in the CMS SDT build project.
-- `nova image-list`: list of OS images you can use. In
-  particular the build nodes should use the latest `SLC6 CERN Server - x86_64`
-  ones.
-- `nova flavor-list`: list available flavors of virtual machines (i.e. how many
-  CPUs, RAM).
+`~/private/cmssdt-openrc.sh`) on either `lxplus` or `aiadm`. You'll have to do this step only once.
 
 Before you can continue to create a slave, make also sure you import the SSH key
 required by build machines into your openstack configuration (use the "Access &
@@ -77,8 +50,11 @@ Security" tab and use "Import key") and that you call it `cmsbuild`.
 ### Creating an Instance  
 
 Creation of instances in CERN Foreman setup is described at
-<http://cern.ch/config/nodes/createnode.html>. The short recipe for build
-machine is:
+<http://cern.ch/config/nodes/createnode.html>. 
+
+After the above steps are done , there are two ways to create puppetzied openstack virtual machines.
+
+Method01:
 
 - Login to `aiadm.cern.ch`.
 - Set up your OpenStack environment (once) and source the `~/private/cmssdt-openrc.sh` file, entering the password when prompted.
@@ -99,17 +75,20 @@ machine is:
                --landb-responsible cms-service-sdt \
                $MACHINE_NAME
         
-This will spawn a new machine. You can check the boot status either in the
-OpenStack GUI or via `nova list`. The `cmsbuild` key used is the ssh key
-available from the cmsbuild user AFS account. Of course you should change the
+Method02:
+
+- Open the cmssdt home page:  <https://cmssdt.cern.ch/SDT/>
+- Click on the Jenkins project
+- Once logged in to Jenkins , there is a job called create-openstack-vms, that creates puppetized VMs in openstack 
+- Click on the Job name and then click on the Build with parameters
+- Provide the parameters such as image , flavor , volume size etc , and run the job.
+- You can monitor the progress either in openstack UI or openstack command line: openstack server show <machine_name>
+
+
+The `cmsbuild` key used is the ssh key available from the cmsbuild user AFS account. Of course you should change the
 name of the machine (`<cmsbuildXX>` in the example) and use a current image and
 flavor. If you have issues about the ssh key, make sure you imported it in your
 account (see the Setting up the OpenStack environment) part. Fore more options you can use ai-bs-vm --help.
-Also , you need to write a file system to /vdc by using mkfs.ext3 or mkfs.ext4 etc manually and then run puppet agent for mounting it properly.
-
-For example :
-
-      mkfs.ext4 /dev/vdc
 
 ### Deleting an Instance
 
