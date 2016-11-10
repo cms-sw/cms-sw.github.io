@@ -47,6 +47,10 @@ Before you can continue to create a slave, make also sure you import the SSH key
 required by build machines into your openstack configuration (use the "Access &
 Security" tab and use "Import key") and that you call it `cmsbuild`.
 
+Public Key:
+
+`ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzHKZxVdp5tF54BJsEOgkQ6rPbhz2w4RznhPlqIM/kmZCL+HN51ofvQPgRWya9coDuuCy2eH5+yJvAZiKRqUlm2QcdUOUmCFYqQKE8WFQVCTGMyMByOHtkf3b+2LtrktIiPp01ElyqQjvoIE++bAmnwKuf3aaK70nmWhrIAQ6BrNfC0vxnx6OOwQcNIyqNHMmi5i49oEUYnwijqm24kngy/reY+ktG3+8fvuISzDru0RKO9pyrtrNg0O772kHY3/MB7GdIgwnJ/bkAvBLa7LEQS9D0EO9TLeJWy6+0IyP5lO0D0Ovillk+0RsWuj4cS7xNnE+xhe+aohuvCP0cwhYwQ== cmsbuild@lxbuild167.cern.ch`
+
 ### Creating an Instance  
 
 Creation of instances in CERN Foreman setup is described at
