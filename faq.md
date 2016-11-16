@@ -299,7 +299,7 @@ only way to access it.
 
 Moreover, if you want to simply browse the old repository via web, you can point your browser to:
 
-<http://cvs.web.cern.ch/cvs/cgi-bin/viewcvs.cgi>
+<http://cern.ch/cmscvs/cgi/viewvc.cgi>
 
 ### How do I ask a question?
 
