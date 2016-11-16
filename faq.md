@@ -288,9 +288,9 @@ For those of you with CERN access there is also a couple of presentations about 
 
 The old CVS repository is available *READ-ONLY* by setting:
 
-    export CVSROOT=":ext:<cern-user-account>@lxplus5.cern.ch:/afs/cern.ch/user/c/cvscmssw/public/CMSSW"
+    export CVSROOT=":ext:<cern-user-account>@lxplus5.cern.ch:/afs/cern.ch/work/c/cmsbuild/public/cvs/CMSSW"
     export CVS_RSH=ssh
-    # setenv CVSROOT ":ext:<cern-user-account>@lxplus5.cern.ch:/afs/cern.ch/user/c/cvscmssw/public/CMSSW"
+    # setenv CVSROOT ":ext:<cern-user-account>@lxplus5.cern.ch:/afs/cern.ch/work/c/cmsbuild/public/cvs/CMSSW"
     # setenv CVS_RSH ssh
 
 where of course `<cern-user-account>` needs to be substituted with your CERN
