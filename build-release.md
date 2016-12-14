@@ -17,15 +17,18 @@ Following are the steps in order to build a CMSSW release.
  
  ```<_TYPE>``` and ```<_pre[0-9]+|_[a-zA-Z]*patch[0-9]+>``` are optional e.g. **CMSSW_8_1_0, CMSSW_8_1_0_patch2, CMSSW_9_0_0_pre2, CMSSW_9_0_0_pre2_ROOT6**
  
- By default the build system uses tip of ```CMSSW_NN_MM<_TYPE>_X``` [cmssw](https://github.com/cms-sw/cmssw) branch to tag the release. If you do not want to use the tip of the branch for release then you can provide the commit hash in the body of the issue using **TAG_COMMIT** option e.g.
+ Body of the issue may contain extra exformation about the release e.g. following keys are supported
+ ```
+ #Override the cmssw branch to use for creating release tag
+ RELEASE_QUEUE: CMSSW_NN_MM_X
  
- **TAG_COMMIT**```: d82023a1d4f3ffd80183cf3f1f37cfe09a99399a```
+ #Override the Commit on the branch to use to tag the release
+ TAG_COMMIT: d82023a1d4f3ffd80183cf3f1f37cfe09a99399a
+ ```
+
+ By default build system uses ```CMSSW_NN_MM<_TYPE>_X``` branch to build the release. You can override it by setting **RELEASE_QUEUE** in the body of the issue. 
  
- OR
- 
- **TAG_COMMIT**```: my-private-tag-or-branch```
- 
- If for some reason you do not have ```CMSSW_NN_MM<_TYPE>_X``` branch then you can explicitly provide [cmssw](https://github.com/cms-sw/cmssw) branch in the body of the issue e.g. **RELEASE_QUEUE**```: CMSSW_9_0_ROOT6_X```
+ By default the build system uses tip of ```CMSSW_NN_MM<_TYPE>_X``` or ```RELEASE_QUEUE``` branch of [cmssw](https://github.com/cms-sw/cmssw) to tag the release. You can override it by setting **TAG_COMMIT** in the body of the issue.
  
  Make sure that [releases config](https://github.com/cms-sw/cms-bot/blob/master/config.map) information file contains at least one line matching  ```RELEASE_QUEUE=CMSSW_NN_MM_X;```
  
