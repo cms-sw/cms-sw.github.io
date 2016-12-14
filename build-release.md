@@ -8,7 +8,7 @@ related:
 
 # How to Build a CMSSW Release
 
-## Create CMSSW Issue:
+## Create CMSSW Github Issue:
    
    Create a new cmssw [issue](https://github.com/cms-sw/cmssw/issues/new). Only github users mentioned [here](https://github.com/cms-sw/cms-bot/blob/master/categories.py#L10) can request for a release. The title of the issue should be
  
@@ -33,7 +33,7 @@ related:
  
  Once issue is created then CMS build bot will acknowledge it.
  
- ## Start build process:
+## Start build process:
  
  One of the [release managers](https://github.com/cms-sw/cms-bot/blob/master/categories.py#L10) can then comment with ```+1``` on the issue to start the build process.
  
