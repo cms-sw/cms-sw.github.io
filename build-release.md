@@ -36,7 +36,7 @@ related:
  
 ## Start build process:
  
- One of the [release managers](https://github.com/cms-sw/cms-bot/blob/master/categories.py#L10) can then comment with ```+1``` on the issue to start the build process.
+ One of the [release managers](https://github.com/cms-sw/cms-bot/blob/master/categories.py#L10) can comment with ```+1``` on the issue to start the build process.
  
  CMS build bot should then guide you (via comments in the issue) how to proceed with upload and announce the release.
 
