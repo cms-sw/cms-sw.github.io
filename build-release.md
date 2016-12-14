@@ -22,7 +22,7 @@ Following are the steps in order to build a CMSSW release.
  #Override the cmssw branch to use for creating release tag
  RELEASE_QUEUE: CMSSW_NN_MM_X
  
- #Override the Commit on the branch to use to tag the release
+ #Override the Commit on the branch to use to tag the release. It can be commit hash or an existing tag
  TAG_COMMIT: d82023a1d4f3ffd80183cf3f1f37cfe09a99399a
  ```
 
