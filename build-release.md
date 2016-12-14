@@ -8,6 +8,31 @@ related:
 
 # How to Build a CMSSW Release
 
+Following are the steps in order to build a CMSSW release.
+ - Create CMSSW Issue:
+   
+   Create a new cmssw [issue](https://github.com/cms-sw/cmssw/issues/new). Only github users mentioned [here](https://github.com/cms-sw/cms-bot/blob/master/categories.py#L10) can request for a release. The title of the issue should be
+ 
+ ```Build CMSSW_NN_MM_OO<_pre[0-9]+|_[a-zA-Z]*patch[0-9]+><_TYPE>```
+ 
+ ```<_TYPE>``` and ```<_pre[0-9]+|_[a-zA-Z]*patch[0-9]+>``` are optional e.g. **CMSSW_8_1_0, CMSSW_8_1_0_patch2, CMSSW_9_0_0_pre2, CMSSW_9_0_0_pre2_ROOT6**
+ 
+ By default the build system uses tip of ```CMSSW_NN_MM<_TYPE>_X``` [cmssw](https://github.com/cms-sw/cmssw) branch to tag the release. If you do not want to use the tip of the branch for release then please tag the release manually. If for some reason you do not have ```CMSSW_NN_MM<_TYPE>_X``` branch then you can explicitly provide [cmssw](https://github.com/cms-sw/cmssw) branch in the body of the issue e.g. ```RELEASE_QUEUE: CMSSW_9_0_ROOT6_X```
+ 
+ Make sure that [releases config](https://github.com/cms-sw/cms-bot/blob/master/config.map) information file contains at least one line matching  ```RELEASE_QUEUE=CMSSW_NN_MM_X;```
+ 
+ Once issue is created then CMS build bot will acknowledge it.
+ 
+ - Start build process:
+ 
+ One of the [release managers](https://github.com/cms-sw/cms-bot/blob/master/categories.py#L10) can then comment with ```+1``` on the issue to start the build process.
+ 
+ CMS build bot should then guide you (via comments in the issue) how to proceed with upload and announce the release.
+
+########################################################
+## OLD Instructions
+########################################################
+
 ## Getting prepared and set up
 
 Before starting, make sure the account you are using (your own account, not
