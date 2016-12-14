@@ -17,6 +17,7 @@ related:
  where ```<_TYPE>``` and ```<_pre[0-9]+|_[a-zA-Z]*patch[0-9]+>``` are optional e.g. **CMSSW_8_1_0, CMSSW_8_1_0_patch2, CMSSW_9_0_0_pre2, CMSSW_9_0_0_pre2_ROOT6**
  
  Body of the issue may contain extra exformation about the release e.g. following keys are supported
+ 
  ```
  #Override the cmssw branch to use for creating release tag
  RELEASE_QUEUE: CMSSW_NN_MM_X
