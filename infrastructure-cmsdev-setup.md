@@ -39,30 +39,26 @@ Setup GPG keys:
 
 Install and configure CVMFS:
 
-     yum -y install cvmfs cvmfs-config-default
-     mv cvmfs/* /etc/cvmfs/
-     rm -rf /etc/cvmfs/*
-     ls /etc/cvmfs/
-     cd /etc/cvmfs/
-     ls
-     scp -r cmsbuild02.cern.ch:/etc/cvmfs/* .
-     ls
-     cvmfs_config setup
-     cvmfs_config chksteup
-     cvmfs_config chksetup
-     cvmfs_config probe
-     df -h
-     cd ..
-     cd
-     cd /etc/profile.d/
-     ls
-     scp -r cmsbuild02.cern.ch:/etc/profile.d/scram.sh .
-     scp -r cmsbuild02.cern.ch:/etc/profile.d/scram.csh .
-     ls
+     # yum -y install cvmfs cvmfs-config-default
+     
+     # cat /etc/cvmfs/default.local
+     CVMFS_REPOSITORIES=cms.cern.ch,grid.cern.ch,cms-ib.cern.ch
+     CVMFS_HTTP_PROXY='DIRECT'
+
+    # cvmfs_config setup
+    # cvmfs_config chksteup
+    # cvmfs_config probe
+    # df -h
+    
+    # cat /etc/profile.d/scram.sh 
+    source /cvmfs/cms.cern.ch/cmsset_default.sh
+    # cat /etc/profile.d/scram.csh 
+    source /cvmfs/cms.cern.ch/cmsset_default.csh
+
      chmod +x scram.sh 
      chmod +x scram.csh 
 
-Install osg client:
+Install osg client and other stuff:
 
      yum -y install https://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm
      yum -y install yum-plugin-priorities
