@@ -1,6 +1,17 @@
-To setup your own slc6 based cmsdev machine , please follow these instructions:   
+<b>To setup your own slc6 based cmsdev machine , please follow these instructions:</b>   
+
+After creating/installing slc6 on your virtual/physical machine add some additional repos in `/etc/yum.repos.d/` with the content as shown by the cat command:
+
+    #cat /etc/yum.repos.d/carepo.repo 
+      [carepo]
+      gpgkey=file:///etc/pki/rpm-gpg/GPG-KEY-EUGridPMA-RPM-3
+      name=IGTF CA Repository
+      baseurl=http://linuxsoft.cern.ch/mirror/repository.egi.eu/sw/production/cas/1/current/
+      gpgcheck=1
+      enabled=1
 
 
+     
 
       scp -r cmsbuild02@cern.ch:/etc-puppet.repos.d/* /etc/yum.repos.d/
       scp -r cmsbuild02.cern.ch:/etc-puppet.repos.d/* /etc/yum.repos.d/
