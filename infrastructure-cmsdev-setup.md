@@ -29,27 +29,16 @@ After creating/installing slc6 on your virtual/physical machine add some additio
        gpgcheck=1
        enabled=0
        priority=80
-       proxy=_none_
-
-
-     
-
+       proxy=_none
+       
+Setup GPG keys:
     
-    
-    
-    
-    
-     mkdir /etc/cvmfs
-     scp -r cmsbuild02.cern.ch:/etc/cvmfs /etc/cvmfs
-     ls /etc/cvmfs/
-     mv cvmfs ~
-    mv cvmfs ~/
-     ls
-     cd
-     mv /etc/cvmfs/cvmfs .
-     rm -rf /etc/cvmfs/
      scp -r cmsbuild02.cern.ch:/etc/pki/rpm-gpg/* /etc/pki/rpm-gpg/
      ls /etc/pki/rpm-gpg/
+
+
+Install and configure CVMFS:
+
      yum -y install cvmfs cvmfs-config-default
      mv cvmfs/* /etc/cvmfs/
      rm -rf /etc/cvmfs/*
@@ -72,41 +61,20 @@ After creating/installing slc6 on your virtual/physical machine add some additio
      ls
      chmod +x scram.sh 
      chmod +x scram.csh 
-     ls
-      yum -y install https://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm
+
+Install osg client:
+
+     yum -y install https://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm
      yum -y install yum-plugin-priorities
      yum -y install osg-wn-client
      yum -y install HEP_OSlibs_SL6 CERN-CA-certs git zip
      df -h
-     cd ,,
-     cd ..
-     cd
-     ls
-     cd /tmp/CMSSW_9_0_0_pre4/x/
-     ls
-     top
-     ls
-     cat runall-report-step123-.log 
-     df -h
-     cvmfs_config probe
-     df -h
-     cat runall-report-step123-.log 
-     cd /tmp/CMSSW_9_0_0_pre4/x
-     cat runall-report-step123-.log 
-     top
-     ls /tmp/CMSSW_9_0_0_pre4/x/
-     w
-    top
-     df -h
-     cvmfs_config probe
-     df -h
-     ls /tmp/CMSSW_9_0_0_pre4/x/
-     top
-     ls /tmp/CMSSW_9_0_0_pre4/x/
-     cvmfs_config killall
-     df -h
-     yum -y install CERN-CA-Certs
-     yum install CERN-CA-certs
+    
+   
+     
+Install some add on tools:
+
+
      yum install gdb
      yum install git
      yum install PyGitHub
