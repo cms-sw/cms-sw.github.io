@@ -3,28 +3,42 @@
 After creating/installing slc6 on your virtual/physical machine add some additional repos in `/etc/yum.repos.d/` with the content as shown by the cat command:
 
     #cat /etc/yum.repos.d/carepo.repo 
-      [carepo]
-      gpgkey=file:///etc/pki/rpm-gpg/GPG-KEY-EUGridPMA-RPM-3
-      name=IGTF CA Repository
-      baseurl=http://linuxsoft.cern.ch/mirror/repository.egi.eu/sw/production/cas/1/current/
+     [carepo]
+     gpgkey=file:///etc/pki/rpm-gpg/GPG-KEY-EUGridPMA-RPM-3
+     name=IGTF CA Repository
+     baseurl=http://linuxsoft.cern.ch/mirror/repository.egi.eu/sw/production/cas/1/current/
+     gpgcheck=1
+     enabled=1
+       
+     # cat /etc/yum.repos.d/cvmfs.repo 
+      [cvmfs]
+      gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CernVM
+      name=CVMFS yum repository for el6
+      baseurl=http://cern.ch/cvmrepo/yum/cvmfs/EL/6/x86_64
+      includepkgs=cvmfs,cvmfs-keys,cvmfs-server,cvmfs-config-default
       gpgcheck=1
       enabled=1
+      priority=80
+      proxy=_none_
+      
+      #cat /etc/yum.repos.d/cvmfs-config.repo 
+       [cvmfs-config]
+       gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CernVM
+       name=CVMFS config yum repository for el6
+       baseurl=http://cern.ch/cvmrepo/yum/cvmfs-config/EL/6/x86_64
+       gpgcheck=1
+       enabled=0
+       priority=80
+       proxy=_none_
 
 
      
 
-      scp -r cmsbuild02@cern.ch:/etc-puppet.repos.d/* /etc/yum.repos.d/
-      scp -r cmsbuild02.cern.ch:/etc-puppet.repos.d/* /etc/yum.repos.d/
-      scp -r cmsbuild02.cern.ch:/etc-puppet.repos.d/ /etc/yum.repos.d/
-      scp -r cmsbuild02.cern.ch:/etc/puppet.repos.d/ /etc/yum.repos.d/
-      scp -r cmsbuild02.cern.ch:/etc/yum-puppet.repos.d/ /etc/yum.repos.d/
-      ls /etc/yum.repos.d/
-     cd /etc/yum.repos.d/
-     ls
-     mv yum-puppet.repos.d/* .
-     y
-     ls
-     rm -rf yum-puppet.repos.d/
+    
+    
+    
+    
+    
      mkdir /etc/cvmfs
      scp -r cmsbuild02.cern.ch:/etc/cvmfs /etc/cvmfs
      ls /etc/cvmfs/
