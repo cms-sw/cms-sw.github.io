@@ -35,7 +35,8 @@ Setup GPG keys:
     
              cat /etc/pki/rpm-gpg/RPM-GPG-KEY-CernVM 
              
- ```
+```
+ 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v2.0.14 (GNU/Linux)
 
@@ -67,7 +68,7 @@ AJ9e1y70yIKwx6YmpDnwqWSE07Q6lACdEnem0DbLg9t+gkX/98driCP9Ifg=
 =S7Dt
 -----END PGP PUBLIC KEY BLOCK-----
 
- ```
+```
               
               
     #cat /etc/pki/rpm-gpg/GPG-KEY-EUGridPMA-RPM-3 
