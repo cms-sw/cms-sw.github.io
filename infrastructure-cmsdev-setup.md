@@ -98,6 +98,10 @@ Install and configure CVMFS:
     CVMFS_REPOSITORIES=cms.cern.ch,grid.cern.ch,cms-ib.cern.ch
     CVMFS_HTTP_PROXY='DIRECT'
     EOF
+    
+    cat <<EOF > /etc/cvmfs/config.d/cms.cern.ch.local
+    export CMS_LOCAL_SITE=T2_CH_CERN
+    EOF
   
     cvmfs_config chksetup
     cvmfs_config probe
