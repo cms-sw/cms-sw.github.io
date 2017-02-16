@@ -114,23 +114,23 @@ Install and configure CVMFS:
 
 Install osg client and other stuff:
 
-     yum -y install https://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm
-     yum -y install yum-plugin-priorities
-     yum -y install osg-wn-client
-     yum -y install HEP_OSlibs_SL6 CERN-CA-certs git zip
-     df -h
+    yum -y install https://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm
+    yum -y install yum-plugin-priorities
+    yum -y install osg-wn-client
+    yum -y install HEP_OSlibs_SL6 CERN-CA-certs git zip
+    df -h
     
    
      
 Install some add on tools:
 
 
-     yum install gdb
-     yum install git
-     yum install python-pip
-     pip install --upgrade pip
+    yum install gdb
+    yum install git
+    yum install python-pip
+    pip install --upgrade pip
      
-     yum install finger screen libXpm-devel libXft-devel krb5-devel subversion telnet readline-devel wget tk-devel tcl-devel
+    yum install finger screen libXpm-devel libXft-devel krb5-devel subversion telnet readline-devel wget tk-devel tcl-devel
   
 
 For testing , please create a release area by doing `scam project <CMSSW_9_0_0_pre4>` and then `cd` into that directory , run `cmsenv` and `voms-proxy-init` , followed by `runTheMatrix.py -i all -s`
