@@ -1,4 +1,4 @@
-<b>To setup your own slc6 based cmsdev machine , please follow these instructions:</b>   
+<b>To setup your own SLC6 based CMSDEV machine , please follow these instructions:</b>   
 
 After creating/installing slc6 on your virtual/physical machine add some additional repos in `/etc/yum.repos.d/` with the content as shown by the cat command:
 
