@@ -129,7 +129,6 @@ Install some add on tools:
     yum install git
     yum install python-pip
     pip install --upgrade pip
-     
     yum install finger screen libXpm-devel libXft-devel krb5-devel subversion telnet readline-devel wget tk-devel tcl-devel
   
 
