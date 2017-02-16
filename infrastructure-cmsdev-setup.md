@@ -133,4 +133,4 @@ Install some add on tools:
      yum install finger screen libXpm-devel libXft-devel krb5-devel subversion telnet readline-devel wget tk-devel tcl-devel
   
 
-For testing , please create a release area by doing `scam project <CMSSW_9_0_0_pre4>` and then `cd` into that directory , run `cmsenv` and `voms-proxy-init` , followed by `runTheMatrix -i all -s`
+For testing , please create a release area by doing `scam project <CMSSW_9_0_0_pre4>` and then `cd` into that directory , run `cmsenv` and `voms-proxy-init` , followed by `runTheMatrix.py -i all -s`
