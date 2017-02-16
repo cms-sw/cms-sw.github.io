@@ -99,8 +99,8 @@ Install and configure CVMFS:
      CVMFS_HTTP_PROXY='DIRECT'
      EOF
   
-    # cvmfs_config chksetup
-    # cvmfs_config probe
+    cvmfs_config chksetup
+    cvmfs_config probe
     
     
     cat <<EOF > /etc/profile.d/scram.sh 
