@@ -3,15 +3,16 @@
 
 After creating/installing slc6 on your virtual/physical machine add some additional repos in `/etc/yum.repos.d/` with the content as shown by the cat command:
 
-    #cat /etc/yum.repos.d/carepo.repo 
+    cat <<EOF > /etc/yum.repos.d/carepo.repo 
     [carepo]
     gpgkey=file:///etc/pki/rpm-gpg/GPG-KEY-EUGridPMA-RPM-3
     name=IGTF CA Repository
     baseurl=http://linuxsoft.cern.ch/mirror/repository.egi.eu/sw/production/cas/1/current/
     gpgcheck=1
     enabled=1
+    EOF
        
-    # cat /etc/yum.repos.d/cvmfs.repo 
+    cat <<EOF > /etc/yum.repos.d/cvmfs.repo 
     [cvmfs]
     gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CernVM
     name=CVMFS yum repository for el6
@@ -19,22 +20,20 @@ After creating/installing slc6 on your virtual/physical machine add some additio
     includepkgs=cvmfs,cvmfs-keys,cvmfs-server,cvmfs-config-default
     gpgcheck=1
     enabled=1
-   
+    EOF
       
-    #cat /etc/yum.repos.d/cvmfs-config.repo 
+    cat <<EOF > /etc/yum.repos.d/cvmfs-config.repo 
     [cvmfs-config]
     gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CernVM
     name=CVMFS config yum repository for el6
     baseurl=http://cern.ch/cvmrepo/yum/cvmfs-config/EL/6/x86_64
     gpgcheck=1
     enabled=1
-    
+    EOF
 Setup GPG keys:
 
     
-    #cat /etc/pki/rpm-gpg/RPM-GPG-KEY-CernVM 
-    
-             
+    cat <<EOF > /etc/pki/rpm-gpg/RPM-GPG-KEY-CernVM 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v2.0.14 (GNU/Linux)
@@ -66,11 +65,10 @@ CFyegf6jnOJU0AqITwQYEQIADwIbDAUCT18MOQUJBboAEQAKCRAjDTidiuRc53P2
 AJ9e1y70yIKwx6YmpDnwqWSE07Q6lACdEnem0DbLg9t+gkX/98driCP9Ifg=
 =S7Dt
 -----END PGP PUBLIC KEY BLOCK-----
+EOF
 ```
               
-              
-    #cat /etc/pki/rpm-gpg/GPG-KEY-EUGridPMA-RPM-3 
-
+    cat <<EOF > /etc/pki/rpm-gpg/GPG-KEY-EUGridPMA-RPM-3 
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1.2.1 (GNU/Linux)
@@ -89,30 +87,31 @@ iFkEExECABkFAkLTiyYECwcDAgMVAgMDFgIBAh4BAheAAAoJEMMtmcg827xx5PQA
 oON2EH0dqfwNjGr1GlGyt1o5bWkzAJ0Y4QOPWaCIJFABoluX5nifjKWV9w==
 =qXx1
 -----END PGP PUBLIC KEY BLOCK-----
-
+EOF
 ```
 
 
 Install and configure CVMFS:
 
-     # yum -y install cvmfs cvmfs-config-default
+     yum -y install cvmfs cvmfs-config-default
      
-     # cat /etc/cvmfs/default.local
+     cat <<EOF > /etc/cvmfs/default.local
      CVMFS_REPOSITORIES=cms.cern.ch,grid.cern.ch,cms-ib.cern.ch
      CVMFS_HTTP_PROXY='DIRECT'
-
+     EOF
   
-    # cvmfs_config chksteup
+    # cvmfs_config chksetup
     # cvmfs_config probe
-    # df -h
     
-    # cat /etc/profile.d/scram.sh 
+    
+    cat <<EOF > /etc/profile.d/scram.sh 
     source /cvmfs/cms.cern.ch/cmsset_default.sh
-    # cat /etc/profile.d/scram.csh 
+    EOF
+    
+    cat <<EOF > /etc/profile.d/scram.csh 
     source /cvmfs/cms.cern.ch/cmsset_default.csh
-
-     chmod +x scram.sh 
-     chmod +x scram.csh 
+    EOF
+     
 
 Install osg client and other stuff:
 
