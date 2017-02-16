@@ -18,8 +18,7 @@ After creating/installing slc6 on your virtual/physical machine add some additio
     includepkgs=cvmfs,cvmfs-keys,cvmfs-server,cvmfs-config-default
     gpgcheck=1
     enabled=1
-    priority=80
-    proxy=_none_
+   
       
     #cat /etc/yum.repos.d/cvmfs-config.repo 
     [cvmfs-config]
@@ -27,10 +26,8 @@ After creating/installing slc6 on your virtual/physical machine add some additio
     name=CVMFS config yum repository for el6
     baseurl=http://cern.ch/cvmrepo/yum/cvmfs-config/EL/6/x86_64
     gpgcheck=1
-    enabled=0
-    priority=80
-    proxy=_none
-       
+    enabled=1
+    
 Setup GPG keys:
 
     
@@ -103,7 +100,7 @@ Install and configure CVMFS:
      CVMFS_REPOSITORIES=cms.cern.ch,grid.cern.ch,cms-ib.cern.ch
      CVMFS_HTTP_PROXY='DIRECT'
 
-    # cvmfs_config setup
+  
     # cvmfs_config chksteup
     # cvmfs_config probe
     # df -h
