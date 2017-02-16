@@ -131,10 +131,7 @@ Install some add on tools:
      yum install git
      yum install python-pip
      pip install --upgrade pip
-     pip install PyGitHub
-     yum -y install python-devel
-     pip install PyGitHub
-     yum install HEP_OSlibs_SL6
+     
      yum install finger screen libXpm-devel libXft-devel krb5-devel subversion telnet readline-devel wget tk-devel tcl-devel
   
 
