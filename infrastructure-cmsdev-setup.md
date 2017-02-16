@@ -128,10 +128,6 @@ Install some add on tools:
 
      yum install gdb
      yum install git
-     yum install PyGitHub
-     yum install Python-Pip
-     yum install PyPip
-     yum search pip
      yum install python-pip
      pip install --upgrade pip
      pip install PyGitHub
