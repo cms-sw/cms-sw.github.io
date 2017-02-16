@@ -92,12 +92,12 @@ EOF
 
 Install and configure CVMFS:
 
-     yum -y install cvmfs cvmfs-config-default
+    yum -y install cvmfs cvmfs-config-default
      
-     cat <<EOF > /etc/cvmfs/default.local
-     CVMFS_REPOSITORIES=cms.cern.ch,grid.cern.ch,cms-ib.cern.ch
-     CVMFS_HTTP_PROXY='DIRECT'
-     EOF
+    cat <<EOF > /etc/cvmfs/default.local
+    CVMFS_REPOSITORIES=cms.cern.ch,grid.cern.ch,cms-ib.cern.ch
+    CVMFS_HTTP_PROXY='DIRECT'
+    EOF
   
     cvmfs_config chksetup
     cvmfs_config probe
