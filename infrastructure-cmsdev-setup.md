@@ -137,4 +137,5 @@ For testing , please create a release area by doing `scam project <CMSSW_9_0_0_p
 
 For complete CVMFS installation , custom configuration and other details , please follow the link:
 
-http://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html
+    http://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html
+    
