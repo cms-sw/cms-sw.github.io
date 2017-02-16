@@ -135,7 +135,7 @@ Install some add on tools:
 
 For testing , please create a release area by doing `scam project <CMSSW_9_0_0_pre4>` and then `cd` into that directory , run `cmsenv` and `voms-proxy-init` , followed by `runTheMatrix.py -i all -s`
 
-For complete CVMFS installation , custom configuration and other details , please follow the link:
+For CVMFS documentation , see also:
 
     http://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html
     
