@@ -1,7 +1,7 @@
 
 <b>To setup your own SLC6 ( tested on SLC6 - x86_64 [2017-01-24] ) based CMSDEV machine , please follow these instructions:</b>   
 
-After creating/installing slc6 on your virtual/physical machine add some additional repos in `/etc/yum.repos.d/` with the content as shown by the cat command:
+After creating/installing slc6 on your virtual/physical machine run the following commands either as root or using sudo:
 
     cat <<EOF > /etc/yum.repos.d/carepo.repo 
     [carepo]
