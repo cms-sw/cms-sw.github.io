@@ -34,7 +34,7 @@ After creating/installing slc6 on your virtual/physical machine run the followin
 Setup GPG keys:
 
 ```
-    cat <<EOF > /etc/pki/rpm-gpg/RPM-GPG-KEY-CernVM 
+cat <<EOF > /etc/pki/rpm-gpg/RPM-GPG-KEY-CernVM 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v2.0.14 (GNU/Linux)
 
@@ -68,7 +68,7 @@ AJ9e1y70yIKwx6YmpDnwqWSE07Q6lACdEnem0DbLg9t+gkX/98driCP9Ifg=
 EOF
 
               
-    cat <<EOF > /etc/pki/rpm-gpg/GPG-KEY-EUGridPMA-RPM-3 
+cat <<EOF > /etc/pki/rpm-gpg/GPG-KEY-EUGridPMA-RPM-3 
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1.2.1 (GNU/Linux)
 
