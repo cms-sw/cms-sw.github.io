@@ -114,6 +114,7 @@ Install and configure CVMFS:
 
 Install osg client and other stuff:
 
+    yum clean all
     yum -y install https://repo.grid.iu.edu/osg/3.3/osg-3.3-el6-release-latest.rpm
     yum -y install yum-plugin-priorities
     yum -y install osg-wn-client
