@@ -49,21 +49,9 @@
    82  yum -y install perl-LWP-Protocol-https
    83  yum -y install fetch-crl
    84  fetch-crl 
-   85  yum -y install CERN-CA-certs
-   86  yum -y install CERN-CA-cert
-   87  yum search CERN-CA
-   88  yum clean all
-   89  yum update
-   90   yum -y install CERN-CA-certs
-   91   yum search CERN-CA
-   92   yum search CA-certs
+  
    93  rpm -iUvh http://linuxsoft.cern.ch/cern/slc65/updates/i386/RPMS/CERN-CA-certs-20160421-2.slc6.noarch.rpm
-   94   yum -y install CERN-CA-certs
-   95  yum clean all
-   96  yum repolist
-   97   yum -y install CERN-CA-certs
-   98  yum search CERN-CA
-   99  rpm -ql CERN-CA-certs.noarch
+  
   100  yum -y install fuse setroubleshoot-server autofs fuse-devel gdb attr cvmfs-config-default
   101  rpm -iUv http://cvmrepo.web.cern.ch/cvmrepo/yum/cvmfs/EL/7.3/aarch64/cvmfs-2.3.2-1.el7.centos.aarch64.rpm
   102  scp -r cmsbuild@techlab-arm64-thunderx-02:/etc/cvmfs /etc/
