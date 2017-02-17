@@ -50,9 +50,8 @@ service autofs start
 cvmfs_config setup
 service autofs restart
 cvmfs_config probe
-mkdir -p /build/cmsbuild
-chown -R cmsbuild:zh /build/cmsbuild/
-chown -R cmsbuild:zh /build/cmsbuild/
+df -h
+ls /cvmfs/cms.cern.ch/SITECONF/local/Jobconfig
 
 
 
