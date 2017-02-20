@@ -27,14 +27,14 @@
    yum -y install fuse setroubleshoot-server autofs fuse-devel gdb attr cvmfs-config-default
    rpm -iUv http://cvmrepo.web.cern.ch/cvmrepo/yum/cvmfs/EL/7.3/aarch64/cvmfs-2.3.2-1.el7.centos.aarch64.rpm
    #scp -r cmsbuild@techlab-arm64-thunderx-02:/etc/cvmfs /etc/
-   cat << EOF > /etc/cvmfs/default.local 
+   cat <<EOF > /etc/cvmfs/default.local 
    CVMFS_QUOTA_LIMIT='2000'
    CVMFS_HTTP_PROXY='DIRECT'
    CVMFS_CACHE_BASE='/var/lib/cvmfs'
    CVMFS_FORCE_SIGNING='yes'
    CVMFS_REPOSITORIES='cms-ib.cern.ch,cms.cern.ch,'
    EOF
-   cat << EOF > /etc/cvmfs/config.d/cms.cern.ch.local 
+   cat <<EOF > /etc/cvmfs/config.d/cms.cern.ch.local 
    export CMS_LOCAL_SITE=T2_CH_CERN
    EOF
    systemctl start autofs
