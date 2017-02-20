@@ -8,10 +8,9 @@
   yum install glibc coreutils bash tcsh zsh perl tcl tk readline openssl ncurses e2fsprogs krb5-libs freetype fontconfig libstdc++ libidn libX11 libXmu libSM libICE libXcursor libXext libXrandr libXft mesa-libGLU mesa-libGL e2fsprogs-libs libXi libXinerama libXrender libXpm gcc-c++ libcom_err libXpm-devel libXft-devel libX11-devel libXext-devel mesa-libGLU mesa-libGLU-devel libGLEW glew perl-Digest-MD5 perl-ExtUtils-MakeMaker patch perl-libwww-perl krb5-libs krb5-devel perl-Data-Dumper perl-WWW-Curl texinfo hostname time perl-Carp perl-Text-ParseWords perl-PathTools perl-ExtUtils-MakeMaker perl-Exporter perl-File-Path perl-Getopt-Long perl-constant perl-File-Temp perl-Socket perl-Time-Local perl-Storable glibc-headers perl-threads perl-Thread-Queue perl-Module-ScanDeps perl-Test-Harness perl-Env perl-Switch perl-ExtUtils-Embed ncurses-libs perl-libs
   yum -y install git subversion bc finger
   yum -y install zip unzip
-  yum install java-1.8.0-openjdk kstart python-pip
+  yum install java-1.8.0-openjdk python-pip python-devel
   rpm -iUv ftp://195.220.108.108/linux/fedora-secondary/releases/25/Everything/ppc64le/os/Packages/k/kstart-4.1-8.fc24.ppc64le.rpm
   pip install --upgrade pip
-  yum -y install python-devel
   pip install PyGithub
   yum -y install lcg-CA
   yum -y install perl-LWP-Protocol-https
