@@ -11,7 +11,6 @@
    scp -r techlab-arm64-moonshot-xgene-002.cern.ch:/etc/yum.repos.d /etc/
    yum -y install ntp
    scp -r techlab-arm64-moonshot-xgene-002.cern.ch:/etc/ntp.conf /etc/
-   systemctl enable ntp
    systemctl enable ntpd
    systemctl start ntpd
    scp -r cmsbuild@techlab-arm64-thunderx-02:/etc/pki/rpm-gpg/ /etc/pki/
