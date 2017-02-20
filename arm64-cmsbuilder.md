@@ -26,13 +26,21 @@
    rpm -iUvh http://linuxsoft.cern.ch/cern/slc65/updates/i386/RPMS/CERN-CA-certs-20160421-2.slc6.noarch.rpm
    yum -y install fuse setroubleshoot-server autofs fuse-devel gdb attr cvmfs-config-default
    rpm -iUv http://cvmrepo.web.cern.ch/cvmrepo/yum/cvmfs/EL/7.3/aarch64/cvmfs-2.3.2-1.el7.centos.aarch64.rpm
-   scp -r cmsbuild@techlab-arm64-thunderx-02:/etc/cvmfs /etc/
-   # cat /etc/cvmfs/config.d/cms.cern.ch.local 
+   #scp -r cmsbuild@techlab-arm64-thunderx-02:/etc/cvmfs /etc/
+   cat << EOF > /etc/cvmfs/default.local 
+   CVMFS_QUOTA_LIMIT='2000'
+   CVMFS_HTTP_PROXY='DIRECT'
+   CVMFS_CACHE_BASE='/var/lib/cvmfs'
+   CVMFS_FORCE_SIGNING='yes'
+   CVMFS_REPOSITORIES='cms-ib.cern.ch,cms.cern.ch,'
+   EOF
+   cat << EOF > /etc/cvmfs/config.d/cms.cern.ch.local 
+   export CMS_LOCAL_SITE=T2_CH_CERN
+   EOF
    systemctl start autofs
    cvmfs_config setup
    cvmfs_config chksetup
    cvmfs_config probe
-   df -h
    mkdir -p /build/cmsbuild
    chown -R cmsbuild:zh /build/cmsbuild
 
