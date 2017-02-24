@@ -54,5 +54,8 @@
    chown -R cmsbld .ssh
    
 
+#for ubuntu machines the cvmfs packages
+#http://davidlt.web.cern.ch/davidlt/vault/cvmfs_ubuntu1610_aarch64/
+
 
 ```
