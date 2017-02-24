@@ -43,6 +43,16 @@
    cvmfs_config probe
    mkdir -p /build/cmsbuild
    chown -R cmsbuild:zh /build/cmsbuild
+   useradd -m -s /bin/bash cmsbld
+   mkdir /build/cmsbld
+   mkdir /data/cmsbld
+   chown -R cmsbld /build/cmsbld
+   chown -R cmsbld /data/cmsbld
+   su - cmsbld
+   rm -rf .ssh
+   scp -r cmsbuild@lxplus.cern.ch:/private/cmsbld/.ssh .
+   chown -R cmsbld .ssh
+   
 
 
 ```
