@@ -34,13 +34,15 @@
    cvmfs_config setup
    cvmfs_config chksetup
    cvmfs_config probe
-   useradd -U -m -s /bin/bash -d /home/cmsbld cmsbld
-   mkdir /build/cmsbld
-   chown -R cmsbld:cmsbld /build/cmsbld
-   su - cmsbld
+   chmod g+w /build
+   USER=cmsbld
+   useradd -U -m -s /bin/bash -d /home/$USER $USER
+   mkdir /build/$USER
+   chown -R $USER:$USER /build/$USER
+   su - $USER
+   cd ~
    rm -rf .ssh
-   echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzHKZxVdp5tF54BJsEOgkQ6rPbhz2w4RznhPlqIM/kmZCL+HN51ofvQPgRWya9coDuuCy2eH5+yJvAZiKRqUlm2QcdUOUmCFYqQKE8WFQVCTGMyMByOHtkf3b+2LtrktIiPp01ElyqQjvoIE++bAmnwKuf3aaK70nmWhrIAQ6BrNfC0vxnx6OOwQcNIyqNHMmi5i49oEUYnwijqm24kngy/reY+ktG3+8fvuISzDru0RKO9pyrtrNg0O772kHY3/MB7GdIgwnJ/bkAvBLa7LEQS9D0EO9TLeJWy6+0IyP5lO0D0Ovillk+0RsWuj4cS7xNnE+xhe+aohuvCP0cwhYwQ== cmsbuild@lxbuild167.cern.ch" > /home/cmsbld/.ssh/authorized_keys
-   chown -R cmsbld .ssh
+   echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzHKZxVdp5tF54BJsEOgkQ6rPbhz2w4RznhPlqIM/kmZCL+HN51ofvQPgRWya9coDuuCy2eH5+yJvAZiKRqUlm2QcdUOUmCFYqQKE8WFQVCTGMyMByOHtkf3b+2LtrktIiPp01ElyqQjvoIE++bAmnwKuf3aaK70nmWhrIAQ6BrNfC0vxnx6OOwQcNIyqNHMmi5i49oEUYnwijqm24kngy/reY+ktG3+8fvuISzDru0RKO9pyrtrNg0O772kHY3/MB7GdIgwnJ/bkAvBLa7LEQS9D0EO9TLeJWy6+0IyP5lO0D0Ovillk+0RsWuj4cS7xNnE+xhe+aohuvCP0cwhYwQ== cmsbuild@lxbuild167.cern.ch" > .ssh/authorized_keys
 
 #for ubuntu machines the cvmfs packages
 #http://davidlt.web.cern.ch/davidlt/vault/cvmfs_ubuntu1610_aarch64/
