@@ -1,12 +1,5 @@
 ```
    su - cmsbuild
-   cd ~
-   mkdir -p ~/.{ssh,globus}
-   mkdir private
-   scp -r cmsbuild@techlab-arm64-moonshot-xgene-002.cern.ch:~/.ssh/ .
-   scp -r cmsbuild@techlab-arm64-moonshot-xgene-002.cern.ch:~/private/ .
-   scp -r cmsbuild@techlab-arm64-moonshot-xgene-002.cern.ch:~/.globus/ .
-   scp -r techlab-arm64-moonshot-xgene-002.cern.ch:~/.gitconfig .
    sudo su -
    scp -r techlab-arm64-moonshot-xgene-002.cern.ch:/etc/yum.repos.d /etc/
    yum -y install ntp
@@ -41,18 +34,13 @@
    cvmfs_config setup
    cvmfs_config chksetup
    cvmfs_config probe
-   mkdir -p /build/cmsbuild
-   chown -R cmsbuild:zh /build/cmsbuild
-   useradd -m -s /bin/bash cmsbld
+   useradd -U -m -s /bin/bash -d /home/cmsbld cmsbld
    mkdir /build/cmsbld
-   mkdir /data/cmsbld
-   chown -R cmsbld /build/cmsbld
-   chown -R cmsbld /data/cmsbld
+   chown -R cmsbld:cmsbld /build/cmsbld
    su - cmsbld
    rm -rf .ssh
-   scp -r cmsbuild@lxplus.cern.ch:/private/cmsbld/.ssh .
+   echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAzHKZxVdp5tF54BJsEOgkQ6rPbhz2w4RznhPlqIM/kmZCL+HN51ofvQPgRWya9coDuuCy2eH5+yJvAZiKRqUlm2QcdUOUmCFYqQKE8WFQVCTGMyMByOHtkf3b+2LtrktIiPp01ElyqQjvoIE++bAmnwKuf3aaK70nmWhrIAQ6BrNfC0vxnx6OOwQcNIyqNHMmi5i49oEUYnwijqm24kngy/reY+ktG3+8fvuISzDru0RKO9pyrtrNg0O772kHY3/MB7GdIgwnJ/bkAvBLa7LEQS9D0EO9TLeJWy6+0IyP5lO0D0Ovillk+0RsWuj4cS7xNnE+xhe+aohuvCP0cwhYwQ== cmsbuild@lxbuild167.cern.ch" > /home/cmsbld/.ssh/authorized_keys
    chown -R cmsbld .ssh
-   
 
 #for ubuntu machines the cvmfs packages
 #http://davidlt.web.cern.ch/davidlt/vault/cvmfs_ubuntu1610_aarch64/
