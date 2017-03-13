@@ -54,6 +54,12 @@ option in your ~/.ssh/config file:
     Host github.com
         User                    git
         ProxyCommand            nc -x localhost:1080 %h %p
+       
+OR On CentOS7 you can
+
+    Host github.com
+        User                    git
+        ProxyCommand            ssh cmsusr nc %h %p
 
 For more information, see [ssh_config(5)](http://www.openbsd.org/cgi-bin/man.cgi?query=ssh_config&sektion=5&manpath=OpenBSD+Current&arch=amd64&format=html).
 
