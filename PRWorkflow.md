@@ -38,7 +38,7 @@ If these tests are successful, your code changes should also pass the basic chec
 
 ### Initial pull request 
    - [This tutorial](tutorial.html) provides instructions for making a pull request to CMSSW
-   - New developments should be always submitted to the development release of CMSSW. The default branch in the CMSSW repository is always the development release, so the default branch is the correct one when you make your pull request.
+   - New developments should be always submitted to the development release of CMSSW. The default branch in the CMSSW repository is always the master branch. **All feature/bug fix requests first need to be integrated into the master branch, so the default branch is the correct one when you first make your pull request.**
    - Pull requests including new packages require an extra check in order to review the code organization in CMSSW [Too be filled in]
    
 ### Code review
