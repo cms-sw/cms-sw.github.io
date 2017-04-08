@@ -9,9 +9,9 @@ They include:
 Importing log files to the repository.
 ======================================
 
-A reasonable amount of processed log files, usually in json format, can be
-stored in this git repository and hopefully be this will not cause scalability
-issues thanks to the fact git is extremely good at compressing similar files.
+A reasonable amount of processed log files, usually in json format, can be 
+stored in this git repository and not cause scalability issues, since git 
+is extremely good at compressing similar files.
 
 This allows us to serve integration builds results via [Github
 Pages](http://pages.github.com)
