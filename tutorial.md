@@ -138,7 +138,7 @@ If you click on the "Edit" button in the top right corner, you can select the
 
 ![Pull request](images/head-branch.png)
 
-Or change the "base branch", i.e. the one to which you want to have your changes merged.
+Or change the "base branch", i.e. the one to which you want to have your changes merged. Starting from CMSSW_9_1_X and later the base branch for the latest development release is the master branch.
 
 ![Pull requests GUI](images/base-branch.png)
 
