@@ -8262,7 +8262,19 @@
                 "hlt_tests": "found"
             }, 
             {
-                "fwlite": [], 
+                "fwlite": [
+                    {
+                        "arch": "slc6_amd64_gcc530", 
+                        "passed": "error", 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/tue/8.0-tue-23/CMSSW_8_0_X_2017-04-11-2300/new_FWLITE/logAnalysis.pkl", 
+                        "details": {
+                            "compWarning": 1, 
+                            "miscError": 5, 
+                            "compError": 2, 
+                            "linkError": 278
+                        }
+                    }
+                ], 
                 "addons": [], 
                 "comp_baseline_state": "ok", 
                 "builds": [
@@ -19546,22 +19558,27 @@
         "comparisons": [
             {
                 "fwlite": [], 
-                "cmsdistTags": {}, 
+                "cmsdistTags": {
+                    "slc7_amd64_gcc630": "IB/CMSSW_9_0_X_2017-04-02-0100/slc7_amd64_gcc630", 
+                    "slc6_amd64_gcc630": "IB/CMSSW_9_0_X_2017-04-02-0100/slc6_amd64_gcc630", 
+                    "slc6_amd64_gcc530": "IB/CMSSW_9_0_X_2017-04-02-0100/slc6_amd64_gcc530", 
+                    "slc7_amd64_gcc530": "IB/CMSSW_9_0_X_2017-04-02-0100/slc7_amd64_gcc530"
+                }, 
                 "addons": [], 
                 "comp_baseline_state": "ok", 
                 "builds": [], 
-                "compared_tags": "CMSSW_9_0_0_pre2-->CMSSW_9_0_0", 
-                "valgrind": "inprogress", 
-                "material_budget": "inprogress", 
-                "dqm_tests": "inprogress", 
+                "compared_tags": "CMSSW_9_0_0_pre2-->CMSSW_9_0_X_2017-04-02-0100", 
+                "valgrind": "found", 
+                "material_budget": "slc6_amd64_gcc530:0", 
+                "dqm_tests": "found", 
                 "relvals": [], 
-                "static_checks": "inprogress", 
+                "static_checks": "slc6_amd64_gcc530:", 
                 "utests": [], 
-                "igprof": "inprogress", 
-                "isIB": false, 
-                "comp_baseline": "inprogress", 
+                "igprof": "found", 
+                "isIB": true, 
+                "comp_baseline": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-baseline-tests/CMSSW_9_0_X_2017-04-02-0100/slc6_amd64_gcc530/-GenuineIntel/matrix-results", 
                 "inProgress": false, 
-                "release_name": "CMSSW_9_0_0", 
+                "release_name": "CMSSW_9_0_X_2017-04-02-0100", 
                 "tests_archs": [], 
                 "RVExceptions": null, 
                 "merged_prs": [
@@ -19908,13 +19925,13 @@
                         "author_login": "boudoul"
                     }, 
                     {
-                        "hash": "d2d7112e9f9cd2e7bba0c4a4f62cf65d067c854e", 
-                        "title": "pr90 simHCALTPDigis Back in phase2_hcal Sequence.", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/17628", 
-                        "number": "17628", 
+                        "hash": "c03823842ecbd6d2d9416d251996ec49e5f2f03d", 
+                        "title": "Prefetch Per-Event Provenance", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/17541", 
+                        "number": "17541", 
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
-                        "author_login": "rekovic"
+                        "author_login": "Dr15Jones"
                     }, 
                     {
                         "hash": "acafd53a09f67a6e5e95411df1eed09053d9d40d", 
@@ -20367,6 +20384,15 @@
                         "author_login": "mariadalfonso"
                     }, 
                     {
+                        "hash": "1ff068c8f21f97efca7fdf1044c095f58f3a9310", 
+                        "title": "Use static_cast to call explicitly conversion operator on TString", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/17227", 
+                        "number": "17227", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
                         "hash": "4281d3e7bb8e0b9ed638b1599ac3f1001d7bbbbf", 
                         "title": "Mitigation action for fakerate at high PU - HighPurity only", 
                         "url": "https://github.com/cms-sw/cmssw/pull/17504", 
@@ -20518,6 +20544,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "dmitrijus"
+                    }, 
+                    {
+                        "hash": "a77774f79e10d3d86f9df3e6f1f605f359112c76", 
+                        "title": "Phase1 Geometry in Online", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/18028", 
+                        "number": "18028", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "fioriNTU"
                     }, 
                     {
                         "hash": "0a2e98a6281b478112335bbf5eb92cc316952d13", 
@@ -21033,13 +21068,13 @@
                         "author_login": "matz-e"
                     }, 
                     {
-                        "hash": "69caf17b0a532cb2d2e6367a5569ea23c0750b7f", 
-                        "title": "Add dtors with noexcept(false) to match C++ requirements", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/17237", 
-                        "number": "17237", 
+                        "hash": "d2d7112e9f9cd2e7bba0c4a4f62cf65d067c854e", 
+                        "title": "pr90 simHCALTPDigis Back in phase2_hcal Sequence.", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/17628", 
+                        "number": "17628", 
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
-                        "author_login": "davidlt"
+                        "author_login": "rekovic"
                     }, 
                     {
                         "hash": "815a89b72b5453b9e41a941512cbe35a115ce44e", 
@@ -21348,15 +21383,6 @@
                         "author_login": "usarica"
                     }, 
                     {
-                        "hash": "c03823842ecbd6d2d9416d251996ec49e5f2f03d", 
-                        "title": "Prefetch Per-Event Provenance", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/17541", 
-                        "number": "17541", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
-                    }, 
-                    {
                         "hash": "b17028e830e3833e5f4b8b9dc5c885db1e4861c1", 
                         "title": "drop HLT in FastSim", 
                         "url": "https://github.com/cms-sw/cmssw/pull/17224", 
@@ -21366,13 +21392,13 @@
                         "author_login": "mtosi"
                     }, 
                     {
-                        "hash": "1ff068c8f21f97efca7fdf1044c095f58f3a9310", 
-                        "title": "Use static_cast to call explicitly conversion operator on TString", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/17227", 
-                        "number": "17227", 
+                        "hash": "db560b933894cf29c93e4e23b9aad122aa358238", 
+                        "title": "Added RunInfo quick access in Condition DB", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/17884", 
+                        "number": "17884", 
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
-                        "author_login": "davidlt"
+                        "author_login": "ggovi"
                     }, 
                     {
                         "hash": "074e25f271d16a6716980284e2de2434b8ccd264", 
@@ -22156,6 +22182,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "davidlt"
+                    }, 
+                    {
+                        "hash": "443ec2ed5121406e73d05b9df53ebd684e593935", 
+                        "title": "Fix exception message context information", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/17113", 
+                        "number": "17113", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "Dr15Jones"
                     }, 
                     {
                         "hash": "c249364432021a6fbb9f3d2495e4a03c7fdcd36f", 
@@ -23517,6 +23552,15 @@
                         "author_login": "gartung"
                     }, 
                     {
+                        "hash": "69caf17b0a532cb2d2e6367a5569ea23c0750b7f", 
+                        "title": "Add dtors with noexcept(false) to match C++ requirements", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/17237", 
+                        "number": "17237", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "davidlt"
+                    }, 
+                    {
                         "hash": "ed1181df91f64d26fc069f469379c49414a893ba", 
                         "title": "Fast timing layer RecHits and event display", 
                         "url": "https://github.com/cms-sw/cmssw/pull/16901", 
@@ -23886,13 +23930,13 @@
                         "author_login": "dildick"
                     }, 
                     {
-                        "hash": "443ec2ed5121406e73d05b9df53ebd684e593935", 
-                        "title": "Fix exception message context information", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/17113", 
-                        "number": "17113", 
+                        "hash": "cdd869fb81601812ddfb14fc724d5caf230523af", 
+                        "title": "Backport to 9_0_X, Fix 2 bugs related to Parentage and Streamer IO", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/18135", 
+                        "number": "18135", 
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
-                        "author_login": "Dr15Jones"
+                        "author_login": "wddgit"
                     }, 
                     {
                         "hash": "d8e0b86a083a8f081c464e6f5188459a0cf184c5", 
@@ -24226,62 +24270,6 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "Martin-Grunewald"
-                    }
-                ], 
-                "hlt_tests": "inprogress"
-            }, 
-            {
-                "fwlite": [], 
-                "cmsdistTags": {
-                    "slc7_amd64_gcc630": "IB/CMSSW_9_0_X_2017-04-02-0100/slc7_amd64_gcc630", 
-                    "slc6_amd64_gcc630": "IB/CMSSW_9_0_X_2017-04-02-0100/slc6_amd64_gcc630", 
-                    "slc6_amd64_gcc530": "IB/CMSSW_9_0_X_2017-04-02-0100/slc6_amd64_gcc530", 
-                    "slc7_amd64_gcc530": "IB/CMSSW_9_0_X_2017-04-02-0100/slc7_amd64_gcc530"
-                }, 
-                "addons": [], 
-                "comp_baseline_state": "ok", 
-                "builds": [], 
-                "compared_tags": "CMSSW_9_0_0-->CMSSW_9_0_X_2017-04-02-0100", 
-                "valgrind": "found", 
-                "material_budget": "slc6_amd64_gcc530:0", 
-                "dqm_tests": "found", 
-                "relvals": [], 
-                "static_checks": "slc6_amd64_gcc530:", 
-                "utests": [], 
-                "igprof": "found", 
-                "isIB": true, 
-                "comp_baseline": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-baseline-tests/CMSSW_9_0_X_2017-04-02-0100/slc6_amd64_gcc530/-GenuineIntel/matrix-results", 
-                "inProgress": false, 
-                "release_name": "CMSSW_9_0_X_2017-04-02-0100", 
-                "tests_archs": [], 
-                "RVExceptions": null, 
-                "merged_prs": [
-                    {
-                        "hash": "cdd869fb81601812ddfb14fc724d5caf230523af", 
-                        "title": "Backport to 9_0_X, Fix 2 bugs related to Parentage and Streamer IO", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/18135", 
-                        "number": "18135", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "wddgit"
-                    }, 
-                    {
-                        "hash": "db560b933894cf29c93e4e23b9aad122aa358238", 
-                        "title": "Added RunInfo quick access in Condition DB", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/17884", 
-                        "number": "17884", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "ggovi"
-                    }, 
-                    {
-                        "hash": "a77774f79e10d3d86f9df3e6f1f605f359112c76", 
-                        "title": "Phase1 Geometry in Online", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/18028", 
-                        "number": "18028", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "fioriNTU"
                     }
                 ], 
                 "hlt_tests": "found"
@@ -24837,7 +24825,38 @@
                 "valgrind": "inprogress", 
                 "material_budget": "inprogress", 
                 "dqm_tests": "inprogress", 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "done": false, 
+                        "arch": "slc6_amd64_gcc630", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc630/www/tue/9.0-tue-23/CMSSW_9_0_X_2017-04-11-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 94, 
+                            "num_failed": 0
+                        }
+                    }, 
+                    {
+                        "done": false, 
+                        "arch": "slc7_amd64_gcc530", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc530/www/tue/9.0-tue-23/CMSSW_9_0_X_2017-04-11-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 28, 
+                            "num_failed": 0
+                        }
+                    }, 
+                    {
+                        "done": false, 
+                        "arch": "slc7_amd64_gcc630", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc630/www/tue/9.0-tue-23/CMSSW_9_0_X_2017-04-11-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 61, 
+                            "num_failed": 0
+                        }
+                    }
+                ], 
                 "static_checks": "inprogress", 
                 "utests": [
                     {
@@ -33340,7 +33359,7 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/tue/9.1-tue-14/CMSSW_9_1_X_2017-04-11-1400/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 709, 
+                            "num_passed": 764, 
                             "num_failed": 3
                         }
                     }
@@ -33442,7 +33461,14 @@
                 "hlt_tests": "inprogress"
             }, 
             {
-                "fwlite": [], 
+                "fwlite": [
+                    {
+                        "arch": "slc6_amd64_gcc530", 
+                        "passed": "passed", 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/tue/9.1-tue-23/CMSSW_9_1_X_2017-04-11-2300/new_FWLITE/logAnalysis.pkl", 
+                        "details": {}
+                    }
+                ], 
                 "cmsdistTags": {
                     "slc6_amd64_gcc530": "IB/CMSSW_9_1_X_2017-04-11-1400/slc6_amd64_gcc530"
                 }, 
