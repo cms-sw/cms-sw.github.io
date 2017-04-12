@@ -280,9 +280,10 @@ Please make a Pull Request to [https://github.com/cms-sw/cms-bot](https://github
 
 Yes, please have a look at the [CMSSW git tutorial pages](tutorial.html).
 
-For those of you with CERN access there is also a couple of presentations about git / github in CMS you might find useful:
+For those of you with CERN access there are also a couple of presentations about git / github in CMS you might find useful:
 
-- https://indico.cern.ch/event/286056/session/1/contribution/3/material/slides/0.pdf
+- <https://indico.cern.ch/event/286056/session/1/contribution/3/material/slides/0.pdf>
+- <https://twiki.cern.ch/twiki/bin/view/CMS/CMSGitTutorial>
 
 ### How do I access the old CVS repository to check what was really there?
 
@@ -325,11 +326,11 @@ to publish web pages. To contribute to it you need to:
 
 Alternatively, you can edit the pages directly with the github.com web editor:
 
-- go to https://github.com/cms-sw/cms-sw.github.io
+- go to <https://github.com/cms-sw/cms-sw.github.io>
 - find for the page you want to modify
 - use the Edit button to automatically fork the repository and open the editor
 - once you are done, use the "Propose file change" button to automatically make
-  a branch and ceate a pull request
+  a branch and create a pull request
 
 
 This will trigger a discussion (and most likely immediate approval) of your
@@ -368,8 +369,7 @@ top left part of the page:
 
 ![branches-dialog](images/branches-dialog.png)
 
-The source-code of the official CMSSW can be searched by using
-https://github.com/cms-sw/cmssw/search .
+The source code of the official CMSSW can be searched by using <https://github.com/cms-sw/cmssw/search>.
 
 If you prefer using the command line interface, you can do the same by using
 `git grep` command inside `CMSSW/src` area:
@@ -514,7 +514,7 @@ for CERN.
 `git cms-addpkg` will then use it to fetch most of the data, and then switch to the
 official repository for fetching the missing parts.
 
-If you happen to have a local copy of the reposiry on the machine you are working
+If you happen to have a local copy of the repository on the machine you are working
 on you can speed up things even further by having:
 
     export CMSSW_GIT_REFERENCE=<repository-path>
@@ -586,7 +586,8 @@ particular once you are familiar with the concept you might want to look at
 [`git rebase
 --interactive`](http://git-scm.com/book/en/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages) which provides
 more flexibility when you want to do more that simply merge a set of commits
-into one.
+into one. There is also a good discussion of different squashing methods on 
+[Stack Overflow](http://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git).
 
 ### How do I pick up a commit from a branch and apply it to another branch?
 
