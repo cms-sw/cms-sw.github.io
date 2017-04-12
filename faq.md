@@ -638,38 +638,6 @@ page](https://www.kernel.org/pub/software/scm/git/docs/git-reflog.html) or the
 [Pro Git](http://git-scm.com/book/ch6-1.html#RefLog-Shortnames) section about
 it.
 
-### How can I prevent automatic forward porting of a pull request?
-
-CMS uses a cronjob to automate the forward porting of pull requests. For
-examples changes which get applied to `CMSSW_7_0_X` get automatically forward
-ported to `CMSSW_7_1_X` and from there they then get to `CMSSW_7_2_X`, etc. The
-forward porting is smart enough to make sure that if there is any conflicting
-changes in a newer version, the forward port of the conflicting part will not
-happen. However sometimes its desiderable to avoid the forward port completely,
-simply because a given bug-fix / new feature might apply on an old release and
-not a new one. In order to avoid this one needs to prepare an additional pull
-request which will stop the propagation in a given release.
-
-Let's say we have locally a branch `my-non-forwardable-feature` which I only
-want in `CMSSW_7_0_X` and not in `CMSSW_7_1_X`. First of all I need to move from
-my development branch to `CMSSW_7_1_X`:
-
-    git fetch official-cmssw
-    git reset --hard official-cmssw/CMSSW_7_1_X
-
-then I need to merge the unwanted feature there, using the `-s ours` option,
-which will tell git to ignore any change and consider our current branch (hence
-the name of the option) as the one from which all the changes will be taken,
-regardless of the merge being successful or not.
-
-    git merge -s ours my-non-forwardable-feature
-
-Finally I need to push my branch, and open a pull request in `CMSSW_7_1_X`. Such
-a pull request will say that thre are 0 changes compared to the current
-CMSSW_7_1_X. Once such a Pull Request is merged, we can happily merge the one
-which was done for `CMSSW_7_0_X` which will then be ignored by the subsequent
-automatic forward port.
-
 ### How do I ask a question?
 
 If you have more questions about git and CMSSW on git, please use [this
