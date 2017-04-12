@@ -85,22 +85,7 @@ to have the whole discussion about the pull request approval process.
 
 ### How do I make sure my topic branch is updated with the latest developments?
 
-Simply merge the release branch into your topic branch:
-
-    git checkout new-feature
-    git fetch official-cmssw
-    git merge official-cmssw/CMSSW_6_2_X
-
-or in one command:
-
-    git pull official-cmssw CMSSW_6_2_X
-
-assuming you are on the `new-feature` branch already.
-
-For more information about merging branching read
-[here](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging).
-
-You can also have a look at the CMS git tutorial found [here](tutorial).
+Follow the tutorial [Resolving conflicts & porting features](tutorial-resolve-conflicts.html).
 
 ### How do I synchronise my personal repository with the official one ?
 
