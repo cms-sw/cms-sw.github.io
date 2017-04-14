@@ -63,4 +63,6 @@ A final caveat is that it will not be possible to remove a package by hand via
 change. To hide a package, you will need to remove it from
 `.git/info/sparse-checkout` and run `git read-tree -mu HEAD` again.
 
-Note: do we need to provide a `git rmpkg` helper?
+A `git cms-rmpkg` command also exists to undo the checkout of specified packages
+that currently exist in the working area.
+(This is useful e.g. if you decide you don't want to recompile a certain package.)
