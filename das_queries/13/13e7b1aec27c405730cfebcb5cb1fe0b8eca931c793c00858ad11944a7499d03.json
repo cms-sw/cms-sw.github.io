@@ -1,41 +1,63 @@
 {
   "apilist": [
+    "das_core",
     "fileReplicas4dataset",
-    "das_core"
+    "files_via_dataset"
   ],
-  "ctime": 0.082323074340799995,
+  "ctime": 0.045415878295899999,
   "data": [
     {
-      "_id": "58f3d1b24bf01c0f3efafcb6",
-      "cache_id": [],
+      "_id": "58f46cdf4bf01c0f3e15ef4c",
+      "cache_id": [
+        "58f46cdf4bf01c0f3e15ef3f",
+        "58f46cde4bf01c0f3e15ef32"
+      ],
       "das": {
-        "api": [],
-        "condition_keys": [
-          "file.name"
+        "api": [
+          "fileReplicas4dataset",
+          "files_via_dataset"
         ],
-        "expire": 1492373958.6559761,
+        "condition_keys": [
+          "dataset.name"
+        ],
+        "expire": 1492413962,
         "instance": "prod/global",
         "primary_key": "file.name",
-        "record": 2,
+        "record": 1,
         "services": [
-          "phedex",
-          "dbs3",
-          "combined"
+          {
+            "phedex": [
+              "phedex"
+            ]
+          },
+          {
+            "dbs3": [
+              "dbs3"
+            ]
+          }
         ],
         "system": [
-          "das"
+          "phedex",
+          "dbs3"
         ],
-        "ts": 1492373938.655988
+        "ts": 1492413663.0733759
       },
       "das_id": [
-        "58f3d1ab4bf01c0f3efaf136",
-        "58f3d1ab4bf01c0f3efaf153"
+        "58f46cde4bf01c0f3e15ef23",
+        "58f46cde4bf01c0f3e15ef20"
       ],
-      "file": [],
-      "qhash": "4e2d662e4cf460d0b1d299d1b30b9f2f"
+      "file": [
+        {
+          "name": "/store/relval/CMSSW_5_2_1/RelValSingleMuPt10/GEN-SIM/START52_V4-v1/0003/9EE76A08-9872-E111-9E13-003048D2C0F0.root"
+        },
+        {
+          "name": "/store/relval/CMSSW_5_2_1/RelValSingleMuPt10/GEN-SIM/START52_V4-v1/0003/9EE76A08-9872-E111-9E13-003048D2C0F0.root"
+        }
+      ],
+      "qhash": "4bc676c30d727361b439893cf28d8c9e"
     }
   ],
-  "incache": false,
+  "incache": true,
   "mongo_query": {
     "fields": [
       "file"
@@ -50,11 +72,10 @@
     "instance": "prod/global",
     "qcache": 0,
     "spec": {
-      "dataset.name": "/RelValSingleMuPt10/CMSSW_5_2_1-START52_V4-v1/GEN-SIM",
-      "site.name": "T2_CH_CERN"
+      "dataset.name": "/RelValSingleMuPt10/CMSSW_5_2_1-START52_V4-v1/GEN-SIM"
     }
   },
   "nresults": 1,
   "status": "ok",
-  "timestamp": 1492373940.7
+  "timestamp": 1492413663.53
 }
