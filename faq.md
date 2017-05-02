@@ -85,22 +85,7 @@ to have the whole discussion about the pull request approval process.
 
 ### How do I make sure my topic branch is updated with the latest developments?
 
-Simply merge the release branch into your topic branch:
-
-    git checkout new-feature
-    git fetch official-cmssw
-    git merge official-cmssw/CMSSW_6_2_X
-
-or in one command:
-
-    git pull official-cmssw CMSSW_6_2_X
-
-assuming you are on the `new-feature` branch already.
-
-For more information about merging branching read
-[here](http://git-scm.com/book/en/Git-Branching-Basic-Branching-and-Merging).
-
-You can also have a look at the CMS git tutorial found [here](tutorial).
+Follow the tutorial [Resolving conflicts & porting features](tutorial-resolve-conflicts.html).
 
 ### How do I synchronise my personal repository with the official one ?
 
@@ -280,9 +265,10 @@ Please make a Pull Request to [https://github.com/cms-sw/cms-bot](https://github
 
 Yes, please have a look at the [CMSSW git tutorial pages](tutorial.html).
 
-For those of you with CERN access there is also a couple of presentations about git / github in CMS you might find useful:
+For those of you with CERN access there are also a couple of presentations about git / github in CMS you might find useful:
 
-- https://indico.cern.ch/event/286056/session/1/contribution/3/material/slides/0.pdf
+- <https://indico.cern.ch/event/286056/session/1/contribution/3/material/slides/0.pdf>
+- <https://twiki.cern.ch/twiki/bin/view/CMS/CMSGitTutorial>
 
 ### How do I access the old CVS repository to check what was really there?
 
@@ -325,11 +311,11 @@ to publish web pages. To contribute to it you need to:
 
 Alternatively, you can edit the pages directly with the github.com web editor:
 
-- go to https://github.com/cms-sw/cms-sw.github.io
+- go to <https://github.com/cms-sw/cms-sw.github.io>
 - find for the page you want to modify
 - use the Edit button to automatically fork the repository and open the editor
 - once you are done, use the "Propose file change" button to automatically make
-  a branch and ceate a pull request
+  a branch and create a pull request
 
 
 This will trigger a discussion (and most likely immediate approval) of your
@@ -368,8 +354,7 @@ top left part of the page:
 
 ![branches-dialog](images/branches-dialog.png)
 
-The source-code of the official CMSSW can be searched by using
-https://github.com/cms-sw/cmssw/search .
+The source code of the official CMSSW can be searched by using <https://github.com/cms-sw/cmssw/search>.
 
 If you prefer using the command line interface, you can do the same by using
 `git grep` command inside `CMSSW/src` area:
@@ -514,7 +499,7 @@ for CERN.
 `git cms-addpkg` will then use it to fetch most of the data, and then switch to the
 official repository for fetching the missing parts.
 
-If you happen to have a local copy of the reposiry on the machine you are working
+If you happen to have a local copy of the repository on the machine you are working
 on you can speed up things even further by having:
 
     export CMSSW_GIT_REFERENCE=<repository-path>
@@ -586,7 +571,8 @@ particular once you are familiar with the concept you might want to look at
 [`git rebase
 --interactive`](http://git-scm.com/book/en/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages) which provides
 more flexibility when you want to do more that simply merge a set of commits
-into one.
+into one. There is also a good discussion of different squashing methods on 
+[Stack Overflow](http://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git).
 
 ### How do I pick up a commit from a branch and apply it to another branch?
 
@@ -651,38 +637,6 @@ To learn more about git reflog you can look at [its man
 page](https://www.kernel.org/pub/software/scm/git/docs/git-reflog.html) or the
 [Pro Git](http://git-scm.com/book/ch6-1.html#RefLog-Shortnames) section about
 it.
-
-### How can I prevent automatic forward porting of a pull request?
-
-CMS uses a cronjob to automate the forward porting of pull requests. For
-examples changes which get applied to `CMSSW_7_0_X` get automatically forward
-ported to `CMSSW_7_1_X` and from there they then get to `CMSSW_7_2_X`, etc. The
-forward porting is smart enough to make sure that if there is any conflicting
-changes in a newer version, the forward port of the conflicting part will not
-happen. However sometimes its desiderable to avoid the forward port completely,
-simply because a given bug-fix / new feature might apply on an old release and
-not a new one. In order to avoid this one needs to prepare an additional pull
-request which will stop the propagation in a given release.
-
-Let's say we have locally a branch `my-non-forwardable-feature` which I only
-want in `CMSSW_7_0_X` and not in `CMSSW_7_1_X`. First of all I need to move from
-my development branch to `CMSSW_7_1_X`:
-
-    git fetch official-cmssw
-    git reset --hard official-cmssw/CMSSW_7_1_X
-
-then I need to merge the unwanted feature there, using the `-s ours` option,
-which will tell git to ignore any change and consider our current branch (hence
-the name of the option) as the one from which all the changes will be taken,
-regardless of the merge being successful or not.
-
-    git merge -s ours my-non-forwardable-feature
-
-Finally I need to push my branch, and open a pull request in `CMSSW_7_1_X`. Such
-a pull request will say that thre are 0 changes compared to the current
-CMSSW_7_1_X. Once such a Pull Request is merged, we can happily merge the one
-which was done for `CMSSW_7_0_X` which will then be ignored by the subsequent
-automatic forward port.
 
 ### How do I ask a question?
 

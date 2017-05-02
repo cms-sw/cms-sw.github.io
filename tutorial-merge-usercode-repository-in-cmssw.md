@@ -54,11 +54,8 @@ the official CMSSW.
 
 This is simply done by doing:
 
-    git cms-addpkg FWCore/Version
+    git cms-init
     git clone git@github.com:<your-user-name>/usercode src/UserCode/<your-name>
-
-notice the initial `git cms-addpkg` is only needeed to create an initial area.
-It will be soon replaced by a `git cms-init`.
 
 Done this you can add additional CMSSW packages by simply doing:
 
@@ -84,11 +81,11 @@ has to be done only once per branch, tag. Done that, you can use the `git
 cms-merge-topic` command to bring in your changes.
 
 The first step, once again is to checkout some CMSSW package to setup CMS
-environment (again this will be replaced by `git cms-init`):
+environment:
 
-   git cms-addpkg FWCore/Version
+    git cms-init
 
-done this you'll have to add your usercode repository as one of the available
+Once this is done you'll have to add your usercode repository as one of the available
 ones. This is done via the standard [git remote
 add](https://www.kernel.org/pub/software/scm/git/docs/git-remote.html) command:
 
@@ -118,7 +115,7 @@ and push the branch to your private CMSSW repository:
 
     git push my-cmssw HEAD:some-branch-name
 
-You are done. From this moment on you can merge your changes in a workarea by simply doing:
+You are done. From this moment on you can merge your changes in a work area by simply doing:
 
     git cms-merge-topic <your-username>:some-branch-name
 
