@@ -34,6 +34,7 @@
    cvmfs_config chksetup
    cvmfs_config probe
    ln -s /cvmfs/grid.cern.ch/etc/grid-security/vomses /etc/vomses
+   ln -s /cvmfs/grid.cern.ch/etc/grid-security /etc/grid-security
    chmod g+w /build
    USER=cmsbld
    useradd -U -m -s /bin/bash -d /home/$USER $USER
