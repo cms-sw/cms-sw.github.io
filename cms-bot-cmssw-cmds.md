@@ -1,0 +1,22 @@
+For CMSSW **Pull requests**, following commands in first line of a comment are recognized
+- **```+1|approve[d]|sign[ed]|+category```**: L1/L2's to approve it
+- **```-1|reject[ed]|-category```**: L1/L2's to reject it
+- **```assign <category>[,<category>[,...]]```**: Any L1/L2's to request signatures from other categories
+- **```unassign <category>[,<category>[,...]]```**: Any L1/L2's to remove signatures from other categories
+- **```hold```**: L1/all L2's/release manager/developers listed <a href="https://github.com/cms-sw/cms-bot/blob/master/categories.py#L11">here</a> to mark it as on hold
+- **```unhold```**: L1/user who put this PR on hold
+- **```merge```**: L1/release managers to merge this request
+- **```urgent```**: L1/L2/requestor to mark it as an urgent request to be merged
+- **```backport [of ]#<PR>```**: L1/L2/requestor to mark it as a backport request
+- **```type bug[[-]fix]```**: L1/L2/requestor to declare it a bugfix
+- **```type [new-]feature```**: L1/L2/requestor to declare it a new feature
+- **Testing PR**: L1/L2 and developers listed <a href="https://github.com/cms-sw/cms-bot/blob/master/categories.py#L12">here</a> to start jenkins tests using ```[@cmsbuild,] please test [workflow <workflow>[,<workflow>[...]]] with [#cmsswPR[,cmsswPR[...]] [cms-sw/cmsdist#PR]]``` e.g. 
+  - **```[@cmsbuild,] please test```**: To start tests
+  - **```[@cmsbuild,] please test with cms-sw/cmsdist#<PR>```**: Run tests with externals from cmsdist PR
+  - **```[@cmsbuild,] please test with #cmsswPR[,cmsswPR[...]]```**: Run tests with extra cmssw PRs
+  - **```[@cmsbuild,] please test with #cmsswPR[,cmsswPR[...]] cms-sw/cmsdist#PR```**: run tests with extra CMSSW PRs and an extra cmsdist PR
+  - **```[@cmsbuild,] please test workflow <workflow>[,<workflow>[...]]```**: Run tests with extra runTheMatrix workflows
+  - **```[@cmsbuild,] please test workflow <workflow>[,<workflow>[...]] with #cmsswPR[,cmsswPR[...]] cms-sw/cmsdist#PR```**: Run tests with extra workflows, cmssw PRs and cmsdist PR
+- **[@cmsbuild,] please abort[ test]**: Those who can request the test can ask to abort a running/on going test.
+- **release-note[s]: ```<multi line message>```**
+L1/L2/requestor and developers listed <a href="https://github.com/cms-sw/cms-bot/blob/master/categories.py#L12">here</a> to provide release-notes. This command can be issued multiple time.
