@@ -175,12 +175,15 @@ addWorkflowRow = function( workflowResult, table, counter, statistics, arch, ib,
 
   var nothingRun = true;
   var errCode = LABELS_TEXT[ 'FAILED' ]
+  var known_err = 0;
   if ("exitcode" in workflowResult){errCode = workflowResult.exitcode;}
+  if ("known_error" in workflowResult){known_err = workflowResult.known_error;}
   for ( var stepNumber in workflowResult.steps ){
 
     var text = workflowResult.steps[ stepNumber ][ 'status' ]
     var errors = workflowResult.steps[ stepNumber ][ 'errors' ]
     var warnings = workflowResult.steps[ stepNumber ][ 'warnings' ]
+    if (known_err==0){text='PASSED';}
 
     var resLabel = $( '<span>' )
     var cellData = LABELS_TEXT[ text ]
