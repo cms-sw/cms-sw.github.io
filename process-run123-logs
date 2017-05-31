@@ -66,17 +66,19 @@ if __name__ == "__main__":
         if order: order = order-maxOrder2
         else: order = known_failed_step-maxOrder2-maxOrder
 
-    results.append({
-                    "id": workflowId,
-                    "fid": float(workflowId),
-                    "name": workflow,
-                    "exitcode": exitcode,
-                    "known_error": known_error,
-                    "known_error_message": known_error_msg,
-                    "known_failed_step" : known_failed_step,
-                    "steps": [{"status": x} for x in stepResults],
-                    "order": order
-                   })
+    result={
+            "id": workflowId,
+            "fid": float(workflowId),
+            "name": workflow,
+            "exitcode": exitcode,
+            "known_error": known_error,
+            "steps": [{"status": x} for x in stepResults],
+            "order": order
+           }
+    if known_error!=0:
+      result["known_error_message"] = known_error_msg
+      result["known_failed_step"]   = known_failed_step
+    results.append(result)
   # Does the same for errors and warnings.
   warningsFile = join(dirname(args.input), "runTheMatrixMsgs.pkl")
   if exists(warningsFile):
