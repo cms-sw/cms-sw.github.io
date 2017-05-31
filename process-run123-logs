@@ -2,7 +2,7 @@
 from argparse import ArgumentParser
 from os.path import exists, join, dirname
 from sys import exit
-from json import dumps
+import json
 import re
 from operator import itemgetter
 from pickle import load
@@ -20,6 +20,11 @@ if __name__ == "__main__":
     exit(1)
 
   # Takes care of the actual results.
+  known_errors = {}
+  known_error_file = join(dirname(args.input),"all_known_errors.json")
+  if exists(known_error_file):
+    try: known_errors = json.load(open(known_error_file))
+    except: pass
   buf = open(args.input).read()
   results = []
   for l in buf.split("\n"):
@@ -35,14 +40,42 @@ if __name__ == "__main__":
     steps = steps.split(" ")
     stepResults = [re.match(STEP_STATUS_RE, s).group(2)
                    for s in steps if re.match(STEP_STATUS_RE, s)]
+
+    failedStep  = 0
+    order       = 0
+    maxOrder    = 200
+    if exitcode:
+      for (i,x) in enumerate(stepResults):
+        if x=="PASSED": continue
+        failedStep = i+1
+        order = i-maxOrder
+        break
+    known_error = 0
+    known_error_msg = ""
+    known_failed_step = 0
+    if workflowId in known_errors:
+      maxOrder2   = maxOrder/2
+      known_error_msg = known_errors[workflowId]["reason"]
+      known_failed_step = known_errors[workflowId]["step"]
+      if str(known_failed_step).startswith("step"): known_failed_step = int(known_failed_step[4:])
+      if (known_failed_step==failedStep) or (known_errors[workflowId]["exitcode"]==exitcode):
+        known_error = 1
+        order = order+maxOrder2
+      else:
+        known_error = -1
+        if order: order = order-maxOrder2
+        else: order = known_failed_step-maxOrder2-maxOrder
+
     results.append({
                     "id": workflowId,
                     "fid": float(workflowId),
                     "name": workflow,
                     "exitcode": exitcode,
+                    "known_error": known_error,
+                    "known_error_message": known_error_msg,
+                    "known_failed_step" : known_failed_step,
                     "steps": [{"status": x} for x in stepResults],
-                    "order": sum([i-10 for (i, x) in enumerate(stepResults)
-                                       if x == "FAILED" or x == "DAS_ERROR" or x == "TIMEOUT"])
+                    "order": order
                    })
   # Does the same for errors and warnings.
   warningsFile = join(dirname(args.input), "runTheMatrixMsgs.pkl")
@@ -65,4 +98,4 @@ if __name__ == "__main__":
   for r in results:
     r.pop("fid")
     r.pop("order")
-  print dumps(results, sort_keys=True, indent=4, separators=(',', ': '))
+  print json.dumps(results, sort_keys=True, indent=4, separators=(',', ': '))
