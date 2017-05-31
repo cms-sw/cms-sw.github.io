@@ -192,7 +192,7 @@ addWorkflowRow = function( workflowResult, table, counter, statistics, arch, ib,
 
     var resLabel = $( '<span>' )
     var cellData = LABELS_TEXT[ text ]
-    if ((text == 'FAILED') || (inKnownErr==true)){cellData = errCode;}
+    if ((text == 'FAILED') || (isKnownErr==true)){cellData = errCode;}
     resLabel.append($('<samp>' ).text(cellData))
 
     if( text == 'PASSED' ){
