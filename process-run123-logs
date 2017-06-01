@@ -22,11 +22,13 @@ if __name__ == "__main__":
   # Takes care of the actual results.
   known_errors = {}
   known_error_file = join(dirname(args.input),"all_known_errors.json")
+  summary_file = join(dirname(args.input),"summary.json")
   if exists(known_error_file):
     try: known_errors = json.load(open(known_error_file))
     except: pass
   buf = open(args.input).read()
   results = []
+  summary = {"num_passed" : 0, "num_failed" : 0, "known_failed" : 0}
   for l in buf.split("\n"):
     r = re.match(RESULTS_RE, l)
     if not r:
@@ -36,7 +38,9 @@ if __name__ == "__main__":
     for c in exit.split(" "):
       if re.match("^[1-9][0-9]*$",c):
         exitcode=int(c)
+        summary["num_failed"]=summary["num_failed"]+1
         break
+      summary["num_passed"]=summary["num_passed"]+1
     steps = steps.split(" ")
     stepResults = [re.match(STEP_STATUS_RE, s).group(2)
                    for s in steps if re.match(STEP_STATUS_RE, s)]
@@ -61,10 +65,15 @@ if __name__ == "__main__":
       if (known_failed_step==failedStep) or (known_errors[workflowId]["exitcode"]==exitcode):
         known_error = 1
         order = order+maxOrder2
+        summary["known_failed"]=summary["known_failed"]+1
+        summary["num_failed"]=summary["num_failed"]-1
       else:
         known_error = -1
-        if order: order = order-maxOrder2
-        else: order = known_failed_step-maxOrder2-maxOrder
+        if order<0: order = order-maxOrder2
+        else:
+          order = known_failed_step-maxOrder2-maxOrder
+          summary["num_failed"]=summary["num_failed"]+1
+          summary["num_passed"]=summary["num_passed"]-1
 
     result={
             "id": workflowId,
@@ -75,10 +84,12 @@ if __name__ == "__main__":
             "steps": [{"status": x} for x in stepResults],
             "order": order
            }
+
     if known_error!=0:
       result["known_error_message"] = known_error_msg
       result["known_failed_step"]   = known_failed_step
     results.append(result)
+  json.dump(summary, open(summary_file,"w"))
   # Does the same for errors and warnings.
   warningsFile = join(dirname(args.input), "runTheMatrixMsgs.pkl")
   if exists(warningsFile):
