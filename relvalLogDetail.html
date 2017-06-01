@@ -54,8 +54,7 @@
 		ORIGINAL_ARCH = parts[ 0 ]
 
 		var EXIT_CODES={};
-		try {EXIT_CODES = $.getJSON("exitcodes.json", function(){});}
-		catch(err){}
+		$.getJSON("exitcodes.json", function(json){EXIT_CODES=json;});
 		// I will check which other architectures are available for this IB
 		readAvailableArchs = function( allAvailableArchs ){
 
