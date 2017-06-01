@@ -178,7 +178,12 @@ addWorkflowRow = function( workflowResult, table, counter, statistics, arch, ib,
   var known_err = 0;
   var known_err_step = -1;
   var known_err_msg = "";
-  if ("exitcode" in workflowResult){errCode = workflowResult.exitcode;}
+  if ("exitcode" in workflowResult)
+  {
+    errCode = workflowResult.exitcode;
+    try {if (errCode in EXIT_CODES){errCode = EXIT_CODES[errCode] ;}}
+    catch(err){}
+  }
   if ("known_error" in workflowResult) {
     known_err = workflowResult.known_error;
     if ("known_failed_step" in workflowResult) {known_err_step = workflowResult.known_failed_step-1;}
