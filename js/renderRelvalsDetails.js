@@ -181,7 +181,7 @@ addWorkflowRow = function( workflowResult, table, counter, statistics, arch, ib,
   if ("exitcode" in workflowResult)
   {
     errCode = workflowResult.exitcode;
-    try {if (errCode in EXIT_CODES){errCode = EXIT_CODES[errCode] ;}}
+    try {if (errCode in EXIT_CODES_MAP){errCode = EXIT_CODES_MAP[errCode] ;}}
     catch(err){}
   }
   if ("known_error" in workflowResult) {
