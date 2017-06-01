@@ -177,10 +177,12 @@ addWorkflowRow = function( workflowResult, table, counter, statistics, arch, ib,
   var errCode = LABELS_TEXT[ 'FAILED' ]
   var known_err = 0;
   var known_err_step = -1;
+  var known_err_msg = "";
   if ("exitcode" in workflowResult){errCode = workflowResult.exitcode;}
   if ("known_error" in workflowResult) {
     known_err = workflowResult.known_error;
     if ("known_failed_step" in workflowResult) {known_err_step = workflowResult.known_failed_step-1;}
+    if ("known_error_message" in workflowResult) {known_err_msg = workflowResult.known_error_message;}
   }
   for ( var stepNumber in workflowResult.steps ){
 
@@ -212,8 +214,10 @@ addWorkflowRow = function( workflowResult, table, counter, statistics, arch, ib,
       var link = getLinkLabelToResultToResLabel( arch , ib , stepNumber , workflowResult.name , workflowResult.id , '', false )
       link.append( resLabel )
       var cell = $( '<td>' ).append( link )
+      if (known_err_msg!=""){
+        cell.attr( 'data-toggle' , 'tooltip' ).attr( 'data-placement' , 'right' ).attr( 'title' ,known_err_msg)
+      }
       row.append( cell )
-
 
     }else if( text == 'FAILED' ){
 
