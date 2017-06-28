@@ -7,8 +7,7 @@ related:
 ---
 # Starting a new release cycle.
 
-In order to start a new release cycle you need to be an administrator of both 
-`cms-sw/cmssw`, `cms-sw/cmsdist` and `cms-sw/cms-bot`
+In order to start a new release cycle you need to be an administrator of  `cms-sw/cmssw`, `cms-sw/cmsdist` and `cms-sw/cms-bot`
 
 The following needs to happen:
 
