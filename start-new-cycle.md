@@ -21,14 +21,6 @@ d cms-bot
 git commit -a -m "setup new developement cycle ${CYCLE}"
 git push origin
 ```
-- Once this is done then PR tests will be run against the new developement release cycle. As we have not yet setup IBs for new cycle and it will take at least 12 hours to get the first IB out for new cycle, what we want is to run PR tests against current dev release cycle unless the new developement release IBs is available. For this update ```cms-bot/get-pr-branch``` and return current dev release cycle e.g. something like https://github.com/cms-sw/cms-bot/commit/1847b5471c2b83481c7df60a8480f8769faea172#diff-decc30f63df5c16e0ce40f20a96967f2
-```
-  if pr.base.ref == "master":
-    #Remove/Comment next 2 lines once new development IB and comparison base line is available
-    print "CMSSW_9_3_X"
-    exit (0)
-```
-and git commit/push this change.
 - Setup cmssw and cmsdist branches. Checkif you need to set special cmssw and cmsdist branches for the new release cycle e.g. DEVEL_X and ROOT6_X. You can crete these branches using cms-bot/gh_create_branches.py e.g.
 ```
 export SRC_BR=CMSW_9_3
@@ -96,7 +88,6 @@ git push origin
 RELEASE_FILTER=CMSSW_9_4_X
 ARCHITECTURE_FILTER=slc6_amd64_gcc530
 ```
-- Once Ib for new release cycle is available and Baseline for comparison are done then remote/comment the change in cms-bot/get-pr-branch
 
 [CMSDIST]: https://github.com/cms-sw/cmsdist
 [PKGTOOLS]: https://github.com/cms-sw/pkgtools
