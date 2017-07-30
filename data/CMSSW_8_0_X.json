@@ -3,27 +3,114 @@
     "release_name": "CMSSW_8_0_X", 
     "comparisons": [
         {
-            "fwlite": [], 
-            "addons": [], 
+            "fwlite": [
+                {
+                    "arch": "slc6_amd64_gcc530", 
+                    "passed": "error", 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/new_FWLITE/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 1, 
+                        "miscError": 5, 
+                        "compError": 2, 
+                        "linkError": 278
+                    }
+                }
+            ], 
+            "addons": [
+                {
+                    "arch": "slc6_amd64_gcc530", 
+                    "passed": true, 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/addOnTests.log", 
+                    "details": {}
+                }, 
+                {
+                    "arch": "slc7_amd64_gcc530", 
+                    "passed": true, 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "comp_baseline_state": "ok", 
-            "builds": [], 
-            "compared_tags": "CMSSW_8_0_14-->CMSSW_8_0_X_2017-07-16-0000", 
-            "valgrind": "inprogress", 
-            "utests": [], 
-            "dqm_tests": "inprogress", 
+            "builds": [
+                {
+                    "arch": "slc6_amd64_gcc530", 
+                    "passed": "warning", 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 24, 
+                        "ignoreWarning": 272
+                    }
+                }, 
+                {
+                    "arch": "slc7_amd64_gcc530", 
+                    "passed": "warning", 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 24, 
+                        "ignoreWarning": 272
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_8_0_14-->CMSSW_8_0_X_2017-07-23-0000", 
+            "valgrind": "found", 
+            "utests": [
+                {
+                    "arch": "slc6_amd64_gcc530", 
+                    "passed": "failed", 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "3"
+                    }
+                }, 
+                {
+                    "arch": "slc7_amd64_gcc530", 
+                    "passed": "failed", 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "4"
+                    }
+                }
+            ], 
+            "dqm_tests": "found", 
             "igprof": "not-found", 
             "material_budget": "not-found", 
-            "relvals": [], 
-            "static_checks": "inprogress", 
+            "relvals": [
+                {
+                    "done": true, 
+                    "arch": "slc6_amd64_gcc530", 
+                    "passed": false, 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 1152, 
+                        "known_failed": 0, 
+                        "num_failed": 74
+                    }
+                }, 
+                {
+                    "done": true, 
+                    "arch": "slc7_amd64_gcc530", 
+                    "passed": false, 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                    "details": {
+                        "num_passed": 1167, 
+                        "known_failed": 0, 
+                        "num_failed": 73
+                    }
+                }
+            ], 
+            "static_checks": "slc6_amd64_gcc530:reports/modules2statics-filter1.txt\n", 
             "cmsdistTags": {
-                "slc6_amd64_gcc530": "IB/CMSSW_8_0_X_2017-07-16-0000/slc6_amd64_gcc530", 
-                "slc7_amd64_gcc530": "IB/CMSSW_8_0_X_2017-07-16-0000/slc7_amd64_gcc530"
+                "slc6_amd64_gcc530": "IB/CMSSW_8_0_X_2017-07-23-0000/slc6_amd64_gcc530", 
+                "slc7_amd64_gcc530": "IB/CMSSW_8_0_X_2017-07-23-0000/slc7_amd64_gcc530"
             }, 
             "isIB": true, 
-            "comp_baseline": "inprogress", 
+            "comp_baseline": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-baseline-tests/CMSSW_8_0_X_2017-07-23-0000/slc6_amd64_gcc530/-GenuineIntel/matrix-results", 
             "inProgress": false, 
-            "release_name": "CMSSW_8_0_X_2017-07-16-0000", 
-            "tests_archs": [], 
+            "release_name": "CMSSW_8_0_X_2017-07-23-0000", 
+            "tests_archs": [
+                "slc6_amd64_gcc530", 
+                "slc7_amd64_gcc530"
+            ], 
             "RVExceptions": null, 
             "merged_prs": [
                 {
@@ -925,6 +1012,15 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "emanueledimarco"
+                }, 
+                {
+                    "hash": "2114e7440efb1b0f18fa4ab4a846f8cbe0396fea", 
+                    "title": "Bugfix and c tagging for ParticleLevelProducer (80X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/19702", 
+                    "number": "19702", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "intrepid42"
                 }, 
                 {
                     "hash": "3678a3a353ef9897a534c1529798d24aa20f6218", 
@@ -3123,152 +3219,6 @@
                     "author_login": "mmusich"
                 }
             ], 
-            "hlt_tests": "inprogress"
-        }, 
-        {
-            "fwlite": [], 
-            "addons": [], 
-            "comp_baseline_state": "ok", 
-            "builds": [], 
-            "compared_tags": "CMSSW_8_0_X_2017-07-16-0000-->CMSSW_8_0_X_2017-07-19-1100", 
-            "valgrind": "inprogress", 
-            "utests": [], 
-            "dqm_tests": "inprogress", 
-            "igprof": "not-found", 
-            "material_budget": "not-found", 
-            "relvals": [], 
-            "static_checks": "inprogress", 
-            "cmsdistTags": {}, 
-            "isIB": true, 
-            "comp_baseline": "inprogress", 
-            "inProgress": false, 
-            "release_name": "CMSSW_8_0_X_2017-07-19-1100", 
-            "tests_archs": [], 
-            "RVExceptions": null, 
-            "merged_prs": [
-                {
-                    "hash": "2114e7440efb1b0f18fa4ab4a846f8cbe0396fea", 
-                    "title": "Bugfix and c tagging for ParticleLevelProducer (80X)", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/19702", 
-                    "number": "19702", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "intrepid42"
-                }
-            ], 
-            "hlt_tests": "inprogress"
-        }, 
-        {
-            "fwlite": [
-                {
-                    "arch": "slc6_amd64_gcc530", 
-                    "passed": "error", 
-                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/new_FWLITE/logAnalysis.pkl", 
-                    "details": {
-                        "compWarning": 1, 
-                        "miscError": 5, 
-                        "compError": 2, 
-                        "linkError": 278
-                    }
-                }
-            ], 
-            "addons": [
-                {
-                    "arch": "slc6_amd64_gcc530", 
-                    "passed": true, 
-                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/addOnTests.log", 
-                    "details": {}
-                }, 
-                {
-                    "arch": "slc7_amd64_gcc530", 
-                    "passed": true, 
-                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/addOnTests.log", 
-                    "details": {}
-                }
-            ], 
-            "comp_baseline_state": "ok", 
-            "builds": [
-                {
-                    "arch": "slc6_amd64_gcc530", 
-                    "passed": "warning", 
-                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/new/logAnalysis.pkl", 
-                    "details": {
-                        "compWarning": 24, 
-                        "ignoreWarning": 272
-                    }
-                }, 
-                {
-                    "arch": "slc7_amd64_gcc530", 
-                    "passed": "warning", 
-                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/new/logAnalysis.pkl", 
-                    "details": {
-                        "compWarning": 24, 
-                        "ignoreWarning": 272
-                    }
-                }
-            ], 
-            "compared_tags": "CMSSW_8_0_X_2017-07-19-1100-->CMSSW_8_0_X_2017-07-23-0000", 
-            "valgrind": "found", 
-            "utests": [
-                {
-                    "arch": "slc6_amd64_gcc530", 
-                    "passed": "failed", 
-                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/unitTests-summary.log", 
-                    "details": {
-                        "num_fails": "3"
-                    }
-                }, 
-                {
-                    "arch": "slc7_amd64_gcc530", 
-                    "passed": "failed", 
-                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/unitTests-summary.log", 
-                    "details": {
-                        "num_fails": "4"
-                    }
-                }
-            ], 
-            "dqm_tests": "found", 
-            "igprof": "not-found", 
-            "material_budget": "not-found", 
-            "relvals": [
-                {
-                    "done": true, 
-                    "arch": "slc6_amd64_gcc530", 
-                    "passed": false, 
-                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                    "details": {
-                        "num_passed": 1152, 
-                        "known_failed": 0, 
-                        "num_failed": 74
-                    }
-                }, 
-                {
-                    "done": true, 
-                    "arch": "slc7_amd64_gcc530", 
-                    "passed": false, 
-                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc530/www/sun/8.0-sun-00/CMSSW_8_0_X_2017-07-23-0000/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                    "details": {
-                        "num_passed": 1167, 
-                        "known_failed": 0, 
-                        "num_failed": 73
-                    }
-                }
-            ], 
-            "static_checks": "slc6_amd64_gcc530:reports/modules2statics-filter1.txt\n", 
-            "cmsdistTags": {
-                "slc6_amd64_gcc530": "IB/CMSSW_8_0_X_2017-07-23-0000/slc6_amd64_gcc530", 
-                "slc7_amd64_gcc530": "IB/CMSSW_8_0_X_2017-07-23-0000/slc7_amd64_gcc530"
-            }, 
-            "isIB": true, 
-            "comp_baseline": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-baseline-tests/CMSSW_8_0_X_2017-07-23-0000/slc6_amd64_gcc530/-GenuineIntel/matrix-results", 
-            "inProgress": false, 
-            "release_name": "CMSSW_8_0_X_2017-07-23-0000", 
-            "tests_archs": [
-                "slc6_amd64_gcc530", 
-                "slc7_amd64_gcc530"
-            ], 
-            "RVExceptions": null, 
-            "merged_prs": [], 
             "hlt_tests": "found"
         }, 
         {
