@@ -28,7 +28,7 @@ the "CMS SDT build" OpenStack project.
 
 The following E-groups membership is required for creating puppetized openstack VMs:
 
--aiadmins ( to log into aiadm servers )
+-ai-admins ( to log into aiadm servers )
 
 -cms-git-vocmssdt-admins
 
