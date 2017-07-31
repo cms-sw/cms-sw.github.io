@@ -28,9 +28,9 @@ the "CMS SDT build" OpenStack project.
 
 The following E-groups membership is required for creating puppetized openstack VMs:
 
--ai-admins ( to log into aiadm servers )
+- ai-admins ( to log into aiadm servers )
 
--cms-git-vocmssdt-admins
+- cms-git-vocmssdt-admins
 
 After the user/account is enrolled/added in the above e-groups , the account must login
 once to CERN foreman web page ( othervise it will have problems registering the vm with foreman).
