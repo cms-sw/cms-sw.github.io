@@ -13,13 +13,31 @@ redirect_from:
 One of the greatest advantages of _git_ is that it is much smarter at handling
 conflicts between different contribution to the same repository. In particular
 it automatically handles the case of two parallel developments, both changing
-the same package in orthogonal manner. As smart as it can be, however,
+the same package in orthogonal ways. As smart as it can be, however,
 git does not know about the mass of the Higgs or how to resolve conflicts where two
 people modified the same line in different ways. This latter case is however
 automatically detected by GitHub, which will point out that your changes cannot
 be merged automatically.
 
-This tutorial will show you how to resolve the latter problem using the `git rebase` command.
+This tutorial will show you how to resolve the latter problem using the `git rebase` command
+and several CMS-specific wrapper commands.
+
+### Uses of CMS commands
+
+* `git cms-rebase-topic`:
+    * moving a branch to a new IB/release
+    * rebasing a branch to resolve merge conflicts
+* `git cms-checkout-topic`:
+    * recreating a working area  
+      (in case it got deleted or corrupted, but the base CMSSW release still exists)
+    * working on top of another topic branch  
+      (see tutorial [Collaborating with peers](tutorial-collaborating-with-peers.html))
+    * preparing to build a CMSSW patch release
+    * setting up for advanced use of `git rebase`
+* `git cms-merge-topic`:
+    * *testing* a branch or PR
+    * combining multiple patches in a private recipe/release
+    * ***NOT*** to be used when developing PRs!
 
 ### Overview of rebasing
 
@@ -86,30 +104,10 @@ Very important note: ***NEVER*** use `git cms-merge-topic` to resolve conflicts 
 This can introduce hundreds of duplicate commits. Release and package managers have the right
 and the responsibility to reject such broken pull requests immediately.
 
-Let's set up your working area with the source code corresponding to the unmergeable branch.
-(It is important in this step to do an "unsafe checkout" with the `-u` option, because
-the unmergeable branch is based on a different release of CMSSW than your current area.)
+Let's use the simple `cms-rebase-topic` command to deal with the unmergeable branch in your working area.
 ```
-git cms-checkout-topic -u kpedro88:Unmergeable8025
+git cms-rebase-topic kpedro88:Unmergeable8025
 ```
-
-For safety, you can make a temporary branch to backup the current state.
-(Experience developers may choose to ignore this step.)
-```
-git checkout -b Unmergeable8025-backup
-git push my-cmssw Unmergeable8025-backup
-git checkout Unmergeable8025
-```
-
-Now you can start the rebase:
-```
-git rebase --onto CMSSW_8_0_26 CMSSW_8_0_25 Unmergeable8025
-```
-This follows the pattern `git rebase --onto [new base] [old base] [branch]`.
-Remember, `[new base]` and `[old base]` can be commit hashes rather than tags.
-If you are working in an integration build (IB) that has expired (so the tag is no longer available),
-or if you lost your original working area and forgot which release was your old base,
-you can use `git log` to find the hash of the latest commit before your changes, and proceed normally.
 
 This will fail with a message like:
 ```
@@ -193,6 +191,17 @@ git rebase --continue
 This means the commit entitled "add new PU scenario" has been modified to avoid the conflict 
 in the new base release CMSSW_8_0_26.
 
+If you look at the current list of branches with `git branch`, you will see that a branch named "..._backup" has been added by default:
+```
+  CMSSW_8_0_X
+* Unmergeable8025
+  Unmergeable8025_backup
+  from-CMSSW_8_0_26
+  kpedro88/Unmergeable8025
+  rebase-attempt
+```
+This backup branch contains the state of the branch before the rebase was done.
+
 ### Finalizing the updates
 
 The temporary branch is now up-to-date with the current release. This means that it is safe to
@@ -221,31 +230,46 @@ scram b
 ```
 Here, you do a "safe" checkout, which automatically checks out any dependent packages as well.
 
+### Recovering from a bad rebase (or merge)
+
+If something went wrong during your rebase, or if you accidentally used `cms-merge-topic` and your PR has been rejected,
+you should go back to your working area and use the automatically-created backup branch:
+```
+git push -f my-cmssw [branch]_backup:[branch]
+```
+where `[branch]` is the name of your branch.
+
+If you have made subsequent commits in the broken branch, you may want to keep the broken branch so you can `cherry-pick` the new commits later:
+```
+git push -f my-cmssw [branch]:[branch]_broken
+```
+
+Once you have recovered the previous state of your branch, please follow the approved procedures as outlined here.
+
 ### More advanced options
 
-If you find that the rebased code does not compile or run correctly because of a mistake
-during the rebase process, you can make an additional commit to fix the problem.
+If you want access to options of `git rebase` that are not provided in `git cms-rebase-topic`,
+you can use `git cms-checkout-topic -u` and then use the `git rebase` command.
+(The `-u` option avoids calling `cms-checkdeps` before the branch is rebased.)
 
+If you find that the rebased code does not compile or run correctly because of a mistake
+during the rebase process, you can make an additional commit to fix the problem. 
 However, advanced users may instead try the `git rebase --interactive` option,
 which allows you to edit the existing commits. This means that you can solve any problems
 in-place and preserve the linear development history.
 
 ### The above is all great stuff but I need a quick recipe!
 
-This is the most concise and general recipe to rebase your branch, resolve conflicts, and update your PR.
+This is the most concise recipe to rebase your branch, resolve conflicts, and update your PR.
+You can also use this recipe to move to a new IB. (If there are no conflicts, the `cms-rebase-topic` command
+will automatically call `cms-checkdeps -a` when it finishes.)
 
 ```
 cmsrel [NEW_RELEASE]
 cd [NEW_RELEASE]/src
 cmsenv
-git cms-checkout-topic -u [user]:[my-branch]
+git cms-rebase-topic [user]:[my-branch]
 
-<optional backup>
-git checkout -b [my-branch]-backup
-git push my-cmssw [my-branch]-backup
-git checkout [my-branch]
-
-git rebase --onto [NEW_RELEASE] [OLD_RELEASE] [my-branch]
 <resolve conflicts as needed>
 
 git cms-checkdeps -a
@@ -259,12 +283,36 @@ git push -f my-cmssw [my-branch]
 Any pull request for a new feature must first be submitted to the open development branch (always the `master` branch).
 Some features may need to be backported to older CMSSW versions, e.g. to fix bugs for data-taking or add options for MC production.
 
-If we needed to backport the change from the above example branch `kpedro88:Unmergeable8025` to the `CMSSW_7_1` series,
-the exact same rebasing procedure can be followed. The "new base" in this case is the latest release `CMSSW_7_1_26`
+If we needed to backport the change from the above example branch `kpedro88:Unmergeable8025` to the `CMSSW_7_4` series,
+the exact same rebasing procedure can be followed. The "new base" in this case is the latest release `CMSSW_7_4_16`
 (instead of `CMSSW_8_0_26`, as we used in the example). That's right; rebasing can work in any "direction".
+
+However, it is necessary to provide more information when porting a PR between branches, since different branches
+may have different commits beyond the changes you have made in your topic branch.
 
 In the case of a backport, you should make a copy of your original topic branch and rebase the copy, 
 because you will submit a separate PR.
+
+Example:
+```
+scram project CMSSW_7_4_16
+cd CMSSW_7_4_16/src
+cmsenv
+git cms-rebase-topic --old-base CMSSW_8_0_25 kpedro88:Unmergeable8025
+<resolve conflicts>
+git branch -m Unmergeable8025_7416
+```
+
+Notice that you have to specify the "old base" of the branch with the `--old-base` (or simply `-o`) option. This does several things:
+* Uses the "old base" to determine which packages you have changed, to avoid checking out unneeded packages
+with `cms-addpkg`. (This works with any `cms-...-topic` command).
+* Uses a more explicit form of of the `git rebase` command: `git rebase --onto [new base] [old base] [branch]`. (You can also specify
+the new base with the `--new-base` or `-n` option; by default, it uses `$CMSSW_VERSION`.)
+
+Remember, `[new base]` and `[old base]` can be commit hashes rather than tags.
+If you are working in an integration build (IB) that has expired (so the tag is no longer available),
+or if you lost your original working area and forgot which release was your old base,
+you can use `git log` or the GitHub history view to find the hash of the latest commit before your changes, and proceed normally.
 
 ### Cherry-picking commits
 
