@@ -3414,23 +3414,86 @@
         }, 
         {
             "fwlite": [], 
-            "cmsdistTags": {}, 
+            "cmsdistTags": {
+                "slc7_amd64_gcc630": "ERR/CMSSW_9_3_X_2017-08-03-1100/slc7_amd64_gcc630", 
+                "slc7_aarch64_gcc700": "ERR/CMSSW_9_3_X_2017-08-03-1100/slc7_aarch64_gcc700", 
+                "slc6_amd64_gcc700": "ERR/CMSSW_9_3_X_2017-08-03-1100/slc6_amd64_gcc700"
+            }, 
             "addons": [], 
             "comp_baseline_state": "ok", 
-            "builds": [], 
-            "compared_tags": "CMSSW_9_3_X_2017-08-02-2300-->CMSSW_9_3_X", 
+            "builds": [
+                {
+                    "arch": "slc7_amd64_gcc630", 
+                    "passed": "error", 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc630/www/thu/9.3-thu-11/CMSSW_9_3_X_2017-08-03-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "miscError": 27, 
+                        "compError": 1, 
+                        "ignoreWarning": 5, 
+                        "linkError": 1584
+                    }
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc700", 
+                    "passed": "error", 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc700/www/thu/9.3-thu-11/CMSSW_9_3_X_2017-08-03-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 22, 
+                        "miscError": 27, 
+                        "compError": 1, 
+                        "ignoreWarning": 1596, 
+                        "linkError": 1584
+                    }
+                }, 
+                {
+                    "arch": "slc7_aarch64_gcc700", 
+                    "passed": "error", 
+                    "file": "/data/sdt/buildlogs/slc7_aarch64_gcc700/www/thu/9.3-thu-11/CMSSW_9_3_X_2017-08-03-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "compWarning": 22, 
+                        "miscError": 27, 
+                        "compError": 1, 
+                        "ignoreWarning": 1596, 
+                        "linkError": 1584
+                    }
+                }
+            ], 
+            "compared_tags": "CMSSW_9_3_X_2017-08-02-2300-->CMSSW_9_3_X_2017-08-03-1100", 
             "valgrind": "inprogress", 
             "material_budget": "inprogress", 
             "dqm_tests": "inprogress", 
             "relvals": [], 
             "static_checks": "inprogress", 
-            "utests": [], 
+            "utests": [
+                {
+                    "arch": "slc7_amd64_gcc630", 
+                    "passed": "unknown", 
+                    "file": "['/data/sdt/buildlogs/slc7_amd64_gcc630/www/thu/9.3-thu-11/CMSSW_9_3_X_2017-08-03-1100/new/logAnalysis.pkl']", 
+                    "details": {}
+                }, 
+                {
+                    "arch": "slc6_amd64_gcc700", 
+                    "passed": "unknown", 
+                    "file": "['/data/sdt/buildlogs/slc6_amd64_gcc700/www/thu/9.3-thu-11/CMSSW_9_3_X_2017-08-03-1100/new/logAnalysis.pkl']", 
+                    "details": {}
+                }, 
+                {
+                    "arch": "slc7_aarch64_gcc700", 
+                    "passed": "unknown", 
+                    "file": "['/data/sdt/buildlogs/slc7_aarch64_gcc700/www/thu/9.3-thu-11/CMSSW_9_3_X_2017-08-03-1100/new/logAnalysis.pkl']", 
+                    "details": {}
+                }
+            ], 
             "igprof": "inprogress", 
-            "isIB": false, 
+            "isIB": true, 
             "comp_baseline": "inprogress", 
             "inProgress": false, 
-            "release_name": "CMSSW_9_3_X", 
-            "tests_archs": [], 
+            "release_name": "CMSSW_9_3_X_2017-08-03-1100", 
+            "tests_archs": [
+                "slc7_amd64_gcc630", 
+                "slc7_aarch64_gcc700", 
+                "slc6_amd64_gcc700"
+            ], 
             "RVExceptions": null, 
             "merged_prs": [
                 {
@@ -3441,15 +3504,6 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "kpedro88"
-                }, 
-                {
-                    "hash": "8f956acf1f11e1c869318c396f5a8617c1f29d43", 
-                    "title": "added missing boost dependency needed by Utilities/General/src/FileIn", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/20033", 
-                    "number": "20033", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "cms-sw"
                 }, 
                 {
                     "hash": "f7d6808624e87d50833ad319b1c562e4c87cd550", 
@@ -3504,6 +3558,39 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "ianna"
+                }
+            ], 
+            "hlt_tests": "inprogress"
+        }, 
+        {
+            "fwlite": [], 
+            "cmsdistTags": {}, 
+            "addons": [], 
+            "comp_baseline_state": "ok", 
+            "builds": [], 
+            "compared_tags": "CMSSW_9_3_X_2017-08-03-1100-->CMSSW_9_3_X", 
+            "valgrind": "inprogress", 
+            "material_budget": "inprogress", 
+            "dqm_tests": "inprogress", 
+            "relvals": [], 
+            "static_checks": "inprogress", 
+            "utests": [], 
+            "igprof": "inprogress", 
+            "isIB": false, 
+            "comp_baseline": "inprogress", 
+            "inProgress": false, 
+            "release_name": "CMSSW_9_3_X", 
+            "tests_archs": [], 
+            "RVExceptions": null, 
+            "merged_prs": [
+                {
+                    "hash": "8f956acf1f11e1c869318c396f5a8617c1f29d43", 
+                    "title": "added missing boost dependency needed by Utilities/General/src/FileIn", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/20033", 
+                    "number": "20033", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cms-sw"
                 }
             ], 
             "hlt_tests": "inprogress"
