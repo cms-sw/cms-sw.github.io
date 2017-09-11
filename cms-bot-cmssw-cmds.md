@@ -18,6 +18,6 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```[@cmsbuild,] please test with #cmsswPR[,cmsswPR[...]] cms-sw/cmsdist#PR```**: run tests with extra CMSSW PRs and an extra cmsdist PR
   - **```[@cmsbuild,] please test workflow <workflow>[,<workflow>[...]]```**: Run tests with extra runTheMatrix workflows
   - **```[@cmsbuild,] please test workflow <workflow>[,<workflow>[...]] with #cmsswPR[,cmsswPR[...]] cms-sw/cmsdist#PR```**: Run tests with extra workflows, cmssw PRs and cmsdist PR
-- **[@cmsbuild,] please abort[ test]**: Those who can request the test can ask to abort a running/on going test.
-- **release-note[s]: ```<multi line message>```**
-L1/L2/requestor and developers listed <a href="https://github.com/cms-sw/cms-bot/blob/master/categories.py#L12">here</a> to provide release-notes. This command can be issued multiple time.
+- **```[@cmsbuild,] please abort[ test]```**: Those who can request the test can ask to abort a running/on going test.
+- **```release-note[s]: <multi line message>```**
+  - L1/L2/requestor and developers listed <a href="https://github.com/cms-sw/cms-bot/blob/master/categories.py#L12">here</a> to provide release-notes. This command can be issued multiple time.
