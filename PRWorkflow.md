@@ -50,7 +50,7 @@ There are two ways to apply any changes requested by the code quality checks. Fi
 curl https://cmssdt.cern.ch/SDT/code-checks/PR-20633/925/git-diff.patch | patch -p1
 ```
 
-alternatively, you can use this command to apply these checks against your code changes
+where the URL appropriate for your pull request will be provided by the code quality check in github. Alternatively, you can use this command to apply these checks against your code changes
 
 ```
 scram build code-checks
