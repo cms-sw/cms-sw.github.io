@@ -11,7 +11,7 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
 - **```type bug[[-]fix]```**: L1/L2/requestor to declare it a bugfix
 - **```type [new-]feature```**: L1/L2/requestor to declare it a new feature
 - **```code-checks```**: By default cms-bot runs code-checks for all Pull Requests made for master branch. If for any reason code-checks tests are not run then one can force start code-checks using this command.
-- **Testing PR**: L1/L2 and developers listed <a href="https://github.com/cms-sw/cms-bot/blob/master/categories.py#L12">here</a> to start jenkins tests using ```[@cmsbuild,] please test [workflow <workflow>[,<workflow>[...]]] with [#cmsswPR[,cmsswPR[...]] [cms-sw/cmsdist#PR]]``` e.g. 
+- **Testing PR**: L1/L2 and developers listed <a href="https://github.com/cms-sw/cms-bot/blob/master/categories.py#L14">here</a> to start jenkins tests using ```[@cmsbuild,] please test [workflow <workflow>[,<workflow>[...]]] with [#cmsswPR[,cmsswPR[...]] [cms-sw/cmsdist#PR]]``` e.g. 
   - **```[@cmsbuild,] please test```**: To start tests
   - **```[@cmsbuild,] please test with cms-sw/cmsdist#<PR>```**: Run tests with externals from cmsdist PR
   - **```[@cmsbuild,] please test with #cmsswPR[,cmsswPR[...]]```**: Run tests with extra cmssw PRs
