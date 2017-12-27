@@ -3,6 +3,7 @@ from optparse import OptionParser
 from glob import glob
 from json import load
 from categories_map import CMSSW_CATEGORIES
+from sys import exit
 
 STATES = {
   "pending": "P",
@@ -18,6 +19,11 @@ for cat in sorted(CMSSW_CATEGORIES.keys()):
   POSITIONS[cat]=pindex
   pindex+=1
 
+def dumpCategoriesJS():
+  cats= "var categories = {"
+  for cat in POSITIONS: cats+='\n  %s : "%s",' % (POSITIONS[cat], cat)
+  return cats.strip(",")+"\n};"
+  
 def labelsToState(labels):
   allParts = [x.split("-", 1) for x in labels if "-" in x]
   validParts = [x for x in allParts if x[0] in POSITIONS.keys()]
@@ -29,8 +35,12 @@ def labelsToState(labels):
 if __name__ == "__main__":
   parser = OptionParser(usage="%prog")
   parser.add_option("-p", "--prs", dest="prs_dir", help="Directory with Pull requests stats", type=str, default=None)
+  parser.add_option("-c", "--categories", dest="categories", help="Dump Categories JS", action="store_true", default=False)
   opts, args = parser.parse_args()
 
+  if opts.categories:
+    print dumpCategoriesJS()
+    exit(0)
   # This is the header of the files and will force a rewrite of the file
   # if a mismatching is found.
   schema= "Creation,MergeTime,id,isPr,N. of Comments,Closed,N. Labels,author, labelStatus, lastUpdateTime, milestoneTitle"
