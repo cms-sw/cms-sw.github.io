@@ -12,17 +12,17 @@ STATES = {
   "started": "S",
   "hold": "H",
 }
-
+CMSSW_CATEGORIES['tests']=[]
 POSITIONS = {}
 pindex = 0
-for cat in sorted(CMSSW_CATEGORIES.keys()+["tests"]):
+for cat in sorted(CMSSW_CATEGORIES.keys()):
   POSITIONS[cat]=pindex
   pindex+=1
 
 def dumpCategoriesJS():
   cats= "var categories = {"
   pindex = 0
-  for cat in sorted(CMSSW_CATEGORIES.keys()+["tests"]):
+  for cat in sorted(CMSSW_CATEGORIES.keys()):
     cats+='\n  %s : "%s",' % (pindex, cat)
     pindex+=1
   return cats.strip(",")+"\n};"
