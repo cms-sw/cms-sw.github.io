@@ -21,7 +21,10 @@ for cat in sorted(CMSSW_CATEGORIES.keys()):
 
 def dumpCategoriesJS():
   cats= "var categories = {"
-  for cat in POSITIONS: cats+='\n  %s : "%s",' % (POSITIONS[cat], cat)
+  pindex = 0
+  for cat in sorted(CMSSW_CATEGORIES.keys()):
+    cats+='\n  %s : "%s",' % (pindex, cat)
+    pindex+=1
   return cats.strip(",")+"\n};"
   
 def labelsToState(labels):
