@@ -7,26 +7,6 @@ var dataObject;
 var chart;
 var csvData = [];
 var chartData = [];
-var categories = {
-  0: "alca",
-  1: "analysis",
-  2: "db",
-  3: "daq",
-  4: "docs",
-  5: "dqm",
-  6: "core",
-  7: "fastsim",
-  8: "generators",
-  9: "geometry",
-  10: "l1",
-  11: "operations",
-  12: "pdmv",
-  13: "reconstruction",
-  14: "simulations",
-  15: "tests",
-  16: "visualization"
-};
-
 var labelsForTestStatus = {
   "A": "<span class='label label-success'>Approved</span>",
   "P": "<span class='label label-warning'>Pending</span>",
