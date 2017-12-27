@@ -16,6 +16,7 @@ var categories = {
   14 : "pdmv",
   15 : "reconstruction",
   16 : "simulation",
-  17 : "upgrade",
-  18 : "visualization"
+  17 : "tests",
+  18 : "upgrade",
+  19 : "visualization"
 };
