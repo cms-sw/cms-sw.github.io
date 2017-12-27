@@ -79,7 +79,7 @@ endef
 
 WF_TIMES := $(sort $(WF_TIMES))
 $(foreach r,$(WF_TIMES),$(eval $(call RelValTimes,$(word 1,$(subst _CMSSW_,$(space),$r)),CMSSW_$(word 2,$(subst _CMSSW_,$(space),$r)))))
-ALL_RULES  := $(ALL_RELVALS) $(ALL_INPUTS) $(ALL_UNIT_TESTS) $(ALL_JOB_REPORTS) $(ALL_COMMANDS) $(ALL_WF_TIMES)
+ALL_RULES  := $(ALL_RELVALS) $(ALL_UNIT_TESTS) $(ALL_JOB_REPORTS) $(ALL_COMMANDS) $(ALL_WF_TIMES)
 
 FORCE_TARGET:
 	@:
@@ -125,5 +125,5 @@ $(TIMESTAMP_FILE): $(ALL_RULES)
 	@$(call update_timestamp,$(ALL_JOB_REPORTS))
 	@$(call update_timestamp,$(ALL_COMMANDS))
 	@$(call update_timestamp,$(ALL_WF_TIMES))
-all: data/cmsdist-config.json ib-files clean_up_old_files pr-stats $(TIMESTAMP_FILE)
+all: data/cmsdist-config.json clean_up_old_files pr-stats $(TIMESTAMP_FILE)
 	@echo Done all
