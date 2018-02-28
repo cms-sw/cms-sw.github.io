@@ -18,6 +18,5 @@ var categories = {
   16 : "simulation",
   17 : "tests",
   18 : "upgrade",
-  19 : "visualization",
-  20 : "xpog"
+  19 : "visualization"
 };
