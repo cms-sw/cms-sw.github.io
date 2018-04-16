@@ -20,7 +20,17 @@
             "release_queue": "CMSSW_10_1_X", 
             "comp_baseline": "inprogress", 
             "material_budget_comparison": "not-found", 
-            "merged_prs": [], 
+            "merged_prs": [
+                {
+                    "hash": "8746f9461c38338f18963e84a8e0e7db0da7390f", 
+                    "title": "[101X][change Metadata] Adding PCC + TrackAlign PCL not consumed by Prompt", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/22920", 
+                    "number": "22920", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "lpernie"
+                }
+            ], 
             "base_branch": "CMSSW_10_1_X", 
             "release_name": "CMSSW_10_1_X", 
             "builds": [], 
@@ -58,13 +68,15 @@
                 }
             ], 
             "compared_tags": "CMSSW_10_1_X_2018-04-15-2300-->CMSSW_10_1_X_2018-04-16-1100", 
-            "dqm_tests": "inprogress", 
+            "dqm_tests": "found", 
             "utests": [
                 {
                     "arch": "slc6_amd64_gcc630", 
-                    "passed": "unknown", 
-                    "file": "['/data/sdt/buildlogs/slc6_amd64_gcc630/www/mon/10.1-mon-11/CMSSW_10_1_X_2018-04-16-1100/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "passed", 
+                    "file": "/data/sdt/buildlogs/slc6_amd64_gcc630/www/mon/10.1-mon-11/CMSSW_10_1_X_2018-04-16-1100/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "0"
+                    }
                 }, 
                 {
                     "arch": "slc7_amd64_gcc630", 
@@ -77,7 +89,7 @@
             "relvals": [], 
             "igprof": "inprogress", 
             "release_queue": "CMSSW_10_1_X", 
-            "comp_baseline": "inprogress", 
+            "comp_baseline": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-baseline-tests/CMSSW_10_1_X_2018-04-16-1100/slc6_amd64_gcc630/-GenuineIntel/matrix-results", 
             "material_budget_comparison": "not-found", 
             "merged_prs": [
                 {
@@ -120,6 +132,12 @@
                     "passed": true, 
                     "file": "/data/sdt/buildlogs/slc6_amd64_gcc630/www/mon/10.1-mon-11/CMSSW_10_1_X_2018-04-16-1100/addOnTests.log", 
                     "details": {}
+                }, 
+                {
+                    "arch": "slc7_amd64_gcc630", 
+                    "passed": true, 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc630/www/mon/10.1-mon-11/CMSSW_10_1_X_2018-04-16-1100/addOnTests.log", 
+                    "details": {}
                 }
             ], 
             "hlt_tests": "inprogress"
@@ -130,7 +148,13 @@
                 "slc7_amd64_gcc630", 
                 "slc6_amd64_gcc630"
             ], 
-            "static_checks_failures": "not-found", 
+            "static_checks_failures": {
+                "status": "found", 
+                "arch": "slc6_amd64_gcc630", 
+                "iterable": [
+                    "reports/modules2statics-filter1.txt\n"
+                ]
+            }, 
             "cmsdistTags": {
                 "slc7_amd64_gcc630": "IB/CMSSW_10_1_X_2018-04-15-0000/slc7_amd64_gcc630", 
                 "slc6_amd64_gcc630": "IB/CMSSW_10_1_X_2018-04-15-0000/slc6_amd64_gcc630"
@@ -268,11 +292,14 @@
                 }
             ], 
             "material_budget_v2": "not-found", 
-            "static_checks_v2": "inprogress", 
+            "static_checks_v2": {
+                "status": "passed", 
+                "arch": "slc6_amd64_gcc630"
+            }, 
             "valgrind": "found", 
             "material_budget": "not-found", 
             "lizard": "found", 
-            "static_checks": "inprogress", 
+            "static_checks": "slc6_amd64_gcc630:reports/modules2statics-filter1.txt\n", 
             "isIB": true, 
             "inProgress": false, 
             "addons": [
