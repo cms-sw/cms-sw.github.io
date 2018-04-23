@@ -55,7 +55,7 @@ if __name__ == "__main__":
         continue
       if l.startswith("#"):
         if step:
-          if "step1_lumiRanges.log" in command:
+          if ("step1_lumiRanges.log" in command) and (not "--lumiToProcess" in command):
             continue
           t = "CMSDRIVER"
           if ("das_client" in command) or ("dasgoclient" in command):
