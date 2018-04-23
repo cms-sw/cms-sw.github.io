@@ -49,17 +49,20 @@ if __name__ == "__main__":
     report += "\n#"
     step = 0
     command = ""
-
+    lumi_cmd = ""
     for l in report.split("\n"):
       if not l.strip():
         continue
       if l.startswith("#"):
         if step:
           if ("step1_lumiRanges.log" in command) and (not "--lumiToProcess" in command):
+            lumi_cmd = command+"\n"
+            command = ""
             continue
           t = "CMSDRIVER"
           if ("das_client" in command) or ("dasgoclient" in command):
-            command = re.sub(" --cache.*das-cache.file", " --cache .../das-cache.file", command)
+            command = lumi_cmd+re.sub(" --cache.*das-cache.file", " --cache .../das-cache.file", command)
+            lumi_cmd = ""
             t = "DAS"
             step = 1
           h = sha1(command).hexdigest()[0:16]
