@@ -32,6 +32,8 @@ The following E-groups membership is required for creating puppetized openstack 
 
 - cms-git-vocmssdt-admins
 
+- cms-sdt-aibox-admins 
+
 After the user/account is enrolled/added in the above e-groups , the account must login
 once to CERN foreman web page ( othervise it will have problems registering the vm with foreman).
 
