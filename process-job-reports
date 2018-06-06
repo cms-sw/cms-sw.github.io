@@ -57,7 +57,7 @@ if __name__ == "__main__":
       print
       printHeader = False
 
-    inDate = re.match(".*CMSSW_.*_(20\d\d-\d\d-\d\d-\d\d\d)/.*", inFile).group(1)
+    inDate = re.match(".*CMSSW_.*_(20\d\d-\d\d-\d\d-\d\d\d\d)/.*", inFile).group(1)
     timestamp = time.mktime(datetime.datetime.strptime(inDate, "%Y-%m-%d-%H%M").timetuple())
     for k in sorted(table):
       v = table[k] 
