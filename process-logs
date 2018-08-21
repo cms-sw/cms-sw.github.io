@@ -44,6 +44,7 @@ def query_es( query, es_index ):
 # Queries elasticsearch to get the current list of avaiable ib results for RelVals
 #
 def get_list_avaiable_ib_rv_results( es_hostname, es_index ):
+  return []
   query_file = 'es-queries/list-available-ib-results.json'
   query = open( query_file, 'r' ).read()
   response = query_es( query, es_index )
@@ -60,6 +61,7 @@ def get_list_avaiable_ib_rv_results( es_hostname, es_index ):
 # Queries elasticsearch to get the current list of avaiable ib results for SCRAM
 #
 def get_list_avaiable_ib_scram_results( es_hostname, es_index ):
+  return []
   query_file = 'es-queries/list-available-scram-results.json'
   query = open( query_file, 'r' ).read()
   response = query_es( query, es_index )
@@ -84,9 +86,9 @@ def remove_too_old_ibs( earliest_date, ib_list ):
 if __name__ == "__main__":
   parser = ArgumentParser()
   parser.add_argument("--logdir", type=str, help="where to find the logs", required=True)
-  parser.add_argument("--es_hostname", type=str, help="elasticsearch hostname", required=True)
-  parser.add_argument("--es_rv_index", type=str, help="elasticsearch relvals index", required=True)
-  parser.add_argument("--es_scram_index", type=str, help="elasticsearch scram index", required=True)
+  parser.add_argument("--es_hostname", type=str, help="elasticsearch hostname", default="")
+  parser.add_argument("--es_rv_index", type=str, help="elasticsearch relvals index", default="")
+  parser.add_argument("--es_scram_index", type=str, help="elasticsearch scram index", default="")
   parser.add_argument("--filter", type=str, default="")
   parser.add_argument("-n", "--dry-run", dest="dryRun", action="store_true", default=False)
   args = parser.parse_args()

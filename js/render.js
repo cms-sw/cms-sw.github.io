@@ -1,3 +1,4 @@
+var CMSSDT_SERVER="https://cmssdt.cern.ch"
 getMenuBar = function(structure){
 
 
@@ -65,7 +66,7 @@ add_qa_link_to_row = function(row, arch,release_name){
   
   var result_cell = $('<td>')
   row.append(result_cell)
-  var url = 'http://cmssdt.cern.ch/SDT/cgi-bin//newQA.py?arch='+arch+'&release='+release_name
+  var url = CMSSDT_SERVER+'/SDT/cgi-bin//newQA.py?arch='+arch+'&release='+release_name
   var r_link = $("<a></a>").attr("href", url)
   var label_link = $("<span></span>")
   
@@ -78,19 +79,37 @@ add_qa_link_to_row = function(row, arch,release_name){
 /**
  * returns the url for the tests, type can be unit tests, relvals or addons
  */
-get_tests_url = function(type,file) {
+get_tests_url = function( type, file, arch, ib ) {
   var link_parts = file.split('/')
-  var si=4      
+  var si=4
   var details_link = ""
   if (type == 'utests' || type =='builds'){
-    details_link="https://cmssdt.cern.ch/SDT/cgi-bin/showBuildLogs.py/" + link_parts[si] + '/'
+
+    if( file == 'not-ready' ){
+      details_link = "http://cms-sw.github.io/scramDetail.html#" + arch + ";" + ib 
+    }else{
+
+      details_link=CMSSDT_SERVER+"/SDT/cgi-bin/showBuildLogs.py/" + link_parts[si] + '/'
                                                                 +link_parts[si+1]+'/'+link_parts[si+2]+'/'+link_parts[si+3]
                                                                 +'/'+link_parts[si+4]
+   }
 
   }else if(type == 'relvals'){
-    details_link="https://cms-sw.github.io/relvalLogDetail.html#" + link_parts[si] + ';' + link_parts[si+4] 
+    if ( file == 'not-ready' ){
+      details_link="https://cms-sw.github.io/relvalLogDetail.html#" + arch + ';' + ib
+    }else {
+      details_link="https://cms-sw.github.io/relvalLogDetail.html#" + link_parts[si] + ';' + link_parts[si+4] 
+    }
+  }else if(type == 'fwlite'){
+    if ( file == 'not-ready' ){
+      details_link=""
+    }else {
+      details_link=CMSSDT_SERVER+"/SDT/cgi-bin/showBuildLogs.py/fwlite/" + link_parts[si] + '/'
+                                                                +link_parts[si+1]+'/'+link_parts[si+2]+'/'+link_parts[si+3]
+                                                                +'/'+link_parts[si+4]
+    }
   }else if(type == 'addons'){
-    details_link = "https://cmssdt.cern.ch/SDT/cgi-bin//showAddOnLogs.py/" + link_parts[si] + '/'
+    details_link = CMSSDT_SERVER+"/SDT/cgi-bin//showAddOnLogs.py/" + link_parts[si] + '/'
                                                                 +link_parts[si+1]+'/'+link_parts[si+2]+'/'+link_parts[si+3]+'/'+link_parts[si+4]
                                                                 +'/'+'addOnTests'+'/'
 
@@ -113,7 +132,7 @@ get_result_tests =  function (arch,tests){
 /**
  * Adds the results of the tests to a row of the table
  */
-add_tests_to_row = function( tests , row , arch , type ){
+add_tests_to_row = function( tests, row, arch, type, ib ){
 
 
   // just add a blank cell if tere are no results for that kind of tests
@@ -156,9 +175,14 @@ add_tests_to_row = function( tests , row , arch , type ){
       test_label = "Unknown"
     }
    
-  }else if (type == 'builds'){
+  }else if (type == 'builds' || type == 'fwlite'){
 
-    if (result == 'passed'){
+    incomplete = file == 'not-ready'
+
+    if ( incomplete ){
+        r_class = "label label-info"
+        test_label = "Not complete"
+    }else if (result == 'passed'){
       r_class = "label label-success"
       test_label = 'See Details'
     }else if (result == 'warning'){
@@ -172,21 +196,33 @@ add_tests_to_row = function( tests , row , arch , type ){
       test_label = ( compError + linkError + miscError ) + " Errors"
     }
   }else if (type == 'relvals'){
- 
+
+      known_err = 0
+      if ("known_failed" in testDetails){known_err = testDetails.known_failed;}
+      r_class = result? "label label-success" : "label label-danger"
+      incomplete = file == 'not-ready'
+
       if ( result ){
 
         r_class = "label label-success"
         test_label = "See Details"
-
+        if ( result_tests.done == false ){
+          test_label = "Pass: " + testDetails.num_passed
+        }
+        if (known_err>0) {test_label = test_label +" ( "+known_err+" )";}
       }else{
 
         r_class = "label label-danger"
-        test_label = "Pass: " + testDetails.num_passed + " Fail: " + testDetails.num_failed
+        test_label = "Pass: " + testDetails.num_passed
+        if (known_err>0) {test_label = test_label +" ( "+known_err+" )";}
+        test_label = test_label + " Fail: " + testDetails.num_failed
       }
       if ( result_tests.done == false )
       {
         r_class = "label label-primary"
       }
+
+
 
   }else{
       r_class = result? "label label-success" : "label label-danger"
@@ -198,7 +234,7 @@ add_tests_to_row = function( tests , row , arch , type ){
 
   res_label.attr("class", r_class)
   var link_parts = file.split('/')
-  var details_url = get_tests_url(type,file)
+  var details_url = get_tests_url( type, file, arch, ib )
   var r_link = $("<a></a>").attr("href", details_url)
 
   r_link.append(res_label)
@@ -208,41 +244,245 @@ add_tests_to_row = function( tests , row , arch , type ){
 
 }
 
+add_inprogress_item = function (title_cell, test_name){
+  title_cell.append($('<span class="glyphicon glyphicon-refresh"></span>'))
+  title_cell.append($('<span></span>').text(test_name))
+  title_cell.append($("<br>"))
+}
+
 /**
  * Generates the static analyzer link and adds it to the cell for the IB
+ * isFound is equal to te architecture where the test is found, if not found
+ * the value is 'not-found'
  */
 add_static_analyzer_link = function ( title_cell , isFound , currentTag ){
-  if ( isFound == 'found'){
-    // for now the arch is hardcoded, this needs to be changed eventually
-    var url = 'https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-static-analysis/' + currentTag + '/slc6_amd64_gcc481/llvm-analysis/index.html'
-    var sa_link = $("<a></a>").attr("href", url)
-    sa_link.append($('<span class="glyphicon glyphicon-eye-open"></span>'))
-    sa_link.append($('<span></span>').text(' Static Analyzer'))
+  if (isFound == 'not-found'){return}
+  if (isFound == 'inprogress'){
+    add_inprogress_item(title_cell,' Static Analyzer')
+    return
+  }
+  found_items = isFound.trim().split(":")
+  isFound = found_items[0]
+  var url = CMSSDT_SERVER+'/SDT/jenkins-artifacts/ib-static-analysis/' + currentTag + '/'+isFound+'/llvm-analysis/index.html'
+  var sa_link = $("<a></a>").attr("href", url)
+  sa_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
+  sa_link.append($('<span></span>').text(' Static Analyzer'))
+  title_cell.append(sa_link)
+  title_cell.append($("<br>"))
+
+  var sa2_link = $("<a></a>").attr("href", url.replace("llvm-analysis/index.html", "reports/modules2statics.txt"))
+  sa2_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
+  sa2_link.append($('<span></span>').text(' Modules to thread unsafe statics'))
+  title_cell.append(sa2_link)
+  title_cell.append($("<br>"))
+
+  var sa_links = ""
+  for (i = 1; i < found_items.length; i++) {
+    if (found_items[i]=='') continue
+    sa_link = $("<a></a>").attr("href", url.replace("llvm-analysis/index.html", found_items[i] ))
+    sa_link.append($('<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>'))
+    sa_link.append($('<span class="glyphicon glyphicon-alert"></span>'))
+    sa_link.append($('<span></span>').text(' produce/analyze/filter()'))
     title_cell.append(sa_link)
     title_cell.append($("<br>"))
-
-    var sa2_link = $("<a></a>").attr("href", url.replace("llvm-analysis/index.html", "reports/modules2statics.txt"))
-    sa2_link.append($('<span></span>').text(' Modules to thread unsafe statics'))
-    title_cell.append(sa2_link)
-
-    title_cell.append($("<br>"))
-
-    var sa3_link = $("<a></a>").attr("href", url.replace("llvm-analysis/index.html", "reports/tlf2esd.txt"))
-    sa3_link.append($('<span></span>').text(' Modules to thread unsafe EventSetup products'))
-    title_cell.append(sa3_link)
   }
+
+  var sa3_link = $("<a></a>").attr("href", url.replace("llvm-analysis/index.html", "reports/tlf2esd.txt"))
+  sa3_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
+  sa3_link.append($('<span></span>').text(' Modules to thread unsafe EventSetup products'))
+  title_cell.append(sa3_link)
+  title_cell.append($("<br>"))
+}
+
+/**
+ * Generates the comparison baseline tests link link and adds it to the cell for the IB
+ */
+add_comp_baseline_tests_link = function ( title_cell, isFound, currentTag, test_state ){
+  if (isFound == 'not-found'){return}
+  if (isFound == 'inprogress'){
+    add_inprogress_item(title_cell,' Comparison Baseline')
+    return
+  }
+  var url = isFound
+  var sa_link = $("<a></a>").attr("href", url)
+  if (test_state == 'ok'){sa_link.append($('<span class="glyphicon glyphicon-ok-sign"></span>'))}
+  else{sa_link.append($('<span class="glyphicon glyphicon-warning-sign"></span>'))}
+  sa_link.append($('<span></span>').text(' Comparison Baseline'))
+  title_cell.append(sa_link)
+  title_cell.append($("<br>"))
 }
 
 /**
  * Generates the hlt tests link link and adds it to the cell for the IB
  */
-add_hlt_tests_link = function ( title_cell , isFound , currentTag ){
-  if ( isFound == 'found' ){
-    var url = 'https://cmssdt.cern.ch/SDT/jenkins-artifacts/HLT-Validation/' + currentTag 
+add_hlt_tests_link = function ( title_cell, isFound, currentTag ){
+  if (isFound == 'not-found'){return}
+  if (isFound == 'inprogress'){
+    add_inprogress_item(title_cell,' HLT Validation')
+    return
+  }
+  if (isFound == 'found' ){
+    var url = CMSSDT_SERVER+'/SDT/jenkins-artifacts/HLT-Validation/' + currentTag 
     var sa_link = $("<a></a>").attr("href", url)
     sa_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
     sa_link.append($('<span></span>').text(' HLT Validation'))
     title_cell.append(sa_link)
+    title_cell.append($("<br>"))
+  }
+}
+
+/**
+ *  * Generates the dqm tests link link and adds it to the cell for the IB
+ *   */
+add_dqm_tests_link = function ( title_cell, isFound, currentTag ){
+  if (isFound == 'not-found'){return}
+  if (isFound == 'inprogress'){
+    add_inprogress_item(title_cell,' DQM Tests')
+    return
+  }
+  if (isFound == 'found' ){
+    var url = CMSSDT_SERVER+'/SDT/jenkins-artifacts/ib-dqm-tests/' + currentTag
+    var sa_link = $("<a></a>").attr("href", url)
+    sa_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
+    sa_link.append($('<span></span>').text(' DQM Tests'))
+    title_cell.append(sa_link)
+    title_cell.append($("<br>"))
+  }
+}
+
+/**
+ * Generates the valgrind tests link link and adds it to the cell for the IB
+ */
+add_valgrind_tests_link = function ( title_cell, isFound, currentTag ){
+  if ( isFound == 'not-found'){return}
+  if (isFound == 'inprogress'){
+    add_inprogress_item(title_cell,' Valgrind')
+    return
+  }
+  if ( isFound == 'found' ){
+    var url = CMSSDT_SERVER+'/SDT/jenkins-artifacts/valgrind/' + currentTag 
+    var sa_link = $("<a></a>").attr("href", url)
+    sa_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
+    sa_link.append($('<span></span>').text(' Valgrind'))
+    title_cell.append(sa_link)
+    title_cell.append($("<br>"))
+  }
+}
+
+/**
+ * Generates the lizard tests link and adds it to the cell for the IB
+ */
+add_lizard_tests_link = function ( title_cell, isFound, currentTag ){
+  if ( isFound == 'not-found'){return}
+  if (isFound == 'inprogress'){
+    add_inprogress_item(title_cell,' Code complexity metrics')
+    return
+  }
+  if ( isFound == 'found' ){
+    var url = CMSSDT_SERVER+'/SDT/jenkins-artifacts/lizard/' + currentTag
+    var sa_link = $("<a></a>").attr("href", url)
+    sa_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
+    sa_link.append($('<span></span>').text(' Code complexity metrics'))
+    title_cell.append(sa_link)
+    title_cell.append($("<br>"))
+  }
+}
+
+/**
+ * Generates the material_budget tests link link and adds it to the cell for the IB
+ */
+add_material_budget_tests_link = function ( title_cell, isFound, currentTag ){
+  if ( isFound == 'not-found'){return}
+  if (isFound == 'inprogress'){
+    add_inprogress_item(title_cell,' Material Budget')
+    return
+  }
+  found_items = isFound.trim().split(":")
+  arch = found_items[0]
+  var url = CMSSDT_SERVER+'/SDT/jenkins-artifacts/material-budget/' + currentTag + '/' + arch
+  var sa_link = $("<a></a>").attr("href", url)
+  sa_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
+  sa_link.append($('<span></span>').text(' Material Budget'))
+  title_cell.append(sa_link)
+  title_cell.append($("<br>"))
+
+  comp = found_items[1]
+  if (comp == "-1") {return}
+  var sa_link1 = $("<a></a>").attr("href", url + "/comparison/")
+  sa_link1.append($('<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>'))
+  if (comp == "0"){sa_link1.append($('<span class="glyphicon glyphicon-ok-sign"></span>'))}
+  else{sa_link1.append($('<span class="glyphicon glyphicon-warning-sign"></span>'))}
+  sa_link1.append($('<span></span>').text(' comparison'))
+  title_cell.append(sa_link1)
+  title_cell.append($("<br>"))
+}
+
+/**
+ * Generates the igprof tests link link and adds it to the cell for the IB
+ */
+add_igprof_tests_link = function ( title_cell, isFound, currentTag ){
+  if ( isFound == 'not-found'){return}
+  if (isFound == 'inprogress'){
+    add_inprogress_item(title_cell,' IgProf')
+    return
+  }
+  if ( isFound == 'found' ){
+    var url = CMSSDT_SERVER+'/SDT/cgi-bin/igprof-navigator/' + currentTag
+    var sa_link = $("<a></a>").attr("href", url)
+    sa_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
+    sa_link.append($('<span></span>').text(' IgProf'))
+    title_cell.append(sa_link)
+    title_cell.append($("<br>"))
+  }
+}
+
+/**
+ * Generates the link to the Relvals Exception Page if the results were found
+ * and addsit to the cell for the IB
+ */
+add_rv_exceptions_link = function ( title_cell, isFound, currentTag ){
+  if ( isFound == 'not-found'){return}
+  if (isFound == 'inprogress'){
+    add_inprogress_item(title_cell,' Relvals Exceptions Summary')
+    return
+  }
+  if ( isFound ){
+    var url = 'http://cms-sw.github.io/relvalsExceptions.html#' + currentTag
+    var sa_link = $("<a></a>").attr("href", url)
+    sa_link.append($('<span class="glyphicon glyphicon-warning-sign"></span>'))
+    sa_link.append($('<span></span>').text(' Relvals Exceptions Summary'))
+    title_cell.append(sa_link)
+  }
+}
+
+/**
+ * Generates the link to the Relvals Exception Page for the given release queue
+ */
+get_rv_exceptions_link_rq = function ( releaseQueue ){
+
+  var url = 'http://cms-sw.github.io/relvalsExceptions.html#' + releaseQueue
+  var sa_link = $("<a></a>").attr("href", url)
+  sa_link.text('Relvals Exceptions Summary for ' + releaseQueue )
+  return sa_link
+
+}
+
+/**
+ * Generates the header check link and adds it to the cell for the IB
+ */
+add_header_check_link = function ( title_cell, isFound, currentTag ){
+  if ( isFound == 'not-found'){return}
+  if (isFound == 'inprogress'){
+    add_inprogress_item(title_cell,' Header Consistency')
+    return
+  }
+  if ( isFound == 'found' ){
+    var url = CMSSDT_SERVER+'/SDT/jenkins-artifacts/check_headers/' + currentTag
+    var sa_link = $("<a></a>").attr("href", url)
+    sa_link.append($('<span class="glyphicon glyphicon-list-alt"></span>'))
+    sa_link.append($('<span></span>').text(' Header Consistency'))
+    title_cell.append(sa_link)
+    title_cell.append($("<br>"))
   }
 }
 
@@ -252,44 +492,86 @@ add_hlt_tests_link = function ( title_cell , isFound , currentTag ){
 addTagLink = function( titleCell , currentTag ){
 
   var isIB = currentTag.indexOf( '-' ) >= 0
-  
+  isTopOfBranch = !isIB && currentTag.indexOf( 'X' ) >= 0
+ 
   if( isIB ) {
+
     var url = 'https://github.com/cms-sw/cmssw/tree/' + currentTag
     var tagLink = $( "<a>" ).attr( "href" , url )
     tagLink.append( $('<span class="glyphicon glyphicon-tag">') )
     tagLink.append( $('<span>').text(' IB Tag') )
     titleCell.append( tagLink )
+
+  }else if( isTopOfBranch ){
+
+    var url = 'https://github.com/cms-sw/cmssw/commits/' + currentTag
+    var tagLink = $( "<a>" ).attr( "href" , url )
+    tagLink.append( $('<span class="glyphicon glyphicon-list">') )
+    tagLink.append( $('<span>').text(' See Branch') )
+    titleCell.append( tagLink )
+
   }else{
+
     var url = 'https://github.com/cms-sw/cmssw/releases/tag/' + currentTag
     var tagLink = $( "<a>" ).attr( "href" , url )
     tagLink.append( $('<span class="glyphicon glyphicon-tag">') )
     tagLink.append( $('<span>').text(' Release') )
     titleCell.append( tagLink )
+
   }
 
 
 }
 
 /**
+ * Adds an indicator that informs that the IB is currently being built
+ */
+addInProgressWarning = function( titleCell, currentTag ){
+
+  var progressSpan = $( '<b>' ).text( 'This IB is currently being built' )
+  var progressGlyph = $( '<span>' ).attr( 'class', 'glyphicon glyphicon-hourglass' )
+
+  titleCell.append( progressGlyph )
+  titleCell.append( progressSpan )
+  titleCell.append( $('<br>') )
+}
+
+/**
  * writes a table with the comparison lates tag, and the information about the IB if it is an IB
  */
-write_comp_IB_table =  function( comparison , tab_pane ){
+write_comp_IB_table =  function( comparison, tab_pane ){
 
   var current_tag = comparison.compared_tags.split("-->")[1]
+  isTopOfBranch = ( current_tag.indexOf( '-' ) == -1 ) && ( current_tag.indexOf( 'X' ) >= 0 )
+
   var title_compared_tags = $("<h3><b></b></h3>").text(current_tag)
- 
-   
+  if ( isTopOfBranch ){
+    title_compared_tags.text( 'Next IB:')
+  }
+
   var titleTable = $('<table class="table table-condensed"></table>')
   titleTable.attr( 'id' , current_tag )
   tab_pane.append( titleTable )
 
   var title_cell = $('<td>').append(title_compared_tags)
+  if( comparison[ 'inProgress' ] ){
+    addInProgressWarning( title_cell, current_tag )
+  }
   addTagLink( title_cell , current_tag )
   title_cell.append($('<br>'))
  
-  add_static_analyzer_link( title_cell , comparison.static_checks , current_tag )
-  title_cell.append($('<br>'))
-   add_hlt_tests_link( title_cell , comparison.hlt_tests , current_tag )
+  if ( ! isTopOfBranch ){
+    add_comp_baseline_tests_link( title_cell , comparison.comp_baseline , current_tag, comparison.comp_baseline_state )
+    add_dqm_tests_link( title_cell , comparison.dqm_tests , current_tag )
+    add_hlt_tests_link( title_cell , comparison.hlt_tests , current_tag )
+    add_valgrind_tests_link( title_cell , comparison.valgrind , current_tag )
+    add_lizard_tests_link( title_cell , comparison.lizard , current_tag )
+    add_igprof_tests_link( title_cell , comparison.igprof , current_tag )
+    add_static_analyzer_link( title_cell , comparison.static_checks , current_tag )
+    add_rv_exceptions_link( title_cell , comparison.RVExceptions , current_tag )
+    add_material_budget_tests_link( title_cell , comparison.material_budget , current_tag )
+    add_header_check_link( title_cell , comparison.check_headers , current_tag )
+  }
 
   var title_row = $('<tr>')
   var relvals_results = comparison.relvals
@@ -297,6 +579,7 @@ write_comp_IB_table =  function( comparison , tab_pane ){
   var addons_results = comparison.addons
   var architectures = comparison.tests_archs
   var building_results =  comparison.builds
+  var fwlite_results =  comparison.fwlite
 
   title_cell.attr("rowspan",architectures.length+1)
   title_row.append(title_cell)
@@ -314,6 +597,8 @@ write_comp_IB_table =  function( comparison , tab_pane ){
     title_row.append(rvs_title)
     var addons_title = $( '<th>' ).text( 'Other Tests' )
     title_row.append(addons_title)
+    var fwlite_title = $( '<th>' ).text( 'FWLite' )
+    title_row.append(fwlite_title )
     var qa_title = $( '<th>' ).text( 'Q/A' )
     title_row.append(qa_title)
     
@@ -322,12 +607,13 @@ write_comp_IB_table =  function( comparison , tab_pane ){
       var ar_row = $( '<tr>' )
       titleTable.append(ar_row)
       var ar_cell = $( '<td>' )
-      fill_arch_cell( ar_cell , architectures[ i ] , comparison.cmsdistTags , current_tag )
+      fill_arch_cell( ar_cell, architectures[ i ], comparison.cmsdistTags, current_tag )
       ar_row.append(ar_cell)
-      add_tests_to_row( building_results , ar_row , architectures[i] , 'builds' )
-      add_tests_to_row( uTests_results, ar_row, architectures[i] , 'utests' )
-      add_tests_to_row(relvals_results,ar_row,architectures[i],'relvals')
-      add_tests_to_row(addons_results,ar_row,architectures[i],'addons')
+      add_tests_to_row( building_results , ar_row , architectures[i] , 'builds', current_tag )
+      add_tests_to_row( uTests_results, ar_row, architectures[i] , 'utests', current_tag )
+      add_tests_to_row(relvals_results,ar_row,architectures[i],'relvals', current_tag)
+      add_tests_to_row(addons_results,ar_row,architectures[i],'addons', current_tag)
+      add_tests_to_row(fwlite_results, ar_row , architectures[i] , 'fwlite', current_tag )
       add_qa_link_to_row(ar_row,architectures[i],current_tag)
      }
 
@@ -335,6 +621,7 @@ write_comp_IB_table =  function( comparison , tab_pane ){
 
 
 }
+
 
 /**
  * fills the arch cell with a link to the cmsdist tag used to build that IB if 
@@ -347,28 +634,35 @@ fill_arch_cell = function( cell , architecture , cmsdistTags , current_tag ){
     cell.text( architecture )
   }else{
     
-    var tagName = cmsdistTags[ architecture ]
-    var intendedTagName = 'IB/'.concat( current_tag ,'/', architecture )
+    var tagName = cmsdistTags[ architecture ] 
+    var intendedTagName1 = 'IB/'.concat( current_tag ,'/', architecture )
+    var intendedTagName2 = 'ERR/'.concat( current_tag ,'/', architecture )
+
     var link = $( '<a>' )
     link.attr( 'href' , 'https://github.com/cms-sw/cmsdist/commits/' + tagName )
     var tooltipText = ''
-    
+   
+    var isPatchSmall = $( '<small>' )
+     
     if( tagName == 'Not Found' ){
       cell.text( architecture )
       return      
-    }else if ( tagName != intendedTagName ){
+    }else if ( tagName != intendedTagName1 && tagName != intendedTagName2 ){
       tooltipText = 'Used same cmsdist tag as ' + tagName.replace( 'IB/' , '').replace( '/' + architecture , '')
+      var baseIB = tagName.split( '/' )[ 1 ]
+      var previousDate = baseIB.substring( baseIB.lastIndexOf( '_' ) + 1, baseIB.length )
+      var baseIBLink = $( '<a>' ).attr( 'href' , '#' + baseIB ).text( 'Patch from ' + previousDate )
+      isPatchSmall.append( baseIBLink )
     }else { 
-
       tooltipText = 'See cmsdist tag used for this build'
-
+      isPatchSmall.text( 'Full Build' )
     }
 
- 
     link.text( architecture )
-    cell.append( link ).attr( 'data-toggle' , 'tooltip' )
-    cell.append( link ).attr( 'data-placement' , 'right' )
-    cell.append( link ).attr( 'title' , tooltipText )
+    cell.append( link )
+    cell.attr( 'data-toggle' , 'tooltip' ).attr( 'data-placement' , 'right' ).attr( 'title' , tooltipText )
+    cell.append( $( '<br>' ) )
+    cell.append( isPatchSmall )
 
   }
 
@@ -496,7 +790,7 @@ paintComparisons = function(rqInfo){
   var tab_pane = $("#"+rqInfo.release_name)
   var comparisons = rqInfo.comparisons
 
-  for(var j =comparisons.length-1; j >= 0; j--){
+  for(var j =0; j < comparisons.length; j++){
 
     write_comparison( comparisons[j] , tab_pane )
   
@@ -516,6 +810,10 @@ checkHasToScroll = function ( releaseName ){
   var url = document.location.toString();
   console.log( 'option2' )
   var hash = url.split('#')[1]
+  if( hash == undefined ){
+    return
+  }
+ 
   var requiredReleaseName = hash.substring( 0 , hash.lastIndexOf( '_' ) )
   var lastChar = requiredReleaseName.charAt( requiredReleaseName.length - 1 )
 
