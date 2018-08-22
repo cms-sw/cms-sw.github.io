@@ -26,3 +26,8 @@ make -j 20
 git commit data -m'Results updated'
 git push origin master
 ```
+
+Contributing to repository.
+=====================
+
+This repository contains two branches - `master` and `code`. All user submitted changes should go to `code` branch which will then be merged into `master` branch. Auto-generated data such as JSON files submitted by Cms Bot should go directly in to `master`. This should solve PR issues like [this](https://github.com/cms-sw/cms-sw.github.io/pull/74).
