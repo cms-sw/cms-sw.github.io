@@ -1,4 +1,4 @@
-# Setting up `SLC6` CMS environment on `Cent OS7`
+# Setting up SLC6 CMS environment on CentOS7
 In order to develop CMSSW for `SLC6`, one can use `singularity` to get `SLC6 CMS` environment. `singularity` is available on `lxplus7` and can be used by any user.
 Here is how you can run `singularity` to setup `cms` environment.
 ```
