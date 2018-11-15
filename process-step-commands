@@ -47,45 +47,37 @@ if __name__ == "__main__":
     xpath, workflowId, workflow = m.groups()
     report = readRelValFile(name,zipFile)
     report += "\n#"
-    step = 0
     command = ""
     lumi_cmd = ""
     for l in report.split("\n"):
-      if not l.strip():
+      if not l.strip(): continue
+      if not l.startswith("#"):
+        command=command+l+"\n"
         continue
-      if l.startswith("#"):
-        if step:
-          if ("step1_lumiRanges.log" in command) and (not "--lumiToProcess" in command):
-            lumi_cmd = command+"\n"
-            command = ""
-            continue
-          t = "CMSDRIVER"
-          if ("das_client" in command) or ("dasgoclient" in command):
-            command = lumi_cmd+re.sub(" --cache.*das-cache.file", " --cache .../das-cache.file", command)
-            lumi_cmd = ""
-            t = "DAS"
-            step = 1
-          command = command.strip()
-          h = sha1(command).hexdigest()[0:16]
-          # One file per hash
-          (fh, filename) = mkstemp()
-          file = fdopen(fh, "w")
-          dump({"command": command, "type": t}, file)
-          file.close()
-          try:
-            destFile = join(args.output, h[0], h[1:])
-            move(filename, destFile)
-          except:
-            print "Unable to move " + destFile + " into place."
-            unlink(filename)
-          results.append((workflowId + "-" + str(step), h))
-
-        step +=1
+      if not command: continue
+      if ("_lumiRanges.log" in command) and (not "--lumiToProcess" in command):
+        lumi_cmd = command
         command = ""
         continue
-      command += l+"\n"
-      if step > 10:
-        print report
-        print step
-        parser.error(name)
+      step = [c for c in command.split(" ") if c.startswith("step")][-1].split("_",1)[0].replace('step','')
+      t = "CMSDRIVER"
+      if ("das_client" in command) or ("dasgoclient" in command):
+        command = lumi_cmd+re.sub(" --cache.*das-cache.file", " --cache .../das-cache.file", command)
+        lumi_cmd = ""
+        t = "DAS"
+      command = command.strip()
+      h = sha1(command).hexdigest()[0:16]
+      # One file per hash
+      (fh, filename) = mkstemp()
+      file = fdopen(fh, "w")
+      dump({"command": command, "type": t}, file)
+      file.close()
+      try:
+        destFile = join(args.output, h[0], h[1:])
+        move(filename, destFile)
+      except:
+        print "Unable to move " + destFile + " into place."
+        unlink(filename)
+      results.append((workflowId + "-" + str(step), h))
+      command = ""
   print dumps(dict(results), sort_keys=True, indent=2, separators=(',', ': '))
