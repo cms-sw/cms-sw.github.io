@@ -15,6 +15,8 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```ignore clang-warnings```**: To ignore clang warnings results
   - **```ignore build-warnings```**: To ignore build warnings results
   - **```ignore none```**: Do not ignore any tests results.
+- **Allowing a user to trigger tests**: L1/L2/Release managers can issue this command to give test triggering rights to a user for a specific pull request
+  - **```allow @username test rights```: Allows github user `username` to start the tests by using one of the `please test` commands.
 - **Testing PR**: L1/L2 and developers listed <a href="https://github.com/cms-sw/cms-bot/blob/master/categories.py#L14">here</a> to start jenkins tests using ```[@cmsbuild,] please test [workflow <workflow>[,<workflow>[...]]] with [#cmsswPR[,cmsswPR[...]] [cms-sw/cmsdist#PR]]``` e.g. 
   - **```[@cmsbuild,] please test```**: To start tests
   - **```[@cmsbuild,] please test with cms-sw/cmsdist#<PR>```**: Run tests with externals from cmsdist PR
