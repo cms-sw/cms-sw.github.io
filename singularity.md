@@ -4,18 +4,16 @@ Here is how you can run `singularity` to setup `cms` environment.
 ```
 #login to CentOS7 system with singularity installed e.g. lxplus7 or 
 ssh lxplus7
+singularity shell -B /afs -B /eos -B /cvmfs docker://cmssw/slc6-builder:latest
 export SCRAM_ARCH=slc6_amd64_gcc700
-singularity shell -B /cvmfs docker://clelange/slc6-cms:latest
-export HOME=$(eval echo  ~$(whoami))
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 ```
 
 # Setting up CentOS7 CMS environment on SLC6
 ```
-#login to SLC67 system with singularity installed e.g. lxplus6 or cmsdevXX
+#login to SLC6 system with singularity installed e.g. lxplus6 or cmsdevXX
 ssh cmsdev15
+singularity shell -B /afs -B /cvmfs docker://cmssw/slc7-builder:latest
 export SCRAM_ARCH=slc7_amd64_gcc700
-singularity shell -B /cvmfs -B /build:/mnt docker://clelange/cc7-cms:latest
-export HOME=$(eval echo  ~$(whoami))
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 ```
