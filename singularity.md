@@ -4,7 +4,7 @@ Here is how you can run `singularity` to setup `cms` environment.
 ```
 #login to CentOS7 system with singularity installed e.g. lxplus7 or 
 ssh lxplus7
-singularity shell -B /afs -B /eos -B /cvmfs docker://cmssw/slc6-builder:latest
+singularity shell -B /afs -B /eos -B /cvmfs docker://cmssw/slc6:latest
 export SCRAM_ARCH=slc6_amd64_gcc700
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 ```
@@ -13,7 +13,7 @@ source /cvmfs/cms.cern.ch/cmsset_default.sh
 ```
 #login to SLC6 system with singularity installed e.g. lxplus6 or cmsdevXX
 ssh cmsdev15
-singularity shell -B /afs -B /cvmfs docker://cmssw/slc7-builder:latest
+singularity shell -B /afs -B /cvmfs docker://cmssw/cc7:latest
 export SCRAM_ARCH=slc7_amd64_gcc700
 source /cvmfs/cms.cern.ch/cmsset_default.sh
 ```
