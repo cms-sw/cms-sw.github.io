@@ -31,10 +31,10 @@ scram b runtests
 Run a basic battery of tests
 
 ```
-runTheMatrix.py -l limited -i all
+runTheMatrix.py -l limited -i all --ibeos
 ```
 
-If these tests are successful, your code changes should also pass the basic checks done during the pull request testing procedure. Some tests, in particular the runTheMatrix.py tests require data available at sites such as CERN.
+If these tests are successful, your code changes should also pass the basic checks done during the pull request testing procedure. Some tests, in particular the runTheMatrix.py tests require data available at sites such as CERN, ```--ibeos``` argument allows to read the files via CMSSW integration file catalog.
 
 ### Initial pull request 
    - [This tutorial](tutorial.html) provides instructions for making a pull request to CMSSW
