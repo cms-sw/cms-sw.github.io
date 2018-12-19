@@ -7,8 +7,7 @@ import re
 from operator import itemgetter
 
 BEGIN_TEST = "^    ([^/]*/[^ ]*) :[ ]*$"
-TEST_OK = "[ ]*([^ ]*)[ ]*OK[ ]*"
-TEST_ERROR = "[ ]*([^ ]*)[ ]*ERRORS[ ]*"
+TEST_OK = '^.* OK:(\d+)\s+fail:(\d+)\s*$'
 
 if __name__ == "__main__":
   parser = ArgumentParser()
@@ -25,18 +24,13 @@ if __name__ == "__main__":
     isBegin = re.match(BEGIN_TEST, l)
     if isBegin:
       currentPackage = isBegin.group(1)
-      results[currentPackage] = {"name": currentPackage, "errors": [], "ok": []}
+      results[currentPackage] = {"name": currentPackage, "errors": 0, "ok": 0}
       continue
-    if not currentPackage:
-      continue
-    isOk = re.match(TEST_OK, l)
-    isError = re.match(TEST_ERROR,l)
-    if isOk:
-      results[currentPackage]["ok"].append(isOk.group(1))
-      continue
-    if isError:
-      results[currentPackage]["errors"].append(isError.group(1))
-      continue
+    if (not currentPackage) or (not currentPackage in l): continue
+    m = re.match(TEST_OK, l)
+    if m:
+      results[currentPackage]["ok"]=int(m.group(1))
+      results[currentPackage]["error"]=int(m.group(2))
   results = results.values()
-  results.sort(key=lambda x : (len(x["errors"]), x["name"]), reverse=True)
+  results.sort(key=lambda x : (x["errors"], x["name"]), reverse=True)
   print dumps(results, sort_keys=True, indent=2, separators=(',', ': '))
