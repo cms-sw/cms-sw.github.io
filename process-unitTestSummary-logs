@@ -30,7 +30,7 @@ if __name__ == "__main__":
     m = re.match(TEST_OK, l)
     if m:
       results[currentPackage]["ok"]=int(m.group(1))
-      results[currentPackage]["error"]=int(m.group(2))
+      results[currentPackage]["errors"]=int(m.group(2))
   results = results.values()
   results.sort(key=lambda x : (x["errors"], x["name"]), reverse=True)
   print dumps(results, sort_keys=True, indent=2, separators=(',', ': '))
