@@ -53,6 +53,7 @@ START_DATE := $(firstword $(sort $(START_DATE) $4))
 ALL_RELVALS      += data/relvals/$2/$4/$3.json
 ALL_INPUTS       += data/inputs/$2/$3/$4.csv
 ALL_UNIT_TESTS   += data/unitTests/$2/$4/$3.json
+ALL_GPU_UNIT_TESTS += data/GPU/unitTests/$2/$4/$3.json
 ALL_JOB_REPORTS  += data/jobreports/$2/$3/$4.csv
 ALL_COMMANDS     += data/commands/$2/$4/$3.json
 WF_TIMES_$2_$3   += $(wildcard $1/pyRelValMatrixLogs/run/relval-times.json)
@@ -60,6 +61,8 @@ WF_TIMES         += $2_$3
 data/relvals/$2/$4/$3.json: $1/pyRelValMatrixLogs/run/runall-report-step123-.log set_timestamps $(FORCE_BUILD)
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-run123-logs $$<)
 data/unitTests/$2/$4/$3.json: $1/unitTests-summary.log set_timestamps $(FORCE_BUILD)
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-unitTestSummary-logs $$<)
+data/GPU/unitTests/$2/$4/$3.json: $1/GPU/unitTests-summary.log set_timestamps $(FORCE_BUILD)
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-unitTestSummary-logs $$<)
 data/commands/$2/$4/$3.json: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-step-commands $$< data/commands/objs)
@@ -79,7 +82,7 @@ endef
 
 WF_TIMES := $(sort $(WF_TIMES))
 $(foreach r,$(WF_TIMES),$(eval $(call RelValTimes,$(word 1,$(subst _CMSSW_,$(space),$r)),CMSSW_$(word 2,$(subst _CMSSW_,$(space),$r)))))
-ALL_RULES  := $(ALL_RELVALS) $(ALL_UNIT_TESTS) $(ALL_JOB_REPORTS) $(ALL_COMMANDS) $(ALL_WF_TIMES)
+ALL_RULES  := $(ALL_RELVALS) $(ALL_UNIT_TESTS) $(ALL_GPU_UNIT_TESTS) $(ALL_JOB_REPORTS) $(ALL_COMMANDS) $(ALL_WF_TIMES)
 
 FORCE_TARGET:
 	@:
@@ -102,6 +105,7 @@ ib-files: $(ALL_INPUTS)
 clean:
 	rm -rf data/relvals
 	rm -rf data/unitTests
+	rm -rf data/GPU/unitTests
 	rm -rf data/commands
 	rm -rf data/jobreports
 	rm -rf data/inputs
@@ -115,6 +119,7 @@ set_timestamps: FORCE_TARGET
 	@$(call set_times,$(ALL_RELVALS))
 	@$(call set_times,$(ALL_INPUTS))
 	@$(call set_times,$(ALL_UNIT_TESTS))
+	@$(call set_times,$(ALL_GPUUNIT_TESTS))
 	@$(call set_times,$(ALL_JOB_REPORTS))
 	@$(call set_times,$(ALL_COMMANDS))
 	@$(call set_times,$(ALL_WF_TIMES))
@@ -123,6 +128,7 @@ $(TIMESTAMP_FILE): $(ALL_RULES)
 	@$(call update_timestamp,$(ALL_RELVALS))
 	@$(call update_timestamp,$(ALL_INPUTS))
 	@$(call update_timestamp,$(ALL_UNIT_TESTS))
+	@$(call update_timestamp,$(ALL_GPU_UNIT_TESTS))
 	@$(call update_timestamp,$(ALL_JOB_REPORTS))
 	@$(call update_timestamp,$(ALL_COMMANDS))
 	@$(call update_timestamp,$(ALL_WF_TIMES))
