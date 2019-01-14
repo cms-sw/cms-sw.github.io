@@ -7,13 +7,13 @@ This document describes the naming, coding, and style rules, as well as design, 
 
 
 ## Outline
-#### [Introduction](https://github.com/cms-sw/cms-sw.github.io/new/code#1-introduction)
-#### Naming Rules
-#### Style Rules
-#### Technical Coding Rules
-#### Documentation Rules
-#### Packaging Rules
-#### Design and Coding Guidelines
+#### 1 -- Introduction
+#### 2 -- Naming Rules
+#### 3 --Style Rules
+#### 4 -- Technical Coding Rules
+#### 5 -- Documentation Rules
+#### 6 -- Packaging Rules
+#### 7 -- Design and Coding Guidelines
 
 ## 1 -- Introduction
 This document describes the CMS C++ software naming, coding, style and documentation rules and recommendations.
@@ -21,18 +21,124 @@ All CMS C++ software is expected to comply with the rules. The asterisk (*) afte
 Coding rules are meant to prevent serious problems in software function, performance, maintainability, usability, and portability. 
 
 ## 2 -- Naming Rules
-1. C++ header ﬁles use the sufﬁx .h, e.g. ```CaloCluster.h``` (*)
-2. For C++ source ﬁles, the preferred sufﬁx  is .cc, e.g. CaloCluster.cc, though there are existing files using .cpp and .cxx suffixes. (*)
+1. C++ header ﬁles use the sufﬁx .h, e.g. `CaloCluster.h` (*)
+2. For C++ source ﬁles, the preferred sufﬁx  is .cc, e.g. `CaloCluster.cc`, though there are existing files using .cpp and .cxx suffixes. (*)
 3. For a header file that contains a class, name that ﬁle after the class.
 4. Name source ﬁles after the class.
-5. For class, struct, type and enumeration names use upper class initials, e.g. GeometryBuilder.
-6. For namespaces use lower case, e.g. namespace edm.
-7. Start method names with lowercase, use upper case initials for following words, e.g. collisionPoint() (allowed exception: implementation of virtual methods inherited from external packages e.g. ProcessHits() method required by Geant4).
-8. Start data member names with lower case. A trailing “_” is the preferred method to distinguish a data member from the getter method (e.g. momentum_).
-9. Using “set” for a setter method is preferred, e.g. setMomentum(double m).
-10. For a getter method, using the value name is preferred, e.g. momentum().
+5. For class, struct, type and enumeration names use upper class initials, e.g. `GeometryBuilder`.
+6. For namespaces use lower case, e.g. `namespace edm`.
+7. Start method names with lowercase, use upper case initials for following words, e.g. `collisionPoint()` (allowed exception: implementation of virtual methods inherited from external packages e.g. `ProcessHits()` method required by Geant4).
+8. Start data member names with lower case. A trailing “_” is the preferred method to distinguish a data member from the getter method (e.g. `momentum_`).
+9. Using “set” for a setter method is preferred, e.g. `setMomentum(double m)`.
+10. For a getter method, using the value name is preferred, e.g. `momentum()`.
 11. Do not use single character names, except for loop indices.
 12. Do not use special characters, except for “_” where allowed.
 13. Do not use “_” as ﬁrst character. Only use it as the last character for class data member names, not local variable names.
 14. Do not use “__”.
 15. Use clear and explanatory variable names.
+
+## 3 -- Style Rules
+1. Do not indent pre-processor directives -- there should be no leading spaces before a directive.  (*)
+2. Never change the language syntax using #deﬁne.
+3. Do not use spaces between method names and their argument list e.g. `foo()` rather than
+`foo ()`.
+4. Do not use spaces in front of [], () and on either side of -> . For example, `vector[i]` instead of `vector [i]`
+5. Separate expressions in a `for` statement by spaces.
+6. Use the same indentation for comments as for the block the comments refer to.
+
+## 4 -- Technical Coding Rules
+1. Protect each header ﬁle from multiple inclusion with  
+**#ifndef PackageName_SubPackageName_FileName_h  
+#define PackageName_SubPackageName_FileName_h**  
+(body of header file)  
+**#endif**  
+If necessary to create a unique name, one can add the directory name:  
+**PackageName_SubPackageName_Directory_FileName_h**.
+2. Each header ﬁle contains one class declaration only. (*)
+3. Header ﬁles must not contain any implementation except for class templates and code to be inlined.
+4. Do not inline virtual functions.
+5. Do not inline functions which contain control structures which require block scoping.
+6. In your own packages, use forward declarations if they are sufﬁcient.
+7. Do not forward-declare an entity from another package.
+8. Do not use absolute directory names or relative ﬁle paths in #include directives.
+9. Use `nullptr`, not “0” or “NULL”.
+10. Use types like `int, uint32_t, size_t`, and `ptrdiff_t` consistently and without mixing them.
+11. Use the bool type for booleans.
+12. Copy and move assignment operators should return a reference to `*this`.
+13. For a class, definition of any of the following requires definition of all five: copy assignment operator, copy constructor, destructor, move constructor, and move assignment operator. (*)
+14. Do not use function-like macros.
+15. Use C++ casts, not C-style casting. (*)
+16. Do not use the ellipsis notation for function arguments, except for variable argument templates. (*)
+17. Do not use union types. (*)
+18. If a class has at least one virtual method, it must have a public virtual destructor or (exceptionally) a protected destructor.
+19. When a derived class function overrides a virtual function, always mark it with `override` or `final`.
+20. Pass by value arguments which are not to be modiﬁed and are built-in types or small objects; otherwise pass arguments of class types by reference or, if necessary, by pointer.
+21. Properly use rvalue references for temporary objects that will be moved.
+22. The argument to a copy constructor and to an assignment operator must be a const reference, while the argument for a move constructor or move assignment operator must be an rvalue reference. 
+23. Do not let const member functions change the state of the object.
+24. A function must never return or in any way give access to references or pointers to local variables (stack variables) outside the scope in which they are declared.
+25. Each class may have only one each of public, protected, and private sections, which must be declared in that order. (*)
+26. Keep the ordering of methods in the header ﬁle and in the source ﬁle identical.
+27. Provide argument names in method declarations in header ﬁle to indicate usage.
+28. Try to avoid excessively long lines of code that impair readability.
+29. Data members of a class must not be redeﬁned in derived classes since doing so hides the original data member and could create confusion between the original and redefined data members.
+
+## 5 -- Documentation Rules
+1. Always  comment  complex,  tricky,  or  non-intuitive  portions of  code.
+2. When revising code, be sure to update and revise comments.
+
+## 6 -- Packaging Rules
+#### Libraries
+1. It is discouraged to have small packages (with couple of cc and header files).
+2. Functionality used by multiple packages should go in the `../src` and `../interface` directories.
+3. Only include files that expose a public interface should go into the `../interface` directory.  
+4. #include only files that are in the current directory, e.g.  
+**#include** `“some_header.h”`  
+ or in the `../interface directory`, e.g  
+**#include** `“Subsystem/Package/interface/some_header.h”  
+#### Plugins
+5. Put plugins (e.g. EDProducers, EDAnalyzers, etc.) into a `Package/Subpackage/plugins/` directory, with its dedicated `BuildFile.xml`.
+6. Do not split plugins into header and source files. If you do split them, keep the header files in the `../plugins` directory.
+7. All code used only by the plugins in `../plugins` should also go under `../plugins`.
+ `plugins.cc` and `SealPlugins.cc` or any special files to just define plugins are discouraged. 
+#### Tests
+8. Unit tests to test the functionalities of your Library and/or Plugins should go under `../test`.
+9. Add test library/plugins in `../test/BuildFile.xml` for the common functionality used only by your unit tests.
+10. For unit tests which simply run `cmsRun your-cfg` (to test your plugin), please use `<test name=”...” command=”cmsRun …”/>` in your `../test/BuildFile.xml`.
+#### Python
+11. A `_cfi` file should contain only the definition of one module, and possible Modifier (“era”) customizations on it. The module label should be the same as the `_cfi` file name.
+12. The `_cfi` file should be left to be generated automatically with the `fillDescriptions()`. When Modifier customizations are needed, the auto-generated label should have e.g. “Default” postfix, and to be imported+cloned to the desired name.
+13. A module/Task/Sequence/Path with a given name should be defined in exactly one `_cfi` or `_cff` file.
+14. All Modifier customizations on a module/Task/Sequence/Path should be applied on the same file that defines the module/Task/Sequence/Path.
+15. When one customizes an existing parameter in `clone(), Modifier.toModify()`, or in assignment, explicit types on the right hand side should be avoided.
+#### Data files
+16. To keep the repository size under control, we discourage to add any data files under `../data`.
+17. Please use cms-data externals github repositories to add/change any data file.
+#### Binaries and scripts
+18. Public executables/binaries should go under `../bin`.
+19. It is discouraged to generate plugins from `../bin`.
+20. Additional libraries used only by multiple executables of your `../bin` should also go under `../bin`.
+21. Any scripts/utilities which should be available publicly (i.e. in PATH) should go under `../bin` and use the `INSTALL_SCRIPTS ../bin/BuildFile.xml` flag.
+22. Adding scripts under `../scripts` is discouraged.
+
+## 7 -- Design and Coding Guidelines
+These guidelines are a brief summary of highlights from the [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines) by Bjarne Stroustrup et al. The links for each guideline provide explanations and justifications.
+
+1. Do not use mutable global data ([no globals](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i2-avoid-non-const-global-variables)).
+2. Ensure code is thread-safe. Avoid non-constant shared data, like static variables ([thread safety](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i2-avoid-non-const-global-variables)).
+3. Class data members that store a class invariant should be private ([invariant data members](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c9-minimize-exposure-of-members)). Those that can freely take any value should be public, without getters or setters  ([public data members](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c131-avoid-trivial-getters-and-setters)).
+4. A collection of data values that can take any value should be a struct, not a class ([struct not class](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c131-avoid-trivial-getters-and-setters)).
+5. Make `const` all methods, data members, variables, and pointer or reference parameters that do not need to be non-const. Use `constexpr` for all constant values that can be evaluated at compile time ([const](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#con-constants-and-immutability)).
+6. Do not use magic numbers. Deﬁne constants using `enum class` or `constexpr`, never **#deﬁne** ([enums](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#enum1-prefer-enumerations-over-macros)).
+7. For ownership of dynamic memory, don’t use bare pointers but rather smart pointers: `std::unique_ptr, std::shared_ptr`, and `std::weak_ptr` ([smart pointers](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r3-a-raw-pointer-a-t-is-non-owning)).
+8. Avoid inlining unless you are sure you have a relevant performance problem ([inlining](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f5-if-a-function-is-very-small-and-time-critical-declare-it-inline)).
+9. Use `string` or `string_view`, not `char *` ([string](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#slstr1-use-stdstring-to-own-character-sequences)).
+10. Avoid use of C-style arrays in favor of STL containers ([std::array](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#slcon1-prefer-using-stl-array-or-vector-instead-of-a-c-array)).
+11. In general, do not catch exceptions -- leave them to the Framework (see [Exception Guidelines](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEdmExceptionUse#Exception%20Handling)).
+12. Do not use the singleton pattern; use framework services ([no singletons](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i3-avoid-singletons)).
+13. Encapsulate algorithms and collaborating classes in namespaces ([namespaces](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c5-place-helper-functions-in-the-same-namespace-as-the-class-they-support)).
+14. Design functions that are short and simple and that perform a single, coherent, logical  task ([logical task](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f2-a-function-should-perform-a-single-logical-operation), [short functions](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f3-keep-functions-short-and-simple)).
+15. Do not duplicate code. If procedural code is needed in two or more places, create a function for the task and call it where needed. ([functions](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f1-package-meaningful-operations-as-carefully-named-functions), [encapsulate](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p11-encapsulate-messy-constructs-rather-than-spreading-through-the-code))
+16. Do not use goto ([no goto](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es76-avoid-goto)).
+
+
