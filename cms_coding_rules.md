@@ -3,7 +3,7 @@
 ### By the CMS Ofﬂine Software Development Team
 
 ## Abstract
-This document describes the naming, coding, and style rules, as well as design, coding and style recommendations for CMS software written in C++.
+This document describes the design, naming, coding, and style rules and recommendations for CMS software written in C++, plus a few guidelines for Python scripts.
 
 
 ## Outline
@@ -17,8 +17,8 @@ This document describes the naming, coding, and style rules, as well as design, 
 
 ## 1 -- Introduction
 This document describes the CMS C++ software naming, coding, style and documentation rules and recommendations.
-All CMS C++ software is expected to comply with the rules. The asterisk (*) after some rules indicates that there may be exceptional use cases where the rule may be violated with good justiﬁcation.
-Coding rules are meant to prevent serious problems in software function, performance, maintainability, usability, and portability. 
+All CMS C++ software is expected to comply with the rules. The asterisk (\*) after some rules indicates that there may be exceptional use cases where the rule may be violated with good justiﬁcation.
+Coding rules are meant to prevent serious problems in software function, performance, maintainability, usability, and portability. The Packaging Rules section also has some brief guidelines for Python scripts.
 
 ## 2 -- Naming Rules
 1. C++ header ﬁles use the sufﬁx .h, e.g. `CaloCluster.h` (*)
@@ -39,7 +39,7 @@ Coding rules are meant to prevent serious problems in software function, perform
 
 ## 3 -- Style Rules
 1. Do not indent pre-processor directives -- there should be no leading spaces before a directive.  (*)
-2. Never change the language syntax using #deﬁne.
+2. Never change the language syntax using **#deﬁne**.
 3. Do not use spaces between method names and their argument list e.g. `foo()` rather than
 `foo ()`.
 4. Do not use spaces in front of [], () and on either side of -> . For example, `vector[i]` instead of `vector [i]`
@@ -63,7 +63,7 @@ If necessary to create a unique name, one can add the directory name:
 8. Do not use absolute directory names or relative ﬁle paths in #include directives.
 9. Use `nullptr`, not “0” or “NULL”.
 10. Use types like `int, uint32_t, size_t`, and `ptrdiff_t` consistently and without mixing them.
-11. Use the bool type for booleans.
+11. Use the `bool` type for booleans.
 12. Copy and move assignment operators should return a reference to `*this`.
 13. For a class, definition of any of the following requires definition of all five: copy assignment operator, copy constructor, destructor, move constructor, and move assignment operator. (*)
 14. Do not use function-like macros.
@@ -74,8 +74,8 @@ If necessary to create a unique name, one can add the directory name:
 19. When a derived class function overrides a virtual function, always mark it with `override` or `final`.
 20. Pass by value arguments which are not to be modiﬁed and are built-in types or small objects; otherwise pass arguments of class types by reference or, if necessary, by pointer.
 21. Properly use rvalue references for temporary objects that will be moved.
-22. The argument to a copy constructor and to an assignment operator must be a const reference, while the argument for a move constructor or move assignment operator must be an rvalue reference. 
-23. Do not let const member functions change the state of the object.
+22. The argument to a copy constructor and to an assignment operator must be a `const` reference, while the argument for a move constructor or move assignment operator must be an rvalue reference. 
+23. Do not let `const` member functions change the state of the object.
 24. A function must never return or in any way give access to references or pointers to local variables (stack variables) outside the scope in which they are declared.
 25. Each class may have only one each of public, protected, and private sections, which must be declared in that order. (*)
 26. Keep the ordering of methods in the header ﬁle and in the source ﬁle identical.
@@ -112,7 +112,7 @@ If necessary to create a unique name, one can add the directory name:
 14. All Modifier customizations on a module/Task/Sequence/Path should be applied on the same file that defines the module/Task/Sequence/Path.
 15. When one customizes an existing parameter in `clone(), Modifier.toModify()`, or in assignment, explicit types on the right hand side should be avoided.
 #### Data files
-16. To keep the repository size under control, we discourage to add any data files under `../data`.
+16. To keep the repository size under control, we discourage adding any data files under `../data`.
 17. Please use cms-data externals github repositories to add/change any data file.
 #### Binaries and scripts
 18. Public executables/binaries should go under `../bin`.
