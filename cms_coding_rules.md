@@ -65,19 +65,19 @@ If necessary to create a unique name, one can add the directory name:
 10. Use types like `int`, `uint32_t`, `size_t`, and `ptrdiff_t` consistently and without mixing them.
 11. Use the `bool` type for booleans.
 12. Copy and move assignment operators should return a reference to `*this`.
-13. For a class, definition of any of the following requires definition of all five: destructor, copy constructor, copy assignment operator, move constructor, and move assignment operator. (*)
+13. For a class, definition of any of the following requires definition of all five: destructor, copy constructor, copy assignment operator, move constructor, and move assignment operator. (\*)
 14. Do not use function-like macros.
-15. Use C++ casts, not C-style casting. (*)
-16. Do not use the ellipsis notation for function arguments, except for variable argument templates. (*)
-17. Do not use union types. (*)
+15. Use C++ casts, not C-style casting. (\*)
+16. Do not use the ellipsis notation for function arguments, except for variable argument templates. (\*)
+17. Do not use union types. (\*)
 18. If a class has at least one virtual method, it must have a public virtual destructor or (exceptionally) a protected destructor.
 19. When a derived class function overrides a virtual function, always mark it with `override` or `final`.
 20. Pass by value arguments which are not to be modiﬁed and are built-in types or small objects; otherwise pass arguments of class types by reference or, if necessary, by pointer.
 21. Properly use rvalue references for temporary objects that will be moved.
-22. The argument to a copy constructor and to an assignment operator must be a `const` reference, while the argument for a move constructor or move assignment operator must be an rvalue reference. (*)
-23. Do not let `const` member functions change the state of the object. (*)
+22. The argument to a copy constructor and to an assignment operator must be a `const` reference, while the argument for a move constructor or move assignment operator must be an rvalue reference. (\*)
+23. Do not let `const` member functions change the state of the object. (\*)
 24. A function must never return or in any way give access to references or pointers to local variables (stack variables) outside the scope in which they are declared.
-25. Each class may have only one each of public, protected, and private sections, which must be declared in that order. (*)
+25. Each class may have only one each of public, protected, and private sections, which must be declared in that order. (\*)
 26. Keep the ordering of methods in the header ﬁle and in the source ﬁle identical.
 27. Provide meaningful argument names in method declarations in the header ﬁle to indicate usage, unless the type fully describes the usage.
 28. Try to avoid excessively long lines of code that impair readability.
