@@ -95,7 +95,7 @@ If necessary to create a unique name, one can add the directory name:
 4. #include only files that are in the current directory, e.g.  
 **#include** `“some_header.h”`  
  or in the `../interface directory`, e.g  
-**#include** `“Subsystem/Package/interface/some_header.h”  
+**#include** `“Subsystem/Package/interface/some_header.h”`
 #### Plugins
 5. Put plugins (e.g. EDProducers, EDAnalyzers, etc.) into a `Package/Subpackage/plugins/` directory, with its dedicated `BuildFile.xml`.
 6. Do not split plugins into header and source files. If you do split them, keep the header files in the `../plugins` directory.
