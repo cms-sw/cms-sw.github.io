@@ -21,8 +21,8 @@ All CMS C++ software is expected to comply with the rules. The asterisk (\*) aft
 Coding rules are meant to prevent serious problems in software function, performance, maintainability, usability, and portability. The Packaging Rules section also has some brief guidelines for Python configuration.
 
 ## 2 -- Naming Rules
-1. C++ header ﬁles use the sufﬁx .h, e.g. `CaloCluster.h`. (*)
-2. For C++ source ﬁles, the preferred sufﬁx  is .cc, e.g. `CaloCluster.cc`, though there are existing files using .cpp and .cxx suffixes. (*)
+1. C++ header ﬁles use the sufﬁx .h, e.g. `CaloCluster.h`. (\*)
+2. For C++ source ﬁles, the preferred sufﬁx  is .cc, e.g. `CaloCluster.cc`, though there are existing files using .cpp and .cxx suffixes. (\*)
 3. For a header file that contains a class, name that ﬁle after the class.
 4. Name source ﬁles after the class.
 5. For class, struct, type, and enumeration names use upper class initials, e.g. `GeometryBuilder`.
@@ -34,14 +34,14 @@ Coding rules are meant to prevent serious problems in software function, perform
 10. For a getter method, using the value name is preferred, e.g. `momentum()`.
 11. Do not use single character names, except for loop indices.
 12. Do not use special characters, except for "_" where allowed.
-13. Do not use "_" as ﬁrst character. Only use it as the last character for class data member names, not local variable names.
-14. Do not use "__".
+13. Do not use "\_" as ﬁrst character. Only use it as the last character for class data member names, not local variable names.
+14. Do not use "\_\_".
 15. Use clear and explanatory variable names.
 
 ## 3 -- Style Rules
-1. Do not indent pre-processor directives -- there should be no leading spaces before a directive.  (*)
+1. Do not indent pre-processor directives -- there should be no leading spaces before a directive.  (\*)
 2. Never change the language syntax using `#deﬁne`.
-3. Do not use spaces between a function or method name and its argument list, e.g. `foo()` rather than `foo ()`.
+3. Do not use spaces between a function, constructor, or method name and its opening parenthesis, e.g. `foo()` rather than `foo ()`. A similar style is encouraged but not required when brace initialization is used, e.g. `foo{13}`.
 4. Do not use spaces in front of [] or on either side of -> . For example, `vector[i]` instead of `vector [i]`.
 5. Separate expressions in a `for` statement by spaces.
 6. Use the same indentation for comments as for the block the comments refer to.
