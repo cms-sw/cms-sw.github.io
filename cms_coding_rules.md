@@ -90,7 +90,7 @@ If necessary to create a unique name, one can add the directory name:
 ## 6 -- Packaging Rules
 #### Libraries
 1. It is discouraged to have small packages (with couple of cc and header files).
-2. Functionality used by multiple packages should go in the `../src` and `../interface` directories.
+2. Functionality used by multiple packages should go in the `.../src` and `.../interface` directories.
 3. Only include files that expose a public interface should go into the `../interface` directory.  
 4. #include only files that are in the current directory, e.g.  
 **#include** `“some_header.h”`  
