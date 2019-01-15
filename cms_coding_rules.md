@@ -27,7 +27,8 @@ Coding rules are meant to prevent serious problems in software function, perform
 4. Name source ﬁles after the class.
 5. For class, struct, type, and enumeration names use upper class initials, e.g. `GeometryBuilder`.
 6. For namespaces use lower case, e.g. `namespace edm`.
-7. Start method names with lowercase, use upper case initials for following words, e.g. `collisionPoint()` (allowed exception: implementation of virtual methods inherited from external packages e.g. `ProcessHits()` method required by Geant4).
+7. Start method names with lowercase, use upper case initials for following words, e.g. `collisionPoint()`.  
+  Allowed exception: Implementation of virtual methods inherited from external packages e.g. `ProcessHits()` method required by Geant4.  
 8. Start data member names with lower case. A trailing "_" is the preferred method to distinguish a data member from the getter method (e.g. `momentum_`).
 9. Using "set" for a setter method is preferred, e.g. `setMomentum(double m)`.
 10. For a getter method, using the value name is preferred, e.g. `momentum()`.
