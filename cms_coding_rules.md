@@ -28,8 +28,8 @@ Coding rules are meant to prevent serious problems in software function, perform
 5. For class, struct, type, and enumeration names use upper class initials, e.g. `GeometryBuilder`.
 6. For namespaces use lower case, e.g. `namespace edm`.
 7. Start method names with lowercase, use upper case initials for following words, e.g. `collisionPoint()`.  
-  Allowed exception: Implementation of virtual methods inherited from external packages e.g. `ProcessHits()` method required by Geant4.  
-8. Start data member names with lower case. A trailing "_" is the preferred method to distinguish a data member from the getter method (e.g. `momentum_`).
+  Allowed exception: Implementation of virtual methods inherited from external packages, e.g. `ProcessHits()` method required by Geant4.  
+8. Start data member names with lower case. A trailing "\_" is the preferred method to distinguish a data member from the getter method (e.g. `momentum_`).
 9. Using "set" for a setter method is preferred, e.g. `setMomentum(double m)`.
 10. For a getter method, using the value name is preferred, e.g. `momentum()`.
 11. Do not use single character names, except for loop indices.
@@ -41,14 +41,14 @@ Coding rules are meant to prevent serious problems in software function, perform
 ## 3 -- Style Rules
 1. Do not indent pre-processor directives -- there should be no leading spaces before a directive.  (*)
 2. Never change the language syntax using `#deﬁne`.
-3. Do not use spaces between method names and their argument list e.g. `foo()` rather than
+3. Do not use spaces between method names and their argument list, e.g. `foo()` rather than
 `foo ()`.
-4. Do not use spaces in front of [], () and on either side of -> . For example, `vector[i]` instead of `vector [i]`
+4. Do not use spaces in front of [], (), or on either side of -> . For example, `vector[i]` instead of `vector [i]`.
 5. Separate expressions in a `for` statement by spaces.
 6. Use the same indentation for comments as for the block the comments refer to.
 
 ## 4 -- Technical Coding Rules
-1. Protect each header ﬁle from multiple inclusion with  
+1. Protect each header ﬁle from multiple inclusion with:  
 `#ifndef PackageName_SubPackageName_FileName_h  
 #define PackageName_SubPackageName_FileName_h`  
 (body of header file)  
@@ -76,7 +76,7 @@ If necessary to create a unique name, one can add the directory name:
 20. Pass by value arguments which are not to be modiﬁed and are built-in types or small objects; otherwise pass arguments of class types by reference or, if necessary, by pointer.
 21. Properly use rvalue references for temporary objects that will be moved.
 22. The argument to a copy constructor and to an assignment operator must be a `const` reference, while the argument for a move constructor or move assignment operator must be an rvalue reference. (*)
-23. Do not let `const` member functions change the state of the object.
+23. Do not let `const` member functions change the state of the object. (*)
 24. A function must never return or in any way give access to references or pointers to local variables (stack variables) outside the scope in which they are declared.
 25. Each class may have only one each of public, protected, and private sections, which must be declared in that order. (*)
 26. Keep the ordering of methods in the header ﬁle and in the source ﬁle identical.
@@ -96,7 +96,7 @@ If necessary to create a unique name, one can add the directory name:
 4. Include only files that are in the current directory, e.g.  
 `#include "some_header.h"`  
  or in the `.../interface directory`, e.g  
-**#include** `"Subsystem/Package/interface/some_header.h"`
+`#include "Subsystem/Package/interface/some_header.h"`
 #### Plugins
 5. Put plugins (e.g. EDProducers, EDAnalyzers, etc.) into a `Package/Subpackage/plugins/` directory, with its dedicated `BuildFile.xml`.
 6. Do not split plugins into header and source files. If you do split them, keep the header files in the `.../plugins` directory.
@@ -105,21 +105,21 @@ If necessary to create a unique name, one can add the directory name:
 #### Tests
 8. Unit tests to test the functionalities of your Library and/or Plugins should go under `.../test`.
 9. Add test library/plugins in `.../test/BuildFile.xml` for the common functionality used only by your unit tests.
-10. For unit tests which simply run `cmsRun your-cfg` (to test your plugin), please use `<test name="..." command="cmsRun …"/>` in your `../test/BuildFile.xml`.
+10. For unit tests which simply run `cmsRun your-cfg` (to test your plugin), please use `<test name="..." command="cmsRun …"/>` in your `.../test/BuildFile.xml`.
 #### Python
 11. A `_cfi` file should contain only the definition of one module, and possible Modifier ("era") customizations on it. The module label should be the same as the `_cfi` file name.
-12. The `_cfi` file should be left to be generated automatically with the `fillDescriptions()`. When Modifier customizations are needed, the auto-generated label should have e.g. "Default" postfix, and to be imported+cloned to the desired name.
+12. The `_cfi` file should be left to be generated automatically with the `fillDescriptions()`. When Modifier customizations are needed, the auto-generated label should have e.g. "Default" postfix and be imported+cloned to the desired name.
 13. A module/Task/Sequence/Path with a given name should be defined in exactly one `_cfi` or `_cff` file.
 14. All Modifier customizations on a module/Task/Sequence/Path should be applied on the same file that defines the module/Task/Sequence/Path.
 15. When one customizes an existing parameter in `clone()`, `Modifier.toModify()`, or in assignment, explicit types on the right hand side should be avoided.
 #### Data files
-16. To keep the repository size under control, we discourage adding any data files under `../data`.
+16. To keep the repository size under control, we discourage adding any data files under `.../data`.
 17. Please use cms-data externals github repositories to add/change any data file.
 #### Binaries and scripts
 18. Public executables/binaries should go under `.../bin`.
 19. It is discouraged to generate plugins from `.../bin`.
 20. Additional libraries used only by multiple executables of your `.../bin` should also go under `.../bin`.
-21. Any scripts/utilities which should be available publicly (i.e. in PATH) should go under `.../bin` and use the `INSTALL_SCRIPTS` flag in .../bin/BuildFile.xml`.
+21. Any scripts/utilities which should be available publicly (i.e. in PATH) should go under `.../bin` and use the `INSTALL_SCRIPTS` flag in `.../bin/BuildFile.xml`.
 22. Adding scripts under `.../scripts` is discouraged.
 
 ## 7 -- Design and Coding Guidelines
