@@ -41,9 +41,8 @@ Coding rules are meant to prevent serious problems in software function, perform
 ## 3 -- Style Rules
 1. Do not indent pre-processor directives -- there should be no leading spaces before a directive.  (*)
 2. Never change the language syntax using `#deﬁne`.
-3. Do not use spaces between method names and their argument list, e.g. `foo()` rather than
-`foo ()`.
-4. Do not use spaces in front of [], (), or on either side of -> . For example, `vector[i]` instead of `vector [i]`.
+3. Do not use spaces between a function or method name and its argument list, e.g. `foo()` rather than `foo ()`.
+4. Do not use spaces in front of [] or on either side of -> . For example, `vector[i]` instead of `vector [i]`.
 5. Separate expressions in a `for` statement by spaces.
 6. Use the same indentation for comments as for the block the comments refer to.
 
