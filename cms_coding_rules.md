@@ -110,7 +110,7 @@ If necessary to create a unique name, one can add the directory name:
 12. The `_cfi` file should be left to be generated automatically with the `fillDescriptions()`. When Modifier customizations are needed, the auto-generated label should have e.g. “Default” postfix, and to be imported+cloned to the desired name.
 13. A module/Task/Sequence/Path with a given name should be defined in exactly one `_cfi` or `_cff` file.
 14. All Modifier customizations on a module/Task/Sequence/Path should be applied on the same file that defines the module/Task/Sequence/Path.
-15. When one customizes an existing parameter in `clone(), Modifier.toModify()`, or in assignment, explicit types on the right hand side should be avoided.
+15. When one customizes an existing parameter in `clone()`, `Modifier.toModify()`, or in assignment, explicit types on the right hand side should be avoided.
 #### Data files
 16. To keep the repository size under control, we discourage adding any data files under `../data`.
 17. Please use cms-data externals github repositories to add/change any data file.
