@@ -48,13 +48,13 @@ Coding rules are meant to prevent serious problems in software function, perform
 
 ## 4 -- Technical Coding Rules
 1. Protect each header ﬁle from multiple inclusion with:  
-`#ifndef PackageName_SubPackageName_FileName_h  
-#define PackageName_SubPackageName_FileName_h`  
+`#ifndef PackageName_SubPackageName_FileName_h`  
+`#define PackageName_SubPackageName_FileName_h`  
 (body of header file)  
 `#endif`  
 If necessary to create a unique name, one can add the directory name:  
 `PackageName_SubPackageName_Directory_FileName_h`.
-2. Each header ﬁle contains one class declaration only. (*)
+2. Each header ﬁle contains one class declaration only. (\*)
 3. Header ﬁles must not contain any implementation except for class templates and code to be inlined.
 4. Do not inline virtual functions.
 5. Do not inline functions which contain control structures which require block scoping.
