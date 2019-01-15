@@ -3,7 +3,7 @@
 ### By the CMS Ofﬂine Software Development Team
 
 ## Abstract
-This document describes the design, naming, coding, and style rules and recommendations for CMS software written in C++, plus a few guidelines for Python scripts.
+This document describes the design, naming, coding, and style rules and recommendations for CMS software written in C++, plus a few guidelines for Python configuration.
 
 
 ## Outline
