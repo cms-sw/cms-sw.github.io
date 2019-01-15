@@ -60,7 +60,7 @@ If necessary to create a unique name, one can add the directory name:
 5. Do not inline functions which contain control structures which require block scoping.
 6. In your own packages, use forward declarations if they are sufﬁcient.
 7. Do not forward-declare an entity from another package.
-8. Do not use absolute directory names or relative ﬁle paths in #include directives.
+8. Do not use absolute directory names or relative ﬁle paths in **#include** directives.
 9. Use `nullptr`, not “0” or “NULL”.
 10. Use types like `int, uint32_t, size_t`, and `ptrdiff_t` consistently and without mixing them.
 11. Use the `bool` type for booleans.
