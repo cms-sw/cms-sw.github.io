@@ -9,23 +9,23 @@ This document describes the design, naming, coding, and style rules and recommen
 ## Outline
 #### 1 -- Introduction
 #### 2 -- Naming Rules
-#### 3 --Style Rules
+#### 3 -- Style Rules
 #### 4 -- Technical Coding Rules
 #### 5 -- Documentation Rules
 #### 6 -- Packaging Rules
 #### 7 -- Design and Coding Guidelines
 
 ## 1 -- Introduction
-This document describes the CMS C++ software naming, coding, style and documentation rules and recommendations.
+This document describes the CMS C++ software naming, coding, style, and documentation rules and recommendations.
 All CMS C++ software is expected to comply with the rules. The asterisk (\*) after some rules indicates that there may be exceptional use cases where the rule may be violated with good justiﬁcation.
 Coding rules are meant to prevent serious problems in software function, performance, maintainability, usability, and portability. The Packaging Rules section also has some brief guidelines for Python configuration.
 
 ## 2 -- Naming Rules
-1. C++ header ﬁles use the sufﬁx .h, e.g. `CaloCluster.h` (*)
+1. C++ header ﬁles use the sufﬁx .h, e.g. `CaloCluster.h`. (*)
 2. For C++ source ﬁles, the preferred sufﬁx  is .cc, e.g. `CaloCluster.cc`, though there are existing files using .cpp and .cxx suffixes. (*)
 3. For a header file that contains a class, name that ﬁle after the class.
 4. Name source ﬁles after the class.
-5. For class, struct, type and enumeration names use upper class initials, e.g. `GeometryBuilder`.
+5. For class, struct, type, and enumeration names use upper class initials, e.g. `GeometryBuilder`.
 6. For namespaces use lower case, e.g. `namespace edm`.
 7. Start method names with lowercase, use upper case initials for following words, e.g. `collisionPoint()` (allowed exception: implementation of virtual methods inherited from external packages e.g. `ProcessHits()` method required by Geant4).
 8. Start data member names with lower case. A trailing "_" is the preferred method to distinguish a data member from the getter method (e.g. `momentum_`).
@@ -74,12 +74,12 @@ If necessary to create a unique name, one can add the directory name:
 19. When a derived class function overrides a virtual function, always mark it with `override` or `final`.
 20. Pass by value arguments which are not to be modiﬁed and are built-in types or small objects; otherwise pass arguments of class types by reference or, if necessary, by pointer.
 21. Properly use rvalue references for temporary objects that will be moved.
-22. The argument to a copy constructor and to an assignment operator must be a `const` reference, while the argument for a move constructor or move assignment operator must be an rvalue reference. 
+22. The argument to a copy constructor and to an assignment operator must be a `const` reference, while the argument for a move constructor or move assignment operator must be an rvalue reference. (*)
 23. Do not let `const` member functions change the state of the object.
 24. A function must never return or in any way give access to references or pointers to local variables (stack variables) outside the scope in which they are declared.
 25. Each class may have only one each of public, protected, and private sections, which must be declared in that order. (*)
 26. Keep the ordering of methods in the header ﬁle and in the source ﬁle identical.
-27. Provide argument names in method declarations in header ﬁle to indicate usage.
+27. Provide meaningful argument names in method declarations in the header ﬁle to indicate usage, unless the type fully describes the usage.
 28. Try to avoid excessively long lines of code that impair readability.
 29. Data members of a class must not be redeﬁned in derived classes since doing so hides the original data member and could create confusion between the original and redefined data members.
 
@@ -91,10 +91,10 @@ If necessary to create a unique name, one can add the directory name:
 #### Libraries
 1. It is discouraged to have small packages (with couple of cc and header files).
 2. Functionality used by multiple packages should go in the `.../src` and `.../interface` directories.
-3. Only include files that expose a public interface should go into the `.../interface` directory.  
+3. Only header files that expose a public interface should go into the `.../interface` directory.  
 4. Include only files that are in the current directory, e.g.  
 `#include "some_header.h"`  
- or in the `. ./interface directory`, e.g  
+ or in the `.../interface directory`, e.g  
 **#include** `"Subsystem/Package/interface/some_header.h"`
 #### Plugins
 5. Put plugins (e.g. EDProducers, EDAnalyzers, etc.) into a `Package/Subpackage/plugins/` directory, with its dedicated `BuildFile.xml`.
