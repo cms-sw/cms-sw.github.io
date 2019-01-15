@@ -118,7 +118,7 @@ If necessary to create a unique name, one can add the directory name:
 18. Public executables/binaries should go under `../bin`.
 19. It is discouraged to generate plugins from `../bin`.
 20. Additional libraries used only by multiple executables of your `../bin` should also go under `../bin`.
-21. Any scripts/utilities which should be available publicly (i.e. in PATH) should go under `../bin` and use the `INSTALL_SCRIPTS ../bin/BuildFile.xml` flag.
+21. Any scripts/utilities which should be available publicly (i.e. in PATH) should go under `../bin` and use the `INSTALL_SCRIPTS` flag in ../bin/BuildFile.xml`.
 22. Adding scripts under `../scripts` is discouraged.
 
 ## 7 -- Design and Coding Guidelines
