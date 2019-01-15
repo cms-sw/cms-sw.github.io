@@ -62,7 +62,7 @@ If necessary to create a unique name, one can add the directory name:
 7. Do not forward-declare an entity from another package.
 8. Do not use absolute directory names or relative ﬁle paths in **#include** directives.
 9. Use `nullptr`, not “0” or “NULL”.
-10. Use types like `int, uint32_t, size_t`, and `ptrdiff_t` consistently and without mixing them.
+10. Use types like `int`, `uint32_t`, `size_t`, and `ptrdiff_t` consistently and without mixing them.
 11. Use the `bool` type for booleans.
 12. Copy and move assignment operators should return a reference to `*this`.
 13. For a class, definition of any of the following requires definition of all five: copy assignment operator, copy constructor, destructor, move constructor, and move assignment operator. (*)
