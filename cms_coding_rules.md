@@ -7,13 +7,13 @@ This document describes the design, naming, coding, and style rules and recommen
 
 
 ## Outline
-#### 1 -- Introduction
-#### 2 -- Naming Rules
-#### 3 -- Style Rules
-#### 4 -- Technical Coding Rules
-#### 5 -- Documentation Rules
-#### 6 -- Packaging Rules
-#### 7 -- Design and Coding Guidelines
+#### [1 -- Introduction](#1----introduction-1)
+#### [2 -- Naming Rules](#2----naming-rules-1)
+#### [3 -- Style Rules](#3----style-rules-1)
+#### [4 -- Technical Coding Rules](#4----technical-coding-rules-1)
+#### [5 -- Documentation Rules](#5----documentation-rules-1)
+#### [6 -- Packaging Rules](#6----packaging-rules-1)
+#### [7 -- Design and Coding Guidelines](#7----design-and-coding-guidelines-1)
 
 ## 1 -- Introduction
 This document describes the CMS C++ software naming, coding, style, and documentation rules and recommendations.
@@ -30,7 +30,7 @@ Coding rules are meant to prevent serious problems in software function, perform
 7. Start method names with lowercase, use upper case initials for following words, e.g. `collisionPoint()`.  
   Allowed exception: Implementation of virtual methods inherited from external packages, e.g. `ProcessHits()` method required by Geant4.  
 8. Start data member names with lower case. A trailing "\_" is the preferred method to distinguish a data member from the getter method (e.g. `momentum_`).
-9. Using "set" for a setter method is preferred, e.g. `setMomentum(double m)`.
+9. Using "set" for a setter method is preferred, e.g. `setMomentum(double momentum)`.
 10. For a getter method, using the value name is preferred, e.g. `momentum()`.
 11. Do not use single character names, except for loop indices.
 12. Do not use special characters, except for "_" where allowed.
@@ -41,8 +41,8 @@ Coding rules are meant to prevent serious problems in software function, perform
 ## 3 -- Style Rules
 1. Do not indent pre-processor directives -- there should be no leading spaces before a directive.  (\*)
 2. Never change the language syntax using `#deﬁne`.
-3. Do not use spaces between a function, constructor, or method name and its opening parenthesis, e.g. `foo()` rather than `foo ()`. A similar style is encouraged but not required when brace initialization is used, e.g. `foo{13}`.
-4. Do not use spaces in front of [] or on either side of -> . For example, `vector[i]` instead of `vector [i]`.
+3. Do not use spaces between a function, constructor, or method name and its opening parenthesis, e.g. `energy()` rather than `energy ()`. A similar style is encouraged but not required when brace initialization is used, e.g. `energy{13}`.
+4. Do not use spaces in front of [] or on either side of -> . For example, `position[i]` instead of `position [i]`.
 5. Separate expressions in a `for` statement by spaces.
 6. Use the same indentation for comments as for the block the comments refer to.
 
@@ -70,12 +70,12 @@ If necessary to create a unique name, one can add the directory name:
 15. Use C++ casts, not C-style casting. (\*)
 16. Do not use the ellipsis notation for function arguments, except for variable argument templates. (\*)
 17. Do not use union types. (\*)
-18. If a class has at least one virtual method, it must have a public virtual destructor or (exceptionally) a protected destructor.
+18. If a class has at least one virtual method, it must have a public virtual destructor or (exceptionally) a protected non-virtual destructor.
 19. When a derived class function overrides a virtual function, always mark it with `override` or `final`.
 20. Pass by value arguments which are not to be modiﬁed and are built-in types or small objects; otherwise pass arguments of class types by reference or, if necessary, by pointer.
 21. Properly use rvalue references for temporary objects that will be moved.
 22. The argument to a copy constructor and to an assignment operator must be a `const` reference, while the argument for a move constructor or move assignment operator must be an rvalue reference. (\*)
-23. Do not let `const` member functions change the state of the object. (\*)
+23. Do not let `const` member functions change the state of the object. Any special exceptions to this rule must still maintain thread safety. (\*)
 24. A function must never return or in any way give access to references or pointers to local variables (stack variables) outside the scope in which they are declared.
 25. Each class may have only one each of public, protected, and private sections, which must be declared in that order. (\*)
 26. Keep the ordering of methods in the header ﬁle and in the source ﬁle identical.
@@ -113,7 +113,7 @@ If necessary to create a unique name, one can add the directory name:
 15. When one customizes an existing parameter in `clone()`, `Modifier.toModify()`, or in assignment, explicit types on the right hand side should be avoided.
 #### Data files
 16. To keep the repository size under control, we discourage adding any data files under `.../data`.
-17. Please use cms-data externals github repositories to add/change any data file.
+17. Please use the [cms-data externals GitHub repositories](https://github.com/cms-data/) to add/change any data file.
 #### Binaries and scripts
 18. Public executables/binaries should go under `.../bin`.
 19. It is discouraged to generate plugins from `.../bin`.
@@ -130,7 +130,7 @@ These guidelines are a brief summary of highlights from the [C++ Core Guidelines
 4. A collection of data values that can take any value should be a struct, not a class, and those data members should be public without getters and setters. ([struct not class](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c131-avoid-trivial-getters-and-setters)).
 5. Make `const` all methods, data members, variables, and pointer or reference parameters that do not need to be non-const. Use `constexpr` for all constant values that can be evaluated at compile time ([const](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#con-constants-and-immutability)).
 6. Do not use magic numbers. Deﬁne constants using `enum class` or `constexpr`, never `#deﬁne` ([enums](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#enum1-prefer-enumerations-over-macros)).
-7. For ownership of dynamic memory, don’t use bare pointers but rather smart pointers: `std::unique_ptr, std::shared_ptr`, and `std::weak_ptr` ([smart pointers](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r3-a-raw-pointer-a-t-is-non-owning)).
+7. For ownership of dynamic memory, don’t use bare pointers but rather smart pointers: `std::unique_ptr, std::shared_ptr`, and `std::weak_ptr` and their constructors `std::make_unique<T>()` and `std::make_shared<T>()` ([smart pointers](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r3-a-raw-pointer-a-t-is-non-owning)).
 8. Avoid inlining unless you are sure you have a relevant performance problem ([inlining](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f5-if-a-function-is-very-small-and-time-critical-declare-it-inline)).
 9. Use `string` or `string_view`, not `char *` ([string](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#slstr1-use-stdstring-to-own-character-sequences)).
 10. Avoid use of C-style arrays in favor of STL containers ([std::array](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#slcon1-prefer-using-stl-array-or-vector-instead-of-a-c-array)).
