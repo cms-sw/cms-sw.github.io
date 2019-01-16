@@ -94,7 +94,7 @@ If necessary to create a unique name, one can add the directory name:
 3. Only header files that expose a public interface should go into the `.../interface` directory.  
 4. Include only files that are in the current directory, e.g.  
 `#include "some_header.h"`  
- or in the `.../interface directory`, e.g  
+ or in the `.../interface` directory, e.g  
 `#include "Subsystem/Package/interface/some_header.h"`
 #### Plugins
 5. Put plugins (e.g. EDProducers, EDAnalyzers, etc.) into a `Package/Subpackage/plugins/` directory, with its dedicated `BuildFile.xml`.
