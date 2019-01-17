@@ -17,7 +17,7 @@ This document describes the design, naming, coding, and style rules and recommen
 
 ## 1 -- Introduction
 This document describes the CMS C++ software naming, coding, style, and documentation rules and recommendations.
-All CMS C++ software is expected to comply with the rules. The asterisk (\*) after some rules indicates that there may be exceptional use cases where the rule may be violated with good justiﬁcation.
+All CMS C++ software is expected to comply with the rules. The asterisk (\*) after some rules indicates that there may be exceptional use cases where the rule may be violated with good justiﬁcation. Intentional violations must be documented in the code next to the violation.
 Coding rules are meant to prevent serious problems in software function, performance, maintainability, usability, and portability. The Packaging Rules section also has some brief guidelines for Python configuration.
 
 ## 2 -- Naming Rules
