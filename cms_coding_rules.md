@@ -22,7 +22,7 @@ Coding rules are meant to prevent serious problems in software function, perform
 
 ## 2 -- Naming Rules
 1. C++ header ﬁles use the sufﬁx .h, e.g. `CaloCluster.h`. (\*)
-2. For C++ source ﬁles, the preferred sufﬁx  is .cc, e.g. `CaloCluster.cc`, though there are existing files using .cpp and .cxx suffixes. (\*)
+2. For C++ source ﬁles, the preferred sufﬁx  is .cc, e.g. `CaloCluster.cc`. (\*)
 3. For a header file that contains a class, name that ﬁle after the class.
 4. Name source ﬁles after the class.
 5. For class, struct, type, and enumeration names use upper class initials, e.g. `GeometryBuilder`.
@@ -43,7 +43,7 @@ Coding rules are meant to prevent serious problems in software function, perform
 2. Never change the language syntax using `#deﬁne`.
 3. Do not use spaces between a function, constructor, or method name and its opening parenthesis, e.g. `energy()` rather than `energy ()`. A similar style is encouraged but not required when brace initialization is used, e.g. `energy{13}`.
 4. Do not use spaces in front of [] or on either side of -> . For example, `position[i]` instead of `position [i]`.
-5. Separate expressions in a `for` statement by spaces.
+5. Separate expressions in a `for` statement by including a space after each semicolon.
 6. Use the same indentation for comments as for the block the comments refer to.
 
 ## 4 -- Technical Coding Rules
@@ -51,7 +51,7 @@ Coding rules are meant to prevent serious problems in software function, perform
 `#ifndef PackageName_SubPackageName_FileName_h`  
 `#define PackageName_SubPackageName_FileName_h`  
 (body of header file)  
-`#endif`  
+`#endif // PackageName_SubPackageName_FileName_h`  
 If necessary to create a unique name, one can add the directory name:  
 `PackageName_SubPackageName_Directory_FileName_h`.
 2. Each header ﬁle contains one class declaration only. (\*)
@@ -61,22 +61,23 @@ If necessary to create a unique name, one can add the directory name:
 6. In your own packages, use forward declarations if they are sufﬁcient.
 7. Do not forward-declare an entity from another package.
 8. Do not use absolute directory names or relative ﬁle paths in `#include` directives.
-9. Use `nullptr`, not "0" or "NULL".
+9. Use `nullptr`, not "0" or "NULL". (\*)
 10. Use types like `int`, `uint32_t`, `size_t`, and `ptrdiff_t` consistently and without mixing them.
 11. Use the `bool` type for booleans.
 12. Copy and move assignment operators should return a reference to `*this`.
 13. For a class, definition of any of the following requires definition of all five: destructor, copy constructor, copy assignment operator, move constructor, and move assignment operator. (\*)
 14. Do not use function-like macros.
 15. Use C++ casts, not C-style casting. (\*)
-16. Do not use the ellipsis notation for function arguments, except for variable argument templates. (\*)
+16. Do not use the ellipsis notation for function arguments, except for variable argument templates.
 17. Do not use union types. (\*)
 18. If a class has at least one virtual method, it must have a public virtual destructor or (exceptionally) a protected non-virtual destructor.
 19. When a derived class function overrides a virtual function, always mark it with `override` or `final`.
-20. Pass by value arguments which are not to be modiﬁed and are built-in types or small objects; otherwise pass arguments of class types by reference or, if necessary, by pointer.
+20. Pass by value arguments which are not to be modiﬁed and are built-in types or small objects; otherwise pass arguments of class types by reference or, if necessary, by pointer.  
+  Allowed exception: If the function algorithm would benefit from using a move of the argument instead of a copy, pass the argument by value.
 21. Properly use rvalue references for temporary objects that will be moved.
 22. The argument to a copy constructor and to an assignment operator must be a `const` reference, while the argument for a move constructor or move assignment operator must be an rvalue reference. (\*)
 23. Do not let `const` member functions change the state of the object. Any special exceptions to this rule must still maintain thread safety. (\*)
-24. A function must never return or in any way give access to references or pointers to local variables (stack variables) outside the scope in which they are declared.
+24. A function must never return or in any way give access to references or pointers to local variables (stack variables) outside the scope in which they are declared, and a `const` member function must not give non-`const` access to any data directly or indirectly held by the object.
 25. Each class may have only one each of public, protected, and private sections, which must be declared in that order. (\*)
 26. Keep the ordering of methods in the header ﬁle and in the source ﬁle identical.
 27. Provide meaningful argument names in method declarations in the header ﬁle to indicate usage, unless the type fully describes the usage.
@@ -96,30 +97,32 @@ If necessary to create a unique name, one can add the directory name:
 `#include "some_header.h"`  
  or in the `.../interface` directory, e.g  
 `#include "Subsystem/Package/interface/some_header.h"`
+5. Group code files into packages based upon their matching dependencies. Such dependencies can be on other CMSSW packages or, more importantly, external libraries.
 #### Plugins
-5. Put plugins (e.g. EDProducers, EDAnalyzers, etc.) into a `Package/Subpackage/plugins/` directory, with its dedicated `BuildFile.xml`.
-6. Do not split plugins into header and source files. If you do split them, keep the header files in the `.../plugins` directory.
-7. All code used only by the plugins in `../plugins` should also go under `.../plugins`.
+6. Put plugins (e.g. EDProducers, EDAnalyzers, etc.) into a `Package/Subpackage/plugins/` directory, with its dedicated `BuildFile.xml`.
+7. Do not split plugins into header and source files. If you do split them, keep the header files in the `.../plugins` directory.
+8. All code used only by the plugins in `../plugins` should also go under `.../plugins`.
  `plugins.cc` and `SealPlugins.cc` or any special files that just define plugins, except for template instantiations, are discouraged. 
 #### Tests
-8. Unit tests to test the functionalities of your Library and/or Plugins should go under `.../test`.
-9. Add test library/plugins in `.../test/BuildFile.xml` for the common functionality used only by your unit tests.
-10. For unit tests which simply run `cmsRun your-cfg` (to test your plugin), please use `<test name="..." command="cmsRun …"/>` in your `.../test/BuildFile.xml`.
+9. Unit tests to test the functionalities of your Library and/or Plugins should go under `.../test`.
+10. Add test library/plugins in `.../test/BuildFile.xml` for the common functionality used only by your unit tests.
+11. For unit tests which simply run `cmsRun your-cfg` (to test your plugin), please use `<test name="..." command="cmsRun …"/>` in your `.../test/BuildFile.xml`.
+12. Unit tests should return a non-zero value from their main to indicate test failure. Successful tests should print nothing or a very small amount to the log file. Tests should not require a human to read their output to determine if they succeed or fail.
 #### Python
-11. A `_cfi` file should contain only the definition of one module, and possible Modifier ("era") customizations on it. The module label should be the same as the `_cfi` file name.
-12. The `_cfi` file should be left to be generated automatically with the `fillDescriptions()`. When Modifier customizations are needed, the auto-generated label should have e.g. "Default" postfix and be imported+cloned to the desired name.
-13. A module/Task/Sequence/Path with a given name should be defined in exactly one `_cfi` or `_cff` file.
-14. All Modifier customizations on a module/Task/Sequence/Path should be applied on the same file that defines the module/Task/Sequence/Path.
-15. When one customizes an existing parameter in `clone()`, `Modifier.toModify()`, or in assignment, explicit types on the right hand side should be avoided.
+13. A `_cfi` file should contain only the definition of one module, and possible Modifier ("era") customizations on it. The module label should be the same as the `_cfi` file name.
+14. The `_cfi` file should be left to be generated automatically with the `fillDescriptions()`. When Modifier customizations are needed, the auto-generated label should have e.g. "Default" postfix and be imported+cloned to the desired name.
+15. A module/Task/Sequence/Path with a given name should be defined in exactly one `_cfi` or `_cff` file.
+16. All Modifier customizations on a module/Task/Sequence/Path should be applied on the same file that defines the module/Task/Sequence/Path.
+17. When one customizes an existing parameter in `clone()`, `Modifier.toModify()`, or in assignment, explicit types on the right hand side should be avoided.
 #### Data files
-16. To keep the repository size under control, we discourage adding any data files under `.../data`.
-17. Please use the [cms-data externals GitHub repositories](https://github.com/cms-data/) to add/change any data file.
+18. To keep the repository size under control, we discourage adding any data files under `.../data`.
+19. Please use the [cms-data externals GitHub repositories](https://github.com/cms-data/) to add/change any data file.
 #### Binaries and scripts
-18. Public executables/binaries should go under `.../bin`.
-19. It is discouraged to generate plugins from `.../bin`.
-20. Additional libraries used only by multiple executables of your `.../bin` should also go under `.../bin`.
-21. Any scripts/utilities which should be available publicly (i.e. in PATH) should go under `.../bin` and use the `INSTALL_SCRIPTS` flag in `.../bin/BuildFile.xml`.
-22. Adding scripts under `.../scripts` is discouraged.
+19. Public executables/binaries should go under `.../bin`.
+20. It is discouraged to generate plugins from `.../bin`.
+21. Additional libraries used only by multiple executables of your `.../bin` should also go under `.../bin`.
+22. Any utilities which should be available publicly (i.e. in the PATH) should go under `.../bin` and use the `INSTALL_SCRIPTS` flag in `.../bin/BuildFile.xml`.
+23. The `.../scripts` directory is reserved for scripts that need to be available in the PATH. Configuration and data files should go into appropriate directories, like `.../data`.
 
 ## 7 -- Design and Coding Guidelines
 These guidelines are a brief summary of highlights from the [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines) by Bjarne Stroustrup et al. The links for each guideline provide explanations and justifications.
