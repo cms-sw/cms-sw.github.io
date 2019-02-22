@@ -34,7 +34,7 @@ Coding rules are meant to prevent serious problems in software function, perform
 10. For a getter method, using the value name is preferred, e.g. `momentum()`.
 11. Do not use single character names, except for loop indices.
 12. Do not use special characters, except for "_" where allowed.
-13. Do not use "\_" as ﬁrst character. Only use it as the last character for class data member names, not local variable names.
+13. Do not use "\_" as ﬁrst character, except for user-defined literals which are required to start with "\_". Only use it as the last character for class data member names, not local variable names.
 14. Do not use "\_\_".
 15. Use clear and explanatory variable names.
 
