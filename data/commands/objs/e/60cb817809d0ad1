@@ -1,0 +1,1 @@
+{"type": "DAS", "command": "echo '{\n\"319450\" : [[1, 100]]\n}' > step1_lumiRanges.log  2>&1\n (dasgoclient --limit 0 --query 'lumi,file dataset=/NoBPTX/Run2018C-v1/RAW run=319450' --format json | das-selected-lumis.py 1,100 ) | ibeos-lfn-sort -u > step1_dasquery.log  2>&1"}

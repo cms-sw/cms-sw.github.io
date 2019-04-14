@@ -1,0 +1,73 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1551084112,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "phedex:fileReplicas4dataset"
+        ]
+      },
+      "file": [
+        {
+          "bytes": 257368889,
+          "checksum": "adler32:dc11b897,cksum:3588168141",
+          "creation_time": 1550511508.8982601,
+          "id": 155821260,
+          "name": "/store/relval/CMSSW_10_5_0_pre1/RelValSingleGammaPt35_UP15/GEN-SIM/103X_mcRun2_asymptotic_v3-v1/10000/1F0FDF4B-157D-6D48-AE58-36ED0F652A40.root",
+          "original_node": null,
+          "replica": [
+            {
+              "custodial": "n",
+              "group": "RelVal",
+              "node": "T2_CH_CERN",
+              "node_id": 1561,
+              "se": "srm-eoscms.cern.ch",
+              "subscribed": "y",
+              "time_create": null
+            }
+          ],
+          "size": 257368889,
+          "time_create": 1550511508.8982601
+        }
+      ],
+      "qhash": "628d90af21ffc436ab3730c7ad403b41"
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "file.name"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "628d90af21ffc436ab3730c7ad403b41",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort file.name | unique",
+    "query": "file dataset=/RelValSingleGammaPt35_UP15/CMSSW_10_5_0_pre1-103X_mcRun2_asymptotic_v3-v1/GEN-SIM site=T2_CH_CERN  detail=true | grep file.name | sort file.name | unique",
+    "spec": {
+      "dataset": "/RelValSingleGammaPt35_UP15/CMSSW_10_5_0_pre1-103X_mcRun2_asymptotic_v3-v1/GEN-SIM",
+      "site": "T2_CH_CERN*"
+    },
+    "system": "",
+    "tstamp": 1551084111
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1551084112
+}
