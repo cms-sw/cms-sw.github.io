@@ -120,6 +120,6 @@ You are done. From this moment on you can merge your changes in a work area by s
     git cms-merge-topic <your-username>:some-branch-name
 
 For more information and the details on how all this works you can also look
-[here](http://git-scm.com/book/ch6-7.html),
+[here](https://git-scm.com/book/en/v1/Git-Tools-Subtree-Merging),
 [here](https://help.github.com/articles/working-with-subtree-merge) and
 [here](https://www.kernel.org/pub/software/scm/git/docs/howto/using-merge-subtree.html).
