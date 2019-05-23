@@ -42,7 +42,7 @@ var clickGraphItem = false;
 var chartWithAllCats = true;
 
 AmCharts.ready(function() {
-  var rows = loadCSV("../data/stats/pr-stats.csv");
+  var rows = loadCSV("../data/stats/pr-open-stats.csv");
   parseCSV(rows);
 
   // SERIAL CHART
