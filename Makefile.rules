@@ -99,6 +99,7 @@ data/cmsdist-config.json: FORCE_TARGET
 	$(SCRIPT_DIRECTORY)/process-cmsdist > $@
 pr-stats:
 	mkdir -p data/stats && $(SCRIPT_DIRECTORY)/process_prs_stats.py -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-sw/cmssw  > data/stats/pr-stats.csv
+	$(SCRIPT_DIRECTORY)/process_prs_stats.py -o -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-sw/cmssw  > data/stats/pr-open-stats.csv
 	mkdir -p stats && $(SCRIPT_DIRECTORY)/process_prs_stats.py -c > stats/categories.js
 ib-files: $(ALL_INPUTS)
 	mkdir -p data/inputs && cat data/inputs/*/*/*.csv | sort -u -r > data/inputs/all-ibs.csv
