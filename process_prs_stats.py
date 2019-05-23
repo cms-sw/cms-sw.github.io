@@ -39,6 +39,7 @@ if __name__ == "__main__":
   parser = OptionParser(usage="%prog")
   parser.add_option("-p", "--prs", dest="prs_dir", help="Directory with Pull requests stats", type=str, default=None)
   parser.add_option("-c", "--categories", dest="categories", help="Dump Categories JS", action="store_true", default=False)
+  parser.add_option("-o", "--open_prs", dest="open_prs", help="Only dump open PRs stats", action="store_true", default=False)
   opts, args = parser.parse_args()
 
   if opts.categories:
@@ -51,12 +52,13 @@ if __name__ == "__main__":
   prs = {}
   for pr_json in glob(opts.prs_dir+"/*/*.json"):
     issue = load(open(pr_json))
+    isClosed = ('closed_at' in issue and issue['closed_at']) and 1 or 0
+    if opts.open_prs and isClosed : continue
     if not 'number' in issue: continue
     labels = issue['labels']
     decodedLabels = labelsToState(labels)
     createdAt = int(issue['created_at'])
     closedAt = ('closed_at' in issue and issue['closed_at']) and int(issue['closed_at']) or "NA"
-    isClosed = ('closed_at' in issue and issue['closed_at']) and 1 or 0
     isPr = 1
     updateAt = int(issue['updated_at'])
     if ('milestone' in issue and issue['milestone']):
