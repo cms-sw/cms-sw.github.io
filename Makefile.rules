@@ -98,8 +98,13 @@ data/cmsdist-config.json: FORCE_TARGET
 	[ -d $(@D) ] || mkdir -p $(@D) &&\
 	$(SCRIPT_DIRECTORY)/process-cmsdist > $@
 pr-stats:
-	mkdir -p data/stats && $(SCRIPT_DIRECTORY)/process_prs_stats.py -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-sw/cmssw  > data/stats/pr-stats.csv
-	$(SCRIPT_DIRECTORY)/process_prs_stats.py -o -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-sw/cmssw  > data/stats/pr-open-stats.csv
+	mkdir -p data/stats && $(SCRIPT_DIRECTORY)/process_prs_stats.py -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-sw/cmssw > data/stats/pr-stats.csv
+	$(SCRIPT_DIRECTORY)/process_prs_stats.py -o -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-sw/cmssw > data/stats/pr-open-stats.csv
+	cp data/stats/pr-open-stats.csv data/stats/pr-all-open-stats.csv
+	$(SCRIPT_DIRECTORY)/process_prs_stats.py -ol -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-sw/cmsdist >> data/stats/pr-all-open-stats.csv
+	$(SCRIPT_DIRECTORY)/process_prs_stats.py -ogl -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-data >> data/stats/pr-all-open-stats.csv
+	$(SCRIPT_DIRECTORY)/process_prs_stats.py -ogl -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-externals >> data/stats/pr-all-open-stats.csv
+
 	mkdir -p stats && $(SCRIPT_DIRECTORY)/process_prs_stats.py -c > stats/categories.js
 ib-files: $(ALL_INPUTS)
 	mkdir -p data/inputs && cat data/inputs/*/*/*.csv | sort -u -r > data/inputs/all-ibs.csv
