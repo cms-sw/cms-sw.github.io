@@ -199,7 +199,7 @@ function writeMainTable() {
 
     var row = [];
     var PRidWithLink = "<a href='https://github.com/" + csvData[i].repository + "/pull/" + csvData[i].id + "' target='_blank'>" + csvData[i].id;
-    var RepoWithLink = "<a href='https://github.com/" + csvData[i].repository + "' target='_blank'>" + csvData[i].repository;
+    var RepoWithLink = "<a href='https://github.com/" + csvData[i].repository + "' target='_blank'>" + csvData[i].repository.split('/')[1];
 
     row.push({
       classes: rowColor,
@@ -402,7 +402,7 @@ function changeCategoryData(category) {
       var rowColor = rowColorFromDays(days);
       var repo = idList[category][period][i].repository
       var PRidWithLink = "<a href='https://github.com/" + repo + "/pull/" + idList[category][period][i].id + "' target='_blank'>" + idList[category][period][i].id;
-      var RepoWithLink = "<a href='https://github.com/" + repo + "' target='_blank'>" + repo;
+      var RepoWithLink = "<a href='https://github.com/" + repo + "' target='_blank'>" + repo.split('/')[1];
       var row = [];
 
       row.push({
