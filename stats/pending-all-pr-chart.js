@@ -189,7 +189,7 @@ function writeMainTable() {
 
     var categoriesPending = "";
     for (o = 0; o < numberOfCategories; o++) {
-      if (o != 15) {
+      if (o != categoriesIds['tests']) {
         var labelLetter = csvData[i].labelStatus[o];
         categoriesPending += labelStatusLetterToLabel(labelLetter, o);
       }
@@ -392,7 +392,7 @@ function changeCategoryData(category) {
 
       var categoriesPending = "";
       for (o = 0; o < numberOfCategories; o++) {
-        if (o != 15) {
+        if (o != categoriesIds['tests']) {
           var labelLetter = idList[category][period][i].labelStatus[o];
           categoriesPending += labelStatusLetterToLabel(labelLetter, o);
         }
