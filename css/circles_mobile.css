@@ -1,0 +1,106 @@
+
+body {
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    height: 100%;
+
+    background-color: #F1F0F0;
+    background-repeat: repeat-x;
+    background-image: url('../img/texture.png');
+}
+
+#loading, #groupTitle {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    -moz-transition-property: opacity;
+    -webkit-transition-property: opacity;
+    -o-transition-property: opacity;
+    -ms-transition-property: opacity;
+    -moz-transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    -ms-transition-duration: 1s;
+}
+
+#loading {
+    margin: auto;
+    height: 70px;
+    width: 90%;
+    font-size: 32px;
+    font-family: Impact, sans-serif;
+    text-align: center;
+    z-index: 3;
+    color: rgba(100, 100, 100, 0.6);
+}
+
+#reflection {
+    position: absolute;
+    margin-bottom: -1px; /* Fixes the ugly white line on Safari/Android */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e7e7e7;
+    height: 10%;
+    display: none;
+}
+
+#visualizationcontainer {
+    position: absolute;
+    left: 1px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+
+    -webkit-box-reflect: below 1px -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0,0,0,0)), color-stop(90%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.7)));
+
+    /** To avoid scroll bars in the otherwise unsupported IE6- */
+    -left: 0px;
+    -right: 0px;
+    -top: 0px;
+    -bottom: 10%;
+}
+
+body.reflection #reflection {
+    display: block;
+}
+
+body.reflection #visualizationcontainer {
+    bottom: 10%;
+}
+
+ul.inline, ul.inline > li {
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+
+ul.inline li:before {
+    content: "| ";
+}
+
+ul.inline li:first-child:before {
+    content: " ";
+}
+
+.dimmed #visualization,
+.dimmed #reset,
+.dimmed #back,
+.dimmed #hints {
+    opacity: 0;
+    -webkit-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+}
+
+#visualization,
+#reset,
+#back,
+#hints {
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-property: opacity;
+    -moz-transition-duration: 0.2s;
+    -o-transition-property: opacity;
+    -o-transition-duration: 0.2;
+}

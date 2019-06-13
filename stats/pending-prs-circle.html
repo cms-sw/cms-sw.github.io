@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-kantu="1" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Pending pull reguests</title>
+
+    <!-- CarrotSearch Circles -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/circles_layout.css">
+    <link rel="stylesheet" href="../css/circles_mobile.css">
+    <script src="../js/carrotsearch.circles.js"></script>
+
+    <!-- local code -->
+    <style type="text/css"> 
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+      .property_label {
+        width:      60%;
+        text-align: left;
+      }
+      .property_value {
+        width:      20%;
+        text-align: right;
+      }
+      #selected {
+        font-style: italic;
+      }
+    </style>
+
+  </head>
+
+  <body data-gr-c-s-loaded="true">
+    <div id="visualization" style="width: 100%;"></div>
+
+    <script>
+      ///////////////////
+      // Helper functions
+      function installResizeHandlerFor(visualization, deferUpdateByMillis) {
+        /**
+          Resizes circle when page size is changed
+        */
+        var fn = function() {
+          var id = visualization.get("id"), element;
+          if (id && (element = document.getElementById(id))) {
+            visualization.resize();
+          }
+        };
+
+        // Call fn at most once within a single minInterval.
+        function defer(minInterval, fn) {
+          var last;
+          var deferId;
+          return function() {
+            var now = new Date().getTime();
+
+            if (deferId) {
+              window.clearTimeout(deferId);
+              deferId = undefined;
+            }
+
+            if (!last || last + minInterval <= now) {
+              last = now;
+              fn();
+            } else {
+              deferId = window.setTimeout(arguments.callee, Math.min(1, minInterval / 5));
+            }
+          };
+        }
+
+        if (undefined === deferUpdateByMillis) {
+          deferUpdateByMillis = 500;
+        }
+
+        window.addEventListener("resize", defer(deferUpdateByMillis, fn));
+        window.addEventListener("orientationchange", defer(deferUpdateByMillis, fn));
+      }
+
+      function loadJson(target, url) {
+        /**
+          makes AJAX call to get JSON
+        */
+        var xhttp = new XMLHttpRequest();
+        xhttp.overrideMimeType("application/json");
+        xhttp.open('GET', url);
+        xhttp.onreadystatechange = function () {
+          if (xhttp.readyState == 4) {
+            target.set("dataObject", JSON.parse(xhttp.responseText));
+          }
+        };
+        xhttp.send(null);
+      }
+
+      //////////////
+      // Circle logic
+      function embed() {
+        // We respin until the visualization container has non-zero area (there are race 
+        // conditions on Chrome which permit that) and the visualization class is loaded.
+        var container = document.getElementById("visualization");
+        if (container.clientWidth <= 0 || container.clientHeight <= 0 || !window["CarrotSearchCircles"]) {
+          window.setTimeout(embed, 250);
+          return;
+        }
+
+        // custom collors
+        var groupColorDecorator = function(opts, params, vars) {
+          if (params.group.color) {
+            vars.groupColor = params.group.color;
+            vars.labelColor = "auto";
+          }
+        };
+
+        // Create an empty CarrotSearchCircles without any data
+        var circles = new CarrotSearchCircles({
+          id: "visualization",
+          captureMouseEvents: false,
+          pixelRatio: Math.min(2, window.devicePixelRatio || 1),
+          visibleGroupCount: 0,
+          showZeroWeightGroups: false,
+          titleBar: "inscribed",
+          titleBarTextColor: "#444",
+          dataObject: null,
+          isGroupVisible: function(group) {
+            return !group.gap;
+          },
+          groupColorDecorator: function(opts, params, vars) {
+            if (params.group.color) {
+              vars.groupColor = params.group.color;
+              vars.labelColor = "auto";
+            }
+          },
+          onGroupClick: function(info) {
+              var group = info.group;
+              if (group && group.url){
+                window.open(group.url);
+              }
+          },
+          titleBarLabelDecorator: function(attrs) {
+            if (attrs.hoverGroup || attrs.selectedGroups.length > 0) {
+               var group = attrs.hoverGroup ? attrs.hoverGroup : attrs.selectedGroups[0];
+               var aditonallInfo = group ? " - No. of PRs: " + group.weight : "";
+               if (group['createdAt']){
+                var d = new Date(group['createdAt'] * 1000);
+                aditonallInfo = " - open since " + d.toLocaleString()
+               }
+               attrs.label = group.label + aditonallInfo;
+            } else {
+               attrs.label = "hover or select something";
+            }
+          }
+        });
+
+        
+        // circles.set("onGroupDoubleClick", function(info){
+        //   var state = info.group.selected ? true : false;
+        //   this.set("selection", {
+        //     groups: [info.group.id],
+        //     selected: !state
+        //   });
+        //   console.log((state ? "Deselected" : "Selected") + " group " + info.group.label);
+        // });
+        installResizeHandlerFor(circles, 300); // Resizes on change
+        loadJson(circles, '/data/stats/pr-all-open-circles.json'); // Load the data
+      }
+
+      embed();
+    </script>
+
+</body></html>
