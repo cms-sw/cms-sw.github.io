@@ -105,7 +105,6 @@ pr-stats:
 	$(SCRIPT_DIRECTORY)/process_prs_stats.py -ogl -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-data >> data/stats/pr-all-open-stats.csv
 	$(SCRIPT_DIRECTORY)/process_prs_stats.py -ogl -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-externals >> data/stats/pr-all-open-stats.csv
 	$(SCRIPT_DIRECTORY)/process_prs_circles_json.py -p $(SCRIPT_DIRECTORY)/../cms-prs/cms-sw/cmssw -g "../cms-prs/cms-data,../cms-prs/cms-externals" > data/stats/pr-all-open-circles.json
-	/Users/matonisz/tmp/circle_page/data.json
 
 	mkdir -p stats && $(SCRIPT_DIRECTORY)/process_prs_stats.py -c > stats/categories.js
 ib-files: $(ALL_INPUTS)
