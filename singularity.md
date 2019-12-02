@@ -1,39 +1,47 @@
 # Using singularity to develop CMSSW on other operating systems
 
-## Setting up SLC5 or SLC6 CMS environment on CentOS7
+We now distribute `cmssw-*` (available under `/cvmfs/cms.cern.ch/common`) helper script to setup cms env
 
-In order to develop CMSSW on `SLC5` or `SLC6`, one can use [singularity](https://www.sylabs.io/docs/) to get the corresponding `SLC5/6 CMS` environment. `singularity` is available on `lxplus6` and `lxplus7`, and can be used by any user.
-Here is how you can run `singularity` to set up `CMS` environment.
+## Setting up SLC5/SLC6/SLC7/CentOS8 CMS environment.
 
-For `SLC6`:
+On lxplus, run `cmssw-*` commands to setup up the env e.g.
 
-```shell
-# log in to CentOS7 system with singularity installed e.g. lxplus7
-ssh lxplus7
-export SINGULARITY_CACHEDIR="/tmp/$(whoami)/singularity"
-singularity shell -B /afs -B /eos -B /cvmfs docker://cmssw/slc6:latest
-export SCRAM_ARCH=slc6_amd64_gcc700
-source /cvmfs/cms.cern.ch/cmsset_default.sh
+- For `SLC 5`:
+
+```
+cmssw-slc5
+```
+OR
+```
+cmssw-slc5 --command-to-run <command-to-run-under-slc5>
 ```
 
-For `SLC5`:
+- For `SLC6`:
 
-```shell
-# log in to CentOS7 system with singularity installed e.g. lxplus7
-ssh lxplus7
-export SINGULARITY_CACHEDIR="/tmp/$(whoami)/singularity"
-singularity shell -B /afs -B /eos -B /cvmfs docker://clelange/slc5-cms:latest
-export SCRAM_ARCH=slc5_amd64_gcc434
-source /cvmfs/cms.cern.ch/cmsset_default.sh
+```
+cmssw-slc6
+```
+OR
+```
+cmssw-slc6 --command-to-run <command-to-run-under-slc6>
 ```
 
-## Setting up CentOS7 CMS environment on SLC6
+- For `SLC7/CentOS7`:
 
-```shell
-# log in to SLC6 system with singularity installed e.g. lxplus6 or cmsdevXX
-ssh cmsdev15
-export SINGULARITY_CACHEDIR="/tmp/$(whoami)/singularity"
-singularity shell -B /afs -B /eos -B /cvmfs docker://cmssw/cc7:latest
-export SCRAM_ARCH=slc7_amd64_gcc700
-source /cvmfs/cms.cern.ch/cmsset_default.sh
+```
+cmssw-cc7
+```
+OR
+```
+cmssw-cc7 --command-to-run <command-to-run-under-cc7>
+```
+
+- For `CentOS 8`: CentOS8 environment can only be set from SLC7/CentOS7 host (e.g. lxplus, lxplsu7)
+
+```
+cmssw-cc8
+```
+OR
+```
+cmssw-cc8 --command-to-run <command-to-run-under-CentOs8>
 ```
