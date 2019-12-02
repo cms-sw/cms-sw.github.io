@@ -10,9 +10,7 @@ On lxplus, run `cmssw-*` commands to setup up the env e.g.
 
 ```
 cmssw-slc5
-```
 OR
-```
 cmssw-slc5 --command-to-run <command-to-run-under-slc5>
 ```
 
@@ -20,9 +18,7 @@ cmssw-slc5 --command-to-run <command-to-run-under-slc5>
 
 ```
 cmssw-slc6
-```
 OR
-```
 cmssw-slc6 --command-to-run <command-to-run-under-slc6>
 ```
 
@@ -30,9 +26,7 @@ cmssw-slc6 --command-to-run <command-to-run-under-slc6>
 
 ```
 cmssw-cc7
-```
 OR
-```
 cmssw-cc7 --command-to-run <command-to-run-under-cc7>
 ```
 
@@ -40,8 +34,6 @@ cmssw-cc7 --command-to-run <command-to-run-under-cc7>
 
 ```
 cmssw-cc8
-```
 OR
-```
 cmssw-cc8 --command-to-run <command-to-run-under-CentOs8>
 ```
