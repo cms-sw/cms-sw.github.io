@@ -9,9 +9,9 @@ On lxplus, run `cmssw-*` commands to setup up the env e.g.
 - **SLC 5**:
 
 ```
-cmssw-slc5
+cmssw-env --cmsos slc5
 OR
-cmssw-slc5 --command-to-run <command-to-run-under-slc5>
+cmssw-env --cmsos slc6 --command-to-run <command-to-run-under-slc5>
 ```
 
 - **SLC6**:
