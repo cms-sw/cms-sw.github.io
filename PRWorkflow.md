@@ -54,6 +54,7 @@ where the URL appropriate for your pull request will be provided by the code qua
 
 ```
 scram build code-checks
+scram build code-format
 ```
 
 In either case, simply apply these changes, commit and update your github branch. This will update your pull request and the code quality checks will be rerun automatically.
