@@ -31,13 +31,14 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```[@cmsbuild,] please test workflow <workflow>[,<workflow>[...]] with (repository|)#PR[,(repository|)#PR[,...]] for CMSSW_11_0_ROOT6_X```**: Run tests with extra workflows, cmssw PRs and cmsdist PR using CMSSW_11_0_ROOT6_X IBs.
 - **PR testing parameters**: Users who can trigger PR tests can also provide extra test parameters by commenting on the pull request. Comment should have the following format
 ```
-test parameters
+test parameters:
 [  - ]workflow(s|) = <workflow>[,<workflow>[,...]]
 [  - ]pull_request(s|) = (repository|)#PR[,(repository|)#PR[,...]]
 [  - ]release = release_cycle|architecture|release_cycle/architecture
 [  - ]enable_test(s|) = gpu|none
 [  - ]ignore_test(s|) = build-warnings|build-warnings|none
-[  - ]full_cmssw = true|false
+[  - ]full(_cmssw|) = true|false
+[  - ](cms-|)addpkg = <cmssw_package>[,<cmssw_package>[,...]]
 ```
 - **```[@cmsbuild,] please abort[ test]```**: Those who can request the test can ask to abort a running/on going test.
 - **```[@cmsbuild,] please close```**: L1/L2/Release managers can issue this command to close a pull requests.
