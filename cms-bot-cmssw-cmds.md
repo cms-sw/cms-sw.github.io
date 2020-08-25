@@ -38,6 +38,7 @@ test parameters:
 [  - ]enable_test(s|) = gpu|none
 [  - ]ignore_test(s|) = build-warnings|build-warnings|none
 [  - ]full(_cmssw|) = true|false
+[  - ]container = cmssw/cc7:amd64-dYYYYMMDD
 [  - ](cms-|)addpkg = <cmssw_package>[,<cmssw_package>[,...]]
 ```
 - **```[@cmsbuild,] please abort[ test]```**: Those who can request the test can ask to abort a running/on going test.
