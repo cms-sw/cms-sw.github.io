@@ -1,0 +1,53 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1526929865,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "dbs3:files_via_dataset"
+        ]
+      },
+      "file": [
+        {
+          "error": "DBS unable to unmarshal the data into DAS record, api=files_via_dataset, data={\"exception\": 400, \"message\": \"Invalid Input Data /RelValTTb...: Not Match Required Format\", \"type\": \"HTTPError\"}, error=json: cannot unmarshal object into Go value of type []mongo.DASRecord"
+        }
+      ],
+      "qhash": "8c81d4692e341368a63ef072c8582bdb"
+    }
+  ],
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "|"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "8c81d4692e341368a63ef072c8582bdb",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort | unique",
+    "query": "file dataset=/RelValTTbar_13/1/GEN-SIM | grep file.name | sort | unique",
+    "spec": {
+      "dataset": "/RelValTTbar_13/1/GEN-SIM"
+    },
+    "system": "",
+    "tstamp": "2018-05-21T21:11:05.179971111+02:00"
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1526929865
+}
