@@ -84,7 +84,7 @@
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/slc6_amd64_gcc700/www/mon/10.2-mon-23/CMSSW_10_2_X_2020-09-14-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 9, 
+                            "num_passed": 15, 
                             "known_failed": 0, 
                             "num_failed": 0
                         }
@@ -107,7 +107,7 @@
                 "dupDict": [
                     {
                         "arch": "slc6_amd64_gcc700", 
-                        "passed": "passed"
+                        "passed": "error"
                     }
                 ], 
                 "static_checks_failures": "not-found", 
@@ -12215,16 +12215,20 @@
                     }
                 ], 
                 "tests_archs": [
+                    "slc7_amd64_gcc700", 
                     "slc7_amd64_gcc820"
                 ], 
                 "cmsdist_merged_prs": {
+                    "slc7_amd64_gcc700": [], 
                     "slc7_amd64_gcc820": []
                 }, 
                 "cmsdist_compared_tags": {
+                    "slc7_amd64_gcc700": "IB/CMSSW_10_6_X_2020-09-13-0000/slc7_amd64_gcc700..IB/CMSSW_10_6_X_2020-09-13-0000/slc7_amd64_gcc700", 
                     "slc7_amd64_gcc820": "IB/CMSSW_10_6_X_2020-09-13-2300/slc7_amd64_gcc820..IB/CMSSW_10_6_X_2020-09-13-2300/slc7_amd64_gcc820"
                 }, 
                 "static_checks_failures": "not-found", 
                 "cmsdistTags": {
+                    "slc7_amd64_gcc700": "IB/CMSSW_10_6_X_2020-09-13-0000/slc7_amd64_gcc700", 
                     "slc7_amd64_gcc820": "IB/CMSSW_10_6_X_2020-09-13-2300/slc7_amd64_gcc820"
                 }, 
                 "flawfinder": "found", 
@@ -12240,8 +12244,17 @@
                 ], 
                 "profiling": "not-found", 
                 "compared_tags": "CMSSW_10_6_X_2020-09-14-1100-->CMSSW_10_6_X_2020-09-14-2300", 
-                "dqm_tests": "inprogress", 
-                "utests": [], 
+                "dqm_tests": "found", 
+                "utests": [
+                    {
+                        "arch": "slc7_amd64_gcc700", 
+                        "passed": "failed", 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc700/www/mon/10.6-mon-23/CMSSW_10_6_X_2020-09-14-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "3"
+                        }
+                    }
+                ], 
                 "ib_date": "2020-09-14-2300-0000", 
                 "relvals": [
                     {
@@ -12250,7 +12263,18 @@
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/slc7_amd64_gcc820/www/mon/10.6-mon-23/CMSSW_10_6_X_2020-09-14-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 3, 
+                            "num_passed": 6, 
+                            "known_failed": 0, 
+                            "num_failed": 0
+                        }
+                    }, 
+                    {
+                        "done": false, 
+                        "arch": "slc7_amd64_gcc700", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc700/www/mon/10.6-mon-23/CMSSW_10_6_X_2020-09-14-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 6, 
                             "known_failed": 0, 
                             "num_failed": 0
                         }
@@ -12259,7 +12283,16 @@
                 "release_queue": "CMSSW_10_6_X", 
                 "release_name": "CMSSW_10_6_X_2020-09-14-2300", 
                 "comp_baseline": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-baseline-tests/CMSSW_10_6_X_2020-09-14-2300/slc7_amd64_gcc700/-GenuineIntel/matrix-results", 
-                "gpu_utests": [], 
+                "gpu_utests": [
+                    {
+                        "arch": "slc7_amd64_gcc700", 
+                        "passed": "passed", 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc700/www/mon/10.6-mon-23/CMSSW_10_6_X_2020-09-14-2300/GPU/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
+                    }
+                ], 
                 "material_budget_comparison": "not-found", 
                 "merged_prs": [
                     {
@@ -12294,6 +12327,10 @@
                 "valgrind": "inprogress", 
                 "material_budget": "not-found", 
                 "dupDict": [
+                    {
+                        "arch": "slc7_amd64_gcc700", 
+                        "passed": "passed"
+                    }, 
                     {
                         "arch": "slc7_amd64_gcc820", 
                         "passed": "passed"
