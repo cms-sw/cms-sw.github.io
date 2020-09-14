@@ -20,17 +20,7 @@
                     }
                 ], 
                 "slc7_ppc64le_gcc820": [], 
-                "slc7_amd64_gcc820": [
-                    {
-                        "hash": "beaca3df1d0353a2327c1111001c5cefcd4a8112", 
-                        "title": "Added Lz4 in to cmssw-tool-conf", 
-                        "url": "https://github.com/cms-sw/cmsdist/pull/6227", 
-                        "number": "6227", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "cms-sw"
-                    }
-                ], 
+                "slc7_amd64_gcc820": [], 
                 "slc7_aarch64_gcc820": [], 
                 "slc7_amd64_gcc10": [
                     {
@@ -60,7 +50,7 @@
                 "cc8_amd64_gcc8": "IB/CMSSW_11_2_X_2020-09-13-2300/cc8_amd64_gcc8..IB/CMSSW_11_2_X/cc8", 
                 "cc8_aarch64_gcc8": "IB/CMSSW_11_2_X_2020-09-09-2300/cc8_aarch64_gcc8..IB/CMSSW_11_2_X/cc8", 
                 "slc7_ppc64le_gcc820": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_ppc64le_gcc820..IB/CMSSW_11_2_X/master", 
-                "slc7_amd64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-0000/slc7_amd64_gcc820..IB/CMSSW_11_2_X/master", 
+                "slc7_amd64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_amd64_gcc820..IB/CMSSW_11_2_X/master", 
                 "slc7_aarch64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_aarch64_gcc820..IB/CMSSW_11_2_X/master", 
                 "slc7_amd64_gcc10": "IB/CMSSW_11_2_X_2020-09-09-2300/slc7_amd64_gcc10..IB/CMSSW_11_2_X/gcc10", 
                 "slc7_amd64_gcc900": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_amd64_gcc900..IB/CMSSW_11_2_X/gcc9", 
@@ -114,7 +104,17 @@
                 "slc7_ppc64le_gcc820"
             ], 
             "cmsdist_merged_prs": {
-                "slc7_amd64_gcc820": [], 
+                "slc7_amd64_gcc820": [
+                    {
+                        "hash": "beaca3df1d0353a2327c1111001c5cefcd4a8112", 
+                        "title": "Added Lz4 in to cmssw-tool-conf", 
+                        "url": "https://github.com/cms-sw/cmsdist/pull/6227", 
+                        "number": "6227", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-sw"
+                    }
+                ], 
                 "slc7_aarch64_gcc820": [
                     {
                         "hash": "beaca3df1d0353a2327c1111001c5cefcd4a8112", 
@@ -161,7 +161,7 @@
                 ]
             }, 
             "cmsdist_compared_tags": {
-                "slc7_amd64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-0000/slc7_amd64_gcc820..IB/CMSSW_11_2_X_2020-09-13-0000/slc7_amd64_gcc820", 
+                "slc7_amd64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-0000/slc7_amd64_gcc820..IB/CMSSW_11_2_X_2020-09-13-2300/slc7_amd64_gcc820", 
                 "slc7_aarch64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-0000/slc7_aarch64_gcc820..IB/CMSSW_11_2_X_2020-09-13-2300/slc7_aarch64_gcc820", 
                 "cc8_amd64_gcc8": "IB/CMSSW_11_2_X_2020-09-13-0000/cc8_amd64_gcc8..IB/CMSSW_11_2_X_2020-09-13-2300/cc8_amd64_gcc8", 
                 "slc7_amd64_gcc900": "IB/CMSSW_11_2_X_2020-09-09-2300/slc7_amd64_gcc900..IB/CMSSW_11_2_X_2020-09-13-2300/slc7_amd64_gcc900", 
@@ -169,7 +169,7 @@
             }, 
             "static_checks_failures": "not-found", 
             "cmsdistTags": {
-                "slc7_amd64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-0000/slc7_amd64_gcc820", 
+                "slc7_amd64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_amd64_gcc820", 
                 "slc7_aarch64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_aarch64_gcc820", 
                 "cc8_amd64_gcc8": "IB/CMSSW_11_2_X_2020-09-13-2300/cc8_amd64_gcc8", 
                 "slc7_amd64_gcc900": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_amd64_gcc900", 
@@ -322,7 +322,14 @@
             "static_checks": "inprogress", 
             "isIB": true, 
             "inProgress": false, 
-            "addons": [], 
+            "addons": [
+                {
+                    "arch": "slc7_aarch64_gcc820", 
+                    "passed": false, 
+                    "file": "/data/sdt/buildlogs/slc7_aarch64_gcc820/www/sun/11.2-sun-23/CMSSW_11_2_X_2020-09-13-2300/addOnTests.log", 
+                    "details": {}
+                }
+            ], 
             "hlt_tests": "inprogress"
         }, 
         {
