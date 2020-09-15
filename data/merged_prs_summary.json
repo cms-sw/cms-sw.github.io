@@ -15355,23 +15355,13 @@
                 "python3_tests": [], 
                 "tests_archs": [], 
                 "cmsdist_merged_prs": {
-                    "slc7_amd64_gcc820": [
-                        {
-                            "hash": "f56bb482104a637b0234005644a19a4b212b2905", 
-                            "title": "[11.1.X] Added Lz4 in to cmssw-tool-conf", 
-                            "url": "https://github.com/cms-sw/cmsdist/pull/6228", 
-                            "number": "6228", 
-                            "is_merge_commit": false, 
-                            "from_merge_commit": false, 
-                            "author_login": "cms-sw"
-                        }
-                    ], 
+                    "slc7_amd64_gcc820": [], 
                     "slc7_aarch64_gcc820": [], 
                     "cc8_amd64_gcc8": [], 
                     "slc7_ppc64le_gcc820": []
                 }, 
                 "cmsdist_compared_tags": {
-                    "slc7_amd64_gcc820": "IB/CMSSW_11_1_X_2020-09-13-0000/slc7_amd64_gcc820..IB/CMSSW_11_1_X/master", 
+                    "slc7_amd64_gcc820": "IB/CMSSW_11_1_X_2020-09-14-2300/slc7_amd64_gcc820..IB/CMSSW_11_1_X/master", 
                     "slc7_aarch64_gcc820": "remotes/origin/IB/CMSSW_11_1_X/master..IB/CMSSW_11_1_X/master", 
                     "cc8_amd64_gcc8": "IB/CMSSW_11_1_X_2020-09-14-2300/cc8_amd64_gcc8..IB/CMSSW_11_1_X/cc8", 
                     "slc7_ppc64le_gcc820": "remotes/origin/IB/CMSSW_11_1_X/master..IB/CMSSW_11_1_X/master"
@@ -15424,9 +15414,21 @@
                     }
                 ], 
                 "tests_archs": [
+                    "slc7_amd64_gcc820", 
                     "cc8_amd64_gcc8"
                 ], 
                 "cmsdist_merged_prs": {
+                    "slc7_amd64_gcc820": [
+                        {
+                            "hash": "f56bb482104a637b0234005644a19a4b212b2905", 
+                            "title": "[11.1.X] Added Lz4 in to cmssw-tool-conf", 
+                            "url": "https://github.com/cms-sw/cmsdist/pull/6228", 
+                            "number": "6228", 
+                            "is_merge_commit": false, 
+                            "from_merge_commit": false, 
+                            "author_login": "cms-sw"
+                        }
+                    ], 
                     "cc8_amd64_gcc8": [
                         {
                             "hash": "f56bb482104a637b0234005644a19a4b212b2905", 
@@ -15440,6 +15442,7 @@
                     ]
                 }, 
                 "cmsdist_compared_tags": {
+                    "slc7_amd64_gcc820": "IB/CMSSW_11_1_X_2020-09-13-0000/slc7_amd64_gcc820..IB/CMSSW_11_1_X_2020-09-14-2300/slc7_amd64_gcc820", 
                     "cc8_amd64_gcc8": "IB/CMSSW_11_1_X_2020-09-13-0000/cc8_amd64_gcc8..IB/CMSSW_11_1_X_2020-09-14-2300/cc8_amd64_gcc8"
                 }, 
                 "static_checks_failures": "not-found", 
@@ -15475,11 +15478,22 @@
                 "relvals": [
                     {
                         "done": false, 
+                        "arch": "slc7_amd64_gcc820", 
+                        "passed": false, 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc820/www/mon/11.1-mon-23/CMSSW_11_1_X_2020-09-14-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 4, 
+                            "known_failed": 0, 
+                            "num_failed": 1
+                        }
+                    }, 
+                    {
+                        "done": false, 
                         "arch": "cc8_amd64_gcc8", 
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/cc8_amd64_gcc8/www/mon/11.1-mon-23/CMSSW_11_1_X_2020-09-14-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 595, 
+                            "num_passed": 1926, 
                             "known_failed": 0, 
                             "num_failed": 0
                         }
@@ -15518,11 +15532,15 @@
                         "details": {}
                     }
                 ], 
-                "check-headers": "inprogress", 
+                "check-headers": "passed", 
                 "static_checks_v2": "inprogress", 
                 "valgrind": "inprogress", 
                 "material_budget": "not-found", 
                 "dupDict": [
+                    {
+                        "arch": "slc7_amd64_gcc820", 
+                        "passed": "passed"
+                    }, 
                     {
                         "arch": "cc8_amd64_gcc8", 
                         "passed": "passed"
@@ -17614,13 +17632,53 @@
                 "igprof": "not-found", 
                 "profiling": "not-found", 
                 "base_branch": "CMSSW_11_2_X", 
-                "compared_tags": "CMSSW_11_2_ASAN_X_2020-09-11-2300-->CMSSW_11_2_X", 
+                "compared_tags": "CMSSW_11_2_ASAN_X_2020-09-14-2300-->CMSSW_11_2_X", 
                 "dqm_tests": "inprogress", 
                 "utests": [], 
-                "ib_date": "2020-09-11-2300-0001", 
+                "ib_date": "2020-09-14-2300-0001", 
                 "relvals": [], 
                 "release_queue": "CMSSW_11_2_ASAN_X", 
                 "release_name": "CMSSW_11_2_X", 
+                "comp_baseline": "not-found", 
+                "gpu_utests": [], 
+                "material_budget_comparison": "not-found", 
+                "merged_prs": [], 
+                "fwlite": [], 
+                "invalid_includes": [], 
+                "builds": [], 
+                "material_budget_v2": "not-found", 
+                "static_checks_v2": "not-found", 
+                "valgrind": "not-found", 
+                "material_budget": "not-found", 
+                "dupDict": [], 
+                "static_checks_failures": "not-found", 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "inProgress": false, 
+                "addons": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "comp_baseline_state": "errors", 
+                "python3_tests": [], 
+                "tests_archs": [], 
+                "cmsdist_merged_prs": {}, 
+                "cmsdist_compared_tags": {}, 
+                "cmsdistTags": {
+                    "slc7_amd64_gcc820": "IB/CMSSW_11_2_ASAN_X_2020-09-14-2300/slc7_amd64_gcc820"
+                }, 
+                "next_ib": false, 
+                "RVExceptions": null, 
+                "igprof": "not-found", 
+                "profiling": "not-found", 
+                "base_branch": "CMSSW_11_2_X", 
+                "compared_tags": "CMSSW_11_2_ASAN_X_2020-09-11-2300-->CMSSW_11_2_ASAN_X_2020-09-14-2300", 
+                "dqm_tests": "inprogress", 
+                "utests": [], 
+                "ib_date": "2020-09-14-2300-0000", 
+                "relvals": [], 
+                "release_queue": "CMSSW_11_2_ASAN_X", 
+                "release_name": "CMSSW_11_2_ASAN_X_2020-09-14-2300", 
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
@@ -17807,7 +17865,7 @@
                 "dupDict": [], 
                 "static_checks_failures": "not-found", 
                 "static_checks": "not-found", 
-                "isIB": false, 
+                "isIB": true, 
                 "inProgress": false, 
                 "addons": [], 
                 "hlt_tests": "not-found"
@@ -18485,13 +18543,53 @@
                 "igprof": "not-found", 
                 "profiling": "not-found", 
                 "base_branch": "CMSSW_11_2_CLANG_X", 
-                "compared_tags": "CMSSW_11_2_CLANG_X_2020-09-13-2300-->CMSSW_11_2_CLANG_X", 
+                "compared_tags": "CMSSW_11_2_CLANG_X_2020-09-14-2300-->CMSSW_11_2_CLANG_X", 
                 "dqm_tests": "inprogress", 
                 "utests": [], 
-                "ib_date": "2020-09-13-2300-0001", 
+                "ib_date": "2020-09-14-2300-0001", 
                 "relvals": [], 
                 "release_queue": "CMSSW_11_2_CLANG_X", 
                 "release_name": "CMSSW_11_2_CLANG_X", 
+                "comp_baseline": "not-found", 
+                "gpu_utests": [], 
+                "material_budget_comparison": "not-found", 
+                "merged_prs": [], 
+                "fwlite": [], 
+                "invalid_includes": [], 
+                "builds": [], 
+                "material_budget_v2": "not-found", 
+                "static_checks_v2": "not-found", 
+                "valgrind": "not-found", 
+                "material_budget": "not-found", 
+                "dupDict": [], 
+                "static_checks_failures": "not-found", 
+                "static_checks": "not-found", 
+                "isIB": false, 
+                "inProgress": false, 
+                "addons": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "comp_baseline_state": "errors", 
+                "python3_tests": [], 
+                "tests_archs": [], 
+                "cmsdist_merged_prs": {}, 
+                "cmsdist_compared_tags": {}, 
+                "cmsdistTags": {
+                    "slc7_amd64_gcc820": "IB/CMSSW_11_2_CLANG_X_2020-09-14-2300/slc7_amd64_gcc820"
+                }, 
+                "next_ib": false, 
+                "RVExceptions": null, 
+                "igprof": "not-found", 
+                "profiling": "not-found", 
+                "base_branch": "CMSSW_11_2_CLANG_X", 
+                "compared_tags": "CMSSW_11_2_CLANG_X_2020-09-13-2300-->CMSSW_11_2_CLANG_X_2020-09-14-2300", 
+                "dqm_tests": "inprogress", 
+                "utests": [], 
+                "ib_date": "2020-09-14-2300-0000", 
+                "relvals": [], 
+                "release_queue": "CMSSW_11_2_CLANG_X", 
+                "release_name": "CMSSW_11_2_CLANG_X_2020-09-14-2300", 
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
@@ -18606,7 +18704,7 @@
                 "dupDict": [], 
                 "static_checks_failures": "not-found", 
                 "static_checks": "not-found", 
-                "isIB": false, 
+                "isIB": true, 
                 "inProgress": false, 
                 "addons": [], 
                 "hlt_tests": "not-found"
@@ -20981,7 +21079,14 @@
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "inProgress": false, 
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc7_amd64_gcc820", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc820/www/mon/11.2.DEVEL-mon-23/CMSSW_11_2_DEVEL_X_2020-09-14-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }, 
             {
@@ -24190,10 +24295,10 @@
                 "igprof": "not-found", 
                 "profiling": "not-found", 
                 "base_branch": "CMSSW_11_2_Patatrack_X", 
-                "compared_tags": "CMSSW_11_2_Patatrack_X_2020-09-14-1100-->CMSSW_11_2_Patatrack_X", 
+                "compared_tags": "CMSSW_11_2_Patatrack_X_2020-09-14-2300-->CMSSW_11_2_Patatrack_X", 
                 "dqm_tests": "inprogress", 
                 "utests": [], 
-                "ib_date": "2020-09-14-1100-0001", 
+                "ib_date": "2020-09-14-2300-0001", 
                 "relvals": [], 
                 "release_queue": "CMSSW_11_2_Patatrack_X", 
                 "release_name": "CMSSW_11_2_Patatrack_X", 
@@ -24214,6 +24319,53 @@
                 "isIB": false, 
                 "inProgress": false, 
                 "addons": [], 
+                "hlt_tests": "not-found"
+            }, 
+            {
+                "comp_baseline_state": "errors", 
+                "python3_tests": [], 
+                "tests_archs": [], 
+                "cmsdist_merged_prs": {}, 
+                "cmsdist_compared_tags": {}, 
+                "cmsdistTags": {
+                    "slc7_amd64_gcc820": "ERR/CMSSW_11_2_Patatrack_X_2020-09-14-2300/slc7_amd64_gcc820"
+                }, 
+                "next_ib": false, 
+                "RVExceptions": null, 
+                "igprof": "not-found", 
+                "profiling": "not-found", 
+                "base_branch": "CMSSW_11_2_Patatrack_X", 
+                "compared_tags": "CMSSW_11_2_Patatrack_X_2020-09-14-1100-->CMSSW_11_2_Patatrack_X_2020-09-14-2300", 
+                "dqm_tests": "inprogress", 
+                "utests": [], 
+                "ib_date": "2020-09-14-2300-0000", 
+                "relvals": [], 
+                "release_queue": "CMSSW_11_2_Patatrack_X", 
+                "release_name": "CMSSW_11_2_Patatrack_X_2020-09-14-2300", 
+                "comp_baseline": "not-found", 
+                "gpu_utests": [], 
+                "material_budget_comparison": "not-found", 
+                "merged_prs": [], 
+                "fwlite": [], 
+                "invalid_includes": [], 
+                "builds": [], 
+                "material_budget_v2": "not-found", 
+                "static_checks_v2": "not-found", 
+                "valgrind": "not-found", 
+                "material_budget": "not-found", 
+                "dupDict": [], 
+                "static_checks_failures": "not-found", 
+                "static_checks": "not-found", 
+                "isIB": true, 
+                "inProgress": false, 
+                "addons": [
+                    {
+                        "arch": "slc7_amd64_gcc820", 
+                        "passed": false, 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc820/www/mon/11.2.Patatrack-mon-23/CMSSW_11_2_Patatrack_X_2020-09-14-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "hlt_tests": "not-found"
             }, 
             {
@@ -25487,20 +25639,10 @@
                     "slc7_amd64_gcc820"
                 ], 
                 "cmsdist_merged_prs": {
-                    "slc7_amd64_gcc820": [
-                        {
-                            "hash": "d90a717a737efeb460ed68c883cea30238c65c2e", 
-                            "title": "Updated root to tip of branch v6-22-00-patches", 
-                            "url": "https://github.com/cms-sw/cmsdist/pull/6217", 
-                            "number": "6217", 
-                            "is_merge_commit": false, 
-                            "from_merge_commit": false, 
-                            "author_login": "mrodozov"
-                        }
-                    ]
+                    "slc7_amd64_gcc820": []
                 }, 
                 "cmsdist_compared_tags": {
-                    "slc7_amd64_gcc820": "IB/CMSSW_11_2_ROOT622_X_2020-09-07-2300/slc7_amd64_gcc820..IB/CMSSW_11_2_ROOT622_X_2020-09-09-2300/slc7_amd64_gcc820"
+                    "slc7_amd64_gcc820": "Not Found..IB/CMSSW_11_2_ROOT622_X_2020-09-09-2300/slc7_amd64_gcc820"
                 }, 
                 "cmsdistTags": {
                     "slc7_amd64_gcc820": "IB/CMSSW_11_2_ROOT622_X_2020-09-09-2300/slc7_amd64_gcc820"
@@ -25787,10 +25929,10 @@
                     "slc7_amd64_gcc820": []
                 }, 
                 "cmsdist_compared_tags": {
-                    "slc7_amd64_gcc820": "IB/CMSSW_11_2_ROOT622_X_2020-09-07-2300/slc7_amd64_gcc820..IB/CMSSW_11_2_ROOT622_X_2020-09-07-2300/slc7_amd64_gcc820"
+                    "slc7_amd64_gcc820": "Not Found..Not Found"
                 }, 
                 "cmsdistTags": {
-                    "slc7_amd64_gcc820": "IB/CMSSW_11_2_ROOT622_X_2020-09-07-2300/slc7_amd64_gcc820"
+                    "slc7_amd64_gcc820": "Not Found"
                 }, 
                 "next_ib": false, 
                 "RVExceptions": null, 
@@ -25950,15 +26092,9 @@
             {
                 "comp_baseline_state": "errors", 
                 "python3_tests": [], 
-                "tests_archs": [
-                    "slc7_amd64_gcc820"
-                ], 
-                "cmsdist_merged_prs": {
-                    "slc7_amd64_gcc820": []
-                }, 
-                "cmsdist_compared_tags": {
-                    "slc7_amd64_gcc820": "IB/CMSSW_11_2_ROOT622_X_2020-09-07-2300/slc7_amd64_gcc820..IB/CMSSW_11_2_ROOT622_X_2020-09-07-2300/slc7_amd64_gcc820"
-                }, 
+                "tests_archs": [], 
+                "cmsdist_merged_prs": {}, 
+                "cmsdist_compared_tags": {}, 
                 "cmsdistTags": {
                     "slc7_amd64_gcc820": "IB/CMSSW_11_2_ROOT622_X_2020-09-07-2300/slc7_amd64_gcc820"
                 }, 
@@ -25969,30 +26105,9 @@
                 "base_branch": "CMSSW_11_2_X", 
                 "compared_tags": "CMSSW_11_2_ROOT622_X_2020-09-06-2300-->CMSSW_11_2_ROOT622_X_2020-09-07-2300", 
                 "dqm_tests": "inprogress", 
-                "utests": [
-                    {
-                        "arch": "slc7_amd64_gcc820", 
-                        "passed": "failed", 
-                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc820/www/mon/11.2.ROOT622-mon-23/CMSSW_11_2_ROOT622_X_2020-09-07-2300/unitTests-summary.log", 
-                        "details": {
-                            "num_fails": "1"
-                        }
-                    }
-                ], 
+                "utests": [], 
                 "ib_date": "2020-09-07-2300-0000", 
-                "relvals": [
-                    {
-                        "done": true, 
-                        "arch": "slc7_amd64_gcc820", 
-                        "passed": true, 
-                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc820/www/mon/11.2.ROOT622-mon-23/CMSSW_11_2_ROOT622_X_2020-09-07-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                        "details": {
-                            "num_passed": 3369, 
-                            "known_failed": 0, 
-                            "num_failed": 0
-                        }
-                    }
-                ], 
+                "relvals": [], 
                 "release_queue": "CMSSW_11_2_ROOT622_X", 
                 "release_name": "CMSSW_11_2_ROOT622_X_2020-09-07-2300", 
                 "comp_baseline": "not-found", 
@@ -26065,38 +26180,17 @@
                 ], 
                 "fwlite": [], 
                 "invalid_includes": [], 
-                "builds": [
-                    {
-                        "arch": "slc7_amd64_gcc820", 
-                        "passed": "passed", 
-                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc820/www/mon/11.2.ROOT622-mon-23/CMSSW_11_2_ROOT622_X_2020-09-07-2300/new/logAnalysis.pkl", 
-                        "details": {
-                            "ignoreWarning": 4
-                        }
-                    }
-                ], 
+                "builds": [], 
                 "material_budget_v2": "not-found", 
                 "static_checks_v2": "not-found", 
                 "valgrind": "not-found", 
                 "material_budget": "not-found", 
-                "dupDict": [
-                    {
-                        "arch": "slc7_amd64_gcc820", 
-                        "passed": "passed"
-                    }
-                ], 
+                "dupDict": [], 
                 "static_checks_failures": "not-found", 
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "inProgress": false, 
-                "addons": [
-                    {
-                        "arch": "slc7_amd64_gcc820", 
-                        "passed": true, 
-                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc820/www/mon/11.2.ROOT622-mon-23/CMSSW_11_2_ROOT622_X_2020-09-07-2300/addOnTests.log", 
-                        "details": {}
-                    }
-                ], 
+                "addons": [], 
                 "hlt_tests": "not-found"
             }, 
             {
@@ -29336,26 +29430,7 @@
                             "author_login": "cms-sw"
                         }
                     ], 
-                    "slc7_aarch64_gcc820": [
-                        {
-                            "hash": "3b35cd1e1526b78922d42bda3cf48c93ef4edebd", 
-                            "title": "Updated root to tip of branch v6-20-00-patches", 
-                            "url": "https://github.com/cms-sw/cmsdist/pull/6235", 
-                            "number": "6235", 
-                            "is_merge_commit": false, 
-                            "from_merge_commit": false, 
-                            "author_login": "mrodozov"
-                        }, 
-                        {
-                            "hash": "334e42636a7a48b28fc967b84f9f9dc023cea5e5", 
-                            "title": "Update tag for L1Trigger-CSCTriggerPrimitives to V00-02-00", 
-                            "url": "https://github.com/cms-sw/cmsdist/pull/6237", 
-                            "number": "6237", 
-                            "is_merge_commit": false, 
-                            "from_merge_commit": false, 
-                            "author_login": "cms-sw"
-                        }
-                    ], 
+                    "slc7_aarch64_gcc820": [], 
                     "slc7_amd64_gcc10": [
                         {
                             "hash": "3b35cd1e1526b78922d42bda3cf48c93ef4edebd", 
@@ -29431,7 +29506,7 @@
                     "cc8_aarch64_gcc8": "IB/CMSSW_11_2_X_2020-09-09-2300/cc8_aarch64_gcc8..IB/CMSSW_11_2_X/cc8", 
                     "slc7_ppc64le_gcc820": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_ppc64le_gcc820..IB/CMSSW_11_2_X/master", 
                     "slc7_amd64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_amd64_gcc820..IB/CMSSW_11_2_X/master", 
-                    "slc7_aarch64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_aarch64_gcc820..IB/CMSSW_11_2_X/master", 
+                    "slc7_aarch64_gcc820": "IB/CMSSW_11_2_X_2020-09-14-2300/slc7_aarch64_gcc820..IB/CMSSW_11_2_X/master", 
                     "slc7_amd64_gcc10": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_amd64_gcc10..IB/CMSSW_11_2_X/gcc10", 
                     "slc7_amd64_gcc900": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_amd64_gcc900..IB/CMSSW_11_2_X/gcc9", 
                     "cc8_ppc64le_gcc8": "IB/CMSSW_11_2_X_2020-09-09-2300/cc8_ppc64le_gcc8..IB/CMSSW_11_2_X/cc8"
@@ -29476,9 +29551,34 @@
             {
                 "comp_baseline_state": "ok", 
                 "python3_tests": [], 
-                "tests_archs": [], 
-                "cmsdist_merged_prs": {}, 
-                "cmsdist_compared_tags": {}, 
+                "tests_archs": [
+                    "slc7_aarch64_gcc820"
+                ], 
+                "cmsdist_merged_prs": {
+                    "slc7_aarch64_gcc820": [
+                        {
+                            "hash": "3b35cd1e1526b78922d42bda3cf48c93ef4edebd", 
+                            "title": "Updated root to tip of branch v6-20-00-patches", 
+                            "url": "https://github.com/cms-sw/cmsdist/pull/6235", 
+                            "number": "6235", 
+                            "is_merge_commit": false, 
+                            "from_merge_commit": false, 
+                            "author_login": "mrodozov"
+                        }, 
+                        {
+                            "hash": "334e42636a7a48b28fc967b84f9f9dc023cea5e5", 
+                            "title": "Update tag for L1Trigger-CSCTriggerPrimitives to V00-02-00", 
+                            "url": "https://github.com/cms-sw/cmsdist/pull/6237", 
+                            "number": "6237", 
+                            "is_merge_commit": false, 
+                            "from_merge_commit": false, 
+                            "author_login": "cms-sw"
+                        }
+                    ]
+                }, 
+                "cmsdist_compared_tags": {
+                    "slc7_aarch64_gcc820": "IB/CMSSW_11_2_X_2020-09-13-2300/slc7_aarch64_gcc820..IB/CMSSW_11_2_X_2020-09-14-2300/slc7_aarch64_gcc820"
+                }, 
                 "static_checks_failures": "not-found", 
                 "cmsdistTags": {
                     "cc8_amd64_gcc8": "IB/CMSSW_11_2_X_2020-09-14-2300/cc8_amd64_gcc8", 
@@ -29502,7 +29602,19 @@
                 "dqm_tests": "inprogress", 
                 "utests": [], 
                 "ib_date": "2020-09-14-2300-0000", 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "done": false, 
+                        "arch": "slc7_aarch64_gcc820", 
+                        "passed": false, 
+                        "file": "/data/sdt/buildlogs/slc7_aarch64_gcc820/www/mon/11.2-mon-23/CMSSW_11_2_X_2020-09-14-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 25, 
+                            "known_failed": 0, 
+                            "num_failed": 4
+                        }
+                    }
+                ], 
                 "release_queue": "CMSSW_11_2_X", 
                 "release_name": "CMSSW_11_2_X_2020-09-14-2300", 
                 "comp_baseline": "inprogress", 
@@ -29606,12 +29718,36 @@
                 "static_checks_v2": "inprogress", 
                 "valgrind": "not-found", 
                 "material_budget": "not-found", 
-                "dupDict": [], 
+                "dupDict": [
+                    {
+                        "arch": "slc7_aarch64_gcc820", 
+                        "passed": "passed"
+                    }
+                ], 
                 "lizard": "inprogress", 
                 "static_checks": "inprogress", 
                 "isIB": true, 
                 "inProgress": false, 
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc7_amd64_gcc10", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc10/www/mon/11.2-mon-23/CMSSW_11_2_X_2020-09-14-2300/addOnTests.log", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc7_aarch64_gcc820", 
+                        "passed": false, 
+                        "file": "/data/sdt/buildlogs/slc7_aarch64_gcc820/www/mon/11.2-mon-23/CMSSW_11_2_X_2020-09-14-2300/addOnTests.log", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc7_amd64_gcc900", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc900/www/mon/11.2-mon-23/CMSSW_11_2_X_2020-09-14-2300/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "hlt_tests": "inprogress"
             }, 
             {
