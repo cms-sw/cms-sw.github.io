@@ -161,7 +161,20 @@
             ], 
             "base_branch": "CMSSW_10_6_X", 
             "invalid_includes": [], 
-            "builds": [], 
+            "builds": [
+                {
+                    "arch": "slc7_amd64_gcc820", 
+                    "passed": "passed", 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc820/www/mon/10.6-mon-23/CMSSW_10_6_X_2020-09-14-2300/new/logAnalysis.pkl", 
+                    "details": {}
+                }, 
+                {
+                    "arch": "slc7_amd64_gcc700", 
+                    "passed": "passed", 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc700/www/mon/10.6-mon-23/CMSSW_10_6_X_2020-09-14-2300/new/logAnalysis.pkl", 
+                    "details": {}
+                }
+            ], 
             "material_budget_v2": "not-found", 
             "addons": [
                 {
@@ -280,7 +293,14 @@
             "merged_prs": [], 
             "base_branch": "CMSSW_10_6_X", 
             "invalid_includes": [], 
-            "builds": [], 
+            "builds": [
+                {
+                    "arch": "slc7_amd64_gcc700", 
+                    "passed": "passed", 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc700/www/mon/10.6-mon-11/CMSSW_10_6_X_2020-09-14-1100/new/logAnalysis.pkl", 
+                    "details": {}
+                }
+            ], 
             "material_budget_v2": "not-found", 
             "addons": [
                 {
@@ -1958,7 +1978,7 @@
             "RVExceptions": null, 
             "fwlite": [], 
             "profiling": "not-found", 
-            "compared_tags": "CMSSW_10_6_16-->CMSSW_10_6_X_2020-09-06-0000", 
+            "compared_tags": "CMSSW_10_6_15-->CMSSW_10_6_X_2020-09-06-0000", 
             "dqm_tests": "found", 
             "utests": [], 
             "ib_date": "2020-09-06-0000-0000", 
@@ -1988,6 +2008,15 @@
                     "author_login": "intrepid42"
                 }, 
                 {
+                    "hash": "454bf920d11dffdf968620905715e30e82bbf4d3", 
+                    "title": "Move \"wmsplit\" dict build to a static method, remove circular import (backport to 10_6_X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/31138", 
+                    "number": "31138", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "justinasr"
+                }, 
+                {
                     "hash": "9ffa4d27455306fa5d0b57a7ef1919c19ffc9a69", 
                     "title": "Switch to UL jet ID in NanoAOD [10_6_X]", 
                     "url": "https://github.com/cms-sw/cmssw/pull/31126", 
@@ -1995,6 +2024,24 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "ahinzmann"
+                }, 
+                {
+                    "hash": "1378e74adf5e5f02ee34b0024b0f3616676a1744", 
+                    "title": "NanoAODv7 code updates [106X]", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/31063", 
+                    "number": "31063", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cms-nanoAOD"
+                }, 
+                {
+                    "hash": "716592b7a242be68c670c0c164ff76f65e73800b", 
+                    "title": "Backport of #30674 (Major updates for Custom JME NanoAODs) to 10_6_X", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/31124", 
+                    "number": "31124", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "nurfikri89"
                 }, 
                 {
                     "hash": "2703a466183ce58e1bd674982c7173f97d75a042", 
@@ -2013,6 +2060,24 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "hqucms"
+                }, 
+                {
+                    "hash": "dc54bdf3c0947b32bb6df0973c1444be71d53fb2", 
+                    "title": "[10_6_X] Use ONNXRuntime for ParticleNet and update the training for UL", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/31037", 
+                    "number": "31037", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "hqucms"
+                }, 
+                {
+                    "hash": "557f20e8684a9ccbf13b70e26882885bc3928e40", 
+                    "title": "Fix to enable hpsPFTauDiscriminationByDeadECALElectronRejection in run2 reminiAODs (10_6_X)", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/31044", 
+                    "number": "31044", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "cms-tau-pog"
                 }, 
                 {
                     "hash": "e4dec9a22c73828ad8f97b7e4716377f98932305", 
@@ -2069,92 +2134,6 @@
             "inProgress": false, 
             "igprof": "inprogress", 
             "hlt_tests": "found"
-        }, 
-        {
-            "comp_baseline_state": "ok", 
-            "python3_tests": [], 
-            "tests_archs": [], 
-            "cmsdist_merged_prs": {}, 
-            "cmsdist_compared_tags": {}, 
-            "static_checks_failures": "not-found", 
-            "cmsdistTags": {}, 
-            "flawfinder": "inprogress", 
-            "next_ib": false, 
-            "RVExceptions": null, 
-            "fwlite": [], 
-            "profiling": "not-found", 
-            "compared_tags": "CMSSW_10_6_15-->CMSSW_10_6_16", 
-            "dqm_tests": "inprogress", 
-            "utests": [], 
-            "ib_date": "0003-CMSSW_10_6_16", 
-            "relvals": [], 
-            "release_queue": "CMSSW_10_6_X", 
-            "release_name": "CMSSW_10_6_16", 
-            "comp_baseline": "inprogress", 
-            "gpu_utests": [], 
-            "material_budget_comparison": "not-found", 
-            "merged_prs": [
-                {
-                    "hash": "716592b7a242be68c670c0c164ff76f65e73800b", 
-                    "title": "Backport of #30674 (Major updates for Custom JME NanoAODs) to 10_6_X", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/31124", 
-                    "number": "31124", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "nurfikri89"
-                }, 
-                {
-                    "hash": "dc54bdf3c0947b32bb6df0973c1444be71d53fb2", 
-                    "title": "[10_6_X] Use ONNXRuntime for ParticleNet and update the training for UL", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/31037", 
-                    "number": "31037", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "hqucms"
-                }, 
-                {
-                    "hash": "1378e74adf5e5f02ee34b0024b0f3616676a1744", 
-                    "title": "NanoAODv7 code updates [106X]", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/31063", 
-                    "number": "31063", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "cms-nanoAOD"
-                }, 
-                {
-                    "hash": "454bf920d11dffdf968620905715e30e82bbf4d3", 
-                    "title": "Move \"wmsplit\" dict build to a static method, remove circular import (backport to 10_6_X)", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/31138", 
-                    "number": "31138", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "justinasr"
-                }, 
-                {
-                    "hash": "557f20e8684a9ccbf13b70e26882885bc3928e40", 
-                    "title": "Fix to enable hpsPFTauDiscriminationByDeadECALElectronRejection in run2 reminiAODs (10_6_X)", 
-                    "url": "https://github.com/cms-sw/cmssw/pull/31044", 
-                    "number": "31044", 
-                    "is_merge_commit": false, 
-                    "from_merge_commit": false, 
-                    "author_login": "cms-tau-pog"
-                }
-            ], 
-            "base_branch": "CMSSW_10_6_X", 
-            "invalid_includes": [], 
-            "builds": [], 
-            "material_budget_v2": "not-found", 
-            "addons": [], 
-            "static_checks_v2": "inprogress", 
-            "valgrind": "inprogress", 
-            "material_budget": "not-found", 
-            "dupDict": [], 
-            "lizard": "inprogress", 
-            "static_checks": "inprogress", 
-            "isIB": false, 
-            "inProgress": false, 
-            "igprof": "inprogress", 
-            "hlt_tests": "inprogress"
         }, 
         {
             "comp_baseline_state": "ok", 
