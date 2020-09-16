@@ -17,6 +17,7 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```ignore none```**: Do not ignore any tests results.
 - **Enable extra PR tests**: L1/L2/Release managers can issue this command or use test parameters to enable some exra PR tests e.g.
   - **```enable gpu```**: To run extra GPU tests
+  - **```enable profiling```**: To run Igprof and generate resource graphs
   - **```enable none```**: To disable all extra tests
 - **Allowing a user to trigger tests**: L1/L2/Release managers can issue this command to give test triggering rights to a user for a specific pull request
   - **```allow @username test rights```: Allows github user `username` to start the tests by using one of the `please test` commands.
