@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-
+from os import unlink
 from os.path import exists, basename
 from commands import getstatusoutput
 from argparse import ArgumentParser
@@ -11,14 +11,10 @@ DATA_DIR='data'
 # the IB date must be in the same format as in the IBs
 #
 def clean_up_results(earliest_date ):
-  
-  if not exists(DATA_DIR):
-    print( 'Directory not found: ' + DATA_DIR)
-    return
   dexp = '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]'
   e, o = getstatusoutput("find %s -name '%s' -o -name '*%s*'" % (DATA_DIR, dexp, dexp))
   if e:
-    print o
+    print (o)
     return
   for cdir in o.split("\n"):
     m = match("^(.+|)(%s)(.+|)$" % dexp,basename(cdir))
@@ -33,6 +29,28 @@ def clean_up_results(earliest_date ):
       print("Keeping %s" % cdir)
   return
 
+def cleanup_commands():
+  e, o = getstatusoutput("find %s/commands -name '*.json' | xargs cat | sed 's|.*: \"||;s|\".*||' | grep '^[0-9a-f]' | sort | uniq" %  DATA_DIR)
+  if e:
+    print (o)
+    return
+  active_cmds = [i for i in o.split("\n")]
+  print ("Active cmds: %s" % len(active_cmds))
+  e , o = getstatusoutput("find %s/commands/objs -type f | sed 's|.*/objs/||'" % DATA_DIR)
+  if e:
+    print (o)
+    return
+  for f in o.split("\n"):
+    i = f.replace("/","")
+    if i not in active_cmds:
+      cfile = "%s/commands/objs/%s" % (DATA_DIR, f)
+      if args.dryRun:
+        print("Not deleting (dry-run): %s" % cfile)
+      else:
+        print("Deleting unused command: %s" % cfile)
+        unlink(cfile)
+  return
+
 #-----------------------------------------------------------------------------------
 #---- Start
 #-----------------------------------------------------------------------------------
@@ -45,5 +63,6 @@ if __name__ == "__main__":
                                                     , required=True)
   parser.add_argument("-n", "--dry-run", dest="dryRun", help="Don't actually delete anything", action="store_true", default=False)
   args = parser.parse_args()
-
-  clean_up_results(args.date)
+  if exists(DATA_DIR):
+    clean_up_results(args.date)
+    cleanup_commands()
