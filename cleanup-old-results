@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 
-from os.path import basename, exists
+from os.path import exists, basename
 from commands import getstatusoutput
 from argparse import ArgumentParser
-
+from re import match
 DATA_DIR='data'
 
 #
@@ -15,19 +15,22 @@ def clean_up_results(earliest_date ):
   if not exists(DATA_DIR):
     print( 'Directory not found: ' + DATA_DIR)
     return
-
-  e, o = getstatusoutput("find %s -name '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]' -type d" % DATA_DIR)
+  dexp = '20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]'
+  e, o = getstatusoutput("find %s -name '%s' -o -name '*%s*'" % (DATA_DIR, dexp, dexp))
   if e:
     print o
     return
   for cdir in o.split("\n"):
-    current_date = basename(cdir)
+    m = match("^(.+|)(%s)(.+|)$" % dexp,basename(cdir))
+    current_date = m.group(2)
     if current_date < earliest_date:
       if args.dryRun:
         print( 'Not deleting (dry-run): %s' % cdir )
       else:
         print( 'Deleting: %s because it was too old' % cdir )
         getstatusoutput("rm -rf %s" % cdir)
+    else:
+      print("Keeping %s" % cdir)
   return
 
 #-----------------------------------------------------------------------------------
