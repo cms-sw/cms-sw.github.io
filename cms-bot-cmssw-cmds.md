@@ -41,6 +41,8 @@ test parameters:
 [  - ]full(_cmssw|) = true|false
 [  - ]container = cmssw/cc7:amd64-dYYYYMMDD
 [  - ](cms-|)addpkg = <cmssw_package>[,<cmssw_package>[,...]]
+[  - ]code_checks_tools = cms.week[01].PR_[0-9a-f]{8}/<tool-conf-version>
+[  - ]relvals_options = <runTheMatrix-extra-options>
 ```
 - **```[@cmsbuild,] please abort[ test]```**: Those who can request the test can ask to abort a running/on going test.
 - **```[@cmsbuild,] please close```**: L1/L2/Release managers can issue this command to close a pull requests.
