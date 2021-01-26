@@ -16,7 +16,7 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```ignore build-warnings```**: To ignore build warnings results
   - **```ignore none```**: Do not ignore any tests results.
 - **Enable extra PR tests**: L1/L2/Release managers can issue this command or use test parameters to enable some exra PR tests e.g.
-  - **```enable gpu```**: To run extra GPU tests
+  - **```enable gpu,threading,profiling```**: To run extra GPU, threading relval and profiling tests
   - **```enable profiling```**: To run Igprof and generate resource graphs
   - **```enable none```**: To disable all extra tests
 - **Allowing a user to trigger tests**: L1/L2/Release managers can issue this command to give test triggering rights to a user for a specific pull request
@@ -36,12 +36,12 @@ test parameters:
 [  - ]workflow(s|) = <workflow>[,<workflow>[,...]]
 [  - ]pull_request(s|) = (repository|)#PR[,(repository|)#PR[,...]]
 [  - ]release = release_cycle|architecture|release_cycle/architecture
-[  - ]enable_test(s|) = gpu|none
+[  - ]enable_test(s|) = none,gpu,threading,profiling
 [  - ]ignore_test(s|) = build-warnings|build-warnings|none
 [  - ]full(_cmssw|) = true|false
 [  - ]container = cmssw/cc7:amd64-dYYYYMMDD
 [  - ](cms-|)addpkg = <cmssw_package>[,<cmssw_package>[,...]]
-[  - ]relvals_options = <runTheMatrix-extra-options>
+[  - ]relvals_opt(ion|)(s|)(_input|_threading|_gpu|) = <runTheMatrix-extra-options for normal relval or special input/threading/gpu jobs>
 ```
 - **```[@cmsbuild,] please abort[ test]```**: Those who can request the test can ask to abort a running/on going test.
 - **```[@cmsbuild,] please close```**: L1/L2/Release managers can issue this command to close a pull requests.
