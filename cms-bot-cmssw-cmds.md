@@ -31,7 +31,7 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```[@cmsbuild,] please test for slc7_amd64_gcc820```**: Run tests using slc7_amd64_gcc900 SCRAM_ARCH IBs.
   - **```[@cmsbuild,] please test workflow <workflow>[,<workflow>[...]] with (repository|)#PR[,(repository|)#PR[,...]] for CMSSW_11_0_ROOT6_X```**: Run tests with extra workflows, cmssw PRs and cmsdist PR using CMSSW_11_0_ROOT6_X IBs.
 - **PR testing parameters**: Users who can trigger PR tests can also provide extra test parameters by commenting on the pull request. Comment should have the following format
-```
+**```
 test parameters:
 [  - ]workflow(s|) = <workflow>[,<workflow>[,...]]
 [  - ]pull_request(s|) = (repository|)#PR[,(repository|)#PR[,...]]
@@ -42,7 +42,7 @@ test parameters:
 [  - ]container = cmssw/cc7:amd64-dYYYYMMDD
 [  - ](cms-|)addpkg = <cmssw_package>[,<cmssw_package>[,...]]
 [  - ]relvals_opt(ion|)(s|)(_input|_threading|_gpu|) = <runTheMatrix-extra-options for normal relval or special input/threading/gpu jobs>
-```
+```**
 - **```[@cmsbuild,] please abort[ test]```**: Those who can request the test can ask to abort a running/on going test.
 - **```[@cmsbuild,] please close```**: L1/L2/Release managers can issue this command to close a pull requests.
 - **```release-note[s]: <multi line message>```**
