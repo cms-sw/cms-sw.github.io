@@ -20,8 +20,8 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```enable profiling```**: To run Igprof and generate resource graphs
   - **```enable none```**: To disable all extra tests
 - **Allowing a user to trigger tests**: L1/L2/Release managers can issue this command to give test triggering rights to a user for a specific pull request
-  - **```allow @username test rights```: Allows github user `username` to start the tests by using one of the `please test` commands.
-- **Testing PR**: L1/L2 and developers listed <a href="https://github.com/cms-sw/cms-bot/blob/master/categories.py#L14">here</a> to start jenkins tests using ```[@cmsbuild,] please test [workflow <workflow>[,<workflow>[...]]] with (repository|)#PR[,(repository|)#PR[,...]] [for [CMSSW_QUEUE|SCRAM_ARCH][CMSSW_QUEUE/SCRAM_ARCH]]]```. Note that test parameters e.g workflows to test, extra pull requests to use etc. could also be provided via `test parameters` command. Any extra test parameter provided here will override default `test parameters`
+  - **```allow @username test rights```**: Allows github user **`username`** to start the tests by using one of the **`please test`** commands.
+- **Testing PR**: L1/L2 and developers listed <a href="https://github.com/cms-sw/cms-bot/blob/master/categories.py#L14">here</a> to start jenkins tests using **```[@cmsbuild,] please test [workflow <workflow>[,<workflow>[...]]] with (repository|)#PR[,(repository|)#PR[,...]] [for [CMSSW_QUEUE|SCRAM_ARCH][CMSSW_QUEUE/SCRAM_ARCH]]]```**. Note that test parameters e.g workflows to test, extra pull requests to use etc. could also be provided via **`test parameters`** command. Any extra test parameter provided here will override default **`test parameters`**
   - **```[@cmsbuild,] please test```**: To start tests
   - **```[@cmsbuild,] please test with (repository|)#PR[,(repository|)#PR[,...]]```**: Run tests with extra PRs
   - **```[@cmsbuild,] please test workflow <workflow>[,<workflow>[...]]```**: Run tests with extra runTheMatrix workflows
