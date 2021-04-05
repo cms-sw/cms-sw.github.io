@@ -7,13 +7,13 @@ This document describes the design, naming, coding, and style rules and recommen
 
 
 ## Outline
-#### [1 -- Introduction](#1----introduction-1)
-#### [2 -- Naming Rules](#2----naming-rules-1)
-#### [3 -- Style Rules](#3----style-rules-1)
-#### [4 -- Technical Coding Rules](#4----technical-coding-rules-1)
-#### [5 -- Documentation Rules](#5----documentation-rules-1)
-#### [6 -- Packaging Rules](#6----packaging-rules-1)
-#### [7 -- Design and Coding Guidelines](#7----design-and-coding-guidelines-1)
+#### [1 -- Introduction](#1--introduction-1)
+#### [2 -- Naming Rules](#2--naming-rules-1)
+#### [3 -- Style Rules](#3--style-rules-1)
+#### [4 -- Technical Coding Rules](#4--technical-coding-rules-1)
+#### [5 -- Documentation Rules](#5--documentation-rules-1)
+#### [6 -- Packaging Rules](#6--packaging-rules-1)
+#### [7 -- Design and Coding Guidelines](#7--design-and-coding-guidelines-1)
 
 ## 1 -- Introduction
 This document describes the CMS C++ software naming, coding, style, and documentation rules and recommendations.
