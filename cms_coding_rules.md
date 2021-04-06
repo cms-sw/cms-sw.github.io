@@ -7,13 +7,13 @@ This document describes the design, naming, coding, and style rules and recommen
 
 
 ## Outline
-#### [1 -- Introduction](#1----introduction-1)
-#### [2 -- Naming Rules](#2----naming-rules-1)
-#### [3 -- Style Rules](#3----style-rules-1)
-#### [4 -- Technical Coding Rules](#4----technical-coding-rules-1)
-#### [5 -- Documentation Rules](#5----documentation-rules-1)
-#### [6 -- Packaging Rules](#6----packaging-rules-1)
-#### [7 -- Design and Coding Guidelines](#7----design-and-coding-guidelines-1)
+#### [1 -- Introduction](#1--introduction-1)
+#### [2 -- Naming Rules](#2--naming-rules-1)
+#### [3 -- Style Rules](#3--style-rules-1)
+#### [4 -- Technical Coding Rules](#4--technical-coding-rules-1)
+#### [5 -- Documentation Rules](#5--documentation-rules-1)
+#### [6 -- Packaging Rules](#6--packaging-rules-1)
+#### [7 -- Design and Coding Guidelines](#7--design-and-coding-guidelines-1)
 
 ## 1 -- Introduction
 This document describes the CMS C++ software naming, coding, style, and documentation rules and recommendations.
@@ -130,23 +130,21 @@ If necessary to create a unique name, one can add the directory name:
 23. The `.../scripts` directory is reserved for scripts that need to be available in the PATH. Configuration and data files should go into appropriate directories, like `.../data`.
 
 ## 7 -- Design and Coding Guidelines
-These guidelines are a brief summary of highlights from the [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines) by Bjarne Stroustrup et al. The links for each guideline provide explanations and justifications.
+These guidelines are a brief summary of highlights from the [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) by Bjarne Stroustrup et al. The links for each guideline provide explanations and justifications.
 
-1. Do not use mutable global data ([no globals](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i2-avoid-non-const-global-variables)).
-2. Ensure code is thread-safe. Avoid non-constant shared data, like static variables ([thread safety](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i2-avoid-non-const-global-variables)).
-3. Class data members that store a class invariant should be private ([invariant data members](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c9-minimize-exposure-of-members)).  
-4. A collection of data values that can take any value should be a struct, not a class, and those data members should be public without getters and setters. ([struct not class](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c131-avoid-trivial-getters-and-setters)).
-5. Make `const` all methods, data members, variables, and pointer or reference parameters that do not need to be non-const. Use `constexpr` for all constant values that can be evaluated at compile time ([const](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#con-constants-and-immutability)).
-6. Do not use magic numbers. Deﬁne constants using `enum class` or `constexpr`, never `#deﬁne` ([enums](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#enum1-prefer-enumerations-over-macros)).
-7. For ownership of dynamic memory, don’t use bare pointers but rather smart pointers: `std::unique_ptr, std::shared_ptr`, and `std::weak_ptr` and their constructors `std::make_unique<T>()` and `std::make_shared<T>()` ([smart pointers](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#r3-a-raw-pointer-a-t-is-non-owning)).
-8. Avoid inlining unless you are sure you have a relevant performance problem ([inlining](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f5-if-a-function-is-very-small-and-time-critical-declare-it-inline)).
-9. Use `string` or `string_view`, not `char *` ([string](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#slstr1-use-stdstring-to-own-character-sequences)).
-10. Avoid use of C-style arrays in favor of STL containers ([std::array](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#slcon1-prefer-using-stl-array-or-vector-instead-of-a-c-array)).
+1. Do not use mutable global data ([no globals](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Ri-global)).
+2. Ensure code is thread-safe. Avoid non-constant shared data, like static variables ([thread safety](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Ri-global)).
+3. Class data members that store a class invariant should be private ([invariant data members](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-private)).
+4. A collection of data values that can take any value should be a struct, not a class, and those data members should be public without getters and setters. ([struct not class](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rh-get)).
+5. Make `const` all methods, data members, variables, and pointer or reference parameters that do not need to be non-const. Use `constexpr` for all constant values that can be evaluated at compile time ([const](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-const)).
+6. Do not use magic numbers. Deﬁne constants using `enum class` or `constexpr`, never `#deﬁne` ([enums](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Renum-macro)).
+7. For ownership of dynamic memory, don’t use bare pointers but rather smart pointers: `std::unique_ptr, std::shared_ptr`, and `std::weak_ptr` and their constructors `std::make_unique<T>()` and `std::make_shared<T>()` ([smart pointers](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rr-ptr)).
+8. Avoid inlining unless you are sure you have a relevant performance problem ([inlining](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rf-inline)).
+9. Use `string` or `string_view`, not `char *` ([string](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rstr-string)).
+10. Avoid use of C-style arrays in favor of STL containers ([std::array](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rsl-arrays)).
 11. In general, do not catch exceptions -- leave them to the Framework (see [Exception Guidelines](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEdmExceptionUse#Exception%20Handling)).
-12. Do not use the singleton pattern; use framework services ([no singletons](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#i3-avoid-singletons)).
-13. Encapsulate algorithms and collaborating classes in namespaces ([namespaces](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#c5-place-helper-functions-in-the-same-namespace-as-the-class-they-support)).
-14. Design functions that are short and simple and that perform a single, coherent, logical  task ([logical task](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f2-a-function-should-perform-a-single-logical-operation), [short functions](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f3-keep-functions-short-and-simple)).
-15. Do not duplicate code. If procedural code is needed in two or more places, create a function for the task and call it where needed. ([functions](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f1-package-meaningful-operations-as-carefully-named-functions), [encapsulate](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p11-encapsulate-messy-constructs-rather-than-spreading-through-the-code))
-16. Do not use goto ([no goto](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es76-avoid-goto)).
-
-
+12. Do not use the singleton pattern; use framework services ([no singletons](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Ri-singleton)).
+13. Encapsulate algorithms and collaborating classes in namespaces ([namespaces](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rc-helper)).
+14. Design functions that are short and simple and that perform a single, coherent, logical  task ([logical task](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rf-logical), [short functions](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rf-single)).
+15. Do not duplicate code. If procedural code is needed in two or more places, create a function for the task and call it where needed. ([functions](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rf-package), [encapsulate](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rp-library))
+16. Do not use goto ([no goto](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Res-goto)).
