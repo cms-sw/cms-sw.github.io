@@ -63,8 +63,8 @@ If necessary to create a unique name, one can add the directory name:
 3. Header ﬁles must not contain any implementation except for class templates and code to be inlined.
 4. Do not inline virtual functions. (\*) Allowed exception: inlining is permitted for simple functions like accessors and setters, as long as there is at least one non-inline virtual function in the class.
 5. Do not inline functions which contain control structures which require block scoping.
-6. In your own packages, use forward declarations if they are sufﬁcient.
-7. Do not forward-declare an entity from another package.
+6. Forward declarations are encouraged in headers within a single package, or wider areas under the same maintenance responsibility.
+7. Use headers with forward declarations instead of explicit forward declarions of classes outside of the package or maintenance area.
 8. Do not use absolute directory names or relative ﬁle paths in `#include` directives.
 9. Use `nullptr`, not "0" or "NULL". (\*)
 10. Use types like `int`, `uint32_t`, `size_t`, and `ptrdiff_t` consistently and without mixing them.
