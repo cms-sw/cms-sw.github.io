@@ -42,7 +42,7 @@ Coding rules are meant to prevent serious problems in software function, perform
 14. Do not use "\_" as ﬁrst character, except for user-defined suffixes (used in user-defined literals). Only use it as the last character for class data member names, not local variable names.
 15. Do not use "\_\_".
 16. Use clear and explanatory variable names.
-17. For class/enum/struct/namespace/global scope constants prefix `k` is slightly preferred (this applies to what can be referred to as `TypeName::kConstantName` or `namespaceName::kConstantName`) . (\*)
+17. For class/enum/struct/namespace/global scope constants prefix `k` is preferred for new sets of constants (this applies to what can be referred to as `TypeName::kConstantName` or `namespaceName::kConstantName`) . (\*) Allowed exception: existing sets of constants can continue to use different naming convention,
 
 ## 3 -- Style Rules
 1. Do not indent pre-processor directives -- there should be no leading spaces before a directive.  (\*)
@@ -149,5 +149,4 @@ These guidelines are a brief summary of highlights from the [C++ Core Guidelines
 14. Design functions that are short and simple and that perform a single, coherent, logical  task ([logical task](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f2-a-function-should-perform-a-single-logical-operation), [short functions](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f3-keep-functions-short-and-simple)).
 15. Do not duplicate code. If procedural code is needed in two or more places, create a function for the task and call it where needed. ([functions](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#f1-package-meaningful-operations-as-carefully-named-functions), [encapsulate](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#p11-encapsulate-messy-constructs-rather-than-spreading-through-the-code))
 16. Do not use goto ([no goto](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#es76-avoid-goto)).
-
 
