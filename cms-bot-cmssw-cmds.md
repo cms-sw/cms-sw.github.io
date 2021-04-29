@@ -33,7 +33,7 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
 - **PR testing parameters**: Users who can trigger PR tests can also provide extra test parameters by commenting on the pull request. Comment should have the following format
 ```
 test parameters:
-[  - ]workflow(s|) = <workflow>[,<workflow>[,...]]
+[  - ]workflow(s|)(_gpu|_threading|_profiling|) = <workflow>[,<workflow>[,...]]
 [  - ]pull_request(s|) = (repository|)#PR[,(repository|)#PR[,...]]
 [  - ]release = release_cycle|architecture|release_cycle/architecture
 [  - ]enable_test(s|) = none,gpu,threading,profiling
