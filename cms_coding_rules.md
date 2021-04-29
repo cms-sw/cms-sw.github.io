@@ -42,6 +42,7 @@ Coding rules are meant to prevent serious problems in software function, perform
 14. Do not use "\_" as ﬁrst character, except for user-defined suffixes (used in user-defined literals). Only use it as the last character for class data member names, not local variable names.
 15. Do not use "\_\_".
 16. Use clear and explanatory variable names.
+17. For class/enum/struct/namespace/global scope constants prefix `k` is preferred for new sets of constants (this applies to what can be referred to as `TypeName::kConstantName` or `namespaceName::kConstantName`). (\*) Allowed exception: existing sets of constants can continue to use different naming convention.
 
 ## 3 -- Style Rules
 1. Do not indent pre-processor directives -- there should be no leading spaces before a directive.  (\*)
