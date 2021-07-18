@@ -3,44 +3,58 @@
   "data": [
     {
       "das": {
-        "expire": 1626289887,
+        "expire": 1626592469,
         "instance": "prod/global",
         "primary_key": "file.name",
         "record": 1,
         "services": [
-          "dbs3:files_via_dataset"
+          "rucio:file4dataset_site"
         ]
       },
       "file": [
         {
           "adler32": "c512e144",
-          "auto_cross_section": 0.0,
-          "block.name": "/RelValSingleGammaPt35/CMSSW_10_5_0_pre1-103X_mc2017_realistic_v2-v1/GEN-SIM#9f54c458-79ad-4c4e-8597-e71769117be8",
-          "block_id": 20055828,
-          "block_name": "/RelValSingleGammaPt35/CMSSW_10_5_0_pre1-103X_mc2017_realistic_v2-v1/GEN-SIM#9f54c458-79ad-4c4e-8597-e71769117be8",
-          "branch_hash_id": null,
-          "check_sum": "1678467564",
-          "create_by": null,
-          "created_by": null,
-          "creation_date": null,
-          "creation_time": null,
-          "dataset": "/RelValSingleGammaPt35/CMSSW_10_5_0_pre1-103X_mc2017_realistic_v2-v1/GEN-SIM",
-          "dataset_id": 13788629,
-          "file_id": 431640437,
-          "file_type_id": 1,
-          "is_file_valid": 1,
-          "last_modification_date": 1550515824,
-          "last_modified_by": "vlimant",
+          "bytes": 248650476,
           "md5": null,
-          "modification_time": 1550515824,
-          "modified_by": "vlimant",
           "name": "/store/relval/CMSSW_10_5_0_pre1/RelValSingleGammaPt35/GEN-SIM/103X_mc2017_realistic_v2-v1/10000/2729600A-C145-E14F-83E3-9220DC8F8F60.root",
-          "nevents": 8950,
+          "pfns": {
+            "gsiftp://eoscmsftp.cern.ch:2811/eos/cms/store/relval/CMSSW_10_5_0_pre1/RelValSingleGammaPt35/GEN-SIM/103X_mc2017_realistic_v2-v1/10000/2729600A-C145-E14F-83E3-9220DC8F8F60.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 1,
+              "rse": "T2_CH_CERN",
+              "rse_id": "542ab69d82bf401e9218bbe375bb1fce",
+              "type": "DISK",
+              "volatile": false
+            },
+            "srm://cmsdcadisk.fnal.gov:8443/srm/managerv2?SFN=/dcache/uscmsdisk/store/relval/CMSSW_10_5_0_pre1/RelValSingleGammaPt35/GEN-SIM/103X_mc2017_realistic_v2-v1/10000/2729600A-C145-E14F-83E3-9220DC8F8F60.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 2,
+              "rse": "T1_US_FNAL_Disk",
+              "rse_id": "087ee3383b9d45f6b31814af07b2c56d",
+              "type": "DISK",
+              "volatile": false
+            }
+          },
+          "rses": {
+            "T1_US_FNAL_Disk": [
+              "srm://cmsdcadisk.fnal.gov:8443/srm/managerv2?SFN=/dcache/uscmsdisk/store/relval/CMSSW_10_5_0_pre1/RelValSingleGammaPt35/GEN-SIM/103X_mc2017_realistic_v2-v1/10000/2729600A-C145-E14F-83E3-9220DC8F8F60.root"
+            ],
+            "T2_CH_CERN": [
+              "gsiftp://eoscmsftp.cern.ch:2811/eos/cms/store/relval/CMSSW_10_5_0_pre1/RelValSingleGammaPt35/GEN-SIM/103X_mc2017_realistic_v2-v1/10000/2729600A-C145-E14F-83E3-9220DC8F8F60.root"
+            ]
+          },
+          "scope": "cms",
           "size": 248650476,
-          "type": "EDM"
+          "space_token": null,
+          "states": {
+            "T1_US_FNAL_Disk": "AVAILABLE",
+            "T2_CH_CERN": "AVAILABLE"
+          }
         }
       ],
-      "qhash": "3fabd6cbc549660e70206bed9dc018c0"
+      "qhash": "f59d567610359a27410df2aaa9cb6b16"
     }
   ],
   "ecode": "",
@@ -62,17 +76,18 @@
         "1"
       ]
     },
-    "hash": "3fabd6cbc549660e70206bed9dc018c0",
+    "hash": "f59d567610359a27410df2aaa9cb6b16",
     "instance": "prod/global",
     "pipe": "grep file.name | sort file.name | unique",
-    "query": "file dataset=/RelValSingleGammaPt35/CMSSW_10_5_0_pre1-103X_mc2017_realistic_v2-v1/GEN-SIM  detail=true | grep file.name | sort file.name | unique",
+    "query": "file dataset=/RelValSingleGammaPt35/CMSSW_10_5_0_pre1-103X_mc2017_realistic_v2-v1/GEN-SIM site=T2_CH_CERN  detail=true | grep file.name | sort file.name | unique",
     "spec": {
-      "dataset": "/RelValSingleGammaPt35/CMSSW_10_5_0_pre1-103X_mc2017_realistic_v2-v1/GEN-SIM"
+      "dataset": "/RelValSingleGammaPt35/CMSSW_10_5_0_pre1-103X_mc2017_realistic_v2-v1/GEN-SIM",
+      "site": "T2_CH_CERN"
     },
     "system": "",
-    "tstamp": 1626289886
+    "tstamp": 1626592468
   },
   "nresults": 1,
   "status": "ok",
-  "timestamp": 1626289887
+  "timestamp": 1626592469
 }
