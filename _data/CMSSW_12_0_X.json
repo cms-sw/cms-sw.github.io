@@ -88,17 +88,7 @@
                         "author_login": "cms-sw"
                     }
                 ], 
-                "slc7_amd64_gcc900": [
-                    {
-                        "hash": "d135cfad9a571dfaef5b09ae87adfa81e09b3846", 
-                        "title": "[BuildRules] cleanup PYTHON27; use python3 as default", 
-                        "url": "https://github.com/cms-sw/cmsdist/pull/7146", 
-                        "number": "7146", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "cms-sw"
-                    }
-                ], 
+                "slc7_amd64_gcc900": [], 
                 "slc7_ppc64le_gcc9": [
                     {
                         "hash": "d135cfad9a571dfaef5b09ae87adfa81e09b3846", 
@@ -117,7 +107,7 @@
                 "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-19-1100/slc7_aarch64_gcc9..IB/CMSSW_12_0_X/master", 
                 "cc8_ppc64le_gcc9": "IB/CMSSW_12_0_X_2021-07-16-2300/cc8_ppc64le_gcc9..IB/CMSSW_12_0_X/cc8", 
                 "slc7_amd64_gcc10": "IB/CMSSW_12_0_X_2021-07-18-2300/slc7_amd64_gcc10..IB/CMSSW_12_0_X/gcc10", 
-                "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-18-0000/slc7_amd64_gcc900..IB/CMSSW_12_0_X/master", 
+                "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-19-1100/slc7_amd64_gcc900..IB/CMSSW_12_0_X/master", 
                 "slc7_ppc64le_gcc9": "IB/CMSSW_12_0_X_2021-07-18-0000/slc7_ppc64le_gcc9..IB/CMSSW_12_0_X/master"
             }, 
             "static_checks_failures": "not-found", 
@@ -198,7 +188,8 @@
             "comp_baseline_state": "ok", 
             "python3_tests": [], 
             "tests_archs": [
-                "slc7_aarch64_gcc9"
+                "slc7_aarch64_gcc9", 
+                "slc7_amd64_gcc900"
             ], 
             "cmsdist_merged_prs": {
                 "slc7_aarch64_gcc9": [
@@ -211,14 +202,27 @@
                         "from_merge_commit": false, 
                         "author_login": "cms-sw"
                     }
+                ], 
+                "slc7_amd64_gcc900": [
+                    {
+                        "hash": "d135cfad9a571dfaef5b09ae87adfa81e09b3846", 
+                        "title": "[BuildRules] cleanup PYTHON27; use python3 as default", 
+                        "url": "https://github.com/cms-sw/cmsdist/pull/7146", 
+                        "number": "7146", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "cms-sw"
+                    }
                 ]
             }, 
             "cmsdist_compared_tags": {
-                "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-18-0000/slc7_aarch64_gcc9..IB/CMSSW_12_0_X_2021-07-19-1100/slc7_aarch64_gcc9"
+                "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-18-0000/slc7_aarch64_gcc9..IB/CMSSW_12_0_X_2021-07-19-1100/slc7_aarch64_gcc9", 
+                "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-18-0000/slc7_amd64_gcc900..IB/CMSSW_12_0_X_2021-07-19-1100/slc7_amd64_gcc900"
             }, 
             "static_checks_failures": "not-found", 
             "cmsdistTags": {
-                "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-19-1100/slc7_aarch64_gcc9"
+                "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-19-1100/slc7_aarch64_gcc9", 
+                "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-19-1100/slc7_amd64_gcc900"
             }, 
             "piechart": "inprogress", 
             "flawfinder": "inprogress", 
@@ -231,6 +235,12 @@
             "compared_tags": "CMSSW_12_0_X_2021-07-18-2300-->CMSSW_12_0_X_2021-07-19-1100", 
             "dqm_tests": "not-found", 
             "utests": [
+                {
+                    "arch": "slc7_amd64_gcc900", 
+                    "passed": "unknown", 
+                    "file": "['/data/sdt/buildlogs/slc7_amd64_gcc900/www/mon/12.0-mon-11/CMSSW_12_0_X_2021-07-19-1100/new/logAnalysis.pkl']", 
+                    "details": {}
+                }, 
                 {
                     "arch": "slc7_aarch64_gcc9", 
                     "passed": "unknown", 
@@ -278,6 +288,14 @@
             "invalid_includes": [], 
             "builds": [
                 {
+                    "arch": "slc7_amd64_gcc900", 
+                    "passed": "passed", 
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc900/www/mon/12.0-mon-11/CMSSW_12_0_X_2021-07-19-1100/new/logAnalysis.pkl", 
+                    "details": {
+                        "ignoreWarning": 19
+                    }
+                }, 
+                {
                     "arch": "slc7_aarch64_gcc9", 
                     "passed": "passed", 
                     "file": "/data/sdt/buildlogs/slc7_aarch64_gcc9/www/mon/12.0-mon-11/CMSSW_12_0_X_2021-07-19-1100/new/logAnalysis.pkl", 
@@ -294,6 +312,10 @@
             "dupDict": [
                 {
                     "arch": "slc7_aarch64_gcc9", 
+                    "passed": "passed"
+                }, 
+                {
+                    "arch": "slc7_amd64_gcc900", 
                     "passed": "passed"
                 }
             ], 
@@ -880,7 +902,7 @@
                     "passed": false, 
                     "file": "/data/sdt/buildlogs/slc7_aarch64_gcc9/www/sun/12.0-sun-00/CMSSW_12_0_X_2021-07-18-0000/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                     "details": {
-                        "num_passed": 2830, 
+                        "num_passed": 3007, 
                         "known_failed": 51, 
                         "num_failed": 5
                     }
