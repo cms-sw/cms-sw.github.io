@@ -23483,7 +23483,7 @@
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/slc7_amd64_gcc10/www/mon/12.0.ASAN-mon-23/CMSSW_12_0_ASAN_X_2021-07-19-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 2, 
+                            "num_passed": 4, 
                             "known_failed": 0, 
                             "num_failed": 0
                         }
@@ -31697,7 +31697,19 @@
                     }
                 ], 
                 "ib_date": "2021-07-19-2300-0000", 
-                "relvals": [], 
+                "relvals": [
+                    {
+                        "done": false, 
+                        "arch": "slc7_amd64_gcc900", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc900/www/mon/12.0.GPU-mon-23/CMSSW_12_0_GPU_X_2021-07-19-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 32, 
+                            "known_failed": 0, 
+                            "num_failed": 0
+                        }
+                    }
+                ], 
                 "igprof": "not-found", 
                 "release_queue": "CMSSW_12_0_GPU_X", 
                 "release_name": "CMSSW_12_0_GPU_X_2021-07-19-2300", 
@@ -34729,9 +34741,11 @@
                 "utests": [
                     {
                         "arch": "slc7_amd64_gcc900", 
-                        "passed": "unknown", 
-                        "file": "['/data/sdt/buildlogs/slc7_amd64_gcc900/www/mon/12.0.ROOT624-mon-23/CMSSW_12_0_ROOT624_X_2021-07-19-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc900/www/mon/12.0.ROOT624-mon-23/CMSSW_12_0_ROOT624_X_2021-07-19-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "5"
+                        }
                     }
                 ], 
                 "ib_date": "2021-07-19-2300-0000", 
@@ -38749,35 +38763,7 @@
                             "author_login": "cms-sw"
                         }
                     ], 
-                    "slc7_amd64_gcc900": [
-                        {
-                            "hash": "64d0b3cb65692ee490aec4c5f2ef8370639edfb0", 
-                            "title": "update mkfit to V3.1.0", 
-                            "url": "https://github.com/cms-sw/cmsdist/pull/7113", 
-                            "number": "7113", 
-                            "is_merge_commit": false, 
-                            "from_merge_commit": false, 
-                            "author_login": "slava77"
-                        }, 
-                        {
-                            "hash": "39224ffbbf3bc910124ace79fa476e9bc696bf28", 
-                            "title": "Update tag for RecoTracker-MkFit to V00-02-00", 
-                            "url": "https://github.com/cms-sw/cmsdist/pull/7149", 
-                            "number": "7149", 
-                            "is_merge_commit": false, 
-                            "from_merge_commit": false, 
-                            "author_login": "cms-sw"
-                        }, 
-                        {
-                            "hash": "05b9896b67c34682cdba092b9935282a2c8c95cc", 
-                            "title": "[Tensorflow] Update to version 2.5.0", 
-                            "url": "https://github.com/cms-sw/cmsdist/pull/7141", 
-                            "number": "7141", 
-                            "is_merge_commit": false, 
-                            "from_merge_commit": false, 
-                            "author_login": "cms-sw"
-                        }
-                    ], 
+                    "slc7_amd64_gcc900": [], 
                     "slc7_ppc64le_gcc9": [
                         {
                             "hash": "64d0b3cb65692ee490aec4c5f2ef8370639edfb0", 
@@ -38814,7 +38800,7 @@
                     "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-20-1100/slc7_aarch64_gcc9..IB/CMSSW_12_0_X/master", 
                     "cc8_ppc64le_gcc9": "IB/CMSSW_12_0_X_2021-07-19-2300/cc8_ppc64le_gcc9..IB/CMSSW_12_0_X/cc8", 
                     "slc7_amd64_gcc10": "IB/CMSSW_12_0_X_2021-07-19-2300/slc7_amd64_gcc10..IB/CMSSW_12_0_X/gcc10", 
-                    "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-19-2300/slc7_amd64_gcc900..IB/CMSSW_12_0_X/master", 
+                    "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-20-1100/slc7_amd64_gcc900..IB/CMSSW_12_0_X/master", 
                     "slc7_ppc64le_gcc9": "IB/CMSSW_12_0_X_2021-07-19-2300/slc7_ppc64le_gcc9..IB/CMSSW_12_0_X/master"
                 }, 
                 "static_checks_failures": "not-found", 
@@ -38919,16 +38905,44 @@
                             "author_login": "cms-sw"
                         }
                     ], 
-                    "slc7_amd64_gcc900": []
+                    "slc7_amd64_gcc900": [
+                        {
+                            "hash": "64d0b3cb65692ee490aec4c5f2ef8370639edfb0", 
+                            "title": "update mkfit to V3.1.0", 
+                            "url": "https://github.com/cms-sw/cmsdist/pull/7113", 
+                            "number": "7113", 
+                            "is_merge_commit": false, 
+                            "from_merge_commit": false, 
+                            "author_login": "slava77"
+                        }, 
+                        {
+                            "hash": "39224ffbbf3bc910124ace79fa476e9bc696bf28", 
+                            "title": "Update tag for RecoTracker-MkFit to V00-02-00", 
+                            "url": "https://github.com/cms-sw/cmsdist/pull/7149", 
+                            "number": "7149", 
+                            "is_merge_commit": false, 
+                            "from_merge_commit": false, 
+                            "author_login": "cms-sw"
+                        }, 
+                        {
+                            "hash": "05b9896b67c34682cdba092b9935282a2c8c95cc", 
+                            "title": "[Tensorflow] Update to version 2.5.0", 
+                            "url": "https://github.com/cms-sw/cmsdist/pull/7141", 
+                            "number": "7141", 
+                            "is_merge_commit": false, 
+                            "from_merge_commit": false, 
+                            "author_login": "cms-sw"
+                        }
+                    ]
                 }, 
                 "cmsdist_compared_tags": {
                     "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-19-2300/slc7_aarch64_gcc9..IB/CMSSW_12_0_X_2021-07-20-1100/slc7_aarch64_gcc9", 
-                    "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-19-2300/slc7_amd64_gcc900..IB/CMSSW_12_0_X_2021-07-19-2300/slc7_amd64_gcc900"
+                    "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-19-2300/slc7_amd64_gcc900..IB/CMSSW_12_0_X_2021-07-20-1100/slc7_amd64_gcc900"
                 }, 
                 "static_checks_failures": "not-found", 
                 "cmsdistTags": {
                     "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-20-1100/slc7_aarch64_gcc9", 
-                    "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-19-2300/slc7_amd64_gcc900"
+                    "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-20-1100/slc7_amd64_gcc900"
                 }, 
                 "piechart": "inprogress", 
                 "flawfinder": "inprogress", 
@@ -39262,11 +39276,27 @@
                 "dqm_tests": "not-found", 
                 "utests": [
                     {
+                        "arch": "slc7_amd64_gcc900", 
+                        "passed": "failed", 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc900/www/mon/12.0-mon-23/CMSSW_12_0_X_2021-07-19-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "5"
+                        }
+                    }, 
+                    {
                         "arch": "slc7_ppc64le_gcc9", 
                         "passed": "failed", 
                         "file": "/data/sdt/buildlogs/slc7_ppc64le_gcc9/www/mon/12.0-mon-23/CMSSW_12_0_X_2021-07-19-2300/unitTests-summary.log", 
                         "details": {
                             "num_fails": "7"
+                        }
+                    }, 
+                    {
+                        "arch": "slc7_amd64_gcc10", 
+                        "passed": "failed", 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc10/www/mon/12.0-mon-23/CMSSW_12_0_X_2021-07-19-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "5"
                         }
                     }, 
                     {
@@ -39284,18 +39314,6 @@
                         "details": {
                             "num_fails": "11"
                         }
-                    }, 
-                    {
-                        "arch": "slc7_amd64_gcc900", 
-                        "passed": "unknown", 
-                        "file": "['/data/sdt/buildlogs/slc7_amd64_gcc900/www/mon/12.0-mon-23/CMSSW_12_0_X_2021-07-19-2300/new/logAnalysis.pkl']", 
-                        "details": {}
-                    }, 
-                    {
-                        "arch": "slc7_amd64_gcc10", 
-                        "passed": "unknown", 
-                        "file": "['/data/sdt/buildlogs/slc7_amd64_gcc10/www/mon/12.0-mon-23/CMSSW_12_0_X_2021-07-19-2300/new/logAnalysis.pkl']", 
-                        "details": {}
                     }, 
                     {
                         "arch": "cc8_amd64_gcc9", 
@@ -39348,12 +39366,23 @@
                     {
                         "done": false, 
                         "arch": "slc7_aarch64_gcc9", 
-                        "passed": true, 
+                        "passed": false, 
                         "file": "/data/sdt/buildlogs/slc7_aarch64_gcc9/www/mon/12.0-mon-23/CMSSW_12_0_X_2021-07-19-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 432, 
-                            "known_failed": 48, 
-                            "num_failed": 0
+                            "num_passed": 533, 
+                            "known_failed": 0, 
+                            "num_failed": 49
+                        }
+                    }, 
+                    {
+                        "done": false, 
+                        "arch": "cc8_amd64_gcc9", 
+                        "passed": false, 
+                        "file": "/data/sdt/buildlogs/cc8_amd64_gcc9/www/mon/12.0-mon-23/CMSSW_12_0_X_2021-07-19-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
+                        "details": {
+                            "num_passed": 0, 
+                            "known_failed": 0, 
+                            "num_failed": 1
                         }
                     }, 
                     {
@@ -39362,7 +39391,7 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/cc8_ppc64le_gcc9/www/mon/12.0-mon-23/CMSSW_12_0_X_2021-07-19-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 1293, 
+                            "num_passed": 1440, 
                             "known_failed": 0, 
                             "num_failed": 1
                         }
