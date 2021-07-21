@@ -1,0 +1,85 @@
+{
+  "gcc": {
+    "build_dependencies": [],
+    "checksum": "610f04827ed0f827de9b8700ad3d9670",
+    "dependencies": [],
+    "doc": "",
+    "name": "gcc",
+    "package_name": "external+gcc+9.3.0",
+    "patches": [
+      "gcc-flex-nonfull-path-m4.patch",
+      "gcc-flex-disable-doc.patch"
+    ],
+    "realversion": "9.3.0",
+    "revision": "1",
+    "sources": [
+      "git+https://github.com/gcc-mirror/gcc.git?obj=releases/gcc-9/4212a6a3e44f870412d9025eeb323fd4f50a61da&export=gcc-9.3.0&output=/gcc-9.3.0-4212a6a3e44f870412d9025eeb323fd4f50a61da.tgz",
+      "https://gmplib.org/download/gmp/gmp-6.2.0.tar.bz2",
+      "http://www.mpfr.org/mpfr-4.0.2/mpfr-4.0.2.tar.bz2",
+      "https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz",
+      "http://isl.gforge.inria.fr/isl-0.21.tar.bz2",
+      "http://zlib.net/zlib-1.2.11.tar.gz",
+      "http://ftp.gnu.org/gnu/bison/bison-3.5.tar.gz",
+      "https://sourceware.org/pub/binutils/releases/binutils-2.32.tar.bz2",
+      "https://sourceware.org/pub/elfutils/0.177/elfutils-0.177.tar.bz2",
+      "http://ftp.gnu.org/gnu/m4/m4-1.4.18.tar.gz",
+      "https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz"
+    ],
+    "version": "9.3.0"
+  },
+  "protobuf": {
+    "build_dependencies": [
+      "cmake",
+      "ninja"
+    ],
+    "checksum": "b19e8af10ba6e3ade0b57e561f4b9c72",
+    "dependencies": [
+      "gcc",
+      "zlib"
+    ],
+    "doc": "",
+    "name": "protobuf",
+    "package_name": "external+protobuf+3.15.1-b19e8af10ba6e3ade0b57e561f4b9c72",
+    "patches": [
+      "protobuf-3.15-gcc10.patch"
+    ],
+    "realversion": "3.15.1",
+    "revision": "1",
+    "sources": [
+      "https://github.com/google/protobuf/archive/v3.15.1.tar.gz"
+    ],
+    "version": "3.15.1-b19e8af10ba6e3ade0b57e561f4b9c72"
+  },
+  "protobuf-toolfile": {
+    "build_dependencies": [],
+    "checksum": "7851917bdc6e0b059086461e9fc5745c",
+    "dependencies": [
+      "protobuf"
+    ],
+    "doc": "",
+    "name": "protobuf-toolfile",
+    "package_name": "external+protobuf-toolfile+1.0-7851917bdc6e0b059086461e9fc5745c",
+    "patches": [],
+    "realversion": "1.0",
+    "revision": "1",
+    "sources": [],
+    "version": "1.0-7851917bdc6e0b059086461e9fc5745c"
+  },
+  "zlib": {
+    "build_dependencies": [],
+    "checksum": "99271b1d98da3981abdd2087fe66ac21",
+    "dependencies": [
+      "gcc"
+    ],
+    "doc": "",
+    "name": "zlib",
+    "package_name": "external+zlib+1.2.11-bcolbf",
+    "patches": [],
+    "realversion": "1.2.11",
+    "revision": "1",
+    "sources": [
+      "git://github.com/cms-externals/zlib.git?obj=cms/v1.2.11/822f7f5a8c57802faf8bbfe16266be02eff8c2e2&export=zlib-1.2.11&output=/zlib-1.2.11.tgz"
+    ],
+    "version": "1.2.11-bcolbf"
+  }
+}

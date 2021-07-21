@@ -1,0 +1,85 @@
+{
+  "clhep": {
+    "build_dependencies": [
+      "cmake",
+      "ninja"
+    ],
+    "checksum": "bc6d48126675bfa75927db505e3c01d2",
+    "dependencies": [
+      "gcc"
+    ],
+    "doc": "",
+    "name": "clhep",
+    "package_name": "external+clhep+2.4.4.0-bc6d48126675bfa75927db505e3c01d2",
+    "patches": [],
+    "realversion": "2.4.4.0",
+    "revision": "1",
+    "sources": [
+      "git+https://github.com/cms-externals/clhep.git?obj=cms/v2.4.4.0/eb4138d955a4b923551fdd65788d9f48d8a57fbb&export=clhep-2.4.4.0&output=/clhep-2.4.4.0.tgz"
+    ],
+    "version": "2.4.4.0-bc6d48126675bfa75927db505e3c01d2"
+  },
+  "gcc": {
+    "build_dependencies": [],
+    "checksum": "610f04827ed0f827de9b8700ad3d9670",
+    "dependencies": [],
+    "doc": "",
+    "name": "gcc",
+    "package_name": "external+gcc+9.3.0",
+    "patches": [
+      "gcc-flex-nonfull-path-m4.patch",
+      "gcc-flex-disable-doc.patch"
+    ],
+    "realversion": "9.3.0",
+    "revision": "1",
+    "sources": [
+      "git+https://github.com/gcc-mirror/gcc.git?obj=releases/gcc-9/4212a6a3e44f870412d9025eeb323fd4f50a61da&export=gcc-9.3.0&output=/gcc-9.3.0-4212a6a3e44f870412d9025eeb323fd4f50a61da.tgz",
+      "https://gmplib.org/download/gmp/gmp-6.2.0.tar.bz2",
+      "http://www.mpfr.org/mpfr-4.0.2/mpfr-4.0.2.tar.bz2",
+      "https://ftp.gnu.org/gnu/mpc/mpc-1.1.0.tar.gz",
+      "http://isl.gforge.inria.fr/isl-0.21.tar.bz2",
+      "http://zlib.net/zlib-1.2.11.tar.gz",
+      "http://ftp.gnu.org/gnu/bison/bison-3.5.tar.gz",
+      "https://sourceware.org/pub/binutils/releases/binutils-2.32.tar.bz2",
+      "https://sourceware.org/pub/elfutils/0.177/elfutils-0.177.tar.bz2",
+      "http://ftp.gnu.org/gnu/m4/m4-1.4.18.tar.gz",
+      "https://github.com/westes/flex/releases/download/v2.6.4/flex-2.6.4.tar.gz"
+    ],
+    "version": "9.3.0"
+  },
+  "ktjet": {
+    "build_dependencies": [],
+    "checksum": "3f3942456961803b7777974e77caf6c0",
+    "dependencies": [
+      "clhep",
+      "gcc"
+    ],
+    "doc": "",
+    "name": "ktjet",
+    "package_name": "external+ktjet+1.06-3f3942456961803b7777974e77caf6c0",
+    "patches": [
+      "ktjet-1.0.6-nobanner.patch"
+    ],
+    "realversion": "1.06",
+    "revision": "1",
+    "sources": [
+      "http://www.hepforge.org/archive/ktjet/KtJet-1.06.tar.gz"
+    ],
+    "version": "1.06-3f3942456961803b7777974e77caf6c0"
+  },
+  "ktjet-toolfile": {
+    "build_dependencies": [],
+    "checksum": "ec863a9c82b2eed857fe030d4dcb970c",
+    "dependencies": [
+      "ktjet"
+    ],
+    "doc": "",
+    "name": "ktjet-toolfile",
+    "package_name": "external+ktjet-toolfile+1.0-ec863a9c82b2eed857fe030d4dcb970c",
+    "patches": [],
+    "realversion": "1.0",
+    "revision": "1",
+    "sources": [],
+    "version": "1.0-ec863a9c82b2eed857fe030d4dcb970c"
+  }
+}
