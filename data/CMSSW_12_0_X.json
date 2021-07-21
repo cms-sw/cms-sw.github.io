@@ -177,6 +177,42 @@
                     "is_merge_commit": false, 
                     "from_merge_commit": false, 
                     "author_login": "CMS-LUMI-POG"
+                }, 
+                {
+                    "hash": "f69cb887f2c59b33302da6ea54b3f82810678f60", 
+                    "title": "Correct pps sim vtx position", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/34556", 
+                    "number": "34556", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "CTPPS"
+                }, 
+                {
+                    "hash": "70d9d290ef1b57b624783ff32f2b9abffed04b18", 
+                    "title": "HCAL:  HF ShowerLibrary combining code/script update", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/34561", 
+                    "number": "34561", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "abdoulline"
+                }, 
+                {
+                    "hash": "647e2a0349b8f08287b473c12a58732f057efa94", 
+                    "title": "Run3-gex83K New way of SD declaration for PPS detectors", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/34568", 
+                    "number": "34568", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "bsunanda"
+                }, 
+                {
+                    "hash": "80973f90da32e0609fe6d5e28bf96d6f3c76dd85", 
+                    "title": "Add DRnR plots to PixelPhase1 DQM", 
+                    "url": "https://github.com/cms-sw/cmssw/pull/34516", 
+                    "number": "34516", 
+                    "is_merge_commit": false, 
+                    "from_merge_commit": false, 
+                    "author_login": "arossi83"
                 }
             ], 
             "fwlite": [], 
@@ -390,14 +426,14 @@
                     }
                 }, 
                 {
-                    "done": false, 
+                    "done": true, 
                     "arch": "slc7_ppc64le_gcc9", 
                     "passed": false, 
                     "file": "/data/sdt/buildlogs/slc7_ppc64le_gcc9/www/tue/12.0-tue-23/CMSSW_12_0_X_2021-07-20-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                     "details": {
                         "num_passed": 3283, 
-                        "known_failed": 0, 
-                        "num_failed": 54
+                        "known_failed": 53, 
+                        "num_failed": 1
                     }
                 }, 
                 {
@@ -406,7 +442,7 @@
                     "passed": false, 
                     "file": "/data/sdt/buildlogs/slc7_amd64_gcc10/www/tue/12.0-tue-23/CMSSW_12_0_X_2021-07-20-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                     "details": {
-                        "num_passed": 3087, 
+                        "num_passed": 3417, 
                         "known_failed": 0, 
                         "num_failed": 3
                     }
@@ -417,7 +453,7 @@
                     "passed": false, 
                     "file": "/data/sdt/buildlogs/cc8_amd64_gcc9/www/tue/12.0-tue-23/CMSSW_12_0_X_2021-07-20-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                     "details": {
-                        "num_passed": 970, 
+                        "num_passed": 1584, 
                         "known_failed": 0, 
                         "num_failed": 3
                     }
@@ -1175,7 +1211,7 @@
                     "passed": false, 
                     "file": "/data/sdt/buildlogs/cc8_aarch64_gcc9/www/mon/12.0-mon-23/CMSSW_12_0_X_2021-07-19-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                     "details": {
-                        "num_passed": 2591, 
+                        "num_passed": 2622, 
                         "known_failed": 53, 
                         "num_failed": 4
                     }
@@ -4275,21 +4311,11 @@
                 "slc7_amd64_gcc900"
             ], 
             "cmsdist_merged_prs": {
-                "slc7_aarch64_gcc9": [
-                    {
-                        "hash": "ae1c84b549894ccc112a389fb347d9762b660411", 
-                        "title": "Updated root to tip of branch v6-22-00-patches", 
-                        "url": "https://github.com/cms-sw/cmsdist/pull/7130", 
-                        "number": "7130", 
-                        "is_merge_commit": false, 
-                        "from_merge_commit": false, 
-                        "author_login": "mrodozov"
-                    }
-                ], 
+                "slc7_aarch64_gcc9": [], 
                 "slc7_amd64_gcc900": []
             }, 
             "cmsdist_compared_tags": {
-                "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-13-2300/slc7_aarch64_gcc9..IB/CMSSW_12_0_X_2021-07-14-1100/slc7_aarch64_gcc9", 
+                "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-14-1100/slc7_aarch64_gcc9..IB/CMSSW_12_0_X_2021-07-14-1100/slc7_aarch64_gcc9", 
                 "slc7_amd64_gcc900": "IB/CMSSW_12_0_X_2021-07-14-1100/slc7_amd64_gcc900..IB/CMSSW_12_0_X_2021-07-14-1100/slc7_amd64_gcc900"
             }, 
             "static_checks_failures": "not-found", 
@@ -4548,15 +4574,9 @@
         {
             "comp_baseline_state": "ok", 
             "python3_tests": [], 
-            "tests_archs": [
-                "slc7_aarch64_gcc9"
-            ], 
-            "cmsdist_merged_prs": {
-                "slc7_aarch64_gcc9": []
-            }, 
-            "cmsdist_compared_tags": {
-                "slc7_aarch64_gcc9": "IB/CMSSW_12_0_X_2021-07-13-2300/slc7_aarch64_gcc9..IB/CMSSW_12_0_X_2021-07-13-2300/slc7_aarch64_gcc9"
-            }, 
+            "tests_archs": [], 
+            "cmsdist_merged_prs": {}, 
+            "cmsdist_compared_tags": {}, 
             "static_checks_failures": "not-found", 
             "cmsdistTags": {
                 "cc8_amd64_gcc9": "IB/CMSSW_12_0_X_2021-07-13-2300/cc8_amd64_gcc9", 
@@ -4581,30 +4601,9 @@
             "base_branch": "CMSSW_12_0_X", 
             "compared_tags": "CMSSW_12_0_X_2021-07-13-1100-->CMSSW_12_0_X_2021-07-13-2300", 
             "dqm_tests": "not-found", 
-            "utests": [
-                {
-                    "arch": "slc7_aarch64_gcc9", 
-                    "passed": "failed", 
-                    "file": "/data/sdt/buildlogs/slc7_aarch64_gcc9/www/tue/12.0-tue-23/CMSSW_12_0_X_2021-07-13-2300/unitTests-summary.log", 
-                    "details": {
-                        "num_fails": "3"
-                    }
-                }
-            ], 
+            "utests": [], 
             "ib_date": "2021-07-13-2300-0000", 
-            "relvals": [
-                {
-                    "done": true, 
-                    "arch": "slc7_aarch64_gcc9", 
-                    "passed": false, 
-                    "file": "/data/sdt/buildlogs/slc7_aarch64_gcc9/www/tue/12.0-tue-23/CMSSW_12_0_X_2021-07-13-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
-                    "details": {
-                        "num_passed": 3270, 
-                        "known_failed": 51, 
-                        "num_failed": 1
-                    }
-                }
-            ], 
+            "relvals": [], 
             "release_queue": "CMSSW_12_0_X", 
             "release_name": "CMSSW_12_0_X_2021-07-13-2300", 
             "comp_baseline": "https://cmssdt.cern.ch/SDT/jenkins-artifacts/ib-baseline-tests/CMSSW_12_0_X_2021-07-13-2300/slc7_amd64_gcc900/-GenuineIntel/matrix-results", 
@@ -4632,16 +4631,7 @@
                     }
                 }
             ], 
-            "builds": [
-                {
-                    "arch": "slc7_aarch64_gcc9", 
-                    "passed": "passed", 
-                    "file": "/data/sdt/buildlogs/slc7_aarch64_gcc9/www/tue/12.0-tue-23/CMSSW_12_0_X_2021-07-13-2300/new/logAnalysis.pkl", 
-                    "details": {
-                        "ignoreWarning": 19
-                    }
-                }
-            ], 
+            "builds": [], 
             "material_budget_v2": "not-found", 
             "check-headers": "passed", 
             "static_checks_v2": {
@@ -4650,24 +4640,12 @@
             }, 
             "valgrind": "not-found", 
             "material_budget": "not-found", 
-            "dupDict": [
-                {
-                    "arch": "slc7_aarch64_gcc9", 
-                    "passed": "passed"
-                }
-            ], 
+            "dupDict": [], 
             "lizard": "found", 
             "static_checks": "slc7_amd64_gcc900:", 
             "isIB": true, 
             "inProgress": false, 
-            "addons": [
-                {
-                    "arch": "slc7_aarch64_gcc9", 
-                    "passed": true, 
-                    "file": "/data/sdt/buildlogs/slc7_aarch64_gcc9/www/tue/12.0-tue-23/CMSSW_12_0_X_2021-07-13-2300/addOnTests.log", 
-                    "details": {}
-                }
-            ], 
+            "addons": [], 
             "hlt_tests": "passed"
         }, 
         {
