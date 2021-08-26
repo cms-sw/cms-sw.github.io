@@ -97,22 +97,22 @@ If necessary to create a unique name, one can add the directory name:
 ## 6 -- Packaging Rules
 #### Libraries
 1. It is discouraged to have small packages (with couple of cc and header files).
-2. Functionality used by multiple packages should go in the `.../src` and `.../interface` directories.
-3. Only header files that expose a public interface should go into the `.../interface` directory.  
+2. Functionality used by multiple packages should go in the `Package/Subpackage/src` and `Package/Subpackage/interface` directories.
+3. Only header files that expose a public interface should go into the `Package/Subpackage/interface` directory.  
 4. Include only files that are in the current directory, e.g.  
 `#include "some_header.h"`  
- or in the `.../interface` directory, e.g  
+ or in the `Package/Subpackage/interface` directory, e.g  
 `#include "Subsystem/Package/interface/some_header.h"`
 5. Group code files into packages based upon their matching dependencies. Such dependencies can be on other CMSSW packages or, more importantly, external libraries.
 #### Plugins
 6. Put plugins (e.g. EDProducers, EDAnalyzers, etc.) into a `Package/Subpackage/plugins/` directory, with its dedicated `BuildFile.xml`.
-7. Do not split plugins into header and source files. If you do split them, keep the header files in the `.../plugins` directory.
-8. All code used only by the plugins in `../plugins` should also go under `.../plugins`.
+7. Do not split plugins into header and source files. If you do split them, keep the header files in the `Package/Subpackage/plugins` directory.
+8. All code used only by the plugins in `../plugins` should also go under `Package/Subpackage/plugins`.
  `plugins.cc` and `SealPlugins.cc` or any special files that just define plugins, except for template instantiations, are discouraged. 
 #### Tests
-9. Unit tests to test the functionalities of your Library and/or Plugins should go under `.../test`.
-10. Add test library/plugins in `.../test/BuildFile.xml` for the common functionality used only by your unit tests.
-11. For unit tests which simply run `cmsRun your-cfg` (to test your plugin), please use `<test name="..." command="cmsRun …"/>` in your `.../test/BuildFile.xml`.
+9. Unit tests to test the functionalities of your Library and/or Plugins should go under `Package/Subpackage/test`.
+10. Add test library/plugins in `Package/Subpackage/test/BuildFile.xml` for the common functionality used only by your unit tests.
+11. For unit tests which simply run `cmsRun your-cfg` (to test your plugin), please use `<test name="..." command="cmsRun …"/>` in your `Package/Subpackage/test/BuildFile.xml`.
 12. Unit tests should return a non-zero value from their main to indicate test failure. Successful tests should print nothing or a very small amount to the log file. Tests should not require a human to read their output to determine if they succeed or fail.
 #### Python
 13. A `_cfi` file should contain only the definition of one module, and possible Modifier ("era") customizations on it. The module label should be the same as the `_cfi` file name.
@@ -121,14 +121,14 @@ If necessary to create a unique name, one can add the directory name:
 16. All Modifier customizations on a module/Task/Sequence/Path should be applied on the same file that defines the module/Task/Sequence/Path.
 17. When one customizes an existing parameter in `clone()`, `Modifier.toModify()`, or in assignment, explicit types on the right hand side should be avoided.
 #### Data files
-18. To keep the repository size under control, we discourage adding any data files under `.../data`.
+18. To keep the repository size under control, we discourage adding any data files under `Package/Subpackage/data`.
 19. Please use the [cms-data externals GitHub repositories](https://github.com/cms-data/) to add/change any data file.
 #### Binaries and scripts
-19. Public executables/binaries should go under `.../bin`.
-20. It is discouraged to generate plugins from `.../bin`.
-21. Additional libraries used only by multiple executables of your `.../bin` should also go under `.../bin`.
-22. Any utilities which should be available publicly (i.e. in the PATH) should go under `.../bin` and use the `INSTALL_SCRIPTS` flag in `.../bin/BuildFile.xml`.
-23. The `.../scripts` directory is reserved for scripts that need to be available in the PATH. Configuration and data files should go into appropriate directories, like `.../data`.
+19. Public executables/binaries should go under `Package/Subpackage/bin`.
+20. It is discouraged to generate plugins from `Package/Subpackage/bin`.
+21. Additional libraries used only by multiple executables of your `Package/Subpackage/bin` should also go under `Package/Subpackage/bin`.
+22. Any utilities which should be available publicly (i.e. in the PATH) should go under `Package/Subpackage/bin` and use the `INSTALL_SCRIPTS` flag in `Package/Subpackage/bin/BuildFile.xml`.
+23. The `Package/Subpackage/scripts` directory is reserved for scripts that need to be available in the PATH. Configuration and data files should go into appropriate directories, like `Package/Subpackage/data`.
 
 ## 7 -- Design and Coding Guidelines
 These guidelines are a brief summary of highlights from the [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) by Bjarne Stroustrup et al. The links for each guideline provide explanations and justifications.
