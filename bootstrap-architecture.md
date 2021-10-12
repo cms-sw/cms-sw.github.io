@@ -49,6 +49,7 @@ cd test-aarch61-gcc11
 ```
 wget http://cmsrep.cern.ch/cmssw/bootstrap.sh
 ARCH=slc7_aarch64_gcc11
+/cvmfs/cms.cern.ch/common/cmssw-cc7
 bash -ex ./bootstrap.sh -r bootstrap_${ARCH} -a ${ARCH} setup
 ```
 
