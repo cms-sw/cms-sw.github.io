@@ -26,6 +26,7 @@ git clone git@github.com:cms-sw/pkgtools -b V00-34-XX
 - Start singularity container
 ```
 /cvmfs/cms.cern.ch/common/cmssw-env --cmsos cc7:aarch64-bootstrap
+scl enable devtoolset-8 -- bash
 ```
 - Build the bootstrap
 ```
