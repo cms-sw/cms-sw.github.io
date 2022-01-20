@@ -40,7 +40,7 @@ test parameters:
 [  - ]ignore_test(s|) = build-warnings|build-warnings|none
 [  - ]full(_cmssw|) = true|false
 [  - ]disable_poison = true|false
-[  - ]container = cmssw/cc7:amd64-dYYYYMMDD
+[  - ]container = cmssw/cc7(:amd64-dYYYYMMDD|)
 [  - ]jenkins_slave = jenkins-node-label
 [  - ](cms-|)addpkg = <cmssw_package>[,<cmssw_package>[,...]]
 [  - ]relvals_opt(ion|)(s|)(_input|_threading|_gpu|) = <runTheMatrix-extra-options for normal relval or special input/threading/gpu jobs>
