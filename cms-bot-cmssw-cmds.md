@@ -18,8 +18,9 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```ignore build-warnings```**: To ignore build warnings results
   - **```ignore none```**: Do not ignore any tests results.
 - **Enable extra PR tests**: Any one who can trigger tests can issue this command or use test parameters to enable some exra PR tests e.g.
-  - **```enable gpu,threading,profiling```**: To run extra GPU, threading relval and profiling tests
+  - **```enable gpu,threading,profiling,high_stats```**: To run extra GPU, threading relval and profiling tests
   - **```enable profiling```**: To run Igprof and generate resource graphs
+  - **```enable high_stats```**: To run high stats relvals tests
   - **```enable none```**: To disable all extra tests
 - **Allowing a user to trigger tests**: L1/L2/Release managers can issue this command to give test triggering rights to a user for a specific pull request
   - **```allow @username test rights```**: Allows github user **`username`** to start the tests by using one of the **`please test`** commands.
@@ -38,7 +39,7 @@ test parameters:
 [  - ]workflow(s|)(_gpu|_threading|_profiling|) = <workflow>[,<workflow>[,...]]
 [  - ]pull_request(s|) = (repository|)#PR[,(repository|)#PR[,...]]
 [  - ]release = release_cycle|architecture|release_cycle/architecture
-[  - ]enable_test(s|) = none,gpu,threading,profiling
+[  - ]enable_test(s|) = none,gpu,threading,profiling,high_stats
 [  - ]ignore_test(s|) = build-warnings|build-warnings|none
 [  - ]full(_cmssw|) = true|false
 [  - ]disable_poison = true|false
