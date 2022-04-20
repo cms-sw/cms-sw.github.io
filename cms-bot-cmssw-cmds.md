@@ -12,6 +12,8 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```type bug|bugfix|bug-fix```**: To add `bugfix` label
   - **```type [new-]feature|[new-]idea```**: To add `new-feature` lebal
   - **```type doc[umentation]|performance|improvements|performance-improvements```**: To add `documentation` and/or `performance-improvements` label
+  - **```type lumi,hgcal,rpc```**: To add extra `lumu`, `hgcal` and `rpc` labels.
+- **```type -gh-label-name(,-gh-label-name,...)```**: L1/L2/requestor to remove an already added label for this PR
 - **```code-checks[ with cms.weekN.PR_hash/tool-conf-version]```**: By default cms-bot runs code-checks for all Pull Requests made for master branch. If for any reason code-checks tests are not run then one can force start code-checks using this command. In case an external update is needed to run code-checks (e.g. due to interface changes in header files) then first run PR tests for cmsdist/external which should deploy externals on CVMFS. Then request the code-checks with the newly deployed externals tools configuration e.g. `code-checks with cms.week0_PR_01234567/47.0-cms2` (external tools configuration is available via cmsdist PR summary page)
 - **Ignoring PR tests results**: Anyone who can trigger tests can issue this command or use test parameters to ignore some of the PR tests results e.g.
   - **```ignore clang-warnings```**: To ignore clang warnings results
