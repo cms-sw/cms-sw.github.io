@@ -1,7 +1,7 @@
 # Using singularity to develop/run CMSSW
 
 We now distribute `cmssw-env, cmssw-cc{6,7,8}, cmssw-el{8,9}` (available under `/cvmfs/cms.cern.ch/common`) helper scripts to setup cms env. The singularity images used by these scripts are available under `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw` e.g. 
-   - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/el8:x86_64`
+   - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/el9:x86_64`
    - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/el8:x86_64`
    - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/cc7:x86_64`
    - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/slc6:amd64`
