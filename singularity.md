@@ -1,11 +1,12 @@
 # Using singularity to develop/run CMSSW
 
-We now distribute `cmssw-env, cmssw-cc{6,7,8}` (available under `/cvmfs/cms.cern.ch/common`) helper scripts to setup cms env. The singularity images used by these scripts are available under `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw` e.g. 
-   - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/cc8:amd64`
-   - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/cc7:amd64`
+We now distribute `cmssw-env, cmssw-cc{6,7,8}, cmssw-el{8,9}` (available under `/cvmfs/cms.cern.ch/common`) helper scripts to setup cms env. The singularity images used by these scripts are available under `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw` e.g. 
+   - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/el8:x86_64`
+   - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/el8:x86_64`
+   - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/cc7:x86_64`
    - `/cvmfs/unpacked.cern.ch/registry.hub.docker.com/cmssw/slc6:amd64`
 
-## Setting up SLC5/SLC6/SLC7/CentOS8 CMS environment.
+## Setting up SLC5/SLC6/SLC7/EL8/EL9 CMS environment.
 
 On lxplus, run `cmssw-env` command to setup up the env e.g.
 
@@ -54,17 +55,17 @@ lxplus> cmssw-cc7 --command-to-run cat /etc/redhat-release
 CentOS Linux release 7.8.2003 (Core)
 ```
 
-- **To use CentOS8 environment**: CentOS8 environment can only be set from SLC7/CentOS7 host (e.g. lxplus, lxplsu7)
+- **To use EL8/9 environment**: CentOS8/RHEL8/EL8 environment can only be set from SLC7/CentOS7 host (e.g. lxplus, lxplsu7)
 
 ```
-lxplus> cmssw-cc8
+lxplus> cmssw-el8 # OR cmssw-el8
 Singularity> cat /etc/redhat-release
-CentOS Linux release 8.2.2004 (Core) 
+AlmaLinux release 8.5 (Arctic Sphynx)
 Singularity> exit
 lxplus>
 ```
 OR
 ```
-lxplus> cmssw-cc8 --command-to-run cat /etc/redhat-release
-CentOS Linux release 8.2.2004 (Core) 
+lxplus> cmssw-el9 --command-to-run cat /etc/redhat-release
+CentOS Stream release 9
 ```
