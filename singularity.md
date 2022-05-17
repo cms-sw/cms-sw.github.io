@@ -58,7 +58,7 @@ CentOS Linux release 7.8.2003 (Core)
 - **To use EL8/9 environment**: CentOS8/RHEL8/EL8 environment can only be set from SLC7/CentOS7 host (e.g. lxplus, lxplsu7)
 
 ```
-lxplus> cmssw-el8 # OR cmssw-el8
+lxplus> cmssw-el8 # OR cmssw-el9
 Singularity> cat /etc/redhat-release
 AlmaLinux release 8.5 (Arctic Sphynx)
 Singularity> exit
@@ -67,5 +67,5 @@ lxplus>
 OR
 ```
 lxplus> cmssw-el9 --command-to-run cat /etc/redhat-release
-CentOS Stream release 9
+AlmaLinux release 9.0 Beta (Emerald Puma)
 ```
