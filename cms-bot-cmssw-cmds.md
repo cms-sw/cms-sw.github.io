@@ -40,7 +40,7 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
 - **PR testing parameters**: Users who can trigger PR tests can also provide extra test parameters by commenting on the pull request. Comment should have the following format
 ```
 test parameters:
-[  - ](workflow|relval)(s|)(_gpu|_threading|high-stats|nano|_profiling|) = <workflow>[,<workflow>[,...]]
+[  - ](workflow|relval)(s|)(_gpu|_threading|_high-stats|_nano|_profiling|) = <workflow>[,<workflow>[,...]]
 [  - ]pull_request(s|) = (repository|)#PR[,(repository|)#PR[,...]]
 [  - ]release = release_cycle|architecture|release_cycle/architecture
 [  - ]enable_test(s|) = none,gpu,threading,profiling,high-stats,nano
@@ -50,7 +50,7 @@ test parameters:
 [  - ]container = cmssw/cc7(:amd64-dYYYYMMDD|)
 [  - ]jenkins_slave = jenkins-node-label
 [  - ](cms-|)addpkg = <cmssw_package>[,<cmssw_package>[,...]]
-[  - ](workflow|relval)_opt(ion|)(s|)(_input|_threading|_gpu|high-stats|nano|) = <runTheMatrix-extra-options for normal relval or special input/threading/gpu jobs>
+[  - ](workflow|relval)_opt(ion|)(s|)(_input|_threading|_gpu|_high-stats|_nano|) = <runTheMatrix-extra-options for normal relval or special input/threading/gpu jobs>
 ```
 - **```[@cmsbuild,] please abort[ test]```**: Those who can request the test can ask to abort a running/on going test.
 - **```[@cmsbuild,] please close```**: L1/L2/Release managers can issue this command to close a pull requests.
