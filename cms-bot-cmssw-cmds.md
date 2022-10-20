@@ -43,7 +43,7 @@ test parameters:
 [  - ](workflow|relval)(s|)(_gpu|_threading|_high-stats|_nano|_profiling|) = <workflow>[,<workflow>[,...]]
 [  - ]pull_request(s|) = (repository|)#PR[,(repository|)#PR[,...]]
 [  - ]release = release_cycle|architecture|release_cycle/architecture
-[  - ]enable_test(s|) = none,gpu,threading,profiling,high-stats,nano
+[  - ]enable(_test(s|)|) = none,gpu,threading,profiling,high-stats,nano
 [  - ]ignore_test(s|) = build-warnings|build-warnings|none
 [  - ]full(_cmssw|) = true|false
 [  - ]disable_poison = true|false
