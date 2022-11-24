@@ -18,7 +18,7 @@ git clone git@github.com:cms-sw/cms-bot
 cd cms-bot
 ./new-release-cycle --cycle ${CYCLE}
 ```
-- Verify (`git diff`) the changes it made in `cms-bot`. Disable any IBs for old development release cycle by appending `DISABLED=1;IB_WEB_PAGE=1;` at the end of each IB line in `config.map` e.g. to disable special `ROOT6` IB
+- Verify (`git diff`) the changes it made in `cms-bot`. Disable any IBs for old development release cycle by appending `DISABLED=1;IB_WEB_PAGE=1;` (`DISABLED=1` to stop building IBs, `IB_WEB_PAGE=1` to keep showing the already build IBs on CMS IBs dashboard) at the end of each IB line in `config.map` e.g. to disable special `ROOT6` IB
 ```
 SCRAM_ARCH=slc6_amd64_gcc630;PKGTOOLS_TAG=V00-31-XX;CMSDIST_TAG=IB/CMSSW_9_4_X/rootgcc6;RELEASE_BRANCH=CMSSW_9_4_ROOT6_X;RELEASE_QUEUE=CMSSW_9_4_ROOT6_X;BUILD_HOUR=23,00;DOCKER_IMG=cmssw/slc6-builder:latest;
 ```
