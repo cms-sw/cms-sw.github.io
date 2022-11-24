@@ -26,8 +26,8 @@ will become
 ```
 SCRAM_ARCH=slc6_amd64_gcc630;PKGTOOLS_TAG=V00-31-XX;CMSDIST_TAG=IB/CMSSW_9_4_X/rootgcc6;RELEASE_BRANCH=CMSSW_9_4_ROOT6_X;RELEASE_QUEUE=CMSSW_9_4_ROOT6_X;BUILD_HOUR=23,00;DOCKER_IMG=cmssw/slc6-builder:latest;DISABLED=1;IB_WEB_PAGE=1;
 ```
-- update `material_budget_ref.py` for new release cycle (use existing reference for the new cycle).
-- Update cmssw known errors for new release cycle if needed in cms-bot/cmssw_known_errors.py
+- Update `material_budget_ref.py` (if needed) for new release cycle (use existing reference for the new cycle).
+- Update cmssw known errors for new release cycle (if needed) in cms-bot/cmssw_known_errors.py
 - Commit and push these changes
 ```
 git commit -a -m "setup new developement cycle ${CYCLE}"
