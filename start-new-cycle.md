@@ -16,7 +16,7 @@ The following needs to happen:
 export CYCLE=CMSSW_10_0_X
 git clone git@github.com:cms-sw/cms-bot
 cd cms-bot
-./new-release-cycle --cycle ${CYCLE}
+PYTHONPATH=/cvmfs/cms-ib.cern.ch/jenkins-env/python/shared ./new-release-cycle --cycle ${CYCLE}
 ```
 - Verify (`git diff`) the changes it made in `cms-bot`. Disable any IBs for old development release cycle by appending `DISABLED=1;IB_WEB_PAGE=1;` (`DISABLED=1` to stop building IBs, `IB_WEB_PAGE=1` to keep showing the already build IBs on CMS IBs dashboard) at the end of each IB line in `config.map` e.g. to disable special `ROOT6` IB
 ```
@@ -29,6 +29,7 @@ SCRAM_ARCH=slc6_amd64_gcc630;PKGTOOLS_TAG=V00-31-XX;CMSDIST_TAG=IB/CMSSW_9_4_X/r
 - Update `material_budget_ref.py` (if needed) for new release cycle (use existing reference for the new cycle).
 - Update cmssw known errors for new release cycle (if needed) in cms-bot/cmssw_known_errors.py
 - Commit and push these changes
+- Go to https://github.com/cms-sw/cmsdist/pulls and update base branch to IB/$CYCLE/master for those PRs which were opened for previous release cycle
 ```
 git commit -a -m "setup new developement cycle ${CYCLE}"
 git push origin
