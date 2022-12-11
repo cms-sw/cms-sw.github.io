@@ -1,9 +1,10 @@
 #! /usr/bin/env python
 from os import unlink
-from os.path import exists, basename
+from os.path import exists, basename, join
 from commands import getstatusoutput
 from argparse import ArgumentParser
 from re import match
+from json import load
 DATA_DIR='data'
 
 #
@@ -27,6 +28,27 @@ def clean_up_results(earliest_date ):
         getstatusoutput("rm -rf %s" % cdir)
     else:
       print("Keeping %s" % cdir)
+  return
+
+def cleanup_old_releases():
+  active_rels_file = join(DATA_DIR,'structure.json')
+  if not exists(active_rels_file):
+    return
+  e, o = getstatusoutput("ls %s/CMSSW_*.json | sed 's|.*/||;s|.json$||'" %  DATA_DIR)
+  if e:
+    print(o)
+    return
+  all_rels = [r for r in o.split('\n') if r]
+  active_rels = load(open(active_rels_file))['all_release_queues']
+  for rel in all_rels:
+    if not rel in active_rels:
+      print("Deleting ",rel)
+      if args.dryRun: continue
+      rel_file = "%s/%s.json" % (DATA_DIR, rel)
+      unlink(rel_file)
+      rel_file = "_data/%s.json" % rel
+      if exists(rel_file):
+        unlink(rel_file)
   return
 
 def cleanup_commands():
@@ -66,3 +88,4 @@ if __name__ == "__main__":
   if exists(DATA_DIR):
     clean_up_results(args.date)
     cleanup_commands()
+    cleanup_old_releases()
