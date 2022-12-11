@@ -39,6 +39,9 @@ def cleanup_old_releases(data):
     print(o)
     return
   all_rels = [r for r in o.split('\n') if r]
+  e, o = getstatusoutput("ls %s/CMSSW_*_summary.txt | sed 's|.*/||;s|_summary.txt$||'" %  data)
+  all_rels += [x for x in o.split('\n') if x.startswith('CMSSW_')]
+  all_rels = list(set(all_rels))
   active_rels = load(open(active_rels_file))['all_release_queues']
   for rel in all_rels:
     if not rel in active_rels:
