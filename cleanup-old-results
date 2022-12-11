@@ -30,11 +30,11 @@ def clean_up_results(earliest_date ):
       print("Keeping %s" % cdir)
   return
 
-def cleanup_old_releases():
-  active_rels_file = join(DATA_DIR,'structure.json')
+def cleanup_old_releases(data):
+  active_rels_file = join(data,'structure.json')
   if not exists(active_rels_file):
     return
-  e, o = getstatusoutput("ls %s/CMSSW_*.json | sed 's|.*/||;s|.json$||'" %  DATA_DIR)
+  e, o = getstatusoutput("ls %s/CMSSW_*.json | sed 's|.*/||;s|.json$||'" %  data)
   if e:
     print(o)
     return
@@ -42,13 +42,12 @@ def cleanup_old_releases():
   active_rels = load(open(active_rels_file))['all_release_queues']
   for rel in all_rels:
     if not rel in active_rels:
-      print("Deleting ",rel)
       if args.dryRun: continue
-      rel_file = "%s/%s.json" % (DATA_DIR, rel)
-      unlink(rel_file)
-      rel_file = "_data/%s.json" % rel
+      print("Deleting ",rel)
+      rel_file = "%s/%s.json" % (data, rel)
       if exists(rel_file):
         unlink(rel_file)
+        print("Deleting ",rel_file)
   return
 
 def cleanup_commands():
@@ -88,4 +87,6 @@ if __name__ == "__main__":
   if exists(DATA_DIR):
     clean_up_results(args.date)
     cleanup_commands()
-    cleanup_old_releases()
+    cleanup_old_releases(DATA_DIR)
+  if exists('_data'):
+    cleanup_old_releases('_data')
