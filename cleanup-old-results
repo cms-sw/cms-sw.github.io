@@ -44,10 +44,11 @@ def cleanup_old_releases(data):
     if not rel in active_rels:
       if args.dryRun: continue
       print("Deleting ",rel)
-      rel_file = "%s/%s.json" % (data, rel)
-      if exists(rel_file):
-        unlink(rel_file)
-        print("Deleting ",rel_file)
+      for ext in ['.json', '_summary.txt']:
+        rel_file = "%s/%s%s" % (data, rel, ext)
+        if exists(rel_file):
+          unlink(rel_file)
+          print("Deleting ",rel_file)
   return
 
 def cleanup_commands():
