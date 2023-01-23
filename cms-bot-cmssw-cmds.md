@@ -22,9 +22,10 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```ignore build-warnings```**: To ignore build warnings results
   - **```ignore none```**: Do not ignore any tests results.
 - **Enable extra PR tests**: Anyone who can trigger tests can issue this command or use test parameters to enable some extra PR tests e.g.
-  - **```enable gpu,threading,profiling,high_stats```**: To run extra GPU, threading relval and profiling tests
+  - **```enable gpu,threading,profiling,high_stats,nano```**: To run extra GPU, threading relval,profiling tests, high statistic relvals and/or nano tests.
   - **```enable profiling```**: To run Igprof and generate resource graphs
   - **```enable high_stats```**: To run high stats relvals tests
+  - **```enable nano```**: To run tests for special nano workflows
   - **```enable none```**: To disable all extra tests
 - **Allowing a user to trigger tests**: L1/L2/Release managers can issue this command to give test triggering rights to a user for a specific pull request
   - **```allow @username test rights```**: Allows github user **`username`** to start the tests by using one of the **`please test`** commands.
