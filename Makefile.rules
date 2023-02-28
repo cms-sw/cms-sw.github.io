@@ -140,4 +140,5 @@ $(TIMESTAMP_FILE): $(ALL_RULES)
 	@$(call update_timestamp,$(ALL_COMMANDS))
 	@$(call update_timestamp,$(ALL_WF_TIMES))
 all: data/cmsdist-config.json clean_up_old_files pr-stats $(TIMESTAMP_FILE)
+	chmod -R a+r data
 	@echo Done all
