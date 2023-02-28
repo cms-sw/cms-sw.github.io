@@ -132,6 +132,9 @@ set_timestamps: FORCE_TARGET
 	@$(call set_times,$(ALL_WF_TIMES))
 $(TIMESTAMP_FILE): $(ALL_RULES)
 	@rm -f $@ && rm -f set_timestamps && touch $@
+	@mkdir -p data/commands/objs
+	@echo 'ForceType application/json' > data/commands/objs/.htaccess
+	@chmod -R a+r data
 	@$(call update_timestamp,$(ALL_RELVALS))
 	@$(call update_timestamp,$(ALL_INPUTS))
 	@$(call update_timestamp,$(ALL_UNIT_TESTS))
@@ -140,5 +143,4 @@ $(TIMESTAMP_FILE): $(ALL_RULES)
 	@$(call update_timestamp,$(ALL_COMMANDS))
 	@$(call update_timestamp,$(ALL_WF_TIMES))
 all: data/cmsdist-config.json clean_up_old_files pr-stats $(TIMESTAMP_FILE)
-	chmod -R a+r data
 	@echo Done all
