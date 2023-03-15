@@ -22,8 +22,8 @@ related:
     #RELEASE_QUEUE: value
     #  This is used to find the matching configuration (cmsdist, pkgtools, archs etc.) from
     #  cms-bot/config.map.
-    #  By default RELEASE_QUEUE is obtained from the release name in the title of issue but
-    #  one can override it using RELEASE_QUEUE: value
+    #  By default RELEASE_QUEUE is obtained from the release name in the title of the github
+    #  release build issue but one can override it using RELEASE_QUEUE: value
     RELEASE_QUEUE: CMSSW_13_1_X
     
     #CMSSW_COMMIT |  TAG_COMMIT: cmssw tag|commit|branch
@@ -42,7 +42,7 @@ related:
     
     #ARCHITECTURE: arch1[,arch2[,...]]
     #  By default bot builds the release for all the archirtectures it found in cms-bot/config.map for
-    #  the selected RELEASE_QUEUE. Bu if you want to build a release for only selected archs then use
+    #  the selected RELEASE_QUEUE. If you want to build a release for only selected archs then use
     #  ARCHITECTURE. Note that archs should be a valid architecture for the RELEASE_QUEUE. 
     #  In case you have used CMSDIST_COMMIT: commit|tag then you should only provide a arch value otherwise
     #  release build process might fail.
