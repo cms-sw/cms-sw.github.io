@@ -44,8 +44,10 @@ test parameters:
 [  - ](workflow|relval)(s|)(_gpu|_threading|_high-stats|_nano|_profiling|) = <workflow>[,<workflow>[,...]]
 [  - ]pull_request(s|) = (repository|)#PR[,(repository|)#PR[,...]]
 [  - ]release = release_cycle|architecture|release_cycle/architecture
+[  - ]baseline = self|default         #default: Use production arch IB as baseline; self: use same release/arch for PR tests and baseline
 [  - ]enable(_test(s|)|) = none,gpu,threading,profiling,high-stats,nano
 [  - ]ignore_test(s|) = build-warnings|build-warnings|none
+[  - ]skip_test(s|) = static|header   #skip static check and/or header consistency 
 [  - ]full(_cmssw|) = true|false
 [  - ]disable_poison = true|false
 [  - ]container = cmssw/cc7(:amd64-dYYYYMMDD|)
