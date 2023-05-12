@@ -59,6 +59,14 @@ related:
  
  Once issue is created then CMS build bot will acknowledge it.
  
+## Patch releases
+
+ If **CMSSW_COMMIT** or **TAG_COMMIT** is not explicitly provided in the github issue body then for patch release
+ `CMSSW_NN_MM_OO_[a-zA-Z]*patch[0-9]+` bot will use `CMSSW_NN_MM_OO_patchX` cmssw branch if available otherwise it
+ will fallback to `CMSSW_NN_MM_X` branch.
+ 
+ By default, patch release will be built for the same architectures the full cmssw release was built.
+ 
 ## Start build process:
  
  One of the [release managers](https://github.com/cms-sw/cms-bot/blob/master/categories.py#L18) can comment with ```+1``` on the issue to start the build process.
