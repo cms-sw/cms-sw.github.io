@@ -27,7 +27,7 @@
                 "el9_amd64_gcc13": "ERR/CMSSW_13_2_X_2023-07-07-2300/el9_amd64_gcc13..IB/CMSSW_13_2_X/g13", 
                 "el8_ppc64le_gcc11": "IB/CMSSW_13_2_X_2023-07-06-2300/el8_ppc64le_gcc11..IB/CMSSW_13_2_X/master", 
                 "el9_aarch64_gcc11": "IB/CMSSW_13_2_X_2023-07-06-2300/el9_aarch64_gcc11..IB/CMSSW_13_2_X/cs9", 
-                "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2023-07-06-2300/slc7_amd64_gcc11..IB/CMSSW_13_2_X/master", 
+                "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2023-07-09-0000/slc7_amd64_gcc11..IB/CMSSW_13_2_X/master", 
                 "el8_ppc64le_gcc12": "ERR/CMSSW_13_2_X_2023-07-06-2300/el8_ppc64le_gcc12..IB/CMSSW_13_2_X/g12", 
                 "el8_aarch64_gcc11": "IB/CMSSW_13_2_X_2023-07-06-2300/el8_aarch64_gcc11..IB/CMSSW_13_2_X/master", 
                 "el8_aarch64_gcc12": "IB/CMSSW_13_2_X_2023-07-06-2300/el8_aarch64_gcc12..IB/CMSSW_13_2_X/g12"
@@ -83,12 +83,12 @@
                 "el8_amd64_gcc11": []
             }, 
             "cmsdist_compared_tags": {
-                "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2023-07-06-2300/slc7_amd64_gcc11..IB/CMSSW_13_2_X_2023-07-06-2300/slc7_amd64_gcc11", 
+                "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2023-07-06-2300/slc7_amd64_gcc11..IB/CMSSW_13_2_X_2023-07-09-0000/slc7_amd64_gcc11", 
                 "el8_amd64_gcc11": "IB/CMSSW_13_2_X_2023-07-06-2300/el8_amd64_gcc11..IB/CMSSW_13_2_X_2023-07-09-0000/el8_amd64_gcc11"
             }, 
             "static_checks_failures": "not-found", 
             "cmsdistTags": {
-                "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2023-07-06-2300/slc7_amd64_gcc11", 
+                "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2023-07-09-0000/slc7_amd64_gcc11", 
                 "el8_amd64_gcc11": "IB/CMSSW_13_2_X_2023-07-09-0000/el8_amd64_gcc11"
             }, 
             "piechart": {
@@ -99,7 +99,10 @@
             "next_ib": false, 
             "RVExceptions": null, 
             "igprof": "found", 
-            "reco_event_loop": "inprogress", 
+            "reco_event_loop": {
+                "status": "passed", 
+                "data": "el8_amd64_gcc11/profiling/11834.21/sorted_RES_CPU_step3.txt"
+            }, 
             "profiling": "found", 
             "crab_tests": "passed", 
             "base_branch": "CMSSW_13_2_X", 
@@ -108,9 +111,11 @@
             "utests": [
                 {
                     "arch": "el8_amd64_gcc11", 
-                    "passed": "unknown", 
-                    "file": "['/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2023-07-09-0000/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "passed", 
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2023-07-09-0000/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "0"
+                    }
                 }, 
                 {
                     "arch": "slc7_amd64_gcc11", 
