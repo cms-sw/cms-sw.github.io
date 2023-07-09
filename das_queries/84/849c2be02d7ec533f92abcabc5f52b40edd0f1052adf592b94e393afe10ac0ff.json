@@ -1,0 +1,106 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1688843500,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "rucio:file4dataset_site"
+        ]
+      },
+      "file": [
+        {
+          "adler32": "7d9b7269",
+          "bytes": 598778525,
+          "md5": null,
+          "name": "/store/relval/CMSSW_9_4_5_cand1/RelValTTbar_13/MINIAODSIM/94X_mc2017_realistic_v14_PU_RelVal_rmaod-v1/10000/84A84D5B-9E2E-E811-B103-0CC47A7C35F4.root",
+          "pfns": {
+            "davs://eoscms.cern.ch:443/eos/cms/store/relval/CMSSW_9_4_5_cand1/RelValTTbar_13/MINIAODSIM/94X_mc2017_realistic_v14_PU_RelVal_rmaod-v1/10000/84A84D5B-9E2E-E811-B103-0CC47A7C35F4.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 1,
+              "rse": "T2_CH_CERN",
+              "rse_id": "542ab69d82bf401e9218bbe375bb1fce",
+              "type": "DISK",
+              "volatile": false
+            },
+            "root://eosctacms.cern.ch:1094//eos/ctacms/archive/cms//store/relval/CMSSW_9_4_5_cand1/RelValTTbar_13/MINIAODSIM/94X_mc2017_realistic_v14_PU_RelVal_rmaod-v1/10000/84A84D5B-9E2E-E811-B103-0CC47A7C35F4.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 3,
+              "rse": "T0_CH_CERN_Tape",
+              "rse_id": "f44c866a264d4da9972969e9f3b5bb52",
+              "type": "TAPE",
+              "volatile": false
+            },
+            "srm://storm-fe-cms.cr.cnaf.infn.it:8444/srm/managerv2?SFN=/cmstape/store/relval/CMSSW_9_4_5_cand1/RelValTTbar_13/MINIAODSIM/94X_mc2017_realistic_v14_PU_RelVal_rmaod-v1/10000/84A84D5B-9E2E-E811-B103-0CC47A7C35F4.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 2,
+              "rse": "T1_IT_CNAF_Tape",
+              "rse_id": "89a267a997d74de6850af9442e21d2a8",
+              "type": "TAPE",
+              "volatile": false
+            }
+          },
+          "rses": {
+            "T0_CH_CERN_Tape": [
+              "root://eosctacms.cern.ch:1094//eos/ctacms/archive/cms//store/relval/CMSSW_9_4_5_cand1/RelValTTbar_13/MINIAODSIM/94X_mc2017_realistic_v14_PU_RelVal_rmaod-v1/10000/84A84D5B-9E2E-E811-B103-0CC47A7C35F4.root"
+            ],
+            "T1_IT_CNAF_Tape": [
+              "srm://storm-fe-cms.cr.cnaf.infn.it:8444/srm/managerv2?SFN=/cmstape/store/relval/CMSSW_9_4_5_cand1/RelValTTbar_13/MINIAODSIM/94X_mc2017_realistic_v14_PU_RelVal_rmaod-v1/10000/84A84D5B-9E2E-E811-B103-0CC47A7C35F4.root"
+            ],
+            "T2_CH_CERN": [
+              "davs://eoscms.cern.ch:443/eos/cms/store/relval/CMSSW_9_4_5_cand1/RelValTTbar_13/MINIAODSIM/94X_mc2017_realistic_v14_PU_RelVal_rmaod-v1/10000/84A84D5B-9E2E-E811-B103-0CC47A7C35F4.root"
+            ]
+          },
+          "scope": "cms",
+          "size": 598778525,
+          "space_token": null,
+          "states": {
+            "T0_CH_CERN_Tape": "COPYING",
+            "T1_IT_CNAF_Tape": "UNAVAILABLE",
+            "T2_CH_CERN": "AVAILABLE"
+          }
+        }
+      ],
+      "qhash": "daeac196a6e66c99d4bc347fb90ec530"
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "file.name"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "daeac196a6e66c99d4bc347fb90ec530",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort file.name | unique",
+    "query": "file dataset=/RelValTTbar_13/CMSSW_9_4_5_cand1-94X_mc2017_realistic_v14_PU_RelVal_rmaod-v1/MINIAODSIM site=T2_CH_CERN  detail=true | grep file.name | sort file.name | unique",
+    "spec": {
+      "dataset": "/RelValTTbar_13/CMSSW_9_4_5_cand1-94X_mc2017_realistic_v14_PU_RelVal_rmaod-v1/MINIAODSIM",
+      "site": "T2_CH_CERN"
+    },
+    "system": "",
+    "tstamp": 1688843499
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1688843500
+}

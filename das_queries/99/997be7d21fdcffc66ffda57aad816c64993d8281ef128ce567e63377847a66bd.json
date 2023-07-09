@@ -1,0 +1,83 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1658516974,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "dbs3:file_lumi4dataset"
+        ]
+      },
+      "file": [
+        {
+          "name": "/store/data/Run2022B/Cosmics/RAW/v1/000/355/442/00000/913d4e7b-5462-46e6-91b5-a47cb7599c32.root"
+        }
+      ],
+      "lumi": [
+        {
+          "number": [
+            2,
+            3,
+            6,
+            9,
+            14,
+            22,
+            12,
+            18,
+            7,
+            21,
+            19,
+            8,
+            10,
+            15,
+            16,
+            1,
+            4,
+            11,
+            13,
+            5,
+            17,
+            20
+          ]
+        }
+      ]
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "lumi",
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "file.name"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "3249a4d607579e29304e5dc63525646b",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort file.name | unique",
+    "query": "lumi,file dataset=/Cosmics/Run2022B-v1/RAW run=355442  detail=true | grep file.name | sort file.name | unique",
+    "spec": {
+      "dataset": "/Cosmics/Run2022B-v1/RAW",
+      "run": "355442"
+    },
+    "system": "",
+    "tstamp": 1658516973
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1658516974
+}

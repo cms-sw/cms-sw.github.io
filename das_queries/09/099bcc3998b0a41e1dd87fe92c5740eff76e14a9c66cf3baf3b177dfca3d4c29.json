@@ -1,0 +1,92 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1686553895,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "rucio:file4dataset_site"
+        ]
+      },
+      "file": [
+        {
+          "adler32": "de2f07a0",
+          "bytes": 142816898,
+          "md5": null,
+          "name": "/store/relval/CMSSW_12_4_9_patch1/RelValSingleMuPt1/GEN-SIM/124X_mcRun3_2022_realistic_v10_BS2022-v2/2580000/1a4ec179-ab2a-4edb-8c4c-4f6489e3da97.root",
+          "pfns": {
+            "davs://eoscms.cern.ch:443/eos/cms/store/relval/CMSSW_12_4_9_patch1/RelValSingleMuPt1/GEN-SIM/124X_mcRun3_2022_realistic_v10_BS2022-v2/2580000/1a4ec179-ab2a-4edb-8c4c-4f6489e3da97.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 1,
+              "rse": "T2_CH_CERN",
+              "rse_id": "542ab69d82bf401e9218bbe375bb1fce",
+              "type": "DISK",
+              "volatile": false
+            },
+            "davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/relval/CMSSW_12_4_9_patch1/RelValSingleMuPt1/GEN-SIM/124X_mcRun3_2022_realistic_v10_BS2022-v2/2580000/1a4ec179-ab2a-4edb-8c4c-4f6489e3da97.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 2,
+              "rse": "T2_IN_TIFR",
+              "rse_id": "fb19bfcb3f504ebc8d75949ecf97b51a",
+              "type": "DISK",
+              "volatile": false
+            }
+          },
+          "rses": {
+            "T2_CH_CERN": [
+              "davs://eoscms.cern.ch:443/eos/cms/store/relval/CMSSW_12_4_9_patch1/RelValSingleMuPt1/GEN-SIM/124X_mcRun3_2022_realistic_v10_BS2022-v2/2580000/1a4ec179-ab2a-4edb-8c4c-4f6489e3da97.root"
+            ],
+            "T2_IN_TIFR": [
+              "davs://se01.indiacms.res.in:443/dpm/indiacms.res.in/home/cms/store/relval/CMSSW_12_4_9_patch1/RelValSingleMuPt1/GEN-SIM/124X_mcRun3_2022_realistic_v10_BS2022-v2/2580000/1a4ec179-ab2a-4edb-8c4c-4f6489e3da97.root"
+            ]
+          },
+          "scope": "cms",
+          "size": 142816898,
+          "states": {
+            "T2_CH_CERN": "AVAILABLE",
+            "T2_IN_TIFR": "AVAILABLE"
+          }
+        }
+      ],
+      "qhash": "d00e142fd86e956915cc2f890a104b28"
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "file.name"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "d00e142fd86e956915cc2f890a104b28",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort file.name | unique",
+    "query": "file dataset=/RelValSingleMuPt1/CMSSW_12_4_9_patch1-124X_mcRun3_2022_realistic_v10_BS2022-v2/GEN-SIM site=T2_CH_CERN  detail=true | grep file.name | sort file.name | unique",
+    "spec": {
+      "dataset": "/RelValSingleMuPt1/CMSSW_12_4_9_patch1-124X_mcRun3_2022_realistic_v10_BS2022-v2/GEN-SIM",
+      "site": "T2_CH_CERN"
+    },
+    "system": "",
+    "tstamp": 1686553894
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1686553895
+}
