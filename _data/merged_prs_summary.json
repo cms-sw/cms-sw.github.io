@@ -30682,13 +30682,15 @@
                 "profiling": "not-found", 
                 "crab_tests": "not-found", 
                 "compared_tags": "CMSSW_5_3_X_2023-07-02-0000-->CMSSW_5_3_X_2023-07-09-0000", 
-                "dqm_tests": "not-found", 
+                "dqm_tests": "found", 
                 "utests": [
                     {
                         "arch": "slc6_amd64_gcc472", 
-                        "passed": "unknown", 
-                        "file": "['/data/sdt/buildlogs/slc6_amd64_gcc472/www/sun/5.3-sun-00/CMSSW_5_3_X_2023-07-09-0000/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc472/www/sun/5.3-sun-00/CMSSW_5_3_X_2023-07-09-0000/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "8"
+                        }
                     }
                 ], 
                 "ib_date": "2023-07-09-0000-0000", 
@@ -30728,7 +30730,14 @@
                 "static_checks": "not-found", 
                 "isIB": true, 
                 "inProgress": false, 
-                "addons": [], 
+                "addons": [
+                    {
+                        "arch": "slc6_amd64_gcc472", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc472/www/sun/5.3-sun-00/CMSSW_5_3_X_2023-07-09-0000/addOnTests.log", 
+                        "details": {}
+                    }
+                ], 
                 "hlt_tests": "inprogress"
             }, 
             {
@@ -36529,8 +36538,8 @@
                     "slc6_amd64_gcc630": []
                 }, 
                 "cmsdist_compared_tags": {
-                    "slc7_amd64_gcc630": "IB/CMSSW_9_4_X_2023-07-02-0000/slc7_amd64_gcc630..IB/CMSSW_9_4_X/gcc630", 
-                    "slc6_amd64_gcc630": "IB/CMSSW_9_4_X_2023-07-02-0000/slc6_amd64_gcc630..IB/CMSSW_9_4_X/gcc630"
+                    "slc7_amd64_gcc630": "IB/CMSSW_9_4_X_2023-07-09-0000/slc7_amd64_gcc630..IB/CMSSW_9_4_X/gcc630", 
+                    "slc6_amd64_gcc630": "IB/CMSSW_9_4_X_2023-07-09-0000/slc6_amd64_gcc630..IB/CMSSW_9_4_X/gcc630"
                 }, 
                 "cmsdistTags": {}, 
                 "next_ib": true, 
@@ -36538,10 +36547,10 @@
                 "fwlite": [], 
                 "profiling": "not-found", 
                 "crab_tests": "not-found", 
-                "compared_tags": "CMSSW_9_4_X_2023-07-02-0000-->CMSSW_9_4_X", 
+                "compared_tags": "CMSSW_9_4_X_2023-07-09-0000-->CMSSW_9_4_X", 
                 "dqm_tests": "not-found", 
                 "utests": [], 
-                "ib_date": "2023-07-02-0000-0001", 
+                "ib_date": "2023-07-09-0000-0001", 
                 "relvals": [], 
                 "igprof": "not-found", 
                 "release_queue": "CMSSW_9_4_X", 
@@ -36562,6 +36571,97 @@
                 "static_checks_failures": "not-found", 
                 "static_checks": "not-found", 
                 "isIB": false, 
+                "inProgress": false, 
+                "addons": [], 
+                "hlt_tests": "inprogress"
+            }, 
+            {
+                "comp_baseline_state": "errors", 
+                "python3_tests": [], 
+                "tests_archs": [
+                    "slc7_amd64_gcc630", 
+                    "slc6_amd64_gcc630"
+                ], 
+                "cmsdist_merged_prs": {
+                    "slc7_amd64_gcc630": [], 
+                    "slc6_amd64_gcc630": []
+                }, 
+                "cmsdist_compared_tags": {
+                    "slc7_amd64_gcc630": "IB/CMSSW_9_4_X_2023-07-02-0000/slc7_amd64_gcc630..IB/CMSSW_9_4_X_2023-07-09-0000/slc7_amd64_gcc630", 
+                    "slc6_amd64_gcc630": "IB/CMSSW_9_4_X_2023-07-02-0000/slc6_amd64_gcc630..IB/CMSSW_9_4_X_2023-07-09-0000/slc6_amd64_gcc630"
+                }, 
+                "cmsdistTags": {
+                    "slc7_amd64_gcc630": "IB/CMSSW_9_4_X_2023-07-09-0000/slc7_amd64_gcc630", 
+                    "slc6_amd64_gcc630": "IB/CMSSW_9_4_X_2023-07-09-0000/slc6_amd64_gcc630"
+                }, 
+                "next_ib": false, 
+                "RVExceptions": null, 
+                "fwlite": [], 
+                "profiling": "not-found", 
+                "crab_tests": "not-found", 
+                "compared_tags": "CMSSW_9_4_X_2023-07-02-0000-->CMSSW_9_4_X_2023-07-09-0000", 
+                "dqm_tests": "not-found", 
+                "utests": [
+                    {
+                        "arch": "slc6_amd64_gcc630", 
+                        "passed": "unknown", 
+                        "file": "['/data/sdt/buildlogs/slc6_amd64_gcc630/www/sun/9.4-sun-00/CMSSW_9_4_X_2023-07-09-0000/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc7_amd64_gcc630", 
+                        "passed": "unknown", 
+                        "file": "['/data/sdt/buildlogs/slc7_amd64_gcc630/www/sun/9.4-sun-00/CMSSW_9_4_X_2023-07-09-0000/new/logAnalysis.pkl']", 
+                        "details": {}
+                    }
+                ], 
+                "ib_date": "2023-07-09-0000-0000", 
+                "relvals": [], 
+                "igprof": "not-found", 
+                "release_queue": "CMSSW_9_4_X", 
+                "release_name": "CMSSW_9_4_X_2023-07-09-0000", 
+                "comp_baseline": "not-found", 
+                "gpu_utests": [], 
+                "material_budget_comparison": "not-found", 
+                "merged_prs": [], 
+                "base_branch": "CMSSW_9_4_X", 
+                "invalid_includes": [], 
+                "builds": [
+                    {
+                        "arch": "slc6_amd64_gcc630", 
+                        "passed": "passed", 
+                        "file": "/data/sdt/buildlogs/slc6_amd64_gcc630/www/sun/9.4-sun-00/CMSSW_9_4_X_2023-07-09-0000/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 11
+                        }
+                    }, 
+                    {
+                        "arch": "slc7_amd64_gcc630", 
+                        "passed": "passed", 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc630/www/sun/9.4-sun-00/CMSSW_9_4_X_2023-07-09-0000/new/logAnalysis.pkl", 
+                        "details": {
+                            "ignoreWarning": 11
+                        }
+                    }
+                ], 
+                "material_budget_v2": "not-found", 
+                "check-headers": "not-found", 
+                "static_checks_v2": "not-found", 
+                "valgrind": "not-found", 
+                "material_budget": "not-found", 
+                "dupDict": [
+                    {
+                        "arch": "slc7_amd64_gcc630", 
+                        "passed": "passed"
+                    }, 
+                    {
+                        "arch": "slc6_amd64_gcc630", 
+                        "passed": "passed"
+                    }
+                ], 
+                "static_checks_failures": "not-found", 
+                "static_checks": "not-found", 
+                "isIB": true, 
                 "inProgress": false, 
                 "addons": [], 
                 "hlt_tests": "inprogress"
