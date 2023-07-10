@@ -38,4 +38,12 @@ Subsequently, the command `python3 -m pip` should be used rather than `pip3`.
 
 ## Usage with CRAB
 
-CRAB support is currently under investigation. Please check back later!
+To add the `$CMSSW_BASE/venv` directory to your CRAB sandbox, include the following line in your CRAB config:
+```python
+config.JobType.sendVenvFolder = True
+```
+
+There is a dedicated setting because symbolic links have to be preserved in the `venv` directory, which is not the default behavior for the CRAB sandbox.
+
+This option must be enabled manually by the user because the `venv` directory can become quite large if many packages were installed.
+Installed Python packages are usually needed for local, offline analysis, rather than `cmsRun` jobs submitted with CRAB.
