@@ -47,9 +47,9 @@ Indexes can be also opened and closed manually by running Jenkins jobs [`es-open
 
 
 ### Scripts pushing data to OpenSearch:
-* Utilities script at [`es_utils.py`](https://github.com/cms-sw/cms-bot/blob/8d0096fd09c9e4bc2f0c7f62133567874cd43755/es_utils.py).
-* Jenkins jobs and queue information at [`parse_jenkins_builds.py`](https://github.com/cms-sw/cms-bot/blob/8d0096fd09c9e4bc2f0c7f62133567874cd43755/parse_jenkins_builds.py).
-* IBs logs at [`es_ibs_log.py`](https://github.com/cms-sw/cms-bot/blob/8d0096fd09c9e4bc2f0c7f62133567874cd43755/es_ibs_log.py).
+* Utilities script at [`es_utils.py`](https://github.com/cms-sw/cms-bot/blob/master/es_utils.py).
+* Jenkins jobs and queue information at [`parse_jenkins_builds.py`](https://github.com/cms-sw/cms-bot/blob/master/parse_jenkins_builds.py).
+* IBs logs at [`es_ibs_log.py`](https://github.com/cms-sw/cms-bot/blob/master/es_ibs_log.py).
 
 *[More to come]*
 
@@ -60,7 +60,7 @@ Dashboards are accessible from the [CMSSDT page](https://cmssdt.cern.ch/SDT/) in
 
 Currently there are 4 active dashboards:
 
-* [**Jenkins Status Dashboard**](https://monit-grafana.cern.ch/d/83t0M504k/cmssdt-jenkins?orgId=11): Its source is the index `cmssdt-jenkins-jobs-*` and it displays information about the status of the infrastructure. In concrete, there is information about:
+* [**Jenkins Status Dashboard**](https://monit-grafana.cern.ch/d/83t0M504k/cmssdt-jenkins?orgId=11): Its source is the index `cmssdt-jenkins-jobs-*` and it displays information about the status of the infrastructure:
 	* Job Status (succeed/failed rate) and Running Builds.
 	* Time-shifts to monitor Running Builds for more than 12h.
 	* Build queue and queue time. Also depending on the node type and labels.
@@ -72,9 +72,9 @@ Currently there are 4 active dashboards:
 
 * [**RelVal Resources Dashboard**](https://monit-grafana.cern.ch/d/bB9CsmHWz/cmssdt-ibmatrix?orgId=11): Its source it is the index `cmssdt-ib-matrix*` and it monitors RelVal resources in terms of:
 	* Information such as the average, maximum and minimum event time and CPU is available.
-	* It allows a esource comparison between release cycles. Also filtering by *os\_arch\_compiler* type and workflow.
+	* It allows to perform resource usage comparision between release cycles. Also filtering by *os\_arch\_compiler* type and workflow.
 
-* [**CMSSW Git Repository Dashboard**](https://monit-grafana.cern.ch/d/srDrmWPWk/cmssdt-cmssw-repository-size?orgId=11): Its source is the `cmssdt-git-repository-size` index and it is dailuy updated to monitor the size of the [cms-sw/cmssw](https://github.com/cms-sw/cmssw) GitHub repository.
+* [**CMSSW Git Repository Dashboard**](https://monit-grafana.cern.ch/d/srDrmWPWk/cmssdt-cmssw-repository-size?orgId=11): Its source is the `cmssdt-git-repository-size` index and it is updated daily to monitor the size of the [cms-sw/cmssw](https://github.com/cms-sw/cmssw) GitHub repository.
 
 ## Dashboard Backups
 In order to back-up the Dashboards one need to move them to the Backup folder. CMS Monitoring have permissions to do this for you since they take care of the actual backup in the "General" tab of the Dashboard settings. The monitoring team takes grafana DB backups and write the json format of the dashboard to HDFS (with restricted access).
