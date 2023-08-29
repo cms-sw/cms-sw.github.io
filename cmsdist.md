@@ -40,7 +40,7 @@ Therefore, in general, you should use the appropriate CMSSW container via Apptai
 
 4. Each external package `${NAME}` has files `${NAME}.spec` and `scram-tools.file/tools/${NAME}/${NAME}.xml` in `cmsdist`.
 The latter file is the toolfile template. It depends on the former, so building the toolfile will also build the external.
-(For complicated externals, these may be split into multiple components/files.)
+(For complicated externals, these may be split into multiple components/files. The command below can only be called for the packages listed in `scram-tools.file/tools/`; the other components for multi-component packages and their toolfiles will be built automatically.)
 To build an external and any new dependencies (existing dependencies will be downloaded as RPMs):
     ```bash
     pkgtools/cmsBuild -i build -a $SCRAM_ARCH -j 8 build ${NAME}-toolfile
