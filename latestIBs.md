@@ -62,7 +62,7 @@ related:
       {% for arch in sortedArchs %}
         <td >
          {% if releaseQueue[1] contains arch %}
-            {% assign ib_name_parts = releaseQueue[1][arch]['latest_IB']  | split:"_201"  %}
+            {% assign ib_name_parts = releaseQueue[1][arch]['latest_IB']  | split:"_202"  %}
             {% if releaseQueue[1][arch]['status'] == 'ok' %}
               {% assign text_color = 'green'  %}
             {% elsif releaseQueue[1][arch]['status'] == 'unknown' %}
@@ -73,7 +73,7 @@ related:
               {% assign text_color = 'red'  %}
             {% endif %}  
               <small>
-                <a style="color:{{ text_color }}" href="http://cms-sw.github.io/showIB.html#{{ releaseQueue[1][arch]['latest_IB'] }}" > 201{{ ib_name_parts[1] }} </a>                
+                <a style="color:{{ text_color }}" href="http://cms-sw.github.io/showIB.html#{{ releaseQueue[1][arch]['latest_IB'] }}" > 202{{ ib_name_parts[1] }} </a>                
               </small>
          {% endif %}
         </td>
