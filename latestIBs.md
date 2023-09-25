@@ -11,7 +11,7 @@ related:
 
 {% assign sortedReleaseQueues = site.data.LatestIBsSummary | sort %}
 {% assign sortedArchs = site.data.LatestIBsSummary.all_archs | sort %}
-<table>
+<table style="overflow-x: scroll; margin-right: 20px;">
   <tr>
     <td>
     </td>
@@ -54,7 +54,7 @@ related:
   </tr>
 
   {% for releaseQueue in sortedReleaseQueues reversed %} 
-    {% if releaseQueue[0] != 'all_archs' %}
+    {% if releaseQueue[0] != 'all_archs' and releaseQueue[0] != 'prod_archs' %}
     <tr>
       <td>
         {{ releaseQueue[0] }}

@@ -75,7 +75,7 @@ In either case, simply apply these changes, commit and update your github branch
 ![PR](images/PR_orpApproval.png)
 
 ### Check the Integration Build
-   - Twice per day, we run a more complete set of tests. The main web page for these results is [here](https://cmssdt.cern.ch/SDT/html/showIB.html). You can check this page a day after your pull request is accepted to check for issues with your pull request. 
+   - Twice per day, we run a more complete set of tests. The main web page for these results is [here](https://cmssdt.cern.ch/SDT/html/cmssdt-ib/). You can check this page a day after your pull request is accepted to check for issues with your pull request. 
 ![PR](images/PR_IntegrationBuilds.png)
    - As with the IB tests, there can be existing problems in the integration builds that will not be related to your pull request or other recently accepted pull requests. You can look at how the test results have changed from day to day to help decide if there are problems created by your pull request.
 
