@@ -34,6 +34,10 @@ and several CMS-specific wrapper commands.
       (see tutorial [Collaborating with peers](tutorial-collaborating-with-peers.html))
     * preparing to build a CMSSW patch release
     * setting up for advanced use of `git rebase`
+* `git cms-squash-topic`:
+    * combining many small commits into one large commit, potentially at the request of the release manager
+      (e.g. if a PR had many minor changes from code review, formatting, etc.)
+    * simplifying a [backport](#backporting-a-pr)
 * `git cms-merge-topic`:
     * *testing* a branch or PR
     * combining multiple patches in a private recipe/release
@@ -313,6 +317,19 @@ Remember, `[new base]` and `[old base]` can be commit hashes rather than tags.
 If you are working in an integration build (IB) that has expired (so the tag is no longer available),
 or if you lost your original working area and forgot which release was your old base,
 you can use `git log` or the GitHub history view to find the hash of the latest commit before your changes, and proceed normally.
+
+If the branch being backported has many commits, you might encounter the same conflicts repeatedly during a rebase.
+To avoid this, you can make a copy of the original branch first, squash it, and then rebase the squashed version (which only has one commit):
+```
+scram project CMSSW_8_0_25
+cd CMSSW_8_0_25/src
+cmsenv
+git cms-squash-topic kpedro88:Unmergeable8025
+git branch -m Unmergeable8025_squash
+git push my-cmssw Unmergeable8025_squash
+[then follow above instructions using branch [user]:Unmergeable8025_squash]
+```
+(In this case, the squash does not have any significant effect, because the original branch only had one commit.)
 
 ### Cherry-picking commits
 
