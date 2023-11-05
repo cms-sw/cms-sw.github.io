@@ -1,0 +1,83 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1658516993,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "dbs3:file_lumi4dataset"
+        ]
+      },
+      "file": [
+        {
+          "name": "/store/data/Run2022B/Tau/RAW/v1/000/355/442/00000/0ab1613c-2005-4d2a-82a1-c4ebc441263e.root"
+        }
+      ],
+      "lumi": [
+        {
+          "number": [
+            4,
+            22,
+            1,
+            3,
+            9,
+            10,
+            16,
+            15,
+            21,
+            7,
+            11,
+            14,
+            17,
+            18,
+            5,
+            19,
+            20,
+            2,
+            6,
+            8,
+            12,
+            13
+          ]
+        }
+      ]
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "lumi",
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "file.name"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "f00e5ba9df832a7cdcb1a26f025819f6",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort file.name | unique",
+    "query": "lumi,file dataset=/Tau/Run2022B-v1/RAW run=355442  detail=true | grep file.name | sort file.name | unique",
+    "spec": {
+      "dataset": "/Tau/Run2022B-v1/RAW",
+      "run": "355442"
+    },
+    "system": "",
+    "tstamp": 1658516992
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1658516993
+}

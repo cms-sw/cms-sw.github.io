@@ -1,0 +1,83 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1658516971,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "dbs3:file_lumi4dataset"
+        ]
+      },
+      "file": [
+        {
+          "name": "/store/data/Run2022B/MuonEG/RAW/v1/000/355/442/00000/b0887e84-3b2d-4402-bd2c-cd8517e7143e.root"
+        }
+      ],
+      "lumi": [
+        {
+          "number": [
+            2,
+            14,
+            16,
+            18,
+            13,
+            4,
+            6,
+            21,
+            22,
+            12,
+            1,
+            7,
+            9,
+            3,
+            15,
+            20,
+            8,
+            11,
+            5,
+            19,
+            17,
+            10
+          ]
+        }
+      ]
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "lumi",
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "file.name"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "ac5fe45816af01554dfbbade7be90a42",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort file.name | unique",
+    "query": "lumi,file dataset=/MuonEG/Run2022B-v1/RAW run=355442  detail=true | grep file.name | sort file.name | unique",
+    "spec": {
+      "dataset": "/MuonEG/Run2022B-v1/RAW",
+      "run": "355442"
+    },
+    "system": "",
+    "tstamp": 1658516970
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1658516971
+}
