@@ -63,7 +63,10 @@
         }, 
         {
             "comp_baseline_state": "errors", 
-            "reco_gpu_mods": "inprogress", 
+            "reco_gpu_mods": {
+                "status": "passed", 
+                "data": "/el8_amd64_gcc11/11834.59621/step3_gpu_nsys.txt"
+            }, 
             "python3_tests": [], 
             "tests_archs": [
                 "el8_amd64_gcc11"
@@ -96,9 +99,11 @@
             "utests": [
                 {
                     "arch": "el8_amd64_gcc11", 
-                    "passed": "unknown", 
-                    "file": "['/data/sdt/buildlogs/el8_amd64_gcc11/www/mon/13.2-mon-11/CMSSW_13_2_X_2023-11-06-1100/new/logAnalysis.pkl']", 
-                    "details": {}
+                    "passed": "failed", 
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/mon/13.2-mon-11/CMSSW_13_2_X_2023-11-06-1100/unitTests-summary.log", 
+                    "details": {
+                        "num_fails": "1"
+                    }
                 }
             ], 
             "ib_date": "2023-11-06-1100-0000", 
@@ -109,7 +114,7 @@
                     "passed": true, 
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/mon/13.2-mon-11/CMSSW_13_2_X_2023-11-06-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                     "details": {
-                        "num_passed": 10, 
+                        "num_passed": 19, 
                         "known_failed": 0, 
                         "num_failed": 0
                     }
