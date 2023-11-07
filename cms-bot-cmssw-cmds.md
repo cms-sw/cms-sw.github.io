@@ -20,7 +20,7 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
 - **Ignoring PR tests results**: Anyone who can trigger tests can issue this command or use test parameters to ignore some of the PR tests results e.g.
   - **```ignore clang-warnings```**: To ignore clang warnings results
   - **```ignore build-warnings```**: To ignore build warnings results
-  - **```ignore tests with (manual-override|ib-failure|external-failure)```**: To ignore test and relval failures:
+  - **```ignore tests-rejected with (manual-override|ib-failure|external-failure)```**: To ignore test and relval failures:
     - `manual-override`: if the failure is not related to a given PR
     - `ib-failure`: if the failure also happens in IBs
     - `external-failure`: if the failure is caused by external factor
