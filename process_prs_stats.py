@@ -29,7 +29,7 @@ def dumpCategoriesJS():
   
 def labelsToState(labels):
   allParts = [x.split("-", 1) for x in labels if "-" in x]
-  validParts = [x for x in allParts if x[0] in POSITIONS.keys()]
+  validParts = [x for x in allParts if x[0] in POSITIONS.keys() and x[1] in STATES.keys()]
   states = [(STATES[x[1]], POSITIONS[x[0]]) for x in validParts]
   iniValue = ["N" for i in xrange(len(POSITIONS))]
   for x in states: iniValue[x[1]] = x[0]
