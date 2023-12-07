@@ -64,7 +64,7 @@ lxplus> cmssw-el7 -- cat /etc/redhat-release
 CentOS Linux release 7.8.2003 (Core)
 ```
 
-- **To use EL8/9 environment**: CentOS8/RHEL8/EL8 environment can only be set from SLC7/CentOS7 host (e.g. lxplus, lxplsu7)
+- **To use EL8/9 environment**:
 
 ```
 lxplus> cmssw-el8 # OR cmssw-el9
