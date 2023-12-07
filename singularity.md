@@ -28,7 +28,7 @@ Scientific Linux CERN SLC release 5.11 (Boron)
 Singularity> exit
 lxplus>
 ```
-OR
+or, to run a single command (in this example `cat /etc/redhat-release` to show the OS version), do
 ```
 lxplus> cmssw-el5 -- cat /etc/redhat-release
 Scientific Linux CERN SLC release 5.11 (Boron)
@@ -43,7 +43,7 @@ CentOS release 6.10 (Final)
 Singularity> exit
 lxplus>
 ```
-OR
+or, to run a single command (in this example `cat /etc/redhat-release` to show the OS version), do
 ```
 lxplus> cmssw-el6 -- cat /etc/redhat-release
 CentOS release 6.10 (Final)
@@ -58,7 +58,7 @@ CentOS Linux release 7.8.2003 (Core)
 Singularity> exit
 lxplus>
 ```
-OR
+or, to run a single command (in this example `cat /etc/redhat-release` to show the OS version), do
 ```
 lxplus> cmssw-el7 -- cat /etc/redhat-release
 CentOS Linux release 7.8.2003 (Core)
@@ -73,7 +73,7 @@ AlmaLinux release 8.5 (Arctic Sphynx)
 Singularity> exit
 lxplus>
 ```
-OR
+or, to run a single command (in this example `cat /etc/redhat-release` to show the OS version), do
 ```
 lxplus> cmssw-el9 -- cat /etc/redhat-release
 AlmaLinux release 9.0 Beta (Emerald Puma)
