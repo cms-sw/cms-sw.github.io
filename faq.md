@@ -289,7 +289,7 @@ Moreover, if you want to simply browse the old repository via web, you can point
 
 ### How to create or update cms-data packages
 
-See [cms-data howto](cms-data)
+See [cms-data howto](cmsdata)
 
 ### How do I ask a question?
 
