@@ -287,6 +287,10 @@ Moreover, if you want to simply browse the old repository via web, you can point
 
 <http://cern.ch/cmscvs/cgi/viewvc.cgi>
 
+### How to create or update cms-data packages
+
+See [cms-data howto](cms-data)
+
 ### How do I ask a question?
 
 If you have more questions about git and CMSSW on git, please use [this
