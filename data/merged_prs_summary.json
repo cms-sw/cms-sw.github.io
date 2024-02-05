@@ -8893,7 +8893,7 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc11/www/sun/13.1-sun-23/CMSSW_13_1_X_2024-02-04-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 3712, 
+                            "num_passed": 3950, 
                             "known_failed": 56, 
                             "num_failed": 1
                         }
@@ -8986,6 +8986,12 @@
                         "arch": "el8_aarch64_gcc11", 
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc11/www/sun/13.1-sun-23/CMSSW_13_1_X_2024-02-04-2300/addOnTests.log", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "el8_ppc64le_gcc11", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/el8_ppc64le_gcc11/www/sun/13.1-sun-23/CMSSW_13_1_X_2024-02-04-2300/addOnTests.log", 
                         "details": {}
                     }
                 ], 
@@ -11927,13 +11933,16 @@
                 "cmsdistTags": {
                     "el8_amd64_gcc11": "IB/CMSSW_13_2_X_2024-02-04-0000/el8_amd64_gcc11"
                 }, 
-                "piechart": "inprogress", 
+                "piechart": {
+                    "status": "passed", 
+                    "data": "el8_amd64_gcc11/11834.21/step3_cpu.resources"
+                }, 
                 "flawfinder": "inprogress", 
                 "next_ib": false, 
                 "RVExceptions": null, 
-                "igprof": "inprogress", 
+                "igprof": "found", 
                 "reco_event_loop": "inprogress", 
-                "profiling": "inprogress", 
+                "profiling": "found", 
                 "crab_tests": "inprogress", 
                 "base_branch": "CMSSW_13_2_X", 
                 "compared_tags": "CMSSW_13_2_X_2024-02-04-2300-->CMSSW_13_2_X_2024-02-05-1100", 
@@ -11971,7 +11980,7 @@
                     }
                 ], 
                 "material_budget_v2": "not-found", 
-                "check-headers": "inprogress", 
+                "check-headers": "passed", 
                 "static_checks_v2": "inprogress", 
                 "valgrind": "not-found", 
                 "material_budget": "not-found", 
@@ -14566,7 +14575,10 @@
             }, 
             {
                 "comp_baseline_state": "errors", 
-                "reco_gpu_mods": "inprogress", 
+                "reco_gpu_mods": {
+                    "status": "passed", 
+                    "data": "/el8_amd64_gcc12/11834.59621/step3_gpu_nsys.txt"
+                }, 
                 "python3_tests": [], 
                 "tests_archs": [
                     "el8_amd64_gcc12", 
@@ -14647,7 +14659,7 @@
                     }
                 ], 
                 "material_budget_v2": "not-found", 
-                "check-headers": "inprogress", 
+                "check-headers": "passed", 
                 "static_checks_v2": "inprogress", 
                 "valgrind": "not-found", 
                 "material_budget": "not-found", 
@@ -14661,7 +14673,7 @@
                         "passed": "passed"
                     }
                 ], 
-                "lizard": "inprogress", 
+                "lizard": "found", 
                 "static_checks": "inprogress", 
                 "isIB": true, 
                 "inProgress": false, 
@@ -14810,12 +14822,12 @@
                     {
                         "done": false, 
                         "arch": "el8_aarch64_gcc12", 
-                        "passed": true, 
+                        "passed": false, 
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/13.3-sun-23/CMSSW_13_3_X_2024-02-04-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 3278, 
-                            "known_failed": 12, 
-                            "num_failed": 0
+                            "num_passed": 4005, 
+                            "known_failed": 0, 
+                            "num_failed": 56
                         }
                     }, 
                     {
@@ -21070,6 +21082,24 @@
                 "material_budget_comparison": "not-found", 
                 "merged_prs": [
                     {
+                        "hash": "0084c011159859b0e7ee6135fb31f126b5040083", 
+                        "title": "Phase2 hgx352A: Add possibilities of more scenarios in some of the checks of G4 Components", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43769", 
+                        "number": "43769", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
                         "hash": "0a7e228ce75451fc638507cae82340782b31272a", 
                         "title": "[14_0_X][DAQ] DaqDirector fixes and cleanup, and removal of EvFOutputModule", 
                         "url": "https://github.com/cms-sw/cmssw/pull/43850", 
@@ -21079,10 +21109,10 @@
                         "author_login": "smorovic"
                     }, 
                     {
-                        "hash": "0084c011159859b0e7ee6135fb31f126b5040083", 
-                        "title": "Phase2 hgx352A: Add possibilities of more scenarios in some of the checks of G4 Components", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/43769", 
-                        "number": "43769", 
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "bsunanda"
@@ -21662,7 +21692,26 @@
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "base_branch": "CMSSW_14_0_X", 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -22539,6 +22588,15 @@
                         "author_login": "smorovic"
                     }, 
                     {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
                         "hash": "d5058b111ca5bd1ade1b4ce340e1d6b4792c7053", 
                         "title": "AXOL1TL change to v3 of model ", 
                         "url": "https://github.com/cms-sw/cmssw/pull/43791", 
@@ -22600,6 +22658,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "bsunanda"
+                    }, 
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
                     }, 
                     {
                         "hash": "a73ce693381d322796eeeedc434f51957d3bcf7f", 
@@ -23062,7 +23129,26 @@
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "base_branch": "CMSSW_14_0_X", 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -23660,6 +23746,15 @@
                         "author_login": "smorovic"
                     }, 
                     {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
                         "hash": "d5058b111ca5bd1ade1b4ce340e1d6b4792c7053", 
                         "title": "AXOL1TL change to v3 of model ", 
                         "url": "https://github.com/cms-sw/cmssw/pull/43791", 
@@ -23721,6 +23816,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "bsunanda"
+                    }, 
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
                     }, 
                     {
                         "hash": "a73ce693381d322796eeeedc434f51957d3bcf7f", 
@@ -23937,6 +24041,15 @@
                         "author_login": "bartosik-hep"
                     }, 
                     {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
                         "hash": "8c583d5f8e44d8ebdd7c03113e782894afd88474", 
                         "title": "Update clang headers location and changed interfaces", 
                         "url": "https://github.com/cms-sw/cmssw/pull/27663", 
@@ -24018,13 +24131,13 @@
                         "author_login": "iarspider"
                     }, 
                     {
-                        "hash": "634a5464ebf48c7b493af7ade1dd0198a8a2d7b8", 
-                        "title": "Remove Configuration/Generator/data/download.url", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/37610", 
-                        "number": "37610", 
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
                         "is_merge_commit": false, 
-                        "from_merge_commit": true, 
-                        "author_login": "iarspider"
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
                     }, 
                     {
                         "hash": "0f7283f7d73284fecb43ecb53770fe9148a0e147", 
@@ -24040,6 +24153,15 @@
                         "title": "Drop PhotosInterface, support for tauola 27.x from TauolaInterface", 
                         "url": "https://github.com/cms-sw/cmssw/pull/37616", 
                         "number": "37616", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": true, 
+                        "author_login": "iarspider"
+                    }, 
+                    {
+                        "hash": "634a5464ebf48c7b493af7ade1dd0198a8a2d7b8", 
+                        "title": "Remove Configuration/Generator/data/download.url", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/37610", 
+                        "number": "37610", 
                         "is_merge_commit": false, 
                         "from_merge_commit": true, 
                         "author_login": "iarspider"
@@ -24916,7 +25038,26 @@
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "base_branch": "CMSSW_14_0_X", 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -25488,7 +25629,26 @@
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "base_branch": "CMSSW_14_0_X", 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -26060,7 +26220,26 @@
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "base_branch": "CMSSW_14_0_X", 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -26880,7 +27059,26 @@
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "base_branch": "CMSSW_14_0_X", 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -27740,7 +27938,26 @@
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "base_branch": "CMSSW_14_0_X", 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -28685,7 +28902,26 @@
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "base_branch": "CMSSW_14_0_X", 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -29628,7 +29864,26 @@
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "base_branch": "CMSSW_14_0_X", 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -30527,7 +30782,26 @@
                 "comp_baseline": "not-found", 
                 "gpu_utests": [], 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "base_branch": "CMSSW_14_0_X", 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -31492,6 +31766,15 @@
                         "author_login": "smorovic"
                     }, 
                     {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
                         "hash": "d5058b111ca5bd1ade1b4ce340e1d6b4792c7053", 
                         "title": "AXOL1TL change to v3 of model ", 
                         "url": "https://github.com/cms-sw/cmssw/pull/43791", 
@@ -31553,6 +31836,15 @@
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "bsunanda"
+                    }, 
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
                     }, 
                     {
                         "hash": "a73ce693381d322796eeeedc434f51957d3bcf7f", 
@@ -32056,6 +32348,24 @@
                 "material_budget_comparison": "not-found", 
                 "merged_prs": [
                     {
+                        "hash": "0084c011159859b0e7ee6135fb31f126b5040083", 
+                        "title": "Phase2 hgx352A: Add possibilities of more scenarios in some of the checks of G4 Components", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43769", 
+                        "number": "43769", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }, 
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
                         "hash": "0a7e228ce75451fc638507cae82340782b31272a", 
                         "title": "[14_0_X][DAQ] DaqDirector fixes and cleanup, and removal of EvFOutputModule", 
                         "url": "https://github.com/cms-sw/cmssw/pull/43850", 
@@ -32065,10 +32375,10 @@
                         "author_login": "smorovic"
                     }, 
                     {
-                        "hash": "0084c011159859b0e7ee6135fb31f126b5040083", 
-                        "title": "Phase2 hgx352A: Add possibilities of more scenarios in some of the checks of G4 Components", 
-                        "url": "https://github.com/cms-sw/cmssw/pull/43769", 
-                        "number": "43769", 
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
                         "is_merge_commit": false, 
                         "from_merge_commit": false, 
                         "author_login": "bsunanda"
@@ -32689,7 +32999,26 @@
                 "comp_baseline": "not-found", 
                 "release_name": "CMSSW_14_0_X", 
                 "material_budget_comparison": "not-found", 
-                "merged_prs": [], 
+                "merged_prs": [
+                    {
+                        "hash": "c03da0e48c76e93456abef430add72e7b414502f", 
+                        "title": "Fix NanoAOD workflow reading 12_4_X file", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43828", 
+                        "number": "43828", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "makortel"
+                    }, 
+                    {
+                        "hash": "ed627fef99f31561104b468385c3ba412d9dc815", 
+                        "title": "Phase2-hgx352C Fix the unit test in Configuration/Geometry", 
+                        "url": "https://github.com/cms-sw/cmssw/pull/43862", 
+                        "number": "43862", 
+                        "is_merge_commit": false, 
+                        "from_merge_commit": false, 
+                        "author_login": "bsunanda"
+                    }
+                ], 
                 "fwlite": [], 
                 "invalid_includes": [], 
                 "builds": [], 
@@ -32732,7 +33061,7 @@
                     "status": "passed", 
                     "data": "el8_amd64_gcc12/11834.21/step3_cpu.resources"
                 }, 
-                "flawfinder": "inprogress", 
+                "flawfinder": "found", 
                 "next_ib": false, 
                 "RVExceptions": null, 
                 "igprof": "found", 
@@ -32789,7 +33118,7 @@
                     }
                 ], 
                 "material_budget_v2": "not-found", 
-                "check-headers": "inprogress", 
+                "check-headers": "passed", 
                 "static_checks_v2": "inprogress", 
                 "valgrind": "not-found", 
                 "material_budget": "not-found", 
@@ -32812,6 +33141,12 @@
                         "arch": "el8_amd64_gcc12", 
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/14.0-mon-11/CMSSW_14_0_X_2024-02-05-1100/addOnTests.log", 
+                        "details": {}
+                    }, 
+                    {
+                        "arch": "slc7_amd64_gcc12", 
+                        "passed": true, 
+                        "file": "/data/sdt/buildlogs/slc7_amd64_gcc12/www/mon/14.0-mon-11/CMSSW_14_0_X_2024-02-05-1100/addOnTests.log", 
                         "details": {}
                     }
                 ], 
