@@ -117,6 +117,7 @@ If necessary to create a unique name, one can add the directory name:
 #### Python
 13. A `_cfi` file should contain only the definition of one module, and possible Modifier ("era") customizations on it. The module label should be the same as the `_cfi` file name.
 14. The `_cfi` file should be left to be generated automatically with the `fillDescriptions()`. When Modifier customizations are needed, the auto-generated label should have e.g. "Default" postfix and be imported+cloned to the desired name.
+  Whenever the plugin needs to be included in a HLT configuration, it is mandatory (for confDB parsing purposes) that a default value is provided for all the top-level parameters. This should be done in the `fillDescriptions()` method by specifying all these top-level parameters with a default value, and using the [`addWithDefaultLabel()`](https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideConfigurationValidationAndHelp#Automatic_module_labels_from_plu)  method to write out a `_cfi` file containing values for all these parameters.
 15. A module/Task/Sequence/Path with a given name should be defined in exactly one `_cfi` or `_cff` file.
 16. All Modifier customizations on a module/Task/Sequence/Path should be applied on the same file that defines the module/Task/Sequence/Path.
 17. When one customizes an existing parameter in `clone()`, `Modifier.toModify()`, or in assignment, explicit types on the right hand side should be avoided.
