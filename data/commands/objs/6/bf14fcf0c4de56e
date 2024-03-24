@@ -1,0 +1,1 @@
+{"type": "DAS", "command": "echo '{\n\"360333\" : [[1, 105]]\n}' > step1_lumiRanges.log  2>&1\n (dasgoclient --limit 0 --query 'lumi,file dataset=/Cosmics/Run2022F-SiPixelCalCosmics-PromptReco-v1/ALCARECO run=360333' --format json | das-selected-lumis.py 1,105 ) | ibeos-lfn-sort -u > step1_dasquery.log  2>&1"}
