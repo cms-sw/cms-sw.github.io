@@ -186,7 +186,7 @@
                 "ib_date": "2024-03-24-0000-0000", 
                 "relvals": [
                     {
-                        "done": false, 
+                        "done": true, 
                         "arch": "slc7_amd64_gcc700", 
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/slc7_amd64_gcc700/www/sun/10.6-sun-00/CMSSW_10_6_X_2024-03-24-0000/pyRelValMatrixLogs/run/runall-report-step123-.log", 
@@ -3450,9 +3450,11 @@
                     }, 
                     {
                         "arch": "el8_ppc64le_gcc10", 
-                        "passed": "unknown", 
-                        "file": "['/data/sdt/buildlogs/el8_ppc64le_gcc10/www/sun/12.4-sun-23/CMSSW_12_4_X_2024-03-24-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "failed", 
+                        "file": "/data/sdt/buildlogs/el8_ppc64le_gcc10/www/sun/12.4-sun-23/CMSSW_12_4_X_2024-03-24-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "2"
+                        }
                     }
                 ], 
                 "ib_date": "2024-03-24-2300-0000", 
@@ -7988,8 +7990,8 @@
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc11/www/mon/13.0-mon-11/CMSSW_13_0_X_2024-03-25-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
                             "num_passed": 3751, 
-                            "known_failed": 0, 
-                            "num_failed": 59
+                            "known_failed": 56, 
+                            "num_failed": 3
                         }
                     }
                 ], 
@@ -9017,8 +9019,8 @@
                         "passed": true, 
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc11/www/mon/13.1-mon-11/CMSSW_13_1_X_2024-03-25-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 435, 
-                            "known_failed": 53, 
+                            "num_passed": 3692, 
+                            "known_failed": 56, 
                             "num_failed": 0
                         }
                     }
@@ -13225,7 +13227,7 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/13.3-mon-11/CMSSW_13_3_X_2024-03-25-1100/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 2785, 
+                            "num_passed": 4194, 
                             "known_failed": 0, 
                             "num_failed": 1
                         }
@@ -31290,9 +31292,11 @@
                 "utests": [
                     {
                         "arch": "el9_amd64_gcc12", 
-                        "passed": "unknown", 
-                        "file": "['/data/sdt/buildlogs/el9_amd64_gcc12/www/sun/14.1.MULTIARCHSV4-sun-23/CMSSW_14_1_MULTIARCHSV4_X_2024-03-24-2300/new/logAnalysis.pkl']", 
-                        "details": {}
+                        "passed": "passed", 
+                        "file": "/data/sdt/buildlogs/el9_amd64_gcc12/www/sun/14.1.MULTIARCHSV4-sun-23/CMSSW_14_1_MULTIARCHSV4_X_2024-03-24-2300/unitTests-summary.log", 
+                        "details": {
+                            "num_fails": "0"
+                        }
                     }
                 ], 
                 "ib_date": "2024-03-24-2300-0000", 
@@ -31370,15 +31374,6 @@
                             "is_merge_commit": false, 
                             "from_merge_commit": true, 
                             "author_login": "jmduarte"
-                        }, 
-                        {
-                            "hash": "29eae5534aa2fb2ba78b0c83f70481d7726b42c3", 
-                            "title": "Update tag for RecoEgamma-PhotonIdentification to V01-07-00", 
-                            "url": "https://github.com/cms-sw/cmsdist/pull/9089", 
-                            "number": "9089", 
-                            "is_merge_commit": false, 
-                            "from_merge_commit": true, 
-                            "author_login": "cms-sw"
                         }
                     ], 
                     "el8_amd64_gcc12": [
@@ -31403,7 +31398,7 @@
                     ]
                 }, 
                 "cmsdist_compared_tags": {
-                    "el9_amd64_gcc12": "IB/CMSSW_14_1_MULTIARCHS_X_2024-03-21-2300/el9_amd64_gcc12..IB/CMSSW_14_1_X/cs9", 
+                    "el9_amd64_gcc12": "IB/CMSSW_14_1_MULTIARCHS_X_2024-03-24-2300/el9_amd64_gcc12..IB/CMSSW_14_1_X/cs9", 
                     "el8_amd64_gcc12": "IB/CMSSW_14_1_MULTIARCHS_X_2024-03-24-2300/el8_amd64_gcc12..IB/CMSSW_14_1_X/master"
                 }, 
                 "cmsdistTags": {}, 
@@ -31521,7 +31516,17 @@
                     "el8_amd64_gcc12"
                 ], 
                 "cmsdist_merged_prs": {
-                    "el9_amd64_gcc12": [], 
+                    "el9_amd64_gcc12": [
+                        {
+                            "hash": "29eae5534aa2fb2ba78b0c83f70481d7726b42c3", 
+                            "title": "Update tag for RecoEgamma-PhotonIdentification to V01-07-00", 
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9089", 
+                            "number": "9089", 
+                            "is_merge_commit": false, 
+                            "from_merge_commit": true, 
+                            "author_login": "cms-sw"
+                        }
+                    ], 
                     "el8_amd64_gcc12": [
                         {
                             "hash": "29eae5534aa2fb2ba78b0c83f70481d7726b42c3", 
@@ -31535,11 +31540,11 @@
                     ]
                 }, 
                 "cmsdist_compared_tags": {
-                    "el9_amd64_gcc12": "IB/CMSSW_14_1_MULTIARCHS_X_2024-03-21-2300/el9_amd64_gcc12..IB/CMSSW_14_1_MULTIARCHS_X_2024-03-21-2300/el9_amd64_gcc12", 
+                    "el9_amd64_gcc12": "IB/CMSSW_14_1_MULTIARCHS_X_2024-03-21-2300/el9_amd64_gcc12..IB/CMSSW_14_1_MULTIARCHS_X_2024-03-24-2300/el9_amd64_gcc12", 
                     "el8_amd64_gcc12": "IB/CMSSW_14_1_MULTIARCHS_X_2024-03-21-2300/el8_amd64_gcc12..IB/CMSSW_14_1_MULTIARCHS_X_2024-03-24-2300/el8_amd64_gcc12"
                 }, 
                 "cmsdistTags": {
-                    "el9_amd64_gcc12": "IB/CMSSW_14_1_MULTIARCHS_X_2024-03-21-2300/el9_amd64_gcc12", 
+                    "el9_amd64_gcc12": "IB/CMSSW_14_1_MULTIARCHS_X_2024-03-24-2300/el9_amd64_gcc12", 
                     "el8_amd64_gcc12": "IB/CMSSW_14_1_MULTIARCHS_X_2024-03-24-2300/el8_amd64_gcc12"
                 }, 
                 "next_ib": false, 
@@ -37700,9 +37705,9 @@
                         "passed": false, 
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/14.1-sun-23/CMSSW_14_1_X_2024-03-24-2300/pyRelValMatrixLogs/run/runall-report-step123-.log", 
                         "details": {
-                            "num_passed": 3011, 
-                            "known_failed": 56, 
-                            "num_failed": 8
+                            "num_passed": 3919, 
+                            "known_failed": 0, 
+                            "num_failed": 67
                         }
                     }, 
                     {
