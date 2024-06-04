@@ -30,6 +30,7 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
   - **```enable profiling```**: To run Igprof and generate resource graphs
   - **```enable high_stats```**: To run high stats relvals tests
   - **```enable nano```**: To run tests for special nano workflows
+  - **```enable hlt_p2_timing```**: To run HLT Phase2 Timing tests
   - **```enable none```**: To disable all extra tests
 - **Allowing a user to trigger tests**: L1/L2/Release managers can issue this command to give test triggering rights to a user for a specific pull request
   - **```allow @username test rights```**: Allows github user **`username`** to start the tests by using one of the **`please test`** commands.
@@ -49,7 +50,7 @@ test parameters:
 [  - ]pull_request(s|) = (repository|)#PR[,(repository|)#PR[,...]]
 [  - ]release = release_cycle|architecture|release_cycle/architecture
 [  - ]baseline = self|default         #default: Use production arch IB as baseline; self: use same release/arch for PR tests and baseline
-[  - ]enable(_test(s|)|) = none,gpu,threading,profiling,high-stats,nano
+[  - ]enable(_test(s|)|) = none,gpu,threading,profiling,high-stats,nano,hlt_p2_timing
 [  - ]ignore_test(s|) = build-warnings|build-warnings|none
 [  - ]skip_test(s|) = static|header   #skip static check and/or header consistency 
 [  - ]full(_cmssw|) = true|false
