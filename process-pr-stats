@@ -51,7 +51,7 @@ def labelsToState(labels):
   states = [(STATES[x[1]], POSITIONS[x[0]])
             for x in validParts]
 
-  iniValue = ["N" for i in xrange(len(POSITIONS))]
+  iniValue = ["N" for i in range(len(POSITIONS))]
 
   for x in states:
     iniValue[x[1]] = x[0]
@@ -106,7 +106,7 @@ if __name__ == "__main__":
 
   # checking if csv file exist
   REnotcomp= re.compile('^\d+,NA,.+')
-  for i in xrange(0, 10000):
+  for i in range(0, 10000):
     beforeBegin = []
     filename = DIRECTORY_NAME + "%s.csv" % i
     if exists(filename):

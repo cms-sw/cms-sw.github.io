@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from sys import argv
 from os.path import exists
 import re
@@ -20,4 +20,4 @@ for wf in cache["workflows"]:
     cache["avg"][a]=[]
   cache["avg"][a].append(wf)
 
-print json.dumps(cache, indent=2, sort_keys=True) 
+print (json.dumps(cache, indent=2, sort_keys=True))
