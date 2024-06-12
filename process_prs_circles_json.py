@@ -100,5 +100,5 @@ if __name__ == "__main__":
     rezult_json['groups'].append(cat_obj)
     rezult_json['groups'].append({ "gap": True , "weight": 0.1})  # this creates a gap in cricles between top level groups
 
-  print(json.dumps(rezult_json, indent=4))
+  print(json.dumps(rezult_json, sort_keys=True, indent=4))
 

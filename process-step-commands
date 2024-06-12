@@ -70,7 +70,7 @@ if __name__ == "__main__":
       # One file per hash
       (fh, filename) = mkstemp()
       file = fdopen(fh, "w")
-      dump({"command": command, "type": t}, file)
+      dump({"command": command, "type": t}, file, sort_keys=True)
       file.close()
       try:
         destFile = join(args.output, h[0], h[1:])
