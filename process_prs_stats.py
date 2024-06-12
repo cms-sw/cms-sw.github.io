@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from optparse import OptionParser
 from glob import glob
 from json import load
@@ -45,7 +45,7 @@ if __name__ == "__main__":
   opts, args = parser.parse_args()
 
   if opts.categories:
-    print dumpCategoriesJS()
+    print (dumpCategoriesJS())
     exit(0)
   # This is the header of the files and will force a rewrite of the file
   # if a mismatching is found.
@@ -76,7 +76,7 @@ if __name__ == "__main__":
 
     prs[createdAt] = [createdAt, closedAt, issue['number'], isPr, issue['comments'], isClosed, len(labels), issue['user'], decodedLabels, updateAt, milestone, repository]
   if opts.header:
-    print schema
+    print (schema)
   for c in reversed(sorted(prs.keys())):
-    print ",".join(str(x) for x in prs[c])
+    print (",".join(str(x) for x in prs[c]))
 

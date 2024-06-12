@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Process job reports and create summary file with performance information.
 from argparse import ArgumentParser
@@ -50,27 +50,27 @@ if __name__ == "__main__":
       
     if printHeader:
       header = sorted(set([k for (w, r) in table.items() for k in r ]))
-      print "Timestamp",
-      print "WorkflowId",
+      print ("Timestamp", end=" ")
+      print ("WorkflowId", end=" ")
       for h in header:
-        print h,
-      print
+        print (h,end=" ")
+      print ("")
       printHeader = False
 
     inDate = re.match(".*CMSSW_.*_(20\d\d-\d\d-\d\d-\d\d\d\d)/.*", inFile).group(1)
     timestamp = time.mktime(datetime.datetime.strptime(inDate, "%Y-%m-%d-%H%M").timetuple())
     for k in sorted(table):
       v = table[k] 
-      print timestamp,
-      print k,
+      print (timestamp,end=" ")
+      print (k,end=" ")
       for h in header:
         if h in v:
           # We do not care about showing less than 1MB changes.
           # Also we round to 1/100s the ellapsed time.
           if h.startswith("PeakValue"):
-            print int(v[h]/10),
+            print (int(v[h]/10),end=" ")
           else:
-            print int(v[h]*10),
+            print (int(v[h]*10),end=" ")
         else:
-          print "NA",
-      print
+          print ("NA",end=" ")
+      print ("")

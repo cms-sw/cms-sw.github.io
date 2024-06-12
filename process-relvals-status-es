@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from argparse import ArgumentParser
-from commands import getstatusoutput
+from subprocess import getstatusoutput
 from operator import itemgetter
 import json
 import re
@@ -47,14 +47,13 @@ if __name__ == "__main__":
   ES_INDEX = args.es_rv_index
 
   if ( not args.input ):
-    print "Please specify an IB to query, and the base " \
-          "directory of the repository"
+    print ("Please specify an IB to query, and the base directory of the repository")
     exit(1)
 
   ib = args.input
   data = get_ib_data( ib )
   if len( data ) == 0:
-    print 'No data found. Something may be wrong'
+    print ('No data found. Something may be wrong')
     exit(1)
 
   groups = {}
@@ -112,8 +111,8 @@ if __name__ == "__main__":
     dir_file_path = out_file_path[:out_file_path.rfind("/")]
     if not os.path.exists( dir_file_path ):
       os.makedirs( dir_file_path )
-    print dir_file_path
-    print 'Generating incomplete results file %s' % out_file_path
+    print (dir_file_path)
+    print ('Generating incomplete results file %s' % out_file_path)
     out_file = open( out_file_path, 'w' )
     json.dump(results_list, out_file, sort_keys=True, indent=4, separators=(',', ': '))
     out_file.close()

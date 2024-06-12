@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from argparse import ArgumentParser
 from os.path import exists
 from sys import exit
@@ -14,7 +14,7 @@ if __name__ == "__main__":
   parser.add_argument("input")
   args = parser.parse_args()
   if not exists(args.input):
-    print "Please specify an input file"
+    print ("Please specify an input file")
     exit(1)
 
   buf = open(args.input).read()
@@ -31,6 +31,6 @@ if __name__ == "__main__":
     if m:
       results[currentPackage]["ok"]=int(m.group(1))
       results[currentPackage]["errors"]=int(m.group(2))
-  results = results.values()
+  results = list(results.values())
   results.sort(key=lambda x : (x["errors"], x["name"]), reverse=True)
-  print dumps(results, sort_keys=True, indent=2, separators=(',', ': '))
+  print (dumps(results, sort_keys=True, indent=2, separators=(',', ': ')))

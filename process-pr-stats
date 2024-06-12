@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 from github import Github
 from argparse import ArgumentParser
 from os.path import exists, expanduser
@@ -100,7 +100,7 @@ if __name__ == "__main__":
   for i in deleteFiles:
     try:
       remove(DIRECTORY_NAME + i +".csv")
-      print "removing %s%s.csv" % (DIRECTORY_NAME, i)
+      print ("removing %s%s.csv" % (DIRECTORY_NAME, i))
     except OSError as ex:
       pass
 
@@ -114,7 +114,7 @@ if __name__ == "__main__":
       lines = f.read().split("\n")
       f.close()
       if len(lines) != 32:
-        print filename + " is too short."
+        print (filename + " is too short.")
       elif lines[0] == schema:
         all_comp = True
         for l in lines:
@@ -122,18 +122,18 @@ if __name__ == "__main__":
             all_comp = False
             break
         if all_comp:
-          print "%s exists and has the same schema, skipping." % filename
+          print ("%s exists and has the same schema, skipping." % filename)
           continue
     try:
       page = iterator.get_page(i)
     except:
-      print "Page %s does not exists." % i
+      print ("Page %s does not exists." % i)
       break
     if not len(page):
       break
 
     # proceesing data if <page>.csv file isn't full
-    print "Processing page %s" % i
+    print ("Processing page %s" % i)
     for issue in page:
       labels = [l.name for l in issue.labels]
       decodedLabels = labelsToState(labels)
@@ -156,7 +156,7 @@ if __name__ == "__main__":
       p = [createdAt, closedAt, issue.number, isPr, issue.comments, isClosed, len(labels), issue.user.login, decodedLabels, updateAt, milestone]
       beforeBegin.append(p)
 
-    print "Saving %s" % filename
+    print ("Saving %s" % filename)
     f = open(filename + ".tmp", "w")
     f.write(schema + "\n")
     for p in beforeBegin:
@@ -173,7 +173,7 @@ if __name__ == "__main__":
       f.write("\n".join(str(x) for x in notClosedPR))
     rename(DIRECTORY_NAME + "pr.tmp", DIRECTORY_NAME + "pr.txt")
   except IOError as ex:
-    print "Something went wrong with %spr.txt file. The reason is %s." % (DIRECTORY_NAME, ex.strerror)
+    print ("Something went wrong with %spr.txt file. The reason is %s." % (DIRECTORY_NAME, ex.strerror))
 
   if args.ignoreIssues:
     notClosedIssue = set(issueArray + notClosedIssue)
@@ -183,4 +183,4 @@ if __name__ == "__main__":
       f.write("\n".join(str(x) for x in notClosedIssue))
     rename(DIRECTORY_NAME + "issue.tmp", DIRECTORY_NAME + "issue.txt")
   except IOError as ex:
-    print "Something went wrong with %sissue.txt file. The reason is %s." % (DIRECTORY_NAME, ex.strerror)
+    print ("Something went wrong with %sissue.txt file. The reason is %s." % (DIRECTORY_NAME, ex.strerror))
