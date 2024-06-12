@@ -3,7 +3,7 @@ import re
 def readRelValFile (name, zipFile):
   data = ""
   if zipFile:
-    data = zipFile.read(name)
+    data = zipFile.read(name).decode()
   else:        
     refFile = open(name)
     data = "".join(refFile.readlines())
