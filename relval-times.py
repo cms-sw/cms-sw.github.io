@@ -10,13 +10,13 @@ for timefile in argv[1:]:
   with open(timefile) as timeinfo:    
     data = json.load(timeinfo)
     for wf in data:
-      if not cache["workflows"].has_key(wf):
+      if not wf in cache["workflows"]:
         cache["workflows"][wf]=[]
       cache["workflows"][wf].append(data[wf])
 
 for wf in cache["workflows"]:
   a = int(sum(cache["workflows"][wf])/len(cache["workflows"][wf]))
-  if not cache["avg"].has_key(a):
+  if not a in cache["avg"]:
     cache["avg"][a]=[]
   cache["avg"][a].append(wf)
 
