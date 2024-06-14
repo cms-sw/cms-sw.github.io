@@ -35,7 +35,7 @@ class ElasticSearchPrinter(object):
                                                       sha1_id)
     request = Request(url)
     if self.auth:
-      base64string = base64.encodestring(self.auth).replace('\n', '')
+      base64string = base64.encodebytes(self.auth.encode()).decode().replace('\n', '')
       request.add_header("Authorization", "Basic %s" % base64string)
     request.get_method = lambda: 'PUT'
     result = urlopen(request, data=json.dumps(payload))
