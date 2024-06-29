@@ -1,0 +1,92 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1717830677,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "rucio:file4dataset_site"
+        ]
+      },
+      "file": [
+        {
+          "adler32": "86181c0e",
+          "bytes": 19053580,
+          "md5": null,
+          "name": "/store/relval/CMSSW_14_1_0_pre3/RelValNuGun/GEN-SIM/140X_mcRun4_realistic_v4_STD_2026D110_noPU-v1/2590000/10f7382b-bbf6-4ce6-b239-a3d03a38f188.root",
+          "pfns": {
+            "davs://eoscms.cern.ch:443/eos/cms/store/relval/CMSSW_14_1_0_pre3/RelValNuGun/GEN-SIM/140X_mcRun4_realistic_v4_STD_2026D110_noPU-v1/2590000/10f7382b-bbf6-4ce6-b239-a3d03a38f188.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 1,
+              "rse": "T2_CH_CERN",
+              "rse_id": "542ab69d82bf401e9218bbe375bb1fce",
+              "type": "DISK",
+              "volatile": false
+            },
+            "davs://xfer-cms.cr.cnaf.infn.it:8443/cmsdisk/store/relval/CMSSW_14_1_0_pre3/RelValNuGun/GEN-SIM/140X_mcRun4_realistic_v4_STD_2026D110_noPU-v1/2590000/10f7382b-bbf6-4ce6-b239-a3d03a38f188.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 2,
+              "rse": "T1_IT_CNAF_Disk",
+              "rse_id": "dd251c7f3f7a40e0b3aef3d2c6d0875e",
+              "type": "DISK",
+              "volatile": false
+            }
+          },
+          "rses": {
+            "T1_IT_CNAF_Disk": [
+              "davs://xfer-cms.cr.cnaf.infn.it:8443/cmsdisk/store/relval/CMSSW_14_1_0_pre3/RelValNuGun/GEN-SIM/140X_mcRun4_realistic_v4_STD_2026D110_noPU-v1/2590000/10f7382b-bbf6-4ce6-b239-a3d03a38f188.root"
+            ],
+            "T2_CH_CERN": [
+              "davs://eoscms.cern.ch:443/eos/cms/store/relval/CMSSW_14_1_0_pre3/RelValNuGun/GEN-SIM/140X_mcRun4_realistic_v4_STD_2026D110_noPU-v1/2590000/10f7382b-bbf6-4ce6-b239-a3d03a38f188.root"
+            ]
+          },
+          "scope": "cms",
+          "size": 19053580,
+          "states": {
+            "T1_IT_CNAF_Disk": "AVAILABLE",
+            "T2_CH_CERN": "AVAILABLE"
+          }
+        }
+      ],
+      "qhash": "f20172058b8056881c576bdb56891125"
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "file.name"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "f20172058b8056881c576bdb56891125",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort file.name | unique",
+    "query": "file dataset=/RelValNuGun/CMSSW_14_1_0_pre3-140X_mcRun4_realistic_v4_STD_2026D110_noPU-v1/GEN-SIM site=T2_CH_CERN  detail=true | grep file.name | sort file.name | unique",
+    "spec": {
+      "dataset": "/RelValNuGun/CMSSW_14_1_0_pre3-140X_mcRun4_realistic_v4_STD_2026D110_noPU-v1/GEN-SIM",
+      "site": "T2_CH_CERN"
+    },
+    "system": "",
+    "tstamp": 1717830676
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1717830677
+}
