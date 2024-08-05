@@ -9,7 +9,7 @@
             "check-headers": "not-found",
             "cmsdistTags": {},
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "IB/CMSSW_14_1_GPU_X_2024-08-01-2300/el8_amd64_gcc12..IB/CMSSW_14_1_X/master"
+                "el8_amd64_gcc12": "IB/CMSSW_14_1_GPU_X_2024-08-04-2300/el8_amd64_gcc12..IB/CMSSW_14_1_X/master"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc12": [
@@ -21,15 +21,6 @@
                         "number": "9342",
                         "title": "BUILDRULES: roll back to V09-04-15",
                         "url": "https://github.com/cms-sw/cmsdist/pull/9342"
-                    },
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": false,
-                        "hash": "111084ba65571c611f2e892f5906ec70578731bc",
-                        "is_merge_commit": false,
-                        "number": "9340",
-                        "title": "[BuildRule] Properly build test dependencies before running test command",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9340"
                     }
                 ]
             },
@@ -51,6 +42,15 @@
             "material_budget_comparison": "not-found",
             "material_budget_v2": "not-found",
             "merged_prs": [
+                {
+                    "author_login": "dan131riley",
+                    "from_merge_commit": false,
+                    "hash": "cf1543d56e4107012ac937b78f8f032bf6a168ef",
+                    "is_merge_commit": false,
+                    "number": "45629",
+                    "title": "Avoid compilation errors in L1Trigger/Phase2L1GMT/src/KMTFCore.cc",
+                    "url": "https://github.com/cms-sw/cmssw/pull/45629"
+                },
                 {
                     "author_login": "mmusich",
                     "from_merge_commit": false,
@@ -88,19 +88,47 @@
             "RVExceptions": null,
             "addons": [],
             "base_branch": "CMSSW_14_1_X",
-            "builds": [],
+            "builds": [
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "ignoreWarning": 755
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/14.1.GPU-sun-23/CMSSW_14_1_GPU_X_2024-08-04-2300/new/logAnalysis.pkl",
+                    "passed": "passed"
+                }
+            ],
             "check-headers": "not-found",
             "cmsdistTags": {
                 "el8_amd64_gcc12": "IB/CMSSW_14_1_GPU_X_2024-08-04-2300/el8_amd64_gcc12"
             },
-            "cmsdist_compared_tags": {},
-            "cmsdist_merged_prs": {},
+            "cmsdist_compared_tags": {
+                "el8_amd64_gcc12": "IB/CMSSW_14_1_GPU_X_2024-08-01-2300/el8_amd64_gcc12..IB/CMSSW_14_1_GPU_X_2024-08-04-2300/el8_amd64_gcc12"
+            },
+            "cmsdist_merged_prs": {
+                "el8_amd64_gcc12": [
+                    {
+                        "author_login": "cms-sw",
+                        "from_merge_commit": false,
+                        "hash": "111084ba65571c611f2e892f5906ec70578731bc",
+                        "is_merge_commit": false,
+                        "number": "9340",
+                        "title": "[BuildRule] Properly build test dependencies before running test command",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9340"
+                    }
+                ]
+            },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
             "compared_tags": "CMSSW_14_1_GPU_X_2024-08-02-2300-->CMSSW_14_1_GPU_X_2024-08-04-2300",
             "crab_tests": "not-found",
             "dqm_tests": "not-found",
-            "dupDict": [],
+            "dupDict": [
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "passed": "passed"
+                }
+            ],
             "fwlite": [],
             "gpu_utests": [],
             "hlt_tests": "not-found",
@@ -177,8 +205,19 @@
             "static_checks": "not-found",
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
-            "tests_archs": [],
-            "utests": [],
+            "tests_archs": [
+                "el8_amd64_gcc12"
+            ],
+            "utests": [
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "num_fails": "0"
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/14.1.GPU-sun-23/CMSSW_14_1_GPU_X_2024-08-04-2300/unitTests-summary.log",
+                    "passed": "passed"
+                }
+            ],
             "valgrind": "not-found",
             "vtune": "not-found"
         },
@@ -703,38 +742,10 @@
                 "el8_amd64_gcc12": "IB/CMSSW_14_1_GPU_X_2024-07-29-2300/el8_amd64_gcc12"
             },
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "IB/CMSSW_14_1_GPU_X_2024-07-28-2300/el8_amd64_gcc12..IB/CMSSW_14_1_GPU_X_2024-07-29-2300/el8_amd64_gcc12"
+                "el8_amd64_gcc12": "IB/CMSSW_14_1_GPU_X_2024-07-29-2300/el8_amd64_gcc12..IB/CMSSW_14_1_GPU_X_2024-07-29-2300/el8_amd64_gcc12"
             },
             "cmsdist_merged_prs": {
-                "el8_amd64_gcc12": [
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": false,
-                        "hash": "83fb3bc439c9d715c45f45d92e9c4dd18176c30d",
-                        "is_merge_commit": false,
-                        "number": "9332",
-                        "title": "gcc cxxflags: enable -fsigned-char -fsigned-bitfields for riscv64",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9332"
-                    },
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": false,
-                        "hash": "4ef2877bc83466f073ddcea6b7fae23b8b951948",
-                        "is_merge_commit": false,
-                        "number": "9329",
-                        "title": "Fix xrootd for non-default arch",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9329"
-                    },
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": false,
-                        "hash": "56fe78d590ef57b999614cef0f58340555ab4213",
-                        "is_merge_commit": false,
-                        "number": "9330",
-                        "title": "ofast-flag: -mrecip=none is only recognized  for ppc64le and x86_64",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9330"
-                    }
-                ]
+                "el8_amd64_gcc12": []
             },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
@@ -882,37 +893,19 @@
             "RVExceptions": null,
             "addons": [],
             "base_branch": "CMSSW_14_1_X",
-            "builds": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {
-                        "ignoreWarning": 753
-                    },
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/14.1.GPU-sun-23/CMSSW_14_1_GPU_X_2024-07-28-2300/new/logAnalysis.pkl",
-                    "passed": "passed"
-                }
-            ],
+            "builds": [],
             "check-headers": "not-found",
             "cmsdistTags": {
                 "el8_amd64_gcc12": "IB/CMSSW_14_1_GPU_X_2024-07-28-2300/el8_amd64_gcc12"
             },
-            "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "IB/CMSSW_14_1_GPU_X_2024-07-28-2300/el8_amd64_gcc12..IB/CMSSW_14_1_GPU_X_2024-07-28-2300/el8_amd64_gcc12"
-            },
-            "cmsdist_merged_prs": {
-                "el8_amd64_gcc12": []
-            },
+            "cmsdist_compared_tags": {},
+            "cmsdist_merged_prs": {},
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
             "compared_tags": "CMSSW_14_1_GPU_X_2024-07-28-2300-->CMSSW_14_1_GPU_X_2024-07-28-2300",
             "crab_tests": "not-found",
             "dqm_tests": "not-found",
-            "dupDict": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "passed": "passed"
-                }
-            ],
+            "dupDict": [],
             "fwlite": [],
             "gpu_utests": [],
             "hlt_tests": "not-found",
@@ -930,35 +923,12 @@
             "python3_tests": [],
             "release_name": "CMSSW_14_1_GPU_X_2024-07-28-2300",
             "release_queue": "CMSSW_14_1_GPU_X",
-            "relvals": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {
-                        "known_failed": 0,
-                        "num_failed": 0,
-                        "num_passed": 237
-                    },
-                    "done": true,
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/14.1.GPU-sun-23/CMSSW_14_1_GPU_X_2024-07-28-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
-                    "passed": true
-                }
-            ],
+            "relvals": [],
             "static_checks": "not-found",
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
-            "tests_archs": [
-                "el8_amd64_gcc12"
-            ],
-            "utests": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {
-                        "num_fails": "0"
-                    },
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/14.1.GPU-sun-23/CMSSW_14_1_GPU_X_2024-07-28-2300/unitTests-summary.log",
-                    "passed": "passed"
-                }
-            ],
+            "tests_archs": [],
+            "utests": [],
             "valgrind": "not-found",
             "vtune": "not-found"
         }
