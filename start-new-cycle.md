@@ -29,11 +29,12 @@ SCRAM_ARCH=slc6_amd64_gcc630;PKGTOOLS_TAG=V00-31-XX;CMSDIST_TAG=IB/CMSSW_9_4_X/r
 - Update `material_budget_ref.py` (if needed) for new release cycle (use existing reference for the new cycle).
 - Update cmssw known errors for new release cycle (if needed) in cms-bot/cmssw_known_errors.py
 - Commit and push these changes
-- Go to https://github.com/cms-sw/cmsdist/pulls and update base branch to IB/$CYCLE/master for those PRs which were opened for previous release cycle
 ```
+git checkout -b new-cycle-${CYCLE}
 git commit -a -m "setup new developement cycle ${CYCLE}"
-git push origin
+git push
 ```
+- Go to https://github.com/cms-sw/cmsdist/pulls and update base branch to IB/$CYCLE/master for those PRs which were opened for previous release cycle
 
 [CMSDIST]: https://github.com/cms-sw/cmsdist
 [PKGTOOLS]: https://github.com/cms-sw/pkgtools
