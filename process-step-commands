@@ -66,6 +66,8 @@ if __name__ == "__main__":
         lumi_cmd = ""
         t = "DAS"
       command = command.strip()
+      command = re.sub('python(2|3|)\s+', 'python ', command)
+      command = re.sub('[^\s\'"]*/monitor_workflow.py','monitor_workflow.py', command)
       h = sha1(command.encode()).hexdigest()[0:16]
       # One file per hash
       (fh, filename) = mkstemp()
