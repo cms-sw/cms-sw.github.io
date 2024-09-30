@@ -37,7 +37,7 @@ One can open a PR with their desired modifications.
 Index are rotated weekly and there is a policy to keep them open for the last 8 weeks.
 Closing old indexes allows for faster information retrieval.
 
-The ES team takes care of the index policies. In this case, the following [policy](https://es-cmssdt.cern.ch/dashboards/app/opensearch_index_management_dashboards#/policy-details?id=delete_old_indices) is applied in OpenSearch to the indexes that rotate weekly:
+The ES team takes care of the index policies. In this case, the following [policy](https://os-cmssdt.cern.ch/dashboards/app/opensearch_index_management_dashboards#/policy-details?id=delete_old_indices) is applied in OpenSearch to the indexes that rotate weekly:
 -   Keep new index open for 8 weeks.
 -   Close index once it is older than 8 weeks.
 -   Delete index if 18 months have passed.
