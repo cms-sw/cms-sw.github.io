@@ -25,7 +25,7 @@ cd src
 scram b distclean 
 git cms-checkdeps -a -A
 scram b -j 8
-scram b runtests
+scram b runtests use-ibeos
 ```
 
 Run a basic battery of tests
