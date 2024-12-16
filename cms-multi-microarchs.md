@@ -1,10 +1,3 @@
----
-title: CMS Offline Software
-layout: default
-related:
- - { name: "Project page", link: "https://github.com/cms-sw/cmssw" }
- - { name: "Feedback", link: "https://github.com/cms-sw/cmssw/issues/new" }
----
 # CMSSW Multi microarch releases
 
 `CMSSW_14_0_X` and above releases are build for multiple micro-architectures support for `x86_64`.
@@ -23,7 +16,3 @@ Starting with CMSSW_15_0_X, we have the follow changes
 - `SCRAM` will also set following environment variables for `CMSSW_15_0` and above
   - **SCRAM_DEFAULT_MICROARCH**: Default micro-arch used for cmssw release e.g. for `CMSSW_15_0_X` it will be `x86-64-v3`
   - **SCRAM_MIN_SUPPORTED_MICROARCH**: Least required micro-arch to run cmssw e.g , for `CMSSW_15_0`, is developer area has multi-microarchitecture support enabled then `SCRAM_MIN_SUPPORTED_MICROARCH` will be set to `x86-64-v2` otherwise it will be `x86-64-v3`
-
-[CMSDIST]: https://github.com/cms-sw/cmsdist
-[PKGTOOLS]: https://github.com/cms-sw/pkgtools
-[CMSSW]: https://github.com/cms-sw/cmssw
