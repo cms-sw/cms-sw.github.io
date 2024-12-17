@@ -10,7 +10,7 @@
             "cmsdistTags": {},
             "cmsdist_compared_tags": {
                 "el8_aarch64_gcc12": "IB/CMSSW_15_0_TF_X_2024-12-10-1100/el8_aarch64_gcc12..IB/CMSSW_15_0_X/tf",
-                "el8_amd64_gcc12": "remotes/origin/IB/CMSSW_15_0_X/tf..IB/CMSSW_15_0_X/tf",
+                "el8_amd64_gcc12": "IB/CMSSW_15_0_TF_X_2024-12-17-1100/el8_amd64_gcc12..IB/CMSSW_15_0_X/tf",
                 "slc7_amd64_gcc12": "IB/CMSSW_15_0_TF_X_2024-12-17-1100/slc7_amd64_gcc12..IB/CMSSW_15_0_X/tf"
             },
             "cmsdist_merged_prs": {
@@ -115,7 +115,26 @@
                         "url": "https://github.com/cms-sw/cmsdist/pull/9564"
                     }
                 ],
-                "el8_amd64_gcc12": [],
+                "el8_amd64_gcc12": [
+                    {
+                        "author_login": "cms-sw",
+                        "from_merge_commit": true,
+                        "hash": "c987c9bf71c1e0e2fee40d81465db27bceaf4174",
+                        "is_merge_commit": false,
+                        "number": "9575",
+                        "title": "[BuildRule]Fix for code checks",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9575"
+                    },
+                    {
+                        "author_login": "cms-sw",
+                        "from_merge_commit": true,
+                        "hash": "a4b732df0483ba4eb3ccdfac883cdc93915f3ea9",
+                        "is_merge_commit": false,
+                        "number": "9569",
+                        "title": "Added git-lfs and update git to version 2.47.1",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9569"
+                    }
+                ],
                 "slc7_amd64_gcc12": [
                     {
                         "author_login": "cms-sw",
@@ -183,6 +202,12 @@
             "RVExceptions": null,
             "addons": [
                 {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {},
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.0.TF-tue-11/CMSSW_15_0_TF_X_2024-12-17-1100/addOnTests.log",
+                    "passed": true
+                },
+                {
                     "arch": "slc7_amd64_gcc12",
                     "details": {},
                     "file": "/data/sdt/buildlogs/slc7_amd64_gcc12/www/tue/15.0.TF-tue-11/CMSSW_15_0_TF_X_2024-12-17-1100/addOnTests.log",
@@ -191,6 +216,14 @@
             ],
             "base_branch": "CMSSW_15_0_X",
             "builds": [
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "ignoreWarning": 638
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.0.TF-tue-11/CMSSW_15_0_TF_X_2024-12-17-1100/new/logAnalysis.pkl",
+                    "passed": "passed"
+                },
                 {
                     "arch": "slc7_amd64_gcc12",
                     "details": {
@@ -206,9 +239,11 @@
                 "slc7_amd64_gcc12": "IB/CMSSW_15_0_TF_X_2024-12-17-1100/slc7_amd64_gcc12"
             },
             "cmsdist_compared_tags": {
+                "el8_amd64_gcc12": "IB/CMSSW_15_0_TF_X_2024-12-17-1100/el8_amd64_gcc12..IB/CMSSW_15_0_TF_X_2024-12-17-1100/el8_amd64_gcc12",
                 "slc7_amd64_gcc12": "IB/CMSSW_15_0_TF_X_2024-12-17-1100/slc7_amd64_gcc12..IB/CMSSW_15_0_TF_X_2024-12-17-1100/slc7_amd64_gcc12"
             },
             "cmsdist_merged_prs": {
+                "el8_amd64_gcc12": [],
                 "slc7_amd64_gcc12": []
             },
             "comp_baseline": "not-found",
@@ -217,6 +252,10 @@
             "crab_tests": "not-found",
             "dqm_tests": "not-found",
             "dupDict": [
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "passed": "passed"
+                },
                 {
                     "arch": "slc7_amd64_gcc12",
                     "passed": "passed"
@@ -485,11 +524,22 @@
             "release_queue": "CMSSW_15_0_TF_X",
             "relvals": [
                 {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "known_failed": 0,
+                        "num_failed": 0,
+                        "num_passed": 3
+                    },
+                    "done": false,
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.0.TF-tue-11/CMSSW_15_0_TF_X_2024-12-17-1100/pyRelValMatrixLogs/run/runall-report-step123-.log",
+                    "passed": true
+                },
+                {
                     "arch": "slc7_amd64_gcc12",
                     "details": {
                         "known_failed": 0,
                         "num_failed": 0,
-                        "num_passed": 44
+                        "num_passed": 306
                     },
                     "done": false,
                     "file": "/data/sdt/buildlogs/slc7_amd64_gcc12/www/tue/15.0.TF-tue-11/CMSSW_15_0_TF_X_2024-12-17-1100/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -500,6 +550,7 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
+                "el8_amd64_gcc12",
                 "slc7_amd64_gcc12"
             ],
             "utests": [
@@ -510,6 +561,12 @@
                     },
                     "file": "/data/sdt/buildlogs/slc7_amd64_gcc12/www/tue/15.0.TF-tue-11/CMSSW_15_0_TF_X_2024-12-17-1100/unitTests-summary.log",
                     "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {},
+                    "file": "['/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.0.TF-tue-11/CMSSW_15_0_TF_X_2024-12-17-1100/new/logAnalysis.pkl']",
+                    "passed": "unknown"
                 }
             ],
             "valgrind": "not-found",
