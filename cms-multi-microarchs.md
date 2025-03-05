@@ -1,18 +1,29 @@
-# CMSSW Multi microarch releases
+# CMSSW Micro-Architecture Support for x86_64
 
-`CMSSW_14_0_X` and above releases are build for multiple micro-architectures support for `x86_64`.
-`CMSSW_14_0, CMSSW_14_1 and CMSSW_14_2` use `x86-64-v2` as default micro-architecture while `x86-64-v3` is provided as an additional micro-architectures. In order to save time and resources, by default `SCRAM` is configured to used only `x86-64-v2`. But if you need to use `x86-64-v3` set of librairies/plugins of cmssw then you can run `scram build enable-multi-targets` in your developer area. This will allow scram to build your checked out packages for both micro-archs and automatiically select the best set of libraries at runtime.
+Starting from `CMSSW_14_0_X`, releases are built with support for multiple micro-architectures on `x86_64`. 
 
-Starting with CMSSW_15_0_X, we have the follow changes
+# For `CMSSW_14_X`:
+- The default micro-architecture is `x86-64-v2`.
+- An additional micro-architecture, `x86-64-v3`, is also available.
+- To optimize time and resource usage, `SCRAM` is configured by default to use only `x86-64-v2`. 
+- If you need `x86-64-v3` libraries and plugins in `CMSSW`, run:
+  ```sh
+  scram build enable-multi-targets
+  ```
+  in your development area. This enables `SCRAM` to build your checked-out packages for both micro-architectures and automatically select the best set of libraries at runtime.
 
-- The default micro-architecture is `x86-64-v3`
-- Additional micro-architecture is `x86-64-v2`
-- Setting runtime environment in `CMSSW` release (e.g. running `cmsenv` directly from the release path) will automatically select the best micro-architecture e.g.
-  - **Nodes with x86-64-v2 only support**: Runtime env will be set to use `x86-64-v2` set of libraries/plugins
-  - **Nodes with x86-64-v3 and above support**:  Runtime env will be set to use `x86-64-v3` set of libraries/plugisn
-- Creating developer area will also automatically enable/disable multi-microarchitecture support e.g.
-  - **Nodes with x86-64-v2 only support**: `SCRAM` will create developer area with multi-microarchitecture support enabled. Any checked out packages will be build for both micro-architectures. At runtime `SCRAM` will selected the best matching micro-architecture
-  - **Nodes with x86-64-v3 and above support**: `SCRAM` will create developer area with multi-microarchitecture support disabled. Any checked out packages will only be built for default (`x86-64-v3`) micro-architecture. At runtime `SCRAM` will only use default (`x86-64-v3`) micro-architecture libraries.
-- `SCRAM` will also set following environment variables for `CMSSW_15_0` and above
-  - **SCRAM_DEFAULT_MICROARCH**: Default micro-arch used for cmssw release e.g. for `CMSSW_15_0_X` it will be `x86-64-v3`
-  - **SCRAM_MIN_SUPPORTED_MICROARCH**: Least required micro-arch to run cmssw e.g , for `CMSSW_15_0`, is developer area has multi-microarchitecture support enabled then `SCRAM_MIN_SUPPORTED_MICROARCH` will be set to `x86-64-v2` otherwise it will be `x86-64-v3`
+# For `CMSSW_15_0_X` and Later:
+Starting with `CMSSW_15_0_X`, the following changes apply:
+- Default Micro-Architecture: `x86-64-v3`
+- Additional Micro-Architecture: `x86-64-v2`
+- Runtime Environment Selection (`cmsenv`):
+  - **Nodes with only `x86-64-v2` support**: The runtime environment will use `x86-64-v2` libraries and plugins.
+  - **Nodes with `x86-64-v3` (or higher) support**: The runtime environment will use `x86-64-v3` libraries and plugins.
+- Development Area Configuration:
+  - **Nodes with only `x86-64-v2` support**: `SCRAM` will enable multi-microarchitecture support. Checked-out packages will be built for both `x86-64-v2` and `x86-64-v3`, with `SCRAM` selecting the best match at runtime.
+  - **Nodes with `x86-64-v3` (or higher) support**: `SCRAM` will disable multi-microarchitecture support. Checked-out packages will be built only for `x86-64-v3`, and at runtime, `SCRAM` will use only `x86-64-v3` libraries.
+- New Environment Variables Set by `SCRAM` (for `CMSSW_15_0_X` and later):
+  - **SCRAM_DEFAULT_MICROARCH**: Specifies the default micro-architecture for the `CMSSW` release (e.g., `x86-64-v3` for `CMSSW_15_0_X`).
+  - **SCRAM_MIN_SUPPORTED_MICROARCH**: Defines the minimum required micro-architecture for `CMSSW`.
+    - If multi-microarchitecture support is enabled in the development area, this will be set to `x86-64-v2`.
+    - Otherwise, it will be set to `x86-64-v3`
