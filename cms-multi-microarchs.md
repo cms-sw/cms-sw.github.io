@@ -2,7 +2,7 @@
 
 Starting from `CMSSW_14_0_X`, releases are built with support for multiple micro-architectures on `x86_64`. 
 
-# For `CMSSW_14_X`:
+**For `CMSSW_14_X`**:
 - The default micro-architecture is `x86-64-v2`.
 - An additional micro-architecture, `x86-64-v3`, is also available.
 - To optimize time and resource usage, `SCRAM` is configured by default to use only `x86-64-v2`. 
@@ -12,7 +12,7 @@ Starting from `CMSSW_14_0_X`, releases are built with support for multiple micro
   ```
   in your development area. This enables `SCRAM` to build your checked-out packages for both micro-architectures and automatically select the best set of libraries at runtime.
 
-# For `CMSSW_15_0_X` and Later:
+**For `CMSSW_15_0_X` and Later**:
 Starting with `CMSSW_15_0_X`, the following changes apply:
 - Default Micro-Architecture: `x86-64-v3`
 - Additional Micro-Architecture: `x86-64-v2`
