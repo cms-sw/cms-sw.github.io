@@ -27,7 +27,7 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
     - `external-failure`: if the failure is caused by external factor
   - **```ignore none```**: Do not ignore any tests results.
 - **Enable extra PR tests**: Anyone who can trigger tests can issue this command or use test parameters to enable some extra PR tests e.g.
-  - **```enable gpu,threading,profiling,high_stats,nano```**: To run extra GPU, threading relval,profiling tests, high statistic relvals and/or nano tests.
+  - **```enable gpu,threading,profiling,high_stats,nano,cuda,rocm```**: To run extra GPU, threading relval,profiling tests, high statistic relvals and/or nano tests. By default, `enable gpu` will run unit tests and relvals using both CUDA and ROCm GPUs, `enable cuda` and `enable rocm` allow selecting only specific GPU type.
   - **```enable profiling```**: To run Igprof and generate resource graphs
   - **```enable high_stats```**: To run high stats relvals tests
   - **```enable nano```**: To run tests for special nano workflows
@@ -51,7 +51,7 @@ test parameters:
 [  - ]pull_request(s|) = (repository|)#PR[,(repository|)#PR[,...]]
 [  - ]release = release_cycle|architecture|release_cycle/architecture
 [  - ]baseline = self|default         #default: Use production arch IB as baseline; self: use same release/arch for PR tests and baseline
-[  - ]enable(_test(s|)|) = none,gpu,threading,profiling,high-stats,nano,hlt_p2_timing
+[  - ]enable(_test(s|)|) = none,gpu,threading,profiling,high-stats,nano,hlt_p2_timing,cuda,rocm
 [  - ]ignore_test(s|) = build-warnings|build-warnings|none
 [  - ]skip_test(s|) = static|header   #skip static check and/or header consistency 
 [  - ]full(_cmssw|) = true|false
