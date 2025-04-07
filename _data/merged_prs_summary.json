@@ -4002,11 +4002,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "slc7_amd64_gcc10",
+                        "arch": "el8_aarch64_gcc10",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_aarch64_gcc10",
+                        "arch": "slc7_amd64_gcc10",
                         "passed": "passed"
                     }
                 ],
@@ -4055,8 +4055,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "slc7_amd64_gcc10",
-                    "el8_aarch64_gcc10"
+                    "el8_aarch64_gcc10",
+                    "slc7_amd64_gcc10"
                 ],
                 "utests": [
                     {
@@ -7754,13 +7754,13 @@
                     {
                         "arch": "el8_aarch64_gcc11",
                         "details": {
-                            "known_failed": 22,
-                            "num_failed": 0,
-                            "num_passed": 169
+                            "known_failed": 0,
+                            "num_failed": 24,
+                            "num_passed": 600
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc11/www/mon/13.0-mon-11/CMSSW_13_0_X_2025-04-07-1100/pyRelValMatrixLogs/run/runall-report-step123-.log",
-                        "passed": true
+                        "passed": false
                     }
                 ],
                 "static_checks": "not-found",
@@ -7772,9 +7772,11 @@
                 "utests": [
                     {
                         "arch": "el8_aarch64_gcc11",
-                        "details": {},
-                        "file": "['/data/sdt/buildlogs/el8_aarch64_gcc11/www/mon/13.0-mon-11/CMSSW_13_0_X_2025-04-07-1100/new/logAnalysis.pkl']",
-                        "passed": "unknown"
+                        "details": {
+                            "num_fails": "3"
+                        },
+                        "file": "/data/sdt/buildlogs/el8_aarch64_gcc11/www/mon/13.0-mon-11/CMSSW_13_0_X_2025-04-07-1100/unitTests-summary.log",
+                        "passed": "failed"
                     }
                 ],
                 "valgrind": "not-found",
@@ -7929,11 +7931,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "slc7_amd64_gcc11",
+                        "arch": "el8_amd64_gcc11",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_amd64_gcc11",
+                        "arch": "slc7_amd64_gcc11",
                         "passed": "passed"
                     }
                 ],
@@ -7989,8 +7991,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "slc7_amd64_gcc11",
-                    "el8_amd64_gcc11"
+                    "el8_amd64_gcc11",
+                    "slc7_amd64_gcc11"
                 ],
                 "utests": [
                     {
@@ -8208,7 +8210,7 @@
                 "cmsdist_compared_tags": {
                     "el8_aarch64_gcc11": "IB/CMSSW_13_1_X_2025-03-31-1100/el8_aarch64_gcc11..IB/CMSSW_13_1_X/master",
                     "el8_amd64_gcc11": "IB/CMSSW_13_1_X_2025-04-06-0000/el8_amd64_gcc11..IB/CMSSW_13_1_X/master",
-                    "el9_aarch64_gcc11": "IB/CMSSW_13_1_X_2025-03-31-1100/el9_aarch64_gcc11..IB/CMSSW_13_1_X/cs9",
+                    "el9_aarch64_gcc11": "IB/CMSSW_13_1_X_2025-04-07-1100/el9_aarch64_gcc11..IB/CMSSW_13_1_X/cs9",
                     "el9_amd64_gcc11": "IB/CMSSW_13_1_X_2025-04-06-2300/el9_amd64_gcc11..IB/CMSSW_13_1_X/cs9",
                     "slc7_amd64_gcc11": "IB/CMSSW_13_1_X_2025-04-06-0000/slc7_amd64_gcc11..IB/CMSSW_13_1_X/master"
                 },
@@ -8262,20 +8264,39 @@
                     }
                 ],
                 "base_branch": "CMSSW_13_1_X",
-                "builds": [],
+                "builds": [
+                    {
+                        "arch": "el9_aarch64_gcc11",
+                        "details": {
+                            "compWarning": 43,
+                            "ignoreWarning": 342
+                        },
+                        "file": "/data/sdt/buildlogs/el9_aarch64_gcc11/www/mon/13.1-mon-11/CMSSW_13_1_X_2025-04-07-1100/new/logAnalysis.pkl",
+                        "passed": "warning"
+                    }
+                ],
                 "check-headers": "not-found",
                 "cmsdistTags": {
                     "el8_aarch64_gcc11": "IB/CMSSW_13_1_X_2025-04-07-1100/el8_aarch64_gcc11",
                     "el9_aarch64_gcc11": "IB/CMSSW_13_1_X_2025-04-07-1100/el9_aarch64_gcc11"
                 },
-                "cmsdist_compared_tags": {},
-                "cmsdist_merged_prs": {},
+                "cmsdist_compared_tags": {
+                    "el9_aarch64_gcc11": "IB/CMSSW_13_1_X_2025-03-31-1100/el9_aarch64_gcc11..IB/CMSSW_13_1_X_2025-04-07-1100/el9_aarch64_gcc11"
+                },
+                "cmsdist_merged_prs": {
+                    "el9_aarch64_gcc11": []
+                },
                 "comp_baseline": "not-found",
                 "comp_baseline_state": "errors",
                 "compared_tags": "CMSSW_13_1_X_2025-04-06-2300-->CMSSW_13_1_X_2025-04-07-1100",
                 "crab_tests": "inprogress",
                 "dqm_tests": "not-found",
-                "dupDict": [],
+                "dupDict": [
+                    {
+                        "arch": "el9_aarch64_gcc11",
+                        "passed": "passed"
+                    }
+                ],
                 "fwlite": [],
                 "gpu_utests": [],
                 "hlt_tests": "inprogress",
@@ -8297,8 +8318,17 @@
                 "static_checks": "not-found",
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
-                "tests_archs": [],
-                "utests": [],
+                "tests_archs": [
+                    "el9_aarch64_gcc11"
+                ],
+                "utests": [
+                    {
+                        "arch": "el9_aarch64_gcc11",
+                        "details": {},
+                        "file": "['/data/sdt/buildlogs/el9_aarch64_gcc11/www/mon/13.1-mon-11/CMSSW_13_1_X_2025-04-07-1100/new/logAnalysis.pkl']",
+                        "passed": "unknown"
+                    }
+                ],
                 "valgrind": "not-found",
                 "vtune": "not-found"
             },
@@ -8451,11 +8481,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "slc7_amd64_gcc11",
+                        "arch": "el8_amd64_gcc11",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_amd64_gcc11",
+                        "arch": "slc7_amd64_gcc11",
                         "passed": "passed"
                     }
                 ],
@@ -8511,8 +8541,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "slc7_amd64_gcc11",
-                    "el8_amd64_gcc11"
+                    "el8_amd64_gcc11",
+                    "slc7_amd64_gcc11"
                 ],
                 "utests": [
                     {
@@ -11285,11 +11315,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "slc7_amd64_gcc11",
+                        "arch": "el8_amd64_gcc11",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_amd64_gcc11",
+                        "arch": "slc7_amd64_gcc11",
                         "passed": "passed"
                     }
                 ],
@@ -11345,8 +11375,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "slc7_amd64_gcc11",
-                    "el8_amd64_gcc11"
+                    "el8_amd64_gcc11",
+                    "slc7_amd64_gcc11"
                 ],
                 "utests": [
                     {
@@ -11528,11 +11558,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "slc7_amd64_gcc11",
+                        "arch": "el8_amd64_gcc11",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_amd64_gcc11",
+                        "arch": "slc7_amd64_gcc11",
                         "passed": "passed"
                     }
                 ],
@@ -11588,8 +11618,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "slc7_amd64_gcc11",
-                    "el8_amd64_gcc11"
+                    "el8_amd64_gcc11",
+                    "slc7_amd64_gcc11"
                 ],
                 "utests": [
                     {
@@ -11691,11 +11721,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_aarch64_gcc11",
+                        "arch": "el8_aarch64_gcc11",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_aarch64_gcc11",
+                        "arch": "el9_aarch64_gcc11",
                         "passed": "passed"
                     }
                 ],
@@ -11756,8 +11786,8 @@
                 "static_checks_v2": "not-found",
                 "tests_archs": [
                     "el9_amd64_gcc11",
-                    "el9_aarch64_gcc11",
-                    "el8_aarch64_gcc11"
+                    "el8_aarch64_gcc11",
+                    "el9_aarch64_gcc11"
                 ],
                 "utests": [
                     {
@@ -17168,9 +17198,9 @@
                     {
                         "arch": "el8_aarch64_gcc12",
                         "details": {
-                            "known_failed": 56,
-                            "num_failed": 6,
-                            "num_passed": 3658
+                            "known_failed": 0,
+                            "num_failed": 62,
+                            "num_passed": 4004
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/14.0-sun-23/CMSSW_14_0_X_2025-04-06-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -20514,7 +20544,7 @@
                         "details": {
                             "known_failed": 0,
                             "num_failed": 0,
-                            "num_passed": 46
+                            "num_passed": 598
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/14.1.O2OTest-mon-11/CMSSW_14_1_O2OTest_X_2025-04-07-1100/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -20908,7 +20938,7 @@
                         "details": {
                             "known_failed": 0,
                             "num_failed": 1,
-                            "num_passed": 192
+                            "num_passed": 3316
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/14.1-mon-11/CMSSW_14_1_X_2025-04-07-1100/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -20919,7 +20949,7 @@
                         "details": {
                             "known_failed": 0,
                             "num_failed": 0,
-                            "num_passed": 1068
+                            "num_passed": 2028
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/slc7_amd64_gcc12/www/mon/14.1-mon-11/CMSSW_14_1_X_2025-04-07-1100/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -21028,8 +21058,8 @@
                         "arch": "el8_aarch64_gcc12",
                         "details": {
                             "known_failed": 25,
-                            "num_failed": 2,
-                            "num_passed": 1729
+                            "num_failed": 3,
+                            "num_passed": 1731
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/14.1-sun-23/CMSSW_14_1_X_2025-04-06-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -21156,11 +21186,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_aarch64_gcc12",
+                        "arch": "slc7_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "slc7_amd64_gcc12",
+                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -21264,8 +21294,8 @@
                 "tests_archs": [
                     "el8_amd64_gcc12",
                     "el9_amd64_gcc12",
-                    "el9_aarch64_gcc12",
-                    "slc7_amd64_gcc12"
+                    "slc7_amd64_gcc12",
+                    "el9_aarch64_gcc12"
                 ],
                 "utests": [
                     {
@@ -22419,9 +22449,9 @@
                     {
                         "arch": "el8_aarch64_gcc12",
                         "details": {
-                            "known_failed": 12,
-                            "num_failed": 3,
-                            "num_passed": 3780
+                            "known_failed": 0,
+                            "num_failed": 30,
+                            "num_passed": 3856
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/14.2-sun-23/CMSSW_14_2_X_2025-04-06-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -22552,11 +22582,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_aarch64_gcc12",
+                        "arch": "slc7_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "slc7_amd64_gcc12",
+                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -22660,8 +22690,8 @@
                 "tests_archs": [
                     "el8_amd64_gcc12",
                     "el9_amd64_gcc12",
-                    "el9_aarch64_gcc12",
-                    "slc7_amd64_gcc12"
+                    "slc7_amd64_gcc12",
+                    "el9_aarch64_gcc12"
                 ],
                 "utests": [
                     {
@@ -23685,11 +23715,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_amd64_gcc13",
+                        "arch": "el8_aarch64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_aarch64_gcc12",
+                        "arch": "el8_amd64_gcc13",
                         "passed": "passed"
                     }
                 ],
@@ -23781,8 +23811,8 @@
                 },
                 "tests_archs": [
                     "el8_amd64_gcc12",
-                    "el8_amd64_gcc13",
-                    "el8_aarch64_gcc12"
+                    "el8_aarch64_gcc12",
+                    "el8_amd64_gcc13"
                 ],
                 "utests": [
                     {
@@ -24789,7 +24819,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "el9_aarch64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -24797,11 +24831,7 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -24918,10 +24948,10 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el8_amd64_gcc13",
                     "el9_aarch64_gcc12",
                     "el9_amd64_gcc12",
+                    "el8_amd64_gcc13",
+                    "el8_amd64_gcc12",
                     "el8_aarch64_gcc12"
                 ],
                 "utests": [
@@ -25286,7 +25316,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "el9_aarch64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -25294,11 +25328,7 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -25446,10 +25476,10 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el8_amd64_gcc13",
                     "el9_aarch64_gcc12",
                     "el9_amd64_gcc12",
+                    "el8_amd64_gcc13",
+                    "el8_amd64_gcc12",
                     "el8_aarch64_gcc12"
                 ],
                 "utests": [
@@ -26095,6 +26125,15 @@
                 "material_budget_comparison": "not-found",
                 "material_budget_v2": "not-found",
                 "merged_prs": [
+                    {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
                     {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
@@ -26744,6 +26783,15 @@
                 "material_budget_comparison": "not-found",
                 "material_budget_v2": "not-found",
                 "merged_prs": [
+                    {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
                     {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
@@ -27773,6 +27821,15 @@
                 "material_budget_v2": "not-found",
                 "merged_prs": [
                     {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
+                    {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
                         "hash": "7b71cf50a70a875939bc808ecc58a018f6032c6b",
@@ -28437,6 +28494,15 @@
                 "material_budget_v2": "not-found",
                 "merged_prs": [
                     {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
+                    {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
                         "hash": "7b71cf50a70a875939bc808ecc58a018f6032c6b",
@@ -29090,6 +29156,15 @@
                 "material_budget_comparison": "not-found",
                 "material_budget_v2": "not-found",
                 "merged_prs": [
+                    {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
                     {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
@@ -30119,6 +30194,15 @@
                 "material_budget_v2": "not-found",
                 "merged_prs": [
                     {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
+                    {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
                         "hash": "7b71cf50a70a875939bc808ecc58a018f6032c6b",
@@ -30871,6 +30955,15 @@
                 "material_budget_v2": "not-found",
                 "merged_prs": [
                     {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
+                    {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
                         "hash": "7b71cf50a70a875939bc808ecc58a018f6032c6b",
@@ -31622,6 +31715,15 @@
                 "material_budget_comparison": "not-found",
                 "material_budget_v2": "not-found",
                 "merged_prs": [
+                    {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
                     {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
@@ -32618,6 +32720,15 @@
                 "material_budget_v2": "not-found",
                 "merged_prs": [
                     {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
+                    {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
                         "hash": "7b71cf50a70a875939bc808ecc58a018f6032c6b",
@@ -33178,6 +33289,15 @@
                 "material_budget_comparison": "not-found",
                 "material_budget_v2": "not-found",
                 "merged_prs": [
+                    {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
                     {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
@@ -34601,6 +34721,15 @@
                 "material_budget_comparison": "not-found",
                 "material_budget_v2": "not-found",
                 "merged_prs": [
+                    {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
                     {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
@@ -36041,6 +36170,15 @@
                 "material_budget_v2": "not-found",
                 "merged_prs": [
                     {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
+                    {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
                         "hash": "7b71cf50a70a875939bc808ecc58a018f6032c6b",
@@ -36356,6 +36494,15 @@
                 "material_budget_comparison": "not-found",
                 "material_budget_v2": "not-found",
                 "merged_prs": [
+                    {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
                     {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
@@ -37373,6 +37520,15 @@
                 "material_budget_v2": "not-found",
                 "merged_prs": [
                     {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
+                    {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
                         "hash": "7b71cf50a70a875939bc808ecc58a018f6032c6b",
@@ -38105,6 +38261,15 @@
                 "material_budget_comparison": "not-found",
                 "material_budget_v2": "not-found",
                 "merged_prs": [
+                    {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
                     {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
@@ -39397,6 +39562,15 @@
                 "material_budget_v2": "not-found",
                 "merged_prs": [
                     {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
+                    {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
                         "hash": "7b71cf50a70a875939bc808ecc58a018f6032c6b",
@@ -39792,6 +39966,15 @@
                 "material_budget_comparison": "not-found",
                 "material_budget_v2": "not-found",
                 "merged_prs": [
+                    {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
                     {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
@@ -40567,6 +40750,15 @@
                 "material_budget_v2": "not-found",
                 "merged_prs": [
                     {
+                        "author_login": "Ma128-bit",
+                        "from_merge_commit": false,
+                        "hash": "88a70bdc5cbb9152ccb7524788312b42dde8579b",
+                        "is_merge_commit": false,
+                        "number": "47690",
+                        "title": "Adding GEM MEs to per-LS scope in Offline DQM",
+                        "url": "https://github.com/cms-sw/cmssw/pull/47690"
+                    },
+                    {
                         "author_login": "patinkaew",
                         "from_merge_commit": false,
                         "hash": "7b71cf50a70a875939bc808ecc58a018f6032c6b",
@@ -40886,7 +41078,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "el9_aarch64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -40894,11 +41090,7 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -41034,10 +41226,10 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el8_amd64_gcc13",
                     "el9_aarch64_gcc12",
                     "el9_amd64_gcc12",
+                    "el8_amd64_gcc13",
+                    "el8_amd64_gcc12",
                     "el8_aarch64_gcc12"
                 ],
                 "utests": [
@@ -41653,27 +41845,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_amd64_gcc13",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_amd64_gcc13",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_aarch64_gcc13",
-                        "passed": "passed"
-                    },
-                    {
                         "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -41681,7 +41853,27 @@
                         "passed": "passed"
                     },
                     {
+                        "arch": "el8_aarch64_gcc13",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_amd64_gcc13",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
                         "arch": "el8_aarch64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_amd64_gcc13",
                         "passed": "passed"
                     }
                 ],
@@ -41827,14 +42019,14 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el9_amd64_gcc13",
-                    "el8_amd64_gcc13",
-                    "el8_aarch64_gcc13",
                     "el9_aarch64_gcc12",
-                    "el9_amd64_gcc12",
                     "el8_amd64_gcc14",
-                    "el8_aarch64_gcc12"
+                    "el8_aarch64_gcc13",
+                    "el9_amd64_gcc12",
+                    "el8_amd64_gcc13",
+                    "el8_amd64_gcc12",
+                    "el8_aarch64_gcc12",
+                    "el9_amd64_gcc13"
                 ],
                 "ubsan-logs": "error",
                 "utests": [
@@ -42187,7 +42379,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "el9_aarch64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -42195,11 +42391,7 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -42362,10 +42554,10 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el8_amd64_gcc13",
                     "el9_aarch64_gcc12",
                     "el9_amd64_gcc12",
+                    "el8_amd64_gcc13",
+                    "el8_amd64_gcc12",
                     "el8_aarch64_gcc12"
                 ],
                 "utests": [
@@ -42685,15 +42877,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_amd64_gcc13",
-                        "passed": "passed"
-                    },
-                    {
                         "arch": "el9_aarch64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_amd64_gcc14",
                         "passed": "passed"
                     },
                     {
@@ -42701,7 +42889,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_amd64_gcc14",
+                        "arch": "el8_amd64_gcc13",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -42866,11 +43058,11 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el8_amd64_gcc13",
                     "el9_aarch64_gcc12",
-                    "el9_amd64_gcc12",
                     "el8_amd64_gcc14",
+                    "el9_amd64_gcc12",
+                    "el8_amd64_gcc13",
+                    "el8_amd64_gcc12",
                     "el8_aarch64_gcc12"
                 ],
                 "ubsan-logs": "error",
@@ -43230,7 +43422,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "el9_aarch64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -43238,11 +43434,7 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -43378,10 +43570,10 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el8_amd64_gcc13",
                     "el9_aarch64_gcc12",
                     "el9_amd64_gcc12",
+                    "el8_amd64_gcc13",
+                    "el8_amd64_gcc12",
                     "el8_aarch64_gcc12"
                 ],
                 "utests": [
@@ -43781,11 +43973,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_amd64_gcc13",
+                        "arch": "el8_amd64_gcc14",
                         "passed": "passed"
                     },
                     {
@@ -43793,15 +43985,15 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
                         "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_amd64_gcc14",
+                        "arch": "el8_amd64_gcc13",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -43940,12 +44132,12 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el8_amd64_gcc13",
-                    "el8_aarch64_gcc13",
                     "el9_aarch64_gcc12",
-                    "el9_amd64_gcc12",
                     "el8_amd64_gcc14",
+                    "el8_aarch64_gcc13",
+                    "el9_amd64_gcc12",
+                    "el8_amd64_gcc13",
+                    "el8_amd64_gcc12",
                     "el8_aarch64_gcc12"
                 ],
                 "ubsan-logs": "error",
@@ -46775,11 +46967,11 @@
                 "dqm_tests": "found",
                 "dupDict": [
                     {
-                        "arch": "slc7_amd64_gcc530",
+                        "arch": "slc6_amd64_gcc530",
                         "passed": "passed"
                     },
                     {
-                        "arch": "slc6_amd64_gcc530",
+                        "arch": "slc7_amd64_gcc530",
                         "passed": "passed"
                     }
                 ],
@@ -46828,8 +47020,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "slc7_amd64_gcc530",
-                    "slc6_amd64_gcc530"
+                    "slc6_amd64_gcc530",
+                    "slc7_amd64_gcc530"
                 ],
                 "utests": [
                     {
@@ -50517,11 +50709,11 @@
                 "dqm_tests": "found",
                 "dupDict": [
                     {
-                        "arch": "slc6_amd64_gcc630",
+                        "arch": "slc7_amd64_gcc630",
                         "passed": "passed"
                     },
                     {
-                        "arch": "slc7_amd64_gcc630",
+                        "arch": "slc6_amd64_gcc630",
                         "passed": "passed"
                     }
                 ],
@@ -50570,8 +50762,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "slc6_amd64_gcc630",
-                    "slc7_amd64_gcc630"
+                    "slc7_amd64_gcc630",
+                    "slc6_amd64_gcc630"
                 ],
                 "utests": [
                     {
