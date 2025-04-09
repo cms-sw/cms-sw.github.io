@@ -11124,15 +11124,15 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el9_amd64_gcc11",
-                        "passed": "passed"
-                    },
-                    {
                         "arch": "el8_aarch64_gcc11",
                         "passed": "passed"
                     },
                     {
                         "arch": "el9_aarch64_gcc11",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_amd64_gcc11",
                         "passed": "passed"
                     }
                 ],
@@ -11192,9 +11192,9 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "el9_amd64_gcc11",
                     "el8_aarch64_gcc11",
-                    "el9_aarch64_gcc11"
+                    "el9_aarch64_gcc11",
+                    "el9_amd64_gcc11"
                 ],
                 "utests": [
                     {
@@ -12565,11 +12565,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "slc7_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "slc7_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -12627,8 +12627,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "slc7_amd64_gcc12"
+                    "slc7_amd64_gcc12",
+                    "el8_amd64_gcc12"
                 ],
                 "utests": [
                     {
@@ -16922,7 +16922,7 @@
                 "cmsdist_compared_tags": {
                     "el8_aarch64_gcc12": "IB/CMSSW_14_0_X_2025-04-06-2300/el8_aarch64_gcc12..IB/CMSSW_14_0_X/master",
                     "el8_amd64_gcc12": "IB/CMSSW_14_0_X_2025-04-06-0000/el8_amd64_gcc12..IB/CMSSW_14_0_X/master",
-                    "el9_aarch64_gcc12": "IB/CMSSW_14_0_X_2025-04-01-2300/el9_aarch64_gcc12..IB/CMSSW_14_0_X/cs9",
+                    "el9_aarch64_gcc12": "IB/CMSSW_14_0_X_2025-04-08-2300/el9_aarch64_gcc12..IB/CMSSW_14_0_X/cs9",
                     "el9_amd64_gcc12": "IB/CMSSW_14_0_X_2025-04-06-2300/el9_amd64_gcc12..IB/CMSSW_14_0_X/cs9",
                     "slc7_amd64_gcc12": "IB/CMSSW_14_0_X_2025-04-06-0000/slc7_amd64_gcc12..IB/CMSSW_14_0_X/master"
                 },
@@ -16970,21 +16970,47 @@
             },
             {
                 "RVExceptions": null,
-                "addons": [],
+                "addons": [
+                    {
+                        "arch": "el9_aarch64_gcc12",
+                        "details": {},
+                        "file": "/data/sdt/buildlogs/el9_aarch64_gcc12/www/tue/14.0-tue-23/CMSSW_14_0_X_2025-04-08-2300/addOnTests.log",
+                        "passed": true
+                    }
+                ],
                 "base_branch": "CMSSW_14_0_X",
-                "builds": [],
+                "builds": [
+                    {
+                        "arch": "el9_aarch64_gcc12",
+                        "details": {
+                            "compWarning": 44,
+                            "ignoreWarning": 408
+                        },
+                        "file": "/data/sdt/buildlogs/el9_aarch64_gcc12/www/tue/14.0-tue-23/CMSSW_14_0_X_2025-04-08-2300/new/logAnalysis.pkl",
+                        "passed": "warning"
+                    }
+                ],
                 "check-headers": "not-found",
                 "cmsdistTags": {
                     "el9_aarch64_gcc12": "IB/CMSSW_14_0_X_2025-04-08-2300/el9_aarch64_gcc12"
                 },
-                "cmsdist_compared_tags": {},
-                "cmsdist_merged_prs": {},
+                "cmsdist_compared_tags": {
+                    "el9_aarch64_gcc12": "IB/CMSSW_14_0_X_2025-04-01-2300/el9_aarch64_gcc12..IB/CMSSW_14_0_X_2025-04-08-2300/el9_aarch64_gcc12"
+                },
+                "cmsdist_merged_prs": {
+                    "el9_aarch64_gcc12": []
+                },
                 "comp_baseline": "not-found",
                 "comp_baseline_state": "errors",
                 "compared_tags": "CMSSW_14_0_X_2025-04-06-2300-->CMSSW_14_0_X_2025-04-08-2300",
                 "crab_tests": "inprogress",
                 "dqm_tests": "not-found",
-                "dupDict": [],
+                "dupDict": [
+                    {
+                        "arch": "el9_aarch64_gcc12",
+                        "passed": "passed"
+                    }
+                ],
                 "fwlite": [],
                 "gpu_utests": [],
                 "hlt_tests": "inprogress",
@@ -17005,12 +17031,33 @@
                 "reco_gpu_mods": "inprogress",
                 "release_name": "CMSSW_14_0_X_2025-04-08-2300",
                 "release_queue": "CMSSW_14_0_X",
-                "relvals": [],
+                "relvals": [
+                    {
+                        "arch": "el9_aarch64_gcc12",
+                        "details": {
+                            "known_failed": 1,
+                            "num_failed": 0,
+                            "num_passed": 4
+                        },
+                        "done": false,
+                        "file": "/data/sdt/buildlogs/el9_aarch64_gcc12/www/tue/14.0-tue-23/CMSSW_14_0_X_2025-04-08-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
+                        "passed": true
+                    }
+                ],
                 "static_checks": "not-found",
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
-                "tests_archs": [],
-                "utests": [],
+                "tests_archs": [
+                    "el9_aarch64_gcc12"
+                ],
+                "utests": [
+                    {
+                        "arch": "el9_aarch64_gcc12",
+                        "details": {},
+                        "file": "['/data/sdt/buildlogs/el9_aarch64_gcc12/www/tue/14.0-tue-23/CMSSW_14_0_X_2025-04-08-2300/new/logAnalysis.pkl']",
+                        "passed": "unknown"
+                    }
+                ],
                 "valgrind": "not-found",
                 "vtune": "inprogress"
             },
@@ -17071,11 +17118,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_aarch64_gcc12",
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -17127,8 +17174,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "el8_aarch64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el9_amd64_gcc12",
+                    "el8_aarch64_gcc12"
                 ],
                 "utests": [
                     {
@@ -17208,11 +17255,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "slc7_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "slc7_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -17276,8 +17323,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "slc7_amd64_gcc12"
+                    "slc7_amd64_gcc12",
+                    "el8_amd64_gcc12"
                 ],
                 "utests": [
                     {
@@ -20780,7 +20827,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_aarch64_gcc12",
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -20788,7 +20835,7 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -20854,9 +20901,9 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "inprogress",
                 "tests_archs": [
-                    "el8_aarch64_gcc12",
+                    "el9_amd64_gcc12",
                     "el9_aarch64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_aarch64_gcc12"
                 ],
                 "utests": [
                     {
@@ -20966,11 +21013,11 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "slc7_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "slc7_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -21050,8 +21097,8 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "slc7_amd64_gcc12"
+                    "slc7_amd64_gcc12",
+                    "el8_amd64_gcc12"
                 ],
                 "utests": [
                     {
@@ -21268,11 +21315,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "slc7_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -21280,7 +21323,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "slc7_amd64_gcc12",
+                        "arch": "el9_aarch64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -21382,10 +21429,10 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el9_aarch64_gcc12",
-                    "el8_amd64_gcc12",
+                    "slc7_amd64_gcc12",
                     "el9_amd64_gcc12",
-                    "slc7_amd64_gcc12"
+                    "el9_aarch64_gcc12",
+                    "el8_amd64_gcc12"
                 ],
                 "utests": [
                     {
@@ -22594,11 +22641,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "slc7_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -22606,7 +22649,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "slc7_amd64_gcc12",
+                        "arch": "el9_aarch64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -22708,10 +22755,10 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el9_aarch64_gcc12",
-                    "el8_amd64_gcc12",
+                    "slc7_amd64_gcc12",
                     "el9_amd64_gcc12",
-                    "slc7_amd64_gcc12"
+                    "el9_aarch64_gcc12",
+                    "el8_amd64_gcc12"
                 ],
                 "utests": [
                     {
@@ -23679,11 +23726,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_aarch64_gcc12",
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -23695,7 +23738,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -23740,7 +23787,10 @@
                 },
                 "profiling": "found",
                 "python3_tests": [],
-                "reco_event_loop": "inprogress",
+                "reco_event_loop": {
+                    "data": "el8_amd64_gcc12/profiling/29834.21/sorted_RES_CPU_step3.txt",
+                    "status": "passed"
+                },
                 "reco_gpu_mods": "inprogress",
                 "release_name": "CMSSW_15_0_X_2025-04-08-2300",
                 "release_queue": "CMSSW_15_0_X",
@@ -23781,20 +23831,20 @@
                     {
                         "arch": "el9_aarch64_gcc12",
                         "details": {
-                            "known_failed": 9,
-                            "num_failed": 0,
-                            "num_passed": 249
+                            "known_failed": 10,
+                            "num_failed": 1,
+                            "num_passed": 272
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el9_aarch64_gcc12/www/tue/15.0-tue-23/CMSSW_15_0_X_2025-04-08-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
-                        "passed": true
+                        "passed": false
                     },
                     {
                         "arch": "el8_aarch64_gcc12",
                         "details": {
                             "known_failed": 57,
                             "num_failed": 9,
-                            "num_passed": 3689
+                            "num_passed": 3881
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/tue/15.0-tue-23/CMSSW_15_0_X_2025-04-08-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -23808,11 +23858,11 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el9_aarch64_gcc12",
+                    "el9_amd64_gcc12",
                     "el8_amd64_gcc13",
                     "el8_aarch64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_amd64_gcc12",
+                    "el9_aarch64_gcc12"
                 ],
                 "utests": [
                     {
@@ -24166,11 +24216,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_aarch64_gcc12",
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -24182,7 +24228,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -24323,11 +24373,11 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el9_aarch64_gcc12",
+                    "el9_amd64_gcc12",
                     "el8_amd64_gcc13",
                     "el8_aarch64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_amd64_gcc12",
+                    "el9_aarch64_gcc12"
                 ],
                 "utests": [
                     {
@@ -24626,11 +24676,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_amd64_gcc12",
+                        "arch": "el8_amd64_gcc13",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el8_amd64_gcc13",
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -24722,8 +24772,8 @@
                 },
                 "tests_archs": [
                     "el8_aarch64_gcc12",
-                    "el8_amd64_gcc12",
-                    "el8_amd64_gcc13"
+                    "el8_amd64_gcc13",
+                    "el8_amd64_gcc12"
                 ],
                 "utests": [
                     {
@@ -24834,15 +24884,15 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
+                        "arch": "el9_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
                         "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     },
                     {
                         "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -24933,9 +24983,9 @@
                     "status": "passed"
                 },
                 "tests_archs": [
+                    "el9_amd64_gcc12",
                     "el9_aarch64_gcc12",
-                    "el8_amd64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_amd64_gcc12"
                 ],
                 "utests": [
                     {
@@ -25730,11 +25780,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_aarch64_gcc12",
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -25746,7 +25792,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -25859,11 +25909,11 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el9_aarch64_gcc12",
+                    "el9_amd64_gcc12",
                     "el8_amd64_gcc13",
                     "el8_aarch64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_amd64_gcc12",
+                    "el9_aarch64_gcc12"
                 ],
                 "utests": [
                     {
@@ -26631,6 +26681,15 @@
                 },
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": false,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
                         {
                             "author_login": "cms-sw",
                             "from_merge_commit": false,
@@ -27430,7 +27489,17 @@
                     "el8_amd64_gcc12": "IB/CMSSW_15_1_CLANG_X_2025-04-08-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/clang"
                 },
                 "cmsdist_merged_prs": {
-                    "el8_amd64_gcc12": []
+                    "el8_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        }
+                    ]
                 },
                 "comp_baseline": "not-found",
                 "comp_baseline_state": "errors",
@@ -28694,6 +28763,15 @@
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [
                         {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
+                        {
                             "author_login": "cms-sw",
                             "from_merge_commit": true,
                             "hash": "1d38353a9bd69d763f488c35abee26851535babe",
@@ -29456,6 +29534,15 @@
                 },
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": false,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
                         {
                             "author_login": "cms-sw",
                             "from_merge_commit": false,
@@ -30262,7 +30349,17 @@
                     "el8_amd64_gcc12": "IB/CMSSW_15_1_DEVEL_X_2025-04-08-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/devel"
                 },
                 "cmsdist_merged_prs": {
-                    "el8_amd64_gcc12": []
+                    "el8_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        }
+                    ]
                 },
                 "comp_baseline": "not-found",
                 "comp_baseline_state": "errors",
@@ -31468,6 +31565,15 @@
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [
                         {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
+                        {
                             "author_login": "cms-sw",
                             "from_merge_commit": true,
                             "hash": "1d38353a9bd69d763f488c35abee26851535babe",
@@ -32270,6 +32376,15 @@
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [
                         {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
+                        {
                             "author_login": "cms-sw",
                             "from_merge_commit": true,
                             "hash": "1d38353a9bd69d763f488c35abee26851535babe",
@@ -33070,7 +33185,17 @@
                     "el8_amd64_gcc12": "IB/CMSSW_15_1_GPU_X_2025-04-08-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/master"
                 },
                 "cmsdist_merged_prs": {
-                    "el8_amd64_gcc12": []
+                    "el8_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": false,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        }
+                    ]
                 },
                 "comp_baseline": "not-found",
                 "comp_baseline_state": "errors",
@@ -34234,6 +34359,15 @@
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [
                         {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": false,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
+                        {
                             "author_login": "cms-sw",
                             "from_merge_commit": false,
                             "hash": "1d38353a9bd69d763f488c35abee26851535babe",
@@ -34458,6 +34592,15 @@
                 },
                 "cmsdist_merged_prs": {
                     "el9_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
                         {
                             "author_login": "cms-sw",
                             "from_merge_commit": true,
@@ -35170,7 +35313,17 @@
                     "el8_amd64_gcc12": "IB/CMSSW_15_1_MULTIARCHS_X_2025-04-08-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/master"
                 },
                 "cmsdist_merged_prs": {
-                    "el8_amd64_gcc12": []
+                    "el8_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": false,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        }
+                    ]
                 },
                 "comp_baseline": "not-found",
                 "comp_baseline_state": "errors",
@@ -36872,7 +37025,17 @@
                     "el8_amd64_gcc12": "IB/CMSSW_15_1_NONLTO_X_2025-04-08-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/master"
                 },
                 "cmsdist_merged_prs": {
-                    "el8_amd64_gcc12": []
+                    "el8_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": false,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        }
+                    ]
                 },
                 "comp_baseline": "not-found",
                 "comp_baseline_state": "errors",
@@ -38583,6 +38746,15 @@
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [
                         {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
+                        {
                             "author_login": "cms-sw",
                             "from_merge_commit": true,
                             "hash": "1d38353a9bd69d763f488c35abee26851535babe",
@@ -40218,6 +40390,15 @@
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [
                         {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": false,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
+                        {
                             "author_login": "cms-sw",
                             "from_merge_commit": false,
                             "hash": "1d38353a9bd69d763f488c35abee26851535babe",
@@ -41500,9 +41681,9 @@
                     {
                         "arch": "el8_aarch64_gcc12",
                         "details": {
-                            "known_failed": 0,
-                            "num_failed": 180,
-                            "num_passed": 1919
+                            "known_failed": 57,
+                            "num_failed": 127,
+                            "num_passed": 2292
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/mon/15.1.ROOT6-mon-23/CMSSW_15_1_ROOT6_X_2025-04-07-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -42631,6 +42812,15 @@
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [
                         {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
+                        {
                             "author_login": "cms-sw",
                             "from_merge_commit": true,
                             "hash": "1d38353a9bd69d763f488c35abee26851535babe",
@@ -43151,6 +43341,15 @@
                 },
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": false,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
                         {
                             "author_login": "cms-sw",
                             "from_merge_commit": false,
@@ -43971,6 +44170,15 @@
                 "cmsdist_merged_prs": {
                     "el8_aarch64_gcc12": [
                         {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": false,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
+                        {
                             "author_login": "cms-sw",
                             "from_merge_commit": false,
                             "hash": "1d38353a9bd69d763f488c35abee26851535babe",
@@ -43991,6 +44199,15 @@
                     ],
                     "el8_aarch64_gcc13": [
                         {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
+                        {
                             "author_login": "cms-sw",
                             "from_merge_commit": true,
                             "hash": "1d38353a9bd69d763f488c35abee26851535babe",
@@ -44009,9 +44226,38 @@
                             "url": "https://github.com/cms-sw/cmsdist/pull/9759"
                         }
                     ],
-                    "el8_amd64_gcc12": [],
-                    "el8_amd64_gcc13": [],
+                    "el8_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": false,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        }
+                    ],
+                    "el8_amd64_gcc13": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        }
+                    ],
                     "el8_amd64_gcc14": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
                         {
                             "author_login": "cms-sw",
                             "from_merge_commit": true,
@@ -44033,6 +44279,15 @@
                     ],
                     "el9_aarch64_gcc12": [
                         {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
+                        {
                             "author_login": "cms-sw",
                             "from_merge_commit": true,
                             "hash": "1d38353a9bd69d763f488c35abee26851535babe",
@@ -44051,8 +44306,27 @@
                             "url": "https://github.com/cms-sw/cmsdist/pull/9759"
                         }
                     ],
-                    "el9_amd64_gcc12": [],
+                    "el9_amd64_gcc12": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        }
+                    ],
                     "el9_amd64_gcc13": [
+                        {
+                            "author_login": "smuzaffar",
+                            "from_merge_commit": true,
+                            "hash": "e6d3dbcd372bfe66a1ba813d4da02b8e15c3ff20",
+                            "is_merge_commit": false,
+                            "number": "9779",
+                            "title": "ROOT 6.32.12: Updated root to tip of branch v6-32-00-patches",
+                            "url": "https://github.com/cms-sw/cmsdist/pull/9779"
+                        },
                         {
                             "author_login": "cms-sw",
                             "from_merge_commit": true,
@@ -44189,6 +44463,7 @@
                     "status": "passed"
                 },
                 "cmsdistTags": {
+                    "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-08-2300/el8_aarch64_gcc12",
                     "el8_amd64_gcc12": "IB/CMSSW_15_1_X_2025-04-08-2300/el8_amd64_gcc12",
                     "el8_amd64_gcc13": "IB/CMSSW_15_1_X_2025-04-08-2300/el8_amd64_gcc13",
                     "el9_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-08-2300/el9_aarch64_gcc12",
@@ -44259,15 +44534,15 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
                         "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
                         "arch": "el8_amd64_gcc13",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_amd64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -44397,7 +44672,7 @@
                         "details": {
                             "known_failed": 0,
                             "num_failed": 1,
-                            "num_passed": 1329
+                            "num_passed": 2031
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el9_amd64_gcc12/www/tue/15.1-tue-23/CMSSW_15_1_X_2025-04-08-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -44408,7 +44683,7 @@
                         "details": {
                             "known_failed": 0,
                             "num_failed": 1,
-                            "num_passed": 735
+                            "num_passed": 1046
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_amd64_gcc13/www/tue/15.1-tue-23/CMSSW_15_1_X_2025-04-08-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -44422,9 +44697,9 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
                     "el9_amd64_gcc12",
-                    "el8_amd64_gcc13"
+                    "el8_amd64_gcc13",
+                    "el8_amd64_gcc12"
                 ],
                 "utests": [
                     {
@@ -44846,19 +45121,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_aarch64_gcc13",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_amd64_gcc13",
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -44866,11 +45129,23 @@
                         "passed": "passed"
                     },
                     {
+                        "arch": "el8_amd64_gcc13",
+                        "passed": "passed"
+                    },
+                    {
                         "arch": "el8_aarch64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_aarch64_gcc13",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -45060,13 +45335,13 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el9_aarch64_gcc12",
-                    "el8_aarch64_gcc13",
-                    "el8_amd64_gcc13",
+                    "el9_amd64_gcc12",
                     "el8_amd64_gcc14",
+                    "el8_amd64_gcc13",
                     "el8_aarch64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_amd64_gcc12",
+                    "el8_aarch64_gcc13",
+                    "el9_aarch64_gcc12"
                 ],
                 "ubsan-logs": "error",
                 "utests": [
@@ -45389,11 +45664,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_aarch64_gcc12",
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -45405,7 +45676,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -45537,11 +45812,11 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el9_aarch64_gcc12",
+                    "el9_amd64_gcc12",
                     "el8_amd64_gcc13",
                     "el8_aarch64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_amd64_gcc12",
+                    "el9_aarch64_gcc12"
                 ],
                 "utests": [
                     {
@@ -45653,22 +45928,12 @@
                 },
                 "cmsdist_compared_tags": {
                     "el8_amd64_gcc12": "IB/CMSSW_15_1_X_2025-04-05-1100/el8_amd64_gcc12..IB/CMSSW_15_1_X_2025-04-06-0000/el8_amd64_gcc12",
-                    "el9_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12..IB/CMSSW_15_1_X_2025-04-06-0000/el9_aarch64_gcc12",
+                    "el9_aarch64_gcc12": "Not Found..IB/CMSSW_15_1_X_2025-04-06-0000/el9_aarch64_gcc12",
                     "el9_amd64_gcc12": "Not Found..IB/CMSSW_15_1_X_2025-04-06-0000/el9_amd64_gcc12"
                 },
                 "cmsdist_merged_prs": {
                     "el8_amd64_gcc12": [],
-                    "el9_aarch64_gcc12": [
-                        {
-                            "author_login": "cms-sw",
-                            "from_merge_commit": true,
-                            "hash": "5863ad972a7a5eac51b7352e00ba10cb74ae1b8b",
-                            "is_merge_commit": false,
-                            "number": "9771",
-                            "title": "Update tag for RecoBTag-Combined to V01-28-00",
-                            "url": "https://github.com/cms-sw/cmsdist/pull/9771"
-                        }
-                    ],
+                    "el9_aarch64_gcc12": [],
                     "el9_amd64_gcc12": []
                 },
                 "comp_baseline": "not-found",
@@ -45678,15 +45943,15 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
+                        "arch": "el9_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
                         "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     },
                     {
                         "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -45777,9 +46042,9 @@
                     "status": "passed"
                 },
                 "tests_archs": [
+                    "el9_amd64_gcc12",
                     "el9_aarch64_gcc12",
-                    "el8_amd64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_amd64_gcc12"
                 ],
                 "utests": [
                     {
@@ -46095,7 +46360,7 @@
                     "el8_amd64_gcc12": "Not Found",
                     "el8_amd64_gcc13": "Not Found",
                     "el8_amd64_gcc14": "IB/CMSSW_15_1_X_2025-04-02-2300/el8_amd64_gcc14",
-                    "el9_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12",
+                    "el9_aarch64_gcc12": "Not Found",
                     "el9_amd64_gcc12": "Not Found",
                     "el9_amd64_gcc13": "IB/CMSSW_15_1_X_2025-04-04-2300/el9_amd64_gcc13"
                 },
@@ -46105,7 +46370,7 @@
                     "el8_amd64_gcc12": "Not Found..Not Found",
                     "el8_amd64_gcc13": "Not Found..Not Found",
                     "el8_amd64_gcc14": "IB/CMSSW_15_1_X_2025-04-02-2300/el8_amd64_gcc14..IB/CMSSW_15_1_X_2025-04-02-2300/el8_amd64_gcc14",
-                    "el9_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12..IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12",
+                    "el9_aarch64_gcc12": "Not Found..Not Found",
                     "el9_amd64_gcc12": "Not Found..Not Found",
                     "el9_amd64_gcc13": "IB/CMSSW_15_1_X_2025-04-04-2300/el9_amd64_gcc13..IB/CMSSW_15_1_X_2025-04-04-2300/el9_amd64_gcc13"
                 },
@@ -46126,7 +46391,27 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
+                        "arch": "el9_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_amd64_gcc14",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_amd64_gcc13",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_aarch64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
                         "arch": "el8_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el8_aarch64_gcc13",
                         "passed": "passed"
                     },
                     {
@@ -46135,26 +46420,6 @@
                     },
                     {
                         "arch": "el9_amd64_gcc13",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_aarch64_gcc13",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_amd64_gcc13",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_amd64_gcc14",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -46300,14 +46565,14 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el9_aarch64_gcc12",
-                    "el9_amd64_gcc13",
-                    "el8_aarch64_gcc13",
-                    "el8_amd64_gcc13",
+                    "el9_amd64_gcc12",
                     "el8_amd64_gcc14",
+                    "el8_amd64_gcc13",
                     "el8_aarch64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_amd64_gcc12",
+                    "el8_aarch64_gcc13",
+                    "el9_aarch64_gcc12",
+                    "el9_amd64_gcc13"
                 ],
                 "ubsan-logs": "error",
                 "utests": [
@@ -46636,14 +46901,14 @@
                     "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el8_aarch64_gcc12",
                     "el8_amd64_gcc12": "Not Found",
                     "el8_amd64_gcc13": "Not Found",
-                    "el9_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12",
+                    "el9_aarch64_gcc12": "Not Found",
                     "el9_amd64_gcc12": "Not Found"
                 },
                 "cmsdist_compared_tags": {
                     "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X_2025-04-01-2300/el8_aarch64_gcc12",
                     "el8_amd64_gcc12": "Not Found..Not Found",
                     "el8_amd64_gcc13": "Not Found..Not Found",
-                    "el9_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12..IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12",
+                    "el9_aarch64_gcc12": "Not Found..Not Found",
                     "el9_amd64_gcc12": "Not Found..Not Found"
                 },
                 "cmsdist_merged_prs": {
@@ -46660,11 +46925,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_aarch64_gcc12",
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -46676,7 +46937,11 @@
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -46835,11 +47100,11 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el9_aarch64_gcc12",
+                    "el9_amd64_gcc12",
                     "el8_amd64_gcc13",
                     "el8_aarch64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_amd64_gcc12",
+                    "el9_aarch64_gcc12"
                 ],
                 "utests": [
                     {
@@ -47122,7 +47387,7 @@
                     "el8_amd64_gcc12": "Not Found",
                     "el8_amd64_gcc13": "Not Found",
                     "el8_amd64_gcc14": "IB/CMSSW_15_1_X_2025-04-02-2300/el8_amd64_gcc14",
-                    "el9_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12",
+                    "el9_aarch64_gcc12": "Not Found",
                     "el9_amd64_gcc12": "Not Found"
                 },
                 "cmsdist_compared_tags": {
@@ -47130,7 +47395,7 @@
                     "el8_amd64_gcc12": "Not Found..Not Found",
                     "el8_amd64_gcc13": "Not Found..Not Found",
                     "el8_amd64_gcc14": "IB/CMSSW_15_1_X_2025-04-02-2300/el8_amd64_gcc14..IB/CMSSW_15_1_X_2025-04-02-2300/el8_amd64_gcc14",
-                    "el9_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12..IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12",
+                    "el9_aarch64_gcc12": "Not Found..Not Found",
                     "el9_amd64_gcc12": "Not Found..Not Found"
                 },
                 "cmsdist_merged_prs": {
@@ -47148,15 +47413,7 @@
                 "dqm_tests": "not-found",
                 "dupDict": [
                     {
-                        "arch": "el8_amd64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el8_amd64_gcc13",
+                        "arch": "el9_amd64_gcc12",
                         "passed": "passed"
                     },
                     {
@@ -47164,11 +47421,19 @@
                         "passed": "passed"
                     },
                     {
+                        "arch": "el8_amd64_gcc13",
+                        "passed": "passed"
+                    },
+                    {
                         "arch": "el8_aarch64_gcc12",
                         "passed": "passed"
                     },
                     {
-                        "arch": "el9_amd64_gcc12",
+                        "arch": "el8_amd64_gcc12",
+                        "passed": "passed"
+                    },
+                    {
+                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -47329,12 +47594,12 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_amd64_gcc12",
-                    "el9_aarch64_gcc12",
-                    "el8_amd64_gcc13",
+                    "el9_amd64_gcc12",
                     "el8_amd64_gcc14",
+                    "el8_amd64_gcc13",
                     "el8_aarch64_gcc12",
-                    "el9_amd64_gcc12"
+                    "el8_amd64_gcc12",
+                    "el9_aarch64_gcc12"
                 ],
                 "ubsan-logs": "error",
                 "utests": [
@@ -47543,12 +47808,6 @@
                 "RVExceptions": null,
                 "addons": [
                     {
-                        "arch": "el9_aarch64_gcc12",
-                        "details": {},
-                        "file": "/data/sdt/buildlogs/el9_aarch64_gcc12/www/tue/15.1-tue-23/CMSSW_15_1_X_2025-04-01-2300/addOnTests.log",
-                        "passed": true
-                    },
-                    {
                         "arch": "el8_aarch64_gcc12",
                         "details": {},
                         "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/tue/15.1-tue-23/CMSSW_15_1_X_2025-04-01-2300/addOnTests.log",
@@ -47557,14 +47816,6 @@
                 ],
                 "base_branch": "CMSSW_15_1_X",
                 "builds": [
-                    {
-                        "arch": "el9_aarch64_gcc12",
-                        "details": {
-                            "ignoreWarning": 245
-                        },
-                        "file": "/data/sdt/buildlogs/el9_aarch64_gcc12/www/tue/15.1-tue-23/CMSSW_15_1_X_2025-04-01-2300/new/logAnalysis.pkl",
-                        "passed": "passed"
-                    },
                     {
                         "arch": "el8_aarch64_gcc12",
                         "details": {
@@ -47591,12 +47842,10 @@
                     "el9_amd64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el9_amd64_gcc12"
                 },
                 "cmsdist_compared_tags": {
-                    "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X_2025-04-01-2300/el8_aarch64_gcc12",
-                    "el9_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12..IB/CMSSW_15_1_X_2025-04-01-2300/el9_aarch64_gcc12"
+                    "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-04-01-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X_2025-04-01-2300/el8_aarch64_gcc12"
                 },
                 "cmsdist_merged_prs": {
-                    "el8_aarch64_gcc12": [],
-                    "el9_aarch64_gcc12": []
+                    "el8_aarch64_gcc12": []
                 },
                 "comp_baseline": "not-found",
                 "comp_baseline_state": "errors",
@@ -47606,10 +47855,6 @@
                 "dupDict": [
                     {
                         "arch": "el8_aarch64_gcc12",
-                        "passed": "passed"
-                    },
-                    {
-                        "arch": "el9_aarch64_gcc12",
                         "passed": "passed"
                     }
                 ],
@@ -47670,17 +47915,6 @@
                 "release_queue": "CMSSW_15_1_X",
                 "relvals": [
                     {
-                        "arch": "el9_aarch64_gcc12",
-                        "details": {
-                            "known_failed": 59,
-                            "num_failed": 15,
-                            "num_passed": 4641
-                        },
-                        "done": true,
-                        "file": "/data/sdt/buildlogs/el9_aarch64_gcc12/www/tue/15.1-tue-23/CMSSW_15_1_X_2025-04-01-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
-                        "passed": false
-                    },
-                    {
                         "arch": "el8_aarch64_gcc12",
                         "details": {
                             "known_failed": 59,
@@ -47699,18 +47933,9 @@
                     "status": "passed"
                 },
                 "tests_archs": [
-                    "el8_aarch64_gcc12",
-                    "el9_aarch64_gcc12"
+                    "el8_aarch64_gcc12"
                 ],
                 "utests": [
-                    {
-                        "arch": "el9_aarch64_gcc12",
-                        "details": {
-                            "num_fails": "2"
-                        },
-                        "file": "/data/sdt/buildlogs/el9_aarch64_gcc12/www/tue/15.1-tue-23/CMSSW_15_1_X_2025-04-01-2300/unitTests-summary.log",
-                        "passed": "failed"
-                    },
                     {
                         "arch": "el8_aarch64_gcc12",
                         "details": {
@@ -54418,11 +54643,11 @@
                 "dqm_tests": "found",
                 "dupDict": [
                     {
-                        "arch": "slc7_amd64_gcc630",
+                        "arch": "slc6_amd64_gcc630",
                         "passed": "passed"
                     },
                     {
-                        "arch": "slc6_amd64_gcc630",
+                        "arch": "slc7_amd64_gcc630",
                         "passed": "passed"
                     }
                 ],
@@ -54471,8 +54696,8 @@
                 "static_checks_failures": "not-found",
                 "static_checks_v2": "not-found",
                 "tests_archs": [
-                    "slc7_amd64_gcc630",
-                    "slc6_amd64_gcc630"
+                    "slc6_amd64_gcc630",
+                    "slc7_amd64_gcc630"
                 ],
                 "utests": [
                     {
