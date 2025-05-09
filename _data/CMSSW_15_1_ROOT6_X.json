@@ -9,21 +9,11 @@
             "check-headers": "not-found",
             "cmsdistTags": {},
             "cmsdist_compared_tags": {
-                "el8_aarch64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-05-08-1100/el8_aarch64_gcc12..IB/CMSSW_15_1_X/rootmaster",
+                "el8_aarch64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-05-08-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X/rootmaster",
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-05-08-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/rootmaster"
             },
             "cmsdist_merged_prs": {
-                "el8_aarch64_gcc12": [
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": false,
-                        "hash": "1d9f2d4fbfe996346baa733e547debd7ee2d546e",
-                        "is_merge_commit": false,
-                        "number": "9838",
-                        "title": "[ROOT6] more fixes for local pcm for external tools",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9838"
-                    }
-                ],
+                "el8_aarch64_gcc12": [],
                 "el8_amd64_gcc12": []
             },
             "comp_baseline": "not-found",
@@ -43,7 +33,17 @@
             "material_budget": "not-found",
             "material_budget_comparison": "not-found",
             "material_budget_v2": "not-found",
-            "merged_prs": [],
+            "merged_prs": [
+                {
+                    "author_login": "makortel",
+                    "from_merge_commit": false,
+                    "hash": "2de2018734eb023f76f0313bd3459d603cd5123b",
+                    "is_merge_commit": false,
+                    "number": "48038",
+                    "title": "Use separate cache identifiers for different Principals, and add an option to use the Event cache identifier in SleepProducer",
+                    "url": "https://github.com/cms-sw/cmssw/pull/48038"
+                }
+            ],
             "next_ib": true,
             "profiling": "not-found",
             "python3_tests": [],
@@ -83,6 +83,14 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/thu/15.1.ROOT6-thu-23/CMSSW_15_1_ROOT6_X_2025-05-08-2300/new/logAnalysis.pkl",
                     "passed": "passed"
+                },
+                {
+                    "arch": "el8_aarch64_gcc12",
+                    "details": {
+                        "ignoreWarning": 245
+                    },
+                    "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/thu/15.1.ROOT6-thu-23/CMSSW_15_1_ROOT6_X_2025-05-08-2300/new/logAnalysis.pkl",
+                    "passed": "passed"
                 }
             ],
             "check-headers": "not-found",
@@ -91,9 +99,21 @@
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-05-08-2300/el8_amd64_gcc12"
             },
             "cmsdist_compared_tags": {
+                "el8_aarch64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-05-08-1100/el8_aarch64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-05-08-2300/el8_aarch64_gcc12",
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-05-08-1100/el8_amd64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-05-08-2300/el8_amd64_gcc12"
             },
             "cmsdist_merged_prs": {
+                "el8_aarch64_gcc12": [
+                    {
+                        "author_login": "cms-sw",
+                        "from_merge_commit": false,
+                        "hash": "1d9f2d4fbfe996346baa733e547debd7ee2d546e",
+                        "is_merge_commit": false,
+                        "number": "9838",
+                        "title": "[ROOT6] more fixes for local pcm for external tools",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9838"
+                    }
+                ],
                 "el8_amd64_gcc12": [
                     {
                         "author_login": "cms-sw",
@@ -114,6 +134,10 @@
             "dupDict": [
                 {
                     "arch": "el8_amd64_gcc12",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -213,18 +237,30 @@
                     "details": {
                         "known_failed": 0,
                         "num_failed": 3,
-                        "num_passed": 3867
+                        "num_passed": 4941
                     },
                     "done": false,
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/thu/15.1.ROOT6-thu-23/CMSSW_15_1_ROOT6_X_2025-05-08-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
                     "passed": false
+                },
+                {
+                    "arch": "el8_aarch64_gcc12",
+                    "details": {
+                        "known_failed": 0,
+                        "num_failed": 0,
+                        "num_passed": 3
+                    },
+                    "done": false,
+                    "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/thu/15.1.ROOT6-thu-23/CMSSW_15_1_ROOT6_X_2025-05-08-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
+                    "passed": true
                 }
             ],
             "static_checks": "not-found",
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "el8_aarch64_gcc12"
             ],
             "utests": [
                 {
@@ -234,6 +270,12 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/thu/15.1.ROOT6-thu-23/CMSSW_15_1_ROOT6_X_2025-05-08-2300/unitTests-summary.log",
                     "passed": "passed"
+                },
+                {
+                    "arch": "el8_aarch64_gcc12",
+                    "details": {},
+                    "file": "['/data/sdt/buildlogs/el8_aarch64_gcc12/www/thu/15.1.ROOT6-thu-23/CMSSW_15_1_ROOT6_X_2025-05-08-2300/new/logAnalysis.pkl']",
+                    "passed": "unknown"
                 }
             ],
             "valgrind": "not-found",
