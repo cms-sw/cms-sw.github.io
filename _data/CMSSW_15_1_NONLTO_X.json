@@ -10,7 +10,7 @@
             "cmsdistTags": {},
             "cmsdist_compared_tags": {
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_NONLTO_X_2025-05-08-1100/el8_amd64_gcc12..IB/CMSSW_15_1_X/master",
-                "el8_amd64_gcc14": "IB/CMSSW_15_1_NONLTO_X_2025-05-08-1100/el8_amd64_gcc14..IB/CMSSW_15_1_X/g14"
+                "el8_amd64_gcc14": "ERR/CMSSW_15_1_NONLTO_X_2025-05-09-1100/el8_amd64_gcc14..IB/CMSSW_15_1_X/g14"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc12": [],
@@ -23,15 +23,6 @@
                         "number": "9839",
                         "title": "[GCC14][Aarch64]Fix for tensorflow-gcc14-aarch64",
                         "url": "https://github.com/cms-sw/cmsdist/pull/9839"
-                    },
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": false,
-                        "hash": "9a074eea63f2a774c835fccbd5ddb84c4b4efed5",
-                        "is_merge_commit": false,
-                        "number": "9836",
-                        "title": "[GCC14] build gcc with frame-pointers; sync changes from el10/gcc14",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9836"
                     }
                 ]
             },
@@ -105,6 +96,18 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/fri/15.1.NONLTO-fri-11/CMSSW_15_1_NONLTO_X_2025-05-09-1100/new/logAnalysis.pkl",
                     "passed": "error"
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "details": {
+                        "compError": 3,
+                        "compWarning": 10,
+                        "ignoreWarning": 171,
+                        "linkError": 8,
+                        "miscError": 8
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/fri/15.1.NONLTO-fri-11/CMSSW_15_1_NONLTO_X_2025-05-09-1100/new/logAnalysis.pkl",
+                    "passed": "error"
                 }
             ],
             "check-headers": "not-found",
@@ -113,10 +116,22 @@
                 "el8_amd64_gcc14": "ERR/CMSSW_15_1_NONLTO_X_2025-05-09-1100/el8_amd64_gcc14"
             },
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "IB/CMSSW_15_1_NONLTO_X_2025-05-08-1100/el8_amd64_gcc12..IB/CMSSW_15_1_NONLTO_X_2025-05-08-1100/el8_amd64_gcc12"
+                "el8_amd64_gcc12": "IB/CMSSW_15_1_NONLTO_X_2025-05-08-1100/el8_amd64_gcc12..IB/CMSSW_15_1_NONLTO_X_2025-05-08-1100/el8_amd64_gcc12",
+                "el8_amd64_gcc14": "IB/CMSSW_15_1_NONLTO_X_2025-05-08-1100/el8_amd64_gcc14..ERR/CMSSW_15_1_NONLTO_X_2025-05-09-1100/el8_amd64_gcc14"
             },
             "cmsdist_merged_prs": {
-                "el8_amd64_gcc12": []
+                "el8_amd64_gcc12": [],
+                "el8_amd64_gcc14": [
+                    {
+                        "author_login": "cms-sw",
+                        "from_merge_commit": false,
+                        "hash": "9a074eea63f2a774c835fccbd5ddb84c4b4efed5",
+                        "is_merge_commit": false,
+                        "number": "9836",
+                        "title": "[GCC14] build gcc with frame-pointers; sync changes from el10/gcc14",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9836"
+                    }
+                ]
             },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
@@ -124,6 +139,10 @@
             "crab_tests": "not-found",
             "dqm_tests": "not-found",
             "dupDict": [
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "passed": "passed"
+                },
                 {
                     "arch": "el8_amd64_gcc12",
                     "passed": "passed"
@@ -185,12 +204,24 @@
                     "done": true,
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/fri/15.1.NONLTO-fri-11/CMSSW_15_1_NONLTO_X_2025-05-09-1100/pyRelValMatrixLogs/run/runall-report-step123-.log",
                     "passed": false
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "details": {
+                        "known_failed": 0,
+                        "num_failed": 66,
+                        "num_passed": 55
+                    },
+                    "done": false,
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/fri/15.1.NONLTO-fri-11/CMSSW_15_1_NONLTO_X_2025-05-09-1100/pyRelValMatrixLogs/run/runall-report-step123-.log",
+                    "passed": false
                 }
             ],
             "static_checks": "not-found",
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
+                "el8_amd64_gcc14",
                 "el8_amd64_gcc12"
             ],
             "utests": [
@@ -201,6 +232,12 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/fri/15.1.NONLTO-fri-11/CMSSW_15_1_NONLTO_X_2025-05-09-1100/unitTests-summary.log",
                     "passed": "failed"
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "details": {},
+                    "file": "['/data/sdt/buildlogs/el8_amd64_gcc14/www/fri/15.1.NONLTO-fri-11/CMSSW_15_1_NONLTO_X_2025-05-09-1100/new/logAnalysis.pkl']",
+                    "passed": "unknown"
                 }
             ],
             "valgrind": "not-found",
