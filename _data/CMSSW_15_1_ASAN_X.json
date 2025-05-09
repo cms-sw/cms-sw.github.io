@@ -11,7 +11,7 @@
             "cmsdist_compared_tags": {
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_ASAN_X_2025-05-07-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/master",
                 "el8_amd64_gcc13": "remotes/origin/IB/CMSSW_15_1_X/g13..IB/CMSSW_15_1_X/g13",
-                "el8_amd64_gcc14": "ERR/CMSSW_15_1_ASAN_X_2025-05-06-2300/el8_amd64_gcc14..IB/CMSSW_15_1_X/g14"
+                "el8_amd64_gcc14": "ERR/CMSSW_15_1_ASAN_X_2025-05-07-2300/el8_amd64_gcc14..IB/CMSSW_15_1_X/g14"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc12": [
@@ -35,24 +35,6 @@
                         "number": "9839",
                         "title": "[GCC14][Aarch64]Fix for tensorflow-gcc14-aarch64",
                         "url": "https://github.com/cms-sw/cmsdist/pull/9839"
-                    },
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": false,
-                        "hash": "9a074eea63f2a774c835fccbd5ddb84c4b4efed5",
-                        "is_merge_commit": false,
-                        "number": "9836",
-                        "title": "[GCC14] build gcc with frame-pointers; sync changes from el10/gcc14",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9836"
-                    },
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": true,
-                        "hash": "8c0aee122b7bcc805eaa401e13ab2eb93cbcd9f6",
-                        "is_merge_commit": false,
-                        "number": "9835",
-                        "title": "Cleanup cuda tools to avoid creation of cuda/lib64 links under cmssw/external",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9835"
                     }
                 ]
             },
@@ -232,6 +214,12 @@
                     "details": {},
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/15.1.ASAN-wed-23/CMSSW_15_1_ASAN_X_2025-05-07-2300/addOnTests.log",
                     "passed": true
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "details": {},
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/wed/15.1.ASAN-wed-23/CMSSW_15_1_ASAN_X_2025-05-07-2300/addOnTests.log",
+                    "passed": false
                 }
             ],
             "base_branch": "CMSSW_15_1_X",
@@ -243,6 +231,17 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/15.1.ASAN-wed-23/CMSSW_15_1_ASAN_X_2025-05-07-2300/new/logAnalysis.pkl",
                     "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "details": {
+                        "compError": 2,
+                        "compWarning": 5,
+                        "ignoreWarning": 3450,
+                        "linkError": 1
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/wed/15.1.ASAN-wed-23/CMSSW_15_1_ASAN_X_2025-05-07-2300/new/logAnalysis.pkl",
+                    "passed": "error"
                 }
             ],
             "check-headers": "not-found",
@@ -251,7 +250,8 @@
                 "el8_amd64_gcc14": "ERR/CMSSW_15_1_ASAN_X_2025-05-07-2300/el8_amd64_gcc14"
             },
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "IB/CMSSW_15_1_ASAN_X_2025-05-05-2300/el8_amd64_gcc12..IB/CMSSW_15_1_ASAN_X_2025-05-07-2300/el8_amd64_gcc12"
+                "el8_amd64_gcc12": "IB/CMSSW_15_1_ASAN_X_2025-05-05-2300/el8_amd64_gcc12..IB/CMSSW_15_1_ASAN_X_2025-05-07-2300/el8_amd64_gcc12",
+                "el8_amd64_gcc14": "ERR/CMSSW_15_1_ASAN_X_2025-05-06-2300/el8_amd64_gcc14..ERR/CMSSW_15_1_ASAN_X_2025-05-07-2300/el8_amd64_gcc14"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc12": [
@@ -264,6 +264,26 @@
                         "title": "Update crab-dev.spec",
                         "url": "https://github.com/cms-sw/cmsdist/pull/9831"
                     }
+                ],
+                "el8_amd64_gcc14": [
+                    {
+                        "author_login": "cms-sw",
+                        "from_merge_commit": false,
+                        "hash": "9a074eea63f2a774c835fccbd5ddb84c4b4efed5",
+                        "is_merge_commit": false,
+                        "number": "9836",
+                        "title": "[GCC14] build gcc with frame-pointers; sync changes from el10/gcc14",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9836"
+                    },
+                    {
+                        "author_login": "cms-sw",
+                        "from_merge_commit": true,
+                        "hash": "8c0aee122b7bcc805eaa401e13ab2eb93cbcd9f6",
+                        "is_merge_commit": false,
+                        "number": "9835",
+                        "title": "Cleanup cuda tools to avoid creation of cuda/lib64 links under cmssw/external",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9835"
+                    }
                 ]
             },
             "comp_baseline": "not-found",
@@ -274,6 +294,10 @@
             "dupDict": [
                 {
                     "arch": "el8_amd64_gcc12",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
                     "passed": "passed"
                 }
             ],
@@ -315,13 +339,25 @@
                     "done": true,
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/15.1.ASAN-wed-23/CMSSW_15_1_ASAN_X_2025-05-07-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
                     "passed": false
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "details": {
+                        "known_failed": 0,
+                        "num_failed": 1260,
+                        "num_passed": 923
+                    },
+                    "done": false,
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/wed/15.1.ASAN-wed-23/CMSSW_15_1_ASAN_X_2025-05-07-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
+                    "passed": false
                 }
             ],
             "static_checks": "not-found",
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "el8_amd64_gcc14"
             ],
             "utests": [
                 {
@@ -331,6 +367,12 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/15.1.ASAN-wed-23/CMSSW_15_1_ASAN_X_2025-05-07-2300/unitTests-summary.log",
                     "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "details": {},
+                    "file": "['/data/sdt/buildlogs/el8_amd64_gcc14/www/wed/15.1.ASAN-wed-23/CMSSW_15_1_ASAN_X_2025-05-07-2300/new/logAnalysis.pkl']",
+                    "passed": "unknown"
                 }
             ],
             "valgrind": "not-found",
