@@ -9,21 +9,11 @@
             "check-headers": "not-found",
             "cmsdistTags": {},
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "IB/CMSSW_15_1_GPU_X_2025-05-12-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/master",
+                "el8_amd64_gcc12": "IB/CMSSW_15_1_GPU_X_2025-05-13-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/master",
                 "el8_amd64_gcc14": "IB/CMSSW_15_1_GPU_X_2025-05-13-2300/el8_amd64_gcc14..IB/CMSSW_15_1_X/g14"
             },
             "cmsdist_merged_prs": {
-                "el8_amd64_gcc12": [
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": false,
-                        "hash": "8796af97a798ee2776ac8a3263672563fbde83c3",
-                        "is_merge_commit": false,
-                        "number": "9857",
-                        "title": "ittnotify: Avoid build errors for aarch64/gcc14",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9857"
-                    }
-                ],
+                "el8_amd64_gcc12": [],
                 "el8_amd64_gcc14": []
             },
             "comp_baseline": "not-found",
@@ -64,6 +54,14 @@
             "base_branch": "CMSSW_15_1_X",
             "builds": [
                 {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "ignoreWarning": 99
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.1.GPU-tue-23/CMSSW_15_1_GPU_X_2025-05-13-2300/new/logAnalysis.pkl",
+                    "passed": "passed"
+                },
+                {
                     "arch": "el8_amd64_gcc14",
                     "details": {
                         "compWarning": 1,
@@ -79,9 +77,21 @@
                 "el8_amd64_gcc14": "IB/CMSSW_15_1_GPU_X_2025-05-13-2300/el8_amd64_gcc14"
             },
             "cmsdist_compared_tags": {
+                "el8_amd64_gcc12": "IB/CMSSW_15_1_GPU_X_2025-05-12-2300/el8_amd64_gcc12..IB/CMSSW_15_1_GPU_X_2025-05-13-2300/el8_amd64_gcc12",
                 "el8_amd64_gcc14": "IB/CMSSW_15_1_GPU_X_2025-05-12-2300/el8_amd64_gcc14..IB/CMSSW_15_1_GPU_X_2025-05-13-2300/el8_amd64_gcc14"
             },
             "cmsdist_merged_prs": {
+                "el8_amd64_gcc12": [
+                    {
+                        "author_login": "cms-sw",
+                        "from_merge_commit": false,
+                        "hash": "8796af97a798ee2776ac8a3263672563fbde83c3",
+                        "is_merge_commit": false,
+                        "number": "9857",
+                        "title": "ittnotify: Avoid build errors for aarch64/gcc14",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9857"
+                    }
+                ],
                 "el8_amd64_gcc14": [
                     {
                         "author_login": "cms-sw",
@@ -102,6 +112,10 @@
             "dupDict": [
                 {
                     "arch": "el8_amd64_gcc14",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -212,9 +226,18 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_amd64_gcc14"
+                "el8_amd64_gcc14",
+                "el8_amd64_gcc12"
             ],
             "utests": [
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "num_fails": "8"
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.1.GPU-tue-23/CMSSW_15_1_GPU_X_2025-05-13-2300/unitTests-summary.log",
+                    "passed": "failed"
+                },
                 {
                     "arch": "el8_amd64_gcc14",
                     "details": {
