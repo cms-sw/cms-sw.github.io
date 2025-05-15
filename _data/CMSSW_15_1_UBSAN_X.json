@@ -10,7 +10,7 @@
             "cmsdistTags": {},
             "cmsdist_compared_tags": {
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_UBSAN_X_2025-05-14-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/master",
-                "el8_amd64_gcc14": "remotes/origin/IB/CMSSW_15_1_X/g14..IB/CMSSW_15_1_X/g14"
+                "el8_amd64_gcc14": "ERR/CMSSW_15_1_UBSAN_X_2025-05-14-2300/el8_amd64_gcc14..IB/CMSSW_15_1_X/g14"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc12": [
@@ -33,7 +33,26 @@
                         "url": "https://github.com/cms-sw/cmsdist/pull/9863"
                     }
                 ],
-                "el8_amd64_gcc14": []
+                "el8_amd64_gcc14": [
+                    {
+                        "author_login": "fwyzard",
+                        "from_merge_commit": true,
+                        "hash": "014c03d7d226a2ff61e8c4272a066f75f03b48dc",
+                        "is_merge_commit": false,
+                        "number": "9860",
+                        "title": "PyTorch: fix configuration of CUDA and cuDNN",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9860"
+                    },
+                    {
+                        "author_login": "fwyzard",
+                        "from_merge_commit": true,
+                        "hash": "c3aa2ea26c1c9c403989b07213d8855eda513bbf",
+                        "is_merge_commit": false,
+                        "number": "9863",
+                        "title": "ONNX Runtime: depend explicitly on Eigen",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9863"
+                    }
+                ]
             },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
@@ -75,6 +94,12 @@
                     "details": {},
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/15.1.UBSAN-wed-23/CMSSW_15_1_UBSAN_X_2025-05-14-2300/addOnTests.log",
                     "passed": true
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "details": {},
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/wed/15.1.UBSAN-wed-23/CMSSW_15_1_UBSAN_X_2025-05-14-2300/addOnTests.log",
+                    "passed": false
                 }
             ],
             "base_branch": "CMSSW_15_1_X",
@@ -86,6 +111,17 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/15.1.UBSAN-wed-23/CMSSW_15_1_UBSAN_X_2025-05-14-2300/new/logAnalysis.pkl",
                     "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "details": {
+                        "compError": 50,
+                        "compWarning": 2,
+                        "ignoreWarning": 536,
+                        "linkError": 7
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/wed/15.1.UBSAN-wed-23/CMSSW_15_1_UBSAN_X_2025-05-14-2300/new/logAnalysis.pkl",
+                    "passed": "error"
                 }
             ],
             "check-headers": "not-found",
@@ -94,7 +130,8 @@
                 "el8_amd64_gcc14": "ERR/CMSSW_15_1_UBSAN_X_2025-05-14-2300/el8_amd64_gcc14"
             },
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "IB/CMSSW_15_1_UBSAN_X_2025-05-12-2300/el8_amd64_gcc12..IB/CMSSW_15_1_UBSAN_X_2025-05-14-2300/el8_amd64_gcc12"
+                "el8_amd64_gcc12": "IB/CMSSW_15_1_UBSAN_X_2025-05-12-2300/el8_amd64_gcc12..IB/CMSSW_15_1_UBSAN_X_2025-05-14-2300/el8_amd64_gcc12",
+                "el8_amd64_gcc14": "ERR/CMSSW_15_1_UBSAN_X_2025-05-14-2300/el8_amd64_gcc14..ERR/CMSSW_15_1_UBSAN_X_2025-05-14-2300/el8_amd64_gcc14"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc12": [
@@ -125,7 +162,8 @@
                         "title": "ittnotify: Avoid build errors for aarch64/gcc14",
                         "url": "https://github.com/cms-sw/cmsdist/pull/9857"
                     }
-                ]
+                ],
+                "el8_amd64_gcc14": []
             },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
@@ -135,6 +173,10 @@
             "dupDict": [
                 {
                     "arch": "el8_amd64_gcc12",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
                     "passed": "passed"
                 }
             ],
@@ -269,7 +311,8 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "el8_amd64_gcc14"
             ],
             "utests": [
                 {
@@ -279,6 +322,12 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/15.1.UBSAN-wed-23/CMSSW_15_1_UBSAN_X_2025-05-14-2300/unitTests-summary.log",
                     "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc14",
+                    "details": {},
+                    "file": "['/data/sdt/buildlogs/el8_amd64_gcc14/www/wed/15.1.UBSAN-wed-23/CMSSW_15_1_UBSAN_X_2025-05-14-2300/new/logAnalysis.pkl']",
+                    "passed": "unknown"
                 }
             ],
             "valgrind": "not-found",
