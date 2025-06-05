@@ -10,21 +10,11 @@
             "cmsdistTags": {},
             "cmsdist_compared_tags": {
                 "el8_aarch64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-06-04-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X/rootmaster",
-                "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-06-02-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/rootmaster"
+                "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-06-04-2300/el8_amd64_gcc12..IB/CMSSW_15_1_X/rootmaster"
             },
             "cmsdist_merged_prs": {
                 "el8_aarch64_gcc12": [],
-                "el8_amd64_gcc12": [
-                    {
-                        "author_login": "smuzaffar",
-                        "from_merge_commit": false,
-                        "hash": "554e8b1618c8ba082ee5b68158ab2af26aa551dc",
-                        "is_merge_commit": false,
-                        "number": "9911",
-                        "title": "[ROOT6] Updated root to tip of branch master",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9911"
-                    }
-                ]
+                "el8_amd64_gcc12": []
             },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
@@ -77,6 +67,14 @@
             "base_branch": "CMSSW_15_1_X",
             "builds": [
                 {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "ignoreWarning": 99
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/15.1.ROOT6-wed-23/CMSSW_15_1_ROOT6_X_2025-06-04-2300/new/logAnalysis.pkl",
+                    "passed": "passed"
+                },
+                {
                     "arch": "el8_aarch64_gcc12",
                     "details": {
                         "ignoreWarning": 245
@@ -91,10 +89,22 @@
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-06-04-2300/el8_amd64_gcc12"
             },
             "cmsdist_compared_tags": {
-                "el8_aarch64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-06-02-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-06-04-2300/el8_aarch64_gcc12"
+                "el8_aarch64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-06-02-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-06-04-2300/el8_aarch64_gcc12",
+                "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-06-02-2300/el8_amd64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-06-04-2300/el8_amd64_gcc12"
             },
             "cmsdist_merged_prs": {
                 "el8_aarch64_gcc12": [
+                    {
+                        "author_login": "smuzaffar",
+                        "from_merge_commit": false,
+                        "hash": "554e8b1618c8ba082ee5b68158ab2af26aa551dc",
+                        "is_merge_commit": false,
+                        "number": "9911",
+                        "title": "[ROOT6] Updated root to tip of branch master",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/9911"
+                    }
+                ],
+                "el8_amd64_gcc12": [
                     {
                         "author_login": "smuzaffar",
                         "from_merge_commit": false,
@@ -114,6 +124,10 @@
             "dupDict": [
                 {
                     "arch": "el8_aarch64_gcc12",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -256,8 +270,8 @@
                 {
                     "arch": "el8_aarch64_gcc12",
                     "details": {
-                        "known_failed": 0,
-                        "num_failed": 9,
+                        "known_failed": 3,
+                        "num_failed": 6,
                         "num_passed": 364
                     },
                     "done": false,
@@ -269,7 +283,8 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_aarch64_gcc12"
+                "el8_aarch64_gcc12",
+                "el8_amd64_gcc12"
             ],
             "utests": [
                 {
@@ -279,6 +294,12 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/wed/15.1.ROOT6-wed-23/CMSSW_15_1_ROOT6_X_2025-06-04-2300/unitTests-summary.log",
                     "passed": "failed"
+                },
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {},
+                    "file": "['/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/15.1.ROOT6-wed-23/CMSSW_15_1_ROOT6_X_2025-06-04-2300/new/logAnalysis.pkl']",
+                    "passed": "unknown"
                 }
             ],
             "valgrind": "not-found",
