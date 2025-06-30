@@ -12,7 +12,7 @@
                 "el8_aarch64_gcc12": "IB/CMSSW_14_0_X_2025-06-22-2300/el8_aarch64_gcc12..IB/CMSSW_14_0_X/master",
                 "el8_amd64_gcc12": "IB/CMSSW_14_0_X_2025-06-29-0000/el8_amd64_gcc12..IB/CMSSW_14_0_X/master",
                 "el9_aarch64_gcc12": "IB/CMSSW_14_0_X_2025-06-24-2300/el9_aarch64_gcc12..IB/CMSSW_14_0_X/cs9",
-                "el9_amd64_gcc12": "IB/CMSSW_14_0_X_2025-06-22-2300/el9_amd64_gcc12..IB/CMSSW_14_0_X/cs9",
+                "el9_amd64_gcc12": "IB/CMSSW_14_0_X_2025-06-29-2300/el9_amd64_gcc12..IB/CMSSW_14_0_X/cs9",
                 "slc7_amd64_gcc12": "IB/CMSSW_14_0_X_2025-06-29-0000/slc7_amd64_gcc12..IB/CMSSW_14_0_X/master"
             },
             "cmsdist_merged_prs": {
@@ -68,20 +68,39 @@
                 }
             ],
             "base_branch": "CMSSW_14_0_X",
-            "builds": [],
+            "builds": [
+                {
+                    "arch": "el9_amd64_gcc12",
+                    "details": {
+                        "compWarning": 11,
+                        "ignoreWarning": 700
+                    },
+                    "file": "/data/sdt/buildlogs/el9_amd64_gcc12/www/sun/14.0-sun-23/CMSSW_14_0_X_2025-06-29-2300/new/logAnalysis.pkl",
+                    "passed": "warning"
+                }
+            ],
             "check-headers": "not-found",
             "cmsdistTags": {
                 "el8_aarch64_gcc12": "IB/CMSSW_14_0_X_2025-06-29-2300/el8_aarch64_gcc12",
                 "el9_amd64_gcc12": "IB/CMSSW_14_0_X_2025-06-29-2300/el9_amd64_gcc12"
             },
-            "cmsdist_compared_tags": {},
-            "cmsdist_merged_prs": {},
+            "cmsdist_compared_tags": {
+                "el9_amd64_gcc12": "IB/CMSSW_14_0_X_2025-06-22-2300/el9_amd64_gcc12..IB/CMSSW_14_0_X_2025-06-29-2300/el9_amd64_gcc12"
+            },
+            "cmsdist_merged_prs": {
+                "el9_amd64_gcc12": []
+            },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
             "compared_tags": "CMSSW_14_0_X_2025-06-29-0000-->CMSSW_14_0_X_2025-06-29-2300",
             "crab_tests": "inprogress",
             "dqm_tests": "not-found",
-            "dupDict": [],
+            "dupDict": [
+                {
+                    "arch": "el9_amd64_gcc12",
+                    "passed": "passed"
+                }
+            ],
             "fwlite": [],
             "gpu_utests": [],
             "hlt_tests": "inprogress",
@@ -106,8 +125,17 @@
             "static_checks": "not-found",
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
-            "tests_archs": [],
-            "utests": [],
+            "tests_archs": [
+                "el9_amd64_gcc12"
+            ],
+            "utests": [
+                {
+                    "arch": "el9_amd64_gcc12",
+                    "details": {},
+                    "file": "['/data/sdt/buildlogs/el9_amd64_gcc12/www/sun/14.0-sun-23/CMSSW_14_0_X_2025-06-29-2300/new/logAnalysis.pkl']",
+                    "passed": "unknown"
+                }
+            ],
             "valgrind": "not-found",
             "vtune": "inprogress"
         },
@@ -168,11 +196,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "slc7_amd64_gcc12",
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "slc7_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -236,8 +264,8 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "slc7_amd64_gcc12",
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "slc7_amd64_gcc12"
             ],
             "utests": [
                 {
