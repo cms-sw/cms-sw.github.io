@@ -26,6 +26,7 @@ def get_dict_available_results( testsDir ):
       for current_release in listdir( DATA_DIR + '/' + testsDir + '/' + current_arch + '/' + current_date ):
 
         current_ib = current_release.rstrip( '.json' ) + '_' + current_date
+        if not  current_ib.startswith("CMSSW_"): continue
         # to avoid confusing the INCOMPLETE, and EXCEPTIONS suffixes with a flavor
         if '_INCOMPLETE' in current_ib:
           current_ib = current_ib.replace( '_INCOMPLETE', '' ) + '_INCOMPLETE'
