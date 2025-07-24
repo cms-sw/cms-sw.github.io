@@ -77,7 +77,7 @@ ARCH_WF_TIMES_$2_$3   := $2
 QUEUE_WF_TIMES_$2_$3  := $3
 WF_TIMES_$2_$3   += $(wildcard $1/pyRelValMatrixLogs/run/relval-times.json)
 WF_TIMES         += $2_$3
-$(foreach g,$(strip $(wildcard $1/gpu/*)),$$(eval $$(call ProcessGPULogs,$$g,$2,$3,$4,$$(notdir $$g))))
+$(foreach g,$(wildcard $1/gpu/*),$(if $(strip $g),$(eval $(call ProcessGPULogs,$g,$2,$3,$4,$(notdir $g)))))
 data/relvals/$2/$4/$3.json: $1/pyRelValMatrixLogs/run/runall-report-step123-.log set_timestamps $(FORCE_BUILD)
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-run123-logs $$<)
 data/unitTests/$2/$4/$3.json: $1/unitTests-summary.log set_timestamps $(FORCE_BUILD)
@@ -108,7 +108,7 @@ endef
 WF_TIMES     := $(sort $(WF_TIMES))
 GPU_WF_TIMES := $(sort $(GPU_WF_TIMES))
 $(foreach r,$(WF_TIMES),    $(eval $(call RelValTimes,$(ARCH_WF_TIMES_$(r)),$(QUEUE_WF_TIMES_$(r)),$r)))
-$(foreach r,$(GPU_WF_TIMES),$(eval $(call RelValTimes,$(ARCH_WF_TIMES_$(r)),$(QUEUE_WF_TIMES_$(r)),$(GPU_TYPE_WF_TIMES_$(r)),$r)))
+$(foreach r,$(GPU_WF_TIMES),$(eval $(call RelValTimesGPU,$(ARCH_WF_TIMES_$(r)),$(QUEUE_WF_TIMES_$(r)),$(GPU_TYPE_WF_TIMES_$(r)),$r)))
 ALL_RULES  := $(ALL_RELVALS) $(ALL_UNIT_TESTS) $(ALL_GPU_UNIT_TESTS) $(ALL_JOB_REPORTS) $(ALL_COMMANDS) $(ALL_WF_TIMES)
 
 FORCE_TARGET:
