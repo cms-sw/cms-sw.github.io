@@ -52,7 +52,10 @@ pyRelValFile=$(if $(strip $(wildcard $(1)/pyRelValPartialLogs)),$(1)/pyRelValPar
 define ProcessGPULogs
 $(info Processing $1)
 ALL_RELVALS      += data/relvals/$2/$4/gpu/$5/$3.json
+ALL_INPUTS       += data/inputs/$2/$3/gpu/$5/$4.csv
 ALL_UNIT_TESTS   += data/unitTests/$2/$4/gpu/$5/$3.json
+ALL_JOB_REPORTS  += data/jobreports/$2/$3/gpu/$5/$4.csv
+ALL_COMMANDS     += data/commands/$2/$4/gpu/$5/$3.json
 ARCH_WF_TIMES_$2_gpu_$5_$3  := $2
 QUEUE_WF_TIMES_$2_gpu_$5_$3 := $3
 GPU_TYPE_WF_TIMES_$2_gpu_$5_$3 := $5
@@ -62,6 +65,12 @@ data/relvals/$2/$4/gpu/$5/$3.json: $1/pyRelValMatrixLogs/run/runall-report-step1
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-run123-logs $$<)
 data/unitTests/$2/$4/gpu/$5/$3.json: $1/unitTests-summary.log set_timestamps $(FORCE_BUILD)
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-unitTestSummary-logs $$<)
+data/commands/$2/$4/gpu/$5/$3.json: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-step-commands $$< data/commands/objs)
+data/jobreports/$2/$3/gpu/$5/$4.csv: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-job-reports $$<)
+data/inputs/$2/$3/gpu/$5/$4.csv: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/log-input-files $$< | sort)
 endef
 
 #dir,arch,queue,date
@@ -70,7 +79,6 @@ START_DATE := $(firstword $(sort $(START_DATE) $4))
 ALL_RELVALS      += data/relvals/$2/$4/$3.json
 ALL_INPUTS       += data/inputs/$2/$3/$4.csv
 ALL_UNIT_TESTS   += data/unitTests/$2/$4/$3.json
-ALL_GPU_UNIT_TESTS += data/GPU/unitTests/$2/$4/$3.json
 ALL_JOB_REPORTS  += data/jobreports/$2/$3/$4.csv
 ALL_COMMANDS     += data/commands/$2/$4/$3.json
 ARCH_WF_TIMES_$2_$3   := $2
@@ -109,7 +117,7 @@ WF_TIMES     := $(sort $(WF_TIMES))
 GPU_WF_TIMES := $(sort $(GPU_WF_TIMES))
 $(foreach r,$(WF_TIMES),    $(eval $(call RelValTimes,$(ARCH_WF_TIMES_$(r)),$(QUEUE_WF_TIMES_$(r)),$r)))
 $(foreach r,$(GPU_WF_TIMES),$(eval $(call RelValTimesGPU,$(ARCH_WF_TIMES_$(r)),$(QUEUE_WF_TIMES_$(r)),$(GPU_TYPE_WF_TIMES_$(r)),$r)))
-ALL_RULES  := $(ALL_RELVALS) $(ALL_UNIT_TESTS) $(ALL_GPU_UNIT_TESTS) $(ALL_JOB_REPORTS) $(ALL_COMMANDS) $(ALL_WF_TIMES)
+ALL_RULES  := $(ALL_RELVALS) $(ALL_UNIT_TESTS) $(ALL_JOB_REPORTS) $(ALL_COMMANDS) $(ALL_WF_TIMES)
 
 FORCE_TARGET:
 	@:
@@ -153,7 +161,6 @@ set_timestamps: FORCE_TARGET
 	@$(call set_times,$(ALL_RELVALS))
 	@$(call set_times,$(ALL_INPUTS))
 	@$(call set_times,$(ALL_UNIT_TESTS))
-	@$(call set_times,$(ALL_GPUUNIT_TESTS))
 	@$(call set_times,$(ALL_JOB_REPORTS))
 	@$(call set_times,$(ALL_COMMANDS))
 	@$(call set_times,$(ALL_WF_TIMES))
@@ -165,7 +172,6 @@ $(TIMESTAMP_FILE): $(ALL_RULES)
 	@$(call update_timestamp,$(ALL_RELVALS))
 	@$(call update_timestamp,$(ALL_INPUTS))
 	@$(call update_timestamp,$(ALL_UNIT_TESTS))
-	@$(call update_timestamp,$(ALL_GPU_UNIT_TESTS))
 	@$(call update_timestamp,$(ALL_JOB_REPORTS))
 	@$(call update_timestamp,$(ALL_COMMANDS))
 	@$(call update_timestamp,$(ALL_WF_TIMES))
