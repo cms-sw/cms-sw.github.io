@@ -56,7 +56,16 @@
                 }
             ],
             "base_branch": "CMSSW_15_1_X",
-            "builds": [],
+            "builds": [
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "ignoreWarning": 845
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/15.1.CLANG-mon-23/CMSSW_15_1_CLANG_X_2025-07-28-2300/new/logAnalysis.pkl",
+                    "passed": "passed"
+                }
+            ],
             "check-headers": "not-found",
             "cmsdistTags": {
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_CLANG_X_2025-07-28-2300/el8_amd64_gcc12"
@@ -110,7 +119,7 @@
                     "details": {
                         "known_failed": 0,
                         "num_failed": 1,
-                        "num_passed": 5
+                        "num_passed": 17
                     },
                     "done": false,
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/15.1.CLANG-mon-23/CMSSW_15_1_CLANG_X_2025-07-28-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -123,7 +132,16 @@
             "tests_archs": [
                 "el8_amd64_gcc12"
             ],
-            "utests": [],
+            "utests": [
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "num_fails": "2"
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/15.1.CLANG-mon-23/CMSSW_15_1_CLANG_X_2025-07-28-2300/unitTests-summary.log",
+                    "passed": "failed"
+                }
+            ],
             "valgrind": "not-found",
             "vtune": "not-found"
         },
@@ -550,20 +568,10 @@
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_CLANG_X_2025-07-22-1100/el8_amd64_gcc12"
             },
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "ERR/CMSSW_15_1_CLANG_X_2025-07-21-2300/el8_amd64_gcc12..IB/CMSSW_15_1_CLANG_X_2025-07-22-1100/el8_amd64_gcc12"
+                "el8_amd64_gcc12": "IB/CMSSW_15_1_CLANG_X_2025-07-22-1100/el8_amd64_gcc12..IB/CMSSW_15_1_CLANG_X_2025-07-22-1100/el8_amd64_gcc12"
             },
             "cmsdist_merged_prs": {
-                "el8_amd64_gcc12": [
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": true,
-                        "hash": "bfdf77f556889e94c05256b3976b56d9a2eff7be",
-                        "is_merge_commit": false,
-                        "number": "9976",
-                        "title": "added geant4core deps in g4hepem",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9976"
-                    }
-                ]
+                "el8_amd64_gcc12": []
             },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
@@ -645,48 +653,21 @@
         },
         {
             "RVExceptions": null,
-            "addons": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {},
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/15.1.CLANG-mon-23/CMSSW_15_1_CLANG_X_2025-07-21-2300/addOnTests.log",
-                    "passed": false
-                }
-            ],
+            "addons": [],
             "base_branch": "CMSSW_15_1_X",
-            "builds": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {
-                        "compError": 16,
-                        "ignoreWarning": 843,
-                        "linkError": 32
-                    },
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/15.1.CLANG-mon-23/CMSSW_15_1_CLANG_X_2025-07-21-2300/new/logAnalysis.pkl",
-                    "passed": "error"
-                }
-            ],
+            "builds": [],
             "check-headers": "not-found",
             "cmsdistTags": {
                 "el8_amd64_gcc12": "ERR/CMSSW_15_1_CLANG_X_2025-07-21-2300/el8_amd64_gcc12"
             },
-            "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "ERR/CMSSW_15_1_CLANG_X_2025-07-21-2300/el8_amd64_gcc12..ERR/CMSSW_15_1_CLANG_X_2025-07-21-2300/el8_amd64_gcc12"
-            },
-            "cmsdist_merged_prs": {
-                "el8_amd64_gcc12": []
-            },
+            "cmsdist_compared_tags": {},
+            "cmsdist_merged_prs": {},
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
             "compared_tags": "CMSSW_15_1_CLANG_X_2025-07-20-2300-->CMSSW_15_1_CLANG_X_2025-07-21-2300",
             "crab_tests": "not-found",
             "dqm_tests": "not-found",
-            "dupDict": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "passed": "passed"
-                }
-            ],
+            "dupDict": [],
             "fwlite": [],
             "hlt_tests": "not-found",
             "ib_date": "2025-07-21-2300-0000",
@@ -758,35 +739,12 @@
             "python3_tests": [],
             "release_name": "CMSSW_15_1_CLANG_X_2025-07-21-2300",
             "release_queue": "CMSSW_15_1_CLANG_X",
-            "relvals": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {
-                        "known_failed": 0,
-                        "num_failed": 198,
-                        "num_passed": 4229
-                    },
-                    "done": true,
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/15.1.CLANG-mon-23/CMSSW_15_1_CLANG_X_2025-07-21-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
-                    "passed": false
-                }
-            ],
+            "relvals": [],
             "static_checks": "not-found",
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
-            "tests_archs": [
-                "el8_amd64_gcc12"
-            ],
-            "utests": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {
-                        "num_fails": "11"
-                    },
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/mon/15.1.CLANG-mon-23/CMSSW_15_1_CLANG_X_2025-07-21-2300/unitTests-summary.log",
-                    "passed": "failed"
-                }
-            ],
+            "tests_archs": [],
+            "utests": [],
             "valgrind": "not-found",
             "vtune": "not-found"
         },
