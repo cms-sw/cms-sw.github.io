@@ -2,6 +2,7 @@
 
 import pickle
 from os import listdir
+import glob
 import os
 import json
 
@@ -34,6 +35,12 @@ def get_dict_available_results( testsDir ):
         if '_EXCEPTIONS' in current_ib:
           current_ib = current_ib.replace( '_EXCEPTIONS', '' ) + '_EXCEPTIONS'
 
+        gpus = []
+        for gpu in glob.glob(os.path.join(DATA_DIR, testsDir, current_arch, current_date, "gpu", "*", current_release)):
+           gpus.append(gpu.split("/")[-2])
+
+        if gpus:
+            current_arch = "%s:%s" % (current_arch, ":".join(gpus))
         if resultsDict.get( current_ib ):
           resultsDict[ current_ib ] += ','+current_arch
         else:
