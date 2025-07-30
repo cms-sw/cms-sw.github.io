@@ -39,14 +39,15 @@ def get_dict_available_results( testsDir ):
         for gpu in glob.glob(os.path.join(DATA_DIR, testsDir, current_arch, current_date, "gpu", "*", current_release)):
            gpus.append(gpu.split("/")[-2])
 
+        arch_data = current_arch
         if gpus:
-            current_arch = "%s:%s" % (current_arch, ":".join(gpus))
+            arch_data = "%s:%s" % (current_arch, ":".join(gpus))
         if resultsDict.get( current_ib ):
-          resultsDict[ current_ib ] += ','+current_arch
+          resultsDict[ current_ib ] += ','+arch_data
         else:
-          resultsDict[ current_ib ] = current_arch
+          resultsDict[ current_ib ] = arch_data
 
-        print ('found results in ', testsDir, ' for: ',  current_ib, ';', current_arch)
+        print ('found results in ', testsDir, ' for: ',  current_ib, ';', arch_data)
 
   return resultsDict
 
