@@ -11,7 +11,7 @@
             "class_versions": "inprogress",
             "cmsdistTags": {},
             "cmsdist_compared_tags": {
-                "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-08-08-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X/master",
+                "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-08-10-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X/master",
                 "el8_aarch64_gcc13": "IB/CMSSW_15_1_X_2025-08-08-2300/el8_aarch64_gcc13..IB/CMSSW_15_1_X/g13",
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_X_2025-08-10-0000/el8_amd64_gcc12..IB/CMSSW_15_1_X/master",
                 "el8_amd64_gcc13": "IB/CMSSW_15_1_X_2025-08-08-2300/el8_amd64_gcc13..IB/CMSSW_15_1_X/g13",
@@ -72,6 +72,12 @@
                     "details": {},
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/addOnTests.log",
                     "passed": true
+                },
+                {
+                    "arch": "el8_aarch64_gcc12",
+                    "details": {},
+                    "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/addOnTests.log",
+                    "passed": true
                 }
             ],
             "base_branch": "CMSSW_15_1_X",
@@ -81,22 +87,36 @@
                     "details": {},
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/new/logAnalysis.pkl",
                     "passed": "passed"
+                },
+                {
+                    "arch": "el8_aarch64_gcc12",
+                    "details": {
+                        "ignoreWarning": 245
+                    },
+                    "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/new/logAnalysis.pkl",
+                    "passed": "passed"
                 }
             ],
             "check-headers": "passed",
-            "clang_analyzer": "inprogress",
+            "clang_analyzer": {
+                "data": "/ib-static-analysis/CMSSW_15_1_X_2025-08-10-2300/el8_amd64_gcc12/build-logs",
+                "status": "warning"
+            },
             "class_versions": {
                 "data": "/class_versions/CMSSW_15_1_X_2025-08-10-2300/el8_amd64_gcc12/class_versions.html",
                 "status": "passed"
             },
             "cmsdistTags": {
                 "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-08-10-2300/el8_aarch64_gcc12",
-                "el8_amd64_gcc12": "IB/CMSSW_15_1_X_2025-08-10-0000/el8_amd64_gcc12"
+                "el8_amd64_gcc12": "IB/CMSSW_15_1_X_2025-08-10-0000/el8_amd64_gcc12",
+                "el8_amd64_gcc13": "IB/CMSSW_15_1_X_2025-08-10-2300/el8_amd64_gcc13"
             },
             "cmsdist_compared_tags": {
+                "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-08-08-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X_2025-08-10-2300/el8_aarch64_gcc12",
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_X_2025-08-10-0000/el8_amd64_gcc12..IB/CMSSW_15_1_X_2025-08-10-0000/el8_amd64_gcc12"
             },
             "cmsdist_merged_prs": {
+                "el8_aarch64_gcc12": [],
                 "el8_amd64_gcc12": []
             },
             "comp_baseline": "not-found",
@@ -107,6 +127,10 @@
             "dupDict": [
                 {
                     "arch": "el8_amd64_gcc12",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -143,6 +167,16 @@
                         "passed": "passed",
                         "release_name": "CMSSW_15_1_X_2025-08-10-2300"
                     },
+                    "nvidia_h100/CUDART/el8_amd64_gcc12": {
+                        "arch": "el8_amd64_gcc12",
+                        "details": {
+                            "num_fails": "0"
+                        },
+                        "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/15.1.CUDART-sun-23/CMSSW_15_1_CUDART_X_2025-08-10-2300/gpu/nvidia_h100/unitTests-summary.log",
+                        "gpu": "nvidia_h100",
+                        "passed": "passed",
+                        "release_name": "CMSSW_15_1_CUDART_X_2025-08-10-2300"
+                    },
                     "nvidia_h100/el8_amd64_gcc12": {
                         "arch": "el8_amd64_gcc12",
                         "details": {
@@ -152,6 +186,16 @@
                         "gpu": "nvidia_h100",
                         "passed": "passed",
                         "release_name": "CMSSW_15_1_X_2025-08-10-2300"
+                    },
+                    "nvidia_l40s/CUDART/el8_amd64_gcc12": {
+                        "arch": "el8_amd64_gcc12",
+                        "details": {
+                            "num_fails": "0"
+                        },
+                        "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/15.1.CUDART-sun-23/CMSSW_15_1_CUDART_X_2025-08-10-2300/gpu/nvidia_l40s/unitTests-summary.log",
+                        "gpu": "nvidia_l40s",
+                        "passed": "passed",
+                        "release_name": "CMSSW_15_1_CUDART_X_2025-08-10-2300"
                     },
                     "nvidia_l40s/el8_amd64_gcc12": {
                         "arch": "el8_amd64_gcc12",
@@ -180,7 +224,7 @@
                         "details": {
                             "known_failed": 0,
                             "num_failed": 0,
-                            "num_passed": 6
+                            "num_passed": 226
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/gpu/amd_mi300x/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -193,7 +237,7 @@
                         "details": {
                             "known_failed": 0,
                             "num_failed": 0,
-                            "num_passed": 6
+                            "num_passed": 226
                         },
                         "done": false,
                         "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/gpu/nvidia_h100/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -206,12 +250,25 @@
                         "details": {
                             "known_failed": 0,
                             "num_failed": 0,
-                            "num_passed": 32
+                            "num_passed": 226
                         },
-                        "done": false,
+                        "done": true,
                         "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/gpu/nvidia_l40s/pyRelValMatrixLogs/run/runall-report-step123-.log",
                         "gpu": "nvidia_l40s",
                         "passed": true,
+                        "release_name": "CMSSW_15_1_X_2025-08-10-2300"
+                    },
+                    "nvidia_t4/el8_amd64_gcc12": {
+                        "arch": "el8_amd64_gcc12",
+                        "details": {
+                            "known_failed": 0,
+                            "num_failed": 1,
+                            "num_passed": 37
+                        },
+                        "done": false,
+                        "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/gpu/nvidia_t4/pyRelValMatrixLogs/run/runall-report-step123-.log",
+                        "gpu": "nvidia_t4",
+                        "passed": false,
                         "release_name": "CMSSW_15_1_X_2025-08-10-2300"
                     }
                 }
@@ -220,7 +277,7 @@
                 "arch": "el8_amd64_gcc12",
                 "status": "passed"
             },
-            "hlt_tests": "inprogress",
+            "hlt_tests": "passed",
             "ib_date": "2025-08-10-2300-0000",
             "igprof": "found",
             "inProgress": false,
@@ -258,18 +315,22 @@
                     "details": {
                         "known_failed": 0,
                         "num_failed": 3,
-                        "num_passed": 1113
+                        "num_passed": 1798
                     },
                     "done": false,
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
                     "passed": false
                 }
             ],
-            "static_checks": "inprogress",
+            "static_checks": "el8_amd64_gcc12:",
             "static_checks_failures": "not-found",
-            "static_checks_v2": "inprogress",
+            "static_checks_v2": {
+                "arch": "el8_amd64_gcc12",
+                "status": "passed"
+            },
             "tests_archs": [
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "el8_aarch64_gcc12"
             ],
             "utests": [
                 {
@@ -279,6 +340,12 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/unitTests-summary.log",
                     "passed": "failed"
+                },
+                {
+                    "arch": "el8_aarch64_gcc12",
+                    "details": {},
+                    "file": "['/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-10-2300/new/logAnalysis.pkl']",
+                    "passed": "unknown"
                 }
             ],
             "valgrind": "not-found",
@@ -364,15 +431,15 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_amd64_gcc12",
-                    "passed": "passed"
-                },
-                {
                     "arch": "el9_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
                     "arch": "el9_aarch64_gcc12",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -692,9 +759,9 @@
                 "status": "passed"
             },
             "tests_archs": [
-                "el8_amd64_gcc12",
                 "el9_amd64_gcc12",
-                "el9_aarch64_gcc12"
+                "el9_aarch64_gcc12",
+                "el8_amd64_gcc12"
             ],
             "utests": [
                 {
@@ -1210,23 +1277,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_aarch64_gcc12",
-                    "passed": "passed"
-                },
-                {
-                    "arch": "el9_amd64_gcc13",
-                    "passed": "passed"
-                },
-                {
                     "arch": "el9_aarch64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc13",
-                    "passed": "passed"
-                },
-                {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 },
                 {
@@ -1234,7 +1289,19 @@
                     "passed": "passed"
                 },
                 {
+                    "arch": "el9_amd64_gcc13",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc13",
+                    "passed": "passed"
+                },
+                {
                     "arch": "el9_amd64_gcc12",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -1589,13 +1656,13 @@
                 "status": "passed"
             },
             "tests_archs": [
-                "el8_aarch64_gcc12",
-                "el9_amd64_gcc13",
                 "el9_aarch64_gcc12",
-                "el8_amd64_gcc13",
-                "el8_amd64_gcc12",
+                "el8_aarch64_gcc12",
                 "el8_aarch64_gcc13",
-                "el9_amd64_gcc12"
+                "el9_amd64_gcc13",
+                "el8_amd64_gcc13",
+                "el9_amd64_gcc12",
+                "el8_amd64_gcc12"
             ],
             "ubsan-logs": "error",
             "utests": [
@@ -2147,11 +2214,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_aarch64_gcc12",
+                    "arch": "el9_aarch64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el9_aarch64_gcc12",
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 },
                 {
@@ -2159,11 +2226,11 @@
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "el9_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el9_amd64_gcc12",
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -2505,11 +2572,11 @@
                 "status": "passed"
             },
             "tests_archs": [
-                "el8_aarch64_gcc12",
                 "el9_aarch64_gcc12",
+                "el8_aarch64_gcc12",
                 "el8_amd64_gcc13",
-                "el8_amd64_gcc12",
-                "el9_amd64_gcc12"
+                "el9_amd64_gcc12",
+                "el8_amd64_gcc12"
             ],
             "utests": [
                 {
@@ -2940,11 +3007,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_aarch64_gcc12",
+                    "arch": "el9_aarch64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el9_aarch64_gcc12",
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 },
                 {
@@ -2952,11 +3019,11 @@
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "el9_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el9_amd64_gcc12",
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -3372,11 +3439,11 @@
                 "status": "passed"
             },
             "tests_archs": [
-                "el8_aarch64_gcc12",
                 "el9_aarch64_gcc12",
+                "el8_aarch64_gcc12",
                 "el8_amd64_gcc13",
-                "el8_amd64_gcc12",
-                "el9_amd64_gcc12"
+                "el9_amd64_gcc12",
+                "el8_amd64_gcc12"
             ],
             "ubsan-logs": "error",
             "utests": [
@@ -3810,11 +3877,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_aarch64_gcc12",
+                    "arch": "el9_aarch64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el9_aarch64_gcc12",
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 },
                 {
@@ -3822,11 +3889,11 @@
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "el9_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el9_amd64_gcc12",
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -4117,11 +4184,11 @@
                 "status": "passed"
             },
             "tests_archs": [
-                "el8_aarch64_gcc12",
                 "el9_aarch64_gcc12",
+                "el8_aarch64_gcc12",
                 "el8_amd64_gcc13",
-                "el8_amd64_gcc12",
-                "el9_amd64_gcc12"
+                "el9_amd64_gcc12",
+                "el8_amd64_gcc12"
             ],
             "utests": [
                 {
@@ -4511,7 +4578,7 @@
                 "el9_amd64_gcc12": "Not Found"
             },
             "cmsdist_compared_tags": {
-                "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-08-03-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X_2025-08-04-2300/el8_aarch64_gcc12",
+                "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-08-04-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X_2025-08-04-2300/el8_aarch64_gcc12",
                 "el8_aarch64_gcc13": "IB/CMSSW_15_1_X_2025-08-04-2300/el8_aarch64_gcc13..IB/CMSSW_15_1_X_2025-08-04-2300/el8_aarch64_gcc13",
                 "el8_amd64_gcc12": "Not Found..IB/CMSSW_15_1_X_2025-08-04-2300/el8_amd64_gcc12",
                 "el8_amd64_gcc13": "IB/CMSSW_15_1_X_2025-08-03-2300/el8_amd64_gcc13..IB/CMSSW_15_1_X_2025-08-03-2300/el8_amd64_gcc13",
@@ -4519,17 +4586,7 @@
                 "el9_amd64_gcc12": "Not Found..Not Found"
             },
             "cmsdist_merged_prs": {
-                "el8_aarch64_gcc12": [
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": false,
-                        "hash": "1fc7ba4ccaed657c8a3d861c1bf4195274cf9e58",
-                        "is_merge_commit": false,
-                        "number": "9990",
-                        "title": "Update tag for DataFormats-Scouting to V00-05-00",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9990"
-                    }
-                ],
+                "el8_aarch64_gcc12": [],
                 "el8_aarch64_gcc13": [],
                 "el8_amd64_gcc12": [],
                 "el8_amd64_gcc13": [],
@@ -4543,19 +4600,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_aarch64_gcc12",
-                    "passed": "passed"
-                },
-                {
                     "arch": "el9_aarch64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc13",
-                    "passed": "passed"
-                },
-                {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 },
                 {
@@ -4563,7 +4612,15 @@
                     "passed": "passed"
                 },
                 {
+                    "arch": "el8_amd64_gcc13",
+                    "passed": "passed"
+                },
+                {
                     "arch": "el9_amd64_gcc12",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -4943,12 +5000,12 @@
                 "status": "passed"
             },
             "tests_archs": [
-                "el8_aarch64_gcc12",
                 "el9_aarch64_gcc12",
-                "el8_amd64_gcc13",
-                "el8_amd64_gcc12",
+                "el8_aarch64_gcc12",
                 "el8_aarch64_gcc13",
-                "el9_amd64_gcc12"
+                "el8_amd64_gcc13",
+                "el9_amd64_gcc12",
+                "el8_amd64_gcc12"
             ],
             "ubsan-logs": "error",
             "utests": [
@@ -5233,12 +5290,6 @@
                     "details": {},
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc13/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-03-2300/addOnTests.log",
                     "passed": true
-                },
-                {
-                    "arch": "el8_aarch64_gcc12",
-                    "details": {},
-                    "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-03-2300/addOnTests.log",
-                    "passed": true
                 }
             ],
             "base_branch": "CMSSW_15_1_X",
@@ -5249,14 +5300,6 @@
                         "ignoreWarning": 178
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc13/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-03-2300/new/logAnalysis.pkl",
-                    "passed": "passed"
-                },
-                {
-                    "arch": "el8_aarch64_gcc12",
-                    "details": {
-                        "ignoreWarning": 245
-                    },
-                    "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-03-2300/new/logAnalysis.pkl",
                     "passed": "passed"
                 }
             ],
@@ -5274,11 +5317,9 @@
                 "el8_amd64_gcc13": "IB/CMSSW_15_1_X_2025-08-03-2300/el8_amd64_gcc13"
             },
             "cmsdist_compared_tags": {
-                "el8_aarch64_gcc12": "IB/CMSSW_15_1_X_2025-08-03-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_X_2025-08-03-2300/el8_aarch64_gcc12",
                 "el8_amd64_gcc13": "IB/CMSSW_15_1_X_2025-08-03-2300/el8_amd64_gcc13..IB/CMSSW_15_1_X_2025-08-03-2300/el8_amd64_gcc13"
             },
             "cmsdist_merged_prs": {
-                "el8_aarch64_gcc12": [],
                 "el8_amd64_gcc13": []
             },
             "comp_baseline": "not-found",
@@ -5287,10 +5328,6 @@
             "crab_tests": "passed",
             "dqm_tests": "not-found",
             "dupDict": [
-                {
-                    "arch": "el8_aarch64_gcc12",
-                    "passed": "passed"
-                },
                 {
                     "arch": "el8_amd64_gcc13",
                     "passed": "passed"
@@ -5344,17 +5381,6 @@
                     "done": true,
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc13/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-03-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
                     "passed": false
-                },
-                {
-                    "arch": "el8_aarch64_gcc12",
-                    "details": {
-                        "known_failed": 59,
-                        "num_failed": 4,
-                        "num_passed": 4811
-                    },
-                    "done": true,
-                    "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-03-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
-                    "passed": false
                 }
             ],
             "static_checks": "el8_amd64_gcc12:",
@@ -5364,7 +5390,6 @@
                 "status": "passed"
             },
             "tests_archs": [
-                "el8_aarch64_gcc12",
                 "el8_amd64_gcc13"
             ],
             "utests": [
@@ -5375,14 +5400,6 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc13/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-03-2300/unitTests-summary.log",
                     "passed": "failed"
-                },
-                {
-                    "arch": "el8_aarch64_gcc12",
-                    "details": {
-                        "num_fails": "0"
-                    },
-                    "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/sun/15.1-sun-23/CMSSW_15_1_X_2025-08-03-2300/unitTests-summary.log",
-                    "passed": "passed"
                 }
             ],
             "valgrind": "not-found",
