@@ -55,6 +55,12 @@
                     "details": {},
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.1.ROOT6-tue-23/CMSSW_15_1_ROOT6_X_2025-08-12-2300/addOnTests.log",
                     "passed": true
+                },
+                {
+                    "arch": "el8_aarch64_gcc12",
+                    "details": {},
+                    "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/tue/15.1.ROOT6-tue-23/CMSSW_15_1_ROOT6_X_2025-08-12-2300/addOnTests.log",
+                    "passed": true
                 }
             ],
             "base_branch": "CMSSW_15_1_X",
@@ -199,9 +205,11 @@
             "utests": [
                 {
                     "arch": "el8_amd64_gcc12",
-                    "details": {},
-                    "file": "['/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.1.ROOT6-tue-23/CMSSW_15_1_ROOT6_X_2025-08-12-2300/new/logAnalysis.pkl']",
-                    "passed": "unknown"
+                    "details": {
+                        "num_fails": "0"
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.1.ROOT6-tue-23/CMSSW_15_1_ROOT6_X_2025-08-12-2300/unitTests-summary.log",
+                    "passed": "passed"
                 }
             ],
             "valgrind": "not-found",
@@ -288,11 +296,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_aarch64_gcc12",
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -359,8 +367,8 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_aarch64_gcc12",
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "el8_aarch64_gcc12"
             ],
             "utests": [
                 {
@@ -440,11 +448,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_aarch64_gcc12",
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -529,8 +537,8 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_aarch64_gcc12",
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "el8_aarch64_gcc12"
             ],
             "utests": [
                 {
@@ -630,11 +638,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_aarch64_gcc12",
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -710,8 +718,8 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_aarch64_gcc12",
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "el8_aarch64_gcc12"
             ],
             "utests": [
                 {
@@ -847,11 +855,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_aarch64_gcc12",
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -936,8 +944,8 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_aarch64_gcc12",
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "el8_aarch64_gcc12"
             ],
             "utests": [
                 {
@@ -1004,7 +1012,7 @@
             },
             "cmsdist_compared_tags": {
                 "el8_aarch64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-08-05-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-08-06-2300/el8_aarch64_gcc12",
-                "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-08-05-2300/el8_amd64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-08-06-2300/el8_amd64_gcc12"
+                "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-08-06-2300/el8_amd64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-08-06-2300/el8_amd64_gcc12"
             },
             "cmsdist_merged_prs": {
                 "el8_aarch64_gcc12": [
@@ -1036,35 +1044,7 @@
                         "url": "https://github.com/cms-sw/cmsdist/pull/9990"
                     }
                 ],
-                "el8_amd64_gcc12": [
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": true,
-                        "hash": "dd5e9d0177cccdd89a5dbe46b1426e2bfd8efa1a",
-                        "is_merge_commit": false,
-                        "number": "9994",
-                        "title": "Update tag for Geometry-HGCalMapping to V00-05-00",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9994"
-                    },
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": true,
-                        "hash": "702d1c5bcc8dfb3c161c19077141138228e61eae",
-                        "is_merge_commit": false,
-                        "number": "9992",
-                        "title": "Update tag for Geometry-HGCalMapping to V00-04-00",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9992"
-                    },
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": true,
-                        "hash": "1fc7ba4ccaed657c8a3d861c1bf4195274cf9e58",
-                        "is_merge_commit": false,
-                        "number": "9990",
-                        "title": "Update tag for DataFormats-Scouting to V00-05-00",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/9990"
-                    }
-                ]
+                "el8_amd64_gcc12": []
             },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
@@ -1073,11 +1053,11 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
-                    "arch": "el8_aarch64_gcc12",
+                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
-                    "arch": "el8_amd64_gcc12",
+                    "arch": "el8_aarch64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -1144,8 +1124,8 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_aarch64_gcc12",
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "el8_aarch64_gcc12"
             ],
             "utests": [
                 {
@@ -1172,12 +1152,6 @@
             "RVExceptions": null,
             "addons": [
                 {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {},
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.1.ROOT6-tue-23/CMSSW_15_1_ROOT6_X_2025-08-05-2300/addOnTests.log",
-                    "passed": true
-                },
-                {
                     "arch": "el8_aarch64_gcc12",
                     "details": {},
                     "file": "/data/sdt/buildlogs/el8_aarch64_gcc12/www/tue/15.1.ROOT6-tue-23/CMSSW_15_1_ROOT6_X_2025-08-05-2300/addOnTests.log",
@@ -1186,15 +1160,6 @@
             ],
             "base_branch": "CMSSW_15_1_X",
             "builds": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {
-                        "compWarning": 1,
-                        "ignoreWarning": 101
-                    },
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.1.ROOT6-tue-23/CMSSW_15_1_ROOT6_X_2025-08-05-2300/new/logAnalysis.pkl",
-                    "passed": "warning"
-                },
                 {
                     "arch": "el8_aarch64_gcc12",
                     "details": {
@@ -1211,12 +1176,10 @@
                 "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-08-05-2300/el8_amd64_gcc12"
             },
             "cmsdist_compared_tags": {
-                "el8_aarch64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-08-05-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-08-05-2300/el8_aarch64_gcc12",
-                "el8_amd64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-08-05-2300/el8_amd64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-08-05-2300/el8_amd64_gcc12"
+                "el8_aarch64_gcc12": "IB/CMSSW_15_1_ROOT6_X_2025-08-05-2300/el8_aarch64_gcc12..IB/CMSSW_15_1_ROOT6_X_2025-08-05-2300/el8_aarch64_gcc12"
             },
             "cmsdist_merged_prs": {
-                "el8_aarch64_gcc12": [],
-                "el8_amd64_gcc12": []
+                "el8_aarch64_gcc12": []
             },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
@@ -1226,10 +1189,6 @@
             "dupDict": [
                 {
                     "arch": "el8_aarch64_gcc12",
-                    "passed": "passed"
-                },
-                {
-                    "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -1270,17 +1229,6 @@
             "release_queue": "CMSSW_15_1_ROOT6_X",
             "relvals": [
                 {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {
-                        "known_failed": 0,
-                        "num_failed": 3,
-                        "num_passed": 5018
-                    },
-                    "done": true,
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.1.ROOT6-tue-23/CMSSW_15_1_ROOT6_X_2025-08-05-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
-                    "passed": false
-                },
-                {
                     "arch": "el8_aarch64_gcc12",
                     "details": {
                         "known_failed": 59,
@@ -1296,18 +1244,9 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_aarch64_gcc12",
-                "el8_amd64_gcc12"
+                "el8_aarch64_gcc12"
             ],
             "utests": [
-                {
-                    "arch": "el8_amd64_gcc12",
-                    "details": {
-                        "num_fails": "2"
-                    },
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/tue/15.1.ROOT6-tue-23/CMSSW_15_1_ROOT6_X_2025-08-05-2300/unitTests-summary.log",
-                    "passed": "failed"
-                },
                 {
                     "arch": "el8_aarch64_gcc12",
                     "details": {
