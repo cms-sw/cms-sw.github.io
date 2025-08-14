@@ -11,7 +11,7 @@
             "cmsdist_compared_tags": {
                 "el8_amd64_gcc12": "IB/CMSSW_14_0_X_2025-08-14-1100/el8_amd64_gcc12..IB/CMSSW_14_0_X/master",
                 "el9_amd64_gcc12": "IB/CMSSW_14_0_X_2025-08-10-2300/el9_amd64_gcc12..IB/CMSSW_14_0_X/cs9",
-                "slc7_amd64_gcc12": "IB/CMSSW_14_0_X_2025-08-10-0000/slc7_amd64_gcc12..IB/CMSSW_14_0_X/master"
+                "slc7_amd64_gcc12": "IB/CMSSW_14_0_X_2025-08-14-1100/slc7_amd64_gcc12..IB/CMSSW_14_0_X/master"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc12": [],
@@ -26,17 +26,7 @@
                         "url": "https://github.com/cms-sw/cmsdist/pull/10013"
                     }
                 ],
-                "slc7_amd64_gcc12": [
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": false,
-                        "hash": "8c080851a9db439832a0e762e8415fea618f678f",
-                        "is_merge_commit": false,
-                        "number": "10013",
-                        "title": "[140X][v630][RF] Fix implementation of HS3 importers",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/10013"
-                    }
-                ]
+                "slc7_amd64_gcc12": []
             },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
@@ -79,6 +69,12 @@
                     "details": {},
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/thu/14.0-thu-11/CMSSW_14_0_X_2025-08-14-1100/addOnTests.log",
                     "passed": true
+                },
+                {
+                    "arch": "slc7_amd64_gcc12",
+                    "details": {},
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc12/www/thu/14.0-thu-11/CMSSW_14_0_X_2025-08-14-1100/addOnTests.log",
+                    "passed": true
                 }
             ],
             "base_branch": "CMSSW_14_0_X",
@@ -91,17 +87,39 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/thu/14.0-thu-11/CMSSW_14_0_X_2025-08-14-1100/new/logAnalysis.pkl",
                     "passed": "warning"
+                },
+                {
+                    "arch": "slc7_amd64_gcc12",
+                    "details": {
+                        "compWarning": 11,
+                        "ignoreWarning": 697
+                    },
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc12/www/thu/14.0-thu-11/CMSSW_14_0_X_2025-08-14-1100/new/logAnalysis.pkl",
+                    "passed": "warning"
                 }
             ],
             "check-headers": "not-found",
             "cmsdistTags": {
-                "el8_amd64_gcc12": "IB/CMSSW_14_0_X_2025-08-14-1100/el8_amd64_gcc12"
+                "el8_amd64_gcc12": "IB/CMSSW_14_0_X_2025-08-14-1100/el8_amd64_gcc12",
+                "slc7_amd64_gcc12": "IB/CMSSW_14_0_X_2025-08-14-1100/slc7_amd64_gcc12"
             },
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "IB/CMSSW_14_0_X_2025-08-10-0000/el8_amd64_gcc12..IB/CMSSW_14_0_X_2025-08-14-1100/el8_amd64_gcc12"
+                "el8_amd64_gcc12": "IB/CMSSW_14_0_X_2025-08-10-0000/el8_amd64_gcc12..IB/CMSSW_14_0_X_2025-08-14-1100/el8_amd64_gcc12",
+                "slc7_amd64_gcc12": "IB/CMSSW_14_0_X_2025-08-10-0000/slc7_amd64_gcc12..IB/CMSSW_14_0_X_2025-08-14-1100/slc7_amd64_gcc12"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc12": [
+                    {
+                        "author_login": "cms-sw",
+                        "from_merge_commit": false,
+                        "hash": "8c080851a9db439832a0e762e8415fea618f678f",
+                        "is_merge_commit": false,
+                        "number": "10013",
+                        "title": "[140X][v630][RF] Fix implementation of HS3 importers",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/10013"
+                    }
+                ],
+                "slc7_amd64_gcc12": [
                     {
                         "author_login": "cms-sw",
                         "from_merge_commit": false,
@@ -121,6 +139,10 @@
             "dupDict": [
                 {
                     "arch": "el8_amd64_gcc12",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "slc7_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -151,9 +173,12 @@
             "next_ib": false,
             "piechart": "inprogress",
             "prod_arch": "el8_amd64_gcc12",
-            "profiling": "inprogress",
+            "profiling": "found",
             "python3_tests": [],
-            "reco_event_loop": "inprogress",
+            "reco_event_loop": {
+                "data": "el8_amd64_gcc12/profiling/29834.21/sorted_RES_CPU_step3.txt",
+                "status": "passed"
+            },
             "release_name": "CMSSW_14_0_X_2025-08-14-1100",
             "release_queue": "CMSSW_14_0_X",
             "relvals": [],
@@ -161,13 +186,22 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "el8_amd64_gcc12"
+                "el8_amd64_gcc12",
+                "slc7_amd64_gcc12"
             ],
             "utests": [
                 {
                     "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "num_fails": "0"
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/thu/14.0-thu-11/CMSSW_14_0_X_2025-08-14-1100/unitTests-summary.log",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "slc7_amd64_gcc12",
                     "details": {},
-                    "file": "['/data/sdt/buildlogs/el8_amd64_gcc12/www/thu/14.0-thu-11/CMSSW_14_0_X_2025-08-14-1100/new/logAnalysis.pkl']",
+                    "file": "['/data/sdt/buildlogs/slc7_amd64_gcc12/www/thu/14.0-thu-11/CMSSW_14_0_X_2025-08-14-1100/new/logAnalysis.pkl']",
                     "passed": "unknown"
                 }
             ],
