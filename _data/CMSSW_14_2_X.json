@@ -12,22 +12,12 @@
             "cmsdistTags": {},
             "cmsdist_compared_tags": {
                 "el8_amd64_gcc12": "IB/CMSSW_14_2_X_2025-08-13-2300/el8_amd64_gcc12..IB/CMSSW_14_2_X/master",
-                "el9_amd64_gcc12": "IB/CMSSW_14_2_X_2025-08-10-0000/el9_amd64_gcc12..IB/CMSSW_14_2_X/cs9",
+                "el9_amd64_gcc12": "IB/CMSSW_14_2_X_2025-08-13-2300/el9_amd64_gcc12..IB/CMSSW_14_2_X/cs9",
                 "slc7_amd64_gcc12": "IB/CMSSW_14_2_X_2025-08-10-0000/slc7_amd64_gcc12..IB/CMSSW_14_2_X/master"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc12": [],
-                "el9_amd64_gcc12": [
-                    {
-                        "author_login": "cms-sw",
-                        "from_merge_commit": true,
-                        "hash": "2108a36cad027db76effc76b4c5dada898078341",
-                        "is_merge_commit": false,
-                        "number": "10011",
-                        "title": "[142X][v630][RF] Fix implementation of HS3 importers",
-                        "url": "https://github.com/cms-sw/cmsdist/pull/10011"
-                    }
-                ],
+                "el9_amd64_gcc12": [],
                 "slc7_amd64_gcc12": [
                     {
                         "author_login": "cms-sw",
@@ -84,6 +74,12 @@
                     "details": {},
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/14.2-wed-23/CMSSW_14_2_X_2025-08-13-2300/addOnTests.log",
                     "passed": true
+                },
+                {
+                    "arch": "el9_amd64_gcc12",
+                    "details": {},
+                    "file": "/data/sdt/buildlogs/el9_amd64_gcc12/www/wed/14.2-wed-23/CMSSW_14_2_X_2025-08-13-2300/addOnTests.log",
+                    "passed": true
                 }
             ],
             "base_branch": "CMSSW_14_2_X",
@@ -95,10 +91,21 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/14.2-wed-23/CMSSW_14_2_X_2025-08-13-2300/new/logAnalysis.pkl",
                     "passed": "passed"
+                },
+                {
+                    "arch": "el9_amd64_gcc12",
+                    "details": {
+                        "ignoreWarning": 752
+                    },
+                    "file": "/data/sdt/buildlogs/el9_amd64_gcc12/www/wed/14.2-wed-23/CMSSW_14_2_X_2025-08-13-2300/new/logAnalysis.pkl",
+                    "passed": "passed"
                 }
             ],
             "check-headers": "passed",
-            "clang_analyzer": "inprogress",
+            "clang_analyzer": {
+                "data": "/ib-static-analysis/CMSSW_14_2_X_2025-08-13-2300/el8_amd64_gcc12/build-logs",
+                "status": "warning"
+            },
             "class_versions": {
                 "data": "/class_versions/CMSSW_14_2_X_2025-08-13-2300/el8_amd64_gcc12/class_versions.html",
                 "status": "passed"
@@ -109,13 +116,25 @@
                 "slc7_amd64_gcc12": "IB/CMSSW_14_2_X_2025-08-13-2300/slc7_amd64_gcc12"
             },
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc12": "IB/CMSSW_14_2_X_2025-08-10-0000/el8_amd64_gcc12..IB/CMSSW_14_2_X_2025-08-13-2300/el8_amd64_gcc12"
+                "el8_amd64_gcc12": "IB/CMSSW_14_2_X_2025-08-10-0000/el8_amd64_gcc12..IB/CMSSW_14_2_X_2025-08-13-2300/el8_amd64_gcc12",
+                "el9_amd64_gcc12": "IB/CMSSW_14_2_X_2025-08-10-0000/el9_amd64_gcc12..IB/CMSSW_14_2_X_2025-08-13-2300/el9_amd64_gcc12"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc12": [
                     {
                         "author_login": "cms-sw",
                         "from_merge_commit": false,
+                        "hash": "2108a36cad027db76effc76b4c5dada898078341",
+                        "is_merge_commit": false,
+                        "number": "10011",
+                        "title": "[142X][v630][RF] Fix implementation of HS3 importers",
+                        "url": "https://github.com/cms-sw/cmsdist/pull/10011"
+                    }
+                ],
+                "el9_amd64_gcc12": [
+                    {
+                        "author_login": "cms-sw",
+                        "from_merge_commit": true,
                         "hash": "2108a36cad027db76effc76b4c5dada898078341",
                         "is_merge_commit": false,
                         "number": "10011",
@@ -131,17 +150,33 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
+                    "arch": "el9_amd64_gcc12",
+                    "passed": "passed"
+                },
+                {
                     "arch": "el8_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
             "flawfinder": "found",
-            "fwlite": [],
+            "fwlite": [
+                {
+                    "arch": "el8_amd64_gcc12",
+                    "details": {
+                        "ignoreWarning": 31
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/14.2-wed-23/CMSSW_14_2_X_2025-08-13-2300/new_FWLITE/logAnalysis.pkl",
+                    "passed": "passed"
+                }
+            ],
             "gpu_data": {
                 "qa": {},
                 "relvals": {}
             },
-            "hlt-p2-timing": "inprogress",
+            "hlt-p2-timing": {
+                "arch": "el8_amd64_gcc12",
+                "status": "passed"
+            },
             "hlt_tests": "passed",
             "ib_date": "2025-08-13-2300-0000",
             "igprof": "found",
@@ -177,17 +212,21 @@
                     "details": {
                         "known_failed": 0,
                         "num_failed": 0,
-                        "num_passed": 916
+                        "num_passed": 2385
                     },
                     "done": false,
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/14.2-wed-23/CMSSW_14_2_X_2025-08-13-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
                     "passed": true
                 }
             ],
-            "static_checks": "inprogress",
+            "static_checks": "el8_amd64_gcc12:",
             "static_checks_failures": "not-found",
-            "static_checks_v2": "inprogress",
+            "static_checks_v2": {
+                "arch": "el8_amd64_gcc12",
+                "status": "passed"
+            },
             "tests_archs": [
+                "el9_amd64_gcc12",
                 "el8_amd64_gcc12"
             ],
             "utests": [
@@ -198,6 +237,12 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc12/www/wed/14.2-wed-23/CMSSW_14_2_X_2025-08-13-2300/unitTests-summary.log",
                     "passed": "passed"
+                },
+                {
+                    "arch": "el9_amd64_gcc12",
+                    "details": {},
+                    "file": "['/data/sdt/buildlogs/el9_amd64_gcc12/www/wed/14.2-wed-23/CMSSW_14_2_X_2025-08-13-2300/new/logAnalysis.pkl']",
+                    "passed": "unknown"
                 }
             ],
             "valgrind": "not-found",
@@ -286,15 +331,15 @@
             "dqm_tests": "not-found",
             "dupDict": [
                 {
+                    "arch": "slc7_amd64_gcc12",
+                    "passed": "passed"
+                },
+                {
                     "arch": "el9_amd64_gcc12",
                     "passed": "passed"
                 },
                 {
                     "arch": "el8_amd64_gcc12",
-                    "passed": "passed"
-                },
-                {
-                    "arch": "slc7_amd64_gcc12",
                     "passed": "passed"
                 }
             ],
@@ -388,9 +433,9 @@
                 "status": "passed"
             },
             "tests_archs": [
+                "slc7_amd64_gcc12",
                 "el9_amd64_gcc12",
-                "el8_amd64_gcc12",
-                "slc7_amd64_gcc12"
+                "el8_amd64_gcc12"
             ],
             "utests": [
                 {
