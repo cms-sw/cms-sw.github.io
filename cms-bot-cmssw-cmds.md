@@ -52,6 +52,7 @@ test parameters:
 [  - ]release = release_cycle|architecture|release_cycle/architecture
 [  - ]baseline = self|default         #default: Use production arch IB as baseline; self: use same release/arch for PR tests and baseline
 [  - ]enable(_test(s|)|) = none,gpu,threading,profiling,high-stats,nano,hlt_p2_timing
+[  - ]gpu = [nvidia|nvidia_t4|nvidia_h100|nvidia_l40s|amd|amd_mi300x|amd_w7900],... # see [here](https://github.com/cms-sw/cms-bot/blob/master/gpu_flavors.txt) and [here](https://github.com/cms-sw/cms-bot/blob/master/gpu_flavors_ondemand.txt) for the possible GPU models
 [  - ]ignore_test(s|) = build-warnings|build-warnings|none
 [  - ]skip_test(s|) = static|header   #skip static check and/or header consistency 
 [  - ]full(_cmssw|) = true|false
