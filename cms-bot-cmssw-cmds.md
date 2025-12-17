@@ -27,7 +27,7 @@ For CMSSW **Pull requests**, following commands in first line of a comment are r
     - `external-failure`: if the failure is caused by external factor
   - **```ignore none```**: Do not ignore any tests results.
 - **Enable extra PR tests**: Anyone who can trigger tests can issue this command or use test parameters to enable some extra PR tests e.g.
-  - **```enable gpu,threading,profiling,high_stats,nano```**: To run extra GPU, threading relval,profiling tests, high statistic relvals and/or nano tests.
+  - **```enable gpu,threading,profiling,high_stats,nano,cuda,rocm```**: To run extra GPU, threading relval,profiling tests, high statistic relvals and/or nano tests. By default, `enable gpu` will run unit tests and relvals using both CUDA and ROCm GPUs, `enable cuda` and `enable rocm` allow selecting only specific GPU type.
   - **```enable profiling```**: To run Igprof and generate resource graphs
   - **```enable high_stats```**: To run high stats relvals tests
   - **```enable nano```**: To run tests for special nano workflows
