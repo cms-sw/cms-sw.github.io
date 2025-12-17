@@ -16,7 +16,7 @@ The following needs to happen:
 export CYCLE=CMSSW_10_0_X
 git clone git@github.com:cms-sw/cms-bot
 cd cms-bot
-PYTHONPATH=/cvmfs/cms-ib.cern.ch/jenkins-env/python/shared ./new-release-cycle --cycle ${CYCLE}
+PYTHONPATH=/cvmfs/cms-ib.cern.ch/jenkins-env/py23 ./new-release-cycle --cycle ${CYCLE}
 ```
 - Verify (`git diff`) the changes it made in `cms-bot`. Disable any IBs for old development release cycle by appending `DISABLED=1;IB_WEB_PAGE=1;` (`DISABLED=1` to stop building IBs, `IB_WEB_PAGE=1` to keep showing the already build IBs on CMS IBs dashboard) at the end of each IB line in `config.map` e.g. to disable special `ROOT6` IB
 ```

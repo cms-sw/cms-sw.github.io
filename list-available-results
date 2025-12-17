@@ -2,6 +2,7 @@
 
 import pickle
 from os import listdir
+import glob
 import os
 import json
 
@@ -26,6 +27,7 @@ def get_dict_available_results( testsDir ):
       for current_release in listdir( DATA_DIR + '/' + testsDir + '/' + current_arch + '/' + current_date ):
 
         current_ib = current_release.rstrip( '.json' ) + '_' + current_date
+        if not  current_ib.startswith("CMSSW_"): continue
         # to avoid confusing the INCOMPLETE, and EXCEPTIONS suffixes with a flavor
         if '_INCOMPLETE' in current_ib:
           current_ib = current_ib.replace( '_INCOMPLETE', '' ) + '_INCOMPLETE'
@@ -33,12 +35,19 @@ def get_dict_available_results( testsDir ):
         if '_EXCEPTIONS' in current_ib:
           current_ib = current_ib.replace( '_EXCEPTIONS', '' ) + '_EXCEPTIONS'
 
-        if resultsDict.get( current_ib ):
-          resultsDict[ current_ib ] += ','+current_arch
-        else:
-          resultsDict[ current_ib ] = current_arch
+        gpus = []
+        for gpu in glob.glob(os.path.join(DATA_DIR, testsDir, current_arch, current_date, "gpu", "*", current_release)):
+           gpus.append(gpu.split("/")[-2])
 
-        print ('found results in ', testsDir, ' for: ',  current_ib, ';', current_arch)
+        arch_data = current_arch
+        if gpus:
+            arch_data = "%s:%s" % (current_arch, ":".join(gpus))
+        if resultsDict.get( current_ib ):
+          resultsDict[ current_ib ] += ','+arch_data
+        else:
+          resultsDict[ current_ib ] = arch_data
+
+        print ('found results in ', testsDir, ' for: ',  current_ib, ';', arch_data)
 
   return resultsDict
 
