@@ -47,31 +47,33 @@ endef
 
 pyRelValFile=$(if $(strip $(wildcard $(1)/pyRelValPartialLogs)),$(1)/pyRelValPartialLogs,$(1)/pyRelValMatrixLogs.zip)
 
-#$1, $2, ,$3   ,$4  ,$5
-#dir,arch,queue,date,gpu_type
-define ProcessGPULogs
+#$1, $2, ,$3   ,$4  ,$5,     $6
+#dir,arch,queue,date,rntuple,type e.g. gpu or other
+define ProcessOtherLogs
 $(info Processing $1)
-ALL_RELVALS      += data/relvals/$2/$4/gpu/$5/$3.json
-ALL_INPUTS       += data/inputs/$2/$3/gpu/$5/$4.csv
-ALL_UNIT_TESTS   += data/unitTests/$2/$4/gpu/$5/$3.json
-ALL_JOB_REPORTS  += data/jobreports/$2/$3/gpu/$5/$4.csv
-ALL_COMMANDS     += data/commands/$2/$4/gpu/$5/$3.json
-ARCH_WF_TIMES_$2_gpu_$5_$3  := $2
-QUEUE_WF_TIMES_$2_gpu_$5_$3 := $3
-GPU_TYPE_WF_TIMES_$2_gpu_$5_$3 := $5
-GPU_WF_TIMES_$2_gpu_$5_$3   += $(wildcard $1/pyRelValMatrixLogs/run/relval-times.json)
-GPU_WF_TIMES                += $2_gpu_$5_$3
-data/relvals/$2/$4/gpu/$5/$3.json: $1/pyRelValMatrixLogs/run/runall-report-step123-.log set_timestamps $(FORCE_BUILD)
-	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-run123-logs $$<)
-data/unitTests/$2/$4/gpu/$5/$3.json: $1/unitTests-summary.log set_timestamps $(FORCE_BUILD)
-	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-unitTestSummary-logs $$<)
-data/commands/$2/$4/gpu/$5/$3.json: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
-	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-step-commands $$< data/commands/objs)
-data/jobreports/$2/$3/gpu/$5/$4.csv: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
-	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-job-reports $$<)
-data/inputs/$2/$3/gpu/$5/$4.csv: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
-	$(call RunCommand,$(SCRIPT_DIRECTORY)/log-input-files $$< | sort)
+ALL_RELVALS      += data/relvals/$2/$4/$6/$5/$3.json
+ALL_INPUTS       += data/inputs/$2/$3/$6/$5/$4.csv
+ALL_UNIT_TESTS   += data/unitTests/$2/$4/$6/$5/$3.json
+ALL_JOB_REPORTS  += data/jobreports/$2/$3/$6/$5/$4.csv
+ALL_COMMANDS     += data/commands/$2/$4/$6/$5/$3.json
+ARCH_WF_TIMES_$2_$6_$5_$3  := $2
+QUEUE_WF_TIMES_$2_$6_$5_$3 := $3
+OTHER_TYPE_WF_TIMES_$2_$6_$5_$3 := $5
+OTHER_TYPE_TIMES_$2_$6_$5_$3 := $6
+OTHER_WF_TIMES_$2_$6_$5_$3   += $(wildcard $1/pyRelValMatrixLogs/run/relval-times.json)
+OTHER_WF_TIMES               += $2_$6_$5_$3
+data/relvals/$2/$4/$6/$5/$3.json: $1/pyRelValMatrixLogs/run/runall-report-step123-.log set_timestamps $(FORCE_BUILD)
+  $(call RunCommand,$(SCRIPT_DIRECTORY)/process-run123-logs $$<)
+data/unitTests/$2/$4/$6/$5/$3.json: $1/unitTests-summary.log set_timestamps $(FORCE_BUILD)
+  $(call RunCommand,$(SCRIPT_DIRECTORY)/process-unitTestSummary-logs $$<)
+data/commands/$2/$4/$6/$5/$3.json: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
+  $(call RunCommand,$(SCRIPT_DIRECTORY)/process-step-commands $$< data/commands/objs)
+data/jobreports/$2/$3/$6/$5/$4.csv: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
+  $(call RunCommand,$(SCRIPT_DIRECTORY)/process-job-reports $$<)
+data/inputs/$2/$3/$6/$5/$4.csv: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
+  $(call RunCommand,$(SCRIPT_DIRECTORY)/log-input-files $$< | sort)
 endef
+
 
 #dir,arch,queue,date
 define ProcessLogs
@@ -85,7 +87,8 @@ ARCH_WF_TIMES_$2_$3   := $2
 QUEUE_WF_TIMES_$2_$3  := $3
 WF_TIMES_$2_$3   += $(wildcard $1/pyRelValMatrixLogs/run/relval-times.json)
 WF_TIMES         += $2_$3
-$(foreach g,$(wildcard $1/gpu/*),$(if $(strip $g),$(eval $(call ProcessGPULogs,$g,$2,$3,$4,$(notdir $g)))))
+$(foreach g,$(wildcard $1/gpu/*),$(if $(strip $g),$(eval $(call ProcessOtherLogs,$g,$2,$3,$4,$(notdir $g),gpu))))
+$(foreach g,$(wildcard $1/other/*),$(if $(strip $g),$(eval $(call ProcessOtherLogs,$g,$2,$3,$4,$(notdir $g),other))))
 data/relvals/$2/$4/$3.json: $1/pyRelValMatrixLogs/run/runall-report-step123-.log set_timestamps $(FORCE_BUILD)
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-run123-logs $$<)
 data/unitTests/$2/$4/$3.json: $1/unitTests-summary.log set_timestamps $(FORCE_BUILD)
@@ -105,18 +108,18 @@ ALL_WF_TIMES += data/relvaltime/$1/$2.json
 data/relvaltime/$1/$2.json: $(WF_TIMES_$(3))
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/relval-times.py $$^)
 endef
-define RelValTimesGPU
-ALL_WF_TIMES += data/relvaltime/$1/gpu/$3/$2.json
-data/relvaltime/$1/gpu/$3/$2.json: $(GPU_WF_TIMES_$(4))
+define RelValTimesOther
+ALL_WF_TIMES += data/relvaltime/$1/$4/$3/$2.json
+data/relvaltime/$1/$4/$3/$2.json: $(OTHER_WF_TIMES_$(5))
 	$(call RunCommand,$(SCRIPT_DIRECTORY)/relval-times.py $$^)
 endef
 
 -include Releases.mk
 
 WF_TIMES     := $(sort $(WF_TIMES))
-GPU_WF_TIMES := $(sort $(GPU_WF_TIMES))
+OTHER_WF_TIMES := $(sort $(OTHER_WF_TIMES))
 $(foreach r,$(WF_TIMES),    $(eval $(call RelValTimes,$(ARCH_WF_TIMES_$(r)),$(QUEUE_WF_TIMES_$(r)),$r)))
-$(foreach r,$(GPU_WF_TIMES),$(eval $(call RelValTimesGPU,$(ARCH_WF_TIMES_$(r)),$(QUEUE_WF_TIMES_$(r)),$(GPU_TYPE_WF_TIMES_$(r)),$r)))
+$(foreach r,$(OTHER_WF_TIMES),$(eval $(call RelValTimesOther,$(ARCH_WF_TIMES_$(r)),$(QUEUE_WF_TIMES_$(r)),$(OTHER_TYPE_WF_TIMES_$(r)),$(OTHER_TYPE_TIMES_$(r)),$r)))
 ALL_RULES  := $(ALL_RELVALS) $(ALL_UNIT_TESTS) $(ALL_JOB_REPORTS) $(ALL_COMMANDS) $(ALL_WF_TIMES)
 
 FORCE_TARGET:
