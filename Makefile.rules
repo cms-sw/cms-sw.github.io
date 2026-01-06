@@ -63,15 +63,15 @@ OTHER_TYPE_TIMES_$2_$6_$5_$3 := $6
 OTHER_WF_TIMES_$2_$6_$5_$3   += $(wildcard $1/pyRelValMatrixLogs/run/relval-times.json)
 OTHER_WF_TIMES               += $2_$6_$5_$3
 data/relvals/$2/$4/$6/$5/$3.json: $1/pyRelValMatrixLogs/run/runall-report-step123-.log set_timestamps $(FORCE_BUILD)
-  $(call RunCommand,$(SCRIPT_DIRECTORY)/process-run123-logs $$<)
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-run123-logs $$<)
 data/unitTests/$2/$4/$6/$5/$3.json: $1/unitTests-summary.log set_timestamps $(FORCE_BUILD)
-  $(call RunCommand,$(SCRIPT_DIRECTORY)/process-unitTestSummary-logs $$<)
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-unitTestSummary-logs $$<)
 data/commands/$2/$4/$6/$5/$3.json: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
-  $(call RunCommand,$(SCRIPT_DIRECTORY)/process-step-commands $$< data/commands/objs)
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-step-commands $$< data/commands/objs)
 data/jobreports/$2/$3/$6/$5/$4.csv: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
-  $(call RunCommand,$(SCRIPT_DIRECTORY)/process-job-reports $$<)
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/process-job-reports $$<)
 data/inputs/$2/$3/$6/$5/$4.csv: $(call pyRelValFile,$1) set_timestamps $(FORCE_BUILD)
-  $(call RunCommand,$(SCRIPT_DIRECTORY)/log-input-files $$< | sort)
+	$(call RunCommand,$(SCRIPT_DIRECTORY)/log-input-files $$< | sort)
 endef
 
 
