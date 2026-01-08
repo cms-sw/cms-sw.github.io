@@ -45,9 +45,9 @@ def get_dict_available_results( testsDir ):
 
         arch_data = current_arch
         if gpus:
-            arch_data = "%s:%s" % (arch_data, ":".join(gpus))
+            arch_data = "%s:gpu;%s" % (arch_data, ";".join(gpus))
         if others:
-            arch_data = "%s:%s" % (arch_data, ":".join(others))
+            arch_data = "%s:other;%s" % (arch_data, ";".join(others))
         if resultsDict.get( current_ib ):
           resultsDict[ current_ib ] += ','+arch_data
         else:
