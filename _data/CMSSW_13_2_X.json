@@ -11,7 +11,7 @@
             "cmsdist_compared_tags": {
                 "el8_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-25-0000/el8_amd64_gcc11..IB/CMSSW_13_2_X/master",
                 "el9_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-19-2300/el9_amd64_gcc11..IB/CMSSW_13_2_X/cs9",
-                "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-18-0000/slc7_amd64_gcc11..IB/CMSSW_13_2_X/master"
+                "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-25-0000/slc7_amd64_gcc11..IB/CMSSW_13_2_X/master"
             },
             "cmsdist_merged_prs": {
                 "el8_amd64_gcc11": [],
@@ -75,6 +75,15 @@
                     },
                     "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-25-0000/new/logAnalysis.pkl",
                     "passed": "warning"
+                },
+                {
+                    "arch": "slc7_amd64_gcc11",
+                    "details": {
+                        "compWarning": 19,
+                        "ignoreWarning": 34
+                    },
+                    "file": "/data/sdt/buildlogs/slc7_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-25-0000/new/logAnalysis.pkl",
+                    "passed": "warning"
                 }
             ],
             "check-headers": "not-found",
@@ -83,10 +92,12 @@
                 "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-25-0000/slc7_amd64_gcc11"
             },
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-18-0000/el8_amd64_gcc11..IB/CMSSW_13_2_X_2026-01-25-0000/el8_amd64_gcc11"
+                "el8_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-25-0000/el8_amd64_gcc11..IB/CMSSW_13_2_X_2026-01-25-0000/el8_amd64_gcc11",
+                "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-18-0000/slc7_amd64_gcc11..IB/CMSSW_13_2_X_2026-01-25-0000/slc7_amd64_gcc11"
             },
             "cmsdist_merged_prs": {
-                "el8_amd64_gcc11": []
+                "el8_amd64_gcc11": [],
+                "slc7_amd64_gcc11": []
             },
             "comp_baseline": "not-found",
             "comp_baseline_state": "errors",
@@ -94,6 +105,10 @@
             "crab_tests": "passed",
             "dqm_tests": "not-found",
             "dupDict": [
+                {
+                    "arch": "slc7_amd64_gcc11",
+                    "passed": "passed"
+                },
                 {
                     "arch": "el8_amd64_gcc11",
                     "passed": "passed"
@@ -123,18 +138,39 @@
             "python3_tests": [],
             "release_name": "CMSSW_13_2_X_2026-01-25-0000",
             "release_queue": "CMSSW_13_2_X",
-            "relvals": [],
+            "relvals": [
+                {
+                    "arch": "el8_amd64_gcc11",
+                    "details": {
+                        "known_failed": 0,
+                        "num_failed": 0,
+                        "num_passed": 2
+                    },
+                    "done": false,
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-25-0000/pyRelValMatrixLogs/run/runall-report-step123-.log",
+                    "passed": true
+                }
+            ],
             "static_checks": "not-found",
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
+                "slc7_amd64_gcc11",
                 "el8_amd64_gcc11"
             ],
             "utests": [
                 {
                     "arch": "el8_amd64_gcc11",
+                    "details": {
+                        "num_fails": "0"
+                    },
+                    "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-25-0000/unitTests-summary.log",
+                    "passed": "passed"
+                },
+                {
+                    "arch": "slc7_amd64_gcc11",
                     "details": {},
-                    "file": "['/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-25-0000/new/logAnalysis.pkl']",
+                    "file": "['/data/sdt/buildlogs/slc7_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-25-0000/new/logAnalysis.pkl']",
                     "passed": "unknown"
                 }
             ],
@@ -236,12 +272,6 @@
             "RVExceptions": null,
             "addons": [
                 {
-                    "arch": "el8_amd64_gcc11",
-                    "details": {},
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-18-0000/addOnTests.log",
-                    "passed": true
-                },
-                {
                     "arch": "slc7_amd64_gcc11",
                     "details": {},
                     "file": "/data/sdt/buildlogs/slc7_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-18-0000/addOnTests.log",
@@ -250,15 +280,6 @@
             ],
             "base_branch": "CMSSW_13_2_X",
             "builds": [
-                {
-                    "arch": "el8_amd64_gcc11",
-                    "details": {
-                        "compWarning": 19,
-                        "ignoreWarning": 34
-                    },
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-18-0000/new/logAnalysis.pkl",
-                    "passed": "warning"
-                },
                 {
                     "arch": "slc7_amd64_gcc11",
                     "details": {
@@ -275,11 +296,9 @@
                 "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-18-0000/slc7_amd64_gcc11"
             },
             "cmsdist_compared_tags": {
-                "el8_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-18-0000/el8_amd64_gcc11..IB/CMSSW_13_2_X_2026-01-18-0000/el8_amd64_gcc11",
                 "slc7_amd64_gcc11": "IB/CMSSW_13_2_X_2026-01-18-0000/slc7_amd64_gcc11..IB/CMSSW_13_2_X_2026-01-18-0000/slc7_amd64_gcc11"
             },
             "cmsdist_merged_prs": {
-                "el8_amd64_gcc11": [],
                 "slc7_amd64_gcc11": []
             },
             "comp_baseline": "not-found",
@@ -291,20 +310,9 @@
                 {
                     "arch": "slc7_amd64_gcc11",
                     "passed": "passed"
-                },
-                {
-                    "arch": "el8_amd64_gcc11",
-                    "passed": "passed"
                 }
             ],
-            "fwlite": [
-                {
-                    "arch": "el8_amd64_gcc11",
-                    "details": {},
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-18-0000/new_FWLITE/logAnalysis.pkl",
-                    "passed": "passed"
-                }
-            ],
+            "fwlite": [],
             "hlt_tests": "passed",
             "ib_date": "2026-01-18-0000-0000",
             "igprof": "not-found",
@@ -344,23 +352,11 @@
                 }
             ],
             "next_ib": false,
-            "prod_arch": "el8_amd64_gcc11",
             "profiling": "not-found",
             "python3_tests": [],
             "release_name": "CMSSW_13_2_X_2026-01-18-0000",
             "release_queue": "CMSSW_13_2_X",
             "relvals": [
-                {
-                    "arch": "el8_amd64_gcc11",
-                    "details": {
-                        "known_failed": 0,
-                        "num_failed": 0,
-                        "num_passed": 4192
-                    },
-                    "done": true,
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-18-0000/pyRelValMatrixLogs/run/runall-report-step123-.log",
-                    "passed": true
-                },
                 {
                     "arch": "slc7_amd64_gcc11",
                     "details": {
@@ -377,18 +373,9 @@
             "static_checks_failures": "not-found",
             "static_checks_v2": "not-found",
             "tests_archs": [
-                "slc7_amd64_gcc11",
-                "el8_amd64_gcc11"
+                "slc7_amd64_gcc11"
             ],
             "utests": [
-                {
-                    "arch": "el8_amd64_gcc11",
-                    "details": {
-                        "num_fails": "0"
-                    },
-                    "file": "/data/sdt/buildlogs/el8_amd64_gcc11/www/sun/13.2-sun-00/CMSSW_13_2_X_2026-01-18-0000/unitTests-summary.log",
-                    "passed": "passed"
-                },
                 {
                     "arch": "slc7_amd64_gcc11",
                     "details": {
