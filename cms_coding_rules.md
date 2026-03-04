@@ -62,10 +62,10 @@ If necessary to create a unique name, one can add the directory name:
 `PackageName_SubPackageName_Directory_FileName_h`.
 2. Each header ﬁle contains one class declaration only. (\*)
 3. Header ﬁles must not contain any implementation except for class templates and code to be inlined.
-4. Do not inline virtual functions.
+4. Do not inline virtual functions. (\*) Allowed exception: inlining is permitted for simple functions like accessors and setters, as long as there is at least one non-inline virtual function in the class.
 5. Do not inline functions which contain control structures which require block scoping.
-6. In your own packages, use forward declarations if they are sufﬁcient.
-7. Do not forward-declare an entity from another package.
+6. Forward declarations are encouraged in headers within a single package, or wider areas under the same maintenance responsibility.
+7. Use headers with forward declarations instead of explicit forward declarions of classes outside of the package or maintenance area.
 8. Do not use absolute directory names or relative ﬁle paths in `#include` directives.
 9. Use `nullptr`, not "0" or "NULL". (\*)
 10. Use types like `int`, `uint32_t`, `size_t`, and `ptrdiff_t` consistently and without mixing them.
@@ -89,10 +89,15 @@ If necessary to create a unique name, one can add the directory name:
 27. Provide meaningful argument names in method declarations in the header ﬁle to indicate usage, unless the type fully describes the usage.
 28. Try to avoid excessively long lines of code that impair readability.
 29. Data members of a class must not be redeﬁned in derived classes since doing so hides the original data member and could create confusion between the original and redefined data members.
+30. Use `std::abs()` instead of `fabs()`.
+31. Use C++ headers, e.g. `#include <cmath>` instead of `#include <math.h>`.
+32. Use MessageLogger instead of `std::cout` and `std::cerr` (\*). Allowed exception: standalone programs should use `std::cout` and `std::cerr`.
+33. Avoid `thread_local`.
 
 ## 5 -- Documentation Rules
 1. Always  comment  complex,  tricky,  or  non-intuitive  portions of  code.
 2. When revising code, be sure to update and revise comments.
+3. Do not leave commented-out code in files. Instead, use git versioning to retain old versions of code in the development history. If code is only commented out temporarily, a clear comment should be added describing why it is temporarily disabled and under what conditions it will be re-enabled.
 
 ## 6 -- Packaging Rules
 #### Libraries
@@ -150,3 +155,5 @@ These guidelines are a brief summary of highlights from the [C++ Core Guidelines
 14. Design functions that are short and simple and that perform a single, coherent, logical  task ([logical task](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rf-logical), [short functions](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rf-single)).
 15. Do not duplicate code. If procedural code is needed in two or more places, create a function for the task and call it where needed. ([functions](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rf-package), [encapsulate](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rp-library))
 16. Do not use goto ([no goto](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Res-goto)).
+17. Do not use `using namespace` in global scope in a header file ([no using namespace in headers](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Rs-using-directive).
+18. Avoid `const_cast` ([const cast](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#Res-casts-const)).
