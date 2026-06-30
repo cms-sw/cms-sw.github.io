@@ -33,6 +33,42 @@
       "updated_at": "1782448590",
       "user": "kpedro88"
     },
+    "51315": {
+      "additions": 1081,
+      "auther_ref": "SoASerialisation_200X",
+      "auther_sha": "f0c1f8e2136b6f19b9dd528c62c9fdc38651a3fa",
+      "author": "Electricks94",
+      "body": "**PR description:**\r\n\r\nExtension of the custom streamer of the SoA Backend to encounter for the following cases:\r\n\r\n- Added columns/eigen columns/scalars are initialised to 0\r\n- Removed or rearranged columns are handle correctly by ROOT\r\n- columns with changed type (e.g. double to float) are handle by ROOTm this holds also for Eigen columns and scalars\r\n- Eigen columns with changed dimensions for example `Eigen::Matrix<float, 4, 2>` -> `Eigen::Matrix<float, 3, 2>;` result in a meaningfull error at reading\r\n- Columns with enum types are stored as integers in the SoA backend and only exposed as enums. Hence, the schema evolution behaves exactly like in the case of integers and also 8 byte large enums are supported which is not case with ROOT normally (see https://github.com/root-project/root/pull/17009)\r\n- Examples using ioread rules are provided to showcase how complex cases (e.g. using custom types for SoA columns) can be handled\r\n\r\n**PR validation:**\r\n\r\nA set of SoA Layouts is provided which evolve from a base SoA Layout. The base SoA Layout is stored multiple times using a different type alias which is then changed in the code to simulate an evolving class. The created ROOT files are then used to validate the reading of the previously stored Collections. \r\n\r\nThis PR is an extension of https://github.com/cms-sw/cmssw/pull/50487\r\n\r\n**If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:**\r\n\r\nThis is a backport of https://github.com/cms-sw/cmssw/pull/50691 to 20_0_X\r\n\r\n@felicepantaleo fyi\r\n",
+      "branch": "CMSSW_20_0_X",
+      "changed_files": 27,
+      "closed_at": "1782825880",
+      "comments": 15,
+      "commits": 10,
+      "created_at": "1782365500",
+      "deletions": 21,
+      "labels": [
+        "backport",
+        "changes-dataformats",
+        "fully-signed",
+        "heterogeneous-approved",
+        "ngt",
+        "orp-approved",
+        "tests-approved",
+        "tests-manual-override",
+        "urgent"
+      ],
+      "merge_commit_sha": "96f9a076e7408361f878ee36e059947e83925f2b",
+      "merged_at": "1782825880",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_0_X",
+      "number": 51315,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[Backport to 20_0_X (#50691)] SoA Schema evolution",
+      "updated_at": "1782825881",
+      "user": "Electricks94"
+    },
     "51327": {
       "additions": 4,
       "auther_ref": "Phase2-hgx367lm",
@@ -63,6 +99,39 @@
       "title": "Phase2-hgx367lm Correct a bug in HGCalGeomParameters.cc to make it work correctly for the ColdBox mode of HGCal and the testing code for neighbour finder of HGCal silicon cells -- backport of #51323 and #51324",
       "updated_at": "1782629115",
       "user": "bsunanda"
+    },
+    "51347": {
+      "additions": 27,
+      "auther_ref": "mm_compareMemProfiles_justOne_20_0_X",
+      "auther_sha": "08a62c7662adbf1b03d2ae4a0b6cb6d2595c2d81",
+      "author": "mmusich",
+      "body": "backport of https://github.com/cms-sw/cmssw/pull/51338\r\n\r\n#### PR description:\r\n\r\nTitle says it all, useful to display at least the PR curves when the baseline failed (see https://github.com/cms-sw/cms-bot/issues/2799)\r\n\r\n#### PR validation:\r\n\r\nPrivate tests.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nverbatim backport of https://github.com/cms-sw/cmssw/pull/51338 to CMSSW_20_0_X",
+      "branch": "CMSSW_20_0_X",
+      "changed_files": 1,
+      "closed_at": "1782825581",
+      "comments": 12,
+      "commits": 1,
+      "created_at": "1782629582",
+      "deletions": 27,
+      "labels": [
+        "backport-ok",
+        "fully-signed",
+        "hlt-approved",
+        "orp-approved",
+        "tests-approved",
+        "tests-external-failure"
+      ],
+      "merge_commit_sha": "7cf5a40f7f901ee229c11cf8481de508e3ba4b27",
+      "merged_at": "1782825581",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_0_X",
+      "number": 51347,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[20.0.X] `compareMemoryProfiles`: support just one file in input",
+      "updated_at": "1782825583",
+      "user": "mmusich"
     }
   }
 }
