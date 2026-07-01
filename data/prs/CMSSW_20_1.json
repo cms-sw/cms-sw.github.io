@@ -1,5 +1,36 @@
 {
   "cmsdist": {
+    "10665": {
+      "additions": 19,
+      "auther_ref": "claude/nnpuppitau-externals-migration-u1xa0p",
+      "auther_sha": "bbc14f0ad8bc0199eae501c1e58d6d848da43483",
+      "author": "artlbv",
+      "body": "#### Summary\r\n\r\nAdds the SCRAM build/install plumbing for the new **[cms-hls4ml/NNPuppiTauModel](https://github.com/cms-hls4ml/NNPuppiTauModel)** external package, following the same precedent already used for `L1TSC4NGJetModel`/`AXOL1TL`. This package replaces the in-tree, un-namespaced hls4ml weight arrays (`w2`, `b2`, ..., `w20`, `b20`) previously compiled directly into `L1Trigger/Phase2L1ParticleFlow`'s `TauNNIdHW`, which were vulnerable to ELF symbol interposition when multiple hls4ml models were loaded into the same process (the bug class behind cms-sw/cmssw#49632).\r\n\r\nThis is part of a 3-PR migration:\r\n1. New external repo: [cms-hls4ml/NNPuppiTauModel](https://github.com/cms-hls4ml/NNPuppiTauModel)  the externally-built package itself.\r\n2. **This PR**  `cmsdist` spec + toolfile so SCRAM builds/installs the new external.\r\n3. cms-sw/cmssw#51263  `cmssw` changes to consume it via `hls4mlEmulator::ModelLoader`/`hls4mlEmulator::Model`.\r\n\r\n#### Changes\r\n\r\n- **`NNPuppiTauModel.spec`** (new)  RPM spec for the external, modeled on `L1TSC4NGJetModel.spec`/`AXOL1TL.spec`: fetches the release tarball from `cms-hls4ml/NNPuppiTauModel`, builds via `make` against `hls4mlEmulatorExtras`/`hls`, installs into `$PREFIX`.\r\n- **`scram-tools.file/tools/NNPuppiTauModel/nnpuppitaumodel.xml`** (new)  SCRAM toolfile exposing `NNPUPPITAUMODEL_BASE`/`LIBDIR` environment variables for the new external, modeled on `l1tsc4ngjetmodel.xml`.\r\n- **`cmssw-tools.spec`**  adds `Requires: NNPuppiTauModel` alongside the existing L1-trigger model externals (`L1TSC4NGJetModel`, `L1TSC82ProngJetModel`, etc.), so it's pulled into every CMSSW release.\r\n\r\n#### Dependencies\r\n\r\nRequires a tagged release of [cms-hls4ml/NNPuppiTauModel](https://github.com/cms-hls4ml/NNPuppiTauModel) to exist before this can build successfully.\r\n\r\n#### PR validation\r\n\r\ncms-bot code-checks will perform the first real build test of the spec/toolfile/package Makefile chain. Once this external is available in an IB, `cms-sw/cmssw#51263` can build against it.\r\n",
+      "branch": "IB/CMSSW_20_1_X/master",
+      "changed_files": 3,
+      "closed_at": "1782925895",
+      "comments": 28,
+      "commits": 3,
+      "created_at": "1781836272",
+      "deletions": 0,
+      "labels": [
+        "externals-approved",
+        "fully-signed",
+        "l1-approved",
+        "orp-pending",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "874e128bad6c0ea73c43bc9c5bc49a93e0b0e137",
+      "merged_at": "1782925895",
+      "merged_by": "smuzaffar",
+      "number": 10665,
+      "release-notes": [],
+      "review_comments": 1,
+      "state": "closed",
+      "title": "Add NNPuppiTauModel external spec and toolfile",
+      "updated_at": "1782925895",
+      "user": "artlbv"
+    },
     "10678": {
       "additions": 22,
       "auther_ref": "IB/CMSSW_20_1_X/master_cuda_13_drivers",
