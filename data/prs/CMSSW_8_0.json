@@ -1,4 +1,36 @@
 {
   "cmsdist": {},
-  "cmssw": {}
+  "cmssw": {
+    "51204": {
+      "additions": 2,
+      "auther_ref": "pileup_input_filelist_no_datamix",
+      "auther_sha": "ea9ba423d5e96184ec4acd4a5004105781bc56e3",
+      "author": "vlimant",
+      "body": "#### PR description:\r\n\r\nthat option to provide `--pileup_input filelist:<path to a file>` is available in 8.1 and after, but is missing in 8.0 and prevents some production using old releases  #51179 \r\n\r\n#### PR validation:\r\n\r\nthis command\r\n`cmsDriver.py Configuration/GenProduction/python/HIN-pPb816Spring16GS-00223-fragment.py --eventcontent RAWSIM --pileup HiMixGEN --customise Configuration/StandardSequences/SimWithCastor_cff.py,Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM --conditions 80X_mcRun2_pA_v4 --beamspot MatchPbPBoost --step GEN,SIM --scenario HeavyIons --era Run2_2016_pA --python_filename HIN-pPb816Spring16GS-00223_1_cfg.py --fileout file:HIN-pPb816Spring16GS-00223.root --number 160 --number_out 160 --pileup_input \"filelist:/cvmfs/cms.cern.ch/offcomp-prod/premixPUlist/d8652afafee2e83edebf88a446b3ba53.txt\" --no_exec --mc`\r\n\r\nnow functions properly in CMSSW_8_0_X_2026-06-07-0000\r\n\r\n## backport \r\n\r\nthis is somewhat a backport of https://github.com/cms-sw/cmssw/commit/81c7eaa7116a8bdfab21f6661b5a382324bd93db ",
+      "branch": "CMSSW_8_0_X",
+      "changed_files": 1,
+      "closed_at": "1782715763",
+      "comments": 7,
+      "commits": 1,
+      "created_at": "1781254317",
+      "deletions": 0,
+      "labels": [
+        "fully-signed",
+        "operations-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "2b82745f4f14133199eb170887f01bba748da7ac",
+      "merged_at": "1782715763",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_8_0_X",
+      "number": 51204,
+      "release-notes": [],
+      "review_comments": 5,
+      "state": "closed",
+      "title": "accept the --pileup_input filelist:... also if not DATAMIX is specified",
+      "updated_at": "1782715765",
+      "user": "vlimant"
+    }
+  }
 }
