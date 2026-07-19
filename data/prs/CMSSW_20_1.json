@@ -1511,6 +1511,42 @@
       "title": "[RECO] Changes to EventContent to make it RISCV64 compliant",
       "updated_at": "1784225516",
       "user": "jfernan2"
+    },
+    "51524": {
+      "additions": 32,
+      "auther_ref": "hgcal-v19-hd200-digi-reco-fixes",
+      "auther_sha": "b4b0cae93bb5505112d688328123b069ab314ff5",
+      "author": "felicepantaleo",
+      "body": "The v19 HGCal geometry introduces a fourth silicon sensor category (HGCSiliconDetId type 3, HD 200um). \r\n\r\nIn the legacy branch of HGCDigitizerBase, `cell.thickness` (1..4) is used directly as the MIP-charge scale of the ZS threshold. This proxy is valid for 120/200/300um (types 0-2) but gives HD 200um a factor 4 instead of 2. \r\nMeasured with single muons at eta 2.3-2.5 (D122 vs D121, no PU):\r\n37% of sim hits in type-3 cells produced no rechit (62.9% efficiency vs 98-100% for all other types), with a three-fold phi pattern following the HD-wafer placement. The fix maps the HD200 factor to 2. Rerunning the same GEN events through the fixed digitizer restores type-3 efficiency to 98.8%.\r\n\r\nhttps://felice.web.cern.ch/orbit/v19_geom_validation_HIGHLIGHTS/21_rechit_efficiency_after_fix.png\r\n\r\nThe v19 `thicknessCorrection` has 8 silicon entries (4 per section) but `deltasi_index_regemfac` remained 3, so all CE-H silicon rechits were misbinned (CE-H HD120 read the CE-E HD200 slot: +12% energy and wrong sigma-noise). The layer cluster additionally copy their constants from HGCalRecHit at import time, before era modifiers apply, so on v19 they ran with pre-v19 6-slot arrays and sent CE-H HD200 hits to the scintillator threshold slot. This adds `deltasi_index_regemfac = 4` to the v19 rechit\r\nmodifier and explicit v19 overrides (8 thickness slots, v19 fCPerMIP, noises, thickness corrections) for the EE/HSi/HSci cluster producers.\r\n\r\n\r\n",
+      "branch": "master",
+      "changed_files": 4,
+      "closed_at": "1784480188",
+      "comments": 18,
+      "commits": 3,
+      "created_at": "1784372599",
+      "deletions": 6,
+      "labels": [
+        "bug-fix",
+        "code-checks-approved",
+        "fully-signed",
+        "hgcal-dpg-approved",
+        "orp-approved",
+        "reconstruction-approved",
+        "simulation-approved",
+        "tests-approved",
+        "urgent"
+      ],
+      "merge_commit_sha": "42f437e9308fcd6d178babe1043a67a8deed681b",
+      "merged_at": "1784480188",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51524,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Fix HGCal HD 200um (type 3) handling in legacy digitizer ZS and v19 local reco constants",
+      "updated_at": "1784480189",
+      "user": "felicepantaleo"
     }
   }
 }
