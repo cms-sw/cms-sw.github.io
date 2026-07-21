@@ -1,37 +1,5 @@
 {
-  "cmsdist": {
-    "10679": {
-      "additions": 19,
-      "auther_ref": "nnpuppitau-externals-migration_CMSSW_17_0_X",
-      "auther_sha": "2efedb49962d320d4bb37501f843dee735a3840f",
-      "author": "artlbv",
-      "body": "Backport of https://github.com/cms-sw/cmsdist/pull/10665\r\n\r\n#### Summary\r\n\r\nAdds the SCRAM build/install plumbing for the new **[cms-hls4ml/NNPuppiTauModel](https://github.com/cms-hls4ml/NNPuppiTauModel)** external package, following the same precedent already used for `L1TSC4NGJetModel`/`AXOL1TL`. This package replaces the in-tree, un-namespaced hls4ml weight arrays (`w2`, `b2`, ..., `w20`, `b20`) previously compiled directly into `L1Trigger/Phase2L1ParticleFlow`'s `TauNNIdHW`, which were vulnerable to ELF symbol interposition when multiple hls4ml models were loaded into the same process (the bug class behind cms-sw/cmssw#49632).\r\n\r\nThis is part of a 3-PR migration:\r\n1. New external repo: [cms-hls4ml/NNPuppiTauModel](https://github.com/cms-hls4ml/NNPuppiTauModel)  the externally-built package itself.\r\n2. **This PR**  `cmsdist` spec + toolfile so SCRAM builds/installs the new external.\r\n3. cms-sw/cmssw#51263  `cmssw` changes to consume it via `hls4mlEmulator::ModelLoader`/`hls4mlEmulator::Model`.\r\n\r\n#### Changes\r\n\r\n- **`NNPuppiTauModel.spec`** (new)  RPM spec for the external, modeled on `L1TSC4NGJetModel.spec`/`AXOL1TL.spec`: fetches the release tarball from `cms-hls4ml/NNPuppiTauModel`, builds via `make` against `hls4mlEmulatorExtras`/`hls`, installs into `$PREFIX`.\r\n- **`scram-tools.file/tools/NNPuppiTauModel/nnpuppitaumodel.xml`** (new)  SCRAM toolfile exposing `NNPUPPITAUMODEL_BASE`/`LIBDIR` environment variables for the new external, modeled on `l1tsc4ngjetmodel.xml`.\r\n- **`cmssw-tools.spec`**  adds `Requires: NNPuppiTauModel` alongside the existing L1-trigger model externals (`L1TSC4NGJetModel`, `L1TSC82ProngJetModel`, etc.), so it's pulled into every CMSSW release.\r\n\r\n#### Dependencies\r\n\r\nRequires a tagged release of [cms-hls4ml/NNPuppiTauModel](https://github.com/cms-hls4ml/NNPuppiTauModel) to exist before this can build successfully.\r\n\r\n#### PR validation\r\nNone yet. \r\n\r\ncms-bot code-checks will perform the first real build test of the spec/toolfile/package Makefile chain. \r\n",
-      "branch": "IB/CMSSW_17_0_X/master",
-      "changed_files": 3,
-      "closed_at": "1784036767",
-      "comments": 7,
-      "commits": 3,
-      "created_at": "1782218169",
-      "deletions": 0,
-      "labels": [
-        "backport-ok",
-        "externals-pending",
-        "orp-approved",
-        "pending-signatures",
-        "tests-approved"
-      ],
-      "merge_commit_sha": "922b5602add7ffbb8624eca686cdb0d49d976cdd",
-      "merged_at": "1784036766",
-      "merged_by": "cmsbuild",
-      "number": 10679,
-      "release-notes": [],
-      "review_comments": 0,
-      "state": "closed",
-      "title": "[Backport] Add NNPuppiTauModel external spec and toolfile",
-      "updated_at": "1784036768",
-      "user": "artlbv"
-    }
-  },
+  "cmsdist": {},
   "cmssw": {
     "51192": {
       "additions": 703,
@@ -101,41 +69,6 @@
       "title": "[Backport of #51263] [Phase-2 L1T] Move TauNNIdHW to the externally-built NNPuppiTauModel package ",
       "updated_at": "1784036798",
       "user": "artlbv"
-    },
-    "51377": {
-      "additions": 137,
-      "auther_ref": "HINM2M_CMSSW_17_0_X",
-      "auther_sha": "e07149fadd54925124fd971b4681499dcc79448b",
-      "author": "stahlleiton",
-      "body": "#### PR description:\r\n\r\nThis PR adds a Mini2Mini workflow for Run3 PbPb RawPrime data that includes:\r\n- Update of the egamma regression optimized on PbPb\r\n- Secondary vertex for 2023 and 2024 PbPb\r\n- Negative secondary vertex for b-tag calibration\r\n- Update of centrality bin\r\n\r\nIn addition, this PR adds a set of relvals that runs on MiniAOD data defined as:\r\n- 141.401 : relval run on 2023 PbPb MiniAOD\r\n- 142.401 : relval run on 2024 PbPb MiniAOD\r\n- 143.401 : relval run on 2025 PbPb MiniAOD\r\n- 144.401 : relval run on 2026 PbPb MiniAOD\r\n\r\nthat runs both the Mini2Mini and the PbPbEW skim steps.\r\n\r\n@mandrenguyen \r\n\r\n#### PR validation:\r\n\r\nTested with workflows:\r\n141.401,142.401,143.401,144.401\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nTo be backported to 16_1_X",
-      "branch": "CMSSW_17_0_X",
-      "changed_files": 4,
-      "closed_at": "1783839120",
-      "comments": 13,
-      "commits": 1,
-      "created_at": "1782818241",
-      "deletions": 0,
-      "labels": [
-        "code-checks-approved",
-        "fully-signed",
-        "operations-approved",
-        "orp-approved",
-        "pdmv-approved",
-        "reconstruction-approved",
-        "tests-approved",
-        "xpog-approved"
-      ],
-      "merge_commit_sha": "51416e8db69f58321e480d9059eb320ca9b9f2a4",
-      "merged_at": "1783839120",
-      "merged_by": "cmsbuild",
-      "milestone": "CMSSW_17_0_X",
-      "number": 51377,
-      "release-notes": [],
-      "review_comments": 0,
-      "state": "closed",
-      "title": "Add HIN Run3 Mini2Mini relvals",
-      "updated_at": "1783839121",
-      "user": "stahlleiton"
     },
     "51459": {
       "additions": 39,
