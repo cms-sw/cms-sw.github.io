@@ -1,4 +1,68 @@
 {
   "cmsdist": {},
-  "cmssw": {}
+  "cmssw": {
+    "51337": {
+      "additions": 1,
+      "auther_ref": "TritonRemoveWorkarounds151X",
+      "auther_sha": "63c5528685f4a09bc0c54074a049d2bf3d157535",
+      "author": "kpedro88",
+      "body": "#### PR description:\r\n\r\nResolves #51309\r\n\r\n#### PR validation:\r\n\r\nUnit tests pass.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nPartial backport of #49564",
+      "branch": "CMSSW_15_1_X",
+      "changed_files": 1,
+      "closed_at": "1784642492",
+      "comments": 13,
+      "commits": 4,
+      "created_at": "1782500609",
+      "deletions": 35,
+      "labels": [
+        "fully-signed",
+        "heterogeneous-approved",
+        "orp-approved",
+        "tests-approved",
+        "tests-external-failure"
+      ],
+      "merge_commit_sha": "985decb76a772251c1cb021605acebf765053983",
+      "merged_at": "1784642492",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_15_1_X",
+      "number": 51337,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Remove Triton workarounds [15_1_X]",
+      "updated_at": "1784642493",
+      "user": "kpedro88"
+    },
+    "51445": {
+      "additions": 7,
+      "auther_ref": "GenProton_15_1_X",
+      "auther_sha": "d9178e26e5cd1bd1921aba64d6b2f44b4241c582",
+      "author": "michael-pitt",
+      "body": "#### PR description:\n\nThis is a backport of #51283.\n\nThe change updates the generator-level proton selection used for the NanoAOD GenProton table to a standardized xi in [0.01, 0.2] acceptance, with the corresponding Run 3 beam-energy window applied through \run3_common.\n\nNo additional code changes are introduced relative to #51283.\n\n#### PR validation:\n\n- Backport is identical to #51283\n- Target branch carries the same pre-fix PhysicsTools/NanoAOD/python/protons_cff.py content as the original branch before merge\n- Original PR validation in #51283 compiled PhysicsTools/NanoAOD and verified that \run3_common switches the GenProton selection to the Run 3 beam-energy window with --era Run3_2024\n\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\n\nBackport of #51283, needed for Run 3 NanoAOD production release cycles on $(System.Collections.Hashtable.base).\n\nwatchers: @forthommel",
+      "branch": "CMSSW_15_1_X",
+      "changed_files": 1,
+      "closed_at": "1784641947",
+      "comments": 8,
+      "commits": 1,
+      "created_at": "1783500596",
+      "deletions": 1,
+      "labels": [
+        "fully-signed",
+        "orp-approved",
+        "tests-approved",
+        "xpog-approved"
+      ],
+      "merge_commit_sha": "9b63c55dfcefc633c16372effe93fe140d73bd63",
+      "merged_at": "1784641947",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_15_1_X",
+      "number": 51445,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Update GenProton NanoAOD acceptance for Run 3 [15_1_X]",
+      "updated_at": "1784641948",
+      "user": "michael-pitt"
+    }
+  }
 }
