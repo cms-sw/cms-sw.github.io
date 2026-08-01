@@ -1,0 +1,93 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1634455134,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "rucio:file4dataset_site"
+        ]
+      },
+      "file": [
+        {
+          "adler32": "b2a4f458",
+          "bytes": 231769323,
+          "md5": null,
+          "name": "/store/relval/CMSSW_10_6_17_patch1/RelValSingleElectronPt10/GEN-SIM/106X_mc2017_realistic_v7-v1/20000/5485A615-9F20-1E45-A949-5508EF49F45A.root",
+          "pfns": {
+            "gsiftp://eoscmsftp.cern.ch:2811/eos/cms/store/relval/CMSSW_10_6_17_patch1/RelValSingleElectronPt10/GEN-SIM/106X_mc2017_realistic_v7-v1/20000/5485A615-9F20-1E45-A949-5508EF49F45A.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 1,
+              "rse": "T2_CH_CERN",
+              "rse_id": "542ab69d82bf401e9218bbe375bb1fce",
+              "type": "DISK",
+              "volatile": false
+            },
+            "srm://cmsdcadisk.fnal.gov:8443/srm/managerv2?SFN=/dcache/uscmsdisk/store/relval/CMSSW_10_6_17_patch1/RelValSingleElectronPt10/GEN-SIM/106X_mc2017_realistic_v7-v1/20000/5485A615-9F20-1E45-A949-5508EF49F45A.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 2,
+              "rse": "T1_US_FNAL_Disk",
+              "rse_id": "087ee3383b9d45f6b31814af07b2c56d",
+              "type": "DISK",
+              "volatile": false
+            }
+          },
+          "rses": {
+            "T1_US_FNAL_Disk": [
+              "srm://cmsdcadisk.fnal.gov:8443/srm/managerv2?SFN=/dcache/uscmsdisk/store/relval/CMSSW_10_6_17_patch1/RelValSingleElectronPt10/GEN-SIM/106X_mc2017_realistic_v7-v1/20000/5485A615-9F20-1E45-A949-5508EF49F45A.root"
+            ],
+            "T2_CH_CERN": [
+              "gsiftp://eoscmsftp.cern.ch:2811/eos/cms/store/relval/CMSSW_10_6_17_patch1/RelValSingleElectronPt10/GEN-SIM/106X_mc2017_realistic_v7-v1/20000/5485A615-9F20-1E45-A949-5508EF49F45A.root"
+            ]
+          },
+          "scope": "cms",
+          "size": 231769323,
+          "space_token": null,
+          "states": {
+            "T1_US_FNAL_Disk": "AVAILABLE",
+            "T2_CH_CERN": "AVAILABLE"
+          }
+        }
+      ],
+      "qhash": "db15affd1e57503a1db1eb0554361af9"
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "file.name"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "db15affd1e57503a1db1eb0554361af9",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort file.name | unique",
+    "query": "file dataset=/RelValSingleElectronPt10/CMSSW_10_6_17_patch1-106X_mc2017_realistic_v7-v1/GEN-SIM site=T2_CH_CERN  detail=true | grep file.name | sort file.name | unique",
+    "spec": {
+      "dataset": "/RelValSingleElectronPt10/CMSSW_10_6_17_patch1-106X_mc2017_realistic_v7-v1/GEN-SIM",
+      "site": "T2_CH_CERN"
+    },
+    "system": "",
+    "tstamp": 1634455133
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1634455134
+}
