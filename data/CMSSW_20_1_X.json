@@ -14,7 +14,7 @@
         "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-07-28-2300/el10_amd64_gcc15..IB/CMSSW_20_1_X/g15",
         "el8_aarch64_gcc14": "remotes/origin/IB/CMSSW_20_1_X/g14..IB/CMSSW_20_1_X/g14",
         "el8_amd64_gcc13": "IB/CMSSW_20_1_X_2026-08-02-0000/el8_amd64_gcc13..IB/CMSSW_20_1_X/master",
-        "el9_aarch64_gcc13": "IB/CMSSW_20_1_X_2026-08-02-2300/el9_aarch64_gcc13..IB/CMSSW_20_1_X/master",
+        "el9_aarch64_gcc13": "IB/CMSSW_20_1_X_2026-08-03-2300/el9_aarch64_gcc13..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc13": "IB/CMSSW_20_1_X_2026-08-02-0000/el9_amd64_gcc13..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-08-03-1100/el9_amd64_gcc14..IB/CMSSW_20_1_X/g14",
         "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-07-28-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
@@ -45,17 +45,7 @@
             "url": "https://github.com/cms-sw/cmsdist/pull/10752"
           }
         ],
-        "el9_aarch64_gcc13": [
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": false,
-            "hash": "dce39afb11b1f50b57df5bd80c54fb7be504156e",
-            "is_merge_commit": false,
-            "number": "10752",
-            "title": "Update tag for Configuration-Generator to V01-14-01",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10752"
-          }
-        ],
+        "el9_aarch64_gcc13": [],
         "el9_amd64_gcc13": [
           {
             "author_login": "cms-sw",
@@ -177,21 +167,49 @@
         }
       ],
       "base_branch": "CMSSW_20_1_X",
-      "builds": [],
+      "builds": [
+        {
+          "arch": "el9_aarch64_gcc13",
+          "details": {
+            "ignoreWarning": 1426
+          },
+          "file": "/data/sdt/buildlogs/el9_aarch64_gcc13/www/mon/20.1-mon-23/CMSSW_20_1_X_2026-08-03-2300/new/logAnalysis.pkl",
+          "passed": "passed"
+        }
+      ],
       "check-headers": "inprogress",
       "clang_analyzer": "inprogress",
       "class_versions": "inprogress",
       "cmsdistTags": {
         "el9_aarch64_gcc13": "IB/CMSSW_20_1_X_2026-08-03-2300/el9_aarch64_gcc13"
       },
-      "cmsdist_compared_tags": {},
-      "cmsdist_merged_prs": {},
+      "cmsdist_compared_tags": {
+        "el9_aarch64_gcc13": "IB/CMSSW_20_1_X_2026-08-02-2300/el9_aarch64_gcc13..IB/CMSSW_20_1_X_2026-08-03-2300/el9_aarch64_gcc13"
+      },
+      "cmsdist_merged_prs": {
+        "el9_aarch64_gcc13": [
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": false,
+            "hash": "dce39afb11b1f50b57df5bd80c54fb7be504156e",
+            "is_merge_commit": false,
+            "number": "10752",
+            "title": "Update tag for Configuration-Generator to V01-14-01",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10752"
+          }
+        ]
+      },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
       "compared_tags": "CMSSW_20_1_X_2026-08-03-1100-->CMSSW_20_1_X_2026-08-03-2300",
       "crab_tests": "inprogress",
       "dqm_tests": "not-found",
-      "dupDict": [],
+      "dupDict": [
+        {
+          "arch": "el9_aarch64_gcc13",
+          "passed": "passed"
+        }
+      ],
       "flawfinder": "inprogress",
       "fwlite": [],
       "hlt-p2-timing": "inprogress",
@@ -232,12 +250,35 @@
       "reco_event_loop": "inprogress",
       "release_name": "CMSSW_20_1_X_2026-08-03-2300",
       "release_queue": "CMSSW_20_1_X",
-      "relvals": [],
+      "relvals": [
+        {
+          "arch": "el9_aarch64_gcc13",
+          "details": {
+            "known_failed": 0,
+            "num_failed": 27,
+            "num_passed": 63
+          },
+          "done": false,
+          "file": "/data/sdt/buildlogs/el9_aarch64_gcc13/www/mon/20.1-mon-23/CMSSW_20_1_X_2026-08-03-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
+          "passed": false
+        }
+      ],
       "static_checks": "inprogress",
       "static_checks_failures": "not-found",
       "static_checks_v2": "inprogress",
-      "tests_archs": [],
-      "utests": [],
+      "tests_archs": [
+        "el9_aarch64_gcc13"
+      ],
+      "utests": [
+        {
+          "arch": "el9_aarch64_gcc13",
+          "details": {
+            "num_fails": "1"
+          },
+          "file": "/data/sdt/buildlogs/el9_aarch64_gcc13/www/mon/20.1-mon-23/CMSSW_20_1_X_2026-08-03-2300/unitTests-summary.log",
+          "passed": "failed"
+        }
+      ],
       "valgrind": "not-found",
       "vtune": "inprogress"
     },
