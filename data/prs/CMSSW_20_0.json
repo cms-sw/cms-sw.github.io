@@ -1,6 +1,38 @@
 {
   "cmsdist": {},
   "cmssw": {
+    "51474": {
+      "additions": 3806,
+      "auther_ref": "CMSSW_16_0_X_OMTF-KB_v1_200X",
+      "auther_sha": "ea9dce77801da28271b84ed0ccdb6f81d4df410b",
+      "author": "mbluj",
+      "body": "#### PR description:\r\n\r\nThis PR is a backport of #50032 to 20_0_X and introduces recent (as for beginning of 2026) changes in the L1T OMTF emulator for Phase2:\r\n* Algorithm adapted to the latest DT TPs;\r\n* Output candidates are returned as `SAMuons` (Phase 2 data format):\r\n   * Conversion to the Phase 2 scales is implemented;\r\n   * Some code refactoring was needed: an internal class `FinalMuon` was introduced that stores the candidate parameters in the output format. It can be either Phase 1 or Phase 2 scales. Then it is converted to `RegionalMuonCands` (Phase 1) or `SAMuons` (Phase 2);\r\n* Improvements and refactoring of `CandidateSimMuonMatcher` and `DataROOTDumper2` used for developments and validations.\r\n\r\nDetails in [this JIRA ticket](https://its.cern.ch/jira/browse/CMSL1TOMTF-26) and K. Bunkowski's presentation [here](https://cern.sharepoint.com/:p:/s/CMS%20L1T%20phase-2%20OMTF/IQBSvhh8yd7sR4LRPREZW4rBAcTHXnsGF30PFfSWuPMV-VU?e=q3yyoW).\r\n\r\nThis PR requires updated configuration files provided in https://github.com/cms-data/L1Trigger-L1TMuon/pull/29.\r\n\r\n#### PR validation:\r\n\r\nValidated with wf 36034.0 (TTbar_14TeV+Run4D125)\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nIt is a backport of #50032 to 20_0_X for the new phase-2 MC campaign.",
+      "branch": "CMSSW_20_0_X",
+      "changed_files": 81,
+      "closed_at": "1785850678",
+      "comments": 8,
+      "commits": 16,
+      "created_at": "1783941689",
+      "deletions": 2510,
+      "labels": [
+        "fully-signed",
+        "l1-approved",
+        "orp-approved",
+        "requires-external",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "2f8fc58bcbc4d5509c29ab98e3ef0a29dfaeedb1",
+      "merged_at": "1785850678",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_0_X",
+      "number": 51474,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Updates L1T OMTF for Phase 2 [20_0_X]",
+      "updated_at": "1785850679",
+      "user": "mbluj"
+    },
     "51520": {
       "additions": 6,
       "auther_ref": "ecal-phase2-noisecorrelation-2023tb-200x",
