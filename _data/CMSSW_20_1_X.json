@@ -16,7 +16,7 @@
         "el8_amd64_gcc13": "IB/CMSSW_20_1_X_2026-08-04-2300/el8_amd64_gcc13..IB/CMSSW_20_1_X/master",
         "el9_aarch64_gcc13": "IB/CMSSW_20_1_X_2026-08-05-1500/el9_aarch64_gcc13..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc13": "IB/CMSSW_20_1_X_2026-08-05-1500/el9_amd64_gcc13..IB/CMSSW_20_1_X/master",
-        "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-08-05-1100/el9_amd64_gcc14..IB/CMSSW_20_1_X/g14",
+        "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-08-05-1500/el9_amd64_gcc14..IB/CMSSW_20_1_X/g14",
         "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-08-04-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
         "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-08-04-2300/el9_amd64_gcc16..IB/CMSSW_20_1_X/gcc16",
         "fc42_riscv64_gcc15": "ERR/CMSSW_20_1_X_2026-07-30-2300/fc42_riscv64_gcc15..IB/CMSSW_20_1_X/g15"
@@ -47,17 +47,7 @@
         ],
         "el9_aarch64_gcc13": [],
         "el9_amd64_gcc13": [],
-        "el9_amd64_gcc14": [
-          {
-            "author_login": "akritkbehera",
-            "from_merge_commit": true,
-            "hash": "ec28a53ce91e83f12db3968ae3dd6cc5d50195de",
-            "is_merge_commit": false,
-            "number": "10751",
-            "title": "[ROCM] Update ROCM to use theRock7.14 with rocgdb",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10751"
-          }
-        ],
+        "el9_amd64_gcc14": [],
         "el9_amd64_gcc15": [
           {
             "author_login": "akritkbehera",
@@ -222,6 +212,14 @@
           },
           "file": "/data/sdt/buildlogs/el9_aarch64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/new/logAnalysis.pkl",
           "passed": "passed"
+        },
+        {
+          "arch": "el9_amd64_gcc14",
+          "details": {
+            "ignoreWarning": 3016
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/new/logAnalysis.pkl",
+          "passed": "passed"
         }
       ],
       "check-headers": "passed",
@@ -237,7 +235,8 @@
       },
       "cmsdist_compared_tags": {
         "el9_aarch64_gcc13": "IB/CMSSW_20_1_X_2026-08-04-2300/el9_aarch64_gcc13..IB/CMSSW_20_1_X_2026-08-05-1500/el9_aarch64_gcc13",
-        "el9_amd64_gcc13": "IB/CMSSW_20_1_X_2026-08-04-2300/el9_amd64_gcc13..IB/CMSSW_20_1_X_2026-08-05-1500/el9_amd64_gcc13"
+        "el9_amd64_gcc13": "IB/CMSSW_20_1_X_2026-08-04-2300/el9_amd64_gcc13..IB/CMSSW_20_1_X_2026-08-05-1500/el9_amd64_gcc13",
+        "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-08-05-1100/el9_amd64_gcc14..IB/CMSSW_20_1_X_2026-08-05-1500/el9_amd64_gcc14"
       },
       "cmsdist_merged_prs": {
         "el9_aarch64_gcc13": [
@@ -261,6 +260,17 @@
             "title": "[ROCM] Update ROCM to use theRock7.14 with rocgdb",
             "url": "https://github.com/cms-sw/cmsdist/pull/10751"
           }
+        ],
+        "el9_amd64_gcc14": [
+          {
+            "author_login": "akritkbehera",
+            "from_merge_commit": true,
+            "hash": "ec28a53ce91e83f12db3968ae3dd6cc5d50195de",
+            "is_merge_commit": false,
+            "number": "10751",
+            "title": "[ROCM] Update ROCM to use theRock7.14 with rocgdb",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10751"
+          }
         ]
       },
       "comp_baseline": "not-found",
@@ -275,6 +285,10 @@
         },
         {
           "arch": "el9_amd64_gcc13",
+          "passed": "passed"
+        },
+        {
+          "arch": "el9_amd64_gcc14",
           "passed": "passed"
         }
       ],
@@ -301,6 +315,16 @@
             "passed": "failed",
             "release_name": "CMSSW_20_1_X_2026-08-05-1500"
           },
+          "amd_w7900/el9_amd64_gcc13": {
+            "arch": "el9_amd64_gcc13",
+            "details": {
+              "num_fails": "0"
+            },
+            "file": "/data/sdt/buildlogs/el9_amd64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/gpu/amd_w7900/unitTests-summary.log",
+            "gpu": "amd_w7900",
+            "passed": "passed",
+            "release_name": "CMSSW_20_1_X_2026-08-05-1500"
+          },
           "nvidia_h100/el9_amd64_gcc13": {
             "arch": "el9_amd64_gcc13",
             "details": {
@@ -308,6 +332,16 @@
             },
             "file": "/data/sdt/buildlogs/el9_amd64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/gpu/nvidia_h100/unitTests-summary.log",
             "gpu": "nvidia_h100",
+            "passed": "passed",
+            "release_name": "CMSSW_20_1_X_2026-08-05-1500"
+          },
+          "nvidia_l4/el9_amd64_gcc13": {
+            "arch": "el9_amd64_gcc13",
+            "details": {
+              "num_fails": "0"
+            },
+            "file": "/data/sdt/buildlogs/el9_amd64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/gpu/nvidia_l4/unitTests-summary.log",
+            "gpu": "nvidia_l4",
             "passed": "passed",
             "release_name": "CMSSW_20_1_X_2026-08-05-1500"
           },
@@ -338,9 +372,9 @@
             "details": {
               "known_failed": 0,
               "num_failed": 0,
-              "num_passed": 9
+              "num_passed": 181
             },
-            "done": false,
+            "done": true,
             "file": "/data/sdt/buildlogs/el9_amd64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/gpu/nvidia_h100/pyRelValMatrixLogs/run/runall-report-step123-.log",
             "gpu": "nvidia_h100",
             "passed": true,
@@ -351,17 +385,33 @@
             "details": {
               "known_failed": 0,
               "num_failed": 0,
-              "num_passed": 9
+              "num_passed": 181
             },
-            "done": false,
+            "done": true,
             "file": "/data/sdt/buildlogs/el9_amd64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/gpu/nvidia_l40s/pyRelValMatrixLogs/run/runall-report-step123-.log",
             "gpu": "nvidia_l40s",
+            "passed": true,
+            "release_name": "CMSSW_20_1_X_2026-08-05-1500"
+          },
+          "nvidia_t4/el9_amd64_gcc13": {
+            "arch": "el9_amd64_gcc13",
+            "details": {
+              "known_failed": 0,
+              "num_failed": 0,
+              "num_passed": 181
+            },
+            "done": true,
+            "file": "/data/sdt/buildlogs/el9_amd64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/gpu/nvidia_t4/pyRelValMatrixLogs/run/runall-report-step123-.log",
+            "gpu": "nvidia_t4",
             "passed": true,
             "release_name": "CMSSW_20_1_X_2026-08-05-1500"
           }
         }
       },
-      "hlt-p2-timing": "inprogress",
+      "hlt-p2-timing": {
+        "arch": "el9_amd64_gcc13",
+        "status": "passed"
+      },
       "hlt_tests": "inprogress",
       "ib_date": "2026-08-05-1500-0000",
       "igprof": "not-found",
@@ -388,7 +438,7 @@
             "details": {
               "known_failed": 0,
               "num_failed": 1,
-              "num_passed": 6
+              "num_passed": 112
             },
             "done": false,
             "file": "/data/sdt/buildlogs/el9_amd64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/other/rntuple/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -417,7 +467,7 @@
           "details": {
             "known_failed": 0,
             "num_failed": 1,
-            "num_passed": 4
+            "num_passed": 172
           },
           "done": false,
           "file": "/data/sdt/buildlogs/el9_amd64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -426,13 +476,24 @@
         {
           "arch": "el9_aarch64_gcc13",
           "details": {
-            "known_failed": 23,
+            "known_failed": 49,
             "num_failed": 0,
-            "num_passed": 228
+            "num_passed": 1512
           },
           "done": false,
           "file": "/data/sdt/buildlogs/el9_aarch64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/pyRelValMatrixLogs/run/runall-report-step123-.log",
           "passed": true
+        },
+        {
+          "arch": "el9_amd64_gcc14",
+          "details": {
+            "known_failed": 0,
+            "num_failed": 1,
+            "num_passed": 128
+          },
+          "done": false,
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/pyRelValMatrixLogs/run/runall-report-step123-.log",
+          "passed": false
         }
       ],
       "static_checks": "inprogress",
@@ -440,7 +501,8 @@
       "static_checks_v2": "inprogress",
       "tests_archs": [
         "el9_aarch64_gcc13",
-        "el9_amd64_gcc13"
+        "el9_amd64_gcc13",
+        "el9_amd64_gcc14"
       ],
       "utests": [
         {
@@ -457,6 +519,14 @@
             "num_fails": "2"
           },
           "file": "/data/sdt/buildlogs/el9_aarch64_gcc13/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/unitTests-summary.log",
+          "passed": "failed"
+        },
+        {
+          "arch": "el9_amd64_gcc14",
+          "details": {
+            "num_fails": "1"
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/wed/20.1-wed-15/CMSSW_20_1_X_2026-08-05-1500/unitTests-summary.log",
           "passed": "failed"
         }
       ],
@@ -888,10 +958,10 @@
             "arch": "el9_amd64_gcc13",
             "details": {
               "known_failed": 0,
-              "num_failed": 8,
-              "num_passed": 156
+              "num_failed": 9,
+              "num_passed": 158
             },
-            "done": false,
+            "done": true,
             "file": "/data/sdt/buildlogs/el9_amd64_gcc13/www/wed/20.1.TF-wed-11/CMSSW_20_1_TF_X_2026-08-05-1100/gpu/amd_w7900/pyRelValMatrixLogs/run/runall-report-step123-.log",
             "gpu": "amd_w7900",
             "passed": false,
