@@ -391,6 +391,36 @@
       "title": "Updated root to tip of branch v6-36-00-patches",
       "updated_at": "1785868598",
       "user": "smuzaffar"
+    },
+    "10763": {
+      "additions": 18,
+      "auther_ref": "fix-elfutils-pthread",
+      "auther_sha": "c7629f331af49a9844987f2f7951dd2df8614bf6",
+      "author": "cms-sw",
+      "body": "This should fix the failing el8_amd64_gcc13 IBs where elfutils fails for el8 with error \r\n```\r\n/build/muz/del/w/el8_amd64_gcc13/external/gcc/13.4.0-6908cfdf803923e783448096ca4f0923/bin/../lib/gcc/x86_64-redhat-linux-gnu/13.4.0/../../../../x86_64-redhat-linux-gnu/bin/ld: libthread.a(threadlib.o): \r\n   undefined reference to symbol 'pthread_join@@GLIBC_2.2.5' \r\n/build/muz/del/w/el8_amd64_gcc13/external/gcc/13.4.0-6908cfdf803923e783448096ca4f0923/bin/../lib/gcc/x86_64-redhat-linux-gnu/13.4.0/../../../../x86_64-redhat-linux-gnu/bin/ld: /lib64/libpthread.so.0: \r\n  error adding symbols: DSO missing from command line collect2: error: ld returned 1\r\nexit status make[2]: *** [Makefile:814: readelf] Error 1 make[1]: *** [Makefile:633: all-recursive] Error 1\r\n```\r\n\r\nFYI @akritkbehera ",
+      "branch": "IB/CMSSW_20_1_X/master",
+      "changed_files": 2,
+      "closed_at": "1786003515",
+      "comments": 14,
+      "commits": 2,
+      "created_at": "1785990091",
+      "deletions": 4,
+      "labels": [
+        "externals-approved",
+        "fully-signed",
+        "orp-pending",
+        "tests-started"
+      ],
+      "merge_commit_sha": "71135981d2fa2885bbb80297c5b38c5593da4dd3",
+      "merged_at": "1786003515",
+      "merged_by": "smuzaffar",
+      "number": 10763,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "fix elfutils for el8",
+      "updated_at": "1786003531",
+      "user": "smuzaffar"
     }
   },
   "cmssw": {
