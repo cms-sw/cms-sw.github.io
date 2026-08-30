@@ -52,37 +52,6 @@
       "updated_at": "1787639363",
       "user": "felicepantaleo"
     },
-    "10800": {
-      "additions": 39,
-      "auther_ref": "IB/CMSSW_20_1_X/master_fix_ROCm_issue_10529",
-      "auther_sha": "c6d6545672d8fd9f45d3cbe158cb887836784c33",
-      "author": "fwyzard",
-      "body": "Prevent a deadlock between `hipEventSynchronize` and `hipMallocAsync`.\r\n\r\n`hipMallocAsync` may try to acquire the device lock while it holds the memory pool lock, if the pool needs to allocate more memory.\r\n\r\n`hipEventSynchronize` will try to acquire the memory pool lock while holding the device lock, to free the unused memory in the pool.\r\n\r\nThis may cause a deadlock if the two operations happen on different threads at the same time.\r\n\r\nThis change makes `MemoryPool::ReleaseFreedMemory` (called by `hipEventSynchronize`) return immediately if it cannot acquire the pool lock.\r\n\r\nWe also build `libamdhip64.so` with debug symbols.",
-      "branch": "IB/CMSSW_20_1_X/master",
-      "changed_files": 2,
-      "closed_at": "1787467646",
-      "comments": 17,
-      "commits": 2,
-      "created_at": "1787316095",
-      "deletions": 1,
-      "labels": [
-        "externals-approved",
-        "fully-signed",
-        "orp-pending",
-        "tests-approved",
-        "tests-ib-failure"
-      ],
-      "merge_commit_sha": "e87a4abcb792c921518b3588a18d81174cded997",
-      "merged_at": "1787467646",
-      "merged_by": "smuzaffar",
-      "number": 10800,
-      "release-notes": [],
-      "review_comments": 0,
-      "state": "closed",
-      "title": "Prevent a deadlock in ROCm",
-      "updated_at": "1787467661",
-      "user": "fwyzard"
-    },
     "10801": {
       "additions": 2,
       "auther_ref": "root-update-master-20260824",
