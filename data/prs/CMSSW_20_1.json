@@ -577,7 +577,7 @@
       "branch": "master",
       "changed_files": 3,
       "closed_at": "1787762498",
-      "comments": 26,
+      "comments": 27,
       "commits": 1,
       "created_at": "1787198372",
       "deletions": 0,
@@ -586,6 +586,7 @@
         "core-approved",
         "fully-signed",
         "heterogeneous-approved",
+        "ngt",
         "operations-approved",
         "orp-approved",
         "tests-approved"
@@ -599,7 +600,7 @@
       "review_comments": 0,
       "state": "closed",
       "title": "Make Open MPI 5 use the same accelerator as CMSSW",
-      "updated_at": "1787762499",
+      "updated_at": "1788266738",
       "user": "fwyzard"
     },
     "51741": {
@@ -828,6 +829,72 @@
       "title": "Modify CLUE3D in the barrel for EGM linking",
       "updated_at": "1787861356",
       "user": "AuroraPerego"
+    },
+    "51764": {
+      "additions": 651,
+      "auther_ref": "cleanupHcalLutProd_201X",
+      "auther_sha": "82c2ff12a908bffba34ff1b0eb03f0b1ca9012cb",
+      "author": "JHiltbrand",
+      "body": "#### PR description:\r\n\r\nThis PR tries to consolidate down `CaloOnlineTools/HcalOnlineDb` to what has actually been used in the recent data-taking periods e.g. Run-3, and it drops everything that has long since been deprecated (functions, classes, files, etc.). The package in question is not a dependency for any other CMSSW packages, and the code within is exclusively run on-demand and \"offline\" to produce custom XML payloads (based on HCAL conditions) that would eventually get loaded onto the HCAL backend electronics.\r\n\r\nWhile removing things, some modest tidying was performed related to includes, BuildFiles, descriptions, as well as some minor spot-refactoring, etc. Likewise, a small fix was made to the LUT analyzer, which was grabbing some records incorrectly.\r\n\r\n#### PR validation:\r\n\r\nThe [relevant \"workflows\"](https://cmshcal.docs.cern.ch/dpg/trg/luts_tks/#producing-lut-and-tk-xml-payloads) for producing and validating HCAL LUT XML files were run to verify that produced LUT XML files are identical before and after the changes and that the various LUT analysis results (e.g. LUT XML diff-ing) are also the same.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nNo need for a backport to any previous cycle.",
+      "branch": "master",
+      "changed_files": 55,
+      "closed_at": "1788266267",
+      "comments": 10,
+      "commits": 1,
+      "created_at": "1787810875",
+      "deletions": 6860,
+      "labels": [
+        "code-checks-approved",
+        "core-approved",
+        "db-approved",
+        "fully-signed",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "04a2bd75c6080567591be76afb537825dfefb2ac",
+      "merged_at": "1788266267",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51764,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Cleanup HCAL LUT XML Production Code",
+      "updated_at": "1788266269",
+      "user": "JHiltbrand"
+    },
+    "51792": {
+      "additions": 0,
+      "auther_ref": "remove_EDM_MPI_MessageType",
+      "auther_sha": "b4ea7f7d8baa61c7de30c531cc3e96d729142901",
+      "author": "fwyzard",
+      "body": "#### PR description:\r\n\r\nRemove unused `EDM_MPI_MessageType` array\r\n\r\n#### PR validation:\r\n\r\nNone.\r\n",
+      "branch": "master",
+      "changed_files": 2,
+      "closed_at": "1788266286",
+      "comments": 9,
+      "commits": 1,
+      "created_at": "1788248269",
+      "deletions": 17,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "heterogeneous-approved",
+        "ngt",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "922ebb7844ca24adb3065fda4f0ff1a809471dce",
+      "merged_at": "1788266286",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51792,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Remove unused `EDM_MPI_MessageType` array",
+      "updated_at": "1788266668",
+      "user": "fwyzard"
     }
   }
 }
