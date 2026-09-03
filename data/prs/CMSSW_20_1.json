@@ -499,6 +499,39 @@
       "updated_at": "1787655582",
       "user": "aterigun"
     },
+    "51716": {
+      "additions": 2053,
+      "auther_ref": "truth-levels-v1",
+      "auther_sha": "c7bcd9cbbc0ce28171074d4cf82bbc179e72c4a4",
+      "author": "felicepantaleo",
+      "body": "Truth levels stamped on the MC-truth logical graph, so a GEN-SIM-DIGI-RAW production ends with a final, self-describing truth graph. The reco-to-truth association layer will follow in a separate PR. Levels are flags on graph particles: the full history stays navigable, and each level marks the one particle per chain that its denominator counts (for the visible signal final state, the pi0 rather than its two photons).\r\n\r\n**Commit 1, package policy.** Removes the prototype banner from every file that carried it and updates the README: the data model and the levels are now covered by unit tests. No code changes.\r\n\r\n**Commit 2, `SimDataFormats/TruthInfo`:**\r\n- `levelFlags` bitmask on `ParticleData`, in the alignment hole so `sizeof` stays 96 (asserted in a unit test).\r\n- `ParticleRole` (normal / connector / synthetic stand-in), stored as its underlying type like `VertexData::role`.\r\n- Seed pdg ids, reconstructable pdg ids and heavy-flavour seeds recorded on the graph, so every flag is re-derivable from the graph alone.\r\n- `truth::Graph` ClassVersion 4 to 5, `truth::ParticleData` 3 to 4.\r\n\r\n**Commit 3, `PhysicsTools/TruthInfo`, the levels.** Every level is an antichain (no member is an ancestor of another); on ttbar, 24% of a kinematics-only selection had another selected particle as an ancestor, which is why a plain cut is not a denominator.\r\n- Levels: hard-scatter legs, generator-stable final state, calorimeter boundary, upstream and underlying-event legs, signal resonance and its visible final state (a pi0 is one object, not two photons), parton-initiated jets (no clustering; the jet is the parton's descendant subgraph, exactly two b jets per ttbar event), first b and first c hadron per chain (B* over B; beauty and charm separate because a B decays to a D).\r\n- One table declares each level (enum, bit, config name); the lookups, the level list and the cleared mask are derived from it, so adding a level is one row.\r\n- Walks descend GEN decay vertices only: a SIM continuation is transport, not decay (a K0S interacting in material yields its GEN pions, never the nuclear secondaries).\r\n- The Signal flag uses the same root computation as the selection, restricted to GEN particles of the signal interaction; a preset naming a decay channel cannot stamp a resonance that decayed the other way. No resonance configured means no signal level, not a degenerate one.\r\n\r\n\r\n### PR validation:\r\n\r\n- Built on `CMSSW_20_1_0_pre2`; all 9 test suites pass (19 cases in `LevelFlags_t`), with the association layer absent, so the split is self-contained. Workflow `37634.0` runs end to end on this branch alone.\r\n- 200 no-PU TenTau events, produced with this branch: 10 signal taus/event, all GEN and signal-interaction. The graph keeps the full decay history (pi0s and their photons, connected); the `reconstructableFromSignal` denominator marks one entry per chain: 1137 pi0s flagged and none of their photons, no neutrinos, no intermediate resonance (rho, a1) flagged.\r\n- 10 ttbar PU200 events: all 8 to 12 `isHardProcess` particles per event belong to the signal interaction, so the flag-driven levels are signal-only in practice; a consumer needing signal-only filters on `eventId` as the denominator producer does.\r\n- Flavour-seeded presets: seeds persisted on the graph, two b hadrons flagged per ttbar event.\r\n\r\n@IzaakWN @elenavernazza fyi",
+      "branch": "master",
+      "changed_files": 78,
+      "closed_at": "1788411071",
+      "comments": 32,
+      "commits": 3,
+      "created_at": "1786867106",
+      "deletions": 657,
+      "labels": [
+        "changes-dataformats",
+        "code-checks-approved",
+        "fully-signed",
+        "generators-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "9b9ae4ec8f9b2dea082c91911df1d9c9d7deca91",
+      "merged_at": "1788411071",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51716,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Truth Graph: Introducing Levels",
+      "updated_at": "1788411072",
+      "user": "felicepantaleo"
+    },
     "51725": {
       "additions": 626,
       "auther_ref": "offlineTICLNanoAOD",
@@ -924,6 +957,40 @@
       "title": "Remove unused `EDM_MPI_MessageType` array",
       "updated_at": "1788266668",
       "user": "fwyzard"
+    },
+    "51801": {
+      "additions": 3,
+      "auther_ref": "fmt-12",
+      "auther_sha": "a0323dfdd1b3e018dc93e3a5ec5cbdd5797a4bcd",
+      "author": "smuzaffar",
+      "body": "Using `fmt::format` via `fmt/core.h` is deprecated since version `12.2` of the `fmt` library (https://github.com/fmtlib/fmt/blob/12.2.0/include/fmt/core.h#L10-L14) and requires defining `#define FMT_DEPRECATED_HEAVY_CORE` or including `fmt/format.h` instead. This PR suggests to use `fmt/format.h` so that we can move forward to fmt version 12 and above",
+      "branch": "master",
+      "changed_files": 3,
+      "closed_at": "1788411145",
+      "comments": 9,
+      "commits": 1,
+      "created_at": "1788327397",
+      "deletions": 3,
+      "labels": [
+        "alca-approved",
+        "code-checks-approved",
+        "fully-signed",
+        "heterogeneous-approved",
+        "orp-approved",
+        "tests-approved",
+        "trk"
+      ],
+      "merge_commit_sha": "e839dd9ba299aa3240a905fe08c924e0c28a0298",
+      "merged_at": "1788411145",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51801,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[fmt 12.2] use fmt/format.h instead of heavy fmt/core.h",
+      "updated_at": "1788411146",
+      "user": "smuzaffar"
     }
   }
 }
