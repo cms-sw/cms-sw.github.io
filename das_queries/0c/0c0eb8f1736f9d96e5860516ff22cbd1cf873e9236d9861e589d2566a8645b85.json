@@ -1,0 +1,49 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1730103098,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "dbs3:file4DatasetRunLumi"
+        ]
+      },
+      "function": "sum",
+      "key": "file.nevents",
+      "result": {
+        "value": 5750
+      }
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [
+      [
+        "sum",
+        "file.nevents"
+      ]
+    ],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "file"
+    ],
+    "filters": {},
+    "hash": "546b77dd52823f194808ba78e64827ea",
+    "instance": "prod/global",
+    "pipe": "sum ( file.nevents )",
+    "query": "file dataset=/SingleMuon/Run2022B-v1/RAW run=355381  detail=true | sum(file.nevents)",
+    "spec": {
+      "dataset": "/SingleMuon/Run2022B-v1/RAW",
+      "run": "355381"
+    },
+    "system": "",
+    "tstamp": 1730103097
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1730103098
+}

@@ -1,0 +1,92 @@
+{
+  "ctime": 1,
+  "data": [
+    {
+      "das": {
+        "expire": 1787771658,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "rucio:file4dataset_site"
+        ]
+      },
+      "file": [
+        {
+          "adler32": "f02aae77",
+          "bytes": 2043864,
+          "md5": null,
+          "name": "/store/relval/CMSSW_20_0_0/RelValNuGun/GEN-SIM/150X_mcRun4_realistic_v1_D127GSOnly-v1/2590000/b32ed7e8-bb6b-45bc-8d53-1174de20b0b1.root",
+          "pfns": {
+            "davs://cmsdcadisk.fnal.gov:2880/dcache/uscmsdisk/store/relval/CMSSW_20_0_0/RelValNuGun/GEN-SIM/150X_mcRun4_realistic_v1_D127GSOnly-v1/2590000/b32ed7e8-bb6b-45bc-8d53-1174de20b0b1.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 1,
+              "rse": "T1_US_FNAL_Disk",
+              "rse_id": "087ee3383b9d45f6b31814af07b2c56d",
+              "type": "DISK",
+              "volatile": false
+            },
+            "davs://eoscms.cern.ch:443/eos/cms/store/relval/CMSSW_20_0_0/RelValNuGun/GEN-SIM/150X_mcRun4_realistic_v1_D127GSOnly-v1/2590000/b32ed7e8-bb6b-45bc-8d53-1174de20b0b1.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 2,
+              "rse": "T2_CH_CERN",
+              "rse_id": "542ab69d82bf401e9218bbe375bb1fce",
+              "type": "DISK",
+              "volatile": false
+            }
+          },
+          "rses": {
+            "T1_US_FNAL_Disk": [
+              "davs://cmsdcadisk.fnal.gov:2880/dcache/uscmsdisk/store/relval/CMSSW_20_0_0/RelValNuGun/GEN-SIM/150X_mcRun4_realistic_v1_D127GSOnly-v1/2590000/b32ed7e8-bb6b-45bc-8d53-1174de20b0b1.root"
+            ],
+            "T2_CH_CERN": [
+              "davs://eoscms.cern.ch:443/eos/cms/store/relval/CMSSW_20_0_0/RelValNuGun/GEN-SIM/150X_mcRun4_realistic_v1_D127GSOnly-v1/2590000/b32ed7e8-bb6b-45bc-8d53-1174de20b0b1.root"
+            ]
+          },
+          "scope": "cms",
+          "size": 2043864,
+          "states": {
+            "T1_US_FNAL_Disk": "AVAILABLE",
+            "T2_CH_CERN": "AVAILABLE"
+          }
+        }
+      ],
+      "qhash": "16f1dacd8f58f31fee94ff1bb004d861"
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "file.name"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "16f1dacd8f58f31fee94ff1bb004d861",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort file.name | unique",
+    "query": "file dataset=/RelValNuGun/CMSSW_20_0_0-150X_mcRun4_realistic_v1_D127GSOnly-v1/GEN-SIM site=T2_CH_CERN  detail=true | grep file.name | sort file.name | unique",
+    "spec": {
+      "dataset": "/RelValNuGun/CMSSW_20_0_0-150X_mcRun4_realistic_v1_D127GSOnly-v1/GEN-SIM",
+      "site": "T2_CH_CERN"
+    },
+    "system": "",
+    "tstamp": 1787771657
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1787771658
+}
