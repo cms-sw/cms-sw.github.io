@@ -15,7 +15,7 @@
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-11-2300/el8_amd64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-09-11-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-11-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X/master",
-        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-10-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
+        "el9_amd64_gcc15": "ERR/CMSSW_20_1_X_2026-09-11-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
         "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-09-10-2300/el9_amd64_gcc16..IB/CMSSW_20_1_X/gcc16",
         "fc42_riscv64_gcc15": "ERR/CMSSW_20_1_X_2026-09-10-2300/fc42_riscv64_gcc15..IB/CMSSW_20_1_X/g15"
       },
@@ -24,26 +24,7 @@
         "el8_amd64_gcc14": [],
         "el9_aarch64_gcc14": [],
         "el9_amd64_gcc14": [],
-        "el9_amd64_gcc15": [
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": false,
-            "hash": "3f9eb1a1af9553482b3421c78fbc7d534f411f23",
-            "is_merge_commit": false,
-            "number": "10846",
-            "title": "gcc15: fix fasthadd and grpc for fc42/riscv64",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10846"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "ce594a9aec6ae93f86e627c0958d8849c1aafb83",
-            "is_merge_commit": false,
-            "number": "10843",
-            "title": "[BuildRules] Improved build rules for generating edm plugin cache",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10843"
-          }
-        ],
+        "el9_amd64_gcc15": [],
         "el9_amd64_gcc16": [
           {
             "author_login": "cms-sw",
@@ -716,6 +697,17 @@
           "passed": "passed"
         },
         {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "compError": 2,
+            "ignoreWarning": 3833,
+            "linkError": 2,
+            "miscError": 1
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/fri/20.1-fri-23/CMSSW_20_1_X_2026-09-11-2300/new/logAnalysis.pkl",
+          "passed": "error"
+        },
+        {
           "arch": "el8_amd64_gcc14",
           "details": {
             "ignoreWarning": 3611
@@ -752,7 +744,8 @@
         "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-10-2300/el10_amd64_gcc15..IB/CMSSW_20_1_X_2026-09-11-2300/el10_amd64_gcc15",
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-09-1100/el8_amd64_gcc14..IB/CMSSW_20_1_X_2026-09-11-2300/el8_amd64_gcc14",
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-09-09-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X_2026-09-11-2300/el9_aarch64_gcc14",
-        "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-09-1100/el9_amd64_gcc14..IB/CMSSW_20_1_X_2026-09-11-2300/el9_amd64_gcc14"
+        "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-09-1100/el9_amd64_gcc14..IB/CMSSW_20_1_X_2026-09-11-2300/el9_amd64_gcc14",
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-10-2300/el9_amd64_gcc15..ERR/CMSSW_20_1_X_2026-09-11-2300/el9_amd64_gcc15"
       },
       "cmsdist_merged_prs": {
         "el10_amd64_gcc15": [
@@ -807,6 +800,26 @@
             "title": "[BuildRules] Improved build rules for generating edm plugin cache",
             "url": "https://github.com/cms-sw/cmsdist/pull/10843"
           }
+        ],
+        "el9_amd64_gcc15": [
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": false,
+            "hash": "3f9eb1a1af9553482b3421c78fbc7d534f411f23",
+            "is_merge_commit": false,
+            "number": "10846",
+            "title": "gcc15: fix fasthadd and grpc for fc42/riscv64",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10846"
+          },
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": true,
+            "hash": "ce594a9aec6ae93f86e627c0958d8849c1aafb83",
+            "is_merge_commit": false,
+            "number": "10843",
+            "title": "[BuildRules] Improved build rules for generating edm plugin cache",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10843"
+          }
         ]
       },
       "comp_baseline": "not-found",
@@ -829,6 +842,10 @@
         },
         {
           "arch": "el9_amd64_gcc14",
+          "passed": "passed"
+        },
+        {
+          "arch": "el9_amd64_gcc15",
           "passed": "passed"
         }
       ],
@@ -1273,7 +1290,8 @@
         "el10_amd64_gcc15",
         "el8_amd64_gcc14",
         "el9_aarch64_gcc14",
-        "el9_amd64_gcc14"
+        "el9_amd64_gcc14",
+        "el9_amd64_gcc15"
       ],
       "ubsan-logs": "error",
       "utests": [
@@ -1308,6 +1326,12 @@
           },
           "file": "/data/sdt/buildlogs/el10_amd64_gcc15/www/fri/20.1-fri-23/CMSSW_20_1_X_2026-09-11-2300/unitTests-summary.log",
           "passed": "failed"
+        },
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {},
+          "file": "['/data/sdt/buildlogs/el9_amd64_gcc15/www/fri/20.1-fri-23/CMSSW_20_1_X_2026-09-11-2300/new/logAnalysis.pkl']",
+          "passed": "unknown"
         }
       ],
       "valgrind": "not-found",
