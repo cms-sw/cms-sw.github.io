@@ -275,6 +275,38 @@
     }
   },
   "cmssw": {
+    "51426": {
+      "additions": 1348,
+      "auther_ref": "from-CMSSW_20_1_X_2026-06-30-2300",
+      "auther_sha": "3bebdfe86056fb65f5d4d7d5bbc2a2dfdc1d761f",
+      "author": "woohyeonHeo",
+      "body": "#### PR description:\r\nWe update the ME0 L1Trigger emulator in CMSSW to the lastest version of firmware.\r\n\r\n##### ME0 Trigger object producer\r\n- Algorithm for ME0 Trigger: <https://ohm.bu.edu/~apeck/notes/algorithm.html>\r\n- GEM DPG presentation: <https://indico.cern.ch/event/1704001/contributions/7166765/subcontributions/623097/attachments/3305616/5914448/ME0SF_CMSSW_wheo.pdf>\r\n- The code is based on the existing python emulator. (<https://github.com/andrewpeck/me0sf/blob/SW_optimizations/road/tb/>)\r\n  + Its structure is designed to keep the same structure of the python emulator.\r\n- There is 2 version of EDProducer for this algorithm; one produce collections of \"ME0Stub\" (old version), and the other produce collections of \"ME0TriggerDigi\" (new version).\r\n  + ME0TriggerDigi is existed data format class before the algorithm is implemented to CMSSW. It is competible class to the other firmware emulator in CMSSW.\r\n#### PR validation:\r\n- The code format has applied with `scram build code-format` and tested with `scram build code-checks`.\r\n- The output of the CMSSW code and the python emulator is identical except for ~0.01 difference in fitting results.\r\n  + The difference is most likely due to the fixed point calculation.\r\n  + Result of `diff [CMSSW outputs] [python emulator outputs]`: <img width=\"1328\" height=\"806\" alt=\" 2026-07-07 002521\" src=\"https://github.com/user-attachments/assets/f82b3c3f-eb8c-47da-9e1f-f6e45ebd34a8\" />\r\n- The default process (e.g. reco, raw2digi, etc.) did not modified. Therefore, there is no change in running `runTheMatrix.py`\r\n\r\n",
+      "branch": "master",
+      "changed_files": 27,
+      "closed_at": "1789287625",
+      "comments": 39,
+      "commits": 10,
+      "created_at": "1783344560",
+      "deletions": 546,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "l1-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "9a065ca0562a6c3a82812e9f8b21fd0ce41d3b05",
+      "merged_at": "1789287625",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51426,
+      "release-notes": [],
+      "review_comments": 43,
+      "state": "closed",
+      "title": "Update ME0 online segment finding algorithm for L1T",
+      "updated_at": "1789287626",
+      "user": "woohyeonHeo"
+    },
     "51604": {
       "additions": 130,
       "auther_ref": "ph2fastsim_16X_pre_trackerdev",
