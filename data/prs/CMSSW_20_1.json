@@ -1308,6 +1308,39 @@
       "title": "Define UniqueSimTrackId as a type alias instead of a class for dictionaries",
       "updated_at": "1789226670",
       "user": "makortel"
+    },
+    "51869": {
+      "additions": 27,
+      "auther_ref": "py314-unittest-Validation",
+      "auther_sha": "a5c9725a86d5f5b9f4e1acf87517629a7198bcf3",
+      "author": "smuzaffar",
+      "body": "This fixes the failing 2 unit tests in Python 3.14 IBs\r\nhttps://cmssdt.cern.ch/SDT/cgi-bin/showBuildLogs.py/el9_amd64_gcc14/www/wed/20.1.PY314-wed-11/CMSSW_20_1_PY314_X_2026-09-09-1100?utests\r\n```\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/cms/cmssw/CMSSW_20_1_PY314_X_2026-09-09-1100/bin/el9_amd64_gcc14/makeHGCalValidationPlots.py\", line 328, in <module>\r\n    main(opts)\r\n    ~~~~^^^^^^\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/cms/cmssw/CMSSW_20_1_PY314_X_2026-09-09-1100/bin/el9_amd64_gcc14/makeHGCalValidationPlots.py\", line 266, in main\r\n    task()\r\n    ~~~~^^\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/cms/cmssw/CMSSW_20_1_PY314_X_2026-09-09-1100/bin/el9_amd64_gcc14/makeHGCalValidationPlots.py\", line 236, in plot_hitCal\r\n    val.doPlots(hgchitcalib, plotterDrawArgs=drawArgs)\r\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/cms/cmssw/CMSSW_20_1_PY314_X_2026-09-09-1100/src/Validation/RecoTrack/python/plotting/validation.py\", line 1268, in doPlots\r\n    self._doPlotsForPlotter(plotter, sample, **kwargs) # which in turn launches _doPlots()\r\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/cms/cmssw/CMSSW_20_1_PY314_X_2026-09-09-1100/src/Validation/RecoTrack/python/plotting/validation.py\", line 1312, in _doPlotsForPlotter\r\n    p.start()\r\n    ~~~~~~~^^\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/external/python3/3.14.6-6981a5f57097289f5ca7aac624c1350d/lib/python3.14/multiprocessing/process.py\", line 121, in start\r\n    self._popen = self._Popen(self)\r\n                  ~~~~~~~~~~~^^^^^^\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/external/python3/3.14.6-6981a5f57097289f5ca7aac624c1350d/lib/python3.14/multiprocessing/context.py\", line 230, in _Popen\r\n    return _default_context.get_context().Process._Popen(process_obj)\r\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/external/python3/3.14.6-6981a5f57097289f5ca7aac624c1350d/lib/python3.14/multiprocessing/context.py\", line 306, in _Popen\r\n    return Popen(process_obj)\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/external/python3/3.14.6-6981a5f57097289f5ca7aac624c1350d/lib/python3.14/multiprocessing/popen_forkserver.py\", line 35, in __init__\r\n    super().__init__(process_obj)\r\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/external/python3/3.14.6-6981a5f57097289f5ca7aac624c1350d/lib/python3.14/multiprocessing/popen_fork.py\", line 20, in __init__\r\n    self._launch(process_obj)\r\n    ~~~~~~~~~~~~^^^^^^^^^^^^^\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/external/python3/3.14.6-6981a5f57097289f5ca7aac624c1350d/lib/python3.14/multiprocessing/popen_forkserver.py\", line 47, in _launch\r\n    reduction.dump(process_obj, buf)\r\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\r\n  File \"/cvmfs/cms-ib.cern.ch/sw/x86_64/nweek-02958/el9_amd64_gcc14/external/python3/3.14.6-6981a5f57097289f5ca7aac624c1350d/lib/python3.14/multiprocessing/reduction.py\", line 60, in dump\r\n    ForkingPickler(file, protocol).dump(obj)\r\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^\r\n_pickle.PicklingError: Can't pickle local object <function IndexSection.__init__.<locals>.<lambda> at 0x1464cf8d1220>\r\n```",
+      "branch": "master",
+      "changed_files": 4,
+      "closed_at": "1789369242",
+      "comments": 10,
+      "commits": 1,
+      "created_at": "1789210098",
+      "deletions": 8,
+      "labels": [
+        "code-checks-approved",
+        "dqm-approved",
+        "fully-signed",
+        "orp-approved",
+        "tests-approved",
+        "tracking"
+      ],
+      "merge_commit_sha": "f6f00c3478f01e3c1faa27fb50810043b1af46ce",
+      "merged_at": "1789369242",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51869,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[PY314] Fix unit tests by avoiding lambda function which is not pickle-able",
+      "updated_at": "1789369244",
+      "user": "smuzaffar"
     }
   }
 }
