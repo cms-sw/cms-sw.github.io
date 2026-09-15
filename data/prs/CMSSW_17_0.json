@@ -269,6 +269,41 @@
       "title": "Fix issue with cosmic workflows in IB",
       "updated_at": "1789064065",
       "user": "stahlleiton"
+    },
+    "51876": {
+      "additions": 8,
+      "auther_ref": "scoutJME_DQM_qfix_17_0_X",
+      "auther_sha": "71fdfb0341a7659a677503de4b20395483df20cb",
+      "author": "jprendi",
+      "body": "#### PR description:\r\n\r\nCrash reported by @etzovara in last Friday's HLT Scouting meeting.\r\n\r\nThis PR adds missing `onlineBeamSpotProducer` to the start of `recoTrackFromScoutingMonitorSequence` in `HLTriggerOffline/Scouting/python/RecoTrackFromScoutingMonitor_cff.py`. \r\nIt also swaps the ordering in `DQMOffline/HLTScouting/python/HLTScoutingDqmOffline_cff.py` of `hltScoutingTrackMonitor` and `recoTrackFromScoutingMonitorSequence` s.t. `recoTrackFromScoutingMonitorSequence` goes first, as `hltScoutingTrackMonitor` also consumes the online beam spot.\r\n\r\n\r\n#### PR validation:\r\n\r\nAs provided by @etzovara :\r\n```\r\ncmsrel CMSSW_17_0_0_pre5\r\ncd CMSSW_17_0_0_pre5/src/\r\ncmsenv\r\npython3 /cvmfs/cms.cern.ch/el9_amd64_gcc13/cms/cmssw/CMSSW_17_0_0_pre5/src/Configuration/DataProcessing/test/RunPromptReco.py --scenario=ppEra_Run3_2025 --reco --aod --miniaod --global-tag 160X_dataRun3_Prompt_v1 --lfn=root://eoscms.cern.ch//eos/cms/tier0/store/backfill/1/data/Tier0_REPLAY_2026/ScoutingPFMonitor/RAW/v8214952/000/398/191/00000/fc45bd25-297f-47b6-a28a-b215c9121574.root --dqmio --dqmSeq=@hltScouting\r\ncmsRun -e RunPromptRecoCfg.py\r\n```\r\nfrom which the job completed successfully.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nVerbatim backport of https://github.com/cms-sw/cmssw/pull/51878\r\n\r\n\r\nFYI @mmusich ",
+      "branch": "CMSSW_17_0_X",
+      "changed_files": 3,
+      "closed_at": "1789487479",
+      "comments": 14,
+      "commits": 3,
+      "created_at": "1789373341",
+      "deletions": 4,
+      "labels": [
+        "backport",
+        "bug-fix",
+        "code-checks-approved",
+        "dqm-approved",
+        "fully-signed",
+        "ngt",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "5cb3002c10cb7c5c972652b564ea97f843f252eb",
+      "merged_at": "1789487479",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_0_X",
+      "number": 51876,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Adding missing beamspot for track scouting DQM and module reordering [17_0_X]",
+      "updated_at": "1789487481",
+      "user": "jprendi"
     }
   }
 }
