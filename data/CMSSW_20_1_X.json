@@ -15,7 +15,7 @@
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-13-0000/el8_amd64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-09-15-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-13-0000/el9_amd64_gcc14..IB/CMSSW_20_1_X/master",
-        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-15-1100/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
+        "el9_amd64_gcc15": "ERR/CMSSW_20_1_X_2026-09-15-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
         "el9_amd64_gcc16": "ERR/CMSSW_20_1_X_2026-09-15-1100/el9_amd64_gcc16..IB/CMSSW_20_1_X/gcc16",
         "fc42_riscv64_gcc15": "ERR/CMSSW_20_1_X_2026-09-10-2300/fc42_riscv64_gcc15..IB/CMSSW_20_1_X/g15"
       },
@@ -62,26 +62,7 @@
             "url": "https://github.com/cms-sw/cmsdist/pull/10853"
           }
         ],
-        "el9_amd64_gcc15": [
-          {
-            "author_login": "gartung",
-            "from_merge_commit": true,
-            "hash": "0f2db87137a84415c9b1cae713cc981b555c1134",
-            "is_merge_commit": false,
-            "number": "10852",
-            "title": "igprof: incorporate TRAMPOLINE_SAVED patch for v5",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10852"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "a151e1a15279f8ac6bc56f28d5447544aa7789de",
-            "is_merge_commit": false,
-            "number": "10853",
-            "title": "Update tag for IOMC-Input to V00-00-01",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10853"
-          }
-        ],
+        "el9_amd64_gcc15": [],
         "el9_amd64_gcc16": [],
         "fc42_riscv64_gcc15": [
           {
@@ -150,6 +131,12 @@
           "passed": true
         },
         {
+          "arch": "el9_amd64_gcc15",
+          "details": {},
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-15-2300/addOnTests.log",
+          "passed": true
+        },
+        {
           "arch": "el10_amd64_gcc15",
           "details": {},
           "file": "/data/sdt/buildlogs/el10_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-15-2300/addOnTests.log",
@@ -167,6 +154,15 @@
           "passed": "passed"
         },
         {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "ignoreWarning": 3841,
+            "miscError": 3
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-15-2300/new/logAnalysis.pkl",
+          "passed": "error"
+        },
+        {
           "arch": "el10_amd64_gcc15",
           "details": {
             "ignoreWarning": 2604
@@ -180,11 +176,14 @@
       "class_versions": "inprogress",
       "cmsdistTags": {
         "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-15-2300/el10_amd64_gcc15",
-        "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-09-15-2300/el9_aarch64_gcc14"
+        "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-09-15-2300/el9_aarch64_gcc14",
+        "el9_amd64_gcc15": "ERR/CMSSW_20_1_X_2026-09-15-2300/el9_amd64_gcc15",
+        "el9_amd64_gcc16": "ERR/CMSSW_20_1_X_2026-09-15-2300/el9_amd64_gcc16"
       },
       "cmsdist_compared_tags": {
         "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-11-2300/el10_amd64_gcc15..IB/CMSSW_20_1_X_2026-09-15-2300/el10_amd64_gcc15",
-        "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-09-13-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X_2026-09-15-2300/el9_aarch64_gcc14"
+        "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-09-13-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X_2026-09-15-2300/el9_aarch64_gcc14",
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-15-1100/el9_amd64_gcc15..ERR/CMSSW_20_1_X_2026-09-15-2300/el9_amd64_gcc15"
       },
       "cmsdist_merged_prs": {
         "el10_amd64_gcc15": [
@@ -226,6 +225,26 @@
             "title": "Update tag for IOMC-Input to V00-00-01",
             "url": "https://github.com/cms-sw/cmsdist/pull/10853"
           }
+        ],
+        "el9_amd64_gcc15": [
+          {
+            "author_login": "gartung",
+            "from_merge_commit": true,
+            "hash": "0f2db87137a84415c9b1cae713cc981b555c1134",
+            "is_merge_commit": false,
+            "number": "10852",
+            "title": "igprof: incorporate TRAMPOLINE_SAVED patch for v5",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10852"
+          },
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": true,
+            "hash": "a151e1a15279f8ac6bc56f28d5447544aa7789de",
+            "is_merge_commit": false,
+            "number": "10853",
+            "title": "Update tag for IOMC-Input to V00-00-01",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10853"
+          }
         ]
       },
       "comp_baseline": "not-found",
@@ -240,6 +259,10 @@
         },
         {
           "arch": "el9_aarch64_gcc14",
+          "passed": "passed"
+        },
+        {
+          "arch": "el9_amd64_gcc15",
           "passed": "passed"
         }
       ],
@@ -341,20 +364,20 @@
         {
           "arch": "el9_aarch64_gcc14",
           "details": {
-            "known_failed": 0,
-            "num_failed": 17,
-            "num_passed": 231
+            "known_failed": 18,
+            "num_failed": 0,
+            "num_passed": 547
           },
           "done": false,
           "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-15-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
-          "passed": false
+          "passed": true
         },
         {
           "arch": "el10_amd64_gcc15",
           "details": {
             "known_failed": 0,
             "num_failed": 0,
-            "num_passed": 13
+            "num_passed": 441
           },
           "done": false,
           "file": "/data/sdt/buildlogs/el10_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-15-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -366,7 +389,8 @@
       "static_checks_v2": "inprogress",
       "tests_archs": [
         "el10_amd64_gcc15",
-        "el9_aarch64_gcc14"
+        "el9_aarch64_gcc14",
+        "el9_amd64_gcc15"
       ],
       "utests": [
         {
@@ -384,6 +408,12 @@
           },
           "file": "/data/sdt/buildlogs/el10_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-15-2300/unitTests-summary.log",
           "passed": "failed"
+        },
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {},
+          "file": "['/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-15-2300/new/logAnalysis.pkl']",
+          "passed": "unknown"
         }
       ],
       "valgrind": "not-found",
@@ -955,7 +985,7 @@
           "details": {
             "known_failed": 0,
             "num_failed": 0,
-            "num_passed": 634
+            "num_passed": 1647
           },
           "done": false,
           "file": "/data/sdt/buildlogs/el9_amd64_gcc16/www/tue/20.1-tue-11/CMSSW_20_1_X_2026-09-15-1100/pyRelValMatrixLogs/run/runall-report-step123-.log",
