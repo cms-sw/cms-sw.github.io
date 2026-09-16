@@ -102,6 +102,15 @@
       "material_budget_v2": "not-found",
       "merged_prs": [
         {
+          "author_login": "xabiercidvidal",
+          "from_merge_commit": false,
+          "hash": "7b4b987ca218da7f10efcf2ebe0ce3dbb259a781",
+          "is_merge_commit": false,
+          "number": "51887",
+          "title": "Extract path-length utilities from TrackExtenderWithMTD",
+          "url": "https://github.com/cms-sw/cmssw/pull/51887"
+        },
+        {
           "author_login": "Electricks94",
           "from_merge_commit": false,
           "hash": "f0825e3de5c98fe17950ee275ebbaced83690bc3",
@@ -559,11 +568,39 @@
         "el9_amd64_gcc16": "IB/CMSSW_20_1_CPP23_X_2026-09-12-1100/el9_amd64_gcc16"
       },
       "cmsdist_compared_tags": {
-        "el9_amd64_gcc15": "IB/CMSSW_20_1_CPP23_X_2026-09-12-1100/el9_amd64_gcc15..IB/CMSSW_20_1_CPP23_X_2026-09-12-1100/el9_amd64_gcc15",
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-08-2300/el9_amd64_gcc15..IB/CMSSW_20_1_CPP23_X_2026-09-12-1100/el9_amd64_gcc15",
         "el9_amd64_gcc16": "IB/CMSSW_20_1_CPP23_X_2026-09-12-1100/el9_amd64_gcc16..IB/CMSSW_20_1_CPP23_X_2026-09-12-1100/el9_amd64_gcc16"
       },
       "cmsdist_merged_prs": {
-        "el9_amd64_gcc15": [],
+        "el9_amd64_gcc15": [
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": false,
+            "hash": "3f9eb1a1af9553482b3421c78fbc7d534f411f23",
+            "is_merge_commit": false,
+            "number": "10846",
+            "title": "gcc15: fix fasthadd and grpc for fc42/riscv64",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10846"
+          },
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": true,
+            "hash": "ce594a9aec6ae93f86e627c0958d8849c1aafb83",
+            "is_merge_commit": false,
+            "number": "10843",
+            "title": "[BuildRules] Improved build rules for generating edm plugin cache",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10843"
+          },
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": true,
+            "hash": "4fabdfc3aa216a40c2c963b81bb98f9e90dc7380",
+            "is_merge_commit": false,
+            "number": "10837",
+            "title": "[UBSAN] Apply abseil ubsan fix",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10837"
+          }
+        ],
         "el9_amd64_gcc16": []
       },
       "comp_baseline": "not-found",
@@ -746,7 +783,7 @@
       },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
-      "compared_tags": "CMSSW_20_1_CPP23_X_2026-09-08-1100-->CMSSW_20_1_CPP23_X_2026-09-10-1100",
+      "compared_tags": "CMSSW_20_1_X_2026-09-08-2300-->CMSSW_20_1_CPP23_X_2026-09-10-1100",
       "crab_tests": "not-found",
       "dqm_tests": "not-found",
       "dupDict": [
@@ -914,27 +951,62 @@
     },
     {
       "RVExceptions": null,
-      "addons": [],
+      "addons": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {},
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-08-2300/addOnTests.log",
+          "passed": true
+        }
+      ],
       "base_branch": "CMSSW_20_1_X",
-      "builds": [],
+      "builds": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "ignoreWarning": 1673
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-08-2300/new/logAnalysis.pkl",
+          "passed": "passed"
+        }
+      ],
       "check-headers": "not-found",
       "cmsdistTags": {
-        "el9_amd64_gcc14": "IB/CMSSW_20_1_CPP23_X_2026-09-08-1100/el9_amd64_gcc14"
+        "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-08-2300/el10_amd64_gcc15",
+        "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-09-08-2300/el9_aarch64_gcc14",
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-08-2300/el9_amd64_gcc15",
+        "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-09-08-2300/el9_amd64_gcc16"
       },
-      "cmsdist_compared_tags": {},
-      "cmsdist_merged_prs": {},
+      "cmsdist_compared_tags": {
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-08-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X_2026-09-08-2300/el9_amd64_gcc15"
+      },
+      "cmsdist_merged_prs": {
+        "el9_amd64_gcc15": []
+      },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
-      "compared_tags": "CMSSW_20_1_CPP23_X_2026-09-08-1100-->CMSSW_20_1_CPP23_X_2026-09-08-1100",
+      "compared_tags": "CMSSW_20_1_X_2026-09-08-1100-->CMSSW_20_1_X_2026-09-08-2300",
       "crab_tests": "not-found",
       "dqm_tests": "not-found",
-      "dupDict": [],
+      "dupDict": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "passed": "passed"
+        }
+      ],
       "fwlite": [],
       "hlt_tests": "not-found",
-      "ib_date": "2026-09-08-1100-0000",
+      "ib_date": "2026-09-08-2300-0000",
       "igprof": "not-found",
       "inProgress": false,
-      "invalid_includes": [],
+      "invalid_includes": [
+        {
+          "arch": "el9_amd64_gcc14",
+          "details": {},
+          "file": "/data/sdt/SDT/jenkins-artifacts/invalid-includes/CMSSW_20_1_X_2026-09-08-2300/el9_amd64_gcc14/summary.json",
+          "passed": "passed"
+        }
+      ],
       "isIB": true,
       "material_budget": "not-found",
       "material_budget_comparison": "not-found",
@@ -943,7 +1015,80 @@
       "next_ib": false,
       "profiling": "not-found",
       "python3_tests": [],
-      "release_name": "CMSSW_20_1_CPP23_X_2026-09-08-1100",
+      "release_name": "CMSSW_20_1_X_2026-09-08-2300",
+      "release_queue": "CMSSW_20_1_CPP23_X",
+      "relvals": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "known_failed": 0,
+            "num_failed": 1,
+            "num_passed": 3784
+          },
+          "done": true,
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-08-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
+          "passed": false
+        }
+      ],
+      "static_checks": "not-found",
+      "static_checks_failures": "not-found",
+      "static_checks_v2": "not-found",
+      "tests_archs": [
+        "el9_amd64_gcc15"
+      ],
+      "utests": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "num_fails": "1"
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-09-08-2300/unitTests-summary.log",
+          "passed": "failed"
+        }
+      ],
+      "valgrind": "not-found",
+      "vtune": "not-found"
+    },
+    {
+      "RVExceptions": null,
+      "addons": [],
+      "base_branch": "CMSSW_20_1_X",
+      "builds": [],
+      "check-headers": "not-found",
+      "cmsdistTags": {
+        "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-08-1100/el8_amd64_gcc14",
+        "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-08-1100/el9_amd64_gcc14"
+      },
+      "cmsdist_compared_tags": {},
+      "cmsdist_merged_prs": {},
+      "comp_baseline": "not-found",
+      "comp_baseline_state": "errors",
+      "compared_tags": "CMSSW_20_1_X_2026-09-08-1100-->CMSSW_20_1_X_2026-09-08-1100",
+      "crab_tests": "not-found",
+      "dqm_tests": "not-found",
+      "dupDict": [],
+      "fwlite": [],
+      "hlt_tests": "not-found",
+      "ib_date": "2026-09-08-1100-0000",
+      "igprof": "not-found",
+      "inProgress": false,
+      "invalid_includes": [
+        {
+          "arch": "el9_amd64_gcc14",
+          "details": {},
+          "file": "/data/sdt/SDT/jenkins-artifacts/invalid-includes/CMSSW_20_1_X_2026-09-08-1100/el9_amd64_gcc14/summary.json",
+          "passed": "passed"
+        }
+      ],
+      "isIB": true,
+      "material_budget": "not-found",
+      "material_budget_comparison": "not-found",
+      "material_budget_v2": "not-found",
+      "merged_prs": [],
+      "next_ib": false,
+      "profiling": "not-found",
+      "python3_tests": [],
+      "release_name": "CMSSW_20_1_X_2026-09-08-1100",
       "release_queue": "CMSSW_20_1_CPP23_X",
       "relvals": [],
       "static_checks": "not-found",
