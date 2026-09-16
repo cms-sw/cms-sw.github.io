@@ -1,6 +1,40 @@
 {
   "cmsdist": {},
   "cmssw": {
+    "51824": {
+      "additions": 21,
+      "auther_ref": "dropClampedPixels_16_0_X",
+      "auther_sha": "73a9058a8ff4bfeb4769657329ecfab2a48abfc0",
+      "author": "tvami",
+      "body": "Backport of \r\nhttps://github.com/cms-sw/cmssw/pull/51753",
+      "branch": "CMSSW_16_0_X",
+      "changed_files": 2,
+      "closed_at": "1789580991",
+      "comments": 11,
+      "commits": 1,
+      "created_at": "1788442014",
+      "deletions": 5,
+      "labels": [
+        "backport-ok",
+        "bug-fix",
+        "fully-signed",
+        "orp-approved",
+        "reconstruction-approved",
+        "tests-approved",
+        "trk"
+      ],
+      "merge_commit_sha": "ae7d631cddf564d2cf313ee13ab13a5a280f33f6",
+      "merged_at": "1789580991",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_16_0_X",
+      "number": 51824,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[16_0_X] Drop clamped pixels, bounds-check cluster ids in SiPixelClusterizer",
+      "updated_at": "1789580992",
+      "user": "tvami"
+    },
     "51837": {
       "additions": 0,
       "auther_ref": "mm_fix_49150_16_0_X",
@@ -33,6 +67,41 @@
       "title": "[16.0.X] Fix `hltGetConfiguration --dbproxy`",
       "updated_at": "1788936968",
       "user": "mmusich"
+    },
+    "51880": {
+      "additions": 8,
+      "auther_ref": "scoutJME_DQM_qfix_16_0_X",
+      "auther_sha": "b26451c5173d99c0e22648cf84fa5e88043abcd7",
+      "author": "jprendi",
+      "body": "#### PR description:\r\n\r\nCrash reported by @etzovara in last Friday's HLT Scouting meeting.\r\n\r\nThis PR adds missing `onlineBeamSpotProducer` to the start of `recoTrackFromScoutingMonitorSequence` in `HLTriggerOffline/Scouting/python/RecoTrackFromScoutingMonitor_cff.py`. \r\nIt also swaps the ordering in `DQMOffline/HLTScouting/python/HLTScoutingDqmOffline_cff.py` of `hltScoutingTrackMonitor` and `recoTrackFromScoutingMonitorSequence` s.t. `recoTrackFromScoutingMonitorSequence` goes first, as `hltScoutingTrackMonitor` also consumes the online beam spot.\r\n\r\n\r\n#### PR validation:\r\n\r\nAs provided by @etzovara :\r\n```\r\ncmsrel CMSSW_16_0_9\r\ncd CMSSW_16_0_9/src/\r\ncmsenv\r\npython3 /cvmfs/cms.cern.ch/el9_amd64_gcc13/cms/cmssw/CMSSW_17_0_0_pre5/src/Configuration/DataProcessing/test/RunPromptReco.py --scenario=ppEra_Run3_2025 --reco --aod --miniaod --global-tag 160X_dataRun3_Prompt_v1 --lfn=root://eoscms.cern.ch//eos/cms/tier0/store/backfill/1/data/Tier0_REPLAY_2026/ScoutingPFMonitor/RAW/v8214952/000/398/191/00000/fc45bd25-297f-47b6-a28a-b215c9121574.root --dqmio --dqmSeq=@hltScouting\r\ncmsRun -e RunPromptRecoCfg.py\r\n```\r\nfrom which the job completed successfully.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nVerbatim backport of https://github.com/cms-sw/cmssw/pull/51878\r\n\r\n\r\nFYI @mmusich ",
+      "branch": "CMSSW_16_0_X",
+      "changed_files": 3,
+      "closed_at": "1789581053",
+      "comments": 13,
+      "commits": 3,
+      "created_at": "1789374818",
+      "deletions": 4,
+      "labels": [
+        "allow-jprendi",
+        "backport-ok",
+        "bug-fix",
+        "dqm-approved",
+        "fully-signed",
+        "ngt",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "ef53e3b7c7fa6dca7636a63586ce6900a25a41bc",
+      "merged_at": "1789581053",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_16_0_X",
+      "number": 51880,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Adding missing beamspot for track scouting DQM and module reordering [16_0_X]",
+      "updated_at": "1789581054",
+      "user": "jprendi"
     }
   }
 }
