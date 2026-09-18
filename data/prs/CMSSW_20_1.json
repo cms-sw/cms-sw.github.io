@@ -377,6 +377,38 @@
       "updated_at": "1789487718",
       "user": "Electricks94"
     },
+    "51535": {
+      "additions": 386,
+      "auther_ref": "add_NPS_DQM_module",
+      "auther_sha": "81843a1273878da411d6988839dbe7a949ec618a",
+      "author": "a-coban",
+      "body": "#### PR description:\r\n\r\nThis PR adds a new DQM validation module `NPSDQM` for the NPS physics category. \r\n\r\nIt introduces the C++ 2 files (`DQM/Physics/src/NPSDQM.cc` and `DQM/Physics/src/NPSDQM.h`) and its default python configuration (`DQM/Physics/python/NPSDQM_cfi.py`). \r\n\r\n- **Expected output changes:** None.\r\n- **Dependencies:** None.\r\n\r\n#### PR validation:\r\n\r\n- Basic local checks performed.",
+      "branch": "master",
+      "changed_files": 3,
+      "closed_at": "1789731183",
+      "comments": 22,
+      "commits": 2,
+      "created_at": "1784634782",
+      "deletions": 0,
+      "labels": [
+        "code-checks-approved",
+        "dqm-approved",
+        "fully-signed",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "66813724ad02f16058f3fa221894462c90eb3267",
+      "merged_at": "1789731183",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51535,
+      "release-notes": [],
+      "review_comments": 11,
+      "state": "closed",
+      "title": "Added NPS DQM module",
+      "updated_at": "1789731184",
+      "user": "a-coban"
+    },
     "51586": {
       "additions": 1003,
       "auther_ref": "MG_gridCosmicSeeder",
@@ -2364,6 +2396,38 @@
       "title": "Update HLT timing script to support new patatrack-scripts functionalities",
       "updated_at": "1789672778",
       "user": "Parsifal-2045"
+    },
+    "51912": {
+      "additions": 1,
+      "auther_ref": "gcc16-cstdint-FakeSoA",
+      "auther_sha": "c0dd53452b3fd939e179a6b04f1cac60d3f465b5",
+      "author": "smuzaffar",
+      "body": "This fixes the [build errors](https://cmssdt.cern.ch/SDT/cgi-bin/buildlogs/el9_amd64_gcc16/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate)  we get in GCC16 IBs \r\n\r\n```\r\nIn file included from input_line_7:36:\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:86](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L86):3: error: unknown type name 'uint16_t'\r\n   uint16_t *a16_ = nullptr;                      //[size_]\r\n  ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:87](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L87):3: error: unknown type name 'uint32_t'\r\n   uint32_t *b32_ = nullptr;                      //[size_]\r\n  ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:21](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L21):32: error: use of undeclared identifier 'uint16_t'\r\n     return nElements * (sizeof(uint16_t) + sizeof(uint32_t)) + padding_ + 0x400;\r\n                               ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:21](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L21):51: error: use of undeclared identifier 'uint32_t'\r\n     return nElements * (sizeof(uint16_t) + sizeof(uint32_t)) + padding_ + 0x400;\r\n                                                  ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:35](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L35):38: error: use of undeclared identifier 'uint16_t'\r\n     memcpy(a16_, onfile.a16_, sizeof(uint16_t) * onfile.size_);\r\n                                     ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:36](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L36):38: error: use of undeclared identifier 'uint32_t'\r\n     memcpy(b32_, onfile.b32_, sizeof(uint32_t) * onfile.size_);\r\n                                     ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:43](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L43):65: error: unknown type name 'intptr_t'\r\n               << reinterpret_cast<std::byte *>(reinterpret_cast<intptr_t>(b32_) - reinterpret_cast<intptr_t>(a16_))\r\n                                                                ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:43](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L43):100: error: unknown type name 'intptr_t'\r\n               << reinterpret_cast<std::byte *>(reinterpret_cast<intptr_t>(b32_) - reinterpret_cast<intptr_t>(a16_))\r\n                                                                                                   ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:64](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L64):28: error: use of undeclared identifier 'uint32_t'\r\n       if (b32_[i] != 24 + (uint32_t)i) {\r\n                           ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:76](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L76):29: error: unknown type name 'uint16_t'\r\n     a16_ = reinterpret_cast<uint16_t *>(buffer);\r\n                            ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:77](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L77):34: error: use of undeclared identifier 'uint16_t'\r\n     buffer += nElements * sizeof(uint16_t) + padding_;\r\n                                 ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:78](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L78):29: error: unknown type name 'uint32_t'\r\n     b32_ = reinterpret_cast<uint32_t *>(buffer);\r\n                            ^\r\n  [src/DataFormats/SoATemplate/test/FakeSoA.h:79](https://github.com/cms-sw/cmssw/blob/CMSSW_20_1_X_2026-09-17-2300/DataFormats/SoATemplate/test/FakeSoA.h#L79):34: error: use of undeclared identifier 'uint32_t'\r\n     buffer += nElements * sizeof(uint32_t);\r\n```",
+      "branch": "master",
+      "changed_files": 1,
+      "closed_at": "1789731156",
+      "comments": 10,
+      "commits": 1,
+      "created_at": "1789718261",
+      "deletions": 0,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "heterogeneous-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "63123ea30d15e461f25e4852670785159ad99f99",
+      "merged_at": "1789731156",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51912,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[GCC16] Added missing cstdint for uint16_t/uint32_t",
+      "updated_at": "1789731157",
+      "user": "smuzaffar"
     }
   }
 }
