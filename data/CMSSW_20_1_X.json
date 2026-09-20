@@ -16,7 +16,7 @@
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-09-18-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-20-0000/el9_amd64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-09-18-1100/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
-        "el9_amd64_gcc16": "ERR/CMSSW_20_1_X_2026-09-18-1100/el9_amd64_gcc16..IB/CMSSW_20_1_X/gcc16",
+        "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-09-20-0000/el9_amd64_gcc16..IB/CMSSW_20_1_X/gcc16",
         "fc42_riscv64_gcc15": "ERR/CMSSW_20_1_X_2026-09-17-2300/fc42_riscv64_gcc15..IB/CMSSW_20_1_X/g15"
       },
       "cmsdist_merged_prs": {
@@ -63,17 +63,7 @@
             "url": "https://github.com/cms-sw/cmsdist/pull/10857"
           }
         ],
-        "el9_amd64_gcc16": [
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "1899dbdd2b8c0b9d9b735a63fa659ec3feb5fa5b",
-            "is_merge_commit": false,
-            "number": "10857",
-            "title": "Update gdb version from 16.2 to 17.2",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10857"
-          }
-        ],
+        "el9_amd64_gcc16": [],
         "fc42_riscv64_gcc15": [
           {
             "author_login": "cms-sw",
@@ -154,6 +144,12 @@
           "details": {},
           "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/sun/20.1-sun-00/CMSSW_20_1_X_2026-09-20-0000/addOnTests.log",
           "passed": true
+        },
+        {
+          "arch": "el9_amd64_gcc16",
+          "details": {},
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc16/www/sun/20.1-sun-00/CMSSW_20_1_X_2026-09-20-0000/addOnTests.log",
+          "passed": true
         }
       ],
       "base_branch": "CMSSW_20_1_X",
@@ -173,6 +169,15 @@
           },
           "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/sun/20.1-sun-00/CMSSW_20_1_X_2026-09-20-0000/new/logAnalysis.pkl",
           "passed": "passed"
+        },
+        {
+          "arch": "el9_amd64_gcc16",
+          "details": {
+            "compWarning": 418,
+            "ignoreWarning": 1011
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc16/www/sun/20.1-sun-00/CMSSW_20_1_X_2026-09-20-0000/new/logAnalysis.pkl",
+          "passed": "warning"
         }
       ],
       "check-headers": "passed",
@@ -186,15 +191,28 @@
       },
       "cmsdistTags": {
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-20-0000/el8_amd64_gcc14",
-        "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-20-0000/el9_amd64_gcc14"
+        "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-20-0000/el9_amd64_gcc14",
+        "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-09-20-0000/el9_amd64_gcc16"
       },
       "cmsdist_compared_tags": {
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-18-2300/el8_amd64_gcc14..IB/CMSSW_20_1_X_2026-09-20-0000/el8_amd64_gcc14",
-        "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-18-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X_2026-09-20-0000/el9_amd64_gcc14"
+        "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-09-18-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X_2026-09-20-0000/el9_amd64_gcc14",
+        "el9_amd64_gcc16": "ERR/CMSSW_20_1_X_2026-09-18-1100/el9_amd64_gcc16..IB/CMSSW_20_1_X_2026-09-20-0000/el9_amd64_gcc16"
       },
       "cmsdist_merged_prs": {
         "el8_amd64_gcc14": [],
-        "el9_amd64_gcc14": []
+        "el9_amd64_gcc14": [],
+        "el9_amd64_gcc16": [
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": true,
+            "hash": "1899dbdd2b8c0b9d9b735a63fa659ec3feb5fa5b",
+            "is_merge_commit": false,
+            "number": "10857",
+            "title": "Update gdb version from 16.2 to 17.2",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10857"
+          }
+        ]
       },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
@@ -208,6 +226,10 @@
         },
         {
           "arch": "el9_amd64_gcc14",
+          "passed": "passed"
+        },
+        {
+          "arch": "el9_amd64_gcc16",
           "passed": "passed"
         }
       ],
@@ -442,9 +464,9 @@
             "details": {
               "known_failed": 0,
               "num_failed": 0,
-              "num_passed": 3246
+              "num_passed": 3783
             },
-            "done": false,
+            "done": true,
             "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/sun/20.1-sun-00/CMSSW_20_1_X_2026-09-20-0000/other/rntuple/pyRelValMatrixLogs/run/runall-report-step123-.log",
             "other": "rntuple",
             "passed": true,
@@ -497,7 +519,8 @@
       },
       "tests_archs": [
         "el8_amd64_gcc14",
-        "el9_amd64_gcc14"
+        "el9_amd64_gcc14",
+        "el9_amd64_gcc16"
       ],
       "utests": [
         {
@@ -515,6 +538,12 @@
           },
           "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/sun/20.1-sun-00/CMSSW_20_1_X_2026-09-20-0000/unitTests-summary.log",
           "passed": "passed"
+        },
+        {
+          "arch": "el9_amd64_gcc16",
+          "details": {},
+          "file": "['/data/sdt/buildlogs/el9_amd64_gcc16/www/sun/20.1-sun-00/CMSSW_20_1_X_2026-09-20-0000/new/logAnalysis.pkl']",
+          "passed": "unknown"
         }
       ],
       "valgrind": "not-found",
