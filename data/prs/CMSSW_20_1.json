@@ -873,6 +873,39 @@
       "updated_at": "1789407259",
       "user": "sakura-ngt"
     },
+    "51866": {
+      "additions": 228,
+      "auther_ref": "lst-displaced-quadruplets",
+      "auther_sha": "9c3790817bc7926d4ebc069f93635f1f407e55f8",
+      "author": "GNiendorf",
+      "body": "#### PR description:\r\n\r\nImproves LSTs displaced efficiency with three commits:\r\n\r\n8604ed608d4a3a02986f98c92af0c12969dbead6: In the T5 duplicate removal, the pixel cross-clean and promotion used delta-R or an r-z table tuned for prompt tracks. They now use shared hits, such that two T5s are duplicates at 5 shared hits with agreeing embeddings or 10 outright. Also, a pixel object deletes a T5 only if it is promoted and owns 4 of its OT hits. Lastly, a T5 failing the r-z tight cut is promoted if its DNN score passes the 93% retention working point.\r\n\r\nd1ebda67a70244a1090a160e2378ad850e2e8200: The segment dPhiChange window previously assumed a beam-line origin. It is replaced by an origin-free line residual at 0.75 sigma. The triplet pointing constraint is widened, allowing an additional set of triplets to pass with a special label; such triplets are used only in T5s.\r\n\r\na2d88dd2240b44d599101b2566f2814e6356ecc8: The anti-prompt dxy veto and the delta-R duplicate clause are removed, the r-z chi2 ceilings are loosened, and the cross-clean deletes on shared hits with a promoted candidate (3, or 2 for a pT5) instead of direction. A new cut was also introduced, where each flat-barrel mini-doublet's two-hit direction must agree with the parent triplet's circle tangent within 6 sigma of the strip resolution; computed once per triplet, stored as a flag.\r\n\r\n<img width=\"500\" alt=\"Screenshot 2026-09-17 at 1 08 33PM\" src=\"https://github.com/user-attachments/assets/11a6c14b-7dc3-4954-af80-5bb8aec218ec\" />\r\n\r\nc.c @slava77",
+      "branch": "master",
+      "changed_files": 12,
+      "closed_at": "1789923563",
+      "comments": 25,
+      "commits": 3,
+      "created_at": "1789147794",
+      "deletions": 248,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "orp-approved",
+        "reconstruction-approved",
+        "tests-approved",
+        "tracking"
+      ],
+      "merge_commit_sha": "549d9879bd8f7b33182f74588350a5f2cecb280b",
+      "merged_at": "1789923563",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51866,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "LST: Displaced Efficiency Improvements",
+      "updated_at": "1789923565",
+      "user": "GNiendorf"
+    },
     "51868": {
       "additions": 113,
       "auther_ref": "muonid-merge-crossing-track-legs",
@@ -1430,6 +1463,39 @@
       "title": "Phase2-hgx368U Add more debug to Neighbrfinding code for HGCal silicon part",
       "updated_at": "1789800689",
       "user": "bsunanda"
+    },
+    "51925": {
+      "additions": 30,
+      "auther_ref": "mm_add_MET_to_ScoutingPaths",
+      "auther_sha": "eafa599cb0e37b37f06bbfe5969e639d4b5611ec",
+      "author": "mmusich",
+      "body": "#### PR description:\r\n\r\nAdds the missing MET reconstruction in the scouting paths.\r\nI also add more variables to the nano HLT flavour (and corresponding monitoring).\r\n\r\n#### PR validation:\r\n\r\n```\r\nrunTheMatrix.py -l ph2_hlt\r\n```\r\n\r\nruns fine.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nN/A\r\n",
+      "branch": "master",
+      "changed_files": 4,
+      "closed_at": "1789923537",
+      "comments": 13,
+      "commits": 2,
+      "created_at": "1789900133",
+      "deletions": 10,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "hlt-approved",
+        "ngt",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "43d9379fc92822eaebb659d8bf2d8fc2118e65b4",
+      "merged_at": "1789923537",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51925,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Add MET at HLT sequence in the Scouting paths",
+      "updated_at": "1789923538",
+      "user": "mmusich"
     }
   }
 }
