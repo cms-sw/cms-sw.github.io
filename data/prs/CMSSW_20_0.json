@@ -32,6 +32,41 @@
       "title": "Phase2-hgx268T2 Remove the chyclic dependency between Geometry/CaloTopolog and Geometry/HGCalGeometry",
       "updated_at": "1789580797",
       "user": "bsunanda"
+    },
+    "51900": {
+      "additions": 1065,
+      "auther_ref": "scoutJME_DQM_qfix_20_0_X",
+      "auther_sha": "9092f7576114179b12edd8b019494c90aa3063db",
+      "author": "jprendi",
+      "body": "#### PR description:\r\n\r\nThis is a combined backport of https://github.com/cms-sw/cmssw/pull/51101 and https://github.com/cms-sw/cmssw/pull/51878 to `20_0_X`. \r\n\r\nPR descriptions copied from the two PRs: \r\n\r\nThis PR is a follow-up to commit https://github.com/cms-sw/cmssw/commit/b1bb704810849cad55a5450335844c9d6fb8897e (introduced in https://github.com/cms-sw/cmssw/pull/50926) and introduces various improvements for `ScoutingTrackMonitor`:\r\n\r\n- use embedded `tk_vtxInd()` index in `Run3ScoutingTrack` for finding closest vertex\r\n- do not early return if beam spot is not available (e.g. `ScoutingPFMonitor`)\r\n- add histogram of track radius and z at DCA\r\n- add more monitoring of vertices (`sumpT2`, `nTracks`, `chi2prob`, `chi2ndf`)\r\n- include vertexing error in the `dxyErr`/`dzErr` computation\r\n\r\nAdditionally, on top of those, this PR adds missing `onlineBeamSpotProducer` to the start of `recoTrackFromScoutingMonitorSequence` in `HLTriggerOffline/Scouting/python/RecoTrackFromScoutingMonitor_cff.py`. \r\nIt also swaps the ordering in `DQMOffline/HLTScouting/python/HLTScoutingDqmOffline_cff.py` of `hltScoutingTrackMonitor` and `recoTrackFromScoutingMonitorSequence` s.t. `recoTrackFromScoutingMonitorSequence` goes first, as `hltScoutingTrackMonitor` also consumes the online beam spot.\r\n\r\n\r\n#### PR validation:\r\n\r\n- successful compilation with `scram b`\r\n- successful testing with `scram b runtests_testHLTScoutingDQMAnalyzers`\r\n- successful testing with `scram b runtests_TestDQMOnlineClient-ngt_dqm_sourceclient`\r\n\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nCombined backport of https://github.com/cms-sw/cmssw/pull/51101 and https://github.com/cms-sw/cmssw/pull/51878 .\r\n\r\nFYI @mmusich ",
+      "branch": "CMSSW_20_0_X",
+      "changed_files": 13,
+      "closed_at": "1790098915",
+      "comments": 11,
+      "commits": 10,
+      "created_at": "1789561859",
+      "deletions": 62,
+      "labels": [
+        "backport-ok",
+        "dqm-approved",
+        "fully-signed",
+        "hlt-approved",
+        "ngt",
+        "orp-approved",
+        "tests-approved",
+        "tracking"
+      ],
+      "merge_commit_sha": "b2c6b04dcea3aa3595baea6ef5f0f9adcddce8c8",
+      "merged_at": "1790098915",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_0_X",
+      "number": 51900,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": " Improvements to ScoutingTrackMonitor [20_0_X]",
+      "updated_at": "1790098917",
+      "user": "jprendi"
     }
   }
 }
