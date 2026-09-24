@@ -10,21 +10,11 @@
       "cmsdistTags": {},
       "cmsdist_compared_tags": {
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-09-23-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/rootmaster",
-        "el9_amd64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-09-22-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X/rootmaster"
+        "el9_amd64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-09-23-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X/rootmaster"
       },
       "cmsdist_merged_prs": {
         "el9_aarch64_gcc14": [],
-        "el9_amd64_gcc14": [
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "ac64bbc38000278f7a8e594b1422c7d3fec454fb",
-            "is_merge_commit": false,
-            "number": "10868",
-            "title": "backport of hipcc-parallel and -ftrack-macro-expansion=0 changes",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10868"
-          }
-        ]
+        "el9_amd64_gcc14": []
       },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
@@ -61,6 +51,12 @@
       "RVExceptions": null,
       "addons": [
         {
+          "arch": "el9_amd64_gcc14",
+          "details": {},
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/wed/20.1.ROOT6-wed-23/CMSSW_20_1_ROOT6_X_2026-09-23-2300/addOnTests.log",
+          "passed": true
+        },
+        {
           "arch": "el9_aarch64_gcc14",
           "details": {},
           "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/wed/20.1.ROOT6-wed-23/CMSSW_20_1_ROOT6_X_2026-09-23-2300/addOnTests.log",
@@ -69,6 +65,15 @@
       ],
       "base_branch": "CMSSW_20_1_X",
       "builds": [
+        {
+          "arch": "el9_amd64_gcc14",
+          "details": {
+            "compWarning": 1,
+            "ignoreWarning": 2652
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/wed/20.1.ROOT6-wed-23/CMSSW_20_1_ROOT6_X_2026-09-23-2300/new/logAnalysis.pkl",
+          "passed": "warning"
+        },
         {
           "arch": "el9_aarch64_gcc14",
           "details": {
@@ -85,10 +90,22 @@
         "el9_amd64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-09-23-2300/el9_amd64_gcc14"
       },
       "cmsdist_compared_tags": {
-        "el9_aarch64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-09-22-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_ROOT6_X_2026-09-23-2300/el9_aarch64_gcc14"
+        "el9_aarch64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-09-22-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_ROOT6_X_2026-09-23-2300/el9_aarch64_gcc14",
+        "el9_amd64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-09-22-2300/el9_amd64_gcc14..IB/CMSSW_20_1_ROOT6_X_2026-09-23-2300/el9_amd64_gcc14"
       },
       "cmsdist_merged_prs": {
         "el9_aarch64_gcc14": [
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": true,
+            "hash": "ac64bbc38000278f7a8e594b1422c7d3fec454fb",
+            "is_merge_commit": false,
+            "number": "10868",
+            "title": "backport of hipcc-parallel and -ftrack-macro-expansion=0 changes",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10868"
+          }
+        ],
+        "el9_amd64_gcc14": [
           {
             "author_login": "cms-sw",
             "from_merge_commit": true,
@@ -108,6 +125,10 @@
       "dupDict": [
         {
           "arch": "el9_aarch64_gcc14",
+          "passed": "passed"
+        },
+        {
+          "arch": "el9_amd64_gcc14",
           "passed": "passed"
         }
       ],
@@ -148,11 +169,22 @@
       "release_queue": "CMSSW_20_1_ROOT6_X",
       "relvals": [
         {
+          "arch": "el9_amd64_gcc14",
+          "details": {
+            "known_failed": 0,
+            "num_failed": 39,
+            "num_passed": 17
+          },
+          "done": false,
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/wed/20.1.ROOT6-wed-23/CMSSW_20_1_ROOT6_X_2026-09-23-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
+          "passed": false
+        },
+        {
           "arch": "el9_aarch64_gcc14",
           "details": {
-            "known_failed": 39,
+            "known_failed": 41,
             "num_failed": 38,
-            "num_passed": 17
+            "num_passed": 21
           },
           "done": false,
           "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/wed/20.1.ROOT6-wed-23/CMSSW_20_1_ROOT6_X_2026-09-23-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -163,14 +195,25 @@
       "static_checks_failures": "not-found",
       "static_checks_v2": "not-found",
       "tests_archs": [
-        "el9_aarch64_gcc14"
+        "el9_aarch64_gcc14",
+        "el9_amd64_gcc14"
       ],
       "utests": [
         {
+          "arch": "el9_amd64_gcc14",
+          "details": {
+            "num_fails": "0"
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/wed/20.1.ROOT6-wed-23/CMSSW_20_1_ROOT6_X_2026-09-23-2300/unitTests-summary.log",
+          "passed": "passed"
+        },
+        {
           "arch": "el9_aarch64_gcc14",
-          "details": {},
-          "file": "['/data/sdt/buildlogs/el9_aarch64_gcc14/www/wed/20.1.ROOT6-wed-23/CMSSW_20_1_ROOT6_X_2026-09-23-2300/new/logAnalysis.pkl']",
-          "passed": "unknown"
+          "details": {
+            "num_fails": "2"
+          },
+          "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/wed/20.1.ROOT6-wed-23/CMSSW_20_1_ROOT6_X_2026-09-23-2300/unitTests-summary.log",
+          "passed": "failed"
         }
       ],
       "valgrind": "not-found",
