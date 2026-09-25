@@ -10,7 +10,7 @@
       "cmsdistTags": {},
       "cmsdist_compared_tags": {
         "el9_amd64_gcc14": "IB/CMSSW_20_1_ROOT640_X_2026-09-23-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X/root640",
-        "el9_amd64_gcc15": "IB/CMSSW_20_1_ROOT640_X_2026-09-22-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/root640-gcc15"
+        "el9_amd64_gcc15": "ERR/CMSSW_20_1_ROOT640_X_2026-09-24-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/root640-gcc15"
       },
       "cmsdist_merged_prs": {
         "el9_amd64_gcc14": [
@@ -33,35 +33,7 @@
             "url": "https://github.com/cms-sw/cmsdist/pull/10870"
           }
         ],
-        "el9_amd64_gcc15": [
-          {
-            "author_login": "fwyzard",
-            "from_merge_commit": true,
-            "hash": "9e7c1ec3d53cdb1e303b62577fa2bf65e75ea2c0",
-            "is_merge_commit": false,
-            "number": "10872",
-            "title": "Disable the MIOpen kernel cache",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10872"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "2d80ad0f31b24c232965ad525c599cbe6f81bbac",
-            "is_merge_commit": false,
-            "number": "10870",
-            "title": "Set hipcc-parallel env via its toolfile",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10870"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "ac64bbc38000278f7a8e594b1422c7d3fec454fb",
-            "is_merge_commit": false,
-            "number": "10868",
-            "title": "backport of hipcc-parallel and -ftrack-macro-expansion=0 changes",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10868"
-          }
-        ]
+        "el9_amd64_gcc15": []
       },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
@@ -115,19 +87,67 @@
         }
       ],
       "base_branch": "CMSSW_20_1_X",
-      "builds": [],
+      "builds": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "ignoreWarning": 4012,
+            "linkError": 112,
+            "miscError": 116
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/thu/20.1.ROOT640-thu-23/CMSSW_20_1_ROOT640_X_2026-09-24-2300/new/logAnalysis.pkl",
+          "passed": "error"
+        }
+      ],
       "check-headers": "not-found",
       "cmsdistTags": {
         "el9_amd64_gcc15": "ERR/CMSSW_20_1_ROOT640_X_2026-09-24-2300/el9_amd64_gcc15"
       },
-      "cmsdist_compared_tags": {},
-      "cmsdist_merged_prs": {},
+      "cmsdist_compared_tags": {
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_ROOT640_X_2026-09-22-2300/el9_amd64_gcc15..ERR/CMSSW_20_1_ROOT640_X_2026-09-24-2300/el9_amd64_gcc15"
+      },
+      "cmsdist_merged_prs": {
+        "el9_amd64_gcc15": [
+          {
+            "author_login": "fwyzard",
+            "from_merge_commit": true,
+            "hash": "9e7c1ec3d53cdb1e303b62577fa2bf65e75ea2c0",
+            "is_merge_commit": false,
+            "number": "10872",
+            "title": "Disable the MIOpen kernel cache",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10872"
+          },
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": true,
+            "hash": "2d80ad0f31b24c232965ad525c599cbe6f81bbac",
+            "is_merge_commit": false,
+            "number": "10870",
+            "title": "Set hipcc-parallel env via its toolfile",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10870"
+          },
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": true,
+            "hash": "ac64bbc38000278f7a8e594b1422c7d3fec454fb",
+            "is_merge_commit": false,
+            "number": "10868",
+            "title": "backport of hipcc-parallel and -ftrack-macro-expansion=0 changes",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10868"
+          }
+        ]
+      },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
       "compared_tags": "CMSSW_20_1_ROOT640_X_2026-09-23-2300-->CMSSW_20_1_ROOT640_X_2026-09-24-2300",
       "crab_tests": "not-found",
       "dqm_tests": "not-found",
-      "dupDict": [],
+      "dupDict": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "passed": "passed"
+        }
+      ],
       "fwlite": [],
       "hlt_tests": "not-found",
       "ib_date": "2026-09-24-2300-0000",
@@ -144,12 +164,35 @@
       "python3_tests": [],
       "release_name": "CMSSW_20_1_ROOT640_X_2026-09-24-2300",
       "release_queue": "CMSSW_20_1_ROOT640_X",
-      "relvals": [],
+      "relvals": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "known_failed": 0,
+            "num_failed": 38,
+            "num_passed": 953
+          },
+          "done": false,
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/thu/20.1.ROOT640-thu-23/CMSSW_20_1_ROOT640_X_2026-09-24-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
+          "passed": false
+        }
+      ],
       "static_checks": "not-found",
       "static_checks_failures": "not-found",
       "static_checks_v2": "not-found",
-      "tests_archs": [],
-      "utests": [],
+      "tests_archs": [
+        "el9_amd64_gcc15"
+      ],
+      "utests": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "num_fails": "71"
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/thu/20.1.ROOT640-thu-23/CMSSW_20_1_ROOT640_X_2026-09-24-2300/unitTests-summary.log",
+          "passed": "failed"
+        }
+      ],
       "valgrind": "not-found",
       "vtune": "not-found"
     },
