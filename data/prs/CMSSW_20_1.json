@@ -2368,6 +2368,38 @@
       "updated_at": "1790098829",
       "user": "Electricks94"
     },
+    "51939": {
+      "additions": 138,
+      "auther_ref": "Phase2-WF89",
+      "auther_sha": "06d6d7fbdaa5629443b42f5e40094f6fd1030fe4",
+      "author": "kpedro88",
+      "body": "#### PR description:\r\n\r\nThe easiest way (in terms of minimizing hacks in `Configuration/PyReleaseValidation`) to satisfy #49776 turned out to be adding a local MinBias GEN-SIM step *by default* to all upgrade PU workflows, and then removing it if a default RelVal dataset is specified.\r\n\r\nTo avoid upsetting special workflows that modify steps/inputs/outputs by assuming fixed numerical indexing of steps, the added MinBias step is injected at the beginning of the workflow and treated as \"step 0\", to avoid incrementing the indices of other steps. The need for this hack highlights that the planned CMSSW_21_X reimplementation of runTheMatrix should treat multi-step workflows as a DAG (since each step has potentially multiple inputs and/or outputs, which should be chained automatically).\r\n\r\nSome other hacks are actually now removed in favor of this approach, namely the previous implementation of the hybrid PU workflows, which also generate MinBias locally.\r\n\r\nAn option `--noLocalPU` is added to `runTheMatrix.py`, since this development is aimed at PR testing and not actual RelVal submission. @cms-sw/pdmv-l2 should comment if they would prefer something different to minimize the impact on their operations.\r\n\r\nI also fixed a very minor bug in the Run4 PU workflow naming and streamlined a few miscellaneous pieces of logic.\r\n\r\nIt should be kept in mind that 10 MinBias events are enough to test technical functionality of code, but not enough to produce reasonable physics output comparisons.\r\n\r\n#### PR validation:\r\n\r\nTested the following workflows, covering all special upgrade workflows that modify PU steps specifically: `37834.0,37834.21,37834.6199,37834.61299,37861.97,37834.99,37834.9921,38634.0,38634.21,38634.6199,38634.61299,38661.97,38634.99,38634.9921,18634.0,18634.96`.\r\n\r\nThis covers D127 (where a default dataset was specified) and D128 (where a default dataset was not specified), to test both cases. The added local MinBias step is correctly removed by the matrix for D127 and kept for D128. The special workflows tested are: ProdLike, premixing, ECAL devel w/ premixing, and variations/combinations of these.\r\n\r\nI also tested with 2026 (Run 3), just the default and hybrid PU workflows. I commented out the default dataset for 2026 to perform this test. The listed Run 3 default datasets are still pre-CMSSW20, so they do not actually work in the modern releases.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nNot a backport, probably won't be backported.",
+      "branch": "master",
+      "changed_files": 6,
+      "closed_at": "1790359272",
+      "comments": 13,
+      "commits": 12,
+      "created_at": "1790077629",
+      "deletions": 92,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "orp-approved",
+        "pdmv-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "d06db702d2ed6a7df2852c499818568b52f9a649",
+      "merged_at": "1790359271",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51939,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Generate pileup minbias input by default in matrix workflows",
+      "updated_at": "1790359273",
+      "user": "kpedro88"
+    },
     "51944": {
       "additions": 1,
       "auther_ref": "fc-20260923-geotestupdate",
@@ -2432,6 +2464,39 @@
       "title": "Phase2-hgx368W Correct the neighbour finding code for the cells in HGCal silicon modules",
       "updated_at": "1790279812",
       "user": "bsunanda"
+    },
+    "51966": {
+      "additions": 21,
+      "auther_ref": "newDQMseq_20_1_X",
+      "auther_sha": "54f38d6d1138a82e324882357654ff8f95a908a6",
+      "author": "jprendi",
+      "body": "#### PR description:\r\n\r\nThis PR:\r\n\r\n1) separates `hltScoutingDqmOffline` into `hltDqmScoutingAndReco` and `hltDqmOnlyScouting`, such that we could run `hltDqmOnlyScouting` for offline DQM analysis on HLT Scouting Collections without needing prompt results\r\n\r\n2) introduces `onlinehlt4vector`, such that we can run the online hlt dqm client in an offline analysis\r\n\r\n#### PR validation:\r\n\r\nThis PR was prepared in `CMSSW_20_1_X_2026-09-23-1100`. We can now run the workflows for example like:\r\n\r\n```\r\ncmsDriver.py step2 \\\r\n    -s DQM:hltDqmOnlyScouting \\\r\n    --conditions 160X_dataRun3_NGT_v6 \\\r\n    --data \\\r\n    --datatier DQMIO \\\r\n    -n 100 \\\r\n    --eventcontent DQMIO \\\r\n    --geometry DB:Extended \\\r\n    --era Run3_2026 \\\r\n    --filein \"${ALL_FILES}\" \\\r\n    --fileout file:step2.root \\\r\n    --nThreads 24 \\\r\n    --python_filename dqm.py \\\r\n    --no_exec\r\n\r\n\r\ncat <<@EOF >> dqm.py\r\nprocess.source.inputCommands = cms.untracked.vstring(\r\n    'keep *',\r\n    'drop CTPPSDiamondDigiedmDetSetVector_hltCTPPSDiamondRawToDigi_TimingDiamond_HLTX',\r\n    'drop CTPPSPixelDigiedmDetSetVector_hltCTPPSPixelDigis__HLTX',\r\n    'drop CTPPSRecord_hltOnlineMetaDataDigis__HLTX',\r\n    'drop DCSRecord_hltOnlineMetaDataDigis__HLTX',\r\n    'drop OnlineLuminosityRecord_hltOnlineMetaDataDigis__HLTX',\r\n    'drop recoBeamSpot_hltOnlineMetaDataDigis__HLTX',\r\n)\r\n\r\nprocess.scoutingCollectionMonitor.onlineMetaDataDigis = \"hltOnlineMetaDataDigis\"\r\nprocess.scoutingCollectionMonitor.onlyScouting = True\r\nprocess.scoutingCollectionMonitor.beamSpot = cms.InputTag(\"hltOnlineBeamSpotFromDB\")\r\nprocess.ScoutingTrackMonitor.beamSpotLabel = cms.InputTag(\"hltOnlineBeamSpotFromDB\")\r\n@EOF\r\n```\r\n\r\nand \r\n\r\n```\r\ncmsDriver.py step2 -s DQM:onlinehlt4vector \\\r\n\t     --conditions 160X_dataRun3_NGT_v6 \\\r\n             --datatier DQMIO \\\r\n             -n 100 \\\r\n             --eventcontent DQMIO \\\r\n             --geometry DB:Extended \\\r\n             --era Run3_2026 \\\r\n             --filein $ALL_FILES \\\r\n             --fileout file:step2.root \\\r\n             --nThreads 24 \\\r\n             --python_filename dqm.py \\\r\n             --no_exec\r\n```\r\n\r\nwith the subsequent standard harvesting.  It was tested w files produced in `16_0_X`, however when one drops the corresponding collections, this runs fine. \r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nThis is not a backport but was backported to `16_0_X` https://github.com/cms-sw/cmssw/pull/51955 , `16_1_X` https://github.com/cms-sw/cmssw/pull/51956, `17_0_X` https://github.com/cms-sw/cmssw/pull/51957 and `20_0_X` https://github.com/cms-sw/cmssw/pull/51967.",
+      "branch": "master",
+      "changed_files": 2,
+      "closed_at": "1790359237",
+      "comments": 11,
+      "commits": 2,
+      "created_at": "1790237076",
+      "deletions": 9,
+      "labels": [
+        "code-checks-approved",
+        "dqm-approved",
+        "fully-signed",
+        "ngt",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "6328268f6998fd0122f4b0a3516fe0cf4c4e84bf",
+      "merged_at": "1790359237",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51966,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Introducing new offline DQM sequences for HLT",
+      "updated_at": "1790359239",
+      "user": "jprendi"
     }
   }
 }
