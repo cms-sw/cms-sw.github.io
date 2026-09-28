@@ -102,6 +102,39 @@
       "title": "[17_0_X] Update HLT timing script to support new patatrack-scripts functionalities",
       "updated_at": "1790312824",
       "user": "Parsifal-2045"
+    },
+    "51994": {
+      "additions": 193,
+      "auther_ref": "GTTTkJetUpdate17X",
+      "auther_sha": "55609c0ee0de53f53ea0d670b4e0fa490e319dba",
+      "author": "BenjaminRS",
+      "body": "backport of #51975 \r\n\r\nThe original PR was: https://github.com/cms-sw/cmssw/pull/50908. I have commandeered it as the original author has now left CMS. No other changes were needed in order for this to come into CMSSW 17X\r\n\r\nThis is the original PR description:\r\n\r\nAdded valid bit to TkJetWord object\r\nTkJetWord now contains 64 bits of data as opposed to 63 before\r\nChanged track jet ordering on readout to GTT pattern file to reflect the same order as the firmware (was sorted by pT before, now sorted first by phi then by eta)\r\nAdded extra output file when running createFirmwareInputFiles_cfg.py called FirmwareGeometryFile.vh. If any of the JetFinding parameters change like eta bin centers or cuts on track multiplicity, regenerate FirmwareGeometryFile.vh and place it in the /algo/components/jet/firmware/hdl/ directory of the JetFinding firmware.\r\nPresentation of changes in a talk coming soon\r\n\r\n#### PR validation:\r\n\r\nOriginal validation:\r\n* Valid bit present in track jet words in GTT test vector files\r\n* Used FirmwareGeometryFile.vh in the firmware and checked emulator test vector output against firmware. They match.\r\n\r\nNew validation:\r\nRan:\r\n* scram b distclean \r\n* scram b -j 8\r\n* scram build code-checks \r\n* scram build code-format\r\n\r\nThe L1T Menu team saw that the TkJet Performance changed with this PR. [I ran a validation to confirm that this was due to changing the minimum track pT for the tracks considered in the TkJet to 10 GeV](https://indico.cern.ch/event/1728721/#10-tracks-vertex). This is required to match the current FW.\r\n\r\n<img width=\"1376\" height=\"694\" alt=\"Screenshot 2026-09-25 at 13 30 49\" src=\"https://github.com/user-attachments/assets/87cf3b66-13cd-4b61-b636-b28e88276902\" />",
+      "branch": "CMSSW_17_0_X",
+      "changed_files": 8,
+      "closed_at": "1790574236",
+      "comments": 9,
+      "commits": 5,
+      "created_at": "1790532007",
+      "deletions": 31,
+      "labels": [
+        "backport-ok",
+        "code-checks-approved",
+        "fully-signed",
+        "l1-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "fbf23095804f2453cc8bd37a310baa6d4b37f93b",
+      "merged_at": "1790574236",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_0_X",
+      "number": 51994,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[17_0_X][L1T] GTT Jet Finding Geometry Readout (Phase 2)",
+      "updated_at": "1790574238",
+      "user": "BenjaminRS"
     }
   }
 }
