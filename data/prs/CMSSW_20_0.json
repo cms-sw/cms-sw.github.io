@@ -104,6 +104,39 @@
       "title": "[20_0_X] Update HLT timing script to support new patatrack-scripts functionalities",
       "updated_at": "1790312818",
       "user": "Parsifal-2045"
+    },
+    "51967": {
+      "additions": 21,
+      "auther_ref": "newDQMseq_20_0_X",
+      "auther_sha": "f1a0dd36c3397d0b1dec1717ae3af2be6256a847",
+      "author": "jprendi",
+      "body": "#### PR description:\r\n\r\nThis PR:\r\n\r\n1) separates `hltScoutingDqmOffline` into `hltDqmScoutingAndReco` and `hltDqmOnlyScouting`, such that we could run `hltDqmOnlyScouting` for offline DQM analysis on HLT Scouting Collections without needing prompt results\r\n\r\n2) introduces `onlinehlt4vector`, such that we can run the online hlt dqm client in an offline analysis\r\n\r\n#### PR validation:\r\n\r\nThis PR was prepared in `CMSSW_20_0_X_2026-09-22-2300`. We can now run the workflows for example like:\r\n\r\n```\r\ncmsDriver.py step2 \\\r\n    -s DQM:hltDqmOnlyScouting \\\r\n    --conditions 160X_dataRun3_NGT_v6 \\\r\n    --data \\\r\n    --datatier DQMIO \\\r\n    -n 100 \\\r\n    --eventcontent DQMIO \\\r\n    --geometry DB:Extended \\\r\n    --era Run3_2026 \\\r\n    --filein \"${ALL_FILES}\" \\\r\n    --fileout file:step2.root \\\r\n    --nThreads 24 \\\r\n    --python_filename dqm.py \\\r\n    --no_exec\r\n\r\n\r\ncat <<@EOF >> dqm.py\r\nprocess.source.inputCommands = cms.untracked.vstring(\r\n    'keep *',\r\n    'drop CTPPSDiamondDigiedmDetSetVector_hltCTPPSDiamondRawToDigi_TimingDiamond_HLTX',\r\n    'drop CTPPSPixelDigiedmDetSetVector_hltCTPPSPixelDigis__HLTX',\r\n    'drop CTPPSRecord_hltOnlineMetaDataDigis__HLTX',\r\n    'drop DCSRecord_hltOnlineMetaDataDigis__HLTX',\r\n    'drop OnlineLuminosityRecord_hltOnlineMetaDataDigis__HLTX',\r\n    'drop recoBeamSpot_hltOnlineMetaDataDigis__HLTX',\r\n)\r\n\r\nprocess.scoutingCollectionMonitor.onlineMetaDataDigis = \"hltOnlineMetaDataDigis\"\r\nprocess.scoutingCollectionMonitor.onlyScouting = True\r\nprocess.scoutingCollectionMonitor.beamSpot = cms.InputTag(\"hltOnlineBeamSpotFromDB\")\r\nprocess.ScoutingTrackMonitor.beamSpotLabel = cms.InputTag(\"hltOnlineBeamSpotFromDB\")\r\n@EOF\r\n```\r\n\r\nand \r\n\r\n```\r\ncmsDriver.py step2 -s DQM:onlinehlt4vector \\\r\n\t     --conditions 160X_dataRun3_NGT_v6 \\\r\n             --datatier DQMIO \\\r\n             -n 100 \\\r\n             --eventcontent DQMIO \\\r\n             --geometry DB:Extended \\\r\n             --era Run3_2026 \\\r\n             --filein $ALL_FILES \\\r\n             --fileout file:step2.root \\\r\n             --nThreads 24 \\\r\n             --python_filename dqm.py \\\r\n             --no_exec\r\n```\r\n\r\nwith the subsequent standard harvesting.  It was tested w files produced in `16_0_X`, however when one drops the corresponding collections, this runs fine.\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nVerbatim backport of https://github.com/cms-sw/cmssw/pull/51966",
+      "branch": "CMSSW_20_0_X",
+      "changed_files": 2,
+      "closed_at": "1790661191",
+      "comments": 9,
+      "commits": 2,
+      "created_at": "1790238091",
+      "deletions": 9,
+      "labels": [
+        "backport-ok",
+        "dqm-approved",
+        "fully-signed",
+        "ngt",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "da0ab756a5555eba44a5e768429efec684512e57",
+      "merged_at": "1790661191",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_0_X",
+      "number": 51967,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Introducing new offline DQM sequences for HLT [20_0_X]",
+      "updated_at": "1790661193",
+      "user": "jprendi"
     }
   }
 }
