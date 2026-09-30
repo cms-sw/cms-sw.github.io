@@ -1,5 +1,35 @@
 {
   "cmsdist": {
+    "10845": {
+      "additions": 9,
+      "auther_ref": "devel-ucx-rocm",
+      "auther_sha": "f0791f84abf381779a7a1dfae2dceffe2b7299b9",
+      "author": "ghyls",
+      "body": "\r\n\r\nThe flag `--with-rocm=$ROCM_HIP_ROOT` we had in `ucx.spec` does not seem to be enough to make the `rocm` transports available to UCX (see [1]). This prevents UCX from knowing about AMD GPU pointers which prevents us from using it to do RDMA with AMD GPUs.\r\n\r\nIn this case, the `./configure` command would print\r\n\r\n```\r\nchecking for hsa.h... no\r\nconfigure: WARNING: ROCm not found\r\n```\r\n\r\nwhich is very easy to miss.\r\n\r\n\r\nThis PR \r\n- Adds the Include and Library flags that UCX needs to build the rocm UCT and UCM modules \r\n- Adds a quick test to check for the generated rocm modules. This is just to allow us to realize if this gets broken in future UCX version upgrades, etc.\r\n\r\n\r\n---\r\n[1]\r\n\r\nThe rocm support can be checked with `ucx_info -b`.\r\n\r\nBefore this PR\r\n\r\n```\r\n[...]\r\n#define UCX_MODULE_SUBDIR         \"ucx\"\r\n#define VERSION                   \"1.21\"\r\n#define restrict                  __restrict__\r\n#define test_MODULES              \":module\"\r\n#define ucm_MODULES               \":cuda\"\r\n#define ucs_MODULES               \"\"\r\n#define uct_MODULES               \":cuda:ib:rdmacm:cma:xpmem\"\r\n#define uct_cuda_MODULES          \":gdrcopy\"\r\n#define uct_ib_MODULES            \":mlx5:efa\"\r\n#define uct_ib_mlx5_MODULES       \":gda\"\r\n#define uct_rocm_MODULES          \"\"\r\n#define ucx_perftest_MODULES      \":cuda\"\r\n```\r\n\r\nAnd after\r\n\r\n```\r\n#define UCX_MODULE_SUBDIR         \"ucx\"\r\n#define VERSION                   \"1.21\"\r\n#define restrict                  __restrict__\r\n#define test_MODULES              \":module\"\r\n#define ucm_MODULES               \":cuda:rocm\"\r\n#define ucs_MODULES               \"\"\r\n#define uct_MODULES               \":cuda:ib:rdmacm:rocm:cma:xpmem\"\r\n#define uct_cuda_MODULES          \":gdrcopy\"\r\n#define uct_ib_MODULES            \":mlx5:efa\"\r\n#define uct_ib_mlx5_MODULES       \":gda\"\r\n#define uct_rocm_MODULES          \"\"\r\n#define ucx_perftest_MODULES      \":cuda:rocm:mad\"\r\n```\r\n\r\n\r\n\r\n\r\n@fwyzard FYI",
+      "branch": "IB/CMSSW_20_1_X/master",
+      "changed_files": 1,
+      "closed_at": "1790744960",
+      "comments": 16,
+      "commits": 1,
+      "created_at": "1789102205",
+      "deletions": 2,
+      "labels": [
+        "externals-approved",
+        "fully-signed",
+        "orp-pending",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "ffc75cb6161ee2039d683039817f348ab7623fec",
+      "merged_at": "1790744960",
+      "merged_by": "smuzaffar",
+      "number": 10845,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Extend rocm support in ucx",
+      "updated_at": "1790744974",
+      "user": "ghyls"
+    },
     "10851": {
       "additions": 89,
       "auther_ref": "Update-llvm",
@@ -1319,6 +1349,39 @@
       "title": "Introducing new offline DQM sequences for HLT",
       "updated_at": "1790359239",
       "user": "jprendi"
+    },
+    "51969": {
+      "additions": 25,
+      "auther_ref": "dev/fix_cb_flag_20x",
+      "auther_sha": "80113a1630e88f16c33c682ae76acd0aa5a5d648",
+      "author": "CMS-HGCAL",
+      "body": "#### PR description:\r\n\r\nIn a few commissioning runs we have noticed spurious values filling the DQM plot which reports counts of error flags. This is tracked down to events where the event is not complete (partial payload missing) and uninitialized SoA values.\r\n\r\nIn addition the higher level error flags (capture block) were not being properly reported in case the inner payload (econ-d) is missing.\r\n\r\nThe PR fixes these two issues.\r\n\r\n\r\n#### PR validation:\r\n\r\nThis has been validated with a commissioning run.\r\n\r\n| Before | After |\r\n|-----|-----|\r\n| <img width=\"500\" alt=\"before\" src=\"https://github.com/user-attachments/assets/36f54b04-2694-484b-9398-932e11f842ce\" /> |  <img width=\"500\" alt=\"after\" src=\"https://github.com/user-attachments/assets/665a6193-d6ec-4c56-a1c8-d69090045f9d\" /> |\r\n\r\n",
+      "branch": "master",
+      "changed_files": 2,
+      "closed_at": "1790745979",
+      "comments": 13,
+      "commits": 1,
+      "created_at": "1790313788",
+      "deletions": 18,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "hgcal-dpg-approved",
+        "orp-approved",
+        "reconstruction-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "e2212563a05824e95a0325587eeec5e9b99fea37",
+      "merged_at": "1790745979",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51969,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Fixes to HGCAL unpacking step",
+      "updated_at": "1790745980",
+      "user": "pfs"
     },
     "51971": {
       "additions": 3427,
