@@ -1772,6 +1772,38 @@
       "updated_at": "1790590167",
       "user": "mmusich"
     },
+    "51996": {
+      "additions": 61,
+      "auther_ref": "jetip_fix",
+      "auther_sha": "f1caabd30434bbeb646cb29239f4beeb5fe5c124",
+      "author": "pritampalit",
+      "body": "JetImpactParameters threw std::runtime_error whenever an output was not finite, which aborted the whole job. For a badly measured track, dxyError()/dzError() for can be inf. This was crashing on samples like displaced tau, QCD_MuEnriched etc. This is taken care of now : such values are replaced by a sentinel (-9999.0) with a warning instead of throwing, \"Not filled\" default values are shifted from -1 -> -9999.0.\r\n\r\nBackport to CMSSW_16_0_X is opened in parallel for the 16_0_9 build.",
+      "branch": "master",
+      "changed_files": 1,
+      "closed_at": "1790866387",
+      "comments": 12,
+      "commits": 1,
+      "created_at": "1790566762",
+      "deletions": 55,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "orp-approved",
+        "tests-approved",
+        "xpog-approved"
+      ],
+      "merge_commit_sha": "5a1de0660edbe79c8d46cd502effd074865410f7",
+      "merged_at": "1790866387",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 51996,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Crash at non-finite jet impact parameter uncertainties is fixed.",
+      "updated_at": "1790866389",
+      "user": "pritampalit"
+    },
     "52003": {
       "additions": 8,
       "auther_ref": "Phase2-hgx3368Y",
@@ -2066,6 +2098,38 @@
       "title": "Fix removal of Ofast from just IterationConfig.cc",
       "updated_at": "1790794148",
       "user": "dan131riley"
+    },
+    "52043": {
+      "additions": 153,
+      "auther_ref": "Phase2-hgx3691",
+      "auther_sha": "bf1bad860164b10f054e10f304e583c1445f742e",
+      "author": "bsunanda",
+      "body": "#### PR description:\r\n\r\nProvide the dd4hep version of the codewhich introduces chamfer possibility to the lead absorbers of EE HGCal\r\n\r\n#### PR validation:\r\n\r\nTested using the scripts in Geometry/HGCalCommonData/test\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nNothing special",
+      "branch": "master",
+      "changed_files": 4,
+      "closed_at": "1790866501",
+      "comments": 9,
+      "commits": 3,
+      "created_at": "1790831884",
+      "deletions": 7,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "geometry-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "065abe8fdb2498970b36a99206aaa7de067546de",
+      "merged_at": "1790866501",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52043,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Phase2 hgx3691 Provide the dd4hep version of the codewhich introduces chamfer possibility to the lead absorbers of EE HGCal",
+      "updated_at": "1790866503",
+      "user": "bsunanda"
     }
   }
 }
