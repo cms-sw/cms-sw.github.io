@@ -625,6 +625,40 @@
       "title": "Fix crash on non-finite jet impact parameter uncertainties (backport for 17_0_X)",
       "updated_at": "1790929441",
       "user": "pritampalit"
+    },
+    "52058": {
+      "additions": 827,
+      "auther_ref": "w3pi_pr_17_0_X",
+      "auther_sha": "033abedb78a4d03f2ad462bf309660c61014567f",
+      "author": "Jared-Fraticelli",
+      "body": "Backport of the W3Pi track-triplet emulation and GTT test-vector changes. Identical to the master PR except that TkTripletWord keeps the plain l1t namespace, since CMSSW_17_0_X predates the io_v1 dataformat migration.\r\n\r\n#### PR description:\r\n\r\nBackport of the W3Pi track-triplet emulation and GTT test-vector changes from #49003 to CMSSW_17_0_X.\r\n\r\nThe TkTripletWord is updated to contain a valid bit, triplet pT, eta, and phi fields (currently set to 0 until the firmware defines their encoding), the triplet invariant mass, the three triplet track pTs, and a charge bit. The track-triplet emulation plugin finds the three highest-pT tracks in an event, computes the invariant mass, and fills the output word, which spans two 64-bit link words in the GTT OutputToGlobalTrigger test vectors. The L1Nano triplet table is updated to match the new word content.\r\n\r\nThe content is identical to the master PR except that TkTripletWord keeps the plain l1t namespace, since CMSSW_17_0_X predates the io_v1 dataformat migration.\r\n\r\nSee https://indico.cern.ch/event/1588031/ for a talk on the W->3pi updates.\r\n\r\n#### PR validation:\r\n\r\nCompiled and tested in CMSSW_17_0_0_pre5 on top of the current CMSSW_17_0_X branch: the GTT test-vector workflow (L1Trigger/DemonstratorTools/test/gtt/createFirmwareInputFiles_cfg.py) runs unmodified, the triplet word is correctly written to the output test vectors, and the L1Nano triplet table fills with values consistent with the test vectors, using a CMSSW_17_0_0_pre1 Phase-2 RelVal (RelValTTbarToDilepton_14TeV, D121, noPU) as input.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nBackport of #49003 to CMSSW_17_0_X, requested by L1T for Phase-2 GTT firmware development in the 17_0_X cycle.\r\n\r\n\r\n",
+      "branch": "CMSSW_17_0_X",
+      "changed_files": 14,
+      "closed_at": "1790946685",
+      "comments": 14,
+      "commits": 1,
+      "created_at": "1790877610",
+      "deletions": 294,
+      "labels": [
+        "backport-ok",
+        "code-checks-approved",
+        "l1-approved",
+        "orp-approved",
+        "pending-signatures",
+        "tests-approved",
+        "xpog-pending"
+      ],
+      "merge_commit_sha": "135ce86836ec38aca16358315c31a74552d47847",
+      "merged_at": "1790946685",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_0_X",
+      "number": 52058,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "W3Pi emulation and test vectors (backport of #49003 to CMSSW_17_0_X)",
+      "updated_at": "1790946686",
+      "user": "Jared-Fraticelli"
     }
   }
 }
