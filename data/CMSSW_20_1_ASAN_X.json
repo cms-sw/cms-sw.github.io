@@ -10,7 +10,7 @@
       "cmsdistTags": {},
       "cmsdist_compared_tags": {
         "el9_amd64_gcc14": "IB/CMSSW_20_1_ASAN_X_2026-10-05-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X/master",
-        "el9_amd64_gcc15": "IB/CMSSW_20_1_ASAN_X_2026-10-02-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15"
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_ASAN_X_2026-10-05-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15"
       },
       "cmsdist_merged_prs": {
         "el9_amd64_gcc14": [
@@ -33,24 +33,6 @@
             "number": "10896",
             "title": "Fix relocation of migraphx cmake file",
             "url": "https://github.com/cms-sw/cmsdist/pull/10896"
-          },
-          {
-            "author_login": "shimashimarin",
-            "from_merge_commit": true,
-            "hash": "3a6fb4c83a3a5406579dcec0b249d5d1835c965f",
-            "is_merge_commit": false,
-            "number": "10818",
-            "title": "Add Sherpa3",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10818"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "1966578c934ab76d90a97b17fa4b2cfd537e0da2",
-            "is_merge_commit": false,
-            "number": "10890",
-            "title": "Avoid parallel nvcc compilation for aarch64",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10890"
           }
         ]
       },
@@ -220,6 +202,12 @@
           "details": {},
           "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/mon/20.1.ASAN-mon-23/CMSSW_20_1_ASAN_X_2026-10-05-2300/addOnTests.log",
           "passed": true
+        },
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {},
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/mon/20.1.ASAN-mon-23/CMSSW_20_1_ASAN_X_2026-10-05-2300/addOnTests.log",
+          "passed": true
         }
       ],
       "base_branch": "CMSSW_20_1_X",
@@ -231,6 +219,14 @@
           },
           "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/mon/20.1.ASAN-mon-23/CMSSW_20_1_ASAN_X_2026-10-05-2300/new/logAnalysis.pkl",
           "passed": "passed"
+        },
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "ignoreWarning": 4416
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/mon/20.1.ASAN-mon-23/CMSSW_20_1_ASAN_X_2026-10-05-2300/new/logAnalysis.pkl",
+          "passed": "passed"
         }
       ],
       "check-headers": "not-found",
@@ -239,7 +235,8 @@
         "el9_amd64_gcc15": "IB/CMSSW_20_1_ASAN_X_2026-10-05-2300/el9_amd64_gcc15"
       },
       "cmsdist_compared_tags": {
-        "el9_amd64_gcc14": "IB/CMSSW_20_1_ASAN_X_2026-10-02-2300/el9_amd64_gcc14..IB/CMSSW_20_1_ASAN_X_2026-10-05-2300/el9_amd64_gcc14"
+        "el9_amd64_gcc14": "IB/CMSSW_20_1_ASAN_X_2026-10-02-2300/el9_amd64_gcc14..IB/CMSSW_20_1_ASAN_X_2026-10-05-2300/el9_amd64_gcc14",
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_ASAN_X_2026-10-02-2300/el9_amd64_gcc15..IB/CMSSW_20_1_ASAN_X_2026-10-05-2300/el9_amd64_gcc15"
       },
       "cmsdist_merged_prs": {
         "el9_amd64_gcc14": [
@@ -261,6 +258,26 @@
             "title": "Avoid parallel nvcc compilation for aarch64",
             "url": "https://github.com/cms-sw/cmsdist/pull/10890"
           }
+        ],
+        "el9_amd64_gcc15": [
+          {
+            "author_login": "shimashimarin",
+            "from_merge_commit": true,
+            "hash": "3a6fb4c83a3a5406579dcec0b249d5d1835c965f",
+            "is_merge_commit": false,
+            "number": "10818",
+            "title": "Add Sherpa3",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10818"
+          },
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": true,
+            "hash": "1966578c934ab76d90a97b17fa4b2cfd537e0da2",
+            "is_merge_commit": false,
+            "number": "10890",
+            "title": "Avoid parallel nvcc compilation for aarch64",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10890"
+          }
         ]
       },
       "comp_baseline": "not-found",
@@ -271,6 +288,10 @@
       "dupDict": [
         {
           "arch": "el9_amd64_gcc14",
+          "passed": "error"
+        },
+        {
+          "arch": "el9_amd64_gcc15",
           "passed": "error"
         }
       ],
@@ -380,7 +401,8 @@
       "static_checks_failures": "not-found",
       "static_checks_v2": "not-found",
       "tests_archs": [
-        "el9_amd64_gcc14"
+        "el9_amd64_gcc14",
+        "el9_amd64_gcc15"
       ],
       "utests": [
         {
@@ -390,6 +412,12 @@
           },
           "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/mon/20.1.ASAN-mon-23/CMSSW_20_1_ASAN_X_2026-10-05-2300/unitTests-summary.log",
           "passed": "failed"
+        },
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {},
+          "file": "['/data/sdt/buildlogs/el9_amd64_gcc15/www/mon/20.1.ASAN-mon-23/CMSSW_20_1_ASAN_X_2026-10-05-2300/new/logAnalysis.pkl']",
+          "passed": "unknown"
         }
       ],
       "valgrind": "not-found",
