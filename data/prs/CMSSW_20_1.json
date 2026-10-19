@@ -389,6 +389,36 @@
       "updated_at": "1792419374",
       "user": "fwyzard"
     },
+    "10937": {
+      "additions": 125,
+      "auther_ref": "improve-hipblaslt-tensile",
+      "auther_sha": "d22684fa6918e9dd8051766fe9b82911de0cd9b9",
+      "author": "cms-sw",
+      "body": "Build hipblaslt Tensile as a separate package so that we build them once and re-use them for most of the SCRAM_ARCH. Tensile are GPU kernal code which should be GCC/OS independenct. Build recipes are updated so that hipblaslt-tensile cache the GPU tensiles as additional sources which can be reused by other architectures. \n\nPyYAML is also now build with libyaml ",
+      "branch": "IB/CMSSW_20_1_X/master",
+      "changed_files": 14,
+      "closed_at": "1792434559",
+      "comments": 9,
+      "commits": 1,
+      "created_at": "1792333429",
+      "deletions": 16,
+      "labels": [
+        "externals-approved",
+        "fully-signed",
+        "orp-pending",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "5328f59705e31b25aa6d96eaaad73c104b92ab18",
+      "merged_at": "1792434559",
+      "merged_by": "smuzaffar",
+      "number": 10937,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Build tensile for all gpu arch via hipblaslt",
+      "updated_at": "1792434575",
+      "user": "smuzaffar"
+    },
     "10938": {
       "additions": 2,
       "auther_ref": "IB/CMSSW_20_1_X/master_root_fix_deps",
@@ -418,6 +448,36 @@
       "title": "Update root dependencies found by CMake",
       "updated_at": "1792408247",
       "user": "fwyzard"
+    },
+    "10939": {
+      "additions": 3,
+      "auther_ref": "root-update-master-20261019",
+      "auther_sha": "785b6afff6bbbafdaaf25b2cb061f77f5919f33f",
+      "author": "akritkbehera",
+      "body": "",
+      "branch": "IB/CMSSW_20_1_X/rootmaster",
+      "changed_files": 1,
+      "closed_at": "1792433782",
+      "comments": 9,
+      "commits": 2,
+      "created_at": "1792390291",
+      "deletions": 2,
+      "labels": [
+        "externals-approved",
+        "fully-signed",
+        "orp-pending",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "1aafa01ba55cc192196c13885a46300a9a3decb1",
+      "merged_at": "1792433782",
+      "merged_by": "smuzaffar",
+      "number": 10939,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[ROOT6] Updated root to tip of branch master",
+      "updated_at": "1792433798",
+      "user": "akritkbehera"
     },
     "10941": {
       "additions": 4,
@@ -2315,6 +2375,38 @@
       "updated_at": "1792090454",
       "user": "smuzaffar"
     },
+    "52196": {
+      "additions": 0,
+      "auther_ref": "dqm-clang23-warn",
+      "auther_sha": "28f80e6e2266da90bae4bd0c523ed57004695dec",
+      "author": "smuzaffar",
+      "body": "Remove unused variables",
+      "branch": "master",
+      "changed_files": 2,
+      "closed_at": "1792434145",
+      "comments": 8,
+      "commits": 1,
+      "created_at": "1792066815",
+      "deletions": 2,
+      "labels": [
+        "code-checks-approved",
+        "dqm-approved",
+        "fully-signed",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "3febaa30175a8f7196b8c42eb961157867d5eb10",
+      "merged_at": "1792434145",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52196,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[DQM] [CLANG] Fix build warnings reported in clang IBs",
+      "updated_at": "1792434147",
+      "user": "smuzaffar"
+    },
     "52197": {
       "additions": 0,
       "auther_ref": "reconstruction-clang23-warn",
@@ -2506,6 +2598,39 @@
       "title": "Run3-gex231 Include FBCM as test code in 2026 special scenario for ForwardCommonData",
       "updated_at": "1792393054",
       "user": "bsunanda"
+    },
+    "52236": {
+      "additions": 0,
+      "auther_ref": "revert-52127-lst-build-flags",
+      "auther_sha": "c686e1a2e038a93be8c587c3cd0f71572f70fd75",
+      "author": "forthommel",
+      "body": "Reverts cms-sw/cmssw#52127",
+      "branch": "master",
+      "changed_files": 1,
+      "closed_at": "1792434155",
+      "comments": 9,
+      "commits": 1,
+      "created_at": "1792401025",
+      "deletions": 2,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "orp-approved",
+        "reconstruction-approved",
+        "tests-approved",
+        "tracking"
+      ],
+      "merge_commit_sha": "bb5a757d913939017695297eeb6653d906311b05",
+      "merged_at": "1792434155",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52236,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Revert \"LSTCore: -Ofast for the CPU backend and --use_fast_math for CUDA\"",
+      "updated_at": "1792434157",
+      "user": "forthommel"
     }
   }
 }
