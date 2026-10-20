@@ -33,39 +33,6 @@
       "title": "Adding `ScoutingMuonPropertiesMonitor` to `hltDqmOnlyScouting` sequence [16_0_X]",
       "updated_at": "1791898494",
       "user": "jprendi"
-    },
-    "52151": {
-      "additions": 4,
-      "auther_ref": "sistripcluster-readrule-split99-CMSSW_16_0_X",
-      "auther_sha": "363d92d262a6ee34338a81db38a129d36ae59c57",
-      "author": "davidwalter2",
-      "body": "#### PR description:\n\nBackport of #52149, fixes #52148. The SiStripCluster read rules for class versions 10-13 are never executed for split-level-99 input, so clusters written by CMSSW <= 14_X at split level 99 are read as empty. The cause is the ROOT bug root-project/root#23686. The targets are reordered so that the first target is the last source; the sources and the code are unchanged.\n\n#### PR validation:\n\nSame as #52149. In this release series (CMSSW_16_0_10, ROOT 6.36.07), split-level-99 files written by 10_6, 13_0 and 14_0 read cluster for cluster the same as their split-level-1 copies. With the current rules they read empty.\n\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\n\nBackport of #52149. Without the fix, this release series reads the strip clusters of Run 2 and 2022-2024 AOD, ALCARECO and split-99 MINIAOD as empty, and 2024 re-MINIs made with it inherit the empty clusters.\n\n Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01RnedNykDXbrLY8Gd7R5KLx\n",
-      "branch": "CMSSW_16_0_X",
-      "changed_files": 1,
-      "closed_at": "1791868963",
-      "comments": 7,
-      "commits": 1,
-      "created_at": "1791759229",
-      "deletions": 2,
-      "labels": [
-        "changes-dataformats",
-        "fully-signed",
-        "orp-approved",
-        "reconstruction-approved",
-        "tests-approved",
-        "trk"
-      ],
-      "merge_commit_sha": "560d8f6c661e0eced441c79376a303dcb63062a0",
-      "merged_at": "1791868963",
-      "merged_by": "cmsbuild",
-      "milestone": "CMSSW_16_0_X",
-      "number": 52151,
-      "release-notes": [],
-      "review_comments": 0,
-      "state": "closed",
-      "title": "[16_0_X] Fix SiStripCluster read rules for split-level-99 input",
-      "updated_at": "1791868966",
-      "user": "davidwalter2"
     }
   }
 }
