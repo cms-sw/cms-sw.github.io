@@ -1,4 +1,70 @@
 {
   "cmsdist": {},
-  "cmssw": {}
+  "cmssw": {
+    "52135": {
+      "additions": 1,
+      "auther_ref": "TritonRemoveWorkarounds150X",
+      "auther_sha": "a534357256db4eae3055d249c85f129b25734fd8",
+      "author": "kpedro88",
+      "body": "backport of #51337\n\nsince recent 15_0_X IBs see similar issues. successfully ran WF 10804.31 locally.",
+      "branch": "CMSSW_15_0_X",
+      "changed_files": 1,
+      "closed_at": "1791957919",
+      "comments": 8,
+      "commits": 4,
+      "created_at": "1791559741",
+      "deletions": 35,
+      "labels": [
+        "backport-ok",
+        "fully-signed",
+        "heterogeneous-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "a9bfb401e641b2be000aa06b18943cdb44363b6e",
+      "merged_at": "1791957919",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_15_0_X",
+      "number": 52135,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Remove Triton workarounds [15_0_X]",
+      "updated_at": "1791957921",
+      "user": "kpedro88"
+    },
+    "52153": {
+      "additions": 4,
+      "auther_ref": "sistripcluster-readrule-split99-CMSSW_15_0_X",
+      "auther_sha": "ffff6b6eaee7cb12a49048a787c2e87ec30254a0",
+      "author": "davidwalter2",
+      "body": "#### PR description:\n\nBackport of #52149, fixes #52148. The SiStripCluster read rules for class versions 10-13 are never executed for split-level-99 input, so clusters written by CMSSW <= 14_X at split level 99 are read as empty. The cause is the ROOT bug root-project/root#23686. The targets are reordered so that the first target is the last source; the sources and the code are unchanged.\n\n#### PR validation:\n\nSame as #52149. In this release series (CMSSW_15_0_19_patch2, ROOT 6.32.13), split-level-99 files written by 10_6, 13_0 and 14_0 read cluster for cluster the same as their split-level-1 copies. With the current rules they read empty.\n\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\n\nBackport of #52149. Without the fix, this release series reads the strip clusters of Run 2 and 2022-2024 AOD, ALCARECO and split-99 MINIAOD as empty, and 2024 re-MINIs made with it inherit the empty clusters.\n\n Generated with [Claude Code](https://claude.com/claude-code)\n\nhttps://claude.ai/code/session_01RnedNykDXbrLY8Gd7R5KLx\n",
+      "branch": "CMSSW_15_0_X",
+      "changed_files": 1,
+      "closed_at": "1791868985",
+      "comments": 7,
+      "commits": 1,
+      "created_at": "1791759233",
+      "deletions": 2,
+      "labels": [
+        "changes-dataformats",
+        "fully-signed",
+        "orp-approved",
+        "reconstruction-approved",
+        "tests-approved",
+        "trk"
+      ],
+      "merge_commit_sha": "16e6f9fb6c29ee2cc1a4274accbda5d72be0ad60",
+      "merged_at": "1791868985",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_15_0_X",
+      "number": 52153,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[15_0_X] Fix SiStripCluster read rules for split-level-99 input",
+      "updated_at": "1791868986",
+      "user": "davidwalter2"
+    }
+  }
 }
