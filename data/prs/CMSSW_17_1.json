@@ -1,4 +1,39 @@
 {
   "cmsdist": {},
-  "cmssw": {}
+  "cmssw": {
+    "52280": {
+      "additions": 43,
+      "auther_ref": "mm_fix_getEventContent_17_1_X",
+      "auther_sha": "4ff5fc207c1bdd7112c91f9ef4a67b96ede5c788",
+      "author": "mmusich",
+      "body": "#### PR description:\r\n\r\nThis PR fixes two bugs:\r\n- removes from `HLTrigger/Configuration/python/HLTrigger_EventContent_cff.py` the collections manually added in #52124. Those are only relevant for Phase-2 and in this cycle as there is still active development on Run-3 they should not be added directly to the auto-generated file, but appended manually in `Configuration/EventContent/python/EventContent_cff.py`\r\n- secondly, `getEventContent.py` is patched to deliver also the content of `hltOutputDQMTestDataScouting`  to the FEVT and DEBUG data-tiers, while avoiding duplication of the scouting collections in several derived data-tiers.\r\n\r\n#### PR validation:\r\n\r\n`getHLT.sh` with these changes runs.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nNot a backport but it will be backported to CMSSW_17_0_X as a bug-fix.\r\n",
+      "branch": "CMSSW_17_1_X",
+      "changed_files": 3,
+      "closed_at": "1792996487",
+      "comments": 10,
+      "commits": 2,
+      "created_at": "1792834302",
+      "deletions": 38,
+      "labels": [
+        "bug-fix",
+        "code-checks-approved",
+        "fully-signed",
+        "hlt-approved",
+        "operations-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "53e8134e3c7e5f86d71ab9f6dd93b837e1789a65",
+      "merged_at": "1792996487",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_1_X",
+      "number": 52280,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[17.1.X ] Fix `HLTrigger` Event contents",
+      "updated_at": "1792996488",
+      "user": "mmusich"
+    }
+  }
 }

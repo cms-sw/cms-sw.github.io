@@ -3302,6 +3302,38 @@
       "title": "add 1D comparison plots of ECAL laser corrections",
       "updated_at": "1792824195",
       "user": "mmusich"
+    },
+    "52279": {
+      "additions": 175,
+      "auther_ref": "fts_register_unknown_threads",
+      "auther_sha": "04227693e140e738ee2e8b95d7a2df6114f0d491",
+      "author": "fwyzard",
+      "body": "#### PR description:\n\nThe `FastTimerService` registers each thread when it enters the TBB arena it observes. A thread that reaches one of its signals without having entered that arena (_e.g._ a thread running in another task_arena, or outside of TBB) was not registered, and timing it dereferenced a null pointer.\n\nThe `FastTimerService` now registers those threads on their first measurement, and reports how many there have been at the end of the job.\n\nA new unit test, `UnobservedThreadSignals`, emits the delayed-get signals of a module from a new `std::thread`, which has never entered a TBB arena. Without these changes the job crashes; now it passes and reports the three unobserved threads at the end of the job.\n\nAs a minor optimisation, the number of calls to read the per-thread data with `::pthread_getspecific()` has been reduced to one per measurement.\n\n\n#### PR validation:\n\nThe new unit test passes.",
+      "branch": "master",
+      "changed_files": 6,
+      "closed_at": "1792996511",
+      "comments": 14,
+      "commits": 3,
+      "created_at": "1792821172",
+      "deletions": 38,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "hlt-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "b9fc7741c59bfaa9e706b3f43d96e202116730b0",
+      "merged_at": "1792996511",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52279,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "`FastTimerService`: handle unknown threads",
+      "updated_at": "1792996513",
+      "user": "fwyzard"
     }
   }
 }
