@@ -3438,6 +3438,38 @@
       "title": "FastTimerService: add printLumiSummary, gate the transition reports",
       "updated_at": "1793028890",
       "user": "fwyzard"
+    },
+    "52292": {
+      "additions": 42,
+      "auther_ref": "mergeRNTuple",
+      "auther_sha": "08a59146cbee7b740dfcc5127c7ca68e860d83e2",
+      "author": "makortel",
+      "body": "#### PR description:\n\nThe first test of RNTuple RelVals reported Merge job failures https://gitlab.cern.ch/cms-ppd/monitoring-operation/special-relvals-requests/-/work_items/313#note_12613491 . Those failures are presumably caused by the Merge job trying to merge TTree files. To address the situation this PR adds an `nrtuple` configuration option to the Merge jobs.\n\nThis PR also adds a rudimentary unit test that checks the Source and OutputModule types for various configuration option combinations.\n\nNote: I don't know what kind of interaction needs to happen between workflow submission, WM, and the `Merge.py` in order to enable the `rntuple` option.\n\nResolves https://github.com/cms-sw/framework-team/issues/2471\n\n#### PR validation:\n\nUnit tests succeed.",
+      "branch": "master",
+      "changed_files": 5,
+      "closed_at": "1793033506",
+      "comments": 8,
+      "commits": 1,
+      "created_at": "1793026771",
+      "deletions": 4,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "operations-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "4aee312a6c4de7a5605550b30b1f71eb005297bc",
+      "merged_at": "1793033506",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52292,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Add rntuple option to Merge jobs, add rudimentary unit test",
+      "updated_at": "1793033506",
+      "user": "makortel"
     }
   }
 }
