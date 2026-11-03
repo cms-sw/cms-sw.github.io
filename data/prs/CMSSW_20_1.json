@@ -2208,6 +2208,38 @@
       "title": "Define the new SiPixelClusterShapeLimitsRcd record in the GTs in autoCond, and port all them in 170X/201X",
       "updated_at": "1793705866",
       "user": "perrotta"
+    },
+    "52372": {
+      "additions": 2062,
+      "auther_ref": "p2gt_ar26_201X",
+      "auther_sha": "fde9ca42b31dbf5450e3b85221fadbbf5cbce445",
+      "author": "RobertJWard",
+      "body": "#### PR description:\n\nDuplicate of 17_0_X backport PR https://github.com/cms-sw/cmssw/pull/52352, targeting instead master (20_1_X).\n\nThis PR updates the Phase-2 Global Trigger Emulator step-1 menu to use the latest online-to-offline scalings from [L1T annual review 2026](https://indico.cern.ch/event/1709561/), derived with the [standalone menu tools](https://github.com/cms-l1-dpg/Phase2-L1MenuTools) AR26 configs using CMSSW_17_0_0_pre6 (identical to pre7 in terms of L1 objects in the menu). \n\nIt also adds three new menus as options for the P2GT step, e.g. `-s L1P2GT:v0p0_2026`, containing the seeds already available to be run in P2GT. The default stays `step1_2024`:\n- `step1p5_2026`: the new core menu based on the Run 3 menu\n- `v0p0_2026`: step 1.5 plus the available step 2 seeds and the extended-eta seeds, which will become the new baseline going forwards\n- `step1and2_2026`: `step1_2024` plus the available step 2 seeds that weren't yet in the emulator, i.e the previous baseline\n\nSeeds not-yet implementable in P2GT include the L1 Calo Tau seeds, the L1 Track-Triplet W->3pi seed, the b-tag L1 NG JetSC4 seed, and the two wide-jet L1 JetSC8 seeds that use the mass variable. The standalone L1EG seeds (both normal and extended) still use the stand-in of TkPhotons without applying isolation, but the two are equivalent physically and just differ in where the inputs come from (CL2 vs GCT).\n\nIn addition to the new menus, this updates the collection and format used in P2GT for the wide-jet objects (which hadn't previously been used in P2GT seeds) in line with the latest developments, and the thresholds in the triple TkMuon step 1 seed have been corrected (4/2 GeV to 3.5/2.5 GeV, to match the name and implementation in standalone tools). \n\n#### PR validation:  \n\nIn preparation: running the standard Phase-2 tests for the default `step1_2024` menu, and a comparison of standalone tools vs P2GT rates for each of the four menus: `step1_2024`, `step1and2_2026`, `step1p5_2026` and `v0p0_2026`",
+      "branch": "master",
+      "changed_files": 24,
+      "closed_at": "1793720723",
+      "comments": 20,
+      "commits": 16,
+      "created_at": "1793649644",
+      "deletions": 120,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "l1-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "90ebc65fdbd9f4c79b0e1eca74ed1d3de85a6fdb",
+      "merged_at": "1793720723",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52372,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[L1T] Update P2GT Emulator with Scalings from Annual Review 2026 and add additional menu options (Phase 2)",
+      "updated_at": "1793720725",
+      "user": "RobertJWard"
     }
   }
 }
