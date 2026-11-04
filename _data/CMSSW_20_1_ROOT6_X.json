@@ -240,8 +240,8 @@
           "arch": "el9_amd64_gcc14",
           "details": {
             "known_failed": 0,
-            "num_failed": 1,
-            "num_passed": 0
+            "num_failed": 3,
+            "num_passed": 16
           },
           "done": false,
           "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/tue/20.1.ROOT6-tue-23/CMSSW_20_1_ROOT6_X_2026-11-03-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -257,9 +257,11 @@
       "utests": [
         {
           "arch": "el9_amd64_gcc14",
-          "details": {},
-          "file": "['/data/sdt/buildlogs/el9_amd64_gcc14/www/tue/20.1.ROOT6-tue-23/CMSSW_20_1_ROOT6_X_2026-11-03-2300/new/logAnalysis.pkl']",
-          "passed": "unknown"
+          "details": {
+            "num_fails": "2"
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/tue/20.1.ROOT6-tue-23/CMSSW_20_1_ROOT6_X_2026-11-03-2300/unitTests-summary.log",
+          "passed": "failed"
         }
       ],
       "valgrind": "not-found",
@@ -1000,30 +1002,11 @@
         "el9_amd64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-10-29-2300/el9_amd64_gcc14"
       },
       "cmsdist_compared_tags": {
-        "el9_aarch64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-10-27-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_ROOT6_X_2026-10-29-2300/el9_aarch64_gcc14",
+        "el9_aarch64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-10-29-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_ROOT6_X_2026-10-29-2300/el9_aarch64_gcc14",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-10-29-2300/el9_amd64_gcc14..IB/CMSSW_20_1_ROOT6_X_2026-10-29-2300/el9_amd64_gcc14"
       },
       "cmsdist_merged_prs": {
-        "el9_aarch64_gcc14": [
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "d4b3fa609e34394573d144ea65940f27dacbf7b3",
-            "is_merge_commit": false,
-            "number": "10965",
-            "title": "cms-common: replace egrep with grep -E",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10965"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "7bcebf3a44209c8bded7cbb6d2b8db01ea6ce73e",
-            "is_merge_commit": false,
-            "number": "10964",
-            "title": "Fix Sherpa3 to pick up our python",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10964"
-          }
-        ],
+        "el9_aarch64_gcc14": [],
         "el9_amd64_gcc14": []
       },
       "comp_baseline": "not-found",
@@ -1121,48 +1104,22 @@
     },
     {
       "RVExceptions": null,
-      "addons": [
-        {
-          "arch": "el9_aarch64_gcc14",
-          "details": {},
-          "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/tue/20.1.ROOT6-tue-23/CMSSW_20_1_ROOT6_X_2026-10-27-2300/addOnTests.log",
-          "passed": true
-        }
-      ],
+      "addons": [],
       "base_branch": "CMSSW_20_1_X",
-      "builds": [
-        {
-          "arch": "el9_aarch64_gcc14",
-          "details": {
-            "compWarning": 5,
-            "ignoreWarning": 586
-          },
-          "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/tue/20.1.ROOT6-tue-23/CMSSW_20_1_ROOT6_X_2026-10-27-2300/new/logAnalysis.pkl",
-          "passed": "warning"
-        }
-      ],
+      "builds": [],
       "check-headers": "not-found",
       "cmsdistTags": {
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-10-27-2300/el9_aarch64_gcc14",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-10-27-2300/el9_amd64_gcc14"
       },
-      "cmsdist_compared_tags": {
-        "el9_aarch64_gcc14": "IB/CMSSW_20_1_ROOT6_X_2026-10-27-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_ROOT6_X_2026-10-27-2300/el9_aarch64_gcc14"
-      },
-      "cmsdist_merged_prs": {
-        "el9_aarch64_gcc14": []
-      },
+      "cmsdist_compared_tags": {},
+      "cmsdist_merged_prs": {},
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
       "compared_tags": "CMSSW_20_1_ROOT6_X_2026-10-26-2300-->CMSSW_20_1_ROOT6_X_2026-10-27-2300",
       "crab_tests": "not-found",
       "dqm_tests": "not-found",
-      "dupDict": [
-        {
-          "arch": "el9_aarch64_gcc14",
-          "passed": "passed"
-        }
-      ],
+      "dupDict": [],
       "fwlite": [],
       "hlt_tests": "not-found",
       "ib_date": "2026-10-27-2300-0000",
@@ -1252,35 +1209,12 @@
       "python3_tests": [],
       "release_name": "CMSSW_20_1_ROOT6_X_2026-10-27-2300",
       "release_queue": "CMSSW_20_1_ROOT6_X",
-      "relvals": [
-        {
-          "arch": "el9_aarch64_gcc14",
-          "details": {
-            "known_failed": 50,
-            "num_failed": 1,
-            "num_passed": 3607
-          },
-          "done": true,
-          "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/tue/20.1.ROOT6-tue-23/CMSSW_20_1_ROOT6_X_2026-10-27-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
-          "passed": false
-        }
-      ],
+      "relvals": [],
       "static_checks": "not-found",
       "static_checks_failures": "not-found",
       "static_checks_v2": "not-found",
-      "tests_archs": [
-        "el9_aarch64_gcc14"
-      ],
-      "utests": [
-        {
-          "arch": "el9_aarch64_gcc14",
-          "details": {
-            "num_fails": "3"
-          },
-          "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/tue/20.1.ROOT6-tue-23/CMSSW_20_1_ROOT6_X_2026-10-27-2300/unitTests-summary.log",
-          "passed": "failed"
-        }
-      ],
+      "tests_archs": [],
+      "utests": [],
       "valgrind": "not-found",
       "vtune": "not-found"
     },
