@@ -266,6 +266,38 @@
       "title": "[CMSSW_17_0_X] L1 GMT Upgrade of Kalman Filter for Barrel Muon KMTF",
       "updated_at": "1793779181",
       "user": "zhenbinwu"
+    },
+    "52352": {
+      "additions": 2062,
+      "auther_ref": "p2gt_ar26",
+      "auther_sha": "4036b3b67798d05e4c83e8b523210c3ebb4130b0",
+      "author": "RobertJWard",
+      "body": "#### PR description:\n\nThis PR updates the Phase-2 Global Trigger Emulator step-1 menu to use the latest online-to-offline scalings from [L1T annual review 2026](https://indico.cern.ch/event/1709561/), derived with the [standalone menu tools](https://github.com/cms-l1-dpg/Phase2-L1MenuTools) AR26 configs using CMSSW_17_0_0_pre6 (identical to pre7 in terms of L1 objects in the menu). \n\nIt also adds three new menus as options for the P2GT step, e.g. `-s L1P2GT:v0p0_2026`, containing the seeds already available to be run in P2GT. The default stays `step1_2024`:\n- `step1p5_2026`: the new core menu based on the Run 3 menu\n- `v0p0_2026`: step 1.5 plus the available step 2 seeds and the extended-eta seeds, which will become the new baseline going forwards\n- `step1and2_2026`: `step1_2024` plus the available step 2 seeds that weren't yet in the emulator, i.e the previous baseline\n\nSeeds not-yet implementable in P2GT include the L1 Calo Tau seeds, the L1 Track-Triplet W->3pi seed, the b-tag L1 NG JetSC4 seed, and the two wide-jet L1 JetSC8 seeds that use the mass variable. The standalone L1EG seeds (both normal and extended) still use the stand-in of TkPhotons without applying isolation, but the two are equivalent physically and just differ in where the inputs come from (CL2 vs GCT).\n\nIn addition to the new menus, this updates the collection and format used in P2GT for the wide-jet objects (which hadn't previously been used in P2GT seeds) in line with the latest developments, and the thresholds in the triple TkMuon step 1 seed have been corrected (4/2 GeV to 3.5/2.5 GeV, to match the name and implementation in standalone tools). \n\n#### PR validation:  \n\nIn preparation: running the standard Phase-2 tests for the default `step1_2024` menu, and a comparison of standalone tools vs P2GT rates for each of the four menus: `step1_2024`, `step1and2_2026`, `step1p5_2026` and `v0p0_2026`\n\nThis is a backport PR targeting the 17_0_0 release.",
+      "branch": "CMSSW_17_0_X",
+      "changed_files": 24,
+      "closed_at": "1793796492",
+      "comments": 42,
+      "commits": 16,
+      "created_at": "1793370542",
+      "deletions": 120,
+      "labels": [
+        "fully-signed",
+        "l1-approved",
+        "orp-approved",
+        "tests-approved",
+        "urgent"
+      ],
+      "merge_commit_sha": "1752c2dfac202d20cec62f190e44df202f95e692",
+      "merged_at": "1793796492",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_0_X",
+      "number": 52352,
+      "release-notes": [],
+      "review_comments": 1,
+      "state": "closed",
+      "title": "[17_0_X] [L1T] Update P2GT Emulator with Scalings from Annual Review 2026 and add additional menu options (Phase 2)",
+      "updated_at": "1793796493",
+      "user": "RobertJWard"
     }
   }
 }
