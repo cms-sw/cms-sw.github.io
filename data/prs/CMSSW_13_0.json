@@ -1,6 +1,38 @@
 {
   "cmsdist": {},
   "cmssw": {
+    "52270": {
+      "additions": 160,
+      "auther_ref": "add-MCZllMesonPhotonFilter-13_0_X",
+      "auther_sha": "6356f2748b4842d96e15c96f0f840cd12e5dd643",
+      "author": "PeiZhuLai",
+      "body": "backport of #52268\r\nto 13_0_X. It adds `MCZllMesonPhotonFilter`, a HepMC-based\r\ngenerator filter for Drell-Yan samples, with the same code as in master.\r\nNo existing code is changed.\r\n\r\n#### PR validation:\r\n\r\nBuilt in CMSSW_13_0_25. 20000 Pythia8 Z+jet  ee/ events were filtered in the same job with\r\nthis module and with the private version used for our current samples, modified to\r\nuse the same fixed cluster axis: both keep the same events (2457 pass both, 0 pass only\r\none of them).\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nBackport of #52268. HIG needs the filter in the Run3Summer23 campaign, for the\r\ncentral production of the DY background samples of the HZ analysis.\r\n",
+      "branch": "CMSSW_13_0_X",
+      "changed_files": 1,
+      "closed_at": "1793857422",
+      "comments": 9,
+      "commits": 2,
+      "created_at": "1792736887",
+      "deletions": 0,
+      "labels": [
+        "backport-ok",
+        "fully-signed",
+        "generators-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "c1809dca5977235717a2060a6bf9fd9dce215c32",
+      "merged_at": "1793857422",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_13_0_X",
+      "number": 52270,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[13_0_X] Add MCZllMesonPhotonFilter to GeneratorInterface/GenFilters",
+      "updated_at": "1793857424",
+      "user": "PeiZhuLai"
+    },
     "52315": {
       "additions": 32,
       "auther_ref": "xrd_130x",
