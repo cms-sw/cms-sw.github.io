@@ -13,7 +13,7 @@
       "cmsdist_compared_tags": {
         "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-05-2300/el10_amd64_gcc15..IB/CMSSW_20_1_X/g15_el10",
         "el8_amd64_gcc14": "ERR/CMSSW_20_1_X_2026-11-06-1100/el8_amd64_gcc14..IB/CMSSW_20_1_X/master",
-        "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-11-04-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/master",
+        "el9_aarch64_gcc14": "ERR/CMSSW_20_1_X_2026-11-06-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc14": "ERR/CMSSW_20_1_X_2026-11-06-1100/el9_amd64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-05-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
         "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-11-05-2300/el9_amd64_gcc16..IB/CMSSW_20_1_X/gcc16",
@@ -51,26 +51,7 @@
             "url": "https://github.com/cms-sw/cmsdist/pull/10988"
           }
         ],
-        "el9_aarch64_gcc14": [
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": false,
-            "hash": "74f7f2a8a0a04d5317e8b9caf2187da741f666f0",
-            "is_merge_commit": false,
-            "number": "10988",
-            "title": "Update tag for RecoTracker-MkFit to V00-20-02",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10988"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": false,
-            "hash": "6c2080a707f868678f87b45f03805e26de67c530",
-            "is_merge_commit": false,
-            "number": "10986",
-            "title": "Update tag for RecoLocalTracker-SiPixelRecHits to V00-00-01",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10986"
-          }
-        ],
+        "el9_aarch64_gcc14": [],
         "el9_amd64_gcc14": [
           {
             "author_login": "cms-sw",
@@ -289,23 +270,71 @@
     },
     {
       "RVExceptions": null,
-      "addons": [],
+      "addons": [
+        {
+          "arch": "el9_aarch64_gcc14",
+          "details": {},
+          "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/fri/20.1-fri-23/CMSSW_20_1_X_2026-11-06-2300/addOnTests.log",
+          "passed": true
+        }
+      ],
       "base_branch": "CMSSW_20_1_X",
-      "builds": [],
+      "builds": [
+        {
+          "arch": "el9_aarch64_gcc14",
+          "details": {
+            "compError": 10,
+            "compWarning": 4,
+            "ignoreWarning": 439,
+            "linkError": 1,
+            "miscError": 1
+          },
+          "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/fri/20.1-fri-23/CMSSW_20_1_X_2026-11-06-2300/new/logAnalysis.pkl",
+          "passed": "error"
+        }
+      ],
       "check-headers": "inprogress",
       "clang_analyzer": "inprogress",
       "class_versions": "inprogress",
       "cmsdistTags": {
         "el9_aarch64_gcc14": "ERR/CMSSW_20_1_X_2026-11-06-2300/el9_aarch64_gcc14"
       },
-      "cmsdist_compared_tags": {},
-      "cmsdist_merged_prs": {},
+      "cmsdist_compared_tags": {
+        "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-11-04-2300/el9_aarch64_gcc14..ERR/CMSSW_20_1_X_2026-11-06-2300/el9_aarch64_gcc14"
+      },
+      "cmsdist_merged_prs": {
+        "el9_aarch64_gcc14": [
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": false,
+            "hash": "74f7f2a8a0a04d5317e8b9caf2187da741f666f0",
+            "is_merge_commit": false,
+            "number": "10988",
+            "title": "Update tag for RecoTracker-MkFit to V00-20-02",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10988"
+          },
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": false,
+            "hash": "6c2080a707f868678f87b45f03805e26de67c530",
+            "is_merge_commit": false,
+            "number": "10986",
+            "title": "Update tag for RecoLocalTracker-SiPixelRecHits to V00-00-01",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10986"
+          }
+        ]
+      },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
       "compared_tags": "CMSSW_20_1_X_2026-11-06-1100-->CMSSW_20_1_X_2026-11-06-2300",
       "crab_tests": "inprogress",
       "dqm_tests": "not-found",
-      "dupDict": [],
+      "dupDict": [
+        {
+          "arch": "el9_aarch64_gcc14",
+          "passed": "error"
+        }
+      ],
       "flawfinder": "inprogress",
       "fwlite": [],
       "hlt-p2-timing": "inprogress",
@@ -341,8 +370,17 @@
       "static_checks": "inprogress",
       "static_checks_failures": "not-found",
       "static_checks_v2": "inprogress",
-      "tests_archs": [],
-      "utests": [],
+      "tests_archs": [
+        "el9_aarch64_gcc14"
+      ],
+      "utests": [
+        {
+          "arch": "el9_aarch64_gcc14",
+          "details": {},
+          "file": "['/data/sdt/buildlogs/el9_aarch64_gcc14/www/fri/20.1-fri-23/CMSSW_20_1_X_2026-11-06-2300/new/logAnalysis.pkl']",
+          "passed": "unknown"
+        }
+      ],
       "valgrind": "not-found",
       "vtune": "inprogress"
     },
@@ -509,6 +547,16 @@
             },
             "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/fri/20.1-fri-11/CMSSW_20_1_X_2026-11-06-1100/gpu/nvidia_h100/unitTests-summary.log",
             "gpu": "nvidia_h100",
+            "passed": "passed",
+            "release_name": "CMSSW_20_1_X_2026-11-06-1100"
+          },
+          "nvidia_l4/el9_amd64_gcc14": {
+            "arch": "el9_amd64_gcc14",
+            "details": {
+              "num_fails": "0"
+            },
+            "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/fri/20.1-fri-11/CMSSW_20_1_X_2026-11-06-1100/gpu/nvidia_l4/unitTests-summary.log",
+            "gpu": "nvidia_l4",
             "passed": "passed",
             "release_name": "CMSSW_20_1_X_2026-11-06-1100"
           },
@@ -6997,10 +7045,7 @@
         "data": "/ib-static-analysis/CMSSW_20_1_X_2026-10-28-2300/el9_amd64_gcc14/build-logs",
         "status": "warning"
       },
-      "class_versions": {
-        "data": "/class_versions/CMSSW_20_1_X_2026-10-28-2300/el9_amd64_gcc14/class_versions.html",
-        "status": "passed"
-      },
+      "class_versions": "inprogress",
       "cmsdistTags": {},
       "cmsdist_compared_tags": {},
       "cmsdist_merged_prs": {},
@@ -7028,16 +7073,10 @@
       "material_budget_v2": "not-found",
       "merged_prs": [],
       "next_ib": false,
-      "piechart": {
-        "data": "el9_amd64_gcc14/38434.21/step3_cpu.resources",
-        "status": "passed"
-      },
-      "profiling": "found",
+      "piechart": "inprogress",
+      "profiling": "inprogress",
       "python3_tests": [],
-      "reco_event_loop": {
-        "data": "el9_amd64_gcc14/38434.21/sorted_RES_CPU_step3.html",
-        "status": "passed"
-      },
+      "reco_event_loop": "inprogress",
       "release_name": "CMSSW_20_1_X_2026-10-28-2300",
       "release_queue": "CMSSW_20_1_X",
       "relvals": [],
@@ -7051,10 +7090,7 @@
       "ubsan-logs": "error",
       "utests": [],
       "valgrind": "not-found",
-      "vtune": {
-        "data": "el9_amd64_gcc14/38434.21/r-step3-38434.21-hs/",
-        "status": "passed"
-      }
+      "vtune": "inprogress"
     },
     {
       "RVExceptions": null,
@@ -7063,10 +7099,7 @@
       "builds": [],
       "check-headers": "inprogress",
       "clang_analyzer": "inprogress",
-      "class_versions": {
-        "data": "/class_versions/CMSSW_20_1_X_2026-10-28-1100/el9_amd64_gcc14/class_versions.html",
-        "status": "passed"
-      },
+      "class_versions": "inprogress",
       "cmsdistTags": {},
       "cmsdist_compared_tags": {},
       "cmsdist_merged_prs": {},
@@ -7094,16 +7127,10 @@
       "material_budget_v2": "not-found",
       "merged_prs": [],
       "next_ib": false,
-      "piechart": {
-        "data": "el9_amd64_gcc14/38434.21/step3_cpu.resources",
-        "status": "passed"
-      },
-      "profiling": "found",
+      "piechart": "inprogress",
+      "profiling": "inprogress",
       "python3_tests": [],
-      "reco_event_loop": {
-        "data": "el9_amd64_gcc14/38434.21/sorted_RES_CPU_step3.html",
-        "status": "passed"
-      },
+      "reco_event_loop": "inprogress",
       "release_name": "CMSSW_20_1_X_2026-10-28-1100",
       "release_queue": "CMSSW_20_1_X",
       "relvals": [],
@@ -7113,10 +7140,7 @@
       "tests_archs": [],
       "utests": [],
       "valgrind": "not-found",
-      "vtune": {
-        "data": "el9_amd64_gcc14/38434.21/r-step3-38434.21-hs/",
-        "status": "passed"
-      }
+      "vtune": "inprogress"
     },
     {
       "RVExceptions": null,
@@ -7125,10 +7149,7 @@
       "builds": [],
       "check-headers": "inprogress",
       "clang_analyzer": "inprogress",
-      "class_versions": {
-        "data": "/class_versions/CMSSW_20_1_X_2026-10-27-2300/el9_amd64_gcc14/class_versions.html",
-        "status": "passed"
-      },
+      "class_versions": "inprogress",
       "cmsdistTags": {
         "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-10-27-2300/el10_amd64_gcc15",
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-10-27-2300/el8_amd64_gcc14",
@@ -7227,16 +7248,10 @@
         }
       ],
       "next_ib": false,
-      "piechart": {
-        "data": "el9_amd64_gcc14/38434.21/step3_cpu.resources",
-        "status": "passed"
-      },
-      "profiling": "found",
+      "piechart": "inprogress",
+      "profiling": "inprogress",
       "python3_tests": [],
-      "reco_event_loop": {
-        "data": "el9_amd64_gcc14/38434.21/sorted_RES_CPU_step3.html",
-        "status": "passed"
-      },
+      "reco_event_loop": "inprogress",
       "release_name": "CMSSW_20_1_X_2026-10-27-2300",
       "release_queue": "CMSSW_20_1_X",
       "relvals": [],
@@ -7246,10 +7261,7 @@
       "tests_archs": [],
       "utests": [],
       "valgrind": "not-found",
-      "vtune": {
-        "data": "el9_amd64_gcc14/38434.21/r-step3-38434.21-hs/",
-        "status": "passed"
-      }
+      "vtune": "inprogress"
     },
     {
       "RVExceptions": null,
