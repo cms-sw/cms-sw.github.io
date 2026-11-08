@@ -64,6 +64,42 @@
       "title": "[14_0_X] XrdAdaptor: Use inactive sources first before trying to open a new source when handling a failed request, and Increase RequestTimeout to three times the StreamTimeout",
       "updated_at": "1793604097",
       "user": "makortel"
+    },
+    "52369": {
+      "additions": 770,
+      "auther_ref": "inputFileCatalogMemory_140x",
+      "auther_sha": "dd06d922dc70632746f33f97696a27ee6f1094f5",
+      "author": "makortel",
+      "body": "#### PR description:\n\nThis PR backports https://github.com/cms-sw/cmssw/pull/50911 as requested in https://github.com/cms-sw/cmssw/issues/47050#issuecomment-6069544996 . To make the backport more straightforward the following additional cleanup PRs are included\n* https://github.com/cms-sw/cmssw/pull/47914\n* https://github.com/cms-sw/cmssw/pull/49134\n* https://github.com/cms-sw/cmssw/pull/49430\n\nThe diffs of these 3 PRs applied cleanly on 14_0_X (whereas the #50911 did not). Therefore I'd suggest to focus the review effort to compare the last commit of this PR to the content of #50911.\n\nResolves https://github.com/cms-sw/framework-team/issues/2482\n\n#### PR validation:\n\nCode compiles.\n\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\n\nBackport of https://github.com/cms-sw/cmssw/pull/47914, https://github.com/cms-sw/cmssw/pull/49134, https://github.com/cms-sw/cmssw/pull/49430, and https://github.com/cms-sw/cmssw/pull/50911. Backports to 14_1_X - 16_1_X (to satisfy policy) to be done after the review of this PR finishes.",
+      "branch": "CMSSW_14_0_X",
+      "changed_files": 55,
+      "closed_at": "1794143300",
+      "comments": 24,
+      "commits": 5,
+      "created_at": "1793645828",
+      "deletions": 1150,
+      "labels": [
+        "alca-approved",
+        "core-approved",
+        "daq-approved",
+        "dqm-approved",
+        "fully-signed",
+        "generators-approved",
+        "l1-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "642d18a81a67d174be56f227b2f8b4051c7a9e68",
+      "merged_at": "1794143300",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_14_0_X",
+      "number": 52369,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[14_0_X] Clean up InputFileCatalog (including rfio, TrivialFileCatalog) and reduce its memory usage",
+      "updated_at": "1794143302",
+      "user": "makortel"
     }
   }
 }
