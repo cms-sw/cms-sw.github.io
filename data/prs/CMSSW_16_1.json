@@ -1,4 +1,34 @@
 {
   "cmsdist": {},
-  "cmssw": {}
+  "cmssw": {
+    "52429": {
+      "additions": 40,
+      "auther_ref": "mm_fix_getEventContent_16_1_X",
+      "auther_sha": "d85c86f6c73985aa907c250ef1f9983f7742fd1c",
+      "author": "mmusich",
+      "body": "backport of https://github.com/cms-sw/cmssw/pull/52281\n\n#### PR description:\n\nThis PR fixes `getEventContent.py`. It is patched to deliver also the content of `hltOutputDQMTestDataScouting`  to the FEVT and DEBUG data-tiers, while avoiding duplication of the scouting collections in several derived data-tiers.\n\n#### PR validation:\n\n`getHLT.sh` with these changes runs.\n\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\n\nPartial backport of to CMSSW_16_1_X of https://github.com/cms-sw/cmssw/pull/52281\n\n",
+      "branch": "CMSSW_16_1_X",
+      "changed_files": 2,
+      "comments": 7,
+      "commits": 1,
+      "created_at": "1794058187",
+      "deletions": 35,
+      "labels": [
+        "backport-ok",
+        "bug-fix",
+        "fully-signed",
+        "hlt-approved",
+        "orp-pending",
+        "tests-approved"
+      ],
+      "milestone": "CMSSW_16_1_X",
+      "number": 52429,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "open",
+      "title": "[16.1.X ] Fix `HLTrigger` Event contents",
+      "updated_at": "1794080056",
+      "user": "mmusich"
+    }
+  }
 }
