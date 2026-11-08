@@ -1,0 +1,93 @@
+{
+  "ctime": 0,
+  "data": [
+    {
+      "das": {
+        "expire": 1616074597,
+        "instance": "prod/global",
+        "primary_key": "file.name",
+        "record": 1,
+        "services": [
+          "rucio:file4dataset_site"
+        ]
+      },
+      "file": [
+        {
+          "adler32": "240c13bb",
+          "bytes": 13122568,
+          "md5": null,
+          "name": "/store/relval/CMSSW_7_1_0_pre7/RelValBeamHalo/GEN-SIM/PRE_STA71_V3-v1/00000/E86B31A6-6DD1-E311-A7AA-002618943949.root",
+          "pfns": {
+            "gsiftp://eoscmsftp.cern.ch:2811/eos/cms/store/relval/CMSSW_7_1_0_pre7/RelValBeamHalo/GEN-SIM/PRE_STA71_V3-v1/00000/E86B31A6-6DD1-E311-A7AA-002618943949.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 1,
+              "rse": "T2_CH_CERN",
+              "rse_id": "542ab69d82bf401e9218bbe375bb1fce",
+              "type": "DISK",
+              "volatile": false
+            },
+            "srm://cmsdcatape.fnal.gov:8443/srm/managerv2?SFN=/11/store/relval/CMSSW_7_1_0_pre7/RelValBeamHalo/GEN-SIM/PRE_STA71_V3-v1/00000/E86B31A6-6DD1-E311-A7AA-002618943949.root": {
+              "client_extract": false,
+              "domain": "wan",
+              "priority": 2,
+              "rse": "T1_US_FNAL_Tape",
+              "rse_id": "dbdaf50ee9d24f92ad24473539522204",
+              "type": "TAPE",
+              "volatile": false
+            }
+          },
+          "rses": {
+            "T1_US_FNAL_Tape": [
+              "srm://cmsdcatape.fnal.gov:8443/srm/managerv2?SFN=/11/store/relval/CMSSW_7_1_0_pre7/RelValBeamHalo/GEN-SIM/PRE_STA71_V3-v1/00000/E86B31A6-6DD1-E311-A7AA-002618943949.root"
+            ],
+            "T2_CH_CERN": [
+              "gsiftp://eoscmsftp.cern.ch:2811/eos/cms/store/relval/CMSSW_7_1_0_pre7/RelValBeamHalo/GEN-SIM/PRE_STA71_V3-v1/00000/E86B31A6-6DD1-E311-A7AA-002618943949.root"
+            ]
+          },
+          "scope": "cms",
+          "size": 13122568,
+          "space_token": null,
+          "states": {
+            "T1_US_FNAL_Tape": "AVAILABLE",
+            "T2_CH_CERN": "AVAILABLE"
+          }
+        }
+      ],
+      "qhash": "b684c760306d1b6c4ac34c0e27118b43"
+    }
+  ],
+  "ecode": "",
+  "mongo_query": {
+    "aggregators": [],
+    "detail": true,
+    "error": "",
+    "fields": [
+      "file"
+    ],
+    "filters": {
+      "grep": [
+        "file.name"
+      ],
+      "sort": [
+        "file.name"
+      ],
+      "unique": [
+        "1"
+      ]
+    },
+    "hash": "b684c760306d1b6c4ac34c0e27118b43",
+    "instance": "prod/global",
+    "pipe": "grep file.name | sort file.name | unique",
+    "query": "file dataset=/RelValBeamHalo/CMSSW_7_1_0_pre7-PRE_STA71_V3-v1/GEN-SIM site=T2_CH_CERN  detail=true | grep file.name | sort file.name | unique",
+    "spec": {
+      "dataset": "/RelValBeamHalo/CMSSW_7_1_0_pre7-PRE_STA71_V3-v1/GEN-SIM",
+      "site": "T2_CH_CERN"
+    },
+    "system": "",
+    "tstamp": 1616074596
+  },
+  "nresults": 1,
+  "status": "ok",
+  "timestamp": 1616074597
+}
