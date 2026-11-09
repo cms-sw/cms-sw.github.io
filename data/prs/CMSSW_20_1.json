@@ -2390,6 +2390,38 @@
       "title": "Fix duplicate SiPixelQuality  registration in #52130",
       "updated_at": "1794041648",
       "user": "stefduponcheel"
+    },
+    "52432": {
+      "additions": 5,
+      "auther_ref": "fc-20261107-fixdigi",
+      "auther_sha": "7fda269b9a704a55c22ce890e027520f69164beb",
+      "author": "fabiocos",
+      "body": "\n#### PR description:\n\nEffective protection to (partially) solve issue https://github.com/cms-sw/cmssw/issues/52431 .\n```BTLReadoutMap``` is not defined for geometry scenarios previous than v4. In https://github.com/cms-sw/cmssw/pull/51861 this map is used in ```BTLElectronicsSim``` to produce the new DIGI collection. If no protection is present, the results are inconsistent as numbering scheme, and produce failures downstream.\n\nA check forces the filling of the new DIGI collection only for the supported scenarios.\n\n#### PR validation:\n\nwfs. 38434.0 (D128, supported) and 29634.0 (D110, not supported) both runs succesfully.",
+      "branch": "master",
+      "changed_files": 2,
+      "closed_at": "1794200668",
+      "comments": 17,
+      "commits": 2,
+      "created_at": "1794074497",
+      "deletions": 1,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "orp-approved",
+        "simulation-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "d2f6549451cff24d6bca4223030fb71695c27dcc",
+      "merged_at": "1794200668",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52432,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "MTD digitization: add a protection in BTL digitization against using BTLReadoutMap for unsupported scenarios",
+      "updated_at": "1794200670",
+      "user": "fabiocos"
     }
   }
 }
