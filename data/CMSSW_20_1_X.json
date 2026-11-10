@@ -12,7 +12,7 @@
       "cmsdistTags": {},
       "cmsdist_compared_tags": {
         "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-05-2300/el10_amd64_gcc15..IB/CMSSW_20_1_X/g15_el10",
-        "el8_amd64_gcc14": "ERR/CMSSW_20_1_X_2026-11-09-2300/el8_amd64_gcc14..IB/CMSSW_20_1_X/master",
+        "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-10-1100/el8_amd64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_aarch64_gcc14": "ERR/CMSSW_20_1_X_2026-11-09-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc14": "ERR/CMSSW_20_1_X_2026-11-09-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-05-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
@@ -85,24 +85,6 @@
             "number": "10997",
             "title": "[ROOT640] Updated root to tip of branch v6-40-00-patches",
             "url": "https://github.com/cms-sw/cmsdist/pull/10997"
-          },
-          {
-            "author_login": "felicepantaleo",
-            "from_merge_commit": false,
-            "hash": "41ec22d6ed1f5b82f6c13cd6d571df1143179eaa",
-            "is_merge_commit": false,
-            "number": "10995",
-            "title": "Update CLUEstering to version `2.14.2`",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10995"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": false,
-            "hash": "a63bb2497b24c9f1a94e98f5e0c16297872a0950",
-            "is_merge_commit": false,
-            "number": "10999",
-            "title": "use make file instead of bash for loop which fails for long commands",
-            "url": "https://github.com/cms-sw/cmsdist/pull/10999"
           }
         ],
         "el9_aarch64_gcc14": [
@@ -370,23 +352,68 @@
     },
     {
       "RVExceptions": null,
-      "addons": [],
+      "addons": [
+        {
+          "arch": "el8_amd64_gcc14",
+          "details": {},
+          "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/tue/20.1-tue-11/CMSSW_20_1_X_2026-11-10-1100/addOnTests.log",
+          "passed": true
+        }
+      ],
       "base_branch": "CMSSW_20_1_X",
-      "builds": [],
+      "builds": [
+        {
+          "arch": "el8_amd64_gcc14",
+          "details": {
+            "compWarning": 8,
+            "ignoreWarning": 883
+          },
+          "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/tue/20.1-tue-11/CMSSW_20_1_X_2026-11-10-1100/new/logAnalysis.pkl",
+          "passed": "warning"
+        }
+      ],
       "check-headers": "inprogress",
       "clang_analyzer": "inprogress",
       "class_versions": "inprogress",
       "cmsdistTags": {
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-10-1100/el8_amd64_gcc14"
       },
-      "cmsdist_compared_tags": {},
-      "cmsdist_merged_prs": {},
+      "cmsdist_compared_tags": {
+        "el8_amd64_gcc14": "ERR/CMSSW_20_1_X_2026-11-09-2300/el8_amd64_gcc14..IB/CMSSW_20_1_X_2026-11-10-1100/el8_amd64_gcc14"
+      },
+      "cmsdist_merged_prs": {
+        "el8_amd64_gcc14": [
+          {
+            "author_login": "felicepantaleo",
+            "from_merge_commit": false,
+            "hash": "41ec22d6ed1f5b82f6c13cd6d571df1143179eaa",
+            "is_merge_commit": false,
+            "number": "10995",
+            "title": "Update CLUEstering to version `2.14.2`",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10995"
+          },
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": false,
+            "hash": "a63bb2497b24c9f1a94e98f5e0c16297872a0950",
+            "is_merge_commit": false,
+            "number": "10999",
+            "title": "use make file instead of bash for loop which fails for long commands",
+            "url": "https://github.com/cms-sw/cmsdist/pull/10999"
+          }
+        ]
+      },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
       "compared_tags": "CMSSW_20_1_X_2026-11-09-2300-->CMSSW_20_1_X_2026-11-10-1100",
       "crab_tests": "inprogress",
       "dqm_tests": "not-found",
-      "dupDict": [],
+      "dupDict": [
+        {
+          "arch": "el8_amd64_gcc14",
+          "passed": "passed"
+        }
+      ],
       "flawfinder": "inprogress",
       "fwlite": [],
       "hlt-p2-timing": "inprogress",
@@ -440,8 +467,17 @@
       "static_checks": "inprogress",
       "static_checks_failures": "not-found",
       "static_checks_v2": "inprogress",
-      "tests_archs": [],
-      "utests": [],
+      "tests_archs": [
+        "el8_amd64_gcc14"
+      ],
+      "utests": [
+        {
+          "arch": "el8_amd64_gcc14",
+          "details": {},
+          "file": "['/data/sdt/buildlogs/el8_amd64_gcc14/www/tue/20.1-tue-11/CMSSW_20_1_X_2026-11-10-1100/new/logAnalysis.pkl']",
+          "passed": "unknown"
+        }
+      ],
       "valgrind": "not-found",
       "vtune": "inprogress"
     },
@@ -814,9 +850,9 @@
           "rntuple/ROOT6/el9_aarch64_gcc14": {
             "arch": "el9_aarch64_gcc14",
             "details": {
-              "known_failed": 44,
+              "known_failed": 49,
               "num_failed": 1,
-              "num_passed": 20
+              "num_passed": 33
             },
             "done": false,
             "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/mon/20.1.ROOT6-mon-23/CMSSW_20_1_ROOT6_X_2026-11-09-2300/other/rntuple/pyRelValMatrixLogs/run/runall-report-step123-.log",
