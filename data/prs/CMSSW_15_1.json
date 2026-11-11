@@ -1,6 +1,42 @@
 {
   "cmsdist": {},
   "cmssw": {
+    "52423": {
+      "additions": 669,
+      "auther_ref": "inputFileCatalogMemory_151x",
+      "auther_sha": "6b16e5672350670b191875ca71f52f82daf0c122",
+      "author": "makortel",
+      "body": "#### PR description:\n\nThis PR backports https://github.com/cms-sw/cmssw/pull/50911 following the request in https://github.com/cms-sw/cmssw/issues/47050#issuecomment-6069544996 . To make the backport more straightforward the following additional cleanup PRs are included\n* https://github.com/cms-sw/cmssw/pull/49134\n* https://github.com/cms-sw/cmssw/pull/49430\n\nThis backport is done as a forward-port of https://github.com/cms-sw/cmssw/pull/52369 (https://github.com/cms-sw/cmssw/pull/47914 is not included because it is already merged in 15_1_X). The last commit did not apply cleanly in 15_1_X, but the conflicts were straightforward to resolve (in `IOPool/Input/src/RootEmbeddedFileSequence.cc`, `IOPool/Input/src/RootPrimaryFileSequence.cc`, `IOPool/Input/src/RootSecondaryFileSequence.cc`).\n\n#### PR validation:\n\nCode compiles\n\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\n\nBackport of https://github.com/cms-sw/cmssw/pull/49134, https://github.com/cms-sw/cmssw/pull/49430, and https://github.com/cms-sw/cmssw/pull/50911.",
+      "branch": "CMSSW_15_1_X",
+      "changed_files": 45,
+      "closed_at": "1794410987",
+      "comments": 12,
+      "commits": 3,
+      "created_at": "1793998448",
+      "deletions": 889,
+      "labels": [
+        "alca-approved",
+        "core-approved",
+        "daq-approved",
+        "dqm-approved",
+        "fully-signed",
+        "generators-approved",
+        "l1-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "de1ad96293625177806d1aa1f630834473815cee",
+      "merged_at": "1794410987",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_15_1_X",
+      "number": 52423,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[15_1_X] Clean up InputFileCatalog (including rfio, TrivialFileCatalog) and reduce its memory usage",
+      "updated_at": "1794410990",
+      "user": "makortel"
+    },
     "52438": {
       "additions": 2073,
       "auther_ref": "quirks-g4-15_1_X",
