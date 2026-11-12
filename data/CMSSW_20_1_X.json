@@ -13,7 +13,7 @@
       "cmsdist_compared_tags": {
         "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-10-2300/el10_amd64_gcc15..IB/CMSSW_20_1_X/g15_el10",
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-11-1100/el8_amd64_gcc14..IB/CMSSW_20_1_X/master",
-        "el9_aarch64_gcc14": "ERR/CMSSW_20_1_X_2026-11-10-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/master",
+        "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-11-11-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-10-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-10-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
         "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-11-10-2300/el9_amd64_gcc16..IB/CMSSW_20_1_X/gcc16",
@@ -32,17 +32,7 @@
           }
         ],
         "el8_amd64_gcc14": [],
-        "el9_aarch64_gcc14": [
-          {
-            "author_login": "akritkbehera",
-            "from_merge_commit": false,
-            "hash": "9c2f8f5a278484c012a42dca05c3c789afa671cd",
-            "is_merge_commit": false,
-            "number": "11000",
-            "title": "Updated ittnotify to latest version and github repo",
-            "url": "https://github.com/cms-sw/cmsdist/pull/11000"
-          }
-        ],
+        "el9_aarch64_gcc14": [],
         "el9_amd64_gcc14": [
           {
             "author_login": "akritkbehera",
@@ -204,6 +194,12 @@
           "details": {},
           "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/wed/20.1-wed-23/CMSSW_20_1_X_2026-11-11-2300/addOnTests.log",
           "passed": true
+        },
+        {
+          "arch": "el9_aarch64_gcc14",
+          "details": {},
+          "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/wed/20.1-wed-23/CMSSW_20_1_X_2026-11-11-2300/addOnTests.log",
+          "passed": true
         }
       ],
       "base_branch": "CMSSW_20_1_X",
@@ -213,19 +209,41 @@
           "details": {},
           "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/wed/20.1-wed-23/CMSSW_20_1_X_2026-11-11-2300/new/logAnalysis.pkl",
           "passed": "passed"
+        },
+        {
+          "arch": "el9_aarch64_gcc14",
+          "details": {
+            "compWarning": 4,
+            "ignoreWarning": 439
+          },
+          "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/wed/20.1-wed-23/CMSSW_20_1_X_2026-11-11-2300/new/logAnalysis.pkl",
+          "passed": "warning"
         }
       ],
       "check-headers": "inprogress",
       "clang_analyzer": "inprogress",
       "class_versions": "inprogress",
       "cmsdistTags": {
-        "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-11-1100/el8_amd64_gcc14"
+        "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-11-1100/el8_amd64_gcc14",
+        "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-11-11-2300/el9_aarch64_gcc14"
       },
       "cmsdist_compared_tags": {
-        "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-11-1100/el8_amd64_gcc14..IB/CMSSW_20_1_X_2026-11-11-1100/el8_amd64_gcc14"
+        "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-11-1100/el8_amd64_gcc14..IB/CMSSW_20_1_X_2026-11-11-1100/el8_amd64_gcc14",
+        "el9_aarch64_gcc14": "ERR/CMSSW_20_1_X_2026-11-10-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X_2026-11-11-2300/el9_aarch64_gcc14"
       },
       "cmsdist_merged_prs": {
-        "el8_amd64_gcc14": []
+        "el8_amd64_gcc14": [],
+        "el9_aarch64_gcc14": [
+          {
+            "author_login": "akritkbehera",
+            "from_merge_commit": false,
+            "hash": "9c2f8f5a278484c012a42dca05c3c789afa671cd",
+            "is_merge_commit": false,
+            "number": "11000",
+            "title": "Updated ittnotify to latest version and github repo",
+            "url": "https://github.com/cms-sw/cmsdist/pull/11000"
+          }
+        ]
       },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
@@ -235,6 +253,10 @@
       "dupDict": [
         {
           "arch": "el8_amd64_gcc14",
+          "passed": "passed"
+        },
+        {
+          "arch": "el9_aarch64_gcc14",
           "passed": "passed"
         }
       ],
@@ -328,13 +350,20 @@
       "static_checks_failures": "not-found",
       "static_checks_v2": "inprogress",
       "tests_archs": [
-        "el8_amd64_gcc14"
+        "el8_amd64_gcc14",
+        "el9_aarch64_gcc14"
       ],
       "utests": [
         {
           "arch": "el8_amd64_gcc14",
           "details": {},
           "file": "['/data/sdt/buildlogs/el8_amd64_gcc14/www/wed/20.1-wed-23/CMSSW_20_1_X_2026-11-11-2300/new/logAnalysis.pkl']",
+          "passed": "unknown"
+        },
+        {
+          "arch": "el9_aarch64_gcc14",
+          "details": {},
+          "file": "['/data/sdt/buildlogs/el9_aarch64_gcc14/www/wed/20.1-wed-23/CMSSW_20_1_X_2026-11-11-2300/new/logAnalysis.pkl']",
           "passed": "unknown"
         }
       ],
@@ -6955,10 +6984,7 @@
       "builds": [],
       "check-headers": "inprogress",
       "clang_analyzer": "inprogress",
-      "class_versions": {
-        "data": "/class_versions/CMSSW_20_1_X_2026-11-02-1100/el9_amd64_gcc14/class_versions.html",
-        "status": "passed"
-      },
+      "class_versions": "inprogress",
       "cmsdistTags": {
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-02-1100/el8_amd64_gcc14",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-02-1100/el9_amd64_gcc14"
