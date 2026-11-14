@@ -33,6 +33,41 @@
     }
   },
   "cmssw": {
+    "51516": {
+      "additions": 2161,
+      "auther_ref": "fastsim-hlt-resurrection-review-default-17_0_X",
+      "auther_sha": "3d8413b868a3f4523dbf1f11920eb745d6387c8f",
+      "author": "sbein",
+      "body": "PR description:\r\nMuch HLT functionality is restored for FastSim, which was last fully functional in CMSSW_7_4_2. fixForFastSim was removed in confdb.py in CMSSW_7_4_3. FastSim HLT was slowly dismantled until an explicit cmsDriver ban on --fast and HLT was imposed inCMSSW_8_4_0. Now HLT is deployed as an opt-in for Run 3 analysis: HLT:GRun, and enabled using the customization script:\r\n\r\n```\r\n--customise FastSimulation/HighLevelTrigger/customizeFastSimHLT.customizeFastSimHLTGRunReviewDefault\r\nDefault FastSim recipes that do not invoke the customization script remain unchanged. The customizer uses existing FastSim or offline-compatible producer substitutions. Some InputTags are re-routed to existing FastSim collections. Several HLT paths are pruned if there are non-FastSim inputs. There are no newly-built collections/DIGIs and no fake/empty collections.\r\n```\r\n\r\nFastSim+HLT is run with the above customizer, e.g., as:\r\n\r\n```\r\ncmsDriver.py SMS-T1tttt_mGl-1500_mLSP-100_13TeV-pythia8_cfi -s GEN,SIM,RECOBEFMIX,DIGI,L1,DIGI2RAW,HLT:GRun,L1Reco,RECO,PAT,NANO --fast --era Run3_2023_FastSim --beamspot Realistic25ns13p6TeVEarly2023Collision --conditions auto:phase1_2023_realistic --geometry DB:Extended --eventcontent NANOAODSIM,MINIAODSIM --datatier NANOAODSIM,MINIAODSIM -n 1 --fileout file:fastsim_hlt_review_default.root --python_filename fastsim_hlt_review_default.py --customise FastSimulation/HighLevelTrigger/customizeFastSimHLT.customizeFastSimHLTGRunReviewDefault --no_exec\r\n```\r\nThis will produce MiniAOD and NanoAOD with TriggerResults and NanoAOD HLT_* branches for a substantial subset of Run 3 paths.\r\n\r\nPR validation:\r\nValidation compares HLT:GRun FastSim against a FullSim reference on SMS-T1tttt samples:\r\nhttps://www.desy.de/~beinsam/FastSim/HltResurrection/HLT_GRun_4000FullSimActiveL1_vs_4000FastSimReviewDefault_20260706/all/index.html",
+      "branch": "CMSSW_17_1_X",
+      "changed_files": 5,
+      "closed_at": "1794642381",
+      "comments": 33,
+      "commits": 2,
+      "created_at": "1784230998",
+      "deletions": 5,
+      "labels": [
+        "code-checks-approved",
+        "fastsim-approved",
+        "fully-signed",
+        "hlt-approved",
+        "operations-approved",
+        "orp-approved",
+        "pdmv-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "b6f7e4aab14c2806aac87c6154da6f7249c54e84",
+      "merged_at": "1794642381",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_1_X",
+      "number": 51516,
+      "release-notes": [],
+      "review_comments": 8,
+      "state": "closed",
+      "title": "[17.1.X]Adding FastSim HLT functionality for Run 3",
+      "updated_at": "1794642383",
+      "user": "sbein"
+    },
     "52091": {
       "additions": 773,
       "auther_ref": "CMSSW_17_0_0_pre1_NNCPE",
@@ -534,6 +569,40 @@
       "updated_at": "1793810768",
       "user": "bsunanda"
     },
+    "52427": {
+      "additions": 45,
+      "auther_ref": "claude/tkmuon-isosum-nano_CMSSW_17_0_X",
+      "auther_sha": "5fff04a71c2447c8c50f94210690cd52457c4034",
+      "author": "artlbv",
+      "body": "backport of #52426\r\nto `CMSSW_17_1_X`. See that PR for the description and the validation.\r\n",
+      "branch": "CMSSW_17_1_X",
+      "changed_files": 2,
+      "closed_at": "1794642561",
+      "comments": 24,
+      "commits": 4,
+      "created_at": "1794029840",
+      "deletions": 2,
+      "labels": [
+        "backport-ok",
+        "code-checks-approved",
+        "fully-signed",
+        "l1-approved",
+        "orp-approved",
+        "tests-approved",
+        "xpog-approved"
+      ],
+      "merge_commit_sha": "bbacb4958f50692123adb776dfb8d6e9d292d1fa",
+      "merged_at": "1794642561",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_1_X",
+      "number": 52427,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[Backport of #52426] [L1T] Phase2 L1Nano: fix TkMuon isolation branches, drop the unfilled hwIso from the SA muon tables",
+      "updated_at": "1794642562",
+      "user": "artlbv"
+    },
     "52434": {
       "additions": 2074,
       "auther_ref": "quirks-g4-17_1_X",
@@ -566,6 +635,40 @@
       "title": "[17_1_X] Add quirk simulation to CustomPhysics",
       "updated_at": "1794292766",
       "user": "tvami"
+    },
+    "52507": {
+      "additions": 41,
+      "auther_ref": "mm_add_MET_to_ScoutingPaths_17_1_X",
+      "auther_sha": "e42962f599521532c8c34f8221c86f51f3c3cb11",
+      "author": "mmusich",
+      "body": "backport of https://github.com/cms-sw/cmssw/pull/51925\n\n#### PR description:\n\nPartial backport of https://github.com/cms-sw/cmssw/pull/51925,  adding more MET variables to the nano HLT flavour (and corresponding monitoring).\n\n#### PR validation:\n\n```\nrunTheMatrix.py -l ph2_hlt\n```\n\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\n\npartial backport of https://github.com/cms-sw/cmssw/pull/51925 to CMSSW_17_1_X as requested in https://github.com/cms-sw/cmssw/pull/51925#issuecomment-6823849456\n\nCc: @artlbv \n",
+      "branch": "CMSSW_17_1_X",
+      "changed_files": 2,
+      "closed_at": "1794642475",
+      "comments": 14,
+      "commits": 2,
+      "created_at": "1794584925",
+      "deletions": 3,
+      "labels": [
+        "backport-ok",
+        "code-checks-approved",
+        "fully-signed",
+        "hlt-approved",
+        "ngt",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "cc26b56cc46c6a9a41d1047bc1a24314f2d59707",
+      "merged_at": "1794642475",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_1_X",
+      "number": 52507,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[17.1.X] add more variables for MET and HT in nanoHLT (and corresponding DQM monitoring)",
+      "updated_at": "1794642476",
+      "user": "mmusich"
     }
   }
 }
