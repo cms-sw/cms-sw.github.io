@@ -3496,6 +3496,40 @@
       "updated_at": "1794730888",
       "user": "felicepantaleo"
     },
+    "52476": {
+      "additions": 57,
+      "auther_ref": "truthgraph-require-hits-followup",
+      "auther_sha": "4d3e123e5354aaacf76d158d2e66383f0840e3dc",
+      "author": "felicepantaleo",
+      "body": "This PR is technical only and it changes nothing if the configuration is correct.\n\n- **A test of the cut.** The check of `requireHits` in `TruthBranchRecoValidator` becomes `BranchHitAssociator::hasHitInDetectors`, with a unit test. Before, no test ran this check. The test covers a hit inside the mask, a hit outside the mask, the whole channel and a branch with no hit.\n- **A missing associator is an error.** `customiseTruthBranchRequireHits` set `requireHits` with the default whole hit channel when the associator of a validator was not in the process, with no message. It now raises `RuntimeError`.\n- **Harvesting.** A harvesting job fills no denominator, so the customise now changes nothing there. This also means the new error does not stop a harvesting job, which does not load the associators.\n- **The error message.** An unknown detector name now gives `denominatorDetectors: unknown DetId::Detector name`.\n\n#### PR validation:\n\n- The new unit test fails when `hasHitInDetectors` ignores the mask, and passes with the code of this PR. It does not run the validator event loop.\n- `customiseTruthBranchRequireHits_t` has 6 tests, 2 of them new. `requireHits_cfg.py` runs.\n\n",
+      "branch": "master",
+      "changed_files": 6,
+      "closed_at": "1794751377",
+      "comments": 12,
+      "commits": 1,
+      "created_at": "1794326105",
+      "deletions": 9,
+      "labels": [
+        "code-checks-approved",
+        "dqm-approved",
+        "fully-signed",
+        "generators-approved",
+        "ngt",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "2ed1667df8e33cc25184ac5775bd7cb3c2f71160",
+      "merged_at": "1794751377",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52476,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "TruthInfo - requireHits: test the cut and stop on a missing associator",
+      "updated_at": "1794751379",
+      "user": "felicepantaleo"
+    },
     "52480": {
       "additions": 2932,
       "auther_ref": "Phase2-gex240",
@@ -3657,6 +3691,40 @@
       "title": "rewrite MkFit pool allocator to use thread locals",
       "updated_at": "1794642464",
       "user": "dan131riley"
+    },
+    "52506": {
+      "additions": 1,
+      "auther_ref": "MG_refForMp050108",
+      "auther_sha": "3353faa1aa8d8647a532df6dc56b19223f0a528c",
+      "author": "goblirsc",
+      "body": "#### PR description:\r\n\r\nUpdate the reference alignment result in the Millepede alignment CI test.\r\n\r\nA bug was recently fixed in Millepede-II that led to inconsistent weights being used when outlier reweighting was enabled.\r\nThe fix is available starting with version 05-01-07. \r\n[cmsdist 11004](https://github.com/cms-sw/cmsdist/pull/11004 ) deploys the updated Millepede version. \r\n\r\nAs the bugfix changes the alignment results, the `Alignment/MillePedeAlignmentAlgorithm/test_PayloadSanity`  and `Alignment/MillePedeAlignmentAlgorithm/test_PedeConversion` CI tests will flag an inconsistency with the reference result (which was obtained with the bug) and report a failure.\r\n\r\nThis PR updates the reference alignment tag for these tests to the result with the bugfix. It should be merged when deploying the externals update from [cmsdist 11004](https://github.com/cms-sw/cmsdist/pull/11004 ). \r\n\r\n#### PR validation:\r\n`scram b runtests` succeeds with the updates, fails without (when running with the updated externals) \r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nNo backport intended. ",
+      "branch": "master",
+      "changed_files": 1,
+      "closed_at": "1794751394",
+      "comments": 12,
+      "commits": 1,
+      "created_at": "1794583081",
+      "deletions": 1,
+      "labels": [
+        "alca-approved",
+        "code-checks-approved",
+        "fully-signed",
+        "orp-approved",
+        "requires-external",
+        "tests-approved",
+        "trk"
+      ],
+      "merge_commit_sha": "d1117ff5aa2b61f4d75e77d380afc7ab0c8e4f79",
+      "merged_at": "1794751394",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52506,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "update reference file for alignment CI test",
+      "updated_at": "1794751647",
+      "user": "goblirsc"
     }
   }
 }
