@@ -4017,6 +4017,39 @@
       "updated_at": "1794516030",
       "user": "Dr15Jones"
     },
+    "52498": {
+      "additions": 3,
+      "auther_ref": "hgcal-corner-fixes",
+      "auther_sha": "717c42200cb2c7ead5e6e1b883f16fa741ceb380",
+      "author": "mmarriot",
+      "body": "#### PR description:\n\nTwo fixes to the HGCal silicon cell corners (`getCorners`, `get8Corners`, `getNewCorners`):\n\n- `HGCalDDDConstants::localToGlobal8` applied the cassette shift as `x -= zside * shift`, while `locateCell`, `waferFromPosition` and the DD placement use `x -= shift`. In -z the corners were therefore off from the cell position by twice the shift (up to 0.82 cm in CE-E, 1.37 cm in CE-H for D122). +z unchanged.\n- `getNewCorners` looped over 7 entries but its sign tables have 6. No change in output.\n\n#### PR validation:\n\nFor every silicon cell in both endcaps, the distance between the centre of its `getNewCorners` hexagon and `getPosition` (should be 0), and for every full wafer, the distance between the centre of its cells' corners and the DDD sensor position (should be 0):\n\n- D122 -z, cell: 0.82 cm (CE-E) / 1.37 cm (CE-H) before, 1e-5 cm after.\n- D122 -z, wafer: 0.82 / 1.37 cm before, 1e-6 cm after.\n- +z unchanged (1e-5 cm). Same result for D110, D120, D121, D123, D124.",
+      "branch": "master",
+      "changed_files": 2,
+      "closed_at": "1795022849",
+      "comments": 11,
+      "commits": 2,
+      "created_at": "1794487378",
+      "deletions": 3,
+      "labels": [
+        "bug-fix",
+        "code-checks-approved",
+        "fully-signed",
+        "geometry-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "d64d4d78be3964cd4c4b45920e854ab726bd5688",
+      "merged_at": "1795022849",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52498,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "HGCal geometry: fix -z cell corners displaced by twice the cassette shift, and an out-of-bounds read in getNewCorners",
+      "updated_at": "1795022851",
+      "user": "mmarriot"
+    },
     "52500": {
       "additions": 23,
       "auther_ref": "lst-converter-seed-fixes",
@@ -4483,6 +4516,38 @@
       "title": "Hlt trigger hlt ticl geom cleanup ",
       "updated_at": "1794994485",
       "user": "smuzaffar"
+    },
+    "52555": {
+      "additions": 1,
+      "auther_ref": "fc-20261118-updatemtdgeo",
+      "auther_sha": "8039f134135623550b15813a0755e7be0e72eddc",
+      "author": "fabiocos",
+      "body": "#### PR description:\n\nAlign MTD geometry version used in unit tests to the CMSSW central one. No update on the reference files is needed.\n\n#### PR validation:\n\nUni tests of ```Geometry/MTD*```, ```RecoMTD/DetLayers``` and ```SimG4CMS/Forward``` pass.",
+      "branch": "master",
+      "changed_files": 1,
+      "closed_at": "1795022830",
+      "comments": 9,
+      "commits": 1,
+      "created_at": "1794995952",
+      "deletions": 1,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "geometry-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "bfc07039d28dc214fc2eaf157345eb23f9d7f503",
+      "merged_at": "1795022830",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52555,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "MTD geometry: move default MTD geometry test version to D128",
+      "updated_at": "1795022832",
+      "user": "fabiocos"
     }
   }
 }
