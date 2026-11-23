@@ -67,39 +67,6 @@
       "updated_at": "1794833022",
       "user": "bsunanda"
     },
-    "52468": {
-      "additions": 1,
-      "auther_ref": "l1t-fix-caloJetHTT-input-17_1_X",
-      "auther_sha": "b0edb4b59d538a79bf4de0c876d3cdf5ba672449",
-      "author": "artlbv",
-      "body": "backport of #52466\r\nto `CMSSW_17_1_X`. See that PR for the description and the validation.\r\n\r\n`l1tCaloJetHTT` reads `(\"L1CaloJet\", \"CaloJets\")`, which no module produces, so the Phase-2 L1 CaloJet HTT is always 0. The input is changed to `(\"l1tCaloJet\", \"L1CaloJetCollectionBXV\")`. The cherry-pick applies cleanly; the affected line is identical on this branch.\r\n\r\n#### PR validation:\r\n\r\nSee #52466. Clean cherry-pick of a one-line configuration change.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nBackport of #52466, to fix the Phase-2 L1 CaloJet HTT (always 0) in the `CMSSW_17_1_X` Phase-2 samples.\r\n",
-      "branch": "CMSSW_17_1_X",
-      "changed_files": 1,
-      "closed_at": "1794731038",
-      "comments": 9,
-      "commits": 1,
-      "created_at": "1794300704",
-      "deletions": 1,
-      "labels": [
-        "backport-ok",
-        "code-checks-approved",
-        "fully-signed",
-        "l1-approved",
-        "orp-approved",
-        "tests-approved"
-      ],
-      "merge_commit_sha": "9f264b64172e6aaff196767e8250d839e8f32f5a",
-      "merged_at": "1794731038",
-      "merged_by": "cmsbuild",
-      "milestone": "CMSSW_17_1_X",
-      "number": 52468,
-      "release-notes": [],
-      "review_comments": 0,
-      "state": "closed",
-      "title": "[Backport of #52466] [L1T Phase-2] Fix input tag of l1tCaloJetHTT",
-      "updated_at": "1794731039",
-      "user": "artlbv"
-    },
     "52551": {
       "additions": 21,
       "auther_ref": "Phase2-hgx369H",
@@ -132,6 +99,40 @@
       "title": "Phase2-hgx369H Try to cure the bug which was causing the exception in running the example 34034.0",
       "updated_at": "1794994549",
       "user": "bsunanda"
+    },
+    "52622": {
+      "additions": 10,
+      "auther_ref": "OXY_CMSSW_17_1_X",
+      "auther_sha": "5feb3432ad1e35eaa6114fcc8dd016880476ed9d",
+      "author": "stahlleiton",
+      "body": "#### PR description:\n\nThis PR sets the pixel reco settings in the 2025 OXY eras to prompt reco settings as detailed in https://indico.cern.ch/event/1568006/contributions/6605939/attachments/3162736/5619938/20251028_PixelOffline_News.pdf . The light ion (pO, OO and NeNe) data was taken between 2025 pp era C and D in June.\n\n@ferencek @mandrenguyen \n\n#### PR validation:\n\nTested with workflows 143.911,143.912,143.921\n\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\n\nTo be backported down to 15_0_X and to be used for the OO UPC rereco",
+      "branch": "CMSSW_17_1_X",
+      "changed_files": 4,
+      "closed_at": "1795464963",
+      "comments": 10,
+      "commits": 1,
+      "created_at": "1795358417",
+      "deletions": 7,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "operations-approved",
+        "orp-approved",
+        "reconstruction-approved",
+        "tests-approved",
+        "trk"
+      ],
+      "merge_commit_sha": "943482573ed62148ac9e4dedaf359d2fd2cc9cb3",
+      "merged_at": "1795464963",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_1_X",
+      "number": 52622,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[17_1_X] Set pixel reco for 2025 OXY eras to prompt settings",
+      "updated_at": "1795464965",
+      "user": "stahlleiton"
     }
   }
 }
