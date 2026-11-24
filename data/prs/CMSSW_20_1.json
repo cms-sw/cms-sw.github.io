@@ -336,6 +336,36 @@
       "updated_at": "1795260088",
       "user": "smuzaffar"
     },
+    "11025": {
+      "additions": 104,
+      "auther_ref": "network-stack-update-mpi511",
+      "auther_sha": "19438666e8a4cda1938ffc44d37c0b509ceee8fa",
+      "author": "fwyzard",
+      "body": "Update Open MPI to v5.11.\r\n\r\nUpdate the RDMA network stack:\r\n  - add liburing v2.15, used by the libfabric tcp provider;\r\n  - update xpmem to the latest commit (2026-02-18);\r\n  - update rdma-core to v66.0;\r\n  - update hwloc to v2.16.0;\r\n  - update gdrcopy to v2.7;\r\n  - update libfabric to v2.7.0;\r\n  - update ucx to v1.23.0.\r\n\r\nBuild updates:\r\n  - the local build of libfabric could pick liburing from the host system; add liburing to cmsdist and let libfabric use the local cms package;\r\n  - the local build of UCX could pick libbfd from the host system; link the static libbfd, libiberty and libsframe built with the cms gcc package.\r\n\r\nFix the GPU perftest:\r\n  - include either the CUDA or ROCm device headers only when building for the corresponding back-end;\r\n  - pass the verbs include path to nvcc so it can find infiniband/mlx5dv.h .\r\n\r\nBuilt and tested locally by Claude Opus 5.5.",
+      "branch": "IB/CMSSW_20_1_X/master",
+      "changed_files": 12,
+      "closed_at": "1795534013",
+      "comments": 19,
+      "commits": 8,
+      "created_at": "1795249381",
+      "deletions": 11,
+      "labels": [
+        "externals-approved",
+        "fully-signed",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "aa062cca58dea87582fb48446300f98b5b4e55c2",
+      "merged_at": "1795534012",
+      "merged_by": "cmsbuild",
+      "number": 11025,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Update the RDMA network stack and Open MPI to v5.11",
+      "updated_at": "1795534014",
+      "user": "fwyzard"
+    },
     "11031": {
       "additions": 2,
       "auther_ref": "update-PhysicsTools-ONNXRuntimeAlpakaTest-to-V00-00-01",
