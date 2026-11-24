@@ -34,39 +34,6 @@
       "updated_at": "1794833022",
       "user": "bsunanda"
     },
-    "52468": {
-      "additions": 1,
-      "auther_ref": "l1t-fix-caloJetHTT-input-17_1_X",
-      "auther_sha": "b0edb4b59d538a79bf4de0c876d3cdf5ba672449",
-      "author": "artlbv",
-      "body": "backport of #52466\r\nto `CMSSW_17_1_X`. See that PR for the description and the validation.\r\n\r\n`l1tCaloJetHTT` reads `(\"L1CaloJet\", \"CaloJets\")`, which no module produces, so the Phase-2 L1 CaloJet HTT is always 0. The input is changed to `(\"l1tCaloJet\", \"L1CaloJetCollectionBXV\")`. The cherry-pick applies cleanly; the affected line is identical on this branch.\r\n\r\n#### PR validation:\r\n\r\nSee #52466. Clean cherry-pick of a one-line configuration change.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nBackport of #52466, to fix the Phase-2 L1 CaloJet HTT (always 0) in the `CMSSW_17_1_X` Phase-2 samples.\r\n",
-      "branch": "CMSSW_17_1_X",
-      "changed_files": 1,
-      "closed_at": "1794731038",
-      "comments": 9,
-      "commits": 1,
-      "created_at": "1794300704",
-      "deletions": 1,
-      "labels": [
-        "backport-ok",
-        "code-checks-approved",
-        "fully-signed",
-        "l1-approved",
-        "orp-approved",
-        "tests-approved"
-      ],
-      "merge_commit_sha": "9f264b64172e6aaff196767e8250d839e8f32f5a",
-      "merged_at": "1794731038",
-      "merged_by": "cmsbuild",
-      "milestone": "CMSSW_17_1_X",
-      "number": 52468,
-      "release-notes": [],
-      "review_comments": 0,
-      "state": "closed",
-      "title": "[Backport of #52466] [L1T Phase-2] Fix input tag of l1tCaloJetHTT",
-      "updated_at": "1794731039",
-      "user": "artlbv"
-    },
     "52551": {
       "additions": 21,
       "auther_ref": "Phase2-hgx369H",
@@ -99,6 +66,39 @@
       "title": "Phase2-hgx369H Try to cure the bug which was causing the exception in running the example 34034.0",
       "updated_at": "1794994549",
       "user": "bsunanda"
+    },
+    "52615": {
+      "additions": 6,
+      "auther_ref": "ExtraMuon_CMSSW_17_1_X",
+      "auther_sha": "b2c039bd647730486b2aaae324b52ef841d59d79",
+      "author": "stahlleiton",
+      "body": "#### PR description:\n\nThis PR adds back the displaced muon and the muon track extra collections in PbPb MiniAOD without affecting the current PbPb reconstruction. Checks done on 10k events of 2024 PbPb minbias data shows negligible impact on size or timing per event (at most 0.4%).\n\n#### PR validation:\n\nTested with workflows 148,158,159,160.02,161.02,162.02,163.02,140.58,140.60,141.501,142.501,143.501,144.501\n\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\n\nTo be backported to 17_0_X for PbPb rereco\n",
+      "branch": "CMSSW_17_1_X",
+      "changed_files": 5,
+      "closed_at": "1795553574",
+      "comments": 10,
+      "commits": 1,
+      "created_at": "1795277906",
+      "deletions": 8,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "orp-approved",
+        "reconstruction-approved",
+        "tests-approved",
+        "xpog-approved"
+      ],
+      "merge_commit_sha": "0cddd792a41c231e5cd8b43b5b697fce9dfc802d",
+      "merged_at": "1795553574",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_1_X",
+      "number": 52615,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[17_1_X] Enable extra muon collections in PbPb MiniAOD",
+      "updated_at": "1795553575",
+      "user": "stahlleiton"
     },
     "52622": {
       "additions": 10,
@@ -133,6 +133,38 @@
       "title": "[17_1_X] Set pixel reco for 2025 OXY eras to prompt settings",
       "updated_at": "1795464965",
       "user": "stahlleiton"
+    },
+    "52629": {
+      "additions": 1,
+      "auther_ref": "CMSSW_17_1_X",
+      "auther_sha": "84de16c2dc2c35eec12bed2e22550e0cd2ac3eec",
+      "author": "oglez",
+      "body": "Changing the NanoAOD variable Muon_tuneP_charge to int instead of a float.\n\nThis is a cherry-pick from a similar commit that was already accepted in master\n\nWe have changed the type of variable produced in the NanoAOD for the variable Muon_tuneP_charge defined in the file PhysicsTools/NanoAOD/python/muons_cff.py (just a one-line change to have an int instead of a float with precision 6 (that was used for unknown motivations).\nImpact should be negligible both in usage and in performance. Perhaps a tiny reduction of the size if the int is easily packed than the float. The amount of information is the same.\n",
+      "branch": "CMSSW_17_1_X",
+      "changed_files": 1,
+      "closed_at": "1795553633",
+      "comments": 9,
+      "commits": 1,
+      "created_at": "1795428492",
+      "deletions": 1,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "orp-approved",
+        "tests-approved",
+        "xpog-approved"
+      ],
+      "merge_commit_sha": "b5d4c899c11a450c605d696d0f3ebe559ea33194",
+      "merged_at": "1795553633",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_1_X",
+      "number": 52629,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Changing the NanoAOD Muon_tuneP_charge to int instead of a float",
+      "updated_at": "1795553634",
+      "user": "oglez"
     }
   }
 }
