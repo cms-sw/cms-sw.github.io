@@ -34,6 +34,39 @@
       "updated_at": "1794833022",
       "user": "bsunanda"
     },
+    "52468": {
+      "additions": 1,
+      "auther_ref": "l1t-fix-caloJetHTT-input-17_1_X",
+      "auther_sha": "b0edb4b59d538a79bf4de0c876d3cdf5ba672449",
+      "author": "artlbv",
+      "body": "backport of #52466\r\nto `CMSSW_17_1_X`. See that PR for the description and the validation.\r\n\r\n`l1tCaloJetHTT` reads `(\"L1CaloJet\", \"CaloJets\")`, which no module produces, so the Phase-2 L1 CaloJet HTT is always 0. The input is changed to `(\"l1tCaloJet\", \"L1CaloJetCollectionBXV\")`. The cherry-pick applies cleanly; the affected line is identical on this branch.\r\n\r\n#### PR validation:\r\n\r\nSee #52466. Clean cherry-pick of a one-line configuration change.\r\n\r\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\r\n\r\nBackport of #52466, to fix the Phase-2 L1 CaloJet HTT (always 0) in the `CMSSW_17_1_X` Phase-2 samples.\r\n",
+      "branch": "CMSSW_17_1_X",
+      "changed_files": 1,
+      "closed_at": "1794731038",
+      "comments": 9,
+      "commits": 1,
+      "created_at": "1794300704",
+      "deletions": 1,
+      "labels": [
+        "backport-ok",
+        "code-checks-approved",
+        "fully-signed",
+        "l1-approved",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "9f264b64172e6aaff196767e8250d839e8f32f5a",
+      "merged_at": "1794731038",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_1_X",
+      "number": 52468,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[Backport of #52466] [L1T Phase-2] Fix input tag of l1tCaloJetHTT",
+      "updated_at": "1794731039",
+      "user": "artlbv"
+    },
     "52551": {
       "additions": 21,
       "auther_ref": "Phase2-hgx369H",
@@ -165,6 +198,40 @@
       "title": "Changing the NanoAOD Muon_tuneP_charge to int instead of a float",
       "updated_at": "1795553634",
       "user": "oglez"
+    },
+    "52655": {
+      "additions": 6,
+      "auther_ref": "Fix_CMSSW_17_1_X",
+      "auther_sha": "e7d6d73a92989e6803bb2a60d5b27ac67105ff7b",
+      "author": "stahlleiton",
+      "body": "#### PR description:\n\nThis PR addresses the issue observed in https://cmssdt.cern.ch/SDT/cgi-bin/logreader/el8_amd64_gcc13/CMSSW_17_1_X_2026-11-24-2300/pyRelValMatrixLogs/run/140.5611_RunHI2018reMINIAOD/step2_RunHI2018reMINIAOD.log and caused by https://github.com/cms-sw/cmssw/pull/52615\n\n@mandrenguyen \n\n#### PR validation:\n\nTested with workflow 140.5611\n\n#### If this PR is a backport please specify the original PR and why you need to backport that PR. If this PR will be backported please specify to which release cycle the backport is meant for:\n\nTo be in included in the backport of https://github.com/cms-sw/cmssw/pull/52615",
+      "branch": "CMSSW_17_1_X",
+      "changed_files": 3,
+      "closed_at": "1795598037",
+      "comments": 10,
+      "commits": 1,
+      "created_at": "1795586574",
+      "deletions": 3,
+      "labels": [
+        "code-checks-approved",
+        "fully-signed",
+        "orp-approved",
+        "reconstruction-approved",
+        "tests-approved",
+        "urgent",
+        "xpog-approved"
+      ],
+      "merge_commit_sha": "eb2a0830bf8c11ad3b4b1d270172d0a7c6cc3f9d",
+      "merged_at": "1795598037",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_17_1_X",
+      "number": 52655,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "[17_1_X] Fix issue in workflow 140.5611",
+      "updated_at": "1795598039",
+      "user": "stahlleiton"
     }
   }
 }
