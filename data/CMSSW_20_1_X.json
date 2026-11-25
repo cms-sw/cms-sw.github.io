@@ -15,7 +15,7 @@
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-23-2300/el8_amd64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-11-24-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-23-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X/master",
-        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-24-1100/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-24-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
         "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-11-24-1100/el9_amd64_gcc16..IB/CMSSW_20_1_X/gcc16",
         "fc42_riscv64_gcc15": "ERR/CMSSW_20_1_X_2026-11-19-2300/fc42_riscv64_gcc15..IB/CMSSW_20_1_X/g15"
       },
@@ -99,17 +99,7 @@
             "url": "https://github.com/cms-sw/cmsdist/pull/11025"
           }
         ],
-        "el9_amd64_gcc15": [
-          {
-            "author_login": "fwyzard",
-            "from_merge_commit": true,
-            "hash": "19438666e8a4cda1938ffc44d37c0b509ceee8fa",
-            "is_merge_commit": false,
-            "number": "11025",
-            "title": "Update the RDMA network stack and Open MPI to v5.11",
-            "url": "https://github.com/cms-sw/cmsdist/pull/11025"
-          }
-        ],
+        "el9_amd64_gcc15": [],
         "el9_amd64_gcc16": [],
         "fc42_riscv64_gcc15": [
           {
@@ -208,6 +198,12 @@
       "RVExceptions": null,
       "addons": [
         {
+          "arch": "el9_amd64_gcc15",
+          "details": {},
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-24-2300/addOnTests.log",
+          "passed": true
+        },
+        {
           "arch": "el9_aarch64_gcc14",
           "details": {},
           "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-24-2300/addOnTests.log",
@@ -222,6 +218,14 @@
       ],
       "base_branch": "CMSSW_20_1_X",
       "builds": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "ignoreWarning": 1120
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-24-2300/new/logAnalysis.pkl",
+          "passed": "passed"
+        },
         {
           "arch": "el9_aarch64_gcc14",
           "details": {
@@ -245,10 +249,12 @@
       "class_versions": "inprogress",
       "cmsdistTags": {
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-11-24-2300/el9_aarch64_gcc14",
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-24-2300/el9_amd64_gcc15",
         "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-11-24-1100/el9_amd64_gcc16"
       },
       "cmsdist_compared_tags": {
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-11-23-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X_2026-11-24-2300/el9_aarch64_gcc14",
+        "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-24-1100/el9_amd64_gcc15..IB/CMSSW_20_1_X_2026-11-24-2300/el9_amd64_gcc15",
         "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-11-24-1100/el9_amd64_gcc16..IB/CMSSW_20_1_X_2026-11-24-1100/el9_amd64_gcc16"
       },
       "cmsdist_merged_prs": {
@@ -256,6 +262,17 @@
           {
             "author_login": "fwyzard",
             "from_merge_commit": false,
+            "hash": "19438666e8a4cda1938ffc44d37c0b509ceee8fa",
+            "is_merge_commit": false,
+            "number": "11025",
+            "title": "Update the RDMA network stack and Open MPI to v5.11",
+            "url": "https://github.com/cms-sw/cmsdist/pull/11025"
+          }
+        ],
+        "el9_amd64_gcc15": [
+          {
+            "author_login": "fwyzard",
+            "from_merge_commit": true,
             "hash": "19438666e8a4cda1938ffc44d37c0b509ceee8fa",
             "is_merge_commit": false,
             "number": "11025",
@@ -273,6 +290,10 @@
       "dupDict": [
         {
           "arch": "el9_aarch64_gcc14",
+          "passed": "error"
+        },
+        {
+          "arch": "el9_amd64_gcc15",
           "passed": "error"
         },
         {
@@ -457,11 +478,22 @@
       "release_queue": "CMSSW_20_1_X",
       "relvals": [
         {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "known_failed": 0,
+            "num_failed": 1,
+            "num_passed": 15
+          },
+          "done": false,
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-24-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
+          "passed": false
+        },
+        {
           "arch": "el9_aarch64_gcc14",
           "details": {
             "known_failed": 0,
-            "num_failed": 18,
-            "num_passed": 603
+            "num_failed": 19,
+            "num_passed": 1338
           },
           "done": false,
           "file": "/data/sdt/buildlogs/el9_aarch64_gcc14/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-24-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
@@ -472,9 +504,9 @@
           "details": {
             "known_failed": 0,
             "num_failed": 1,
-            "num_passed": 1811
+            "num_passed": 3788
           },
-          "done": false,
+          "done": true,
           "file": "/data/sdt/buildlogs/el9_amd64_gcc16/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-24-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
           "passed": false
         }
@@ -484,9 +516,18 @@
       "static_checks_v2": "inprogress",
       "tests_archs": [
         "el9_aarch64_gcc14",
+        "el9_amd64_gcc15",
         "el9_amd64_gcc16"
       ],
       "utests": [
+        {
+          "arch": "el9_amd64_gcc15",
+          "details": {
+            "num_fails": "5"
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-24-2300/unitTests-summary.log",
+          "passed": "failed"
+        },
         {
           "arch": "el9_aarch64_gcc14",
           "details": {
@@ -7914,10 +7955,7 @@
         "data": "/ib-static-analysis/CMSSW_20_1_X_2026-11-15-2300/el9_amd64_gcc14/build-logs",
         "status": "warning"
       },
-      "class_versions": {
-        "data": "/class_versions/CMSSW_20_1_X_2026-11-15-2300/el9_amd64_gcc14/class_versions.html",
-        "status": "passed"
-      },
+      "class_versions": "inprogress",
       "cmsdistTags": {
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-15-2300/el8_amd64_gcc14",
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-11-15-2300/el9_aarch64_gcc14",
@@ -8027,10 +8065,7 @@
       "builds": [],
       "check-headers": "inprogress",
       "clang_analyzer": "inprogress",
-      "class_versions": {
-        "data": "/class_versions/CMSSW_20_1_X_2026-11-15-0000/el9_amd64_gcc14/class_versions.html",
-        "status": "passed"
-      },
+      "class_versions": "inprogress",
       "cmsdistTags": {
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-15-0000/el8_amd64_gcc14",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-15-0000/el9_amd64_gcc14"
