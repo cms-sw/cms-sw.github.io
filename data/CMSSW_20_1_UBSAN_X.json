@@ -12,7 +12,35 @@
         "el9_amd64_gcc14": "IB/CMSSW_20_1_UBSAN_X_2026-11-25-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X/master"
       },
       "cmsdist_merged_prs": {
-        "el9_amd64_gcc14": []
+        "el9_amd64_gcc14": [
+          {
+            "author_login": "cms-sw",
+            "from_merge_commit": false,
+            "hash": "bb39b5d6a824551eeeee36e353514172c6d3d290",
+            "is_merge_commit": false,
+            "number": "11035",
+            "title": "build rules fix for building x86-64-v3 on x86-64-v2",
+            "url": "https://github.com/cms-sw/cmsdist/pull/11035"
+          },
+          {
+            "author_login": "akritkbehera",
+            "from_merge_commit": false,
+            "hash": "581a31f6349e11ad045ef8c6d8849ed847fc7277",
+            "is_merge_commit": false,
+            "number": "11034",
+            "title": "backport changes for rocm 10.1 from `IB/CMSSW_20_1_X/ROCm10` branch",
+            "url": "https://github.com/cms-sw/cmsdist/pull/11034"
+          },
+          {
+            "author_login": "fwyzard",
+            "from_merge_commit": false,
+            "hash": "a1679f659a2d1bdc657c214a49fd53ff013a3f03",
+            "is_merge_commit": false,
+            "number": "11030",
+            "title": "[PyTorch] make `jiterator_stringify` produce a `std::string_view`",
+            "url": "https://github.com/cms-sw/cmsdist/pull/11030"
+          }
+        ]
       },
       "comp_baseline": "not-found",
       "comp_baseline_state": "errors",
@@ -287,9 +315,11 @@
       "utests": [
         {
           "arch": "el9_amd64_gcc14",
-          "details": {},
-          "file": "['/data/sdt/buildlogs/el9_amd64_gcc14/www/wed/20.1.UBSAN-wed-23/CMSSW_20_1_UBSAN_X_2026-11-25-2300/new/logAnalysis.pkl']",
-          "passed": "unknown"
+          "details": {
+            "num_fails": "2"
+          },
+          "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/wed/20.1.UBSAN-wed-23/CMSSW_20_1_UBSAN_X_2026-11-25-2300/unitTests-summary.log",
+          "passed": "failed"
         }
       ],
       "valgrind": "not-found",
