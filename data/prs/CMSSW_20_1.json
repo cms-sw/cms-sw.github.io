@@ -4189,6 +4189,38 @@
       "title": "Phase2-hgx369M1 Modify the scripts in Geometry/HGCalCommonData/test/python to accommodate testing the new scenarios",
       "updated_at": "1795683364",
       "user": "bsunanda"
+    },
+    "52670": {
+      "additions": 2,
+      "auther_ref": "fix-MtdSimMergedCluster-assoc",
+      "auther_sha": "1f07c25f58172b07eceab9534977cf8760b7399b",
+      "author": "smuzaffar",
+      "body": "This fixes the wrong dict association for MtdSimMergedCluster ( see https://github.com/cms-sw/cmssw/pull/52123#issuecomment-7193722126 ) . This should fix the wrong dict errors from 20.1.X IBs\n\nhttps://cmssdt.cern.ch/SDT/cgi-bin/showDupDict.py/el9_amd64_gcc14/www/wed/20.1-wed-23/CMSSW_20_1_X_2026-11-25-2300/testLogs/dupDict-lostDefs.log\n```\n ./SimDataFormats/Associations/src/classes_def.xml defines the following dictionaries that should be defined in another package \t\nTrackingAnalysis : edm::helpers::KeyVal< edm::RefProd< vector< MtdSimMergedCluster > >, edm::RefProd< vector< TrackingParticle > > >\nTrackingAnalysis : edm::helpers::KeyVal< edm::RefProd< vector< TrackingParticle > >, edm::RefProd< vector< MtdSimMergedCluster > > > \n```",
+      "branch": "master",
+      "changed_files": 1,
+      "closed_at": "1795792853",
+      "comments": 8,
+      "commits": 1,
+      "created_at": "1795698831",
+      "deletions": 0,
+      "labels": [
+        "code-checks-approved",
+        "core-approved",
+        "fully-signed",
+        "orp-approved",
+        "tests-approved"
+      ],
+      "merge_commit_sha": "c1a2d115706bfd510161d17e21fd746269792ead",
+      "merged_at": "1795792853",
+      "merged_by": "cmsbuild",
+      "milestone": "CMSSW_20_1_X",
+      "number": 52670,
+      "release-notes": [],
+      "review_comments": 0,
+      "state": "closed",
+      "title": "Update dict association for MtdSimMergedCluster",
+      "updated_at": "1795792855",
+      "user": "smuzaffar"
     }
   }
 }
