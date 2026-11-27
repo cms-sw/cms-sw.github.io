@@ -12,7 +12,7 @@
       "cmsdistTags": {},
       "cmsdist_compared_tags": {
         "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-24-2300/el10_amd64_gcc15..IB/CMSSW_20_1_X/g15",
-        "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-26-1100/el8_amd64_gcc14..IB/CMSSW_20_1_X/master",
+        "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-26-2300/el8_amd64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-11-24-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-26-1100/el9_amd64_gcc14..IB/CMSSW_20_1_X/master",
         "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-24-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X/g15",
@@ -275,6 +275,12 @@
           "details": {},
           "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-26-2300/addOnTests.log",
           "passed": true
+        },
+        {
+          "arch": "el8_amd64_gcc14",
+          "details": {},
+          "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-26-2300/addOnTests.log",
+          "passed": true
         }
       ],
       "base_branch": "CMSSW_20_1_X",
@@ -286,6 +292,14 @@
           },
           "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-26-2300/new/logAnalysis.pkl",
           "passed": "passed"
+        },
+        {
+          "arch": "el8_amd64_gcc14",
+          "details": {
+            "ignoreWarning": 930
+          },
+          "file": "/data/sdt/buildlogs/el8_amd64_gcc14/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-26-2300/new/logAnalysis.pkl",
+          "passed": "passed"
         }
       ],
       "check-headers": "passed",
@@ -295,12 +309,15 @@
         "status": "passed"
       },
       "cmsdistTags": {
+        "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-26-2300/el8_amd64_gcc14",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-26-1100/el9_amd64_gcc14"
       },
       "cmsdist_compared_tags": {
+        "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-26-1100/el8_amd64_gcc14..IB/CMSSW_20_1_X_2026-11-26-2300/el8_amd64_gcc14",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-26-1100/el9_amd64_gcc14..IB/CMSSW_20_1_X_2026-11-26-1100/el9_amd64_gcc14"
       },
       "cmsdist_merged_prs": {
+        "el8_amd64_gcc14": [],
         "el9_amd64_gcc14": []
       },
       "comp_baseline": "not-found",
@@ -309,6 +326,10 @@
       "crab_tests": "passed",
       "dqm_tests": "not-found",
       "dupDict": [
+        {
+          "arch": "el8_amd64_gcc14",
+          "passed": "passed"
+        },
         {
           "arch": "el9_amd64_gcc14",
           "passed": "passed"
@@ -326,7 +347,7 @@
         }
       ],
       "hlt-p2-timing": "inprogress",
-      "hlt_tests": "inprogress",
+      "hlt_tests": "passed",
       "ib_date": "2026-11-26-2300-0000",
       "igprof": "not-found",
       "inProgress": false,
@@ -373,6 +394,7 @@
       "static_checks_failures": "not-found",
       "static_checks_v2": "inprogress",
       "tests_archs": [
+        "el8_amd64_gcc14",
         "el9_amd64_gcc14"
       ],
       "utests": [
@@ -380,6 +402,12 @@
           "arch": "el9_amd64_gcc14",
           "details": {},
           "file": "['/data/sdt/buildlogs/el9_amd64_gcc14/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-26-2300/new/logAnalysis.pkl']",
+          "passed": "unknown"
+        },
+        {
+          "arch": "el8_amd64_gcc14",
+          "details": {},
+          "file": "['/data/sdt/buildlogs/el8_amd64_gcc14/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-26-2300/new/logAnalysis.pkl']",
           "passed": "unknown"
         }
       ],
@@ -419,7 +447,10 @@
         }
       ],
       "check-headers": "passed",
-      "clang_analyzer": "inprogress",
+      "clang_analyzer": {
+        "data": "/ib-static-analysis/CMSSW_20_1_X_2026-11-26-1100/el9_amd64_gcc14/build-logs",
+        "status": "warning"
+      },
       "class_versions": "inprogress",
       "cmsdistTags": {
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-26-1100/el8_amd64_gcc14",
@@ -548,9 +579,9 @@
             "details": {
               "known_failed": 0,
               "num_failed": 0,
-              "num_passed": 159
+              "num_passed": 197
             },
-            "done": false,
+            "done": true,
             "file": "/data/sdt/buildlogs/el9_amd64_gcc14/www/thu/20.1-thu-11/CMSSW_20_1_X_2026-11-26-1100/gpu/amd_w7900/pyRelValMatrixLogs/run/runall-report-step123-.log",
             "gpu": "amd_w7900",
             "passed": true,
@@ -636,9 +667,12 @@
           "passed": true
         }
       ],
-      "static_checks": "inprogress",
+      "static_checks": "el9_amd64_gcc14:",
       "static_checks_failures": "not-found",
-      "static_checks_v2": "inprogress",
+      "static_checks_v2": {
+        "arch": "el9_amd64_gcc14",
+        "status": "passed"
+      },
       "tests_archs": [
         "el8_amd64_gcc14",
         "el9_amd64_gcc14"
@@ -1406,7 +1440,7 @@
         "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-11-24-1100/el9_amd64_gcc16"
       },
       "cmsdist_compared_tags": {
-        "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-19-2300/el10_amd64_gcc15..IB/CMSSW_20_1_X_2026-11-24-2300/el10_amd64_gcc15",
+        "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-24-2300/el10_amd64_gcc15..IB/CMSSW_20_1_X_2026-11-24-2300/el10_amd64_gcc15",
         "el8_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-23-2300/el8_amd64_gcc14..IB/CMSSW_20_1_X_2026-11-24-2300/el8_amd64_gcc14",
         "el9_aarch64_gcc14": "IB/CMSSW_20_1_X_2026-11-23-2300/el9_aarch64_gcc14..IB/CMSSW_20_1_X_2026-11-24-2300/el9_aarch64_gcc14",
         "el9_amd64_gcc14": "IB/CMSSW_20_1_X_2026-11-23-2300/el9_amd64_gcc14..IB/CMSSW_20_1_X_2026-11-24-2300/el9_amd64_gcc14",
@@ -1414,62 +1448,7 @@
         "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-11-24-1100/el9_amd64_gcc16..IB/CMSSW_20_1_X_2026-11-24-1100/el9_amd64_gcc16"
       },
       "cmsdist_merged_prs": {
-        "el10_amd64_gcc15": [
-          {
-            "author_login": "fwyzard",
-            "from_merge_commit": true,
-            "hash": "19438666e8a4cda1938ffc44d37c0b509ceee8fa",
-            "is_merge_commit": false,
-            "number": "11025",
-            "title": "Update the RDMA network stack and Open MPI to v5.11",
-            "url": "https://github.com/cms-sw/cmsdist/pull/11025"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "e8d3c2f9e0a5efdd9daea607f416c5f0585c05a8",
-            "is_merge_commit": false,
-            "number": "11031",
-            "title": "Update tag for PhysicsTools-ONNXRuntimeAlpakaTest to V00-00-01",
-            "url": "https://github.com/cms-sw/cmsdist/pull/11031"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "ef5daf5261c93131568ef6433179b1951e53487f",
-            "is_merge_commit": false,
-            "number": "11024",
-            "title": "cms-git-tools:  Handle the single commit case - #134",
-            "url": "https://github.com/cms-sw/cmsdist/pull/11024"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "fb13763751dba534ed4877d695d2fa050239c05c",
-            "is_merge_commit": false,
-            "number": "11020",
-            "title": "[20.1.X] Update GCC to version 14.4.1",
-            "url": "https://github.com/cms-sw/cmsdist/pull/11020"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": true,
-            "hash": "084ffdac509eb39e9848cb8bc59e2836b3d340d6",
-            "is_merge_commit": false,
-            "number": "11021",
-            "title": "enable x86-64-v2 for el9 and v3 for el10 and above",
-            "url": "https://github.com/cms-sw/cmsdist/pull/11021"
-          },
-          {
-            "author_login": "cms-sw",
-            "from_merge_commit": false,
-            "hash": "a9e73ec0fdae4bca1dfcb03a822a9d921d39731c",
-            "is_merge_commit": false,
-            "number": "11023",
-            "title": "[GCC15] move to latest commit of gcc-15 branch",
-            "url": "https://github.com/cms-sw/cmsdist/pull/11023"
-          }
-        ],
+        "el10_amd64_gcc15": [],
         "el8_amd64_gcc14": [
           {
             "author_login": "fwyzard",
@@ -6207,12 +6186,6 @@
           "passed": true
         },
         {
-          "arch": "el10_amd64_gcc15",
-          "details": {},
-          "file": "/data/sdt/buildlogs/el10_amd64_gcc15/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-19-2300/addOnTests.log",
-          "passed": true
-        },
-        {
           "arch": "fc42_riscv64_gcc15",
           "details": {},
           "file": "/data/sdt/buildlogs/fc42_riscv64_gcc15/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-19-2300/addOnTests.log",
@@ -6233,14 +6206,6 @@
             "ignoreWarning": 1112
           },
           "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-19-2300/new/logAnalysis.pkl",
-          "passed": "passed"
-        },
-        {
-          "arch": "el10_amd64_gcc15",
-          "details": {
-            "ignoreWarning": 581
-          },
-          "file": "/data/sdt/buildlogs/el10_amd64_gcc15/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-19-2300/new/logAnalysis.pkl",
           "passed": "passed"
         },
         {
@@ -6281,13 +6246,11 @@
         "fc42_riscv64_gcc15": "ERR/CMSSW_20_1_X_2026-11-19-2300/fc42_riscv64_gcc15"
       },
       "cmsdist_compared_tags": {
-        "el10_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-19-2300/el10_amd64_gcc15..IB/CMSSW_20_1_X_2026-11-19-2300/el10_amd64_gcc15",
         "el9_amd64_gcc15": "IB/CMSSW_20_1_X_2026-11-19-2300/el9_amd64_gcc15..IB/CMSSW_20_1_X_2026-11-19-2300/el9_amd64_gcc15",
         "el9_amd64_gcc16": "IB/CMSSW_20_1_X_2026-11-19-2300/el9_amd64_gcc16..IB/CMSSW_20_1_X_2026-11-19-2300/el9_amd64_gcc16",
         "fc42_riscv64_gcc15": "ERR/CMSSW_20_1_X_2026-11-17-2300/fc42_riscv64_gcc15..ERR/CMSSW_20_1_X_2026-11-19-2300/fc42_riscv64_gcc15"
       },
       "cmsdist_merged_prs": {
-        "el10_amd64_gcc15": [],
         "el9_amd64_gcc15": [],
         "el9_amd64_gcc16": [],
         "fc42_riscv64_gcc15": []
@@ -6298,10 +6261,6 @@
       "crab_tests": "passed",
       "dqm_tests": "not-found",
       "dupDict": [
-        {
-          "arch": "el10_amd64_gcc15",
-          "passed": "passed"
-        },
         {
           "arch": "el9_amd64_gcc15",
           "passed": "passed"
@@ -6456,17 +6415,6 @@
           "passed": false
         },
         {
-          "arch": "el10_amd64_gcc15",
-          "details": {
-            "known_failed": 0,
-            "num_failed": 1,
-            "num_passed": 3788
-          },
-          "done": true,
-          "file": "/data/sdt/buildlogs/el10_amd64_gcc15/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-19-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
-          "passed": false
-        },
-        {
           "arch": "fc42_riscv64_gcc15",
           "details": {
             "known_failed": 6,
@@ -6496,7 +6444,6 @@
         "status": "passed"
       },
       "tests_archs": [
-        "el10_amd64_gcc15",
         "el9_amd64_gcc15",
         "el9_amd64_gcc16",
         "fc42_riscv64_gcc15"
@@ -6508,14 +6455,6 @@
             "num_fails": "0"
           },
           "file": "/data/sdt/buildlogs/el9_amd64_gcc15/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-19-2300/unitTests-summary.log",
-          "passed": "passed"
-        },
-        {
-          "arch": "el10_amd64_gcc15",
-          "details": {
-            "num_fails": "0"
-          },
-          "file": "/data/sdt/buildlogs/el10_amd64_gcc15/www/thu/20.1-thu-23/CMSSW_20_1_X_2026-11-19-2300/unitTests-summary.log",
           "passed": "passed"
         },
         {
@@ -6924,14 +6863,7 @@
     },
     {
       "RVExceptions": null,
-      "addons": [
-        {
-          "arch": "fc42_riscv64_gcc15",
-          "details": {},
-          "file": "/data/sdt/buildlogs/fc42_riscv64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-17-2300/addOnTests.log",
-          "passed": false
-        }
-      ],
+      "addons": [],
       "base_branch": "CMSSW_20_1_X",
       "builds": [
         {
@@ -7074,19 +7006,7 @@
       },
       "release_name": "CMSSW_20_1_X_2026-11-17-2300",
       "release_queue": "CMSSW_20_1_X",
-      "relvals": [
-        {
-          "arch": "fc42_riscv64_gcc15",
-          "details": {
-            "known_failed": 6,
-            "num_failed": 950,
-            "num_passed": 507
-          },
-          "done": true,
-          "file": "/data/sdt/buildlogs/fc42_riscv64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-17-2300/pyRelValMatrixLogs/run/runall-report-step123-.log",
-          "passed": false
-        }
-      ],
+      "relvals": [],
       "static_checks": "el9_amd64_gcc14:",
       "static_checks_failures": "not-found",
       "static_checks_v2": {
@@ -7099,11 +7019,9 @@
       "utests": [
         {
           "arch": "fc42_riscv64_gcc15",
-          "details": {
-            "num_fails": "226"
-          },
-          "file": "/data/sdt/buildlogs/fc42_riscv64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-17-2300/unitTests-summary.log",
-          "passed": "failed"
+          "details": {},
+          "file": "['/data/sdt/buildlogs/fc42_riscv64_gcc15/www/tue/20.1-tue-23/CMSSW_20_1_X_2026-11-17-2300/new/logAnalysis.pkl']",
+          "passed": "unknown"
         }
       ],
       "valgrind": "not-found",
