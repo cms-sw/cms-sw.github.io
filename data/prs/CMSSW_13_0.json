@@ -1,37 +1,4 @@
 {
   "cmsdist": {},
-  "cmssw": {
-    "52527": {
-      "additions": 138,
-      "auther_ref": "GEN-tasklist-70-13_0_X-backport",
-      "auther_sha": "5c20e85762336c0bef43deffd6f5f70d79f871f9",
-      "author": "mardsouza",
-      "body": "backport of #51942\r\nto `13_0_X`.\r\n\r\nDifferences with respect to the master PR:\r\n- The `ResonanceDecayFilterCounter` handling is not included, because it is not part of `13_0_X`.\r\n\r\nAdditional material:  [Original PR #51942 to the master branch](https://github.com/cms-sw/cmssw/pull/51942)\r\n#### PR validation:\r\n\r\nThe code is the same as in the master PR, apart from the differences listed above. Validated with `13_0_X` on Powheg+Pythia, MadGraph+Pythia, Pythia-only and Sherpa samples.\r\nSamples that were tested:\r\n```\r\n/DYto2E_MLL-50to120_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer22MiniAODv3-124X_mcRun3_2022_realistic_v12-v2/MINIAODSIM              \r\n/ZZto4L_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer22MiniAODv3-124X_mcRun3_2022_realistic_v12-v2/MINIAODSIM                          \r\n/TTto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer22MiniAODv3-124X_mcRun3_2022_realistic_v12-v4/MINIAODSIM                       \r\n/BprimeBtoTW_M-1000_NWALO_TuneCP5_13p6TeV_madgraph-pythia8/Run3Summer22MiniAODv3-124X_mcRun3_2022_realistic_v12-v2/MINIAODSIM      \r\n/TTWW_TuneCP5_13p6TeV_madgraph-madspin-pythia8/Run3Summer22MiniAODv3-124X_mcRun3_2022_realistic_v12-v2/MINIAODSIM                  \r\n/DYto2E_MLL-50to120_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer23MiniAODv4-130X_mcRun3_2023_realistic_v14-v2/MINIAODSIM              \r\n/ZZto4L_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer23MiniAODv4-130X_mcRun3_2023_realistic_v14-v3/MINIAODSIM                          \r\n/TTto2L2Nu_TuneCP5_13p6TeV_powheg-pythia8/Run3Summer23MiniAODv4-130X_mcRun3_2023_realistic_v14-v2/MINIAODSIM                       \r\n/BprimeBtoTW_M-1000_NWALO_TuneCP5_13p6TeV_madgraph-pythia8/Run3Summer23MiniAODv4-130X_mcRun3_2023_realistic_v15-v2/MINIAODSIM      \r\n/TTWW_TuneCP5_13p6TeV_madgraph-madspin-pythia8/Run3Summer23MiniAODv4-130X_mcRun3_2023_realistic_v15-v2/MINIAODSIM                  \r\n/VBF-Hto2Mu_Par-M-125_TuneCP5_13p6TeV_amcatnlo-pythia8/RunIII2024Summer24MiniAODv6-150X_mcRun3_2024_realistic_v2_ext1-v2/MINIAODSIM\r\n/VBF-Hto2Mu_Par-M-125_TuneCP5_13p6TeV_amcatnlo-pythia8/RunIII2024Summer24MiniAODv6-150X_mcRun3_2024_realistic_v2-v2/MINIAODSIM   \r\n```\r\n\r\nSome of these samples, created with more recent versions of CMSSW, exhibited an incompatibility issue (as was to be expected) due to CMSSW versioning. This PR aims to resolve this issue specifically for earlier versions. Backports were applied to the `CMSSW_13_0_X`, `CMSSW_14_0_X`, and `CMSSW_15_0_X` versions, following the same procedure.",
-      "branch": "CMSSW_13_0_X",
-      "changed_files": 1,
-      "closed_at": "1794852017",
-      "comments": 7,
-      "commits": 1,
-      "created_at": "1794775899",
-      "deletions": 15,
-      "labels": [
-        "backport-ok",
-        "fully-signed",
-        "generators-approved",
-        "orp-approved",
-        "tests-approved"
-      ],
-      "merge_commit_sha": "3b82d735a869f0ca853ecc807b96020a439904bd",
-      "merged_at": "1794852017",
-      "merged_by": "cmsbuild",
-      "milestone": "CMSSW_13_0_X",
-      "number": 52527,
-      "release-notes": [],
-      "review_comments": 0,
-      "state": "closed",
-      "title": "[13_0_X] [BACKPORT] GeneratorInterface/Core: Fix cross section consistency in GenXSecAnalyzer",
-      "updated_at": "1794852019",
-      "user": "mardsouza"
-    }
-  }
+  "cmssw": {}
 }
